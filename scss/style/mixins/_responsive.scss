@@ -1,0 +1,33 @@
+/**
+ * Responsive mixins.
+ */
+
+$responsive-xs-min: 0px;
+$responsive-sm-min: 768px;
+$responsive-md-min: 992px;
+$responsive-lg-min: 1200px;
+
+@mixin respond-to($name) {
+
+  @if $name == extra-small {
+    @content;
+  }
+
+  @else if $name == small {
+    @media (min-width: $responsive-sm-min) {
+      @content;
+    }
+  }
+
+  @else if $name == medium {
+    @media (min-width: $responsive-md-min) {
+      @content;
+    }
+  }
+
+  @else if $name == large {
+    @media (min-width: $responsive-lg-min) {
+      @content;
+    }
+  }
+}

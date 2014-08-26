@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/**
+ * This is the main style file.
+ * Include this for full inclusion!
+ */
+
+@import 'style/mixins/responsive';
+@import 'style/mixins/grid';
+
+// here comes some test code
+
+$any-color: blue;
+
+body {
+  background-color: lighten($blue, 90%);
+}
+
+.button {
+  color: lighten($any-color, 30%);
+
+  @include respond-to(small) {
+    color: lighten($any-color, 20%);
+  }
+
+  @include respond-to(medium) {
+    color: lighten($any-color, 10%);
+  }
+
+  @include respond-to(large) {
+    color: $any-color;
+  }
+}
