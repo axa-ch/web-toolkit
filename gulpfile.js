@@ -9,47 +9,30 @@ gulp.task('docs', function (cb) {
       branch = require('metalsmith-branch');
 
   var metalsmith = new Metalsmith(__dirname);
-
   metalsmith.source('./src/docs');
-  metalsmith.clean(true);
 
-  metalsmith.use(function (files, metalsmith, done) {
-    var filtered = [];
+  // put the visuals to metadata
+  metalsmith.use(branch('visuals/*.jade')
+      .use(jade({ locals: metalsmith.metadata() }))
+      .use(collections({ visuals: 'visuals/*' }))
+      .use(ignore('visuals/*')));
 
-    for (var file in files) {
-      console.log(files[file]);
-      if (files[file].collection !== undefined) {
-        filtered.push(files[file]);
-      }
-    }
+  // do the static pages
+  metalsmith.use(branch('*.jade')
+      .use(jade({ locals: metalsmith.metadata() }))
+      .use(templates({
+          engine: 'jade',
+          directory: './src/docs/layouts'
+      })));
 
-    return jade({
-      pretty: true,
-      locals: metalsmith.metadata()
-    })(filtered, metalsmith, done);
-  });
-
-  metalsmith.use(collections({
-    visuals: {}
-  }));
-
-  metalsmith.use(jade({
-    pretty: true,
-    locals: metalsmith.metadata()
-  }));
-
-  /*metalsmith.use(templates({
-    engine: 'jade',
-    directory: './src/docs/layouts',
-    pretty: true
-  }));*/
+  // we no need the layouts
+  metalsmith.use(ignore('layouts/*'));
 
   metalsmith.destination('./dist/docs');
 
   return metalsmith.build(function (err) {
     if (err) return cb(err);
     var m = metalsmith.metadata();
-    console.log(m);
     cb();
   });
 });
