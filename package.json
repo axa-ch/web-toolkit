@@ -1,0 +1,34 @@
+{
+  "name": "style-guide",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "style",
+    "guide"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidknezic/style-guide.git"
+  },
+  "author": "David Knezić <davidknezic@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidknezic/style-guide/issues"
+  },
+  "homepage": "https://github.com/davidknezic/style-guide",
+  "dependencies": {
+    "gulp": "^3.8.7",
+    "highlight.js": "^8.2.0",
+    "jade": "^1.5.0",
+    "metalsmith": "^0.10.0",
+    "metalsmith-branch": "0.0.4",
+    "metalsmith-collections": "^0.6.0",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-jade": "0.0.1",
+    "metalsmith-templates": "^0.5.2"
+  }
+}

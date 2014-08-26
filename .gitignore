@@ -1,0 +1,13 @@
+# mac os x
+.DS_Store/
+
+# node
+node_modules/
+
+# bower
+bower_components/
+src/bower_components
+
+# project
+build/
+dist/

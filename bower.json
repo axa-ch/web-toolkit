@@ -1,0 +1,22 @@
+{
+  "name": "style-guide",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "style",
+    "guide"
+  ],
+  "homepage": "https://github.com/davidknezic/style-guide",
+  "authors": [
+    "David Knezić <davidknezic@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
