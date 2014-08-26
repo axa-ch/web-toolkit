@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var bg = require('gulp-bg');
 var docs = require('./gulp/docs');
 
 gulp.task('docs', docs({
