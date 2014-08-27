@@ -29,6 +29,7 @@
     "metalsmith-collections": "^0.6.0",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-jade": "0.0.1",
+    "metalsmith-sass": "^0.3.0",
     "metalsmith-templates": "^0.5.2"
   }
 }
