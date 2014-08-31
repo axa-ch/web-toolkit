@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var docs = require('./gulp/docs');
+var docs = require('./tasks/docs');
 
 gulp.task('docs', docs({
   cwd: __dirname,
