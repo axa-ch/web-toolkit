@@ -1,5 +1,8 @@
 var gulp = require('gulp');
+
 var iconfont = require('gulp-iconfont');
+var sass = require('gulp-sass');
+
 var docs = require('./tasks/docs');
 
 gulp.task('docs', docs({
@@ -22,6 +25,13 @@ gulp.task('icons', function (cb) {
       console.log(codepoints);
     })
     .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task('sass', function (cb) {
+  gulp.src(['scss/style.scss', 'scss/normalize.scss'])
+    .pipe(sass())
+    .on('error', cb)
+    .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('default', []);

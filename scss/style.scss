@@ -7,13 +7,14 @@
 
 @import 'style/mixins/responsive';
 @import 'style/mixins/grid';
+@import 'style/mixins/icon';
 
 // here comes some test code
 
-$any-color: blue;
+$any-color: #333;
 
 body {
-  background-color: lighten($blue, 90%);
+  background-color: lighten(#f2f2f2, 90%);
 }
 
 .button {
