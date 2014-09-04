@@ -17,7 +17,7 @@ module.exports = exports = function (options) {
     var jade = require('metalsmith-jade');
     var ignore = require('metalsmith-ignore');
     var branch = require('metalsmith-branch');
-    var sass = require('metalsmith-sass');
+    var less = require('metalsmith-less');
 
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);
@@ -37,16 +37,20 @@ module.exports = exports = function (options) {
       })));
 
     // do the styles
-    metalsmith.use(branch('scss/*')
-      .use(sass({
-        outputDir: 'css/',
-        includePaths: [
-          './scss'
-        ]
+    metalsmith.use(branch('less/*')
+      .use(less({
+        pattern: ['less/docs.less'],
+        parse: {
+          paths: [
+            path.join(options.cwd, 'less'),
+            path.join(options.cwd, 'docs/less')
+          ]
+        }
       })));
 
-    // we no need the layouts
+    // we no need these files
     metalsmith.use(ignore('layouts/*'));
+    metalsmith.use(ignore('less/*'));
 
     metalsmith.destination(options.dest);
 

@@ -1,7 +1,8 @@
 var gulp = require('gulp');
 
 var iconfont = require('gulp-iconfont');
-var sass = require('gulp-sass');
+var less = require('gulp-less');
+var sourcemaps = require('gulp-sourcemaps');
 
 var docs = require('./tasks/docs');
 
@@ -27,10 +28,14 @@ gulp.task('icons', function (cb) {
     .pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('sass', function (cb) {
-  gulp.src(['scss/style.scss', 'scss/normalize.scss'])
-    .pipe(sass())
+gulp.task('less', function (cb) {
+  gulp.src(['less/style.less', 'less/normalize.less'])
+    .pipe(sourcemaps.init())
+    .pipe(less({
+      paths: []
+    }))
     .on('error', cb)
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'));
 });
 
