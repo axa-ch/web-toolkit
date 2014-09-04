@@ -1,0 +1,24 @@
+// depends on: mobile-trigger
+
+.header {
+  &--main {
+    &__mobile-trigger {
+      float: right;
+
+      border: 1px solid black;
+      display: block;
+      height: 50px;
+      width: 50px;
+      color: transparent;
+      background-color: #dedede;
+
+      &:hover {
+        background-color: #f2f2f2;
+      }
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+// depends on: -
+
+@import 'style/mixins/clearfix';
+
+.menu {
+  &, & ul, &--main, &--main ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    // FIXME: Remove the margin as soon as this problem is solved:
+    // github.com/necolas/normalize.css/issues/74
+    margin: 0;
+
+    .clearfix;
+  }
+
+  &--main {
+    background-color: blue;
+
+    &__item {
+      float: left;
+    }
+
+    &__link {
+      display: block;
+      padding: 20px;
+    }
+  }
+
+  &, &--main {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
