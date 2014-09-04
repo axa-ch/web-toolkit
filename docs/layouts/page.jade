@@ -5,3 +5,26 @@ html
     //script(type="text/javascript", src="js/style.js")
     link(rel="stylesheet", href="css/docs.css")
   body
+    .site__page
+      header.l-holder
+        .l-row
+          .header--main
+            span.header--main__mobile-trigger
+            .l-row
+              .brand
+                .logo
+            .l-row
+              nav
+                ul.menu--main
+                  li.menu--main__item.menu--main__item--home.is-active
+                    a.link.menu--main__link.menu--main__link--home(href="index.html") Home
+                  li.menu--main__item
+                    a.link.menu--main__link(href="visuals.html") Visuals
+
+      .l-holder
+        .l-row!= contents
+
+      footer.l-holder
+
+    .site__mobile-nav
+      p Mobile Nav!
