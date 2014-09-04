@@ -11,7 +11,9 @@ others have not been implemented yet.
 
 - [x] Generate static site with `Metalsmith`
 - [x] Map SVG icons to web fonts automatically
-- [ ] Compile Sass with `libsass`
+- [x] Compile Less
+- [ ] Reference icon font from the CSS
 - [ ] Set up the JavaScript environment
 - [ ] Include icon reference into static site
 - [ ] Build distributable package
+- [ ] Describe the style guide structure in the docs
