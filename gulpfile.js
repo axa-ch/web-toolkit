@@ -32,7 +32,7 @@ gulp.task('less', function (cb) {
   gulp.src(['less/style.less', 'less/normalize.less'])
     .pipe(sourcemaps.init())
     .pipe(less({
-      paths: []
+      paths: ['less']
     }))
     .on('error', cb)
     .pipe(sourcemaps.write())
