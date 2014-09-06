@@ -57,6 +57,7 @@ module.exports = exports = function (options) {
     // we no need these files
     metalsmith.use(ignore('layouts/*'));
     metalsmith.use(ignore('less/*'));
+    metalsmith.use(ignore('config.json'));
 
     metalsmith.destination(options.dest);
 
