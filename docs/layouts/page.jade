@@ -2,7 +2,6 @@ doctype html
 html
   head
     title= title
-    //script(type="text/javascript", src="js/style.js")
     link(rel="stylesheet", href="css/docs.css")
   body
     .site__page
@@ -16,10 +15,10 @@ html
             .l-row
               nav
                 ul.menu--main
-                  li.menu--main__item.menu--main__item--home.is-active
-                    a.link.menu--main__link.menu--main__link--home(href="index.html") Home
-                  li.menu--main__item
-                    a.link.menu--main__link(href="visuals.html") Visuals
+                  li.menu--main__item.menu--main__item--home(class=slug === 'home' ? 'menu--main__item--active' : undefined)
+                    a.link.menu--main__link.menu--main__link--home(href="index.html", class=slug === 'home' ? 'menu--main__link--active' : undefined) Home
+                  li.menu--main__item(class=slug === 'visuals' ? 'menu--main__item--active' : undefined)
+                    a.link.menu--main__link(href="visuals.html", class=slug === 'visuals' ? 'menu--main__link--active' : undefined) Visuals
 
       .l-holder
         .l-row!= contents
