@@ -33,6 +33,7 @@
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-jade": "0.0.1",
     "metalsmith-less": "^0.1.2",
+    "metalsmith-metadata": "0.0.1",
     "metalsmith-templates": "^0.5.2"
   }
 }

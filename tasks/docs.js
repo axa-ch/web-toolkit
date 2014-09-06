@@ -18,9 +18,15 @@ module.exports = exports = function (options) {
     var ignore = require('metalsmith-ignore');
     var branch = require('metalsmith-branch');
     var less = require('metalsmith-less');
+    var metadata = require('metalsmith-metadata');
 
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);
+
+    // add metadata from files
+    metalsmith.use(metadata({
+      config: 'config.json'
+    }));
 
     // put the visuals to metadata
     metalsmith.use(branch('visuals/*.jade')
