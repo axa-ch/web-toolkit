@@ -1,3 +1,11 @@
 {
+  "description": "One great live styleguide!",
+  "keywords": [
+    "great",
+    "live",
+    "style",
+    "guide"
+  ],
+  "author": "me and my friends",
   "repository": "https://github.com/davidknezic/style-guide"
 }
