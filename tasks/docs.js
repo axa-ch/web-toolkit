@@ -35,7 +35,7 @@ module.exports = exports = function (options) {
       .use(ignore('visuals/*')));
 
     // do the static pages
-    metalsmith.use(branch('*.jade')
+    metalsmith.use(branch(['*.jade', 'examples/*.jade'])
       .use(jade({ locals: metalsmith.metadata() }))
       .use(templates({
         engine: 'jade',
@@ -45,7 +45,7 @@ module.exports = exports = function (options) {
     // do the styles
     metalsmith.use(branch('less/*')
       .use(less({
-        pattern: ['less/docs.less'],
+        pattern: ['less/docs.less', 'less/style.less'],
         parse: {
           paths: [
             path.join(options.cwd, 'less'),
