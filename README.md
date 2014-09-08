@@ -13,7 +13,7 @@ others have not been implemented yet.
 - [x] Map SVG icons to web fonts automatically
 - [x] Compile Less
 - [ ] Reference icon font from the CSS
-- [ ] Set up the JavaScript environment
+- [x] Set up the JavaScript environment
 - [ ] Include icon reference into static site
 - [ ] Build distributable package
 - [ ] Describe the style guide structure in the docs
