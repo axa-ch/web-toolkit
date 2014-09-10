@@ -21,10 +21,10 @@ html
             .l-row
               nav
                 ul.menu--main
-                  li.menu--main__item.menu--main__item--home(class=slug === 'home' ? 'menu--main__item--active' : undefined)
-                    a.link.menu--main__link.menu--main__link--home(href="index.html", class=slug === 'home' ? 'menu--main__link--active' : undefined) Home
-                  li.menu--main__item(class=slug === 'visuals' ? 'menu--main__item--active' : undefined)
-                    a.link.menu--main__link(href="visuals.html", class=slug === 'visuals' ? 'menu--main__link--active' : undefined) Visuals
+                  li.menu--main__item.menu--main__item--home(class=slug === 'home' ? 'is-active' : undefined)
+                    a.link.menu--main__link.menu--main__link--home(href="index.html", class=slug === 'home' ? 'is-active' : undefined) Home
+                  li.menu--main__item(class=slug === 'visuals' ? 'is-active' : undefined)
+                    a.link.menu--main__link(href="visuals.html", class=slug === 'visuals' ? 'is-active' : undefined) Visuals
 
       .l-holder
         .l-row!= contents
