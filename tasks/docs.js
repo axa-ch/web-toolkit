@@ -20,6 +20,7 @@ module.exports = exports = function (options) {
     var less = require('metalsmith-less');
     var metadata = require('metalsmith-metadata');
     var define = require('metalsmith-define');
+    var assets = require('metalsmith-assets');
 
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);
@@ -32,6 +33,18 @@ module.exports = exports = function (options) {
     // add metadata
     metalsmith.use(define({
       icons: require(path.join(options.cwd, 'dist/icons.json'))
+    }));
+
+    // include fonts
+    metalsmith.use(assets({
+      source: './dist/fonts',
+      destination: './fonts'
+    }));
+
+    // include js files
+    metalsmith.use(assets({
+      source: './dist/js',
+      destination: './js'
     }));
 
     // put the visuals to metadata
