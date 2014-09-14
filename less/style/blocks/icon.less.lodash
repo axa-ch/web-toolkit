@@ -1,0 +1,32 @@
+// Attention: This file is generated automatically!
+
+@import 'style/variables';
+
+@path: @sg-icon-font-path;
+@name: @sg-icon-font-name;
+
+@font-face {
+  font-family: '@{name}';
+  src: url('@{path}/@{name}.eot');
+  src: url('@{path}/@{name}.eot?#iefix') format('embedded-opentype'),
+    url('@{path}/@{name}.woff') format('woff'),
+    url('@{path}/@{name}.ttf') format('truetype'),
+    url('@{path}/@{name}.svg#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 '@{name}';
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+<% _.forEach(glyphs, function (glyph) {
+%>.icon--<%= glyph.name %>::before {
+  content: '\<%= glyph.codepoint.toString(16).toUpperCase() %>';
+}
+<% }); %>

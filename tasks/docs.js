@@ -19,6 +19,7 @@ module.exports = exports = function (options) {
     var branch = require('metalsmith-branch');
     var less = require('metalsmith-less');
     var metadata = require('metalsmith-metadata');
+    var define = require('metalsmith-define');
 
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);
@@ -26,6 +27,11 @@ module.exports = exports = function (options) {
     // add metadata from files
     metalsmith.use(metadata({
       config: 'config.json'
+    }));
+
+    // add metadata
+    metalsmith.use(define({
+      icons: require(path.join(options.cwd, 'dist/icons.json'))
     }));
 
     // put the visuals to metadata
@@ -48,7 +54,7 @@ module.exports = exports = function (options) {
         pattern: ['less/docs.less', 'less/style.less'],
         parse: {
           paths: [
-            path.join(options.cwd, 'less'),
+            path.join(options.cwd, 'dist/less'),
             path.join(options.cwd, 'docs/less')
           ]
         }

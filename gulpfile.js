@@ -1,6 +1,9 @@
 // FIXME: Merge docs & assets building tasks as much as possible!
 
 var gulp = require('gulp');
+var fs = require('fs');
+var del = require('del');
+var merge = require('merge-stream');
 var iconfont = require('gulp-iconfont');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
@@ -12,7 +15,8 @@ var watch = require('gulp-watch');
 var connect = require('connect');
 var serveStatic = require('serve-static');
 var gutil = require('gulp-util');
-var clean = require('gulp-clean');
+var template = require('gulp-template');
+var rename = require("gulp-rename");
 
 var docs = require('./tasks/docs');
 
@@ -21,9 +25,8 @@ function errorify(e) {
   gutil.log(e);
 }
 
-gulp.task('clean', function () {
-  return gulp.src('./dist', { read: false })
-    .pipe(clean());
+gulp.task('clean', function (cb) {
+  del(['./dist/**/*'], cb);
 });
 
 gulp.task('docs', docs({
@@ -32,45 +35,102 @@ gulp.task('docs', docs({
   dest: './dist/docs'
 }));
 
-gulp.task('icons', function () {
-  return gulp.src(['./icons/*.svg'])
+gulp.task('icons', function (cb) {
+  var n = 0;
+  var end = function (err) {
+    // Ignore this rule on error
+    if (err) return cb(err);
+
+    // Notify execution end on second call, when...
+    // * icons.json file is written
+    // * fonts are created
+    if (++n >= 2) cb();
+  }
+
+  gulp.src(['./icons/*.svg'])
     .pipe(iconfont({
       fontName: 'style-guide-font',
       appendCodepoints: true
     }))
     .on('error', errorify)
-    .on('codepoints', function (codepoints) {
-      // FIXME: Create less-file with codepoints here
+    .on('codepoints', function (points) {
+      var glyphs = [];
+
+      points.forEach(function (point) {
+        glyphs.push({
+          name: point.name,
+          codepoint: point.codepoint.toString(16).toUpperCase()
+        });
+      });
+
+      var contents = new Buffer(JSON.stringify(glyphs, null, 2));
+
+      fs.writeFile('./dist/icons.json', contents, end);
     })
-    .pipe(gulp.dest('./dist/fonts'));
+    .pipe(gulp.dest('./dist/fonts'))
+    .on('end', end);
 });
 
-gulp.task('styles', function () {
-  return gulp.src(['./less/style.less', './less/normalize.less'])
+gulp.task('styles-copy', function () {
+  return gulp.src(['./less/**/*.less'], { base: './less' })
+    .pipe(gulp.dest('./dist/less'));
+});
+
+gulp.task('styles-generate', function (cb) {
+  gulp.src(['./icons/*.svg'])
+    .pipe(iconfont({ fontName: 'temporary' }))
+    .on('error', errorify)
+    .on('codepoints', function (codepoints) {
+      gulp.src('./less/style/blocks/icon.less.lodash', { base: './less' })
+        .pipe(template({ glyphs: codepoints }))
+        .on('error', errorify)
+        .pipe(rename('style/blocks/icon.less'))
+        .pipe(gulp.dest('./dist/less'))
+        .on('end', function() {
+          cb();
+        });
+    });
+});
+
+gulp.task('styles-compile', function () {
+  return gulp.src(['./dist/less/{style,normalize}.less'])
     .pipe(sourcemaps.init())
     .pipe(less({
-      paths: ['less']
+      paths: ['./dist/less']
     }))
     .on('error', errorify)
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('scripts', function () {
+gulp.task('styles', function (cb) {
+  runSequence('styles-copy', 'styles-generate', 'styles-compile', cb);
+});
+
+gulp.task('scripts-compile', function () {
   return gulp.src('./coffee/*.coffee')
     .pipe(sourcemaps.init())
     .pipe(coffee())
     .on('error', errorify)
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/js'))
+    .pipe(gulp.dest('./dist/js'));
+});
+
+gulp.task('scripts-combine', function () {
+  return gulp.src('./dist/js/*.js')
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(concat('style.all.js'))
     .on('error', errorify)
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist/js'));
 });
 
+gulp.task('scripts', function (cb) {
+  runSequence('scripts-compile', 'scripts-combine', cb);
+});
+
 gulp.task('build', function (cb) {
-  runSequence(['docs', 'icons', 'scripts', 'styles'], cb);
+  runSequence('icons', 'styles', 'scripts', 'docs', cb);
 });
 
 gulp.task('serve', function (next) {
@@ -79,7 +139,7 @@ gulp.task('serve', function (next) {
     .listen(process.env.PORT || 3000, next);
 });
 
-gulp.task('dev', ['docs', 'serve'], function () {
+gulp.task('dev', ['build', 'serve'], function () {
   livereload.listen();
 
   watch([
@@ -88,7 +148,7 @@ gulp.task('dev', ['docs', 'serve'], function () {
     './icons/**',
     './coffee/**'
   ], function (files, callback) {
-    runSequence('docs', function (arguments) {
+    runSequence('build', function (arguments) {
       livereload.changed();
       callback.apply(this, arguments);
     });
