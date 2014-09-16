@@ -1,0 +1,34 @@
+.respond(@device; @rules) when(@device = print) {
+    @media print {
+      @rules();
+    }
+}
+
+.respond(@device; @rules) when(@device = medium) {
+    @media (min-width: @respond-medium-min-width) {
+      @rules();
+    }
+}
+
+.respond(@device; @rules) when(@device = large) {
+    @media (min-width: @respond-medium-min-width) {
+      @rules();
+    }
+}
+
+
+.test-respond-to {
+  background: red;
+
+  .respond(medium; {
+    background: green;
+  });
+
+  .respond(large; {
+    background: blue;
+  });
+
+  .respond(print; {
+    background: gray;
+  });
+}
