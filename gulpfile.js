@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var fs = require('fs');
+var stream = require('stream');
 var del = require('del');
 var merge = require('merge-stream');
 var iconfont = require('gulp-iconfont');
@@ -23,6 +24,21 @@ var docs = require('./tasks/docs');
 function errorify(e) {
   gutil.beep();
   gutil.log(e);
+}
+
+function file(filename, contents) {
+  var src = stream.Readable({ objectMode: true });
+  src._read = function () {
+    this.push(new gutil.File({
+      cwd: "",
+      base: "",
+      path: filename,
+      contents: contents
+    }))
+
+    this.push(null)
+  }
+  return src
 }
 
 gulp.task('clean', function (cb) {
@@ -65,7 +81,9 @@ gulp.task('icons', function (cb) {
 
       var contents = new Buffer(JSON.stringify(glyphs, null, 2));
 
-      fs.writeFile('./dist/icons.json', contents, end);
+      file('icons.json', contents)
+        .pipe(gulp.dest('./dist'))
+        .on('end', end);
     })
     .pipe(gulp.dest('./dist/fonts'))
     .on('end', end);
