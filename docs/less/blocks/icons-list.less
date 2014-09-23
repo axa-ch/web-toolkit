@@ -1,0 +1,36 @@
+.icons-list {
+  padding-left: 0;
+  list-style: none;
+  display: block;
+
+  &:after {
+    clear: both;
+    content: ' ';
+    display: block;
+  }
+
+  &__item {
+    float: left;
+
+    width: 25%;
+    padding: 10px;
+
+    line-height: 1.4;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #fff;
+
+    &:hover {
+      color: #fff;
+      background-color: #5BBBA6;
+    }
+  }
+
+  &__icon {
+    font-size: 2em;
+  }
+
+  &__text {
+    display: block;
+  }
+}
