@@ -63,6 +63,12 @@ module.exports = exports = function (options) {
       .use(collections({ visuals: 'visuals/*' }))
       .use(ignore('visuals/*')));
 
+    // put the visuals to metadata
+    metalsmith.use(branch('mixins/*.jade')
+      .use(jade({ locals: metalsmith.metadata() }))
+      .use(collections({ mixins: 'mixins/*' }))
+      .use(ignore('mixins/*')));
+
     // do the static pages
     metalsmith.use(branch(['*.jade', 'examples/*.jade'])
       .use(jade({ locals: metalsmith.metadata() }))

@@ -1,0 +1,15 @@
+---
+title: Mixins
+slug: mixins
+template: page.jade
+---
+
+h1 Mixins
+
+p This page shows the mixins available in the styleguide LESS distribution.
+
+each mixin in mixins
+  div
+    h1(id=mixin.title)= mixin.title
+      a(href='#' + mixin.title).anchor--docs
+    div!= mixin.contents
