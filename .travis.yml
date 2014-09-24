@@ -14,6 +14,7 @@ script:
 
 after_success:
 - chmod 600 .travis/deploy_key
+- eval "$(ssh-agent -s)"
 - ssh-add .travis/deploy_key
 - rm -rf out || exit 0
 - mkdir out
