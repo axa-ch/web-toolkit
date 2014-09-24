@@ -22,7 +22,7 @@ after_success:
 - git init
 - git config user.name "Travis CI"
 - git config user.email "travis@example.com"
-- cp -r ../dist/docs/ .
+- cp -r ../dist/docs/* .
 - git add .
 - git commit -m "Deploy to GitHub Pages"
 - git remote add deploy $DEPLOY_REPOSITORY
