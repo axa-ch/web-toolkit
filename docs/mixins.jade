@@ -6,10 +6,13 @@ template: page.jade
 
 h1 Mixins
 
-p This page shows the mixins available in the styleguide LESS distribution.
+ul.nav--docs
+  each mixin in mixins
+    li.nav__item
+      a.nav__link(href='#' + mixin.slug)= mixin.title
 
 each mixin in mixins
   div
-    h1(id=mixin.title)= mixin.title
-      a(href='#' + mixin.title).anchor--docs
+    h1(id=mixin.slug)= mixin.title
+      a(href='#' + mixin.slug).anchor--docs
     div!= mixin.contents
