@@ -1,5 +1,7 @@
 # Style Guide
 
+[![Build Status][status]][travis]
+
 > The foundation for your next live style guide!
 
 ## Intro
@@ -85,3 +87,6 @@ for your next web style guide. Here is what it does for you:
 ## License
 
 MIT © David Knezić
+
+[status]: https://travis-ci.org/davidknezic/style-guide.svg
+[travis]: https://travis-ci.org/davidknezic/style-guide
