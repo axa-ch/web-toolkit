@@ -1,24 +1,34 @@
-// depends on: mobile-trigger
+@import '../mixins/respond';
+@import '../mixins/clearfix';
 
 .header {
-  &--main {
-    &__mobile-trigger {
-      float: right;
 
-      border: 1px solid black;
+
+  .clearfix();
+
+  padding: 11px 10px 10px 10px;
+
+  .respond(large, {
+      padding: 20px;
+  });
+
+  &__brand {
+    float: left;
+  }
+
+  &__meta {
+    float: right;
+    display: none;
+    height: 16px;
+
+    .respond(large, {
       display: block;
-      height: 50px;
-      width: 50px;
-      color: transparent;
-      background-color: #dedede;
+    });
 
-      &:hover {
-        background-color: #f2f2f2;
-      }
-
-      @media (min-width: 768px) {
-        display: none;
-      }
+    .menu {
+      float: right;
     }
   }
+
+
 }
