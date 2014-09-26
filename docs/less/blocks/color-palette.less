@@ -1,0 +1,50 @@
+@import 'style/variables';
+@import 'style/mixins/clearfix';
+
+.color-palette {
+  .clearfix;
+
+  margin: 0 -10px;
+
+  &__swatch {
+    width: 33.333%;
+    padding: 10px;
+    float: left;
+
+    &__color {
+      display: block;
+      height: 100px;
+      width: 100%;
+
+      &--ui-alpha {
+        background-color: @color-ui-alpha;
+      }
+
+      &--ui-beta {
+        background-color: @color-ui-beta;
+      }
+
+      &--ui-gamma {
+        background-color: @color-ui-gamma;
+      }
+
+      &--ui-delta {
+        background-color: @color-ui-delta;
+      }
+
+      &--ui-epsilon {
+        background-color: @color-ui-epsilon;
+      }
+
+      &--text-alpha {
+        background-color: @color-text-alpha;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      color: gray;
+      text-transform: uppercase;
+    }
+  }
+}
