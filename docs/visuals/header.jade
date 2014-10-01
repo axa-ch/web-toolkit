@@ -4,26 +4,40 @@ slug: header
 ---
 
 header.header.header--main
-  .mobile-trigger
-  .header__brand.brand
-    .brand__logo
-    .brand__tagline.brand__tagline--de
-  .header__meta
-    nav.menu.menu--language
-      ul
-        li.menu__item
-          a(href='#') DE
-        li.menu__item
-          a(href='#') FR
-        li.menu__item
-          a(href='#') IT
-        li.menu__item
-          a(href='#') EN
-    nav.menu.menu--meta
-      ul
-        li.menu__item.is-active
-          a(href='#') Individuals
-        li.menu__item
-          a(href='#') Small Business Insurance
-        li.menu__item
-          a(href='#') Business
+  .header__container
+    .mobile-trigger
+    .header__brand.brand
+      .brand__logo
+      .brand__tagline.brand__tagline--de
+    .header__meta
+      .header__meta__upper
+        .header__meta__language.menu.menu--language
+          ul
+            li.menu__item
+              a(href='#') DE
+            li.menu__item
+              a(href='#') FR
+            li.menu__item
+              a(href='#') IT
+            li.menu__item
+              a(href='#') EN
+        .header__meta__menu.menu.menu--meta
+          ul
+            li.menu__item.is-active
+              a(href='#') Individuals
+            li.menu__item
+              a(href='#') Small Business Insurance
+            li.menu__item
+              a(href='#') Business
+      .header__meta__lower
+        .header__meta__social.menu.menu--social
+          ul
+            li.menu__item
+              a(href='http://facebook.com') Facebook
+            li.menu__item
+              a(href='http://twitter.com') Twitter
+        .header__meta__welcome
+          ul
+            li.header__meta__welcome__item Welcome to AXA
+            li.header__meta__welcome__item
+              a(href='tel:0800809809') 0800 809 809

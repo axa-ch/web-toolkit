@@ -3,14 +3,20 @@
 
 .header {
 
+  border-bottom: 1px solid #DEDEE2;
 
-  .clearfix();
+  &__container {
+    .clearfix();
 
-  padding: 11px 10px 10px 10px;
+    max-width: 980px;
+    margin: 0 auto;
 
-  .respond(large, {
-      padding: 20px;
-  });
+    padding: 11px 10px 10px 10px;
+
+    .respond(large, {
+        padding: 20px;
+    });
+  }
 
   &__brand {
     float: left;
@@ -25,8 +31,68 @@
       display: block;
     });
 
-    .menu {
+    &__upper {
+      .clearfix();
+    }
+
+    &__language {
       float: right;
+    }
+
+    &__menu {
+      float: right;
+    }
+
+    &__lower {
+      .clearfix();
+
+      margin-top: 16px;
+    }
+
+    &__welcome {
+      .clearfix();
+
+      float: right;
+
+      margin: 0 10px 0 0;
+      padding: 5px 0 0 0;
+
+      border-right: 1px solid #6F6F6F;
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      &__item {
+        float: left;
+        margin: 0 10px 0 0;
+        padding: 0 10px 0 0;
+        height: 16px; // TODO: Dirty hack to get the exact height for the right border
+        line-height: 16px;
+
+        border-right: 1px solid #6F6F6F;
+
+        font-family: ITCFranklinGothicCondensedDemi, sans-serif;
+        font-size: 20px;
+
+        &:last-of-type {
+          border-right: 0;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__social {
+      float: right;
+    }
+
+  }
+
+  &__social {
+    ul {
+
     }
   }
 
