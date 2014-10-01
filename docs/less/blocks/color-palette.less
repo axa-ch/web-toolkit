@@ -28,23 +28,28 @@
         background-color: @color-ui-gamma;
       }
 
-      &--ui-delta {
-        background-color: @color-ui-delta;
-      }
-
-      &--ui-epsilon {
-        background-color: @color-ui-epsilon;
-      }
-
       &--text-alpha {
         background-color: @color-text-alpha;
+      }
+
+      &--text-beta {
+        background-color: @color-text-beta;
+      }
+
+      &--headline-alpha {
+        background-color: @color-headline-alpha;
       }
     }
 
     &__text {
       text-align: center;
-      color: gray;
+      color: @color-text-alpha;
       text-transform: uppercase;
+
+      &--secondary {
+        text-transform: none;
+        color: @color-text-beta;
+      }
     }
   }
 }
