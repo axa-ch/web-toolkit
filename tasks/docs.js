@@ -60,13 +60,13 @@ module.exports = exports = function (options) {
     // put the visuals to metadata
     metalsmith.use(branch('visuals/*.jade')
       .use(jade({ locals: metalsmith.metadata() }))
-      .use(collections({ visuals: 'visuals/*' }))
+      .use(collections({ visuals: { pattern: 'visuals/*', sortBy: 'order', reverse: false }}))
       .use(ignore('visuals/*')));
 
     // put the visuals to metadata
     metalsmith.use(branch('mixins/*.jade')
       .use(jade({ locals: metalsmith.metadata() }))
-      .use(collections({ mixins: 'mixins/*' }))
+      .use(collections({ mixins: { pattern: 'mixins/*', sortBy: 'order', reverse: false }}))
       .use(ignore('mixins/*')));
 
     // do the static pages
