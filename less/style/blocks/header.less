@@ -3,7 +3,7 @@
 
 .header {
 
-  border-bottom: 1px solid #DEDEE2;
+  border-bottom: 1px solid #DEDEE2; // TODO: Use color defined in color palette
 
   &__container {
     .clearfix();
@@ -54,10 +54,7 @@
 
       float: right;
 
-      margin: 0 10px 0 0;
       padding: 5px 0 0 0;
-
-      border-right: 1px solid #6F6F6F;
 
       ul {
         list-style-type: none;
@@ -72,9 +69,9 @@
         height: 16px; // TODO: Dirty hack to get the exact height for the right border
         line-height: 16px;
 
-        border-right: 1px solid #6F6F6F;
+        border-right: 1px solid @color-text-beta; // TODO: is it okay to use a text color on a border for a text with diffrent coloring?
 
-        color: #0E2E85;
+        color: @color-ui-alpha; // TODO: use text color instead of ui color
         font-family: ITCFranklinGothicCondensedDemi, sans-serif;
         font-size: 20px;
 
@@ -86,12 +83,18 @@
         &:last-of-type {
           border-right: 0;
           margin-right: 0;
+          padding-right: 0;
         }
       }
     }
 
     &__social {
       float: right;
+      min-height: 21px; // TODO
+
+      border-left: 1px solid @color-text-beta;
+      padding: 0 0 0 10px;
+      margin: 0 0 0 10px;
     }
 
   }
