@@ -18,6 +18,21 @@
     });
   }
 
+  &__mobile-trigger {
+    float: right;
+    width: 41px;
+    height: 41px;
+
+    background: red;
+
+    cursor: pointer;
+
+    .respond(large, {
+      display: none;
+    })
+  }
+
+
   &__brand {
     float: left;
   }
