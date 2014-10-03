@@ -3,34 +3,38 @@
 .brand {
 
   &__logo {
-
-    .invisible-font();
+    .invisible-font;
 
     width: 173px;
     height: 41px;
 
-    background: transparent url('@{images-path}/logo.svg') top left no-repeat;
-
-    background-size: 173px 41px;
+    background-color: transparent;
+    background-image: url('@{images-path}/logo.svg');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
 
     .respond(large, {
       width: 230px;
       height: 54px;
-      background-size: 230px 54px;
+      background-size: auto 100%;
     });
 
   }
 
   &__tagline {
+    .invisible-font;
 
     display: none;
-    .invisible-font();
 
     width: 230px;
+    margin-top: 4px;
 
-    background: transparent url('@{images-path}/tagline-de.svg') top left no-repeat;
-
-    background-size: 173px 41px;
+    background-color: transparent;
+    background-image: url('@{images-path}/tagline-de.svg');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
 
     &--de,
     &--fr,
@@ -41,9 +45,7 @@
     }
 
     &--de {
-      background: transparent url('@{images-path}/tagline-de.svg') left top no-repeat;
       height: 14px;
     }
-
   }
 }
