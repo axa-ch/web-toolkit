@@ -2,21 +2,11 @@
 @import '../mixins/clearfix';
 
 .header {
+  .clearfix();
+
+  padding: 12.5px;
 
   border-bottom: 1px solid #DEDEE2; // TODO: Use color defined in color palette
-
-  &__container {
-    .clearfix();
-
-    max-width: 980px;
-    margin: 0 auto;
-
-    padding: 11px 10px 10px 10px;
-
-    .respond(large, {
-        padding: 20px;
-    });
-  }
 
   &__mobile-trigger {
     float: right;
@@ -32,12 +22,13 @@
     })
   }
 
-
   &__brand {
     float: left;
   }
 
   &__meta {
+    .clearfix();
+
     float: right;
     display: none;
     height: 16px;
@@ -111,14 +102,10 @@
       padding: 0 0 0 10px;
       margin: 0 0 0 10px;
     }
-
   }
 
   &__social {
     ul {
-
     }
   }
-
-
 }
