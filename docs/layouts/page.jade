@@ -11,42 +11,35 @@ html
     meta(name="author", content=config.author)
   body.site
     .site__page
-      header.l-holder
+      header.header.header--main.l-holder
         .l-row
-          .header.header--main
-            .header__mobile-trigger
-            .header__brand.brand
-              .brand__logo
-              .brand__tagline.brand__tagline--de
-            .header__meta
-              .header__meta__upper
-                .header__meta__language.menu.menu--language
-                .header__meta__menu.menu.menu--meta
-              .header__meta__lower
-                .header__meta__social.menu.menu--social
-                  ul
-                    li.menu__item
-                      a(href=config.repository.url, title=config.repository.name) GitHub
-                .header__meta__welcome
-                  ul
-                    li.header__meta__welcome__item Welcome to the AXA Style Guide
+          .header__mobile-trigger
+          .header__brand.brand
+            .brand__logo
+            .brand__tagline.brand__tagline--de
+          .header__meta
+            .header__meta__upper
+              .header__meta__language.menu.menu--language
+              .header__meta__menu.menu.menu--meta
+            .header__meta__lower
+              .header__meta__social.menu.menu--social
+                ul
+                  li.menu__item
+                    a(href=config.repository.url, title=config.repository.name) GitHub
+              .header__meta__welcome
+                ul
+                  li.header__meta__welcome__item Welcome to the AXA Style Guide
 
-      header.l-holder
-        .l-row
-          .header--main
-            span.header--main__mobile-trigger
-            .l-row
-              .brand
-                .logo
-            .l-row
-              nav
-                ul.menu--main
-                  li.menu--main__item.menu--main__item--home(class=slug === 'home' ? 'is-active' : undefined)
-                    a.link.menu--main__link.menu--main__link--home(href="index.html", class=slug === 'home' ? 'is-active' : undefined) Home
-                  li.menu--main__item(class=slug === 'visuals' ? 'is-active' : undefined)
-                    a.link.menu--main__link(href="visuals.html", class=slug === 'visuals' ? 'is-active' : undefined) Visuals
-                  li.menu--main__item(class=slug === 'visuals' ? 'is-active' : undefined)
-                    a.link.menu--main__link(href="mixins.html", class=slug === 'mixins' ? 'is-active' : undefined) Mixins
+      .l-holder
+        nav.l-row.menu.menu--main
+          ul
+            li.menu__item(class=slug === 'home' ? 'is-active' : undefined)
+              a(href="index.html", class=slug === 'home' ? 'is-active' : undefined) Home
+            li.menu__item(class=slug === 'visuals' ? 'is-active' : undefined)
+              a(href="visuals.html", class=slug === 'visuals' ? 'is-active' : undefined) Visuals
+            li.menu__item(class=slug === 'mixins' ? 'is-active' : undefined)
+              a(href="mixins.html", class=slug === 'mixins' ? 'is-active' : undefined) Mixins
+
 
       .l-holder
         .l-row!= contents

@@ -20,6 +20,39 @@
     padding: 0;
   }
 
+  &--main {
+    padding-top: 10px;
+
+    border-bottom: 5px solid @color-ui-alpha;
+
+    .menu__item {
+      height: 44px;
+      line-height: 44px;
+      margin: 0 10px;
+
+      &.is-active,
+      &:hover {
+        border-bottom: 5px solid @color-ui-alpha;
+        &,
+        & a {
+          color: #6f6f6f; // TODO: Use color-text-* var
+        }
+      }
+
+      &,
+      & a {
+        color: #B0B0B0; // TODO: Use color-text-* var
+        font-size: 14px;
+        font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
+        text-decoration: none;
+      }
+
+      & a {
+        display: block;
+      }
+    }
+  }
+
   &--meta,
   &--language {
 
