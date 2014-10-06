@@ -1,0 +1,103 @@
+@import 'style/mixins/respond';
+@import 'style/mixins/clearfix';
+
+.worldwide {
+  .clearfix;
+
+  padding: 0;
+  margin: 0 -12.5px;
+
+  list-style-type: none;
+
+  .respond(medium, {
+    margin: 0;
+  });
+}
+
+.worldwide__item {
+  display: block;
+  width: 100%;
+
+  .respond(medium, {
+    float: left;
+    width: 100px;
+
+    margin-right: 12.5px;
+  });
+}
+
+.worldwide__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50px;
+
+  padding: 0 12.5px;
+
+  line-height: 50px;
+  background-color: @color-ui-alpha;
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    background-color: lighten(@color-ui-alpha, 5%);
+  }
+
+  .respond(medium, {
+    height: 80px;
+
+    margin: 0 auto;
+    padding-top: 52px;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+
+    border: 1px solid #dde8f2;
+    background-color: #eff4f9;
+    text-align: center;
+    font-size: @font-size-small;
+    line-height: 20px;
+    color: @color-text-alpha;
+
+    &:hover {
+      background-color: white;
+    }
+  });
+
+  &::after {
+    .respond(medium, {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      content: '';
+
+      display: block;
+      width: 100%;
+      height: 35px;
+
+      margin-top: 10px;
+
+      background-repeat: no-repeat;
+      background-image: url('@{images-path}/axa-world.svg');
+      background-position: center 0;
+    });
+  }
+}
+
+.respond(medium, {
+  .worldwide__link.worldwide__link--world::after {
+    background-image: url('@{images-path}/axa-world.svg');
+  }
+
+  .worldwide__link.worldwide__link--switzerland::after {
+    background-image: url('@{images-path}/axa-switzerland.svg');
+  }
+
+  .worldwide__link::after {
+    background-position: center 0;
+  }
+
+  .worldwide__link:hover::after {
+    background-position: center -50px;
+  }
+});
