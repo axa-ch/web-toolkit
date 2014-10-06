@@ -51,6 +51,12 @@ module.exports = exports = function (options) {
       destination: './fonts'
     }));
 
+    // include images
+    metalsmith.use(assets({
+      source: './dist/images',
+      destination: './images'
+    }));
+
     // include js files
     metalsmith.use(assets({
       source: './dist/js',

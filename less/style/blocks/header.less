@@ -1,24 +1,111 @@
-// depends on: mobile-trigger
+@import '../mixins/respond';
+@import '../mixins/clearfix';
 
 .header {
-  &--main {
-    &__mobile-trigger {
+  .clearfix();
+
+  padding: 12.5px;
+
+  border-bottom: 1px solid #DEDEE2; // TODO: Use color defined in color palette
+
+  &__mobile-trigger {
+    float: right;
+    width: 41px;
+    height: 41px;
+
+    background: red;
+
+    cursor: pointer;
+
+    .respond(large, {
+      display: none;
+    })
+  }
+
+  &__brand {
+    float: left;
+  }
+
+  &__meta {
+    .clearfix();
+
+    float: right;
+    display: none;
+    height: 16px;
+
+    .respond(large, {
+      display: block;
+    });
+
+    &__upper {
+      .clearfix();
+    }
+
+    &__language {
+      float: right;
+    }
+
+    &__menu {
+      float: right;
+    }
+
+    &__lower {
+      .clearfix();
+
+      margin-top: 16px;
+    }
+
+    &__welcome {
+      .clearfix();
+
       float: right;
 
-      border: 1px solid black;
-      display: block;
-      height: 50px;
-      width: 50px;
-      color: transparent;
-      background-color: #dedede;
+      padding: 5px 0 0 0;
 
-      &:hover {
-        background-color: #f2f2f2;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
       }
 
-      @media (min-width: 768px) {
-        display: none;
+      &__item {
+        float: left;
+        margin: 0 10px 0 0;
+        padding: 0 10px 0 0;
+        height: 16px; // Hack to get the border-right exactly 16px height
+        line-height: 16px;
+
+        border-right: 1px solid @color-text-beta; // TODO: Use ui color instead
+
+        color: @color-text-gamma;
+        font-family: ITCFranklinGothicCondensedDemi, sans-serif;
+        font-size: 20px;
+
+        a {
+          color: #0E2E85;
+          text-decoration: none;
+        }
+
+        &:last-of-type {
+          border-right: 0;
+          margin-right: 0;
+          padding-right: 0;
+        }
       }
+    }
+
+    &__social {
+      float: right;
+      min-height: 21px; // TODO
+
+      border-left: 1px solid @color-text-beta;
+      padding: 0 0 0 10px;
+      margin: 0 0 0 10px;
+    }
+  }
+
+  &__social {
+    ul {
     }
   }
 }
