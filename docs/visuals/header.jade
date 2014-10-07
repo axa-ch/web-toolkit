@@ -19,117 +19,123 @@ order: 4
   The ``header__meta__upper`` element contains a ``header__meta__menu`` element and a ``header__meta__language`` element.
   The ``header__meta__lower`` element contains a ``header__meta__welcome`` element and a ``header__meta__social`` element.
 
-header.header.header--main
-  .header__mobile-trigger
-  .header__brand.brand
-    .brand__logo
-    .brand__tagline.brand__tagline--de
-  .header__meta
-    .header__meta__upper
-      .header__meta__language.menu.menu--language
-        ul
-          li.menu__item
-            a(href='#') DE
-          li.menu__item
-            a(href='#') FR
-          li.menu__item
-            a(href='#') IT
-          li.menu__item
-            a(href='#') EN
-      .header__meta__menu.menu.menu--meta
-        ul
-          li.menu__item.is-active
-            a(href='#') Individuals
-          li.menu__item
-            a(href='#') Small Business Insurance
-          li.menu__item
-            a(href='#') Business
-    .header__meta__lower
-      .header__meta__social.menu.menu--social
-        ul
-          li.menu__item
-            a(href='http://facebook.com') Facebook
-          li.menu__item
-            a(href='http://twitter.com') Twitter
-      .header__meta__welcome
-        ul
-          li.header__meta__welcome__item Welcome to AXA
-          li.header__meta__welcome__item
-            a(href='tel:0800809809') 0800 809 809
+.sample
+  .sample__header
+    .sample__header__item Sample
+    .sample__header__item Source
+  .sample__content
+    .sample__content__item
+      header.header.header--main
+        .header__mobile-trigger
+        .header__brand.brand
+          .brand__logo
+          .brand__tagline.brand__tagline--de
+        .header__meta
+          .header__meta__upper
+            .header__meta__language.menu.menu--language
+              ul
+                li.menu__item
+                  a(href='#') DE
+                li.menu__item
+                  a(href='#') FR
+                li.menu__item
+                  a(href='#') IT
+                li.menu__item
+                  a(href='#') EN
+            .header__meta__menu.menu.menu--meta
+              ul
+                li.menu__item.is-active
+                  a(href='#') Individuals
+                li.menu__item
+                  a(href='#') Small Business Insurance
+                li.menu__item
+                  a(href='#') Business
+          .header__meta__lower
+            .header__meta__social.menu.menu--social
+              ul
+                li.menu__item
+                  a(href='http://facebook.com') Facebook
+                li.menu__item
+                  a(href='http://twitter.com') Twitter
+            .header__meta__welcome
+              ul
+                li.header__meta__welcome__item Welcome to AXA
+                li.header__meta__welcome__item
+                  a(href='tel:0800809809') 0800 809 809
+    .sample__content__item
+      pre.hljs.highlight
+        code.html
+          :highlight
+            <header class="header header--main">
+              <div class="header__mobile-trigger"></div>
 
-pre.hljs
-  code.html
-    :highlight
-      <header class="header header--main">
-        <div class="header__mobile-trigger"></div>
+              <div class="header__brand brand">
+                <div class="brand__logo"></div>
 
-        <div class="header__brand brand">
-          <div class="brand__logo"></div>
+                <div class="brand__tagline brand__tagline--de"></div>
+              </div>
 
-          <div class="brand__tagline brand__tagline--de"></div>
-        </div>
+              <div class="header__meta">
+                <div class="header__meta__upper">
+                  <div class="header__meta__language menu menu--language">
+                    <ul>
+                      <li class="menu__item">
+                        <a href="#">DE</a>
+                      </li>
 
-        <div class="header__meta">
-          <div class="header__meta__upper">
-            <div class="header__meta__language menu menu--language">
-              <ul>
-                <li class="menu__item">
-                  <a href="#">DE</a>
-                </li>
+                      <li class="menu__item">
+                        <a href="#">FR</a>
+                      </li>
 
-                <li class="menu__item">
-                  <a href="#">FR</a>
-                </li>
+                      <li class="menu__item">
+                        <a href="#">IT</a>
+                      </li>
 
-                <li class="menu__item">
-                  <a href="#">IT</a>
-                </li>
+                      <li class="menu__item">
+                        <a href="#">EN</a>
+                      </li>
+                    </ul>
+                  </div>
 
-                <li class="menu__item">
-                  <a href="#">EN</a>
-                </li>
-              </ul>
-            </div>
+                  <div class="header__meta__menu menu menu--meta">
+                    <ul>
+                      <li class="menu__item is-active">
+                        <a href="#">Individuals</a>
+                      </li>
 
-            <div class="header__meta__menu menu menu--meta">
-              <ul>
-                <li class="menu__item is-active">
-                  <a href="#">Individuals</a>
-                </li>
+                      <li class="menu__item">
+                        <a href="#">Small Business Insurance</a>
+                      </li>
 
-                <li class="menu__item">
-                  <a href="#">Small Business Insurance</a>
-                </li>
+                      <li class="menu__item">
+                        <a href="#">Business</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
 
-                <li class="menu__item">
-                  <a href="#">Business</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+                <div class="header__meta__lower">
+                  <div class="header__meta__social menu menu--social">
+                    <ul>
+                      <li class="menu__item">
+                        <a href="http://facebook.com">Facebook</a>
+                      </li>
 
-          <div class="header__meta__lower">
-            <div class="header__meta__social menu menu--social">
-              <ul>
-                <li class="menu__item">
-                  <a href="http://facebook.com">Facebook</a>
-                </li>
+                      <li class="menu__item">
+                        <a href="http://twitter.com">Twitter</a>
+                      </li>
+                    </ul>
+                  </div>
 
-                <li class="menu__item">
-                  <a href="http://twitter.com">Twitter</a>
-                </li>
-              </ul>
-            </div>
+                  <div class="header__meta__welcome">
+                    <ul>
+                      <li class="header__meta__welcome__item">Welcome to AXA</li>
 
-            <div class="header__meta__welcome">
-              <ul>
-                <li class="header__meta__welcome__item">Welcome to AXA</li>
-
-                <li class="header__meta__welcome__item">
-                  <a href="tel:0800809809">0800 809 809</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </header>
+                      <li class="header__meta__welcome__item">
+                        <a href="tel:0800809809">0800 809 809</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </header>

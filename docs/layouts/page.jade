@@ -9,6 +9,70 @@ html
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
+
+    script(type='text/javascript').
+      window.onload = function() {
+        var samples = [].slice.call(document.getElementsByClassName("sample")),
+            hasClass = function(ele,cls) {
+              return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+            },
+            addClass = function(ele,cls) {
+              if (!hasClass(ele,cls)) ele.className += " "+cls;
+            },
+            removeClass = function(ele,cls) {
+              if (hasClass(ele,cls)) {
+                var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                ele.className=ele.className.replace(reg,' ');
+              }
+            },
+            each = function(list, callback, scope) {
+              var i = 0;
+
+              for(i = 0; i < list.length; i++) {
+                callback.call(scope, list[i]);
+              }
+            },
+            Sample = function(el) {
+              this.el = el;
+              this.headers = [].slice.call(el.getElementsByClassName('sample__header__item'));
+              this.contents = [].slice.call(el.getElementsByClassName('sample__content__item'));
+              this.setActiveItem(0);
+
+              console.log(this);
+
+              each(this.headers, function(header) {
+                header.addEventListener('click', this.onHeaderClick.bind(this));
+              }, this);
+
+
+            };
+
+        Sample.prototype.setActiveItem = function(index) {
+          if(this.currentIndex != undefined) {
+            removeClass(this.headers[this.currentIndex], 'is-active');
+            removeClass(this.contents[this.currentIndex], 'is-active');
+          }
+
+          this.currentIndex = index;
+
+          addClass(this.headers[this.currentIndex], 'is-active');
+          addClass(this.contents[this.currentIndex], 'is-active');
+        }
+
+        Sample.prototype.onHeaderClick = function(event) {
+          var index = this.headers.indexOf(event.currentTarget);
+
+          console.log('click');
+
+          this.setActiveItem(index);
+        }
+
+        console.log(samples);
+        each(samples, function(sample) {
+          new Sample(sample);
+        }, window);
+
+      }
   body.site
     .site__page
       header.header.header--main.l-holder
