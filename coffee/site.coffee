@@ -3,41 +3,54 @@
   # Public class definition
   class Site
     constructor: (element, options) ->
-      DEFAULTS:
+      DEFAULTS =
         mask: false
 
       @$element = $ element
+      # TODO grab elements from options/data- attributes
+      @$page = $(document).find '.site__page'
+      @$menu = $(document).find '.site__mobile-menu'
       @options = $.extend {}, DEFAULTS, options
 
-    toggle: (show) ->
-      # TODO
+    toggleMenu: (show) ->
 
-    show: () ->
+      if !show?
+        show = !(@$page.hasClass 'is-pushed')
+
+      if show
+        @$page.addClass 'is-pushed'
+        @$menu.addClass 'is-visible'
+      else
+        @$page.removeClass 'is-pushed'
+        @$menu.removeClass 'is-visible'
+
+    showMenu: () ->
       toggle true
 
-    hide: () ->
+    hideMenu: () ->
       toggle false
 
   # Plugin definition
   Plugin = (option) ->
     return this.each () ->
       $this = $ this
-      data = $this.data 'bs.site'
+      data = $this.data 'axa.site'
       options = typeof option == 'object' && option
 
       if !data
-        data = new Button this, options
-        $this.data 'bs.site', data
+        data = new Site this, options
+        $this.data 'axa.site', data
 
-      if option == 'toggle'
-        # Do what we want to do
-        data.toggle
-      else if option
-        # Execute default action
-        data.setState option
+      data[option]() ? typeof option == 'string'
 
   # Plugin registration
-  $.fn.button = Plugin
-  $.fn.button.Constructor = Button
+  $.fn.site = Plugin
+  $.fn.site.Constructor = Site
+
+  # data-* api
+  ($ document).on('click.axa.site.data-api', '[data-toggle="site-menu"]', (e) ->
+    e.preventDefault()
+    Plugin.call($(this), 'toggleMenu');
+  )
 
 )(jQuery)

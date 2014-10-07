@@ -1,4 +1,66 @@
 // depends on: -
 
 .site {
+
+  @mobile-nav-width: 240px;
+
+  &__page {
+    position: relative;
+    overflow-x: hidden;
+    right: 0;
+
+
+    &.is-pushed {
+      right: @mobile-nav-width;
+    }
+
+    // fancy stuff when css transitions are available
+    .csstransforms & {
+      right: 0; // override on transition stuff
+    	-webkit-transform: translateX(0%);
+    	-ms-transform: translateX(0%);
+    	transform: translateX(0%);
+
+    	-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.6, -0.1, 0.735, 0.045);
+    	transition: transform 0.5s cubic-bezier(0.6, -0.1, 0.735, 0.045);
+
+      &.is-pushed {
+        -webkit-transform: translateX(-@mobile-nav-width);
+      	-ms-transform: translateX(-@mobile-nav-width);
+      	transform: translateX(-@mobile-nav-width);
+      }
+    }
+  }
+
+  &__mobile-menu {
+    position: fixed;
+    z-index: 99;
+    width: @mobile-nav-width;
+    height: 100%;
+    right: -@mobile-nav-width;
+    top: 0;
+    background: red;
+
+    &.is-visible {
+      right: 0;
+    }
+
+    // fancy stuff when css transitions are available
+    .csstransforms & {
+    	right: 0; // override on transition stuff
+
+    	-webkit-transform: translateX(100%);
+    	-ms-transform: translateX(100%);
+    	transform: translateX(100%);
+
+      -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.6, -0.1, 0.735, 0.045);
+      transition: transform 0.5s cubic-bezier(0.6, -0.1, 0.735, 0.045);
+
+      &.is-visible {
+      	-webkit-transform: translateX(0%);
+      	-ms-transform: translateX(0%);
+      	transform: translateX(0%);
+      }
+    }
+  }
 }

@@ -9,11 +9,16 @@ html
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
+
+    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(type='text/javascript', src='js/site.js')
+
   body.site
     .site__page
       header.header.header--main.l-holder
         .l-row
-          .header__mobile-trigger
+          .header__mobile-trigger(data-toggle='site-menu')
           .header__brand.brand
             .brand__logo
             .brand__tagline.brand__tagline--de
@@ -46,4 +51,5 @@ html
 
       footer.l-holder
 
-    .site__mobile-nav
+    .site__mobile-menu
+      some mobile nav here
