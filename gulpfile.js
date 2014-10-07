@@ -18,7 +18,9 @@ var serveStatic = require('serve-static');
 var gutil = require('gulp-util');
 var template = require('gulp-template');
 var rename = require("gulp-rename");
+var git = require('gulp-git');
 
+var config = require('./package.json');
 var docs = require('./tasks/docs');
 
 function errorify(e) {
@@ -176,6 +178,51 @@ gulp.task('dev', ['build', 'serve'], function () {
       callback.apply(this, arguments);
     });
   });
+});
+
+gulp.task('deploy-clean', function (cb) {
+  del(['./out'], cb);
+});
+
+gulp.task('deploy-copy', function () {
+  return gulp.src('./dist/docs/**')
+    .pipe(gulp.dest('./out'));
+});
+
+gulp.task('deploy-init', function (cb) {
+  git.init({ args: '--quiet', cwd: './out' }, cb);
+});
+
+gulp.task('deploy-config', function (cb) {
+  git.addRemote('deploy', config.repository.url, {
+    cwd: './out'
+  }, cb);
+});
+
+gulp.task('deploy-add', function () {
+  return gulp.src('./*', { cwd: './out' })
+    .pipe(git.add({ cwd: './out' }));
+});
+
+gulp.task('deploy-commit', function () {
+  return gulp.src('./*', { cwd: './out' })
+    .pipe(git.commit('Deploy to GitHub Pages', {
+      args: '--author="Robo Coder <robo@coder>"',
+      cwd: './out'
+    }));
+});
+
+gulp.task('deploy-push', function (cb) {
+  git.push('deploy', 'master:gh-pages', {
+    args: '--force',
+    cwd: './out'
+  }, cb).end();
+});
+
+gulp.task('deploy', function (cb) {
+  runSequence(
+    'deploy-clean', 'deploy-copy', 'deploy-init',
+    'deploy-config', 'deploy-add', 'deploy-commit', 'deploy-push', cb);
 });
 
 gulp.task('default', ['build']);
