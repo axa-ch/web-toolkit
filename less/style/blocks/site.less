@@ -2,7 +2,7 @@
 
 .site {
 
-  @mobile-nav-width: 240px;
+  @mobile-nav-width: 80%;
 
   &__page {
     position: relative;
@@ -12,6 +12,10 @@
 
     &.is-pushed {
       right: @mobile-nav-width;
+
+      .respond(large, {
+        right: 0;
+      });
     }
 
     // fancy stuff when css transitions are available
@@ -28,6 +32,12 @@
         -webkit-transform: translateX(-@mobile-nav-width);
       	-ms-transform: translateX(-@mobile-nav-width);
       	transform: translateX(-@mobile-nav-width);
+
+        .respond(large, {
+          -webkit-transform: translateX(0%);
+          -ms-transform: translateX(0%);
+          transform: translateX(0%);
+        });
       }
     }
   }
@@ -39,7 +49,10 @@
     height: 100%;
     right: -@mobile-nav-width;
     top: 0;
-    background: red;
+
+    .respond(large, {
+      display: none;
+    });
 
     &.is-visible {
       right: 0;

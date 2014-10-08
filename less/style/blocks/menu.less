@@ -20,10 +20,53 @@
     padding: 0;
   }
 
+  &--mobile {
+
+    ul { // TODO: structure
+      display: table !important;
+      width: 100%;
+    }
+
+    .menu__item {
+      float: none;
+      height: 60px;
+      display: table-row;
+      width: 100%;
+
+      &:first-of-type {
+        border-top: none;
+      }
+
+      &,
+      & a {
+        color: #747474; // TODO color
+      }
+
+      a { // TODO: structure
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        padding: 0 0 0 20px;
+
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 1.4;
+
+        border-top: 1px solid #efefef; // TODO color
+      }
+    }
+  }
+
   &--main {
     padding-top: 10px;
 
     border-bottom: 5px solid @color-ui-alpha;
+
+    display: none !important; // TODO: !important needed for
+
+    .respond(large, {
+      display: block !important;
+    });
 
     .menu__item {
       height: 44px;
