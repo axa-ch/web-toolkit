@@ -1,0 +1,35 @@
+@import 'style/variables';
+@import 'style/mixins/respond';
+
+.footer {}
+
+.footer__content {
+  border-top: 1px solid #e5e5e5;
+
+  .respond(medium, {
+    border-top: none;
+  });
+}
+
+.footer__content__inner {
+  .respond(medium, {
+    border-top: 5px solid @color-ui-alpha;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  });
+}
+
+.footer__copyline {
+  background-color: #f5f5f5;
+
+  .respond(medium, {
+    border-top: 1px solid #e5e5e5;
+  });
+}
+
+.footer__copyline__inner {
+  .respond(medium, {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  });
+}

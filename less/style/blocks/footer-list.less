@@ -1,0 +1,52 @@
+@import 'style/mixins/clearfix';
+
+.footer-list {
+  .clearfix;
+
+  padding: 0;
+  list-style-type: none;
+
+  margin: 0 -12.5px;
+
+  &.footer-list--social {
+    border: none;
+  }
+}
+
+.footer-list__link,
+.footer-list__text {
+  display: block;
+
+  width: 100%;
+  height: 50px;
+
+  padding: 0 12.5px;
+
+  line-height: 50px;
+  border-bottom: 1px solid white;
+  background-color: #f2f2f2;
+
+  .footer-list--social & {
+    float: left;
+
+    width: 25%;
+    height: 80px;
+    padding: 12.5px;
+    border: 1px solid white;
+
+    line-height: 80px;
+
+    font-size: 0;
+    text-align: center;
+    color: transparent;
+    background-color: #f2f2f2;
+  }
+
+  .footer-list--copyline & {
+    height: 35px;
+    line-height: 35px;
+
+    background-color: #dfdfdf;
+    border-bottom: none;
+  }
+}

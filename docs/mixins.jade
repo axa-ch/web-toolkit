@@ -6,13 +6,14 @@ template: page.jade
 
 h1 Mixins
 
-ul.nav--docs
-  each mixin in mixins
-    li.nav__item
-      a.nav__link(href='#' + mixin.slug)= mixin.title
+nav.menu.menu--main.menu--docs-submenu
+  ul
+    each mixin in mixins
+      li.menu__item
+        a(href='#' + mixin.slug)= mixin.title
 
 each mixin in mixins
-  div
-    h1(id=mixin.slug)= mixin.title
+  div.block
+    h2(id=mixin.slug)= mixin.title
       a(href='#' + mixin.slug).anchor--docs
-    div!= mixin.contents
+    div.block!= mixin.contents

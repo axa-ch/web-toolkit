@@ -1,0 +1,46 @@
+@import 'style/variables';
+@import 'style/mixins/clearfix';
+@import 'style/mixins/respond';
+
+.footer-menu {
+  .clearfix;
+
+  margin: 0 -12.5px;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.footer-menu__item {}
+
+.footer-menu__link {
+  display: block;
+
+  width: 100%;
+  height: 50px;
+
+  padding: 0 12.5px;
+
+  line-height: 50px;
+  border-bottom: 1px solid white;
+  background-color: #f2f2f2;
+  color: @color-text-gamma;
+  text-decoration: none;
+
+  &:hover {
+    background-color: lighten(#f2f2f2, 2%);
+  }
+
+  .respond(medium, {
+    height: auto;
+
+    line-height: 30px;
+    border-bottom: none;
+    background-color: transparent;
+
+    &:hover {
+      text-decoration: underline;
+      background-color: transparent;
+    }
+  });
+}
