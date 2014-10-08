@@ -127,12 +127,20 @@ gulp.task('styles-compile', function () {
     }))
     .on('error', errorify)
     .pipe(sourcemaps.write('.'))
-    .pipe(postcss([ autoprefixer() ]))
     .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('styles-autoprefix', function() {
+  return gulp.src(['./dist/css/*.css'])
+    .pipe(sourcemaps.init())
+    .pipe(postcss([ autoprefixer() ]))
+    .on('error', errorify)
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./dist/css'));
+})
+
 gulp.task('styles', function (cb) {
-  runSequence('styles-copy', 'styles-generate', 'styles-compile', cb);
+  runSequence('styles-copy', 'styles-generate', 'styles-compile', 'styles-autoprefix', cb);
 });
 
 gulp.task('scripts-compile', function () {
