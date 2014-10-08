@@ -50,6 +50,8 @@
     "metalsmith-metadata": "0.0.1",
     "metalsmith-templates": "^0.5.2",
     "run-sequence": "^0.3.6",
-    "serve-static": "^1.5.4"
+    "serve-static": "^1.5.4",
+    "gulp-postcss": "~2.0.0",
+    "autoprefixer-core": "~3.1.1"
   }
 }

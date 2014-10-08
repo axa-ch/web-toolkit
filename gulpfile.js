@@ -19,6 +19,8 @@ var gutil = require('gulp-util');
 var template = require('gulp-template');
 var rename = require("gulp-rename");
 var git = require('gulp-git');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer-core');
 
 var config = require('./package.json');
 var docs = require('./tasks/docs');
@@ -125,6 +127,7 @@ gulp.task('styles-compile', function () {
     }))
     .on('error', errorify)
     .pipe(sourcemaps.write('.'))
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(gulp.dest('./dist/css'));
 });
 
