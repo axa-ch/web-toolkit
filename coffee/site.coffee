@@ -7,9 +7,9 @@
         mask: false
 
       @$element = $ element
-      # TODO grab elements from options/data- attributes
-      @$page = $(document).find '.site__page'
-      @$menu = $(document).find '.site__mobile-menu'
+
+      @$page = $(document).find(@$element.data('site-page'))
+      @$menu = $(document).find(@$element.data('site-menu'))
       @options = $.extend {}, DEFAULTS, options
 
     toggleMenu: (show) ->
