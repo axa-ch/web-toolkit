@@ -21,21 +21,14 @@
     // fancy stuff when css transitions are available
     .csstransforms & {
       right: 0; // override on transition stuff
-    	-webkit-transform: translateX(0%);
-    	-ms-transform: translateX(0%);
     	transform: translateX(0%);
 
-    	-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.6, -0.1, 0.735, 0.045);
     	transition: transform 0.5s cubic-bezier(0.6, -0.1, 0.735, 0.045);
 
       &.is-pushed {
-        -webkit-transform: translateX(-@mobile-nav-width);
-      	-ms-transform: translateX(-@mobile-nav-width);
       	transform: translateX(-@mobile-nav-width);
 
         .respond(large, {
-          -webkit-transform: translateX(0%);
-          -ms-transform: translateX(0%);
           transform: translateX(0%);
         });
       }
@@ -62,16 +55,11 @@
     .csstransforms & {
     	right: 0; // override on transition stuff
 
-    	-webkit-transform: translateX(100%);
-    	-ms-transform: translateX(100%);
     	transform: translateX(100%);
 
-      -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.6, -0.1, 0.735, 0.045);
       transition: transform 0.5s cubic-bezier(0.6, -0.1, 0.735, 0.045);
 
       &.is-visible {
-      	-webkit-transform: translateX(0%);
-      	-ms-transform: translateX(0%);
       	transform: translateX(0%);
       }
     }
