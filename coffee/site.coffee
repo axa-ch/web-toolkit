@@ -8,8 +8,8 @@
 
       @$element = $ element
 
-      @$page = $(document).find(@$element.data('site-page'))
-      @$menu = $(document).find(@$element.data('site-menu'))
+      @$page = @$element.find('.site__page')
+      @$menu = @$element.find('.site__mobile-menu')
       @options = $.extend {}, DEFAULTS, options
 
     toggleMenu: (show) ->
@@ -49,8 +49,13 @@
 
   # data-* api
   ($ document).on('click.axa.site.data-api', '[data-toggle="site-menu"]', (e) ->
-    e.preventDefault()
-    Plugin.call($(this), 'toggleMenu');
+    $this   = $(this)
+    href    = $this.attr('href')
+    $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, '')))
+
+    e.preventDefault ? $this.is 'a'
+
+    Plugin.call($target, 'toggleMenu');
   )
 
 )(jQuery)
