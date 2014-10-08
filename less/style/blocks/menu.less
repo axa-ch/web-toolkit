@@ -7,12 +7,10 @@
 
   .clearfix();
 
-  ul {
-    margin: 0;
-    padding: 0;
-
-    list-style-type: none;
-  }
+  // resets for ul elements
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 
   &__item {
     float: left;
@@ -21,38 +19,29 @@
   }
 
   &--mobile {
-
-    ul { // TODO: structure
-      display: table !important;
-      width: 100%;
-    }
+    display: table; // TODO: Here we imply that there IS NO ELEMENT between .menu--mobile .menu__item
+    width: 100%;
 
     .menu__item {
       float: none;
       height: 60px;
       display: table-row;
-      width: 100%;
 
-      &:first-of-type {
-        border-top: none;
-      }
-
-      &,
-      & a {
-        color: #747474; // TODO color
-      }
-
-      a { // TODO: structure
+      .menu__link {
         display: table-cell;
         vertical-align: middle;
-        width: 100%;
         padding: 0 0 0 20px;
 
         text-decoration: none;
         font-size: 16px;
         line-height: 1.4;
+        color: #747474; // TODO color
 
-        border-top: 1px solid #efefef; // TODO color
+        border-top: 1px solid @color-ui-delta; // TODO color
+      }
+
+      &:first-of-type .menu__link {
+        border-top: none;
       }
     }
   }
@@ -76,38 +65,29 @@
       &.is-active,
       &:hover {
         border-bottom: 5px solid @color-ui-alpha;
-        &,
-        & a {
+
+        .menu__link {
           color: #6f6f6f; // TODO: Use color-text-* var
         }
       }
 
-      &,
-      & a {
+      .menu__link {
+        display: block;
         color: #B0B0B0; // TODO: Use color-text-* var
         font-size: 14px;
         font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
         text-decoration: none;
-      }
-
-      & a {
-        display: block;
       }
     }
   }
 
   &--meta,
   &--language {
-
     margin-left: 7px;
+    font-size: 12px; // TODO: fixed font-size
 
     .menu__item {
       margin-left: 7px;
-
-      a {
-        text-decoration: none;
-        color: #6f6f6f;
-      }
 
       &.is-active,
       &:hover {
@@ -115,12 +95,12 @@
           color: #0E2E85;
         }
       }
-    }
 
-    ul li a {
+      .menu__link {
+        text-decoration: none;
+        color: #6f6f6f;
+      }
     }
-
-    font-size: 12px;
 
   }
 
@@ -130,7 +110,7 @@
     .menu__item {
       font-weight: bold;
       color: #0E2E85;
-      font-size: 20px;
+      font-size: 20px; // TODO: fixed font-size
     }
 
   }
@@ -141,7 +121,7 @@
       margin-top: 2px;
       margin-left: 12px;
       padding-left: 8px;
-      font-size: 12px;
+      font-size: 12px; // TODO: fixed font-size
       font-weight: bold;
       font-family: "ITCFranklinGothicCondensedDemi", sans-serif;
     }
@@ -151,7 +131,7 @@
   &--language {
 
     .menu__item {
-      font-size: 14px;
+      font-size: 14px; // TODO: fixed font-size
       font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
       text-transform: uppercase;
     }

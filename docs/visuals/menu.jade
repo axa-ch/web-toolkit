@@ -4,13 +4,13 @@ slug: menu
 order: 6
 ---
 
-nav.menu.menu--main
-  ul
+nav
+  ul.menu.menu--main
     li.menu__item
-      a(href='#1') Menu Item 1
+      a(href='#1').menu__link Menu Item 1
+    li.menu__item.is-active
+      a(href='#2').menu__link Menu Item 2
     li.menu__item
-      a(href='#2') Menu Item 2
+      a(href='#3').menu__link Menu Item 3
     li.menu__item
-      a(href='#3') Menu Item 3
-    li.menu__item
-      a(href='#4') Menu Item 4
+      a(href='#4').menu__link Menu Item 4
