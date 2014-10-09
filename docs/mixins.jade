@@ -4,16 +4,21 @@ slug: mixins
 template: page.jade
 ---
 
-h1 Mixins
+.l-row
+  .l-full
+    h1 Mixins
 
-nav.menu.menu--main.menu--docs-submenu
-  ul
+.l-row
+  .l-primary
     each mixin in mixins
-      li.menu__item
-        a(href='#' + mixin.slug)= mixin.title
+      div.block
+        h2(id=mixin.slug)= mixin.title
+          a(href='#' + mixin.slug).anchor--docs
+        div.block!= mixin.contents
 
-each mixin in mixins
-  div.block
-    h2(id=mixin.slug)= mixin.title
-      a(href='#' + mixin.slug).anchor--docs
-    div.block!= mixin.contents
+  .l-secondary
+    nav
+      ul
+        each mixin in mixins
+          li
+            a(href='#' + mixin.slug)= mixin.title

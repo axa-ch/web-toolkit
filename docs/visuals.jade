@@ -4,16 +4,21 @@ slug: visuals
 template: page.jade
 ---
 
-h1 Visuals
+.l-row
+  .l-full
+    h1 Visuals
 
-nav.menu.menu--main.menu--docs-submenu
-  ul
+.l-row
+  .l-primary
     each visual in visuals
-      li.menu__item
-        a(href='#' + visual.slug)= visual.title
+      div.block
+        h2(id=visual.slug)= visual.title
+          a(href='#' + visual.slug).anchor--docs
+        div!= visual.contents
 
-each visual in visuals
-  div.block
-    h2(id=visual.slug)= visual.title
-      a(href='#' + visual.slug).anchor--docs
-    div!= visual.contents
+  .l-secondary
+    nav.side-menu(data-spy="affix", data-offset-top="230")
+      ul
+        each visual in visuals
+          li
+            a(href='#' + visual.slug)= visual.title
