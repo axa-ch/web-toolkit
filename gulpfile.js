@@ -142,7 +142,7 @@ gulp.task('scripts-compile', function () {
 });
 
 gulp.task('scripts-combine', function () {
-  return gulp.src('./dist/js/*.js')
+  return gulp.src(['./dist/js/*.js', '!./dist/js/*.all.js'])
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(concat('style.all.js'))
     .on('error', errorify)
