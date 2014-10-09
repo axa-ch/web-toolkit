@@ -44,8 +44,18 @@
     color: #747474; // TODO color
 
     border-top: 1px solid @color-ui-delta; // TODO color
-  }
 
+    &:hover {
+      background-color: @color-ui-delta;
+      color: @color-text-alpha;
+    }
+
+    &.is-active,
+    &:active {
+      background-color: @color-ui-alpha;
+      color: #fff; // TODO color
+    }
+  }
 }
 
 .menu--main {
