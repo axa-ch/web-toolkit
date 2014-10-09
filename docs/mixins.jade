@@ -17,7 +17,7 @@ template: page.jade
         div.block!= mixin.contents
 
   .l-secondary
-    nav
+    nav.side-menu(data-spy="affix", data-offset-top="230")
       ul
         each mixin in mixins
           li
