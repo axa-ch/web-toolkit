@@ -37,7 +37,7 @@
         data.setState option
 
   # Plugin registration
-  $.fn.button = Plugin
-  $.fn.button.Constructor = Button
+  $.fn.site = Plugin
+  $.fn.site.Constructor = Site
 
 )(jQuery)
