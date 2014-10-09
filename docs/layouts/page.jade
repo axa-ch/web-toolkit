@@ -46,6 +46,14 @@ html
       .l-holder
         .l-row!= contents
 
-      footer.l-holder
+      footer.footer
+        .footer__copyline.l-holder
+          .footer__copyline__inner.l-row
+            .l-full
+              ul.copyline-menu
+                li.copyline-menu__item
+                  a.copyline-menu__link(href=config.repository.url, title=config.repository.name) GitHub
+                li.copyline-menu__item
+                  span.copyline-menu__text AXA 2014 ©
 
     .site__mobile-nav
