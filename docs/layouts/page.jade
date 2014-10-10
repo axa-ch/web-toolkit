@@ -9,11 +9,16 @@ html
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
+
+    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(type='text/javascript', src='js/site.js')
+
   body.site
     .site__page
       header.header.header--main.l-holder
         .l-row
-          .header__mobile-trigger
+          .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
           .header__brand.brand
             .brand__logo
             .brand__tagline.brand__tagline--de
@@ -22,8 +27,8 @@ html
               .header__meta__language.menu.menu--language
               .header__meta__menu.menu.menu--meta
             .header__meta__lower
-              .header__meta__social.menu.menu--social
-                ul
+              .header__meta__social
+                ul.menu.menu--social
                   li.menu__item
                     a(href=config.repository.url, title=config.repository.name) GitHub
               .header__meta__welcome
@@ -31,14 +36,16 @@ html
                   li.header__meta__welcome__item Welcome to the AXA Winterthur style guide
 
       .l-holder
-        nav.l-row.menu.menu--main
-          ul
+        nav.l-row
+          ul.menu.menu--main
             li.menu__item(class=slug === 'home' ? 'is-active' : undefined)
-              a(href="index.html", class=slug === 'home' ? 'is-active' : undefined) Home
+              a(href="index.html", class=slug === 'home' ? 'is-active' : undefined).menu__link Home
             li.menu__item(class=slug === 'visuals' ? 'is-active' : undefined)
-              a(href="visuals.html", class=slug === 'visuals' ? 'is-active' : undefined) Visuals
+              a(href="visuals.html", class=slug === 'visuals' ? 'is-active' : undefined).menu__link Visuals
             li.menu__item(class=slug === 'mixins' ? 'is-active' : undefined)
-              a(href="mixins.html", class=slug === 'mixins' ? 'is-active' : undefined) Mixins
+              a(href="mixins.html", class=slug === 'mixins' ? 'is-active' : undefined).menu__link Mixins
+            li.menu__item(class=slug === 'interactions' ? 'is-active' : undefined)
+              a(href="interactions.html", class=slug === 'interactions' ? 'is-active' : undefined).menu__link Interactions
 
 
       .l-holder
@@ -46,4 +53,14 @@ html
 
       footer.l-holder
 
-    .site__mobile-nav
+    .site__mobile-menu
+      nav
+        ul.menu.menu--mobile
+          li.menu__item(class=slug === 'home' ? 'is-active' : undefined)
+            a(href="index.html", class=slug === 'home' ? 'is-active' : undefined).menu__link Home
+          li.menu__item(class=slug === 'visuals' ? 'is-active' : undefined)
+            a(href="visuals.html", class=slug === 'visuals' ? 'is-active' : undefined).menu__link Visuals
+          li.menu__item(class=slug === 'mixins' ? 'is-active' : undefined)
+            a(href="mixins.html", class=slug === 'mixins' ? 'is-active' : undefined).menu__link Mixins
+          li.menu__item(class=slug === 'interactions' ? 'is-active' : undefined)
+            a(href="interactions.html", class=slug === 'interactions' ? 'is-active' : undefined).menu__link Interactions

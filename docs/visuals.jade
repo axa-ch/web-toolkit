@@ -6,11 +6,11 @@ template: page.jade
 
 h1 Visuals
 
-nav.menu.menu--main.menu--docs-submenu
-  ul
+nav
+  ul.menu.menu--main.menu--docs-submenu
     each visual in visuals
       li.menu__item
-        a(href='#' + visual.slug)= visual.title
+        a(href='#' + visual.slug).menu__link= visual.title
 
 each visual in visuals
   div.block

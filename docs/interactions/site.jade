@@ -1,0 +1,74 @@
+---
+title: Site
+slug: site
+order: 1
+---
+
+h3 Intro
+
+p.
+  The main functionality this plugin provides is the side menu handling for
+  mobile devices. It binds to the <em>burger</em> icon and triggers the
+  toggling of the menu.
+
+h3 Usage
+
+p Activate the functionality with JavaScript:
+
+pre.hljs: code.js
+  :highlight
+    $('body.site').site(options)
+
+h4 Options
+
+table.table--docs
+  caption Available options
+  tr
+    th Name
+    th Type
+    th Default
+    th Description
+  tr
+    td: code mask
+    td: code boolean
+    td: code true
+    td.
+      Includes a backdrop element which darkens the actual page when the
+      menu is open. A click anywhere on the mask closes the menu again.
+
+h4 Methods
+
+h5: code .site('toggleMenu')
+
+p Manually toggles the menu.
+
+pre.hljs: code.js
+  :highlight
+    $('body.site').site('toggleMenu')
+
+h5: code .site('showMenu')
+
+p Manually shows the menu. Doesn't do anything when the menu is already open.
+
+pre.hljs: code.js
+  :highlight
+    $('body.site').site('showMenu')
+
+h5: code .site('hideMenu')
+
+p Manually hides the menu. Doesn't do anything when the menu is already hidden.
+
+pre.hljs: code.js
+  :highlight
+    $('body.site').site('hideMenu')
+
+h4 Events
+
+table.table--docs
+  caption Available events
+  tr
+    th Event Type
+    th Description
+  tr
+    td: code show.axa.site-menu
+    td

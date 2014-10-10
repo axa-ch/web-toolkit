@@ -75,6 +75,12 @@ module.exports = exports = function (options) {
       .use(collections({ mixins: { pattern: 'mixins/*', sortBy: 'order', reverse: false }}))
       .use(ignore('mixins/*')));
 
+    // put the interactions to metadata
+    metalsmith.use(branch('interactions/*.jade')
+      .use(jade({ locals: metalsmith.metadata() }))
+      .use(collections({ interactions: { pattern: 'interactions/*', sortBy: 'order', reverse: false }}))
+      .use(ignore('interactions/*')));
+
     // do the static pages
     metalsmith.use(branch(['*.jade', 'examples/*.jade'])
       .use(jade({ locals: metalsmith.metadata() }))
