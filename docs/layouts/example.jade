@@ -11,7 +11,7 @@ html
     meta(name="author", content=config.author)
     script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
     script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-    script(type='text/javascript', src='/js/site.js')
+    script(type='text/javascript', src='/js/style.all.js')
   body.site
     .site__page
       header.header.header--main.l-holder
@@ -118,65 +118,56 @@ html
                   span.copyline-menu__text AXA 2014 ©
 
     .site__mobile-menu
-      nav.menu.menu--mobile
-        ul.menu__level.is-previous
+      nav.menu.menu--mobile(data-menu="compact")
+        ul#first.menu__level.is-previous
+
           li.menu__item.is-active
-            a(href='#1').menu__link Menu Item 1
-            ul.menu__level.is-current
+            a(href='#1').menu__link Privatpersonen
+            ul#second.menu__level.is-current
               li.menu__item.menu__item--back
-                a(href='#1').menu__link Zurück 1
-              li.menu__item.is-active
-                a(href='#1').menu__link Menu Item 1.1
+                a(href='#1').menu__link Zurück zu Privatpersonen
               li.menu__item
-                a(href='#2').menu__link Menu Item 1.2
+                a(href='#1').menu__link Wohnen und Eigentum
+
               li.menu__item
-                a(href='#3').menu__link Menu Item 1.3
+                a(href='#2').menu__link Fahrzeug und Reise
+                ul#third.menu__level
+                  li.menu__item.menu__item--back
+                    a(href='#1').menu__link Zurück zu Fahrzeug und Reise
+                  li.menu__item
+                    a(href='#1').menu__link Autoversicherung
+                  li.menu__item
+                    a(href='#1').menu__link Motorradversicherung
+
               li.menu__item
-                a(href='#4').menu__link Menu Item 1.4
-              li.menu__item
-                a(href='#4').menu__link Menu Item 1.5
-              li.menu__item
-                a(href='#4').menu__link Menu Item 1.6
-              li.menu__item
-                a(href='#4').menu__link Menu Item 1.7
-              li.menu__item
-                a(href='#4').menu__link Menu Item 1.8
+                a(href='#2').menu__link Vorsorgen und Sparen
+
           li.menu__item
-            a(href='#2').menu__link Menu Item 2
+            a(href='#2').menu__link Unternehmenskunden
             ul.menu__level
               li.menu__item.menu__item--back
-                a(href='#1').menu__link Zurück 2
+                a(href='#1').menu__link Zurück zu Unternehmenskunden
               li.menu__item
-                a(href='#1').menu__link Menu Item 2.1
+                a(href='#1').menu__link Personal
               li.menu__item
-                a(href='#2').menu__link Menu Item 2.2
+                a(href='#2').menu__link Haftpflicht und Schaden
               li.menu__item
-                a(href='#3').menu__link Menu Item 2.3
-              li.menu__item
-                a(href='#4').menu__link Menu Item 2.4
+                a(href='#3').menu__link Fahrzeuge
+
           li.menu__item
-            a(href='#3').menu__link Menu Item 3
+            a(href='#3').menu__link Kontakt und Service
             ul.menu__level
               li.menu__item.menu__item--back
-                a(href='#1').menu__link Zurück 3
+                a(href='#1').menu__link Zurück zu Kontakt und Service
               li.menu__item
-                a(href='#1').menu__link Menu Item 3.1
+                a(href='#1').menu__link Schäden, Leistungen
               li.menu__item
-                a(href='#2').menu__link Menu Item 3.2
+                a(href='#2').menu__link Verträge, Dokumente
               li.menu__item
-                a(href='#3').menu__link Menu Item 3.3
-              li.menu__item
-                a(href='#4').menu__link Menu Item 3.4
+                a(href='#3').menu__link Ratgeber, weitere Services
+
           li.menu__item
-            a(href='#4').menu__link Menu Item 4
-            ul.menu__level
-              li.menu__item.menu__item--back
-                a(href='#1').menu__link Zurück 4
-              li.menu__item
-                a(href='#1').menu__link Menu Item 4.1
-              li.menu__item
-                a(href='#2').menu__link Menu Item 4.2
-              li.menu__item
-                a(href='#3').menu__link Menu Item 4.3
-              li.menu__item
-                a(href='#4').menu__link Menu Item 4.4
+            a(href='#4').menu__link Über uns
+
+    script(type='text/javascript').
+      $('body.site').site('showMenu');
