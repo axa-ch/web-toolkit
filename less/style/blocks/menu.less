@@ -20,13 +20,38 @@
 }
 
 .menu--mobile {
-  display: table;
-  width: 100%;
+  //display: table;
+  //width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  height: 100%;
+
+  .menu__level {
+    // reset ul
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 200%;
+    width: 100%;
+
+    &.is-previous {
+      left: -100%;
+    }
+
+    &.is-current {
+      left: 100%;
+    }
+  }
 
   .menu__item {
     float: none;
-    height: 60px;
-    display: table-row;
+    //height: 60px;
+    //display: table-row;
 
     &:first-of-type .menu__link {
       border-top: none;
@@ -34,9 +59,12 @@
   }
 
   .menu__link {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0 0 0 20px;
+    //display: table-cell;
+    //vertical-align: middle;
+    display: block;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 18px 0 18px 20px;
 
     text-decoration: none;
     font-size: 16px;

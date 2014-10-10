@@ -118,13 +118,65 @@ html
                   span.copyline-menu__text AXA 2014 ©
 
     .site__mobile-menu
-      nav
-        ul.menu.menu--mobile
-          li.menu__item
+      nav.menu.menu--mobile
+        ul.menu__level.is-previous
+          li.menu__item.is-active
             a(href='#1').menu__link Menu Item 1
+            ul.menu__level.is-current
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link Zurück 1
+              li.menu__item.is-active
+                a(href='#1').menu__link Menu Item 1.1
+              li.menu__item
+                a(href='#2').menu__link Menu Item 1.2
+              li.menu__item
+                a(href='#3').menu__link Menu Item 1.3
+              li.menu__item
+                a(href='#4').menu__link Menu Item 1.4
+              li.menu__item
+                a(href='#4').menu__link Menu Item 1.5
+              li.menu__item
+                a(href='#4').menu__link Menu Item 1.6
+              li.menu__item
+                a(href='#4').menu__link Menu Item 1.7
+              li.menu__item
+                a(href='#4').menu__link Menu Item 1.8
           li.menu__item
             a(href='#2').menu__link Menu Item 2
+            ul.menu__level
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link Zurück 2
+              li.menu__item
+                a(href='#1').menu__link Menu Item 2.1
+              li.menu__item
+                a(href='#2').menu__link Menu Item 2.2
+              li.menu__item
+                a(href='#3').menu__link Menu Item 2.3
+              li.menu__item
+                a(href='#4').menu__link Menu Item 2.4
           li.menu__item
             a(href='#3').menu__link Menu Item 3
+            ul.menu__level
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link Zurück 3
+              li.menu__item
+                a(href='#1').menu__link Menu Item 3.1
+              li.menu__item
+                a(href='#2').menu__link Menu Item 3.2
+              li.menu__item
+                a(href='#3').menu__link Menu Item 3.3
+              li.menu__item
+                a(href='#4').menu__link Menu Item 3.4
           li.menu__item
             a(href='#4').menu__link Menu Item 4
+            ul.menu__level
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link Zurück 4
+              li.menu__item
+                a(href='#1').menu__link Menu Item 4.1
+              li.menu__item
+                a(href='#2').menu__link Menu Item 4.2
+              li.menu__item
+                a(href='#3').menu__link Menu Item 4.3
+              li.menu__item
+                a(href='#4').menu__link Menu Item 4.4
