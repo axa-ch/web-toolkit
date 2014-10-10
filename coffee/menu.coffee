@@ -11,6 +11,20 @@
       @init()
 
     init: () ->
+      @$element.on 'click', '.menu__link--back', @, (event) ->
+        link = $(event.target)
+        currentLevel = link.closest('.menu__level')
+        upperLevel = currentLevel.parent().closest('.menu__level')
+
+        event.data.level(upperLevel)
+
+      @$element.on 'click', '.menu__link', @, (event) ->
+        link = $(event.target)
+        subLevel = link.siblings('.menu__level')
+
+        if subLevel.length > 0
+          event.data.level(subLevel)
+
       # .menu__level
       # .menu__item
 
@@ -33,10 +47,16 @@
           throw new Error 'Provided level not in menu!'
 
         level.addClass('is-current')
+
         parentLevels = level.parentsUntil @$element, ($e) ->
           return $e.hasClass('menu__level')
 
         parentLevels.addClass('is-previous')
+
+        parentLinks = level.parentsUntil @$element, ($e) ->
+          return $e.hasClass('menu__link')
+        
+        parentLinks.addClass('is_active')
 
     back: () ->
 
@@ -62,11 +82,11 @@
   $.fn.menu.Constructor = Menu
 
   # DATA-API
-  #$(window).on 'load', () ->
-  #  $('[data-menu="compact"]').each () ->
-  #    $menu = $(this)
-  #    data = $menu.data()
-  #
-  #    Plugin.call($menu, data)
+  $(window).on 'load', () ->
+    $('[data-menu="compact"]').each () ->
+      $menu = $(this)
+      data = $menu.data()
+
+      Plugin.call($menu, data)
 
 )(jQuery)
