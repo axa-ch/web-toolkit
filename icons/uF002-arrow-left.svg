@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
-    <title>burger</title>
+    <title>arrow-left</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="burger" sketch:type="MSArtboardGroup" fill="#000000">
-            <rect id="lower" sketch:type="MSShapeGroup" x="20" y="70" width="60" height="10"></rect>
-            <rect id="middle" sketch:type="MSShapeGroup" x="20" y="45" width="60" height="10"></rect>
-            <rect id="upper" sketch:type="MSShapeGroup" x="20" y="20" width="60" height="10"></rect>
+        <g id="arrow-left" sketch:type="MSArtboardGroup" fill="#000000">
+            <path d="M32,50.5180268 L60.3396381,21 L68.4583068,29.0956614 L46.9857234,50.4557525 L69,71.8322315 L61.1033918,80 L32,50.5180268 L32,50.5180268 Z" id="left" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>
