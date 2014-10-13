@@ -4,14 +4,18 @@ slug: home
 template: page.jade
 ---
 
-h1 This is one nice style guide! Isn't it?
+.l-holder
+  .l-row
+    .l-full
+    
+      h1 This is one nice style guide! Isn't it?
 
-p
-  | The live style guide you see here is built by the
-  | project
-  = ' '
-  a(href=config.repository.url)= config.repository.name
-  | .
+      p
+        | The live style guide you see here is built by the
+        | project
+        = ' '
+        a(href=config.repository.url)= config.repository.name
+        | .
 
-p
-  | Take a look!
+      p
+        | Take a look!
