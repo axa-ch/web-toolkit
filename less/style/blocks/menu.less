@@ -1,13 +1,9 @@
-// depends on: -
-
 @import 'style/variables';
 @import 'style/mixins/clearfix';
 
 .menu {
+  .clearfix;
 
-  .clearfix();
-
-  // resets for ul elements
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -20,8 +16,6 @@
 }
 
 .menu--mobile {
-  //display: table;
-  //width: 100%;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
@@ -53,8 +47,6 @@
 
   .menu__item {
     float: none;
-    //height: 60px;
-    //display: table-row;
 
     &:first-of-type .menu__link {
       border-top: none;
@@ -62,8 +54,6 @@
   }
 
   .menu__link {
-    //display: table-cell;
-    //vertical-align: middle;
     display: block;
     height: 60px;
     box-sizing: border-box;
@@ -72,24 +62,33 @@
     text-decoration: none;
     font-size: 16px;
     line-height: 1.4;
-    color: #747474; // TODO color
+    color: @color-text-delta;
 
-    border-top: 1px solid @color-ui-delta; // TODO color
+    border-top: 1px dotted lighten(@color-ui-epsilon, 20%);
 
     &:hover {
-      background-color: @color-ui-delta;
-      color: @color-text-alpha;
+      color: white;
     }
 
     &.is-active,
     &:active {
-      background-color: @color-ui-alpha;
-      color: #fff; // TODO color
+      background-color: darken(@color-ui-epsilon, 5%);
+      color: white;
     }
   }
 
   .menu__link--back {
-    background-color: @color-ui-gamma;
+    background-color: darken(@color-ui-epsilon, 10%);
+
+    &:hover {
+      color: white;
+    }
+
+    &.is-active,
+    &:active {
+      background-color: darken(@color-ui-epsilon, 15%);
+      color: white;
+    }
   }
 }
 
@@ -126,7 +125,6 @@
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
   }
-
 }
 
 .menu--meta,
@@ -149,7 +147,6 @@
     text-decoration: none;
     color: #6f6f6f;
   }
-
 }
 
 .menu--header-main {
@@ -160,7 +157,6 @@
     color: #0E2E85;
     font-size: 20px; // TODO: fixed font-size
   }
-
 }
 
 .menu--meta {
@@ -173,7 +169,6 @@
     font-weight: bold;
     font-family: "ITCFranklinGothicCondensedDemi", sans-serif;
   }
-
 }
 
 .menu--language {
@@ -183,5 +178,4 @@
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-transform: uppercase;
   }
-
 }
