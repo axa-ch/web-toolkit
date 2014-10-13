@@ -17,12 +17,14 @@
 }
 
 .icon {
-  display: inline-block;
-  font: normal normal normal 14px/1 '@{name}';
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  &::before {
+    display: inline-block;
+    font: normal normal normal 14px/1 '@{name}';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 <% _.forEach(glyphs, function (glyph) {

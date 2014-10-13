@@ -32,7 +32,6 @@
 
       else
         @$element.find('.is-current').removeClass('is-current')
-        @$element.find('.is-previous').removeClass('is-previous')
         @$element.find('.is-active').removeClass('is-active')
         @$element.find('.menu__level').css('left', '')
 
@@ -46,9 +45,8 @@
 
         @$element.children('.menu__level').css('left', (parentLevels.length * -100) + '%')
 
-        level.siblings('.menu__link').addClass('is-active')
-
         level.addClass('is-current')
+        level.siblings('.menu__link').addClass('is-active')
         parentLinks.addClass('is-active')
 
     back: () ->

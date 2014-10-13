@@ -1,5 +1,6 @@
 @import 'style/variables';
 @import 'style/mixins/clearfix';
+@import 'style/blocks/icon';
 
 .menu {
   .clearfix;
@@ -57,7 +58,7 @@
     display: block;
     height: 60px;
     box-sizing: border-box;
-    padding: 18px 0 18px 20px;
+    padding: 18px 10px 18px 20px;
 
     text-decoration: none;
     font-size: 16px;
@@ -77,7 +78,28 @@
     }
   }
 
+  .menu__link.is-parent {
+    .icon;
+    .icon--arrow-right;
+
+    &::before {
+      display: block;
+      float: right;
+      font-size: 1.4em;
+    }
+  }
+
+  // TODO: should this one be called .is-back?
   .menu__link--back {
+    .icon;
+    .icon--arrow-left;
+
+    &::before {
+      display: block;
+      float: left;
+      font-size: 1.4em;
+    }
+
     background-color: darken(@color-ui-epsilon, 10%);
 
     &:hover {
