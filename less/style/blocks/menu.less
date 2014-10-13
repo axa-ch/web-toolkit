@@ -29,23 +29,25 @@
   height: 100%;
 
   .menu__level {
-    // reset ul
     margin: 0;
     padding: 0;
     list-style-type: none;
+
     display: block;
+    width: 100%;
+
     position: absolute;
     top: 0;
-    left: 200%;
-    width: 100%;
-    transition: left 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045);
+    left: 100%;
+
+    visibility: hidden;
+    transition: left 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility 0.5s;
 
     &.is-previous {
-      left: -100%;
     }
 
     &.is-current {
-      left: 100%;
+      visibility: visible;
     }
   }
 

@@ -9,6 +9,7 @@
       @options = $.extend {}, Menu.DEFAULTS, options
 
       @init()
+      @level(@$element.children('.menu__level'))
 
     init: () ->
       @$element.on 'click', '.menu__link--back', @, (event) ->
@@ -24,14 +25,6 @@
 
         if subLevel.length > 0
           event.data.level(subLevel)
-
-      # .menu__level
-      # .menu__item
-
-      # is-active
-
-      # is-previous
-      # is-current
 
     level: (toSet) ->
       if not toSet
@@ -51,11 +44,11 @@
         parentLevels = level.parentsUntil @$element, '.menu__level'
         parentLinks = level.parentsUntil @$element, '.menu__link'
 
-        level.css('left', (parentLevels.length * 100) + '%')
-        level.siblings('.menu__link').addClass('is-active')
-        level.addClass('is-current')
+        @$element.children('.menu__level').css('left', (parentLevels.length * -100) + '%')
 
-        parentLevels.addClass('is-previous')
+        level.siblings('.menu__link').addClass('is-active')
+
+        level.addClass('is-current')
         parentLinks.addClass('is-active')
 
     back: () ->
