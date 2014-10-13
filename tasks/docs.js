@@ -63,23 +63,20 @@ module.exports = exports = function (options) {
       destination: './js'
     }));
 
-    // put the visuals to metadata
-    metalsmith.use(branch('visuals/*.jade')
-      .use(jade({ locals: metalsmith.metadata() }))
-      .use(collections({ visuals: { pattern: 'visuals/*', sortBy: 'order', reverse: false }}))
-      .use(ignore('visuals/*')));
+    [
+      'visuals',
+      'mixins',
+      'interactions'
+    ].forEach(function (name) {
+      // TODO: Remove when collection plugin supports undeclared collections
+      var options = {};
+      options[name] = { sortBy: 'order', reverse: false };
 
-    // put the visuals to metadata
-    metalsmith.use(branch('mixins/*.jade')
-      .use(jade({ locals: metalsmith.metadata() }))
-      .use(collections({ mixins: { pattern: 'mixins/*', sortBy: 'order', reverse: false }}))
-      .use(ignore('mixins/*')));
-
-    // put the interactions to metadata
-    metalsmith.use(branch('interactions/*.jade')
-      .use(jade({ locals: metalsmith.metadata() }))
-      .use(collections({ interactions: { pattern: 'interactions/*', sortBy: 'order', reverse: false }}))
-      .use(ignore('interactions/*')));
+      metalsmith.use(branch(name + '/*.jade')
+        .use(jade({ locals: metalsmith.metadata() }))
+        .use(collections(options))
+        .use(ignore(name + '/*.jade')));
+    });
 
     // do the static pages
     metalsmith.use(branch(['*.jade', 'examples/*.jade'])
