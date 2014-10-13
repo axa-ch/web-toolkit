@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="35px" height="32px" viewBox="0 0 35 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
+    <title>Home</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icons" sketch:type="MSLayerGroup" transform="translate(-27.000000, -124.000000)" fill="#000000">
+            <g id="Home" transform="translate(27.000000, 125.000000)" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-path" x="5" y="14" width="9" height="16.333"></rect>
+                <rect id="Rectangle-path" x="21" y="14" width="9" height="16.333"></rect>
+                <path d="M0.483,16.993 L34.483,16.993 L17.502,-0.09" id="Shape"></path>
+                <rect id="Rectangle-path" x="12" y="16" width="10.875" height="1.875"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
