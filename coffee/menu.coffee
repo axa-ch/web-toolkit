@@ -40,23 +40,23 @@
       else
         @$element.find('.is-current').removeClass('is-current')
         @$element.find('.is-previous').removeClass('is-previous')
+        @$element.find('.is-active').removeClass('is-active')
+        @$element.find('.menu__level').css('left', '')
 
         level = @$element.find toSet
 
         if not level
           throw new Error 'Provided level not in menu!'
 
+        parentLevels = level.parentsUntil @$element, '.menu__level'
+        parentLinks = level.parentsUntil @$element, '.menu__link'
+
+        level.css('left', (parentLevels.length * 100) + '%')
+        level.siblings('.menu__link').addClass('is-active')
         level.addClass('is-current')
 
-        parentLevels = level.parentsUntil @$element, ($e) ->
-          return $e.hasClass('menu__level')
-
         parentLevels.addClass('is-previous')
-
-        parentLinks = level.parentsUntil @$element, ($e) ->
-          return $e.hasClass('menu__link')
-        
-        parentLinks.addClass('is_active')
+        parentLinks.addClass('is-active')
 
     back: () ->
 

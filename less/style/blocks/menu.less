@@ -38,7 +38,7 @@
     top: 0;
     left: 200%;
     width: 100%;
-    transition: left 0.5s cubic-bezier(0.6, -0.1, 0.735, 0.045);
+    transition: left 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045);
 
     &.is-previous {
       left: -100%;
@@ -84,6 +84,10 @@
       background-color: @color-ui-alpha;
       color: #fff; // TODO color
     }
+  }
+
+  .menu__link--back {
+    background-color: @color-ui-gamma;
   }
 }
 
