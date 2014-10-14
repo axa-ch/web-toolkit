@@ -1,8 +1,12 @@
 {
   "name": "style-guide",
   "version": "0.0.0",
-  "description": "The foundation for your next live style guide!",
+  "description": "AXA Switzerland Web Style Guide",
   "keywords": [
+    "axa",
+    "switzerland",
+    "versicherungen",
+    "web",
     "style",
     "guide"
   ],
@@ -14,8 +18,8 @@
     "type": "git",
     "url": "https://github.com/davidknezic/axa-style-guide.git"
   },
-  "author": "David Knezić <davidknezic@gmail.com>",
-  "license": "MIT",
+  "author": "AXA Versicherungen AG",
+  "license": "none",
   "bugs": {
     "url": "https://github.com/davidknezic/axa-style-guide/issues"
   },
