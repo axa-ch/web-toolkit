@@ -15,6 +15,8 @@ var serveStatic = require('serve-static');
 var template = require('gulp-template');
 var rename = require("gulp-rename");
 var git = require('gulp-git');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer-core');
 
 var readJSONFile = require('./lib/readJSONFile');
 var errorify = require('./lib/errorify');
@@ -120,11 +122,19 @@ gulp.task('styles-copy-colors', function () {
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('styles-autoprefix', function() {
+  return gulp.src(['./dist/css/*.css'])
+    .pipe(sourcemaps.init())
+    .pipe(postcss([ autoprefixer() ]))
+    .on('error', errorify)
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./dist/css'));
+})
+
 gulp.task('styles', function (cb) {
   runSequence(
     'styles-copy', 'styles-generate', 'styles-generate-variables',
-    'styles-copy-colors', 'styles-compile', cb);
-});
+    'styles-copy-colors', 'styles-compile', 'styles-autoprefix', cb);
 
 gulp.task('scripts-clean', function (cb) {
   del(['./dist/js/**'], cb);
