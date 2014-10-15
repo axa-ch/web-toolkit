@@ -46,6 +46,10 @@ module.exports = exports = function (options) {
       icons: readJSONFile(path.join(options.cwd, 'dist/icons.json'))
     }));
 
+    metalsmith.use(define({
+      colors: readJSONFile(path.join(options.cwd, 'less/colors.json'))
+    }));
+
     // include fonts
     metalsmith.use(assets({
       source: './dist/fonts',

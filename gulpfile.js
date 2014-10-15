@@ -128,8 +128,15 @@ gulp.task('styles-compile', function () {
     .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('styles-generate-variables', function() {
+  return gulp.src('./less/style/variables.less.lodash')
+    .pipe(template({ colors: require('./less/colors.json') }))
+    .pipe(rename('./less/style/variables.less'))
+    .pipe(gulp.dest('./dist/'));
+})
+
 gulp.task('styles', function (cb) {
-  runSequence('styles-copy', 'styles-generate', 'styles-compile', cb);
+  runSequence('styles-copy', 'styles-generate', 'styles-generate-variables', 'styles-compile', cb);
 });
 
 gulp.task('scripts-clean', function (cb) {

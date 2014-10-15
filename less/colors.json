@@ -1,0 +1,16 @@
+{
+  "ui": {
+    "alpha": "#0f2e86",
+    "beta": "#ff1821",
+    "gamma": "#86a647",
+    "delta": "#efefef",
+    "epsilon": "#192858"
+  },
+  "text": {
+    "alpha": "#333333",
+    "beta": "#6f6f6f",
+    "gamma": "#0f2e86",
+    "delta": "#a5afcb",
+    "epsilon": "#b0b0b0"
+  }
+}
