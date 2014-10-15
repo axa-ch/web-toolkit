@@ -2,16 +2,6 @@
  * @file The Metalsmith workflow that builds our docs.
  */
 
-function readJSONFile(path) {
-  var fs = require('fs');
-
-  var contents = fs.readFileSync(path, {
-    encoding: 'utf8'
-  });
-
-  return JSON.parse(contents);
-}
-
 module.exports = exports = function (options) {
   var path = require('path');
   var options = options || {};
@@ -21,6 +11,7 @@ module.exports = exports = function (options) {
   options.dest = options.dest || './dest';
 
   return function (cb) {
+    var readJSONFile = require('../lib/readJSONFile');
     var Metalsmith = require('metalsmith');
     var collections = require('metalsmith-collections');
     var templates = require('metalsmith-templates');
@@ -43,7 +34,8 @@ module.exports = exports = function (options) {
 
     // add metadata
     metalsmith.use(define({
-      icons: readJSONFile(path.join(options.cwd, 'dist/icons.json'))
+      icons: readJSONFile(path.join(options.cwd, 'dist/icons.json')),
+      colors: readJSONFile(path.join(options.cwd, 'dist/colors.json'))
     }));
 
     // include fonts

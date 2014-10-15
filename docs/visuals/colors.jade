@@ -4,20 +4,11 @@ slug: colors
 collection: visuals
 ---
 
-.color-palette
-  h3.color-palette__headline UI
-
-  each code, name in { 'alpha': '#103184', 'beta': '#ff1821', 'gamma': '#86a647', 'delta': '#efefef', 'epsilon': '#192858' }
-    .color-palette__swatch
-      span.color-palette__swatch__color(class='color-palette__swatch__color--ui-#{name}')
-      p.color-palette__swatch__text= code
-      p.color-palette__swatch__text.color-palette__swatch__text--secondary= '@color-ui-' + name
-
-.color-palette
-  h3.color-palette__headline Text
-
-  each code, name in { 'alpha': '#333333', 'beta': '#6f6f6f', 'gamma': '#103184', 'delta': '#a5afcb' }
-    .color-palette__swatch
-      span.color-palette__swatch__color(class='color-palette__swatch__color--text-#{name}')
-      p.color-palette__swatch__text= code
-      p.color-palette__swatch__text.color-palette__swatch__text--secondary= '@color-text-' + name
+each category, categoryName in colors
+  .color-palette
+    h3.color-palette__headline #{categoryName}
+    each color, colorName in category
+      .color-palette__swatch
+        span.color-palette__swatch__color(style='background: ' + color + ';')
+        p.color-palette__swatch__text #{color}
+        p.color-palette__swatch__text @color-#{categoryName}-#{colorName}

@@ -1,0 +1,24 @@
+@import 'style/mixins/respond';
+
+.nav {
+}
+
+.nav--side {
+  // TODO: Never let the block hide itself!
+  display: none;
+
+  .respond(large, {
+    display: block;
+  });
+}
+
+.nav--side.is-affixed {
+  position: fixed;
+  top: 20px;
+}
+
+.nav--side.is-affixed-top {
+}
+
+.nav--side.is-affixed-bottom {
+}
