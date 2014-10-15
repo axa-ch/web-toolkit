@@ -1,8 +1,5 @@
-// FIXME: Merge docs & assets building tasks as much as possible!
-
 var gulp = require('gulp');
 var fs = require('fs');
-var stream = require('stream');
 var del = require('del');
 var merge = require('merge-stream');
 var iconfont = require('gulp-iconfont');
@@ -15,35 +12,17 @@ var runSequence = require('run-sequence');
 var watch = require('gulp-watch');
 var connect = require('connect');
 var serveStatic = require('serve-static');
-var gutil = require('gulp-util');
 var template = require('gulp-template');
 var rename = require("gulp-rename");
 var git = require('gulp-git');
 
 var readJSONFile = require('./lib/readJSONFile');
+var errorify = require('./lib/errorify');
+var file = require('./lib/file');
+var after = require('./lib/after');
 
 var config = require('./package.json');
 var docs = require('./tasks/docs');
-
-function errorify(e) {
-  gutil.beep();
-  gutil.log(e);
-}
-
-function file(filename, contents) {
-  var src = stream.Readable({ objectMode: true });
-  src._read = function () {
-    this.push(new gutil.File({
-      cwd: "",
-      base: "",
-      path: filename,
-      contents: contents
-    }))
-
-    this.push(null)
-  }
-  return src
-}
 
 gulp.task('clean', function (cb) {
   del(['./dist/**/*'], cb);
@@ -56,16 +35,14 @@ gulp.task('docs', docs({
 }));
 
 gulp.task('icons', function (cb) {
-  var n = 0;
-  var end = function (err) {
-    // Ignore this rule on error
-    if (err) return cb(err);
-
-    // Notify execution end on second call, when...
-    // * icons.json file is written
-    // * fonts are created
-    if (++n >= 2) cb();
-  }
+  // Notify execution end on second call, when...
+  // * icons.json file is written
+  // * fonts are created
+  var end = after(2, function (err) {
+    cb(err);
+  }, function (err) {
+    if (err) cb(err);
+  });
 
   gulp.src(['./icons/*.svg'])
     .pipe(iconfont({
