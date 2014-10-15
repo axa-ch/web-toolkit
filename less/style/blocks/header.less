@@ -1,5 +1,7 @@
-@import '../mixins/respond';
-@import '../mixins/clearfix';
+@import 'style/variables';
+@import 'style/mixins/respond';
+@import 'style/mixins/clearfix';
+@import 'style/blocks/icon';
 
 .header {
   @padding-top-bottom: 9.5px;
@@ -19,14 +21,24 @@
   });
 
   &__mobile-trigger {
+    .icon;
+    .icon--burger;
+
     float: right;
     width: @mobile-trigger-size;
     height: @mobile-trigger-size;
     margin-right: @padding-left-right;
 
-    background: red;
+    color: @color-ui-alpha;
+    font-size: 1.3em;
+    text-align: center;
+    line-height: @mobile-trigger-size;
 
     cursor: pointer;
+
+    &:hover {
+      color: lighten(@color-ui-alpha, 10%);
+    }
 
     .respond(large, {
       display: none;

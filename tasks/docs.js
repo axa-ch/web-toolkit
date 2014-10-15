@@ -31,6 +31,7 @@ module.exports = exports = function (options) {
     var metadata = require('metalsmith-metadata');
     var define = require('metalsmith-define');
     var assets = require('metalsmith-assets');
+    var autoprefixer = require('metalsmith-autoprefixer');
 
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);
@@ -99,7 +100,8 @@ module.exports = exports = function (options) {
             path.join(options.cwd, 'docs/less')
           ]
         }
-      })));
+      }))
+      .use(autoprefixer()));
 
     // we no need these files
     metalsmith.use(ignore('layouts/*'));

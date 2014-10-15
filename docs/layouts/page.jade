@@ -5,7 +5,7 @@ html
     link(rel="stylesheet", href="css/docs.css")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0")
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
@@ -30,7 +30,7 @@ html
               .header__meta__social
                 ul.menu.menu--social
                   li.menu__item
-                    a(href=config.repository.url, title=config.repository.name) GitHub
+                    a.icon.icon--github(href=config.repository.url, title=config.repository.name)
               .header__meta__welcome
                 ul
                   li.header__meta__welcome__item Welcome to the AXA Winterthur style guide

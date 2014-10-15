@@ -2,16 +2,18 @@ doctype html
 html
   head
     title= title
-    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="../css/style.css")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0")
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
-    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
-    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-    script(type='text/javascript', src='/js/site.js')
+
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(type='text/javascript', src='../js/style.all.js')
+
   body.site
     .site__page
       header.header.header--main.l-holder
@@ -118,13 +120,56 @@ html
                   span.copyline-menu__text AXA 2014 ©
 
     .site__mobile-menu
-      nav
-        ul.menu.menu--mobile
+      nav.menu.menu--mobile(data-menu="compact")
+        ul#first.menu__level
+
+          li.menu__item.is-parent
+            a(href='#1').menu__link.is-parent Privatpersonen
+            ul#second.menu__level
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link.menu__link--back Zurück zu Privatpersonen
+              li.menu__item
+                a(href='#1').menu__link Wohnen und Eigentum
+
+              li.menu__item.is-parent
+                a(href='#2').menu__link.is-parent Fahrzeug und Reise
+                ul#third.menu__level
+                  li.menu__item.menu__item--back
+                    a(href='#1').menu__link.menu__link--back Zurück zu Fahrzeug und Reise
+                  li.menu__item
+                    a(href='#1').menu__link Autoversicherung
+                  li.menu__item
+                    a(href='#1').menu__link Motorradversicherung
+
+              li.menu__item
+                a(href='#2').menu__link Vorsorgen und Sparen
+
+          li.menu__item.is-parent
+            a(href='#2').menu__link.is-parent Unternehmenskunden
+            ul.menu__level
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link.menu__link--back Zurück zu Unternehmenskunden
+              li.menu__item
+                a(href='#1').menu__link Personal
+              li.menu__item
+                a(href='#2').menu__link Haftpflicht und Schaden
+              li.menu__item
+                a(href='#3').menu__link Fahrzeuge
+
+          li.menu__item.is-parent
+            a(href='#3').menu__link.is-parent Kontakt und Service
+            ul.menu__level
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link.menu__link--back Zurück zu Kontakt und Service
+              li.menu__item
+                a(href='#1').menu__link Schäden, Leistungen
+              li.menu__item
+                a(href='#2').menu__link Verträge, Dokumente
+              li.menu__item
+                a(href='#3').menu__link Ratgeber, weitere Services
+
           li.menu__item
-            a(href='#1').menu__link Menu Item 1
-          li.menu__item
-            a(href='#2').menu__link Menu Item 2
-          li.menu__item
-            a(href='#3').menu__link Menu Item 3
-          li.menu__item
-            a(href='#4').menu__link Menu Item 4
+            a(href='#4').menu__link Über uns
+
+    script(type='text/javascript').
+      $('body.site').site('showMenu');

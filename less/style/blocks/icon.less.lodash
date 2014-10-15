@@ -17,16 +17,20 @@
 }
 
 .icon {
-  display: inline-block;
-  font: normal normal normal 14px/1 '@{name}';
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  &::before {
+    display: inline-block;
+    font: normal normal normal 14px/1 '@{name}';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 <% _.forEach(glyphs, function (glyph) {
-%>.icon--<%= glyph.name %>::before {
-  content: '\<%= glyph.codepoint.toString(16).toUpperCase() %>';
+%>.icon--<%= glyph.name %> {
+  &::before {
+    content: '\<%= glyph.codepoint.toString(16).toLowerCase() %>';
+  }
 }
 <% }); %>

@@ -132,6 +132,10 @@ gulp.task('styles', function (cb) {
   runSequence('styles-copy', 'styles-generate', 'styles-compile', cb);
 });
 
+gulp.task('scripts-clean', function (cb) {
+  del(['./dist/js/**'], cb);
+});
+
 gulp.task('scripts-compile', function () {
   return gulp.src('./coffee/*.coffee')
     .pipe(sourcemaps.init())
@@ -151,7 +155,7 @@ gulp.task('scripts-combine', function () {
 });
 
 gulp.task('scripts', function (cb) {
-  runSequence('scripts-compile', 'scripts-combine', cb);
+  runSequence('scripts-clean', 'scripts-compile', 'scripts-combine', cb);
 });
 
 gulp.task('build', function (cb) {

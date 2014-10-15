@@ -13,10 +13,14 @@
 
       @options = $.extend {}, Site.DEFAULTS, options
 
+      @$element.on 'click', '.site__page.is-masked', @, (event) ->
+        event.data.hideMenu();
+
     toggleMenu: (show) ->
       show = not @$page.hasClass('is-pushed') if not show?
 
       @$page.toggleClass('is-pushed', show)
+      @$page.toggleClass('is-masked', show) if @options.mask
       @$menu.toggleClass('is-visible', show)
 
     showMenu: () ->
