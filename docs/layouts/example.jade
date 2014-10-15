@@ -2,114 +2,174 @@ doctype html
 html
   head
     title= title
-    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="../css/style.css")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0")
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
-  body
-    header.header.header--main.l-holder
-      .l-row
-        .header__mobile-trigger
-        .header__brand.brand
-          .brand__logo
-          .brand__tagline.brand__tagline--de
-        .header__meta
-          .header__meta__upper
-            .header__meta__language.menu.menu--language
-              ul
-                li.menu__item
-                  a(href='#') DE
-                li.menu__item
-                  a(href='#') FR
-                li.menu__item
-                  a(href='#') IT
-                li.menu__item
-                  a(href='#') EN
-            .header__meta__menu.menu.menu--meta
-              ul
-                li.menu__item.is-active
-                  a(href='#') Individuals
-                li.menu__item
-                  a(href='#') Small Business Insurance
-                li.menu__item
-                  a(href='#') Business
-          .header__meta__lower
-            .header__meta__social.menu.menu--social
-              ul
-                li.menu__item
-                  a(href='http://facebook.com') Facebook
-                li.menu__item
-                  a(href='http://twitter.com') Twitter
-            .header__meta__welcome
-              ul
-                li.header__meta__welcome__item Welcome to AXA
-                li.header__meta__welcome__item
-                  a(href='tel:0800809809') 0800 809 809
 
-    nav.l-holder
-      .l-row
-        .menu.menu--main
-          ul
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(type='text/javascript', src='../js/style.all.js')
+
+  body.site
+    .site__page
+      header.header.header--main.l-holder
+        .l-row
+          .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
+          .header__brand.brand
+            .brand__logo
+            .brand__tagline.brand__tagline--de
+          .header__meta
+            .header__meta__upper
+              .header__meta__language
+                ul.menu.menu--language
+                  li.menu__item
+                    a(href='#').menu__link DE
+                  li.menu__item
+                    a(href='#').menu__link FR
+                  li.menu__item
+                    a(href='#').menu__link IT
+                  li.menu__item
+                    a(href='#').menu__link EN
+              .header__meta__menu
+                ul.menu.menu--meta
+                  li.menu__item.is-active
+                    a(href='#').menu__link Individuals
+                  li.menu__item
+                    a(href='#').menu__link Small Business Insurance
+                  li.menu__item
+                    a(href='#').menu__link Business
+            .header__meta__lower
+              .header__meta__social
+                ul.menu.menu--social
+                  li.menu__item
+                    a(href='http://facebook.com') Facebook
+                  li.menu__item
+                    a(href='http://twitter.com') Twitter
+              .header__meta__welcome
+                ul
+                  li.header__meta__welcome__item Welcome to AXA
+                  li.header__meta__welcome__item
+                    a(href='tel:0800809809') 0800 809 809
+
+      nav.l-holder
+        .l-row
+          ul.menu.menu--main
             li.menu__item
-              a(href='#1') Menu Item 1
+              a(href='#1').menu__link Menu Item 1
             li.menu__item
-              a(href='#2') Menu Item 2
+              a(href='#2').menu__link Menu Item 2
             li.menu__item
-              a(href='#3') Menu Item 3
+              a(href='#3').menu__link Menu Item 3
             li.menu__item
-              a(href='#4') Menu Item 4
+              a(href='#4').menu__link Menu Item 4
 
-    section.l-holder
-      .l-row
-        .l-full!= contents
+      section.l-holder
+        .l-row
+          .l-full!= contents
 
-    footer.footer
-      .footer__content.l-holder
-        .footer__content__inner.l-row
-          .l-third
-            h3 Keep In Touch
-            ul.footer-menu
-              li.footer-menu__item
-                a.footer-menu__link(href="#facebook") Facebook
-              li.footer-menu__item
-                a.footer-menu__link(href="#twitter") Twitter
-              li.footer-menu__item
-                a.footer-menu__link(href="#youtube") YouTube
-              li.footer-menu__item
-                a.footer-menu__link(href="#linkedin") LinkedIn
+      footer.footer
+        .footer__content.l-holder
+          .footer__content__inner.l-row
+            .l-third
+              h3 Keep In Touch
+              ul.footer-menu
+                li.footer-menu__item
+                  a.footer-menu__link(href="#facebook") Facebook
+                li.footer-menu__item
+                  a.footer-menu__link(href="#twitter") Twitter
+                li.footer-menu__item
+                  a.footer-menu__link(href="#youtube") YouTube
+                li.footer-menu__item
+                  a.footer-menu__link(href="#linkedin") LinkedIn
 
-          .l-third
-            h3 AXA & You
-            ul.footer-menu
-              li.footer-menu__item
-                a.footer-menu__link(href="#contact-us") Contact Us
-              li.footer-menu__item
-                a.footer-menu__link(href="#help-and-advice") Help & Advice
-              li.footer-menu__item
-                a.footer-menu__link(href="#latest-news") Latest News
-              li.footer-menu__item
-                a.footer-menu__link(href="#jobs") Jobs
+            .l-third
+              h3 AXA & You
+              ul.footer-menu
+                li.footer-menu__item
+                  a.footer-menu__link(href="#contact-us") Contact Us
+                li.footer-menu__item
+                  a.footer-menu__link(href="#help-and-advice") Help & Advice
+                li.footer-menu__item
+                  a.footer-menu__link(href="#latest-news") Latest News
+                li.footer-menu__item
+                  a.footer-menu__link(href="#jobs") Jobs
 
-          .l-third
-            h3 AXA Worldwide
-            ul.worldwide
-              li.worldwide__item
-                a.worldwide__link.worldwide__link--world(href="#axa-com", title="AXA International") AXA.com
-              li.worldwide__item
-                a.worldwide__link.worldwide__link--switzerland(href="#axa-ch", title="AXA Switzerland") AXA.ch
+            .l-third
+              h3 AXA Worldwide
+              ul.worldwide
+                li.worldwide__item
+                  a.worldwide__link.worldwide__link--world(href="#axa-com", title="AXA International") AXA.com
+                li.worldwide__item
+                  a.worldwide__link.worldwide__link--switzerland(href="#axa-ch", title="AXA Switzerland") AXA.ch
 
-      .footer__copyline.l-holder
-        .footer__copyline__inner.l-row
-          .l-full
-            ul.copyline-menu
-              li.copyline-menu__item
-                a.copyline-menu__link(href="#sitemap") Sitemap
-              li.copyline-menu__item
-                a.copyline-menu__link(href="#privacy") Privacy
-              li.copyline-menu__item
-                a.copyline-menu__link(href="#disclaimer") Disclaimer
-              li.copyline-menu__item
-                span.copyline-menu__text AXA 2014 ©
+        .footer__copyline.l-holder
+          .footer__copyline__inner.l-row
+            .l-full
+              ul.copyline-menu
+                li.copyline-menu__item
+                  a.copyline-menu__link(href="#sitemap") Sitemap
+                li.copyline-menu__item
+                  a.copyline-menu__link(href="#privacy") Privacy
+                li.copyline-menu__item
+                  a.copyline-menu__link(href="#disclaimer") Disclaimer
+                li.copyline-menu__item
+                  span.copyline-menu__text AXA 2014 ©
+
+    .site__mobile-menu
+      nav.menu.menu--mobile(data-menu="compact")
+        ul#first.menu__level
+
+          li.menu__item.is-parent
+            a(href='#1').menu__link.is-parent Privatpersonen
+            ul#second.menu__level
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link.menu__link--back Zurück zu Privatpersonen
+              li.menu__item
+                a(href='#1').menu__link Wohnen und Eigentum
+
+              li.menu__item.is-parent
+                a(href='#2').menu__link.is-parent Fahrzeug und Reise
+                ul#third.menu__level
+                  li.menu__item.menu__item--back
+                    a(href='#1').menu__link.menu__link--back Zurück zu Fahrzeug und Reise
+                  li.menu__item
+                    a(href='#1').menu__link Autoversicherung
+                  li.menu__item
+                    a(href='#1').menu__link Motorradversicherung
+
+              li.menu__item
+                a(href='#2').menu__link Vorsorgen und Sparen
+
+          li.menu__item.is-parent
+            a(href='#2').menu__link.is-parent Unternehmenskunden
+            ul.menu__level
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link.menu__link--back Zurück zu Unternehmenskunden
+              li.menu__item
+                a(href='#1').menu__link Personal
+              li.menu__item
+                a(href='#2').menu__link Haftpflicht und Schaden
+              li.menu__item
+                a(href='#3').menu__link Fahrzeuge
+
+          li.menu__item.is-parent
+            a(href='#3').menu__link.is-parent Kontakt und Service
+            ul.menu__level
+              li.menu__item.menu__item--back
+                a(href='#1').menu__link.menu__link--back Zurück zu Kontakt und Service
+              li.menu__item
+                a(href='#1').menu__link Schäden, Leistungen
+              li.menu__item
+                a(href='#2').menu__link Verträge, Dokumente
+              li.menu__item
+                a(href='#3').menu__link Ratgeber, weitere Services
+
+          li.menu__item
+            a(href='#4').menu__link Über uns
+
+    script(type='text/javascript').
+      $('body.site').site('showMenu');

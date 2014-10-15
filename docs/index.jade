@@ -4,30 +4,18 @@ slug: home
 template: page.jade
 ---
 
-:markdown
-  # Welcome to the AXA Winterthur style guide
+.l-holder
+  .l-row
+    .l-full
+    
+      h1 This is one nice style guide! Isn't it?
 
-  **Warning: This style guide is a preview only and not meant for
-  production use yet.**
+      p
+        | The live style guide you see here is built by the
+        | project
+        = ' '
+        a(href=config.repository.url)= config.repository.name
+        | .
 
-  On this page you'll find guidelines on common elements used across
-  web sites/apps created by or for AXA Winterthur. The following list of elements
-  are mandatory for any web site/app (as defined by the AXA group guidelines).
-
-  - Header
-  - Main menu
-  - Footer
-
-  ## Principles
-
-  ### Styles - CSS
-
-  We're using the Block Element Modifier (BEM) methodology in out styles.
-  Further information about this methodology is available on
-  [bem.info](http://bem.info/).
-
-  ### Scripts - JavaScript
-
-  The scripts in this style guide are designed to be a [jQuery](http://jquery.com) plugin.
-  They can all be used with a data-* api or using the actual javascript classes.
-  See the actual plugin documentations for further details.
+      p
+        | Take a look!

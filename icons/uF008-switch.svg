@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
+    <title>switch</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="switch" sketch:type="MSArtboardGroup" fill="#000000">
+            <g sketch:type="MSLayerGroup" transform="translate(14.000000, 9.000000)">
+                <path d="M72.3027647,81.5645882 L63.0262941,81.5645882 L-2.84217094e-14,5.68434189e-14 L9.48641176,5.68434189e-14 L72.3027647,81.5645882 Z" sketch:type="MSShapeGroup" transform="translate(36.000000, 41.000000) scale(-1, 1) translate(-36.000000, -41.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

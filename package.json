@@ -1,8 +1,12 @@
 {
   "name": "style-guide",
   "version": "0.0.0",
-  "description": "The foundation for your next live style guide!",
+  "description": "AXA Switzerland Web Style Guide",
   "keywords": [
+    "axa",
+    "switzerland",
+    "versicherungen",
+    "web",
     "style",
     "guide"
   ],
@@ -14,8 +18,8 @@
     "type": "git",
     "url": "https://github.com/davidknezic/axa-style-guide.git"
   },
-  "author": "David Knezić <davidknezic@gmail.com>",
-  "license": "MIT",
+  "author": "AXA Versicherungen AG",
+  "license": "none",
   "bugs": {
     "url": "https://github.com/davidknezic/axa-style-guide/issues"
   },
@@ -41,6 +45,7 @@
     "merge-stream": "^0.1.5",
     "metalsmith": "^0.10.0",
     "metalsmith-assets": "0.0.1",
+    "metalsmith-autoprefixer": "^0.1.2",
     "metalsmith-branch": "0.0.4",
     "metalsmith-collections": "^0.6.0",
     "metalsmith-define": "0.0.1",
@@ -50,6 +55,8 @@
     "metalsmith-metadata": "0.0.1",
     "metalsmith-templates": "^0.5.2",
     "run-sequence": "^0.3.6",
-    "serve-static": "^1.5.4"
+    "serve-static": "^1.5.4",
+    "gulp-postcss": "~2.0.0",
+    "autoprefixer-core": "~3.1.1"
   }
 }

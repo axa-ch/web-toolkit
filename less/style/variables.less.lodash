@@ -1,0 +1,23 @@
+// Attention: This file is generated automatically!
+
+@respond-medium-min-width: 768px;
+@respond-large-min-width: 1024px;
+
+@sg-icon-font-path: '../fonts';
+@sg-icon-font-name: 'style-guide-font';
+
+@font-size-base: 14px;
+@font-size-large: 16px;
+@font-size-small: 13px;
+
+@images-path: '../images';
+
+<%
+_.forEach(colors, function (category, categoryName) {
+  _.forEach(category, function(color, colorName) {
+%>
+@color-<%= categoryName%>-<%= colorName %>: <%= color %>;<%
+  });
+%>
+<%
+}); %>

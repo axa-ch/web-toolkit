@@ -2,16 +2,6 @@
  * @file The Metalsmith workflow that builds our docs.
  */
 
-function readJSONFile(path) {
-  var fs = require('fs');
-
-  var contents = fs.readFileSync(path, {
-    encoding: 'utf8'
-  });
-
-  return JSON.parse(contents);
-}
-
 module.exports = exports = function (options) {
   var path = require('path');
   var options = options || {};
@@ -21,6 +11,7 @@ module.exports = exports = function (options) {
   options.dest = options.dest || './dest';
 
   return function (cb) {
+    var readJSONFile = require('../lib/readJSONFile');
     var Metalsmith = require('metalsmith');
     var collections = require('metalsmith-collections');
     var templates = require('metalsmith-templates');
@@ -31,6 +22,7 @@ module.exports = exports = function (options) {
     var metadata = require('metalsmith-metadata');
     var define = require('metalsmith-define');
     var assets = require('metalsmith-assets');
+    var autoprefixer = require('metalsmith-autoprefixer');
 
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);
@@ -42,7 +34,8 @@ module.exports = exports = function (options) {
 
     // add metadata
     metalsmith.use(define({
-      icons: readJSONFile(path.join(options.cwd, 'dist/icons.json'))
+      icons: readJSONFile(path.join(options.cwd, 'dist/icons.json')),
+      colors: readJSONFile(path.join(options.cwd, 'dist/colors.json'))
     }));
 
     // include fonts
@@ -63,17 +56,20 @@ module.exports = exports = function (options) {
       destination: './js'
     }));
 
-    // put the visuals to metadata
-    metalsmith.use(branch('visuals/*.jade')
-      .use(jade({ locals: metalsmith.metadata() }))
-      .use(collections({ visuals: { pattern: 'visuals/*', sortBy: 'order', reverse: false }}))
-      .use(ignore('visuals/*')));
+    [
+      'visuals',
+      'mixins',
+      'interactions'
+    ].forEach(function (name) {
+      // TODO: Remove when collection plugin supports undeclared collections
+      var options = {};
+      options[name] = { sortBy: 'order', reverse: false };
 
-    // put the visuals to metadata
-    metalsmith.use(branch('mixins/*.jade')
-      .use(jade({ locals: metalsmith.metadata() }))
-      .use(collections({ mixins: { pattern: 'mixins/*', sortBy: 'order', reverse: false }}))
-      .use(ignore('mixins/*')));
+      metalsmith.use(branch(name + '/*.jade')
+        .use(jade({ locals: metalsmith.metadata() }))
+        .use(collections(options))
+        .use(ignore(name + '/*.jade')));
+    });
 
     // do the static pages
     metalsmith.use(branch(['*.jade', 'examples/*.jade'])
@@ -93,7 +89,8 @@ module.exports = exports = function (options) {
             path.join(options.cwd, 'docs/less')
           ]
         }
-      })));
+      }))
+      .use(autoprefixer()));
 
     // we no need these files
     metalsmith.use(ignore('layouts/*'));
