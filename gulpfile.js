@@ -135,6 +135,7 @@ gulp.task('styles', function (cb) {
   runSequence(
     'styles-copy', 'styles-generate', 'styles-generate-variables',
     'styles-copy-colors', 'styles-compile', 'styles-autoprefix', cb);
+});
 
 gulp.task('scripts-clean', function (cb) {
   del(['./dist/js/**'], cb);
