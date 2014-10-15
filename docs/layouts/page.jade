@@ -5,79 +5,20 @@ html
     link(rel="stylesheet", href="css/docs.css")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0")
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
 
-    script(type='text/javascript').
-      window.onload = function() {
-        var samples = [].slice.call(document.getElementsByClassName("sample")),
-            hasClass = function(ele,cls) {
-              return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
-            },
-            addClass = function(ele,cls) {
-              if (!hasClass(ele,cls)) ele.className += " "+cls;
-            },
-            removeClass = function(ele,cls) {
-              if (hasClass(ele,cls)) {
-                var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
-                ele.className=ele.className.replace(reg,' ');
-              }
-            },
-            each = function(list, callback, scope) {
-              var i = 0;
+    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(type='text/javascript', src='js/site.js')
 
-              for(i = 0; i < list.length; i++) {
-                callback.call(scope, list[i]);
-              }
-            },
-            Sample = function(el) {
-              this.el = el;
-              this.headers = [].slice.call(el.getElementsByClassName('sample__header__item'));
-              this.contents = [].slice.call(el.getElementsByClassName('sample__content__item'));
-              this.setActiveItem(0);
-
-              console.log(this);
-
-              each(this.headers, function(header) {
-                header.addEventListener('click', this.onHeaderClick.bind(this));
-              }, this);
-
-
-            };
-
-        Sample.prototype.setActiveItem = function(index) {
-          if(this.currentIndex != undefined) {
-            removeClass(this.headers[this.currentIndex], 'is-active');
-            removeClass(this.contents[this.currentIndex], 'is-active');
-          }
-
-          this.currentIndex = index;
-
-          addClass(this.headers[this.currentIndex], 'is-active');
-          addClass(this.contents[this.currentIndex], 'is-active');
-        }
-
-        Sample.prototype.onHeaderClick = function(event) {
-          var index = this.headers.indexOf(event.currentTarget);
-
-          console.log('click');
-
-          this.setActiveItem(index);
-        }
-
-        console.log(samples);
-        each(samples, function(sample) {
-          new Sample(sample);
-        }, window);
-
-      }
   body.site
     .site__page
       header.header.header--main.l-holder
         .l-row
-          .header__mobile-trigger
+          .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
           .header__brand.brand
             .brand__logo
             .brand__tagline.brand__tagline--de
@@ -86,23 +27,25 @@ html
               .header__meta__language.menu.menu--language
               .header__meta__menu.menu.menu--meta
             .header__meta__lower
-              .header__meta__social.menu.menu--social
-                ul
+              .header__meta__social
+                ul.menu.menu--social
                   li.menu__item
-                    a(href=config.repository.url, title=config.repository.name) GitHub
+                    a.icon.icon--github(href=config.repository.url, title=config.repository.name)
               .header__meta__welcome
                 ul
-                  li.header__meta__welcome__item Welcome to the AXA Style Guide
+                  li.header__meta__welcome__item Welcome to the AXA Winterthur style guide
 
       .l-holder
-        nav.l-row.menu.menu--main
-          ul
+        nav.l-row
+          ul.menu.menu--main
             li.menu__item(class=slug === 'home' ? 'is-active' : undefined)
-              a(href="index.html", class=slug === 'home' ? 'is-active' : undefined) Home
+              a(href="index.html", class=slug === 'home' ? 'is-active' : undefined).menu__link Home
             li.menu__item(class=slug === 'visuals' ? 'is-active' : undefined)
-              a(href="visuals.html", class=slug === 'visuals' ? 'is-active' : undefined) Visuals
+              a(href="visuals.html", class=slug === 'visuals' ? 'is-active' : undefined).menu__link Visuals
             li.menu__item(class=slug === 'mixins' ? 'is-active' : undefined)
-              a(href="mixins.html", class=slug === 'mixins' ? 'is-active' : undefined) Mixins
+              a(href="mixins.html", class=slug === 'mixins' ? 'is-active' : undefined).menu__link Mixins
+            li.menu__item(class=slug === 'interactions' ? 'is-active' : undefined)
+              a(href="interactions.html", class=slug === 'interactions' ? 'is-active' : undefined).menu__link Interactions
 
 
       .l-holder
@@ -110,4 +53,14 @@ html
 
       footer.l-holder
 
-    .site__mobile-nav
+    .site__mobile-menu
+      nav
+        ul.menu.menu--mobile
+          li.menu__item(class=slug === 'home' ? 'is-active' : undefined)
+            a(href="index.html", class=slug === 'home' ? 'is-active' : undefined).menu__link Home
+          li.menu__item(class=slug === 'visuals' ? 'is-active' : undefined)
+            a(href="visuals.html", class=slug === 'visuals' ? 'is-active' : undefined).menu__link Visuals
+          li.menu__item(class=slug === 'mixins' ? 'is-active' : undefined)
+            a(href="mixins.html", class=slug === 'mixins' ? 'is-active' : undefined).menu__link Mixins
+          li.menu__item(class=slug === 'interactions' ? 'is-active' : undefined)
+            a(href="interactions.html", class=slug === 'interactions' ? 'is-active' : undefined).menu__link Interactions

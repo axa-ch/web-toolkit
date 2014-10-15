@@ -1,0 +1,23 @@
+---
+title: Interactions
+slug: interactions
+template: page.jade
+---
+
+.l-holder
+  .l-row
+    .l-full
+
+      h1 Interactions
+
+      nav
+        ul.menu.menu--main.menu--docs-submenu
+          each interaction in interactions
+            li.menu__item
+              a(href='#' + interaction.slug).menu__link= interaction.title
+
+      each interaction in interactions
+        div.block
+          h2(id=interaction.slug)= interaction.title
+            a(href='#' + interaction.slug).anchor--docs
+          div.block!= interaction.contents

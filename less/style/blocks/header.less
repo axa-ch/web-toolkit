@@ -1,8 +1,10 @@
-@import '../mixins/respond';
-@import '../mixins/clearfix';
+@import 'style/variables';
+@import 'style/mixins/respond';
+@import 'style/mixins/clearfix';
+@import 'style/blocks/icon';
 
 .header {
-  @padding-top-bottom: 12.5px;
+  @padding-top-bottom: 9.5px;
   @padding-top-bottom-large: 20px;
   @padding-left-right: 10px;
   @padding-left-right-large: 20px;
@@ -12,21 +14,31 @@
 
   padding: @padding-top-bottom 0;
 
-  border-bottom: 1px solid #DEDEE2; // TODO: Use color defined in color palette
+  border-bottom: 1px solid @color-ui-delta;
 
   .respond(large, {
     padding: @padding-top-bottom-large 0;
   });
 
   &__mobile-trigger {
+    .icon;
+    .icon--burger;
+
     float: right;
     width: @mobile-trigger-size;
     height: @mobile-trigger-size;
     margin-right: @padding-left-right;
 
-    background: red;
+    color: @color-ui-alpha;
+    font-size: 1.3em;
+    text-align: center;
+    line-height: @mobile-trigger-size;
 
     cursor: pointer;
+
+    &:hover {
+      color: lighten(@color-ui-alpha, 10%);
+    }
 
     .respond(large, {
       display: none;
@@ -100,7 +112,7 @@
         font-size: 20px;
 
         a {
-          color: #0E2E85;
+          color: @color-text-gamma;
           text-decoration: none;
         }
 

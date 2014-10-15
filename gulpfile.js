@@ -1,8 +1,5 @@
-// FIXME: Merge docs & assets building tasks as much as possible!
-
 var gulp = require('gulp');
 var fs = require('fs');
-var stream = require('stream');
 var del = require('del');
 var merge = require('merge-stream');
 var iconfont = require('gulp-iconfont');
@@ -15,31 +12,19 @@ var runSequence = require('run-sequence');
 var watch = require('gulp-watch');
 var connect = require('connect');
 var serveStatic = require('serve-static');
-var gutil = require('gulp-util');
 var template = require('gulp-template');
 var rename = require("gulp-rename");
+var git = require('gulp-git');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer-core');
 
+var readJSONFile = require('./lib/readJSONFile');
+var errorify = require('./lib/errorify');
+var file = require('./lib/file');
+var after = require('./lib/after');
+
+var config = require('./package.json');
 var docs = require('./tasks/docs');
-
-function errorify(e) {
-  gutil.beep();
-  gutil.log(e);
-}
-
-function file(filename, contents) {
-  var src = stream.Readable({ objectMode: true });
-  src._read = function () {
-    this.push(new gutil.File({
-      cwd: "",
-      base: "",
-      path: filename,
-      contents: contents
-    }))
-
-    this.push(null)
-  }
-  return src
-}
 
 gulp.task('clean', function (cb) {
   del(['./dist/**/*'], cb);
@@ -52,16 +37,14 @@ gulp.task('docs', docs({
 }));
 
 gulp.task('icons', function (cb) {
-  var n = 0;
-  var end = function (err) {
-    // Ignore this rule on error
-    if (err) return cb(err);
-
-    // Notify execution end on second call, when...
-    // * icons.json file is written
-    // * fonts are created
-    if (++n >= 2) cb();
-  }
+  // Notify execution end on second call, when...
+  // * icons.json file is written
+  // * fonts are created
+  var end = after(2, function (err) {
+    cb(err);
+  }, function (err) {
+    if (err) cb(err);
+  });
 
   gulp.src(['./icons/*.svg'])
     .pipe(iconfont({
@@ -126,8 +109,36 @@ gulp.task('styles-compile', function () {
     .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('styles-generate-variables', function () {
+  return gulp.src('./less/style/variables.less.lodash')
+    .pipe(template({ colors: readJSONFile('./less/colors.json') }))
+    .pipe(rename('./less/style/variables.less'))
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('styles-copy-colors', function () {
+  return gulp.src('./less/colors.json')
+    .pipe(rename('./colors.json'))
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('styles-autoprefix', function() {
+  return gulp.src(['./dist/css/*.css'])
+    .pipe(sourcemaps.init())
+    .pipe(postcss([ autoprefixer() ]))
+    .on('error', errorify)
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./dist/css'));
+})
+
 gulp.task('styles', function (cb) {
-  runSequence('styles-copy', 'styles-generate', 'styles-compile', cb);
+  runSequence(
+    'styles-copy', 'styles-generate', 'styles-generate-variables',
+    'styles-copy-colors', 'styles-compile', 'styles-autoprefix', cb);
+});
+
+gulp.task('scripts-clean', function (cb) {
+  del(['./dist/js/**'], cb);
 });
 
 gulp.task('scripts-compile', function () {
@@ -149,7 +160,7 @@ gulp.task('scripts-combine', function () {
 });
 
 gulp.task('scripts', function (cb) {
-  runSequence('scripts-compile', 'scripts-combine', cb);
+  runSequence('scripts-clean', 'scripts-compile', 'scripts-combine', cb);
 });
 
 gulp.task('build', function (cb) {
@@ -176,6 +187,51 @@ gulp.task('dev', ['build', 'serve'], function () {
       callback.apply(this, arguments);
     });
   });
+});
+
+gulp.task('deploy-clean', function (cb) {
+  del(['./out'], cb);
+});
+
+gulp.task('deploy-copy', function () {
+  return gulp.src('./dist/docs/**')
+    .pipe(gulp.dest('./out'));
+});
+
+gulp.task('deploy-init', function (cb) {
+  git.init({ args: '--quiet', cwd: './out' }, cb);
+});
+
+gulp.task('deploy-config', function (cb) {
+  git.addRemote('deploy', config.repository.url, {
+    cwd: './out'
+  }, cb);
+});
+
+gulp.task('deploy-add', function () {
+  return gulp.src('./*', { cwd: './out' })
+    .pipe(git.add({ cwd: './out' }));
+});
+
+gulp.task('deploy-commit', function () {
+  return gulp.src('./*', { cwd: './out' })
+    .pipe(git.commit('Deploy to GitHub Pages', {
+      args: '--author="Robo Coder <robo@coder>"',
+      cwd: './out'
+    }));
+});
+
+gulp.task('deploy-push', function (cb) {
+  git.push('deploy', 'master:gh-pages', {
+    args: '--force',
+    cwd: './out'
+  }, cb).end();
+});
+
+gulp.task('deploy', function (cb) {
+  runSequence(
+    'deploy-clean', 'deploy-copy', 'deploy-init',
+    'deploy-config', 'deploy-add', 'deploy-commit', 'deploy-push', cb);
 });
 
 gulp.task('default', ['build']);

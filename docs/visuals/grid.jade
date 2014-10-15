@@ -1,40 +1,59 @@
 ---
 title: Grid
 slug: grid
+collection: visuals
 order: 2
 ---
 
-.sample
-  .sample__header
-    .sample__header__item Sample
-    .sample__header__item Source
-  .sample__content
-    .sample__content__item
-      .l-row
-        .l-full.box.box--docs.box--grid
-          p Full column
-        .l-primary.box.box--docs.box--grid
-          p Primary column
-        .l-secondary.box.box--docs.box--grid
-          p Secondary column
-        .l-half.box.box--docs.box--grid
-          p Half column
-        .l-third.box.box--docs.box--grid
-          p Third column
-        .l-fourth.box.box--docs.box--grid
-          p Fourth column
-        .l-thumbnail.box.box--docs.box--grid
-          p Thumbnail column
-    .sample__content__item
-      pre.highlight.hljs
-        code.html
-          :highlight
-            <div class="l-row">
-              <div class="l-full">...</div>
-              <div class="l-primary">...</div>
-              <div class="l-secondary">...</div>
-              <div class="l-half">...</div>
-              <div class="l-third">...</div>
-              <div class="l-fourth">...</div>
-              <div class="l-thumbnail">...</div>
-            </div>
+.example
+  .l-row
+    .l-full.box.box--docs.box--grid
+      p Full column
+    .l-primary.box.box--docs.box--grid
+      p Primary column
+    .l-secondary.box.box--docs.box--grid
+      p Secondary column
+
+    - for (var i = 0; i < 2; i++) {
+      .l-half.box.box--docs.box--grid
+        p Half column
+    - }
+
+    - for (var i = 0; i < 3; i++) {
+      .l-third.box.box--docs.box--grid
+        p Third column
+    - }
+
+    - for (var i = 0; i < 4; i++) {
+      .l-fourth.box.box--docs.box--grid
+        p Fourth column
+    - }
+
+    - for (var i = 0; i < 6; i++) {
+      .l-thumbnail.box.box--docs.box--grid
+        p Thumbnail column
+    - }
+
+pre.highlight.hljs
+  code.html
+    :highlight
+      <div class="l-row">
+        <div class="l-full">...</div>
+        <div class="l-primary">...</div>
+        <div class="l-secondary">...</div>
+        <div class="l-half">...</div>
+        <div class="l-half">...</div>
+        <div class="l-third">...</div>
+        <div class="l-third">...</div>
+        <div class="l-third">...</div>
+        <div class="l-fourth">...</div>
+        <div class="l-fourth">...</div>
+        <div class="l-fourth">...</div>
+        <div class="l-fourth">...</div>
+        <div class="l-thumbnail">...</div>
+        <div class="l-thumbnail">...</div>
+        <div class="l-thumbnail">...</div>
+        <div class="l-thumbnail">...</div>
+        <div class="l-thumbnail">...</div>
+        <div class="l-thumbnail">...</div>
+      </div>

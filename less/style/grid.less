@@ -9,7 +9,8 @@
 }
 
 .l-row .l-row {
-	padding: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .l-full,
@@ -24,4 +25,72 @@
   position: relative;
   padding-left: 12.5px;
   padding-right: 12.5px;
+}
+
+.l-full {
+	.respond(medium, {
+	});
+
+	.respond(large, {
+	});
+}
+
+.l-primary {
+	.respond(medium, {
+		width: 66.66667%;
+	});
+
+	.respond(large, {
+		width: 66.66667%;
+	});
+}
+
+.l-secondary {
+	.respond(medium, {
+		width: 33.33333%;
+	});
+
+	.respond(large, {
+		width: 33.33333%;
+	});
+}
+
+.l-third {
+	.respond(medium, {
+		width: 33.33333%;
+	});
+
+	.respond(large, {
+		width: 33.33333%;
+	});
+}
+
+.l-half {
+	.respond(medium, {
+		width: 50%;
+	});
+
+	.respond(large, {
+		width: 50%;
+	});
+}
+
+.l-fourth {
+	.respond(medium, {
+		width: 25%;
+	});
+
+	.respond(large, {
+		width: 25%;
+	});
+}
+
+.l-thumbnail {
+	.respond(medium, {
+		width: 33.33333%;
+	});
+
+	.respond(large, {
+		width: 16.66667%;
+	});
 }
