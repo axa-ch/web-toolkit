@@ -4,9 +4,11 @@
     <title>arrow-right</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="arrow-right" sketch:type="MSArtboardGroup" fill="#000000">
-            <path d="M67.4594545,51.0282778 L39.1275455,80.5479444 L31.0110909,72.4518333 L52.4778182,51.0905556 L30.4695455,29.7128889 L38.364,21.5446667 L67.4594545,51.0282778 L67.4594545,51.0282778 Z" id="right" sketch:type="MSShapeGroup"></path>
+            <g sketch:type="MSLayerGroup" transform="translate(25.000000, 11.000000)" id="right">
+                <path d="M50.6208845,38.8683719 L12.3345209,78.3947053 L1.36633907,67.5541497 L30.37543,38.9517608 L0.634520885,10.3274275 L11.3027027,-0.609683616 L50.6208845,38.8683719 L50.6208845,38.8683719 Z" sketch:type="MSShapeGroup"></path>
+            </g>
         </g>
     </g>
 </svg>

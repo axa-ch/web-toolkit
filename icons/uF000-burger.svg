@@ -6,9 +6,11 @@
     <defs></defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="burger" sketch:type="MSArtboardGroup" fill="#000000">
-            <rect id="top" sketch:type="MSShapeGroup" x="14" y="24" width="72.7786417" height="9"></rect>
-            <rect id="middle" sketch:type="MSShapeGroup" x="14" y="45" width="72.7786417" height="10"></rect>
-            <rect id="bottom" sketch:type="MSShapeGroup" x="14" y="67" width="72.7786417" height="9"></rect>
+            <g sketch:type="MSLayerGroup" transform="translate(2.000000, 15.000000)">
+                <rect id="top" sketch:type="MSShapeGroup" x="-0.0209509094" y="0.177627579" width="96.7267537" height="11.918569"></rect>
+                <rect id="middle" sketch:type="MSShapeGroup" x="-0.0209509094" y="27.9876218" width="96.7267537" height="13.2428544"></rect>
+                <rect id="bottom" sketch:type="MSShapeGroup" x="-0.0209509094" y="57.1219015" width="96.7267537" height="11.918569"></rect>
+            </g>
         </g>
     </g>
 </svg>

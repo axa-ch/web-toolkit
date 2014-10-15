@@ -4,12 +4,11 @@
     <title>home</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="home" sketch:type="MSArtboardGroup" fill="#000000">
-            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="28.8540544" y="47.9990854" width="15.937298" height="27.9983615"></rect>
-            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="57.1870286" y="47.9990854" width="15.937298" height="27.9983615"></rect>
-            <path d="M20,53.2840268 L80.2075701,53.2840268 L50.1374305,24" id="Shape" sketch:type="MSShapeGroup"></path>
-            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="41.2497306" y="51.4275262" width="19.2575684" height="3.21416322"></rect>
+            <g sketch:type="MSLayerGroup" transform="translate(1.000000, 8.000000)">
+                <path d="M40.4925423,83.9958758 L14.4616222,83.9958758 L14.4616222,47.3049664 L0,47.3049664 L49.2244698,0 L98.3390312,47.3049664 L86.7697334,47.3049664 L86.7697334,83.9958758 L60.7388134,83.9958758 L60.7388134,51.1134982 L40.4925423,51.1134982 L40.4925423,83.9958758 Z" sketch:type="MSShapeGroup"></path>
+            </g>
         </g>
     </g>
 </svg>

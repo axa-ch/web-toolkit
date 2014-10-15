@@ -6,8 +6,8 @@
     <defs></defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="cross" sketch:type="MSArtboardGroup" fill="#000000">
-            <g sketch:type="MSLayerGroup" transform="translate(26.000000, 26.000000)">
-                <path d="M48.8863959,41.2206305 L31.9860625,24.3705945 L48.8858125,7.520555 L41.3430209,0 L24.442979,16.849749 L7.543375,0.0004375 L0,7.520555 L16.8998959,24.370304 L0,41.2206305 L7.543375,48.740895 L24.4435625,31.8910025 L41.3433125,48.740314 L48.8863959,41.2206305" sketch:type="MSShapeGroup"></path>
+            <g sketch:type="MSLayerGroup" transform="translate(14.000000, 14.000000)">
+                <path d="M72.8307531,61.4103271 L47.6527054,36.3072122 L72.8298839,11.2040921 L61.5926639,0 L36.4150504,25.1026873 L11.2380893,0.000651785714 L0,11.2040921 L25.177396,36.3067794 L0,61.4103271 L11.2380893,72.6139864 L36.4159196,47.5110854 L61.5930982,72.6131209 L72.8307531,61.4103271" sketch:type="MSShapeGroup"></path>
             </g>
         </g>
     </g>
