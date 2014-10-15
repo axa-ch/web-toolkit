@@ -17,8 +17,8 @@ template: page.jade
         div.block!= mixin.contents
 
   .l-secondary
-    nav.side-menu(data-spy="affix", data-offset-top="230")
-      ul
+    nav.nav.nav--side(data-spy="affix", data-offset-top="230")
+      ul.menu.menu--side
         each mixin in mixins
-          li
-            a(href='#' + mixin.slug)= mixin.title
+          li.menu__item
+            a.menu__link(href='#' + mixin.slug)= mixin.title
