@@ -20,6 +20,8 @@ var template = require('gulp-template');
 var rename = require("gulp-rename");
 var git = require('gulp-git');
 
+var readJSONFile = require('./lib/readJSONFile');
+
 var config = require('./package.json');
 var docs = require('./tasks/docs');
 
@@ -128,15 +130,23 @@ gulp.task('styles-compile', function () {
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('styles-generate-variables', function() {
+gulp.task('styles-generate-variables', function () {
   return gulp.src('./less/style/variables.less.lodash')
-    .pipe(template({ colors: require('./less/colors.json') }))
+    .pipe(template({ colors: readJSONFile('./less/colors.json') }))
     .pipe(rename('./less/style/variables.less'))
     .pipe(gulp.dest('./dist/'));
-})
+});
+
+gulp.task('styles-copy-colors', function () {
+  return gulp.src('./less/colors.json')
+    .pipe(rename('./colors.json'))
+    .pipe(gulp.dest('./dist/'));
+});
 
 gulp.task('styles', function (cb) {
-  runSequence('styles-copy', 'styles-generate', 'styles-generate-variables', 'styles-compile', cb);
+  runSequence(
+    'styles-copy', 'styles-generate', 'styles-generate-variables',
+    'styles-copy-colors', 'styles-compile', cb);
 });
 
 gulp.task('scripts-clean', function (cb) {
