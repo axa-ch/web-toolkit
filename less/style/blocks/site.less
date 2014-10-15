@@ -12,6 +12,8 @@
 
   overflow-x: hidden;
 
+  transition: right 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045);
+
   &.is-pushed {
     right: @mobile-nav-width;
 
@@ -40,22 +42,6 @@
       cursor: pointer;
     }
   }
-
-  // fancy stuff when css transitions are available
-  .csstransforms & {
-    right: 0; // override on transition stuff
-  	transform: translateX(0%);
-
-  	transition: transform 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045);
-
-    &.is-pushed {
-    	transform: translateX(-@mobile-nav-width);
-
-      .respond(large, {
-        transform: translateX(0%);
-      });
-    }
-  }
 }
 
 .site__mobile-menu {
@@ -71,24 +57,13 @@
 
   background-color: @color-ui-epsilon;
 
+  transition: right 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045);
+
   .respond(large, {
     display: none;
   });
 
   &.is-visible {
     right: 0;
-  }
-
-  // fancy stuff when css transitions are available
-  .csstransforms & {
-    right: 0; // override on transition stuff
-
-    transform: translateX(100%);
-
-    transition: transform 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045);
-
-    &.is-visible {
-  	   transform: translateX(0%);
-    }
   }
 }
