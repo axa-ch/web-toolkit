@@ -1,5 +1,6 @@
 @import 'style/variables';
 @import 'style/mixins/clearfix';
+@import 'style/mixins/respond';
 @import 'style/blocks/icon';
 
 .menu {
@@ -11,7 +12,6 @@
 }
 
 .menu__item {
-  float: left;
   margin: 0;
   padding: 0;
 }
@@ -142,6 +142,10 @@
         color: @color-text-beta;
       }
     }
+
+    .respond(large, {
+      float: left;
+    });
   }
 
   .menu__link {
@@ -150,6 +154,37 @@
     font-size: 14px;
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
+  }
+}
+
+.menu--side {
+  display: none;
+
+  .respond(large, {
+    display: block;
+  });
+
+  .menu__item {
+  }
+
+  .menu__link {
+    display: block;
+    width: 100%;
+
+    padding: 3px 10px;
+
+    color: @color-text-epsilon;
+    text-decoration: none;
+    font-size: @font-size-base;
+
+    &:hover {
+      color: @color-text-beta;
+    }
+
+    &.is-active,
+    &:active {
+      color: @color-text-gamma;
+    }
   }
 }
 
@@ -167,6 +202,10 @@
         color: @color-text-gamma;
       }
     }
+
+    .respond(large, {
+      float: left;
+    });
   }
 
   .menu__link {
@@ -203,5 +242,14 @@
     font-size: 14px; // TODO: fixed font-size
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-transform: uppercase;
+  }
+}
+
+.menu--social {
+
+  .menu__item {
+    .respond(large, {
+      float: left;
+    });
   }
 }

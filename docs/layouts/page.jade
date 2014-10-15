@@ -3,16 +3,15 @@ html
   head
     title= title
     link(rel="stylesheet", href="css/docs.css")
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(src="js/style.all.js")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0")
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
-
-    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
-    script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-    script(type='text/javascript', src='js/site.js')
 
   body.site
     .site__page
@@ -51,7 +50,15 @@ html
       .l-holder
         .l-row!= contents
 
-      footer.l-holder
+      footer.footer
+        .footer__copyline.l-holder
+          .footer__copyline__inner.l-row
+            .l-full
+              ul.copyline-menu
+                li.copyline-menu__item
+                  a.copyline-menu__link(href=config.repository.url, title=config.repository.name) GitHub
+                li.copyline-menu__item
+                  span.copyline-menu__text AXA 2014 ©
 
     .site__mobile-menu
       nav

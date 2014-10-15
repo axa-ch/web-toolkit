@@ -4,20 +4,21 @@ slug: visuals
 template: page.jade
 ---
 
-.l-holder
-  .l-row
-    .l-full
+.l-row
+  .l-full
+    h1 Visuals
 
-      h1 Visuals
+.l-row
+  .l-primary
+    each visual in visuals
+      div.block
+        h2(id=visual.slug)= visual.title
+          a(href='#' + visual.slug).anchor--docs
+        div!= visual.contents
 
-      nav
-        ul.menu.menu--main.menu--docs-submenu
-          each visual in visuals
-            li.menu__item
-              a(href='#' + visual.slug).menu__link= visual.title
-
-      each visual in visuals
-        div.block
-          h2(id=visual.slug)= visual.title
-            a(href='#' + visual.slug).anchor--docs
-          div!= visual.contents
+  .l-secondary
+    nav.nav.nav--side(data-spy="affix", data-offset-top="230")
+      ul.menu.menu--side
+        each visual in visuals
+          li.menu__item
+            a.menu__link(href='#' + visual.slug)= visual.title
