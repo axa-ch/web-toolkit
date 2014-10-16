@@ -57,23 +57,42 @@ module.exports = exports = function (options) {
     }));
 
     // jade filters
-    var jadeFilters = {
-      sample: function(jade_lang, jade_runtime, jade_filters) {
-        return function(text) {
-          var html = '<div class="sample" ><div class="sample__header" ><a href="#" >Tab 1</a><a href="#" >Tab 2</a></div><div class="sample__body" ><div>{{sample}}</div><div><pre class="hljs" ><code class="html" >{{html}}</code></pre></div><div><pre class="hljs" ><code class="jade" >{{jade}}</code></pre></div></div></div>';
+    jade.registerFilter('sample', function(jade_lang, jade_runtime, jade_filters) {
+      var sampleCount = 0;
+      var html = '<div class="sample" >\
+                    <ul class="sample__header menu menu--tabs tab-panel__header" >\
+                      <li class="menu__item">\
+                        <a href="#sample_{{sampleCount}}_sample" data-toggle="tab" class="menu__link" >Sample</a>\
+                      </li>\
+                      <li class="menu__item">\
+                        <a href="#sample_{{sampleCount}}_html" data-toggle="tab" class="menu__link" >HTML</a>\
+                      </li>\
+                      <li class="menu__item">\
+                        <a href="#sample_{{sampleCount}}_jade" data-toggle="tab" class="menu__link" >Jade</a>\
+                      </li>\
+                    </ul>\
+                    <div class="sample__body" >\
+                      <div id="sample_{{sampleCount}}_sample" >{{sample}}</div>\
+                      <div id="sample_{{sampleCount}}_html" ><pre class="hljs" ><code class="html" >{{html}}</code></pre></div>\
+                      <div id="sample_{{sampleCount}}_jade" ><pre class="hljs" ><code class="jade" >{{jade}}</code></pre></div>\
+                    </div>\
+                  </div>';
 
-          var sample = jade_lang.render(text, {pretty: true});
-          // Cut off first/last blank lines
-          sample = sample.replace(/^\n+|\s+$/g, '');
-          var src_html = jade_filters('highlight', sample);
-          var src_jade = jade_filters('highlight', text);
-          // Cut off first/last blank lines
-          src_jade = src_jade.replace(/^\n+|\s+$/g, '');
+      return function(text) {
 
-          return html.replace(/{{sample}}/, sample).replace(/{{html}}/, src_html).replace(/{{jade}}/, src_jade);
-        }
+        sampleCount += 1;
+
+        var sample = jade_lang.render(text, {pretty: true});
+        // Cut off first/last blank lines
+        sample = sample.replace(/^\n+|\s+$/g, '');
+        var src_html = jade_filters('highlight', sample);
+        var src_jade = jade_filters('highlight', text);
+        // Cut off first/last blank lines
+        src_jade = src_jade.replace(/^\n+|\s+$/g, '');
+
+        return html.replace(/{{sampleCount}}/g, sampleCount).replace(/{{sample}}/, sample).replace(/{{html}}/, src_html).replace(/{{jade}}/, src_jade);
       }
-    };
+    });
 
     [
       'visuals',
@@ -85,14 +104,14 @@ module.exports = exports = function (options) {
       options[name] = { sortBy: 'order', reverse: false };
 
       metalsmith.use(branch(name + '/*.jade')
-        .use(jade({ locals: metalsmith.metadata(), filters: jadeFilters }))
+        .use(jade({ locals: metalsmith.metadata() }))
         .use(collections(options))
         .use(ignore(name + '/*.jade')));
     });
 
     // do the static pages
     metalsmith.use(branch(['*.jade', 'examples/*.jade'])
-      .use(jade({ locals: metalsmith.metadata(), filters: jadeFilters }))
+      .use(jade({ locals: metalsmith.metadata() }))
       .use(templates({
         engine: 'jade',
         directory: path.join(options.src, 'layouts')
