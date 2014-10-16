@@ -1,0 +1,28 @@
+@import 'style/variables';
+@import 'style/mixins/respond';
+
+.masthead.masthead--docs {
+  padding: 10px inherit;
+
+  background-color: @color-ui-gamma;
+  text-align: center;
+  color: white;
+
+  .respond(medium, {
+    padding: 20px inherit;
+  });
+}
+
+.masthead__lead {
+  padding: 10px inherit;
+
+  font-size: 1.3em;
+  line-height: 1.6em;
+
+  .respond(medium, {
+    padding: 20px 100px;
+
+    font-size: 1.8em;
+    line-height: 1.4em;
+  });
+}

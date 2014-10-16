@@ -4,18 +4,18 @@ slug: home
 template: page.jade
 ---
 
-.l-holder
+.masthead.masthead--docs
   .l-row
     .l-full
-    
-      h1 This is one nice style guide! Isn't it?
+      p.lead.masthead__lead.
+        Meet the AXA Switzerland Web Style Guide – the HTML, CSS and JS
+        framework for developing responsive, mobile first projects
+        on the web.
 
       p
-        | The live style guide you see here is built by the
-        | project
-        = ' '
-        a(href=config.repository.url)= config.repository.name
-        | .
+        a(href=config.urls.releases, title="See the releases on GitHub").
+          Download Style Guide
 
       p
-        | Take a look!
+        a(href=config.repository.url, title=config.repository.name).
+          View project on GitHub
