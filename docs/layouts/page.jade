@@ -62,7 +62,7 @@ html
 
     .site__mobile-menu
       nav
-        ul.menu.menu--mobile
+        ul.menu.menu--sliding(data-menu="collapsing")
           li.menu__item(class=slug === 'home' ? 'is-active' : undefined)
             a(href="index.html", class=slug === 'home' ? 'is-active' : undefined).menu__link Home
           li.menu__item(class=slug === 'visuals' ? 'is-active' : undefined)

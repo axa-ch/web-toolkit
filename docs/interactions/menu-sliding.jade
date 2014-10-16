@@ -1,0 +1,55 @@
+---
+title: Sliding Menu
+slug: sliding-menu
+collection: interactions
+order: 2
+---
+
+h3 Intro
+
+p.
+  The sliding menu plugin provides all functionality for the sliding
+  menu. It manages the menu level change and links the back menu item
+  to a back action.
+
+h3 Example
+
+nav.menu.menu--sliding(data-menu="sliding")
+  ul.menu__level
+    li.menu__item
+      a(href='#home').menu__link Home
+    li.menu__item.is-parent
+      a(href='#private-individuals').menu__link.is-parent Private individuals
+      ul.menu__level
+        li.menu__item.menu__item--back
+          a(href='#private-individuals').menu__link.menu__link--back Private individuals
+        li.menu__item
+          a(href='#contents-insurance').menu__link Contents insurance
+    li.menu__item.is-parent
+      a(href='#contact-and-service').menu__link.is-parent Contact and service
+      ul.menu__level
+        li.menu__item.menu__item--back
+          a(href='#contact-and-service').menu__link.menu__link--back Contact and service
+        li.menu__item
+          a(href='#claims-and-benefits').menu__link Claims and benefits
+        li.menu__item
+          a(href='#contracts-and-documents').menu__link Contracts and documents
+        li.menu__item.is-parent
+          a(href='#guides-and-other-services').menu__link.is-parent Guides and other services
+          ul.menu__level
+            li.menu__item.menu__item--back
+              a(href='#guides-and-other-services').menu__link.menu__link--back Guides and other services
+            li.menu__item
+              a(href='#guides').menu__link Guides
+            li.menu__item
+              a(href='#publications').menu__link Publications
+            li.menu__item.is-parent
+              a(href='#mobile-apps').menu__link Mobile apps
+
+h3 Usage
+
+p Activate the functionality with JavaScript:
+
+pre.hljs: code.js
+  :highlight
+    $('#menu').slidingMenu(options)
