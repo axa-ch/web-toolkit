@@ -43,3 +43,7 @@
 .icon--facebook {
   color: #3d539e;
 }
+
+.icon--github {
+  color: black;
+}
