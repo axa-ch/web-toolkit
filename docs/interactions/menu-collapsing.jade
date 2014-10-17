@@ -14,7 +14,7 @@ p.
 
 h3 Example
 
-nav.menu.menu--collapsing(data-menu="collapsing", data-exclusive=true)
+nav.menu.menu--collapsing(data-menu="collapsing", data-exclusive)
   ul.menu__level.is-open
     li.menu__item
       a(href='#home').menu__link Home
@@ -47,3 +47,36 @@ p Activate the functionality with JavaScript:
 pre.hljs: code.js
   :highlight
     $('#menu').collapsingMenu(options)
+
+p Alternatively, you can activate the plugin with data attributes:
+
+pre.hljs: code.html
+  :highlight
+    <nav data-menu="collapsing" data-exclusive></nav>
+
+h4 Options
+
+table.table--docs
+  caption Available options
+  tr
+    th Name
+    th Type
+    th Default
+    th Description
+  tr
+    td: code exclusive
+    td: code boolean
+    td: code false
+    td.
+      Closes all other levels when opening a new one. This option
+      makes the menu behave like an accordion.
+
+h4 Methods
+
+h5: code .collapsingMenu('toggle', menuLevel)
+
+p Manually toggle a menu level.
+
+pre.hljs: code.js
+  :highlight
+    $('#menu').collapsingMenu('toggle', $('#second.menu__level'))
