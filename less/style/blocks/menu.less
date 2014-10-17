@@ -226,6 +226,10 @@
       .menu__link {
         color: @color-text-beta;
       }
+
+      .menu__link--home::before {
+        color: @color-text-gamma;
+      }
     }
 
     .respond(large, {
@@ -239,6 +243,16 @@
     font-size: 14px;
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
+  }
+
+  .menu__link--home {
+    .icon();
+    .icon--home();
+
+    &::before {
+      font-size: 16px;
+      color: @color-text-gamma;
+    }
   }
 }
 
