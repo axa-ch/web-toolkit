@@ -32,7 +32,7 @@ html
                     a.icon.icon--github(href=config.repository.url, title=config.repository.name)
               .header__meta__welcome
                 ul
-                  li.header__meta__welcome__item Welcome to the AXA Winterthur style guide
+                  li.header__meta__welcome__item Web Style Guide
 
       .l-holder
         nav.l-row
@@ -47,8 +47,7 @@ html
               a(href="interactions.html", class=slug === 'interactions' ? 'is-active' : undefined).menu__link Interactions
 
 
-      .l-holder
-        .l-row!= contents
+      .l-holder!= contents
 
       footer.footer
         .footer__copyline.l-holder
@@ -58,7 +57,7 @@ html
                 li.copyline-menu__item
                   a.copyline-menu__link(href=config.repository.url, title=config.repository.name) GitHub
                 li.copyline-menu__item
-                  span.copyline-menu__text AXA 2014 ©
+                  span.copyline-menu__text Copyright AXA Versicherungen AG 2014
 
     .site__mobile-menu
       nav
