@@ -1,12 +1,12 @@
 (($) ->
 
   # Public class definition
-  class Menu
+  class SlidingMenu
     @DEFAULTS
 
     constructor: (element, options) ->
       @$element = $ element
-      @options = $.extend {}, Menu.DEFAULTS, options
+      @options = $.extend {}, SlidingMenu.DEFAULTS, options
 
       @init()
       @level(@$element.children('.menu__level'))
@@ -40,6 +40,8 @@
         if not level
           throw new Error 'Provided level not in menu!'
 
+        @$element.css('height', level.height());
+
         parentLevels = level.parentsUntil @$element, '.menu__level'
         parentLinks = level.parentsUntil @$element, '.menu__link'
 
@@ -49,32 +51,30 @@
         level.siblings('.menu__link').addClass('is-active')
         parentLinks.addClass('is-active')
 
-    back: () ->
-
   # Plugin definition
   Plugin = (option) ->
     params = arguments
 
     return this.each () ->
       $this = $ this
-      options = $.extend({}, Menu.DEFAULTS, data, typeof option == 'object' && option)
+      options = $.extend({}, SlidingMenu.DEFAULTS, data, typeof option == 'object' && option)
       action = option if typeof option == 'string'
       data = $this.data('axa.menu')
 
       if not data
-        data = new Menu this, options
+        data = new SlidingMenu this, options
         $this.data 'axa.menu', data
 
       if action == 'level'
         data.level(params[1])
 
   # Plugin registration
-  $.fn.menu = Plugin
-  $.fn.menu.Constructor = Menu
+  $.fn.slidingMenu = Plugin
+  $.fn.slidingMenu.Constructor = SlidingMenu
 
   # DATA-API
   $(window).on 'load', () ->
-    $('[data-menu="compact"]').each () ->
+    $('[data-menu="sliding"]').each () ->
       $menu = $(this)
       data = $menu.data()
 

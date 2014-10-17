@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
-    <title>arrow-bottom</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="arrow-bottom" sketch:type="MSArtboardGroup" fill="#000000">
-            <g sketch:type="MSLayerGroup" transform="translate(11.000000, 26.000000)" id="bottom">
-                <path d="M39.7150556,47.798026 L0.188722222,11.0431169 L11.0292778,0.513662338 L39.6316667,28.3623896 L68.256,-0.188883117 L79.1931111,10.0525714 L39.7150556,47.798026 L39.7150556,47.798026 Z" sketch:type="MSShapeGroup"></path>
-            </g>
-        </g>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2048"
+   height="2048"
+   viewBox="0 0 2048 2048"
+   version="1.1"
+   id="svg4011"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="uF005-arrow-bottom.svg">
+  <metadata
+     id="metadata4024">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     id="namedview4022"
+     showgrid="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.417193"
+     inkscape:cx="844.73305"
+     inkscape:cy="299.75782"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4011">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4026"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="128px"
+       spacingy="128px" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-225.31538,-256"
+       id="guide4028" />
+  </sodipodi:namedview>
+  <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4013">arrow-bottom</title>
+  <desc
+     id="desc4015">Created with Sketch.</desc>
+  <defs
+     id="defs4017" />
+  <g
+     id="Page-1"
+     sketch:type="MSPage"
+     style="fill:none;stroke:none"
+     transform="matrix(35.308383,0,0,35.308383,-711.05986,-127.07846)">
+    <g
+       id="arrow-bottom"
+       sketch:type="MSArtboardGroup"
+       style="fill:#000000">
+      <path
+         d="M 49.157889,68.852727 20.138556,42.052273 28.097444,34.374546 49.096667,54.680909 70.112,33.862273 78.141778,41.33 49.157889,68.852727 l 0,0 z"
+         id="bottom"
+         sketch:type="MSShapeGroup"
+         inkscape:connector-curvature="0" />
     </g>
+  </g>
 </svg>

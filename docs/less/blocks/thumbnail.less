@@ -1,0 +1,24 @@
+@import 'style/variables';
+@import 'style/mixins/respond';
+
+.thumbnail {
+  display: block;
+  padding: 2px;
+
+  border: 1px solid @color-ui-delta;
+
+  transition: border-color @transition-duration-fast @transition-fn-fancy;
+
+  &:hover {
+    border-color: @color-ui-epsilon;
+  }
+
+  .respond(medium, {
+    padding: 5px;
+  });
+}
+
+.thumbnail__media {
+  max-width: 100%;
+  height: auto;
+}
