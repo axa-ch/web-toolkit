@@ -16,43 +16,8 @@
   padding: 0;
 }
 
-.menu--mobile {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  height: 100%;
-
-  .menu__level {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-
-    display: block;
-    width: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 100%;
-
-    visibility: hidden;
-    transition: left 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility 0.5s;
-
-    &.is-previous {
-    }
-
-    &.is-current {
-      visibility: visible;
-    }
-  }
-
-  .menu__item {
-    float: none;
-
-    &:first-of-type .menu__link {
-      border-top: none;
-    }
-  }
+.menu--collapsing,
+.menu--sliding {
 
   .menu__link {
     display: block;
@@ -63,6 +28,7 @@
     text-decoration: none;
     font-size: 16px;
     line-height: 1.4;
+    background-color: @color-ui-epsilon;
     color: @color-text-delta;
 
     overflow: hidden;
@@ -93,7 +59,6 @@
     }
   }
 
-  // TODO: should this one be called .is-back?
   .menu__link--back {
     .icon;
     .icon--arrow-left;
@@ -114,6 +79,110 @@
     &:active {
       background-color: darken(@color-ui-epsilon, 15%);
       color: white;
+    }
+  }
+}
+
+.menu--collapsing {
+  // Level 1
+  .menu__level .menu__link {
+    background: #22336a;
+  }
+
+  .menu__level .menu__link.is-active {
+    background: #040b20;
+  }
+
+  // Level 2
+  .menu__level .menu__level .menu__link {
+    padding-left: 50px;
+    background-color: #22336a;
+  }
+
+  .menu__level .menu__level .menu__link.is-active {
+    background-color: #131f44;
+  }
+
+  // Level 3
+  .menu__level .menu__level .menu__level .menu__link {
+    background-color: #f3f6fc;
+    color: #22336a;
+  }
+
+  .menu__level .menu__level .menu__level .menu__link.is-active {
+    background-color: #eaf5fe;
+  }
+
+  .menu__level {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    width: 100%;
+    max-height: 0px;
+
+    visibility: hidden;
+    overflow: hidden;
+
+    // Watch out: prevent delayed closing with a bezier
+    transition: max-height @transition-duration cubic-bezier(0, 1.05, 0, 1), visibility @transition-duration;
+  }
+
+  .menu__level.is-open {
+    visibility: visible;
+
+    // Watch out: work around, since no transition to `height: auto` is possible
+    max-height: 3999px;
+  }
+
+  .menu__item {
+    float: none;
+
+    &:first-of-type .menu__link {
+      border-top: none;
+    }
+  }
+
+  .menu__link.is-parent.is-active {
+    .icon--arrow-bottom;
+  }
+}
+
+.menu--sliding {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  transition: height @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
+
+  .menu__level {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: block;
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 100%;
+
+    visibility: hidden;
+    transition: left @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
+
+    &.is-previous {
+    }
+
+    &.is-current {
+      visibility: visible;
+    }
+  }
+
+  .menu__item {
+    float: none;
+
+    &:first-of-type .menu__link {
+      border-top: none;
     }
   }
 }

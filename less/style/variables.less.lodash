@@ -10,6 +10,8 @@
 @font-size-large: 16px;
 @font-size-small: 13px;
 
+@transition-duration: 0.5s;
+
 @images-path: '../images';
 
 @transition-fn-fancy: cubic-bezier(0.6, 0.0, 0.735, 0.045);
