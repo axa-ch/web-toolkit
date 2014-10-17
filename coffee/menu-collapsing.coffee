@@ -2,7 +2,8 @@
 
   # Public class definition
   class CollapsingMenu
-    @DEFAULTS
+    @DEFAULTS:
+      exclusive: false
 
     constructor: (element, options) ->
       @$element = $ element
@@ -23,12 +24,18 @@
 
       throw new Error 'Provided level not in menu!' if not level
 
+      parentLinks = level.parentsUntil(@$element, '.menu__link')
+      parentLevels = level.parentsUntil(@$element, '.menu__level')
+
       shouldOpen = not level.hasClass('is-open')
 
-      level.toggleClass('is-open', shouldOpen)
-      level.siblings('.menu__link').toggleClass('is-active', shouldOpen)
+      if shouldOpen and @options.exclusive
+        @$element.find('.menu__level').not(parentLevels)
+          .removeClass('is-open')
+          .siblings('.menu__link').removeClass('is-active')
 
-      level.parentsUntil(@$element, '.menu__link').toggle('is-active')
+      level.toggleClass('is-open', shouldOpen)
+        .siblings('.menu__link').toggleClass('is-active', shouldOpen)
 
   # Plugin definition
   Plugin = (option) ->
