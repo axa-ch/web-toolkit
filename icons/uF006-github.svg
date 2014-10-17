@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
-    <title>github</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="github" sketch:type="MSArtboardGroup" fill="#000000">
-            <g sketch:type="MSLayerGroup" transform="translate(1.000000, 3.000000)" id="Shape">
-                <path d="M48.7827194,-0.698529412 C21.6331029,-0.698529412 -0.379450775,21.2677794 -0.379450775,48.3603589 C-0.379450775,70.0392133 13.705511,88.4243191 33.2424806,94.9099616 C35.700013,95.3591571 36.5972226,93.8439848 36.5972226,92.5504399 C36.5972226,91.3826084 36.5521892,87.5140468 36.5281843,83.4178212 C22.8573562,86.3821471 19.9677344,77.632801 19.9677344,77.632801 C17.7293194,71.9675534 14.5095813,70.4584177 14.5095813,70.4584177 C10.041681,67.4161917 14.8485314,67.476078 14.8485314,67.476078 C19.7845285,67.8173822 22.3832101,72.530485 22.3832101,72.530485 C26.7701656,80.0282545 33.8935913,77.8603691 36.6901698,76.602756 C37.1370462,73.4407573 38.4093094,71.2728719 39.8108153,70.0511906 C28.8975817,68.8115913 17.4172548,64.6015338 17.4172548,45.8031643 C17.4172548,40.4432891 19.3346755,36.0716822 22.4732767,32.6371768 C21.9721491,31.391541 20.279799,26.3999907 22.9593293,19.6478779 C22.9593293,19.6478779 27.0822302,18.3303785 36.4800783,24.6783304 C40.398841,23.5854286 44.6027827,23.0464516 48.7826233,23.0284378 C52.9594874,23.0464516 57.1663097,23.5913694 61.0912176,24.6842711 C70.471206,18.3303785 74.6000602,19.6538187 74.6000602,19.6538187 C77.2886163,26.411968 75.5962663,31.3974817 75.092162,32.6371768 C78.2427657,36.0716822 80.1452073,40.4433849 80.1452073,45.8031643 C80.1452073,64.6494428 68.6468286,68.7995182 57.694611,70.0152587 C59.4650252,71.5363717 61.0313012,74.5187114 61.0313012,79.0940276 C61.0313012,85.6516296 60.9652395,90.9395453 60.9652395,92.5564765 C60.9652395,93.8619986 61.8593765,95.3890523 64.3499397,94.9099616 C83.8720262,88.4123418 97.9448895,70.027236 97.9448895,48.3603589 C97.9448895,21.2677794 75.9323358,-0.698529412 48.7827194,-0.698529412 L48.7827194,-0.698529412 Z" sketch:type="MSShapeGroup"></path>
-            </g>
-        </g>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2048"
+   height="2048"
+   viewBox="0 0 2048 2048"
+   version="1.1"
+   id="svg4047"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="uF006-github.svg">
+  <metadata
+     id="metadata4062">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     id="namedview4060"
+     showgrid="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.295"
+     inkscape:cx="599.64601"
+     inkscape:cy="984.85497"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4047">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4064"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="128px"
+       spacingy="128px" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-213.55932,-256"
+       id="guide4066" />
+  </sodipodi:namedview>
+  <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4049">github</title>
+  <desc
+     id="desc4051">Created with Sketch.</desc>
+  <defs
+     id="defs4053" />
+  <g
+     id="Icons"
+     sketch:type="MSPage"
+     style="fill:none;stroke:none"
+     transform="matrix(25.200546,0,0,25.200546,-244.10187,35.950892)">
+    <g
+       id="github"
+       sketch:type="MSArtboardGroup"
+       style="fill:#000000">
+      <g
+         sketch:type="MSLayerGroup"
+         transform="translate(10,11)"
+         id="Shape">
+        <path
+           d="m 40.320411,-0.58088235 c -22.439989,0 -40.63403868,18.26672035 -40.63403868,40.79633835 0,18.027679 11.64165168,33.316346 27.78955568,38.70967 2.031226,0.373541 2.772797,-0.886444 2.772797,-1.962129 0,-0.971144 -0.03722,-4.188158 -0.05706,-7.594493 -11.299357,2.465071 -13.687718,-4.810701 -13.687718,-4.810701 -1.850119,-4.711101 -4.511331,-5.966066 -4.511331,-5.966066 -3.6928562,-2.529851 0.280153,-2.480051 0.280153,-2.480051 4.079752,0.283821 6.227642,4.203138 6.227642,4.203138 3.625953,6.234988 9.513683,4.43222 11.82514,3.386415 0.369358,-2.629451 1.420922,-4.432219 2.57931,-5.448144 -9.020122,-1.030824 -18.508964,-4.53182 -18.508964,-20.164148 0,-4.457159 1.584807,-8.092495 4.178957,-10.948558 -0.414197,-1.035844 -1.812976,-5.186713 0.401737,-10.801627 0,0 3.407704,-1.095605 11.175313,4.183218 3.238978,-0.908834 6.713664,-1.357036 10.168431,-1.372016 3.452306,0.01498 6.929373,0.468122 10.173429,1.376956 7.752848,-5.283763 11.165472,-4.183218 11.165472,-4.183218 2.222174,5.619934 0.823395,9.765783 0.406738,10.796687 2.60407,2.856063 4.176496,6.491478 4.176496,10.948558 0,15.672169 -9.503762,19.123284 -18.556105,20.134268 1.463302,1.264926 2.757877,3.744977 2.757877,7.549713 0,5.453164 -0.0546,9.850483 -0.0546,11.195089 0,1.085645 0.739031,2.355511 2.797558,1.957109 16.135602,-5.403284 27.767254,-20.691951 27.767254,-38.70967 0,-22.529618 -18.194049,-40.79633835 -40.634038,-40.79633835 l 0,0 z"
+           sketch:type="MSShapeGroup"
+           id="path4058"
+           inkscape:connector-curvature="0" />
+      </g>
     </g>
+  </g>
 </svg>

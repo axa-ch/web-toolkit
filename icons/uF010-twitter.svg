@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="2048"
+   width="2048"
+   id="svg4737"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="uF010-twitter.svg">
+  <metadata
+     id="metadata4745">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4743" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     id="namedview4741"
+     showgrid="true"
+     inkscape:zoom="0.236"
+     inkscape:cx="428.5715"
+     inkscape:cy="500"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4737" />
+  <path
+     d="M 1706.6667,898.66667 Q 1632,932 1545.3333,944 q 90.6667,-53.33333 124,-156 -86.6666,50.66667 -178.6666,68 -81.3334,-88 -204,-88 -116,0 -198,82 -82,82 -82,198 0,38.6667 6.6666,64 -171.99997,-9.3333 -322.66663,-86.6667 Q 540,948 434.66667,818.66667 396,885.33333 396,960 396,1112 517.33333,1193.3333 454.66667,1192 384,1158.6667 v 2.6666 q 0,100 66.66667,178 66.66666,78 164,96.6667 -38.66667,10.6667 -68,10.6667 -17.33334,0 -52,-5.3334 28,84 99.33333,138.6667 71.33333,54.6667 162,56 -154.66667,120 -348,120 -34.66667,0 -66.66667,-4 197.33334,125.3333 429.33334,125.3333 149.33333,0 280.00003,-47.3333 130.6666,-47.3333 224,-126.6667 Q 1368,1624 1435.3333,1520.6667 q 67.3334,-103.3334 100,-216 Q 1568,1192 1568,1080 q 0,-24 -1.3333,-36 84,-60 140,-145.33333 z M 2048,640 v 1280 q 0,158.6667 -112.6667,271.3333 Q 1822.6667,2304 1664,2304 H 384 Q 225.33333,2304 112.66667,2191.3333 0,2078.6667 0,1920 V 640 Q 0,481.33333 112.66667,368.66667 225.33333,256 384,256 h 1280 q 158.6667,0 271.3333,112.66667 Q 2048,481.33333 2048,640 z"
+     id="path4739"
+     inkscape:connector-curvature="0" />
+</svg>
