@@ -19,3 +19,43 @@ template: page.jade
       p
         a(href=config.repository.url, title=config.repository.name).
           View project on GitHub
+
+.l-row
+  .l-primary
+    h1#examples Examples
+      a.anchor--docs(href="#examples")
+
+    p.lead.
+      Need a starting point or a simple showcase of the things possible
+      with the Web Style Guide? Check out the examples.
+
+    .l-row
+      .l-third
+        a.thumbnail(href="examples/page.html")
+          img.thumbnail__media(src="images/example-simple.png", alt="")
+        h3 Basic template
+        p.
+          Basic template with a sliding mobile menu. Make sure your
+          browser size is small enough.
+
+    h1#license License
+      a.anchor--docs(href="#license")
+
+    p.
+      The Web Style Guide is <code>Copyright 2014 AXA Versicherungen AG</code>.
+      All rights are reserved. Therefore it's forbidden to do any
+      of the following with the Web Style Guide without
+      permission by the legal copyright holder:
+
+    ul
+      li distribution
+      li modification
+      li sublicensing
+
+  .l-secondary
+    nav.nav.nav--side(data-spy="affix", data-offset-top="520")
+      ul.menu.menu--side
+        li.menu__item
+          a.menu__link(href='#examples') Examples
+        li.menu__item
+          a.menu__link(href='#license') License
