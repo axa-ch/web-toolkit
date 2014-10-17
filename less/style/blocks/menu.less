@@ -16,6 +16,22 @@
   padding: 0;
 }
 
+// TODO: Do styling
+.menu--tabs {
+  .menu__link {
+    display: block;
+    margin-right: 1px;
+    padding: 8px 20px;
+    background: @color-ui-alpha;
+    color: white;
+    text-decoration: none;
+
+    &.is-active {
+      background: @color-ui-beta;
+    }
+  }
+}
+
 .menu--collapsing,
 .menu--sliding {
 
