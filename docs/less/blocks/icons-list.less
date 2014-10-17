@@ -12,8 +12,13 @@
   &__item {
     float: left;
 
-    width: 25%;
-    padding: 10px;
+    width: 50%;
+    height: 120px;
+    padding: 20px 10px 10px 10px;
+
+    .respond(large, {
+      width: 25%;
+    });
 
     line-height: 1.4;
     text-align: center;
