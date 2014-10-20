@@ -1,0 +1,96 @@
+---
+title: Getting Started
+slug: getting-started
+template: page.jade
+---
+
+.masthead.masthead--docs
+  .l-row
+    .l-full
+      h1 Getting Started
+
+      p.
+        The AXA Switzerland style guide (currently vTBD) is hosted on github.
+
+      p
+        a(href=config.urls.releases, title="See the releases on GitHub").button.
+          Download Style Guide
+        = ' '
+        a(href=config.repository.url, title=config.repository.name).button.button--secondary.
+          View project on GitHub
+
+.l-row
+
+  h1 Getting the assets
+
+  p.
+    There are two easy ways to get started with the style guide. Each of them requires you to download the archive from above.
+
+  p.
+    You can use the compiled CSS and JavaScript or you can use the source LESS and CoffeScript.
+    We recommend using the source files since you gain much flexibility.
+
+.l-row
+  .l-half
+    h2 Using the compiled CSS and JavaScript
+    p.
+      Copy the css/, js/, images/ and fonts/ folder from the downloaded style guide release to your project and use it as you like. See the "Basic template" section for further information.
+    p.note.
+      Note that the resources must be available from the web
+      in the same hierarchy as provided by the style guide.
+      (For example the images/ folder has to be in the same location
+      as the css/ folder since images are referenced in the css files using a prefix of ../images/).
+
+  .l-half
+    h2 Using the source files (LESS, CoffeScript)
+    p.
+      Compiling the source files on your own is a little trickier than using the compiled CSS and JavaScript but provides you with much more flexibility.
+
+    h3 Compiling the LESS files
+    p.
+      To have the flexibility of customizing LESS variables of the style guide (see section TODO) and use the provided mixins you may want to include the LESS files into your applications LESS file.
+
+    p.
+      You could also compile the style guide on its own, but that would not make any sense since you could use the compiled version in this case. For instructions on building the style guide on its own see the README.md file.
+
+    p.note
+      We recommend using the official LESS compiler provided at lesscss.org since the style guide is tested with this compiler.
+
+    h3 Compiling the CoffeeScript files
+    p.
+      Since you do not gain anything by compiling the CoffeeScript files on your own we do not recommend it. Simply use the JavaScript files provided.
+
+.l-row
+  h1 Basic template
+
+  pre.hljs: code.html
+    :highlight
+      <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+            <title>Style guide - Basic template</title>
+
+            <!-- CSS -->
+            <!-- reference pre compiled or custom css here depending on whether you use pre-build LESS files or not -->
+            <link href="css/style.min.css" rel="stylesheet">
+
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!-- TODO: Review license agreements and bundle them with the style guide -->
+            <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+              <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+          </head>
+          <body>
+            <h1>Hello, world!</h1>
+
+            <!-- jQuery (necessary for the style guide's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="js/style-all.min.js"></script>
+          </body>
+        </html>
