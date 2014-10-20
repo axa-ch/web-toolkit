@@ -62,19 +62,19 @@ module.exports = exports = function (options) {
       var html = '<div class="sample" >\
                     <ul class="sample__header menu menu--tabs tab-panel__header" >\
                       <li class="menu__item">\
-                        <a href="#sample_{{sampleCount}}_sample" data-toggle="tab" class="menu__link" >Sample</a>\
+                        <a href="#" data-target="#sample_{{sampleCount}}_sample" data-toggle="tab" class="menu__link is-active" >Sample</a>\
                       </li>\
                       <li class="menu__item">\
-                        <a href="#sample_{{sampleCount}}_html" data-toggle="tab" class="menu__link" >HTML</a>\
+                        <a href="#" data-target="#sample_{{sampleCount}}_html" data-toggle="tab" class="menu__link" >HTML</a>\
                       </li>\
                       <li class="menu__item">\
-                        <a href="#sample_{{sampleCount}}_jade" data-toggle="tab" class="menu__link" >Jade</a>\
+                        <a href="#" data-target="#sample_{{sampleCount}}_jade" data-toggle="tab" class="menu__link" >Jade</a>\
                       </li>\
                     </ul>\
-                    <div class="sample__body" >\
-                      <div id="sample_{{sampleCount}}_sample" >{{sample}}</div>\
-                      <div id="sample_{{sampleCount}}_html" ><pre class="hljs" ><code class="html" >{{html}}</code></pre></div>\
-                      <div id="sample_{{sampleCount}}_jade" ><pre class="hljs" ><code class="jade" >{{jade}}</code></pre></div>\
+                    <div class="sample__body tab-panel__content" >\
+                      <div id="sample_{{sampleCount}}_sample" class="tab-panel__tab is-active" >{{sample}}</div>\
+                      <div id="sample_{{sampleCount}}_html" class="tab-panel__tab" ><pre class="hljs" ><code class="html" >{{html}}</code></pre></div>\
+                      <div id="sample_{{sampleCount}}_jade" class="tab-panel__tab" ><pre class="hljs" ><code class="jade" >{{jade}}</code></pre></div>\
                     </div>\
                   </div>';
 
