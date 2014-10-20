@@ -26,7 +26,7 @@
       @activate @$target, @$target.parent().closest('.tab-panel__content')
 
     activate: ($element, $container) ->
-      $active = $container.find('.is-active')
+      $active = $container.find('.is-active').not($container.find('.tab-panel .is-active'))
 
       $active.removeClass('is-active')
 
