@@ -4,6 +4,12 @@ slug: buttons
 collection: visuals
 ---
 
-a.button(href="#button-one") Button
-= ' '
-a.button.button--secondary(href="#button-two") 2<sup>nd</sup> button
+.example
+  a.button(href="#button-one") Primary Action
+  = ' '
+  a.button.button--secondary(href="#button-two") Secondary Action
+
+pre.highlight.hljs: code.html
+  :highlight
+    <a href="#" class="button">Primary Button</a>
+    <a href="#" class="button button--secondary">Secondary Action</a>
