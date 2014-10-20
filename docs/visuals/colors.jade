@@ -10,5 +10,5 @@ each category, categoryName in colors
     each color, colorName in category
       .color-palette__swatch
         span.color-palette__swatch__color(style='background: ' + color + ';')
-        p.color-palette__swatch__text #{color}
-        p.color-palette__swatch__text @color-#{categoryName}-#{colorName}
+        p.color-palette__swatch__variable @color-#{categoryName}-#{colorName}
+        p.color-palette__swatch__code #{color}
