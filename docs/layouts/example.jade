@@ -3,16 +3,15 @@ html
   head
     title= title
     link(rel="stylesheet", href="../css/style.css")
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(type='text/javascript', src='../js/style.all.js')
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0")
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
-
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-    script(type='text/javascript', src='../js/style.all.js')
 
   body.site
     .site__page
@@ -46,9 +45,9 @@ html
               .header__meta__social
                 ul.menu.menu--social
                   li.menu__item
-                    a(href='http://facebook.com') Facebook
+                    a(href='#facebook').icon.icon--facebook
                   li.menu__item
-                    a(href='http://twitter.com') Twitter
+                    a(href='#twitter').icon.icon--twitter
               .header__meta__welcome
                 ul
                   li.header__meta__welcome__item Welcome to AXA
@@ -58,6 +57,8 @@ html
       nav.l-holder
         .l-row
           ul.menu.menu--main
+            li.menu__item
+              a(href='#0').menu__link.menu__link--home
             li.menu__item
               a(href='#1').menu__link Menu Item 1
             li.menu__item
@@ -120,7 +121,7 @@ html
                   span.copyline-menu__text AXA 2014 ©
 
     .site__mobile-menu
-      nav.menu.menu--mobile(data-menu="compact")
+      nav.menu.menu--sliding(data-menu="sliding")
         ul#first.menu__level
 
           li.menu__item.is-parent

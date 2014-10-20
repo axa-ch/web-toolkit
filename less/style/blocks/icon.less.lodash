@@ -34,3 +34,16 @@
   }
 }
 <% }); %>
+
+
+.icon--twitter {
+  color: #55acee;
+}
+
+.icon--facebook {
+  color: #3d539e;
+}
+
+.icon--github {
+  color: black;
+}

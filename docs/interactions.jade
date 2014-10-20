@@ -4,20 +4,21 @@ slug: interactions
 template: page.jade
 ---
 
-.l-holder
-  .l-row
-    .l-full
+.l-row
+  .l-full
+    h1 Interactions
 
-      h1 Interactions
+.l-row
+  .l-primary
+    each interaction in interactions
+      div.block
+        h2(id=interaction.slug)= interaction.title
+          a(href='#' + interaction.slug).anchor--docs
+        div.block!= interaction.contents
 
-      nav
-        ul.menu.menu--main.menu--docs-submenu
-          each interaction in interactions
-            li.menu__item
-              a(href='#' + interaction.slug).menu__link= interaction.title
-
-      each interaction in interactions
-        div.block
-          h2(id=interaction.slug)= interaction.title
-            a(href='#' + interaction.slug).anchor--docs
-          div.block!= interaction.contents
+  .l-secondary
+    nav.nav.nav--side(data-spy="affix", data-offset-top="230")
+      ul.menu.menu--side
+        each interaction in interactions
+          li.menu__item
+            a.menu__link(href='#' + interaction.slug)= interaction.title

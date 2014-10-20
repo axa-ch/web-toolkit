@@ -10,5 +10,8 @@
   "repository": {
     "name": "davidknezic/axa-style-guide",
     "url": "https://github.com/davidknezic/axa-style-guide"
+  },
+  "urls": {
+    "releases": "https://github.com/davidknezic/axa-style-guide/releases"
   }
 }
