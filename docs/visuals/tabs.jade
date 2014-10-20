@@ -5,15 +5,17 @@ collection: visuals
 order: 9
 ---
 
-ul.menu.menu--tabs.tab-panel__header
-  li.menu__item
-    a(href='#', data-toggle='tab', data-target='#tab_a').menu__link.is-active Tab A
-  li.menu__item
-    a(href='#', data-toggle='tab', data-target='#tab_b').menu__link Tab B
-  li.menu__item
-    a(href='#', data-toggle='tab', data-target='#tab_c').menu__link Tab C
+:sample
+  .tab-panel
+    ul.menu.menu--tabs.tab-panel__header
+      li.menu__item
+        a(href='#', data-toggle='tab', data-target='#tab_a').menu__link.is-active Tab A
+      li.menu__item
+        a(href='#', data-toggle='tab', data-target='#tab_b').menu__link Tab B
+      li.menu__item
+        a(href='#', data-toggle='tab', data-target='#tab_c').menu__link Tab C
 
-.tab-panel__content
-  #tab_a.tab-panel__tab.is-active A
-  #tab_b.tab-panel__tab B
-  #tab_c.tab-panel__tab C
+    .tab-panel__content
+      #tab_a.tab-panel__tab.is-active A
+      #tab_b.tab-panel__tab B
+      #tab_c.tab-panel__tab C

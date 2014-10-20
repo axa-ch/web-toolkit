@@ -59,7 +59,7 @@ module.exports = exports = function (options) {
     // jade filters
     jade.registerFilter('sample', function(jade_lang, jade_runtime, jade_filters) {
       var sampleCount = 0;
-      var html = '<div class="sample" >\
+      var html = '<div class="sample tab-panel" >\
                     <ul class="sample__header menu menu--tabs tab-panel__header" >\
                       <li class="menu__item">\
                         <a href="#" data-target="#sample_{{sampleCount}}_sample" data-toggle="tab" class="menu__link is-active" >Sample</a>\
