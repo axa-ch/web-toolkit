@@ -13,11 +13,10 @@ template: page.jade
         on the web.
 
       p
-        a(href=config.urls.releases, title="See the releases on GitHub").
+        a(href=config.urls.releases, title="See the releases on GitHub").button.
           Download Style Guide
-
-      p
-        a(href=config.repository.url, title=config.repository.name).
+        = ' '
+        a(href=config.repository.url, title=config.repository.name).button.button--secondary.
           View project on GitHub
 
 .l-row
