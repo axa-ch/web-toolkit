@@ -12,6 +12,8 @@ module.exports = exports = function (options) {
 
   return function (cb) {
     var readJSONFile = require('../lib/readJSONFile');
+    var sampleJadeFilter = require('../lib/sampleJadeFilter');
+
     var Metalsmith = require('metalsmith');
     var collections = require('metalsmith-collections');
     var templates = require('metalsmith-templates');
@@ -23,6 +25,9 @@ module.exports = exports = function (options) {
     var define = require('metalsmith-define');
     var assets = require('metalsmith-assets');
     var autoprefixer = require('metalsmith-autoprefixer');
+
+    // Jade filters
+    jade.registerFilter('sample', sampleJadeFilter);
 
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);
@@ -55,44 +60,6 @@ module.exports = exports = function (options) {
       source: './dist/js',
       destination: './js'
     }));
-
-    // jade filters
-    jade.registerFilter('sample', function(jade_lang, jade_runtime, jade_filters) {
-      var sampleCount = 0;
-      var html = '<div class="sample tab-panel" >\
-                    <ul class="sample__header menu menu--tabs tab-panel__header" >\
-                      <li class="menu__item">\
-                        <a href="#" data-target="#sample_{{sampleCount}}_sample" data-toggle="tab" class="menu__link is-active" >Sample</a>\
-                      </li>\
-                      <li class="menu__item">\
-                        <a href="#" data-target="#sample_{{sampleCount}}_html" data-toggle="tab" class="menu__link" >HTML</a>\
-                      </li>\
-                      <li class="menu__item">\
-                        <a href="#" data-target="#sample_{{sampleCount}}_jade" data-toggle="tab" class="menu__link" >Jade</a>\
-                      </li>\
-                    </ul>\
-                    <div class="sample__body tab-panel__content" >\
-                      <div id="sample_{{sampleCount}}_sample" class="tab-panel__tab is-active" >{{sample}}</div>\
-                      <div id="sample_{{sampleCount}}_html" class="tab-panel__tab" ><pre class="hljs" ><code class="html" >{{html}}</code></pre></div>\
-                      <div id="sample_{{sampleCount}}_jade" class="tab-panel__tab" ><pre class="hljs" ><code class="jade" >{{jade}}</code></pre></div>\
-                    </div>\
-                  </div>';
-
-      return function(text) {
-
-        sampleCount += 1;
-
-        var sample = jade_lang.render(text, {pretty: true});
-        // Cut off first/last blank lines
-        sample = sample.replace(/^\n+|\s+$/g, '');
-        var src_html = jade_filters('highlight', sample);
-        var src_jade = jade_filters('highlight', text);
-        // Cut off first/last blank lines
-        src_jade = src_jade.replace(/^\n+|\s+$/g, '');
-
-        return html.replace(/{{sampleCount}}/g, sampleCount).replace(/{{sample}}/, sample).replace(/{{html}}/, src_html).replace(/{{jade}}/, src_jade);
-      }
-    });
 
     [
       'visuals',
