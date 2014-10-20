@@ -1,17 +1,19 @@
 {
-  "description": "One great live styleguide!",
+  "description": "AXA Switzerland Web Style Guide",
   "keywords": [
-    "great",
-    "live",
+    "axa",
+    "switzerland",
+    "versicherungen",
+    "web",
     "style",
     "guide"
   ],
-  "author": "me and my friends",
+  "author": "AXA Versicherungen AG",
   "repository": {
-    "name": "davidknezic/axa-style-guide",
-    "url": "https://github.com/davidknezic/axa-style-guide"
+    "name": "axa-ch/style-guide",
+    "url": "https://github.com/axa-ch/style-guide"
   },
   "urls": {
-    "releases": "https://github.com/davidknezic/axa-style-guide/releases"
+    "releases": "https://github.com/axa-ch/style-guide/releases"
   }
 }
