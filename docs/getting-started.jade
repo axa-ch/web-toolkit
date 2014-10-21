@@ -21,6 +21,13 @@ template: page.jade
 
 .l-row
 
+
+  p.callout
+    | The aim of the style guide is to help you building web apps with ease. If you strugle using the assets or face any other problems please feel free to file an issue
+    != ' '
+    a(href=config.repository.url) on github
+    | .
+
   h1 Getting the assets
 
   p.
@@ -28,7 +35,7 @@ template: page.jade
 
   p.
     You can use the compiled CSS and JavaScript or you can use the source LESS and CoffeScript.
-    We recommend using the source files since you gain much flexibility.
+    We recommend using the source files since it provides you much more flexibility.
 
 .l-row
   .l-half
@@ -53,24 +60,46 @@ template: page.jade
     p.
       You could also compile the style guide on its own, but that would not make any sense since you could use the compiled version in this case. For instructions on building the style guide on its own see the README.md file.
 
-    p.note
-      We recommend using the official LESS compiler provided at lesscss.org since the style guide is tested with this compiler.
+    p.callout
+      | We recommend using the official LESS compiler provided at
+      != ' '
+      a(href='http://lesscss.org') lesscss.org
+      != ' '
+      | since the style guide is tested with this compiler.
 
     h3 Compiling the CoffeeScript files
     p.
       Since you do not gain anything by compiling the CoffeeScript files on your own we do not recommend it. Simply use the JavaScript files provided.
 
+    h3 Copying the other assets
+    p.
+      Make sure to copy the assets from the images/ and fonts/ folder to a location available from the web. See the section "Compiling the LESS files" on how to set the URL root for assets.
+
 .l-row
   h1 Basic template
 
+  p.
+    The basic template below should provide you a starting point for your next web app. See the comments in the template itself for any explanations.
+
   pre.hljs: code.html
     :highlight
+      <!-- Always use an HTML 5 doctype. Note that HTML 5 is NO LONGER XML. You do NOT need to explicitly close self closing tags. -->
       <!DOCTYPE html>
+        <!-- The lang attribute helps screen readers having the right accent and google translate/chrome to propose a proper translation.-->
         <html lang="en">
           <head>
+            <!-- Set the contents character encoding. Please always use utf-8. Ensure your web server delivers content utf-8 encoded. -->
             <meta charset="utf-8">
+
+            <!-- Force IE to NOT use compatibility mode -->
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+            <!-- We want to have the viewport to have the width of the device (This in fact includes some normalizations. E.g. iPhone 5 (1136 x 640 @2x) will have a device-width of 320 and not 640 since it is 2x) -->
+            <!-- Further we do not want the user to use pinch'n'zoom since the site is responsive. Therefore we set min and max scale to 1.0 -->
+            <!-- (If you want to support pinch'n'zoom for some reason you may want to use initial-scale="1.0" instead) -->
+            <!-- TODO: We should have a recommendations page to collect these sort of things -->
             <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
             <title>Style guide - Basic template</title>
 
             <!-- CSS -->
