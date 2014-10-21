@@ -116,6 +116,13 @@ gulp.task('styles-generate-variables', function () {
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('styles-generate-grid', function () {
+  return gulp.src('./less/style/grid.less.lodash')
+    .pipe(template({}))
+    .pipe(rename('./less/style/grid.less'))
+    .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('styles-copy-colors', function () {
   return gulp.src('./less/colors.json')
     .pipe(rename('./colors.json'))
@@ -134,6 +141,7 @@ gulp.task('styles-autoprefix', function() {
 gulp.task('styles', function (cb) {
   runSequence(
     'styles-copy', 'styles-generate', 'styles-generate-variables',
+    'styles-generate-grid',
     'styles-copy-colors', 'styles-compile', 'styles-autoprefix', cb);
 });
 

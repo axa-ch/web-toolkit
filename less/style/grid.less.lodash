@@ -1,0 +1,76 @@
+// Attention: This file is generated automatically!
+
+<%
+	var columns = 12;
+	var sizes = [null, 'medium', 'large'];
+
+	var classes = [];
+%>
+
+@import 'style/variables';
+@import 'style/mixins/respond';
+@import 'style/mixins/clearfix';
+
+.l-holder {
+}
+
+.l-container {
+	.clearfix;
+
+	margin-right: auto;
+  margin-left: auto;
+
+	padding-left:  (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+}
+
+.l-row {
+	.clearfix;
+
+	margin-left:  (@grid-gutter-width / -2);
+  margin-right: (@grid-gutter-width / -2);
+}
+
+<% _.forEach(sizes, function (size) { %>
+		<% isMobile = !size %>
+		<% suffix = (isMobile ? '' : '-' + size) %>
+
+		<% _.range(1, columns + 1).forEach(function (column) {
+			classes.push(['.l-column', suffix, '-', column].join(''));
+		}); %>
+
+<% }); %>
+
+<%= classes.join(',\n') %> {
+	position: relative;
+
+	float: left;
+
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+
+	// Inner gutter via padding
+  padding-left: (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+}
+
+<% _.forEach(sizes, function (size) {  %>
+	<% isMobile = !size %>
+	<% suffix = (isMobile ? '' : '-' + size) %>
+
+	<% if (!isMobile) { %>
+	.respond(<%= size %>, {
+	<% } %>
+
+	<% _.range(1, columns + 1).forEach(function (column) { %>
+		.l-column<%= suffix %>-<%= column %> { width: percentage(<%= column %> / <%= columns %>)); }
+		.l-column<%= suffix %>-push-<%= column %> { left: percentage(<%= column %> / <%= columns %>)); }
+		.l-column<%= suffix %>-pull-<%= column %> { right: percentage(<%= column %> / <%= columns %>)); }
+		.l-column<%= suffix %>-offset-<%= column %> { margin-left: percentage(<%= column %> / <%= columns %>)); }
+	<% }) %>
+
+	<% if (!isMobile) { %>
+	});
+	<% } %>
+
+<% }) %>
