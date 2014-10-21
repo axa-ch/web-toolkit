@@ -1,10 +1,8 @@
 // Attention: This file is generated automatically!
 
 <%
-	var columns = 12;
-	var sizes = [null, 'medium', 'large'];
-
-	var classes = [];
+var columns = 12;
+var sizes = [null, 'medium', 'large'];
 %>
 
 @import 'style/variables';
@@ -15,62 +13,62 @@
 }
 
 .l-container {
-	.clearfix;
+  .clearfix;
 
-	margin-right: auto;
+  margin-right: auto;
   margin-left: auto;
 
-	padding-left:  (@grid-gutter-width / 2);
+  padding-left:  (@grid-gutter-width / 2);
   padding-right: (@grid-gutter-width / 2);
 }
 
 .l-row {
-	.clearfix;
+  .clearfix;
 
-	margin-left:  (@grid-gutter-width / -2);
+  margin-left:  (@grid-gutter-width / -2);
   margin-right: (@grid-gutter-width / -2);
 }
 
-<% _.forEach(sizes, function (size) { %>
-		<% isMobile = !size %>
-		<% suffix = (isMobile ? '' : '-' + size) %>
+<%
+var classes = [];
+_.forEach(sizes, function (size) {
+  var isMobile = !size;
+  var suffix = (isMobile ? '' : '-' + size);
 
-		<% _.range(1, columns + 1).forEach(function (column) {
-			classes.push(['.l-column', suffix, '-', column].join(''));
-		}); %>
-
-<% }); %>
+  _.range(1, columns + 1).forEach(function (column) {
+    classes.push(['.l-column', suffix, '-', column].join(''));
+  });
+});
+%>
 
 <%= classes.join(',\n') %> {
-	position: relative;
+  position: relative;
 
-	float: left;
+  float: left;
 
   // Prevent columns from collapsing when empty
   min-height: 1px;
 
-	// Inner gutter via padding
+  // Inner gutter via padding
   padding-left: (@grid-gutter-width / 2);
   padding-right: (@grid-gutter-width / 2);
 }
 
 <% _.forEach(sizes, function (size) {  %>
-	<% isMobile = !size %>
-	<% suffix = (isMobile ? '' : '-' + size) %>
+  <% isMobile = !size %>
+  <% suffix = (isMobile ? '' : '-' + size) %>
 
-	<% if (!isMobile) { %>
-	.respond(<%= size %>, {
-	<% } %>
+  <% if (!isMobile) { %>
+    .respond(<%= size %>, {
+  <% } %>
 
-	<% _.range(1, columns + 1).forEach(function (column) { %>
-		.l-column<%= suffix %>-<%= column %> { width: percentage(<%= column %> / <%= columns %>)); }
-		.l-column<%= suffix %>-push-<%= column %> { left: percentage(<%= column %> / <%= columns %>)); }
-		.l-column<%= suffix %>-pull-<%= column %> { right: percentage(<%= column %> / <%= columns %>)); }
-		.l-column<%= suffix %>-offset-<%= column %> { margin-left: percentage(<%= column %> / <%= columns %>)); }
-	<% }) %>
-
-	<% if (!isMobile) { %>
-	});
-	<% } %>
-
+  <% _.range(1, columns + 1).forEach(function (column) { %>
+    .l-column<%= suffix %>-<%= column %> { width: percentage(<%= column %> / <%= columns %>); }
+    .l-column<%= suffix %>-push-<%= column %> { left: percentage(<%= column %> / <%= columns %>); }
+    .l-column<%= suffix %>-pull-<%= column %> { right: percentage(<%= column %> / <%= columns %>); }
+    .l-column<%= suffix %>-offset-<%= column %> { margin-left: percentage(<%= column %> / <%= columns %>); }
+  <% }); %>
+  <% if (!isMobile) { %>
+    });
+  <% } %>
 <% }) %>
