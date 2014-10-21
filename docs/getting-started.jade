@@ -60,12 +60,8 @@ template: page.jade
     p.
       You could also compile the style guide on its own, but that would not make any sense since you could use the compiled version in this case. For instructions on building the style guide on its own see the README.md file.
 
-    p.callout
-      | We recommend using the official LESS compiler provided at
-      != ' '
-      a(href='http://lesscss.org') lesscss.org
-      != ' '
-      | since the style guide is tested with this compiler.
+    p.callout.
+      We recommend using the official LESS compiler provided at <a href='http://lesscss.org' >lesscss.org</a> since the style guide is tested with this compiler.
 
     h3 Compiling the CoffeeScript files
     p.
@@ -88,16 +84,13 @@ template: page.jade
         <!-- The lang attribute helps screen readers having the right accent and google translate/chrome to propose a proper translation.-->
         <html lang="en">
           <head>
-            <!-- Set the contents character encoding. Please always use utf-8. Ensure your web server delivers content utf-8 encoded. -->
+            <!-- Set the contents character encoding. See recommendations for explanations. -->
             <meta charset="utf-8">
 
-            <!-- Force IE to NOT use compatibility mode -->
+            <!-- Force IE to NOT use compatibility mode. See recommendations for explanations. -->
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-            <!-- We want to have the viewport to have the width of the device (This in fact includes some normalizations. E.g. iPhone 5 (1136 x 640 @2x) will have a device-width of 320 and not 640 since it is 2x) -->
-            <!-- Further we do not want the user to use pinch'n'zoom since the site is responsive. Therefore we set min and max scale to 1.0 -->
-            <!-- (If you want to support pinch'n'zoom for some reason you may want to use initial-scale="1.0" instead) -->
-            <!-- TODO: We should have a recommendations page to collect these sort of things -->
+            <!-- Mobile viewport. See recommendations for explanations. -->
             <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
             <title>Style guide - Basic template</title>

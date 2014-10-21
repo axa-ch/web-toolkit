@@ -1,0 +1,13 @@
+@import 'style/variables';
+
+.callout {
+  background: lighten(@color-ui-delta, 5%);
+  border: 1px solid darken(@color-ui-delta, 5%);
+  border-left: 3px solid @color-ui-alpha;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.callout--danger {
+  border-left-color: @color-ui-beta;
+}
