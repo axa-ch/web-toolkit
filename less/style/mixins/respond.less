@@ -1,17 +1,23 @@
-.respond(@device; @rules) when(@device = print) {
-    @media print {
-      @rules();
-    }
+@import 'style/variables';
+
+.respond(small; @rules) {
+  @rules();
 }
 
-.respond(@device; @rules) when(@device = medium) {
-    @media (min-width: @respond-medium-min-width) {
-      @rules();
-    }
+.respond(print; @rules) {
+  @media print {
+    @rules();
+  }
 }
 
-.respond(@device; @rules) when(@device = large) {
-    @media (min-width: @respond-medium-min-width) {
-      @rules();
-    }
+.respond(medium; @rules) {
+  @media (min-width: @respond-medium-min-width) {
+    @rules();
+  }
+}
+
+.respond(large; @rules) {
+  @media (min-width: @respond-medium-min-width) {
+    @rules();
+  }
 }
