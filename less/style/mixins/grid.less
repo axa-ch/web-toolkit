@@ -1,0 +1,49 @@
+@import 'style/variables';
+@import 'style/mixins/clearfix';
+@import 'style/mixins/respond';
+
+.container(@gutter: @grid-gutter-width) {
+  &:extend(.clearfix all);
+
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+}
+
+.make-row(@gutter: @grid-gutter-width) {
+  &:extend(.clearfix all);
+
+  margin-left: (@gutter / -2);
+  margin-right: (@gutter / -2);
+}
+
+.make-col(@columns; @size: small; @gutter: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  .respond(@size, {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  });
+}
+
+.make-col-offset(@columns; @size: small) {
+  .respond(@size, {
+    margin-left: percentage((@columns / @grid-columns));
+  });
+}
+
+.make-col-push(@columns; @size: small) {
+  .respond(@size, {
+    left: percentage((@columns / @grid-columns));
+  });
+}
+
+.make-col-pull(@columns; @size: small) {
+  .respond(@size, {
+    right: percentage((@columns / @grid-columns));
+  });
+}
