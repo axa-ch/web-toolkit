@@ -13,6 +13,9 @@
     "name": "axa-ch/style-guide",
     "url": "https://github.com/axa-ch/style-guide"
   },
+  "bugs": {
+    "url": "https://github.com/axa-ch/style-guide/issues"
+  },
   "urls": {
     "releases": "https://github.com/axa-ch/style-guide/releases"
   }
