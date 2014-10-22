@@ -12,6 +12,8 @@ module.exports = exports = function (options) {
 
   return function (cb) {
     var readJSONFile = require('../lib/readJSONFile');
+    var sampleJadeFilter = require('../lib/sampleJadeFilter');
+
     var Metalsmith = require('metalsmith');
     var collections = require('metalsmith-collections');
     var templates = require('metalsmith-templates');
@@ -23,6 +25,9 @@ module.exports = exports = function (options) {
     var define = require('metalsmith-define');
     var assets = require('metalsmith-assets');
     var autoprefixer = require('metalsmith-autoprefixer');
+
+    // Jade filters
+    jade.registerFilter('sample', sampleJadeFilter);
 
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);

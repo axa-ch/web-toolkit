@@ -19,118 +19,41 @@ order: 4
   The ``header__meta`` element is divided into an ``header__meta__upper`` and ``header__meta__lower`` element.
   The ``header__meta__upper`` element contains a ``header__meta__menu`` element and a ``header__meta__language`` element.
   The ``header__meta__lower`` element contains a ``header__meta__welcome`` element and a ``header__meta__social`` element.
-
-header.header.header--main
-  .header__mobile-trigger
-  .header__brand.brand
-    .brand__logo
-    .brand__tagline.brand__tagline--de
-  .header__meta
-    .header__meta__upper
-      .header__meta__language
-        ul.menu.menu--language
-          li.menu__item
-            a(href='#').menu__link DE
-          li.menu__item
-            a(href='#').menu__link FR
-          li.menu__item
-            a(href='#').menu__link IT
-          li.menu__item
-            a(href='#').menu__link EN
-      .header__meta__menu
-        ul.menu.menu--meta
-          li.menu__item.is-active
-            a(href='#').menu__link Individuals
-          li.menu__item
-            a(href='#').menu__link Small Business Insurance
-          li.menu__item
-            a(href='#').menu__link Business
-    .header__meta__lower
-      .header__meta__social
-        ul.menu.menu--social
-          li.menu__item
-            a(href='#facebook').icon.icon--facebook
-          li.menu__item
-            a(href='#twitter').icon.icon--twitter
-      .header__meta__welcome
-        ul
-          li.header__meta__welcome__item Welcome to AXA
-          li.header__meta__welcome__item
-            a(href='tel:0800809809') 0800 809 809
-
-pre.hljs
-  code.html
-    :highlight
-      <header class="header header--main">
-        <div class="header__mobile-trigger"></div>
-
-        <div class="header__brand brand">
-          <div class="brand__logo"></div>
-
-          <div class="brand__tagline brand__tagline--de"></div>
-        </div>
-
-        <div class="header__meta">
-          <div class="header__meta__upper">
-            <div class="header__meta__language">
-              <ul class="menu menu--language">
-                <li class="menu__item">
-                  <a href="#">DE</a>
-                </li>
-
-                <li class="menu__item">
-                  <a href="#">FR</a>
-                </li>
-
-                <li class="menu__item">
-                  <a href="#">IT</a>
-                </li>
-
-                <li class="menu__item">
-                  <a href="#">EN</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="header__meta__menu">
-              <ul class="menu menu--meta">
-                <li class="menu__item is-active">
-                  <a href="#">Individuals</a>
-                </li>
-
-                <li class="menu__item">
-                  <a href="#">Small Business Insurance</a>
-                </li>
-
-                <li class="menu__item">
-                  <a href="#">Business</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="header__meta__lower">
-            <div class="header__meta__social">
-              <ul class="menu menu--social">
-                <li class="menu__item">
-                  <a href="http://facebook.com">Facebook</a>
-                </li>
-
-                <li class="menu__item">
-                  <a href="http://twitter.com">Twitter</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="header__meta__welcome">
-              <ul>
-                <li class="header__meta__welcome__item">Welcome to AXA</li>
-
-                <li class="header__meta__welcome__item">
-                  <a href="tel:0800809809">0800 809 809</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </header>
+:sample
+  header.header.header--main
+    .header__mobile-trigger
+    .header__brand.brand
+      .brand__logo
+      .brand__tagline.brand__tagline--de
+    .header__meta
+      .header__meta__upper
+        .header__meta__language
+          ul.menu.menu--language
+            li.menu__item
+              a(href='#').menu__link DE
+            li.menu__item
+              a(href='#').menu__link FR
+            li.menu__item
+              a(href='#').menu__link IT
+            li.menu__item
+              a(href='#').menu__link EN
+        .header__meta__menu
+          ul.menu.menu--meta
+            li.menu__item.is-active
+              a(href='#').menu__link Individuals
+            li.menu__item
+              a(href='#').menu__link Small Business Insurance
+            li.menu__item
+              a(href='#').menu__link Business
+      .header__meta__lower
+        .header__meta__social
+          ul.menu.menu--social
+            li.menu__item
+              a(href='#facebook').icon.icon--facebook
+            li.menu__item
+              a(href='#twitter').icon.icon--twitter
+        .header__meta__welcome
+          ul
+            li.header__meta__welcome__item Welcome to AXA
+            li.header__meta__welcome__item
+              a(href='tel:0800809809') 0800 809 809

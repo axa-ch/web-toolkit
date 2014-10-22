@@ -14,31 +14,32 @@ p.
 
 h3 Example
 
-nav.menu.menu--collapsing(data-menu="collapsing", data-exclusive)
-  ul.menu__level.is-open
-    li.menu__item
-      a(href='#home').menu__link Home
-    li.menu__item
-      a(href='#private-individuals').menu__link.is-parent Private individuals
-      ul.menu__level
-        li.menu__item
-          a(href='#contents-insurance').menu__link Contents insurance
-    li.menu__item
-      a(href='#contact-and-service').menu__link.is-parent Contact and service
-      ul.menu__level
-        li.menu__item
-          a(href='#claims-and-benefits').menu__link Claims and benefits
-        li.menu__item
-          a(href='#contracts-and-documents').menu__link Contracts and documents
-        li.menu__item
-          a(href='#guides-and-other-services').menu__link.is-parent Guides and other services
-          ul.menu__level
-            li.menu__item
-              a(href='#guides').menu__link Guides
-            li.menu__item
-              a(href='#publications').menu__link Publications
-            li.menu__item.is-parent
-              a(href='#mobile-apps').menu__link Mobile apps
+:sample
+  nav.menu.menu--collapsing(data-menu="collapsing", data-exclusive)
+    ul.menu__level.is-open
+      li.menu__item
+        a(href='#home').menu__link Home
+      li.menu__item
+        a(href='#private-individuals').menu__link.is-parent Private individuals
+        ul.menu__level
+          li.menu__item
+            a(href='#contents-insurance').menu__link Contents insurance
+      li.menu__item
+        a(href='#contact-and-service').menu__link.is-parent Contact and service
+        ul.menu__level
+          li.menu__item
+            a(href='#claims-and-benefits').menu__link Claims and benefits
+          li.menu__item
+            a(href='#contracts-and-documents').menu__link Contracts and documents
+          li.menu__item
+            a(href='#guides-and-other-services').menu__link.is-parent Guides and other services
+            ul.menu__level
+              li.menu__item
+                a(href='#guides').menu__link Guides
+              li.menu__item
+                a(href='#publications').menu__link Publications
+              li.menu__item.is-parent
+                a(href='#mobile-apps').menu__link Mobile apps
 
 h3 Usage
 
