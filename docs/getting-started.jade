@@ -42,11 +42,10 @@ template: page.jade
     h2 Using the compiled CSS and JavaScript
     p.
       Copy the css/, js/, images/ and fonts/ folder from the downloaded style guide release to your project and use it as you like. See the "Basic template" section for further information.
-    p.note.
+    p.callout.
       Note that the resources must be available from the web
-      in the same hierarchy as provided by the style guide.
-      (For example the images/ folder has to be in the same location
-      as the css/ folder since images are referenced in the css files using a prefix of ../images/).
+      in the same hierarchy as provided by the style guide when using precompiled assets. For example the <code>images/</code> folder has to be in the same location
+      as the <code>css/</code> folder since images are referenced in the css with a relative path (<code>../images/</code>).
 
   .l-half
     h2 Using the source files (LESS, CoffeScript)
