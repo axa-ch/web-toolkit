@@ -13,6 +13,13 @@
   &:hover {
     background: darken(@color-ui-alpha, 10%);
   }
+
+  &.icon {
+    &::before {
+      font-size: 16px;
+      margin-right: 5px;
+    }
+  }
 }
 
 .button--secondary {
@@ -20,5 +27,17 @@
 
   &:hover {
     background: darken(@color-ui-beta, 20%);
+  }
+}
+
+.button--small {
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 5px 10px;
+
+  &.icon {
+    &::before {
+      font-size: 12px;
+    }
   }
 }

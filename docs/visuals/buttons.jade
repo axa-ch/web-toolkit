@@ -4,12 +4,33 @@ slug: buttons
 collection: visuals
 ---
 
-.example
-  a.button(href="#button-one") Primary Action
-  = ' '
-  a.button.button--secondary(href="#button-two") Secondary Action
+p.
+  There are tow types of buttons. The default/primary button and the secondary button.
 
-pre.highlight.hljs: code.html
-  :highlight
-    <a href="#" class="button">Primary Button</a>
-    <a href="#" class="button button--secondary">Secondary Action</a>
+p.
+  Use the default/primary button as the primary call to action (e.g. save, get a quote, ...) and the secondary as the secondary call to action (e.g. cancel, print offer, ...).
+
+:sample
+  a(href="#button-one").button Primary Action
+  = ' '
+  a(href="#button-two").button.button--secondary Secondary Action
+
+p.
+  You can add an icon to a button using the <code>.icon</code> and the <code>.icon--{icon-name}</code> classes. See the icon block for all available icons.
+
+:sample
+  a(href="#button-one").button.icon.icon--arrow-right Primary Action
+  = ' '
+  a(href="#button-two").button.button--secondary.icon.icon--arrow-left Secondary Action
+  = ' '
+  a(href="#button-two").button.button--secondary.icon.icon--arrow-left
+
+p.
+  If you need to have smaller buttons (e.g. in a table) use the <code>.button--small</code> modifier. (Also available for buttons with icons)
+
+:sample
+  a(href="#button-one").button.button--small Primary Action
+  = ' '
+  a(href="#button-two").button.button--small.button--secondary.icon.icon--home Secondary Action
+  = ' '
+  a(href="#button-two").button.button--small.button--secondary.icon.icon--arrow-left 
