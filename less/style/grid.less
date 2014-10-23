@@ -5,8 +5,17 @@
 @import 'style/mixins/clearfix';
 @import 'style/mixins/grid';
 
+// Container
+//
+// Here to contain rows.
+
 .l-container {
 	.make-container();
+
+	.respond(medium, {
+		// double gutter on large devices
+		.make-container((@grid-gutter-width * 2));
+	});
 }
 
 .l-row {
