@@ -4,21 +4,22 @@ slug: mixins
 template: page.jade
 ---
 
-.l-row
-  .l-full
-    h1 Mixins
+.l-container
+  .l-row
+    .l-full
+      h1 Mixins
 
-.l-row
-  .l-primary
-    each mixin in mixins
-      div.block
-        h2(id=mixin.slug)= mixin.title
-          a(href='#' + mixin.slug).anchor--docs
-        div.block!= mixin.contents
+  .l-row
+    .l-primary
+      each mixin in mixins
+        div.block
+          h2(id=mixin.slug)= mixin.title
+            a(href='#' + mixin.slug).anchor--docs
+          div.block!= mixin.contents
 
-  .l-secondary
-    nav.nav.nav--side(data-spy="affix", data-offset-top="230")
-      ul.menu.menu--side
-        each mixin in mixins
-          li.menu__item
-            a.menu__link(href='#' + mixin.slug)= mixin.title
+    .l-secondary
+      nav.nav.nav--side(data-spy="affix", data-offset-top="230")
+        ul.menu.menu--side
+          each mixin in mixins
+            li.menu__item
+              a.menu__link(href='#' + mixin.slug)= mixin.title

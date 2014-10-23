@@ -5,59 +5,60 @@ template: page.jade
 ---
 
 .masthead.masthead--docs
-  .l-row
-    .l-full
-      p.lead.masthead__lead.
-        Meet the AXA Switzerland Web Style Guide – the HTML, CSS and JS
-        framework for developing responsive, mobile first projects
-        on the web.
-
-      p
-        a(href=config.urls.releases, title="See the releases on GitHub").button.
-          Download Style Guide
-        = ' '
-        a(href=config.repository.url, title=config.repository.name).button.button--secondary.
-          View project on GitHub
-
-.l-row
-  .l-primary
-    h1#examples Examples
-      a.anchor--docs(href="#examples")
-
-    p.lead.
-      Need a starting point or a simple showcase of the things possible
-      with the Web Style Guide? Check out the examples.
-
+  .l-container
     .l-row
-      .l-third
-        a.thumbnail(href="examples/page.html")
-          img.thumbnail__media(src="images/example-simple.png", alt="")
-        h3 Basic template
-        p.
-          Basic template with a sliding mobile menu. Make sure your
-          browser size is small enough.
+      .l-full
+        p.lead.masthead__lead.
+          Meet the AXA Switzerland Web Style Guide – the HTML, CSS and JS
+          framework for developing responsive, mobile first projects
+          on the web.
+        p
+          a(href=config.urls.releases, title="See the releases on GitHub").button.
+            Download Style Guide
+          = ' '
+          a(href=config.repository.url, title=config.repository.name).button.button--secondary.
+            View project on GitHub
 
-    h1#license License
-      a.anchor--docs(href="#license")
+.l-container
+  .l-row
+    .l-primary
+      h1#examples Examples
+        a.anchor--docs(href="#examples")
 
-    p.
-      The Web Style Guide is <code>Copyright 2014 AXA Versicherungen AG</code>.
-      All rights are reserved. Therefore it's forbidden to do any
-      of the following with the Web Style Guide without
-      permission by the legal copyright holder:
+      p.lead.
+        Need a starting point or a simple showcase of the things possible
+        with the Web Style Guide? Check out the examples.
 
-    ul
-      li distribution
-      li modification
-      li sublicensing
+      .l-row
+        .l-third
+          a.thumbnail(href="examples/page.html")
+            img.thumbnail__media(src="images/example-simple.png", alt="")
+          h3 Basic template
+          p.
+            Basic template with a sliding mobile menu. Make sure your
+            browser size is small enough.
 
-  .l-secondary
-    nav#affix.nav.nav--side
-      ul.menu.menu--side
-        li.menu__item
-          a.menu__link(href='#examples') Examples
-        li.menu__item
-          a.menu__link(href='#license') License
+      h1#license License
+        a.anchor--docs(href="#license")
+
+      p.
+        The Web Style Guide is <code>Copyright 2014 AXA Versicherungen AG</code>.
+        All rights are reserved. Therefore it's forbidden to do any
+        of the following with the Web Style Guide without
+        permission by the legal copyright holder:
+
+      ul
+        li distribution
+        li modification
+        li sublicensing
+
+    .l-secondary
+      nav#affix.nav.nav--side
+        ul.menu.menu--side
+          li.menu__item
+            a.menu__link(href='#examples') Examples
+          li.menu__item
+            a.menu__link(href='#license') License
 
 script(type='text/javascript').
   $('#affix').affix({
