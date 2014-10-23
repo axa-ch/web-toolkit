@@ -3,17 +3,16 @@
 
 .footer {}
 
-.footer__content {
+.footer__content-container {
   border-top: 1px solid #e5e5e5;
 
   .respond(medium, {
-    border-top: none;
+    border-top: 5px solid @color-ui-alpha;
   });
 }
 
-.footer__content__inner {
+.footer__content {
   .respond(medium, {
-    border-top: 5px solid @color-ui-alpha;
     padding-top: 10px;
     padding-bottom: 10px;
   });
