@@ -1,0 +1,62 @@
+p {
+  line-height: 1.5;
+  margin: .5em 0;
+  color: #333;
+}
+
+.heading {
+  font-weight: 500;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+h1 {
+  &:extend(.heading all);
+  font-size: 2em;
+}
+
+h2 {
+  &:extend(.heading all);
+  font-size: 1.8em;
+}
+
+h3 {
+  &:extend(.heading all);
+  font-size: 1.4em;
+}
+
+h4 {
+  &:extend(.heading all);
+  font-size: 1.2em;
+}
+
+h5 {
+  &:extend(.heading all);
+  font-size: 1.1em;
+}
+
+h6 {
+  &:extend(.heading all);
+  font-size: 1em;
+}
+
+mark {
+  background: lighten(#ffff00, 20%);
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  color: @color-ui-alpha;
+  text-decoration: none;
+
+  &:hover {
+    color: @color-ui-beta;
+  }
+}
