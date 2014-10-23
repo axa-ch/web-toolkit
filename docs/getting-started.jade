@@ -18,33 +18,36 @@ template: page.jade
 
 .l-row
   p.callout
-    | With this style guide we want to help you building
+    | With the Style Guide we want to help you building
     | awesome responsive web sites and apps with ease.
-    | If you strugle using the assets, miss a component
-    | or face any other problem please feel free to file
-    | an issue
+    | If you struggle using the assets, miss a component
+    | or face any other problem please feel free to
     = ' '
-    a(href=config.repository.url) on github
+    a(href=config.repository.url, title=config.repository.name) file an issue
     | .
     // TODO: Or talk to the style guide team?
 
 .l-row
-  h1 What comes with the style guide?
+  h1 What comes with the Style Guide?
   p.
-    The style guide provides all components needed to build
-    responsive applications at AXA Winterthur.
+    The Style Guide provides all components needed to build
+    responsive apps at AXA Switzerland.
   p.
     You can find all components included in the
-    style guide in our kitchen sink example. TODO: Kitchen sink
+    Style Guide in our kitchen sink example. TODO: Kitchen sink
 
 .l-row
   h1 Let's get started!
-  p.
-    There are two easy ways to get started with the style guide.
-    Each of them requires you to download the archive from above first.
+  p
+    | There are two easy ways to get started.
+    | Each of them requires you to
+    = ' '
+    a(href=config.urls.releases, title="See the releases on GitHub") download the release package
+    = ' '
+    | first.
   p.
     You can use the compiled CSS and JavaScript or you can use
-    the source LESS and CoffeScript.
+    the source Less and CoffeScript.
     We recommend using the source files since it provides
     you much more flexibility.
 
@@ -54,43 +57,44 @@ template: page.jade
     p.
       Copy the <code>css/</code>, <code>js/</code>,
       <code>images/</code> and <code>fonts/</code> folder
-      from the downloaded style guide release
+      from the downloaded Style Guide release
       to your project and use it as you like.
-      See the "Basic template" section for further information.
+      See the <a href="#basic-template">Basic template</a> section
+      for further information.
     p.callout.
       Note that the resources must be available from the web
-      in the same hierarchy as provided by the style guide
+      in the same hierarchy as provided by the Style Guide
       when using precompiled assets.
       For example the <code>images/</code> folder has to be
       in the same location as the <code>css/</code> folder
-      since images are referenced in the css
+      since images are referenced in the CSS
       with a relative path (<code>../images/</code>).
 
   .l-half
-    h2 Using the source files (LESS, CoffeScript)
+    h2 Using the source files (Less, CoffeScript)
     p.
       Compiling the source files on your own is a
       little trickier than using the compiled CSS
       and JavaScript but provides you with much
       more flexibility.
 
-    h3 Compiling the LESS files
+    h3#compiling-less-files Compiling the Less files
     p.
       To have the flexibility of
-      customizing LESS variables of the
-      style guide (see section TODO) and use the
+      customizing Less variables of the
+      Style Guide (see section TODO) and use the
       provided mixins you may want to include the
-      LESS files into your applications LESS file.
+      Less files into your applications Less file.
     p.
-      You could also compile the style guide on its own,
+      You could also compile the Style Guide on its own,
       but that would not make any sense since you could use
       the compiled version in this case.
-      For instructions on building the style guide
-      on its own see the README.md file.
+      For instructions on building the Style Guide
+      on its own see the projects README file.
     p.callout.
-      We recommend using the official LESS compiler
+      We recommend using the official Less compiler
       provided at <a href='http://lesscss.org' >lesscss.org</a> since
-      the style guide is tested with this compiler.
+      the Style Guide is tested with this compiler.
 
     h3 Compiling the CoffeeScript files
     p.
@@ -103,41 +107,44 @@ template: page.jade
       Make sure to copy the assets from the
       <code>images/</code> and <code>fonts/</code> folder
       to a location available from the web.
-      See the section "Compiling the LESS files" on
-      how to set the URL root for assets.
+      See the section
+      <a href="#compiling-less-files">Compiling the LESS files</a>
+      on how to set the URL root for assets.
 
 .l-row
-  h1 Basic template
+  h1#basic-template Basic template
   p.
-    The basic template below should provide you
+    The basic template below should provide you with
     a starting point for your next web app.
     See the comments in the template itself for any explanations.
 
   pre.hljs: code.html
     :highlight
-      <!-- Always use an HTML 5 doctype. Note that HTML 5 is NO LONGER XML. You do NOT need to explicitly close self closing tags. -->
+      <!-- Always use an HTML5 doctype. -->
+      <!-- Note that HTML5 is no longer XML, so you do not need to close self closing tags. -->
       <!DOCTYPE html>
-        <!-- The lang attribute helps screen readers having the right accent and google translate/chrome to propose a proper translation.-->
+        <!-- The lang attribute helps screen readers having the right accent. -->
+        <!-- It also enables Google Translate and similar to propose a proper translation.-->
         <html lang="en">
           <head>
-            <!-- Set the contents character encoding. See recommendations for explanations. -->
+            <!-- Set the contents character encoding. (see recommendations) -->
             <meta charset="utf-8">
 
-            <!-- Force IE to NOT use compatibility mode. See recommendations for explanations. -->
+            <!-- Force IE to NOT use compatibility mode. (see recommendations) -->
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-            <!-- Mobile viewport. See recommendations for explanations. -->
+            <!-- Mobile viewport. (see recommendations) -->
             <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
-            <title>Style guide - Basic template</title>
+            <title>Style Guide - Basic template</title>
 
-            <!-- CSS -->
-            <!-- reference pre compiled or custom css here depending on whether you use pre-build LESS files or not -->
+            <!-- Reference precompiled or custom CSS here. -->
+            <!-- Which one depends on whether you use pre-built Less files or not. -->
             <link href="css/style.min.css" rel="stylesheet">
 
-            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries. -->
             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-            <!-- TODO: Review license agreements and bundle them with the style guide -->
+            <!-- TODO: Review license and bundle them with the Style Guide -->
             <!--[if lt IE 9]>
               <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
               <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -146,9 +153,10 @@ template: page.jade
           <body>
             <h1>Hello, world!</h1>
 
-            <!-- jQuery (necessary for the style guide's JavaScript plugins) -->
+            <!-- jQuery is necessary if you make use of the Style Guide plugins. -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-            <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+            <!-- Include all compiled plugins or select individual files as needed. -->
             <script src="js/style-all.min.js"></script>
           </body>
         </html>
@@ -156,7 +164,7 @@ template: page.jade
 .l-row
   h1 Customization
 
-  h2 LESS Variables
+  h2 Less Variables
 
   table.table--docs
     thead
@@ -166,14 +174,14 @@ template: page.jade
         th Description
     tbody
       tr
-        td @sg-icon-font-path
-        td '../fonts'
+        td: code @sg-icon-font-path
+        td: code '../fonts'
         td.
           Relative (to the CSS file) or absolute path
           where the browser should download the icon font files from.
       tr
-        td @images-path
-        td '../images'
+        td: code @images-path
+        td: code '../images'
         td.
           Relative (to the CSS file) or absolute path
           where the browser should download the images from.
