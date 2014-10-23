@@ -212,8 +212,7 @@
 
 .menu--main {
   padding-top: 10px;
-
-  border-bottom: 5px solid @color-ui-alpha;
+  margin-left: (@grid-gutter-width / -2);
 
   display: none;
 
@@ -224,7 +223,7 @@
   .menu__item {
     height: 44px;
     line-height: 44px;
-    margin: 0 10px;
+    margin: 0 (@grid-gutter-width / 2);
 
     &.is-active,
     &:hover {
