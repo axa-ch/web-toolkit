@@ -10,15 +10,7 @@
 // Here to contain rows.
 
 .l-container {
-	.make-container();
-
-	max-width: @respond-large-min-width;
-
-	.respond(medium, {
-		// full gutter boundary on large devices
-		padding-left: @grid-gutter-width;
-		padding-right: @grid-gutter-width;
-	});
+	.make-container(@respond-large-min-width);
 }
 
 .l-row {
