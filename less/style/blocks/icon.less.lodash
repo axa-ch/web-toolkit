@@ -45,5 +45,5 @@
 }
 
 .icon--github {
-  color: black;
+  color: #333333;
 }
