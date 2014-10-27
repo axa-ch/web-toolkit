@@ -1,44 +1,115 @@
 @import 'style/variables';
 @import 'style/blocks/icon';
 
-.button {
-  display: inline-block;
+/**
+ * sizes
+ */
+@sg-button-height: 50px;
+@sg-button-pad-lr: 30px;
+@sg-button-border-radius: 7px;
+@sg-button-icon-pad: 8px;
+@sg-button-icon-size: 16px;
+@sg-button-font-size: 18px; // TODO: Change to 22px for Franlink Gothic
 
-  padding: 10px 20px;
+/**
+ * sizes SMALL
+ */
+@sg-button-sm-height: 40px;
+@sg-button-sm-pad-lr: 25px;
+@sg-button-sm-border-radius: 5px;
+@sg-button-sm-icon-pad: 5px;
+@sg-button-sm-icon-size: 14px;
+@sg-button-sm-font-size: 14px; // TODO: Change to 18px for Franlink Gothic
 
-  font-size: 18px;
-  color: white;
-  background: @color-ui-alpha;
+/**
+ * colors PRIMARY
+ */
+@sg-button-primary-bg: @color-ui-alpha;
+@sg-button-primary-color: white;
+
+/**
+ * colors SECONDARY
+ */
+@sg-button-secondary-bg: @color-ui-zeta;
+@sg-button-secondary-color: @color-ui-alpha;
+
+/**
+ * MIXINS
+ */
+.make-button-size(@height, @pad-lr, @border-radius, @icon-pad, @icon-size, @font-size, @line-height: 1.5) {
+  // TODO: we may support @line-height in pixel or em using css guards
+  @calculated-line-height: @font-size * @line-height;
+
+  font-size: @font-size;
+
+  line-height: @line-height;
+  padding: ((@height - @calculated-line-height) / 2) @pad-lr;
+
+  border-radius: @border-radius;
+
+  &.icon::before {
+    margin-right: @icon-pad;
+    font-size: @icon-size;
+    vertical-align: middle; // TODO: Why do we need that, shouldn't that be corrected by 2px offset of icons?
+  }
+}
+
+.make-button-color(@bg-color, @color, @hover-bg-color: lighten(@bg-color, 10%), @hover-color: lighten(@color, 10%)) {
+  background: @bg-color;
+  color: @color;
+
   text-decoration: none;
 
   &:hover {
-    background: darken(@color-ui-alpha, 10%);
-  }
-
-  &.icon {
-    &::before {
-      font-size: 16px;
-      margin-right: 5px;
-    }
+    background: @hover-bg-color;
+    color: @hover-color;
   }
 }
 
-.button--secondary {
-  background: @color-ui-beta;
+/**
+ * DEFAULT / PRIMARY button
+ */
+.button {
+  display: inline-block;
 
-  &:hover {
-    background: darken(@color-ui-beta, 20%);
-  }
+  // TODO: franklin gothic medium
+  font-weight: bold;
+
+  .make-button-size(
+    @height: @sg-button-height;
+    @pad-lr: @sg-button-pad-lr;
+    @border-radius: @sg-button-border-radius;
+    @icon-pad: @sg-button-icon-pad;
+    @icon-size: @sg-button-icon-size;
+    @font-size: @sg-button-font-size;
+  );
+
+  .make-button-color(
+    @bg-color: @sg-button-primary-bg;
+    @color: @sg-button-primary-color;
+  );
 }
 
+/**
+ * SMALL button
+ */
 .button--small {
-  font-size: 12px;
-  line-height: 1.5;
-  padding: 5px 10px;
+  .make-button-size(
+    @height: @sg-button-sm-height;
+    @pad-lr: @sg-button-sm-pad-lr;
+    @border-radius: @sg-button-sm-border-radius;
+    @icon-pad: @sg-button-sm-icon-pad;
+    @icon-size: @sg-button-sm-icon-size;
+    @font-size: @sg-button-sm-font-size;
+  );
+}
 
-  &.icon {
-    &::before {
-      font-size: 12px;
-    }
-  }
+/**
+ * SECONDARY button
+ */
+.button--secondary {
+  .make-button-color(
+    @bg-color: @sg-button-secondary-bg;
+    @color: @sg-button-secondary-color;
+  );
 }
