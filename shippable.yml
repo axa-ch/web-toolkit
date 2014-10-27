@@ -9,5 +9,5 @@ before_install:
   - npm install -g gulp
 
 script:
-  - npm run gulp build
-  - npm run gulp deploy
+  - gulp build
+  - gulp deploy
