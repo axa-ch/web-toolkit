@@ -228,7 +228,7 @@ gulp.task('deploy-init', function (cb) {
 });
 
 gulp.task('deploy-config', function (cb) {
-  git.addRemote('deploy', config.repository.url, {
+  git.addRemote('deploy', (process.env.REPO_URL ? process.env.REPO_URL : config.repository.url), {
     cwd: './out'
   }, cb);
 });
