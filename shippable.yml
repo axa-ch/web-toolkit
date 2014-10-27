@@ -5,6 +5,9 @@ language: node_js
 node_js:
   - 0.10.25
 
+before_install:
+  - npm install -g gulp
+
 script:
   - npm run gulp build
   - npm run gulp deploy
