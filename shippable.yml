@@ -6,5 +6,5 @@ node_js:
   - 0.10.25
 
 script:
-  - gulp build
-  - gulp deploy
+  - npm run gulp build
+  - npm run gulp deploy
