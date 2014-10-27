@@ -10,7 +10,7 @@
 // Here to contain rows.
 
 .l-container {
-	.make-container(@respond-large-min-width);
+  .make-container(@respond-large-min-width);
 }
 
 .l-row {
@@ -22,17 +22,17 @@
 // Columns without semantic meaning for all screens.
 
 .l-col {
-	.make-col(@grid-columns);
+  .make-col(@grid-columns);
 }
 
 .make-grid();
 
 .respond(medium, {
-	.make-grid(medium);
+  .make-grid(medium);
 });
 
 .respond(large, {
-	.make-grid(large);
+  .make-grid(large);
 });
 
 // Semantic Columns
@@ -40,35 +40,35 @@
 // Standard layout columns with media queries applied to them.
 
 .l-full {
-	.make-col(12);
+  .make-col(12);
 }
 
 .l-primary {
-	.make-col(12);
-	.make-col(9, medium);
+  .make-col(12);
+  .make-col(9, medium);
 }
 
 .l-secondary {
-	.make-col(12);
-	.make-col(3, medium);
+  .make-col(12);
+  .make-col(3, medium);
 }
 
 .l-half {
-	.make-col(12);
-	.make-col(6, medium);
+  .make-col(12);
+  .make-col(6, medium);
 }
 
 .l-third {
-	.make-col(12);
-	.make-col(4, medium);
+  .make-col(12);
+  .make-col(4, medium);
 }
 
 .l-fourth {
-	.make-col(12);
-	.make-col(3, medium);
+  .make-col(12);
+  .make-col(3, medium);
 }
 
 .l-thumbnail {
-	.make-col(12);
-	.make-col(2, medium);
+  .make-col(12);
+  .make-col(2, medium);
 }
