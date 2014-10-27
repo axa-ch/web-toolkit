@@ -51,15 +51,17 @@ h3 Usage
 
 p Activate the functionality with JavaScript:
 
-pre.hljs: code.js
-  :highlight
-    $('#menu').slidingMenu()
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('#menu').slidingMenu()
 
 p Alternatively, you can activate the plugin with a data attribute:
 
-pre.hljs: code.html
-  :highlight
-    <nav data-menu="sliding"></nav>
+.highlight
+  pre.highlight__listing.hljs: code.html
+    :highlight
+      <nav data-menu="sliding"></nav>
 
 h4 Methods
 
@@ -67,9 +69,10 @@ h5: code .slidingMenu('level', [levelToSet])
 
 p Get the currently active level or set one.
 
-pre.hljs: code.js
-  :highlight
-    $('#menu').slidingMenu('level')
-    // -> returns the current jQuery object of the current level
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('#menu').slidingMenu('level')
+      // -> returns the current jQuery object of the current level
 
-    $('#menu').slidingMenu('level', $('#first.menu__level'))
+      $('#menu').slidingMenu('level', $('#first.menu__level'))
