@@ -19,6 +19,7 @@
 .icon {
   text-decoration: none; // prevent some odd underline in IE
 
+  &:before, // Keep the :before for IE8 support
   &::before {
     display: inline-block;
     font: normal normal normal 14px/1 '@{name}';
