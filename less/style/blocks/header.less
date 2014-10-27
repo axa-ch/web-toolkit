@@ -10,7 +10,7 @@
   @padding-left-right-large: 20px;
   @mobile-trigger-size: 41px;
 
-  .clearfix();
+  &:extend(.clearfix all);
 
   padding: @padding-top-bottom 0;
 
@@ -50,7 +50,7 @@
   }
 
   &__meta {
-    .clearfix();
+    &:extend(.clearfix all);
 
     float: right;
     display: none;
@@ -61,7 +61,7 @@
     });
 
     &__upper {
-      .clearfix();
+      &:extend(.clearfix all);
     }
 
     &__language {
@@ -73,13 +73,13 @@
     }
 
     &__lower {
-      .clearfix();
+      &:extend(.clearfix all);
 
       margin-top: 16px;
     }
 
     &__welcome {
-      .clearfix();
+      &:extend(.clearfix all);
 
       float: right;
 
