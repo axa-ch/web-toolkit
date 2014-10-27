@@ -26,12 +26,14 @@
  */
 @sg-button-primary-bg: @color-ui-alpha;
 @sg-button-primary-color: white;
+@sg-button-primary-hover-bg: lighten(@color-ui-alpha, 5%);
 
 /**
  * colors SECONDARY
  */
 @sg-button-secondary-bg: @color-ui-zeta;
 @sg-button-secondary-color: @color-ui-alpha;
+@sg-button-secondary-hover-bg: lighten(@color-ui-zeta, 5%);
 
 /**
  * MIXINS
@@ -54,7 +56,7 @@
   }
 }
 
-.make-button-color(@bg-color, @color, @hover-bg-color: lighten(@bg-color, 10%), @hover-color: lighten(@color, 10%)) {
+.make-button-color(@bg-color, @color, @hover-bg-color: @bg-color, @hover-color: @color) {
   background: @bg-color;
   color: @color;
 
@@ -87,6 +89,7 @@
   .make-button-color(
     @bg-color: @sg-button-primary-bg;
     @color: @sg-button-primary-color;
+    @hover-bg-color: @sg-button-primary-hover-bg;
   );
 }
 
@@ -111,5 +114,6 @@
   .make-button-color(
     @bg-color: @sg-button-secondary-bg;
     @color: @sg-button-secondary-color;
+    @hover-bg-color: @sg-button-secondary-hover-bg;
   );
 }
