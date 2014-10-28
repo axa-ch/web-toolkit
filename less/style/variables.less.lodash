@@ -3,8 +3,8 @@
 @respond-medium-min-width: 768px;
 @respond-large-min-width: 1024px;
 
-@sg-icon-font-path: '../fonts';
-@sg-icon-font-name: 'style-guide-font';
+@icon-font-path: '../fonts';
+@icon-font-name: 'style-guide-font';
 
 @font-size-base: 14px;
 @font-size-large: 16px;

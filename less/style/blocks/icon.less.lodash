@@ -2,8 +2,8 @@
 
 @import 'style/variables';
 
-@path: @sg-icon-font-path;
-@name: @sg-icon-font-name;
+@path: @icon-font-path;
+@name: @icon-font-name;
 
 @font-face {
   font-family: '@{name}';
