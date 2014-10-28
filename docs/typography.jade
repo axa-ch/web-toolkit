@@ -12,8 +12,9 @@ template: page.jade
 
 .l-container
   .l-row
-    .l-full
-      h1 Headings
+    .l-primary
+      h1#headings Headings
+        a.anchor--docs(href="#headings")
 
       :sample
         h1 Heading one
@@ -23,7 +24,8 @@ template: page.jade
         h5 Heading five
         h6 Heading six
 
-      h1 Paragraphs
+      h1#paragraphs Paragraphs
+        a.anchor--docs(href="#paragraphs")
 
       :sample
         p.
@@ -39,40 +41,47 @@ template: page.jade
           fatback adipisicing strip steak drumstick mollit sausage,
           sint deserunt officia eu tongue labore cupidatat kevin.
 
-      h1 Anchor element
+      h1#anchors Anchors
+        a.anchor--docs(href="#anchors")
 
       :sample
         p.
           This paragraph shows an <a href="#" >awesome
           inline anchor</a> and lose some words about emphasizing.
 
-      h1 Inline text elements
+      h1#inline-text Inline text
+        a.anchor--docs(href="#inline-text")
 
-      h2 Marked text
+      h2#marked-text Marked text
+          a.anchor--docs(href="#marked-text")
 
       :sample
         p.
           You can use the mark tag to <mark>highlight</mark> text.
 
-      h2 Deleted text
+      h2#deleted-text Deleted text
+        a.anchor--docs(href="#deleted-text")
 
       :sample
         p.
           Use <code>del</code> to indicate that <del>a part of a</del> some text has been deleted.
 
-      h2 No longer relevant text
+      h2#irrelevant-text Irrelevant text
+        a.anchor--docs(href="#irrelevant-text")
 
       :sample
         p.
           <s>To show that a text is no longer relevant use the </s><code>s</code><s> tag. </s>
 
-      h2 Inserted text
+      h2#inserted-text Inserted text
+        a.anchor--docs(href="#inserted-text")
 
       :sample
         p.
           The <code>ins</code> tag shows that a text <ins>has been inserted.</ins>
 
-      h2 Emphasize
+      h2#emphasize Emphasize
+        a.anchor--docs(href="#emphasize")
 
       :sample
         p.
@@ -80,3 +89,11 @@ template: page.jade
           will result in <strong>bold</strong> or <em>italic</em> text.
           It is not recommended to use <code>b</code> or <code>i</code>
           tags.
+
+    .l-secondary
+      nav.nav.nav--side(data-spy="affix", data-offset-top="230")
+        ul.menu.menu--side
+          li.menu__item: a.menu__link(href="#headings") Headings
+          li.menu__item: a.menu__link(href="#paragraphs") Paragraphs
+          li.menu__item: a.menu__link(href="#anchors") Anchors
+          li.menu__item: a.menu__link(href="#inline-text") Inline text
