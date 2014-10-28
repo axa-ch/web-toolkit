@@ -1,3 +1,5 @@
+[![Build Status](https://api.shippable.com/projects/544e872d44927f89db3df031/badge?branchName=master)](https://app.shippable.com/projects/544e872d44927f89db3df031/builds/latest)
+
 # AXA Switzerland Web Style Guide
 
 > The mobile-ready style guide for internal and external

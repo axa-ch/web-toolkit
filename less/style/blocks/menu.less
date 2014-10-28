@@ -25,16 +25,29 @@
     margin-right: 1px;
   }
 
-
   .menu__link {
     display: block;
     padding: 8px 20px;
-    background: @color-ui-alpha;
-    color: white;
+    background: @color-ui-zeta;
+    color: @color-ui-alpha;
     text-decoration: none;
 
+
     &.is-active {
-      background: @color-ui-beta;
+      background: @color-ui-alpha;
+      color: white;
+    }
+  }
+
+  .menu__item {
+    overflow: hidden;
+
+    &:first-of-type {
+      border-top-left-radius: 5px;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 5px;
     }
   }
 }
@@ -211,9 +224,8 @@
 }
 
 .menu--main {
-  padding: 10px 10px 0 10px;
-
-  border-bottom: 5px solid @color-ui-alpha;
+  padding-top: 10px;
+  margin-left: (@grid-gutter-width / -2);
 
   display: none;
 
@@ -224,7 +236,7 @@
   .menu__item {
     height: 44px;
     line-height: 44px;
-    margin: 0 10px;
+    margin: 0 (@grid-gutter-width / 2);
 
     &.is-active,
     &:hover {

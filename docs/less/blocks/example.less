@@ -1,20 +1,33 @@
+@import 'style/variables';
+@import 'style/mixins/respond';
+
 .example {
   position: relative;
+
   padding: 45px 15px 15px;
-  margin: 0 -15px 15px;
+  margin: 0 -15px; // TODO: Use variables for left & right margin
+
   border-width: 1px 0;
   border-style: solid;
-  border-color: #ddd;
+  border-color: @color-ui-delta;
+
+  .respond(medium, {
+    margin: 0;
+
+    border-width: 1px;
+  });
 
   &:after {
     position: absolute;
     top: 15px;
     left: 15px;
-    font-size: 12px;
+
+    content: 'example';
+
+    font-size: @font-size-small;
     font-weight: 700;
-    color: #959595;
+    color: @color-text-epsilon;
     text-transform: uppercase;
     letter-spacing: 1px;
-    content: "Example";
   }
 }

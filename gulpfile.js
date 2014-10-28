@@ -17,8 +17,11 @@ var rename = require("gulp-rename");
 var git = require('gulp-git');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer-core');
+var csswring = require('csswring');
+var uglify = require('gulp-uglify');
 
 var readJSONFile = require('./lib/readJSONFile');
+var writeJSONFile = require('./lib/writeJSONFile');
 var errorify = require('./lib/errorify');
 var file = require('./lib/file');
 var after = require('./lib/after');
@@ -82,7 +85,7 @@ gulp.task('styles-copy', function () {
     .pipe(gulp.dest('./dist/less'));
 });
 
-gulp.task('styles-generate', function (cb) {
+gulp.task('styles-icons', function (cb) {
   gulp.src(['./icons/*.svg'])
     .pipe(iconfont({ fontName: 'temporary' }))
     .on('error', errorify)
@@ -105,15 +108,15 @@ gulp.task('styles-compile', function () {
       paths: ['./dist/less']
     }))
     .on('error', errorify)
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.', {sourceRoot: './'}))
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('styles-generate-variables', function () {
-  return gulp.src('./less/style/variables.less.lodash')
+gulp.task('styles-generate', function () {
+  return gulp.src(['./less/**/*.less.lodash', '!./less/style/blocks/icon.less.lodash'])
     .pipe(template({ colors: readJSONFile('./less/colors.json') }))
-    .pipe(rename('./less/style/variables.less'))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(rename({ extname: '' }))
+    .pipe(gulp.dest('./dist/less/'));
 });
 
 gulp.task('styles-copy-colors', function () {
@@ -124,17 +127,30 @@ gulp.task('styles-copy-colors', function () {
 
 gulp.task('styles-autoprefix', function() {
   return gulp.src(['./dist/css/*.css'])
-    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(postcss([ autoprefixer() ]))
     .on('error', errorify)
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.', {sourceRoot: './'}))
     .pipe(gulp.dest('./dist/css'));
-})
+});
+
+gulp.task('styles-compress', function() {
+  return gulp.src(['./dist/css/{style,normalize}.css'])
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(postcss([ csswring() ]))
+    .on('error', errorify)
+    .pipe(rename({
+      extname: '.min.css'
+    }))
+    .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+    .pipe(gulp.dest('./dist/css'));
+});
 
 gulp.task('styles', function (cb) {
   runSequence(
-    'styles-copy', 'styles-generate', 'styles-generate-variables',
-    'styles-copy-colors', 'styles-compile', 'styles-autoprefix', cb);
+    'styles-copy', 'styles-icons', 'styles-generate',
+    'styles-copy-colors', 'styles-compile', 'styles-autoprefix',
+    'styles-compress', cb);
 });
 
 gulp.task('scripts-clean', function (cb) {
@@ -146,7 +162,7 @@ gulp.task('scripts-compile', function () {
     .pipe(sourcemaps.init())
     .pipe(coffee())
     .on('error', errorify)
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.', {sourceRoot: './'}))
     .pipe(gulp.dest('./dist/js'));
 });
 
@@ -155,16 +171,57 @@ gulp.task('scripts-combine', function () {
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(concat('style.all.js'))
     .on('error', errorify)
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+    .pipe(gulp.dest('./dist/js'));
+});
+
+gulp.task('scripts-compress', function(cb) {
+  return gulp.src(['./dist/js/*.js'])
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(uglify())
+    .pipe(rename({
+      extname: '.min.js'
+    }))
+    .pipe(sourcemaps.write('.', {sourceRoot: './'}))
     .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('scripts', function (cb) {
-  runSequence('scripts-clean', 'scripts-compile', 'scripts-combine', cb);
+  runSequence('scripts-clean', 'scripts-compile', 'scripts-combine', 'scripts-compress', cb);
 });
 
+gulp.task('create-versions-file', function(cb) {
+  var data = {
+    tag: null,
+    hash: {
+      long: null,
+      short: null
+    }
+  },
+  end = after(2, function (err) {
+
+    writeJSONFile('./dist/version.json', data);
+
+    cb(err);
+  }, function (err) {
+    if (err) cb(err);
+  });
+
+  git.revParse({args:'--short HEAD'}, function (err, hash) {
+    data.hash.short = hash;
+
+    end();
+  });
+
+  git.revParse({args:'HEAD'}, function (err, hash) {
+    data.hash.long = hash;
+
+    end();
+  });
+})
+
 gulp.task('build', function (cb) {
-  runSequence('icons', 'images', 'styles', 'scripts', 'docs', cb);
+  runSequence('icons', 'images', 'styles', 'scripts', 'create-versions-file', 'docs', cb);
 });
 
 gulp.task('serve', function (next) {
@@ -203,7 +260,7 @@ gulp.task('deploy-init', function (cb) {
 });
 
 gulp.task('deploy-config', function (cb) {
-  git.addRemote('deploy', config.repository.url, {
+  git.addRemote('deploy', (process.env.REPO_URL ? process.env.REPO_URL : config.repository.url), {
     cwd: './out'
   }, cb);
 });

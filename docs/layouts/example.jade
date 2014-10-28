@@ -15,8 +15,8 @@ html
 
   body.site
     .site__page
-      header.header.header--main.l-holder
-        .l-row
+      header.header.header--main
+        .l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
           a.header__brand.brand(href="#home")
             .brand__logo
@@ -54,62 +54,60 @@ html
                   li.header__meta__welcome__item
                     a(href='tel:0800809809') 0800 809 809
 
-      nav.l-holder
-        .l-row
-          ul.menu.menu--main
-            li.menu__item
-              a(href='#0').menu__link.menu__link--home
-            li.menu__item
-              a(href='#1').menu__link Menu Item 1
-            li.menu__item
-              a(href='#2').menu__link Menu Item 2
-            li.menu__item
-              a(href='#3').menu__link Menu Item 3
-            li.menu__item
-              a(href='#4').menu__link Menu Item 4
+      nav.main-nav
+        ul.menu.menu--main
+          li.menu__item
+            a(href='#0').menu__link.menu__link--home
+          li.menu__item
+            a(href='#1').menu__link Menu Item 1
+          li.menu__item
+            a(href='#2').menu__link Menu Item 2
+          li.menu__item
+            a(href='#3').menu__link Menu Item 3
+          li.menu__item
+            a(href='#4').menu__link Menu Item 4
 
-      section.l-holder
-        .l-row
-          .l-full!= contents
+      section!= contents
 
       footer.footer
-        .footer__content.l-holder
-          .footer__content__inner.l-row
-            .l-third
-              h3 Keep In Touch
-              ul.footer-menu
-                li.footer-menu__item
-                  a.footer-menu__link(href="#facebook") Facebook
-                li.footer-menu__item
-                  a.footer-menu__link(href="#twitter") Twitter
-                li.footer-menu__item
-                  a.footer-menu__link(href="#youtube") YouTube
-                li.footer-menu__item
-                  a.footer-menu__link(href="#linkedin") LinkedIn
+        .footer__content-container.l-container
+          .footer__content
+            .l-row
+              .l-third
+                h3 Keep In Touch
+                ul.footer-menu
+                  li.footer-menu__item
+                    a.footer-menu__link(href="#facebook") Facebook
+                  li.footer-menu__item
+                    a.footer-menu__link(href="#twitter") Twitter
+                  li.footer-menu__item
+                    a.footer-menu__link(href="#youtube") YouTube
+                  li.footer-menu__item
+                    a.footer-menu__link(href="#linkedin") LinkedIn
 
-            .l-third
-              h3 AXA & You
-              ul.footer-menu
-                li.footer-menu__item
-                  a.footer-menu__link(href="#contact-us") Contact Us
-                li.footer-menu__item
-                  a.footer-menu__link(href="#help-and-advice") Help & Advice
-                li.footer-menu__item
-                  a.footer-menu__link(href="#latest-news") Latest News
-                li.footer-menu__item
-                  a.footer-menu__link(href="#jobs") Jobs
+              .l-third
+                h3 AXA & You
+                ul.footer-menu
+                  li.footer-menu__item
+                    a.footer-menu__link(href="#contact-us") Contact Us
+                  li.footer-menu__item
+                    a.footer-menu__link(href="#help-and-advice") Help & Advice
+                  li.footer-menu__item
+                    a.footer-menu__link(href="#latest-news") Latest News
+                  li.footer-menu__item
+                    a.footer-menu__link(href="#jobs") Jobs
 
-            .l-third
-              h3 AXA Worldwide
-              ul.worldwide
-                li.worldwide__item
-                  a.worldwide__link.worldwide__link--world(href="#axa-com", title="AXA International") AXA.com
-                li.worldwide__item
-                  a.worldwide__link.worldwide__link--switzerland(href="#axa-ch", title="AXA Switzerland") AXA.ch
+              .l-third
+                h3 AXA Worldwide
+                ul.worldwide
+                  li.worldwide__item
+                    a.worldwide__link.worldwide__link--world(href="#axa-com", title="AXA International") AXA.com
+                  li.worldwide__item
+                    a.worldwide__link.worldwide__link--switzerland(href="#axa-ch", title="AXA Switzerland") AXA.ch
 
-        .footer__copyline.l-holder
-          .footer__copyline__inner.l-row
-            .l-full
+        .footer__copyline
+          .l-container
+            .footer__copyline__inner
               ul.copyline-menu
                 li.copyline-menu__item
                   a.copyline-menu__link(href="#sitemap") Sitemap
@@ -171,6 +169,3 @@ html
 
           li.menu__item
             a(href='#4').menu__link Über uns
-
-    script(type='text/javascript').
-      $('body.site').site('showMenu');

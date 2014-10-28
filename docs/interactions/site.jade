@@ -14,11 +14,19 @@ p.
 
 h3 Usage
 
+p Activate the functionality with the data-* API
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      <a data-toggle="site-menu" data-target=".site" ></a>
+
 p Activate the functionality with JavaScript:
 
-pre.hljs: code.js
-  :highlight
-    $('body.site').site(options)
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('body.site').site(options)
 
 h4 Options
 
@@ -43,25 +51,28 @@ h5: code .site('toggleMenu')
 
 p Manually toggles the menu.
 
-pre.hljs: code.js
-  :highlight
-    $('body.site').site('toggleMenu')
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('body.site').site('toggleMenu')
 
 h5: code .site('showMenu')
 
 p Manually shows the menu. Doesn't do anything when the menu is already open.
 
-pre.hljs: code.js
-  :highlight
-    $('body.site').site('showMenu')
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('body.site').site('showMenu')
 
 h5: code .site('hideMenu')
 
 p Manually hides the menu. Doesn't do anything when the menu is already hidden.
 
-pre.hljs: code.js
-  :highlight
-    $('body.site').site('hideMenu')
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('body.site').site('hideMenu')
 
 h4 Events
 

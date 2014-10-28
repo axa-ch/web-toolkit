@@ -1,0 +1,9 @@
+@import 'style/variables';
+@import 'style/mixins/respond';
+
+.main-nav {
+  .respond(medium, {
+    .l-container();
+    border-bottom: 5px solid @color-ui-alpha;
+  });
+}

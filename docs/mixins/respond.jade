@@ -10,10 +10,11 @@ p.
   Let's clarify where to use these mixins, why and how. And show some fancy
   examples!
 
-pre.hljs
-  code.less
-    :highlight
-      .respond(@device, @rules);
+.highlight
+  pre.highlight__listing.hljs
+    code.less
+      :highlight
+        .respond(@device, @rules);
 
 dl
   dt @device
@@ -36,9 +37,10 @@ table.table--docs
     td print
     td print
 
+p An example how you can use the mixin:
 
-pre.hljs
-  code.less
+.highlight
+  pre.highlight__listing.hljs: code.less
     :highlight
       .custom-responsive-block {
         background: red; // default
