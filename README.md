@@ -44,7 +44,30 @@ $ gulp dev
 
 ## Feedback
 
-We love feedback! File an issue and we'll reach out to you.
+We love feedback! File an issue and we'll reach out to you. 
+
+## Contributing
+
+Do not hesitate, we appreciate every contribution. Do not fear non-perfect Pull Requests, nobody is perfect.
+
+When contribution please stick to the following guides:
+
+### Branching
+
+Please add every feature/bugfix in a separate branch and create a pull request to the master branch.
+
+We stick to the following naming conventions for branches:
+
+- ```feature/...``` for feature branches
+- ```bugfix/...``` for bugfix branches
+
+### Commit messages
+
+- Begin you commit message with a verb in the imperative. (E.g. ```introduce foo bar```, ```fix baz```, ...)
+- Try to have small, atomic commits.
+- First line of a commit message should sum up your changes and should not be longer than 50 charactes.
+- Second line should be empty
+- Third and following lines can optionally contain a longer description
 
 ## Who's behind it?
 
