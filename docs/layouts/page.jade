@@ -79,3 +79,13 @@ html
             a(href="interactions.html", class=slug === 'interactions' ? 'is-active' : undefined).menu__link Interactions
           li.menu__item(class=slug === 'recommendations' ? 'is-active' : undefined)
             a(href="recommendations.html", class=slug === 'recommendations' ? 'is-active' : undefined).menu__link Recommendations
+
+    script(type='text/javascript').
+      $('.js-affix-under-head').affix({
+        offset: {
+          top: function () {
+            var $head = $('.head');
+            return $head.offset().top + $head.height() + 40;
+          }
+        }
+      });

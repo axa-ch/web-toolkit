@@ -52,19 +52,9 @@ template: page.jade
         li sublicensing
 
     .l-secondary
-      nav#affix.nav.nav--side
+      nav.js-affix-under-head.nav.nav--side
         ul.menu.menu--side
           li.menu__item
             a.menu__link(href='#examples') Examples
           li.menu__item
             a.menu__link(href='#license') License
-
-script(type='text/javascript').
-  $('#affix').affix({
-    offset: {
-      top: function () {
-        var $masthead = $('.masthead');
-        return $masthead.offset().top + $masthead.height() + 20;
-      }
-    }
-  });
