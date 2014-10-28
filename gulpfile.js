@@ -21,6 +21,7 @@ var csswring = require('csswring');
 var uglify = require('gulp-uglify');
 
 var readJSONFile = require('./lib/readJSONFile');
+var writeJSONFile = require('./lib/writeJSONFile');
 var errorify = require('./lib/errorify');
 var file = require('./lib/file');
 var after = require('./lib/after');
@@ -188,8 +189,38 @@ gulp.task('scripts', function (cb) {
   runSequence('scripts-clean', 'scripts-compile', 'scripts-combine', 'scripts-compress', cb);
 });
 
+gulp.task('create-versions-file', function(cb) {
+  var data = {
+    tag: null,
+    hash: {
+      long: null,
+      short: null
+    }
+  },
+  end = after(2, function (err) {
+
+    writeJSONFile('./dist/version.json', data);
+
+    cb(err);
+  }, function (err) {
+    if (err) cb(err);
+  });
+
+  git.revParse({args:'--short HEAD'}, function (err, hash) {
+    data.hash.short = hash;
+
+    end();
+  });
+
+  git.revParse({args:'HEAD'}, function (err, hash) {
+    data.hash.long = hash;
+
+    end();
+  });
+})
+
 gulp.task('build', function (cb) {
-  runSequence('icons', 'images', 'styles', 'scripts', 'docs', cb);
+  runSequence('create-versions-file', 'icons', 'images', 'styles', 'scripts', 'docs', cb);
 });
 
 gulp.task('serve', function (next) {
