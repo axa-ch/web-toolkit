@@ -1,9 +1,6 @@
 @import 'style/variables';
-@import 'style/blocks/icon';
+@import 'style/mixins/button';
 
-/**
- * sizes
- */
 @button-height: 50px;
 @button-pad-lr: 30px;
 @button-border-radius: 7px;
@@ -11,9 +8,6 @@
 @button-icon-size: 16px;
 @button-font-size: 18px; // TODO: Change to 22px for Franlink Gothic
 
-/**
- * sizes SMALL
- */
 @button-sm-height: 40px;
 @button-sm-pad-lr: 25px;
 @button-sm-border-radius: 5px;
@@ -21,56 +15,14 @@
 @button-sm-icon-size: 14px;
 @button-sm-font-size: 14px; // TODO: Change to 18px for Franlink Gothic
 
-/**
- * colors PRIMARY
- */
 @button-primary-bg: @color-ui-alpha;
 @button-primary-color: white;
 @button-primary-hover-bg: lighten(@color-ui-alpha, 5%);
 
-/**
- * colors SECONDARY
- */
 @button-secondary-bg: @color-ui-zeta;
 @button-secondary-color: @color-ui-alpha;
 @button-secondary-hover-bg: lighten(@color-ui-zeta, 5%);
 
-/**
- * MIXINS
- */
-.make-button-size(@height, @pad-lr, @border-radius, @icon-pad, @icon-size, @font-size, @line-height: 1.5) {
-  // TODO: we may support @line-height in pixel or em using css guards
-  @calculated-line-height: @font-size * @line-height;
-
-  font-size: @font-size;
-
-  line-height: @line-height;
-  padding: ((@height - @calculated-line-height) / 2) @pad-lr;
-
-  border-radius: @border-radius;
-
-  &.icon::before {
-    margin-right: @icon-pad;
-    font-size: @icon-size;
-    vertical-align: middle; // TODO: Why do we need that, shouldn't that be corrected by 2px offset of icons?
-  }
-}
-
-.make-button-color(@bg-color, @color, @hover-bg-color: @bg-color, @hover-color: @color) {
-  background: @bg-color;
-  color: @color;
-
-  text-decoration: none;
-
-  &:hover {
-    background: @hover-bg-color;
-    color: @hover-color;
-  }
-}
-
-/**
- * DEFAULT / PRIMARY button
- */
 .button {
   display: inline-block;
 
@@ -93,9 +45,6 @@
   );
 }
 
-/**
- * SMALL button
- */
 .button--small {
   .make-button-size(
     @height: @button-sm-height;
@@ -107,9 +56,6 @@
   );
 }
 
-/**
- * SECONDARY button
- */
 .button--secondary {
   .make-button-color(
     @bg-color: @button-secondary-bg;
