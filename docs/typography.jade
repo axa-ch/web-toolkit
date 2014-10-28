@@ -5,77 +5,78 @@ template: page.jade
 ---
 
 .masthead.masthead--docs
+  .l-container
+    .l-row
+      .l-full
+        h1 An awesome style guide needs awesome typography
+
+.l-container
   .l-row
     .l-full
-      h1 An awesome style guide needs awesome typography
+      h1 Headings
 
+      :sample
+        h1 Heading one
+        h2 Heading two
+        h3 Heading three
+        h4 Heading four
+        h5 Heading five
+        h6 Heading six
 
-.l-row
+      h1 Paragraphs
 
-  h1 Headings
+      :sample
+        p.
+          Some fancy paragraph followed by a bigger one.
 
-  :sample
-    h1 Heading one
-    h2 Heading two
-    h3 Heading three
-    h4 Heading four
-    h5 Heading five
-    h6 Heading six
+        p.
+          Bacon ipsum dolor amet nisi pancetta short ribs
+          sed exercitation andouille landjaeger ad. Ball
+          tip pariatur chuck, officia cupidatat qui eiusmod
+          lorem in. Brisket reprehenderit laborum proident,
+          deserunt filet mignon et sed. Incididunt prosciutto
+          flank exercitation tempor. Beef et in minim. Commodo
+          fatback adipisicing strip steak drumstick mollit sausage,
+          sint deserunt officia eu tongue labore cupidatat kevin.
 
-  h1 Paragraphs
+      h1 Anchor element
 
-  :sample
-    p.
-      Some fancy paragraph followed by a bigger one.
+      :sample
+        p.
+          This paragraph shows an <a href="#" >awesome
+          inline anchor</a> and lose some words about emphasizing.
 
-    p.
-      Bacon ipsum dolor amet nisi pancetta short ribs
-      sed exercitation andouille landjaeger ad. Ball
-      tip pariatur chuck, officia cupidatat qui eiusmod
-      lorem in. Brisket reprehenderit laborum proident,
-      deserunt filet mignon et sed. Incididunt prosciutto
-      flank exercitation tempor. Beef et in minim. Commodo
-      fatback adipisicing strip steak drumstick mollit sausage,
-      sint deserunt officia eu tongue labore cupidatat kevin.
+      h1 Inline text elements
 
-  h1 Anchor element
+      h2 Marked text
 
-  :sample
-    p.
-      This paragraph shows an <a href="#" >awesome
-      inline anchor</a> and lose some words about emphasizing.
+      :sample
+        p.
+          You can use the mark tag to <mark>highlight</mark> text.
 
-  h1 Inline text elements
+      h2 Deleted text
 
-  h2 Marked text
+      :sample
+        p.
+          Use <code>del</code> to indicate that <del>a part of a</del> some text has been deleted.
 
-  :sample
-    p.
-      You can use the mark tag to <mark>highlight</mark> text.
+      h2 No longer relevant text
 
-  h2 Deleted text
+      :sample
+        p.
+          <s>To show that a text is no longer relevant use the </s><code>s</code><s> tag. </s>
 
-  :sample
-    p.
-      Use <code>del</code> to indicate that <del>a part of a</del> some text has been deleted.
+      h2 Inserted text
 
-  h2 No longer relevant text
+      :sample
+        p.
+          The <code>ins</code> tag shows that a text <ins>has been inserted.</ins>
 
-  :sample
-    p.
-      <s>To show that a text is no longer relevant use the </s><code>s</code><s> tag. </s>
+      h2 Emphasize
 
-  h2 Inserted text
-
-  :sample
-    p.
-      The <code>ins</code> tag shows that a text <ins>has been inserted.</ins>
-
-  h2 Emphasize
-
-  :sample
-    p.
-      Emphasizing text using <code>strong</code> or <code>em</code>
-      will result in <strong>bold</strong> or <em>italic</em> text.
-      It is not recommended to use <code>b</code> or <code>i</code>
-      tags.
+      :sample
+        p.
+          Emphasizing text using <code>strong</code> or <code>em</code>
+          will result in <strong>bold</strong> or <em>italic</em> text.
+          It is not recommended to use <code>b</code> or <code>i</code>
+          tags.
