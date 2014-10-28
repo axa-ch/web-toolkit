@@ -2,8 +2,8 @@
 
 @import 'style/variables';
 
-@path: @sg-icon-font-path;
-@name: @sg-icon-font-name;
+@path: @icon-font-path;
+@name: @icon-font-name;
 
 @font-face {
   font-family: '@{name}';
@@ -38,15 +38,21 @@
 }
 <% }); %>
 
+.make-color(@color) {
+  &,
+  &:hover {
+    color: @color;
+  }
+}
 
 .icon--twitter {
-  color: #55acee;
+  .make-color(#55acee);
 }
 
 .icon--facebook {
-  color: #3d539e;
+  .make-color(#3d539e);
 }
 
 .icon--github {
-  color: #333333;
+  .make-color(#333333);
 }
