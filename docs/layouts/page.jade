@@ -27,7 +27,7 @@ html
               .header__meta__menu.menu.menu--meta
                 if version && version.hash && version.hash.long && version.hash.short
                   .menu__item
-                    a.menu__link(href=config.repository.url + '/commit/' + version.hash.long) #{version.hash.short}
+                    a.menu__link(href=config.repository.url + '/commit/' + version.hash.long) Build ##{version.hash.short}
             .header__meta__lower
               .header__meta__social
                 ul.menu.menu--social
