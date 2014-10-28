@@ -50,7 +50,7 @@ We love feedback! File an issue and we'll reach out to you.
 
 Do not hesitate, we appreciate every contribution. Do not fear non-perfect Pull Requests, nobody is perfect.
 
-When contribution please stick to the following guides:
+When contributing please stick to the following guides:
 
 ### Branching
 
