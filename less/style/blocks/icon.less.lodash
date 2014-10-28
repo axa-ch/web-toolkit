@@ -56,3 +56,19 @@
 .icon--github {
   .make-color(#333333);
 }
+
+.icon--youtube {
+  .make-color(#ca272c);
+}
+
+.icon--google-plus {
+  .make-color(#bb3627);
+}
+
+.icon--linked-in {
+  .make-color(#007bb6);
+}
+
+.icon--xing {
+  .make-color(#00605e);
+}
