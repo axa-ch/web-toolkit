@@ -220,7 +220,7 @@ gulp.task('create-versions-file', function(cb) {
 })
 
 gulp.task('build', function (cb) {
-  runSequence('create-versions-file', 'icons', 'images', 'styles', 'scripts', 'docs', cb);
+  runSequence('icons', 'images', 'styles', 'scripts', 'create-versions-file', 'docs', cb);
 });
 
 gulp.task('serve', function (next) {
