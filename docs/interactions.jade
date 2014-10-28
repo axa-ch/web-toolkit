@@ -4,11 +4,14 @@ slug: interactions
 template: page.jade
 ---
 
-.l-container
-  .l-row
-    .l-full
-      h1 Interactions
+.head
+  .l-container
+    h1.head__title Interactions
+    p.head__lead.lead.
+      Interactions bring your web apps to life. They react to user
+      input and move things around on your page.
 
+.l-container
   .l-row
     .l-primary
       each interaction in interactions
@@ -18,7 +21,7 @@ template: page.jade
           div.block!= interaction.contents
 
     .l-secondary
-      nav.nav.nav--side(data-spy="affix", data-offset-top="230")
+      nav.js-affix-under-head.nav.nav--side
         ul.menu.menu--side
           each interaction in interactions
             li.menu__item

@@ -4,11 +4,14 @@ slug: visuals
 template: page.jade
 ---
 
-.l-container
-  .l-row
-    .l-full
-      h1 Visuals
+.head
+  .l-container
+    h1.head__title Visuals
+    p.head__lead.lead.
+      <em>Visuals</em> are the building blocks for your next project.
+      Find out what's available and how you can use them.
 
+.l-container
   .l-row
     .l-primary
       each visual in visuals
@@ -18,7 +21,7 @@ template: page.jade
           div!= visual.contents
 
     .l-secondary
-      nav.nav.nav--side(data-spy="affix", data-offset-top="230")
+      nav.js-affix-under-head.nav.nav--side
         ul.menu.menu--side
           each visual in visuals
             li.menu__item

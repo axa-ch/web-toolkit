@@ -4,18 +4,18 @@ slug: home
 template: page.jade
 ---
 
-.masthead.masthead--docs
+.head.head--master
   .l-container
-    p.lead.masthead__lead.
+    p.head__lead.lead.
       Meet the AXA Switzerland Web Style Guide – the HTML, CSS and JS
       framework for developing responsive, mobile first projects
       on the web.
 
-    p
-      a(href=config.urls.releases, title="See the releases on GitHub").button.icon.icon--download.
+    .head__actions
+      a.head__action.button.icon.icon--download(href=config.urls.releases, title="See the releases on GitHub").
         Download Style Guide
-      = ' '
-      a(href=config.repository.url, title=config.repository.name).button.button--secondary.icon.icon--source.
+
+      a.head__action.button.button--secondary.icon.icon--source(href=config.repository.url, title=config.repository.name).
         View project on GitHub
 
 .l-container
@@ -52,19 +52,9 @@ template: page.jade
         li sublicensing
 
     .l-secondary
-      nav#affix.nav.nav--side
+      nav.js-affix-under-head.nav.nav--side
         ul.menu.menu--side
           li.menu__item
             a.menu__link(href='#examples') Examples
           li.menu__item
             a.menu__link(href='#license') License
-
-script(type='text/javascript').
-  $('#affix').affix({
-    offset: {
-      top: function () {
-        var $masthead = $('.masthead');
-        return $masthead.offset().top + $masthead.height() + 20;
-      }
-    }
-  });
