@@ -15,8 +15,8 @@ html
 
   body.site
     .site__page
-      header.header.header--main.l-holder
-        .l-row
+      header.header.header--main
+        .l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
           a.header__brand.brand(href="index.html")
             .brand__logo
@@ -37,8 +37,8 @@ html
                 ul
                   li.header__meta__welcome__item Web Style Guide
 
-      .l-holder
-        nav.l-row
+      nav.main-nav
+        .main-nav__container.l-container
           ul.menu.menu--main
             li.menu__item(class=slug === 'home' ? 'is-active' : undefined)
               a(href="index.html", class=slug === 'home' ? 'is-active' : undefined).menu__link.menu__link--home
@@ -53,13 +53,12 @@ html
             li.menu__item(class=slug === 'recommendations' ? 'is-active' : undefined)
               a(href="recommendations.html", class=slug === 'recommendations' ? 'is-active' : undefined).menu__link Recommendations
 
-
-      .l-holder!= contents
+      section!= contents
 
       footer.footer
-        .footer__copyline.l-holder
-          .footer__copyline__inner.l-row
-            .l-full
+        .footer__copyline
+          .footer__copyline__inner
+            .l-container
               ul.copyline-menu
                 li.copyline-menu__item
                   a.copyline-menu__link(href=config.repository.url, title=config.repository.name) GitHub

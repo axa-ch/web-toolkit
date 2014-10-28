@@ -85,7 +85,7 @@ gulp.task('styles-copy', function () {
     .pipe(gulp.dest('./dist/less'));
 });
 
-gulp.task('styles-generate', function (cb) {
+gulp.task('styles-icons', function (cb) {
   gulp.src(['./icons/*.svg'])
     .pipe(iconfont({ fontName: 'temporary' }))
     .on('error', errorify)
@@ -112,11 +112,11 @@ gulp.task('styles-compile', function () {
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('styles-generate-variables', function () {
-  return gulp.src('./less/style/variables.less.lodash')
+gulp.task('styles-generate', function () {
+  return gulp.src(['./less/**/*.less.lodash', '!./less/style/blocks/icon.less.lodash'])
     .pipe(template({ colors: readJSONFile('./less/colors.json') }))
-    .pipe(rename('./less/style/variables.less'))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(rename({ extname: '' }))
+    .pipe(gulp.dest('./dist/less/'));
 });
 
 gulp.task('styles-copy-colors', function () {
@@ -148,8 +148,9 @@ gulp.task('styles-compress', function() {
 
 gulp.task('styles', function (cb) {
   runSequence(
-    'styles-copy', 'styles-generate', 'styles-generate-variables',
-    'styles-copy-colors', 'styles-compile', 'styles-autoprefix', 'styles-compress', cb);
+    'styles-copy', 'styles-icons', 'styles-generate',
+    'styles-copy-colors', 'styles-compile', 'styles-autoprefix',
+    'styles-compress', cb);
 });
 
 gulp.task('scripts-clean', function (cb) {

@@ -1,0 +1,23 @@
+// initial
+.loop-slctr(@index; @pattern; @count; @rules) when (@index = 1) {
+  @item: replace(@pattern, "##", @index);
+  .loop-slctr((@index + 1); @pattern; @count; @rules; @item);
+}
+
+// general
+.loop-slctr(@index; @pattern; @count; @rules; @list) when (@index =< @count) {
+  @item: replace(@pattern, "##", @index);
+  .loop-slctr((@index + 1); @pattern; @count; @rules; ~"@{list}, @{item}");
+}
+
+// terminal
+.loop-slctr(@index; @pattern; @count; @rules; @list) when (@index > @count) {
+  @{list} {
+    @rules();
+  }
+}
+
+.loop-selector(@pattern; @count; @rules) {
+  // kickstart the loop
+  .loop-slctr(1; @pattern; @count; @rules);
+}
