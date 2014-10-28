@@ -4,11 +4,12 @@ slug: typography
 template: page.jade
 ---
 
-.masthead.masthead--docs
+.head
   .l-container
-    .l-row
-      .l-full
-        h1 An awesome style guide needs awesome typography
+    h1.head__title Typography
+    p.head__lead.lead.
+      <em>Typography</em> matters! The Style Guide comes packed with
+      lots of typographic elements that make reading a breeze.
 
 .l-container
   .l-row
@@ -91,7 +92,7 @@ template: page.jade
           tags.
 
     .l-secondary
-      nav.nav.nav--side(data-spy="affix", data-offset-top="230")
+      nav.js-affix-under-head.nav.nav--side
         ul.menu.menu--side
           li.menu__item: a.menu__link(href="#headings") Headings
           li.menu__item: a.menu__link(href="#paragraphs") Paragraphs
