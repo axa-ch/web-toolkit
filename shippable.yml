@@ -13,4 +13,4 @@ before_install:
 
 script:
   - gulp build
-  - if [ "$BRANCH" -eq "master" ]; then gulp deploy; fi
+  - if [ "$BRANCH" = "master" ]; then gulp deploy; fi
