@@ -41,9 +41,9 @@
      showgrid="true"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="0.59"
-     inkscape:cx="1058.8652"
-     inkscape:cy="340.60455"
+     inkscape:zoom="0.295"
+     inkscape:cx="1091.1148"
+     inkscape:cy="820.0596"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -79,7 +79,7 @@
        sketch:type="MSArtboardGroup"
        style="fill:#000000">
       <path
-         d="M 50.137778,30.84177 20,60.945557 l 7.525947,0 0,22.577841 15.051894,0 0,-18.814871 15.051893,0 0,18.814871 15.051894,0 0,-22.577841 7.525947,0 z"
+         d="M 50.137776,27.078792 20,57.182579 l 7.525946,0 0,22.577841 15.051893,0 0,-18.814871 15.051892,0 0,18.814871 15.051893,0 0,-22.577841 7.525946,0 z"
          id="rect3085"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cccccccccccc" />
