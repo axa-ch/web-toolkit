@@ -28,13 +28,13 @@
   .menu__link {
     display: block;
     padding: 8px 20px;
-    background: @color-ui-zeta;
-    color: @color-ui-alpha;
+    background: @color-tbd-2;
+    color: @color-blue;
     text-decoration: none;
 
 
     &.is-active {
-      background: @color-ui-alpha;
+      background: @color-blue;
       color: white;
     }
   }
@@ -64,14 +64,14 @@
     text-decoration: none;
     font-size: 16px;
     line-height: 1.4;
-    background-color: @color-ui-epsilon;
-    color: @color-text-delta;
+    background-color: @color-tbd-1;
+    color: @color-tbd-4;
 
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    border-top: 1px dotted lighten(@color-ui-epsilon, 20%);
+    border-top: 1px dotted lighten(@color-tbd-1, 20%);
 
     &:hover {
       color: white;
@@ -79,7 +79,7 @@
 
     &.is-active,
     &:active {
-      background-color: darken(@color-ui-epsilon, 5%);
+      background-color: darken(@color-tbd-1, 5%);
       color: white;
     }
   }
@@ -105,7 +105,7 @@
       font-size: 1.4em;
     }
 
-    background-color: darken(@color-ui-epsilon, 10%);
+    background-color: darken(@color-tbd-1, 10%);
 
     &:hover {
       color: white;
@@ -113,7 +113,7 @@
 
     &.is-active,
     &:active {
-      background-color: darken(@color-ui-epsilon, 15%);
+      background-color: darken(@color-tbd-1, 15%);
       color: white;
     }
   }
@@ -240,14 +240,14 @@
 
     &.is-active,
     &:hover {
-      border-bottom: 5px solid @color-ui-alpha;
+      border-bottom: 5px solid @color-blue;
 
       .menu__link {
-        color: @color-text-beta;
+        color: @color-gray--darker;
       }
 
       .menu__link--home::before {
-        color: @color-text-gamma;
+        color: @color-blue;
       }
     }
 
@@ -258,7 +258,7 @@
 
   .menu__link {
     display: block;
-    color: @color-text-epsilon;
+    color: @color-gray;
     font-size: 14px;
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
@@ -270,7 +270,7 @@
 
     &::before {
       font-size: 16px;
-      color: @color-text-gamma;
+      color: @color-blue;
     }
   }
 }
@@ -291,17 +291,17 @@
 
     padding: 3px 10px;
 
-    color: @color-text-epsilon;
+    color: @color-gray;
     text-decoration: none;
     font-size: @font-size-base;
 
     &:hover {
-      color: @color-text-beta;
+      color: @color-gray--darker;
     }
 
     &.is-active,
     &:active {
-      color: @color-text-gamma;
+      color: @color-blue;
     }
   }
 }
@@ -317,7 +317,7 @@
     &.is-active,
     &:hover {
       a {
-        color: @color-text-gamma;
+        color: @color-blue;
       }
     }
 
@@ -328,7 +328,7 @@
 
   .menu__link {
     text-decoration: none;
-    color: @color-text-beta;
+    color: @color-gray--darker;
   }
 }
 
@@ -337,7 +337,7 @@
 
   .menu__item {
     font-weight: bold;
-    color: @color-text-gamma;
+    color: @color-blue;
     font-size: 20px; // TODO: fixed font-size
   }
 }

@@ -14,7 +14,7 @@
 
   padding: @padding-top-bottom 0;
 
-  border-bottom: 1px solid @color-ui-delta;
+  border-bottom: 1px solid @color-gray--lighter;
 
   .respond(large, {
     padding: @padding-top-bottom-large 0;
@@ -30,14 +30,14 @@
 
     float: right;
 
-    color: @color-ui-alpha;
+    color: @color-blue;
     font-size: 1.3em;
     text-align: center;
 
     cursor: pointer;
 
     &:hover {
-      color: lighten(@color-ui-alpha, 10%);
+      color: lighten(@color-blue, 10%);
     }
 
     .respond(large, {
@@ -98,14 +98,14 @@
         height: 16px; // Hack to get the border-right exactly 16px height
         line-height: 16px;
 
-        border-right: 1px solid @color-text-beta; // TODO: Use ui color instead
+        border-right: 1px solid @color-gray--darker; // TODO: Use ui color instead
 
-        color: @color-text-gamma;
+        color: @color-blue;
         font-family: ITCFranklinGothicCondensedDemi, sans-serif;
         font-size: 20px;
 
         a {
-          color: @color-text-gamma;
+          color: @color-blue;
           text-decoration: none;
         }
 
@@ -121,7 +121,7 @@
       float: right;
       min-height: 21px; // TODO
 
-      border-left: 1px solid @color-text-beta;
+      border-left: 1px solid @color-gray--darker;
       padding: 0 0 0 10px;
       margin: 0 0 0 10px;
     }

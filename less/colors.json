@@ -1,17 +1,39 @@
 {
-  "ui": {
-    "alpha": "#0f2e86",
-    "beta": "#ff1821",
-    "gamma": "#86a647",
-    "delta": "#efefef",
-    "epsilon": "#192858",
-    "zeta": "#bcd9f4"
+  "primary": {
+    "blue": "#0f2e86",
+    "red": "#ff1821",
+    "tbd-1": "#192858",
+    "tbd-2": "#bcd9f4",
+    "tbd-3": "#333333",
+    "tbd-4": "#a5afcb"
   },
-  "text": {
-    "alpha": "#333333",
-    "beta": "#6f6f6f",
-    "gamma": "#0f2e86",
-    "delta": "#a5afcb",
-    "epsilon": "#b0b0b0"
-  }
+  "secondary": [{
+    "name": "light-blue",
+    "colors": {
+      "light-blue": "#0062a9",
+      "light-blue--light": "#5c91c0"
+    }
+  },{
+    "name": "blue-gray",
+    "colors": {
+      "blue-gray": "#79838d",
+      "blue-gray--light": "#dedee2"
+    }
+  },{
+    "name": "gray",
+    "colors": {
+      "black": "#000000",
+      "gray--darker": "#6f6f6f",
+      "gray--dark": "#919191",
+      "gray": "#b0b0b0",
+      "gray--light": "#e5e5e5",
+      "gray--lighter": "#efefef",
+      "white": "#ffffff"
+    }
+  },{
+    "name": "green",
+    "colors": {
+      "green": "#7a9f35"
+    }
+  }]
 }
