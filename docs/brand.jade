@@ -1,0 +1,66 @@
+---
+title: Brand
+slug: brand
+template: page.jade
+---
+
+.head
+  .l-container
+    h1.head__title Brand
+    p.head__lead.lead.
+      Guides on how to use the AXA logo and what
+      typeface colors should be used.
+
+.l-container
+  h1 Logo
+
+  .l-row
+    .l-col.l-col--medium-6
+      h3 Usage
+      p.
+        Our logo is the most distilled and ubiquitous
+        element of our identity – a universal signature
+        across all AXA Winterthur communications. While it
+        is a simple logo, we must treat it nicely.
+        This page covers the correct usage.
+    .l-col.l-col--medium-6
+      h3 Logo <strong>without</strong> tagline
+      :sample
+        .brand
+          .brand__logo
+
+      h3 Logo <strong>with</strong> tagline
+      :sample
+        .brand
+          .brand__logo
+          .brand__tagline.brand__tagline--de
+
+
+
+  h1 Colors
+
+  h2 Primary palette
+
+  .l-row
+    .color-palette.color-palette--primary
+      each colorCode, colorName in colors.primary
+        .l-col(class='l-col--medium-2')
+          .color-palette__color
+            .color-palette__color__box(style='background: ' + colorCode)
+            .color-palette__color__name #{colorName}
+            .color-palette__color__code #{colorCode}
+            .color-palette__color__var @color-#{colorName}
+
+  h2 Secondary palette
+
+  each colorGroup in colors.secondary
+    .color-palette.color-palette--secondary
+      h3 #{colorGroup.name}
+      .l-row
+        each colorCode, colorName in colorGroup.colors
+          .l-col(class='l-col--medium-2')
+            .color-palette__color
+              .color-palette__color__box(style='background: ' + colorCode, class=(colorCode == '#ffffff' ? 'color-palette__color__box--white' : ''))
+              .color-palette__color__name #{colorName}
+              .color-palette__color__code #{colorCode}
+              .color-palette__color__var @color-#{colorName}
