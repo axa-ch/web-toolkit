@@ -131,6 +131,22 @@ p Next is an example with semantic classes:
         code.box .l-thumbnail
     - }
 
+h3 Nesting grids
+
+p.
+  It can sometimes be practical to have one grid contained in another.
+  The grid is built in a way that when you nest them, no multiple
+  gutters will add to each other, thus preventing strange behavior.
+
+:sample
+  .l-row
+    .l-primary
+      p: code.box Primary
+      .l-row
+        .l-primary: code.box Primary Primary
+        .l-secondary: code.box Primary Secondary
+    .l-secondary: code.box Secondary
+
 h3 Skip columns
 
 p.
