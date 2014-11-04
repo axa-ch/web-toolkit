@@ -1,0 +1,25 @@
+@import 'style/variables';
+
+.table {
+  width: 100%;
+
+  > caption {
+    padding: 10px;
+    border: 1px solid @color-ui-delta;
+    border-bottom: 0;
+    font-size: 0.8em;
+    font-style: italic;
+    color: @color-text-beta;
+  }
+
+  td, th {
+    padding: 10px;
+    border: 1px solid @color-ui-delta;
+  }
+
+  tbody tr:nth-of-type(2n) {
+    td, th {
+      background-color: @color-ui-delta;
+    }
+  }
+}
