@@ -69,7 +69,7 @@ module.exports = exports = function (options) {
     ].forEach(function (name) {
       // TODO: Remove when collection plugin supports undeclared collections
       var options = {};
-      options[name] = { sortBy: 'order', reverse: false };
+      options[name] = { sortBy: 'slug', reverse: false };
 
       metalsmith.use(branch(name + '/*.jade')
         .use(jade({ locals: metalsmith.metadata() }))
