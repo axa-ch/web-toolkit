@@ -16,6 +16,7 @@
 
   .contract-list__item__header {
     height: 60px;
+    padding: 0 15px;
     overflow: hidden;
     background: @color-ui-alpha;
     color: white;
@@ -24,13 +25,24 @@
   .contract-list__item__header.icon {
     &::before {
       float: left;
-      box-sizing: border-box;
-      width: 60px;
-      height: 100%;
-      padding: 10px;
+      padding: 17px 10px 19px 0;
       font-size: 24px;
+      text-align: center;
+      vertical-align: middle;
     }
+  }
 
+  .contract-list__item__headline {
+    padding: 10px 0;
+  }
+
+  .contract-list__item__headline__primary {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .contract-list__item__headline__secondary {
+    font-size: 0.9em;
   }
 
   .contract-list__item__content {
@@ -73,7 +85,7 @@
   .contract-list__item__footer__link {
     text-align: center;
     display: block;
-    padding: 10px;
+    padding: 14px;
   }
 
   .contract-list__item__footer__link--primary {
