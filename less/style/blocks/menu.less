@@ -81,8 +81,13 @@
       color: @color-text-delta;
     }
 
+    &.icon:before,
+    &.icon::before {
+      padding-right: 8px;
+    }
+
     &.is-active {
-      background-color: darken(@color-ui-epsilon, 5%);
+      background-color: #040b20;
       color: white;
     }
   }
@@ -91,10 +96,12 @@
     .icon;
     .icon--arrow-right;
 
+    &:before,
     &::before {
       display: block;
       float: right;
       font-size: 1.4em;
+      padding: 0;
     }
   }
 
@@ -102,20 +109,17 @@
     .icon;
     .icon--arrow-left;
 
+    &:before,
     &::before {
       display: block;
       float: left;
       font-size: 1.4em;
+      padding-right: 8px;
     }
 
-    background-color: darken(@color-ui-epsilon, 10%);
+    background-color: #040b20;
 
     &:hover {
-      color: white;
-    }
-
-    &.is-active {
-      background-color: darken(@color-ui-epsilon, 15%);
       color: white;
     }
   }
@@ -146,7 +150,7 @@
     background-color: #f3f6fc;
     color: #22336a;
     border-top: none;
-    border-bottom: 1px solid #131f44;
+    border-bottom: 1px solid #4f5d88;
     height: 41px;
     padding-top: 10px;
     padding-bottom: 9px;
