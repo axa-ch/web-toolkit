@@ -6,22 +6,22 @@ collection: visuals
 
 :sample
   .list
-    each item in ['one', 'two', 'three']
+    each item in ['One', 'Two', 'Three']
       .list__item
-        .list__item__header.icon.icon--home
-          .list__item__headline
-            .list__item__headline__primary BOX
-            .list__item__headline__secondary= item
-        .list__item__content
-          .list__item__content__item.list__item__content__item--key
-            .list__item__content__item__label Kontrollschild
-            .list__item__content__item__value TG 163090
-          .list__item__content__item
-            .list__item__content__item__label Kontrollschild
-            .list__item__content__item__value TG 163090
-          .list__item__content__item.list__item__content__item--sum
-            .list__item__content__item__label Kontrollschild
-            .list__item__content__item__value TG 163090
-        .list__item__footer
-          a(href='#').list__item__footer__link.list__item__footer__link--secondary Details
-          a(href='#').list__item__footer__link.list__item__footer__link--primary Services
+        .list__item__cell.list__item__cell--header
+          i.icon.icon--home
+          = ' '
+          span= 'Product Number ' + item
+        .list__item__cell
+          div Kontrollschild
+          div TG 163090
+        .list__item__cell
+          div Kontrollschild
+          div TG 163090
+        .list__item__cell
+          a(href='#') Details
+        .list__item__cell.list__item__cell--action
+          a.list__item__cell__action-button.button.button--primary(href='#')
+            span More
+            != ' '
+            i.icon.icon--arrow-bottom
