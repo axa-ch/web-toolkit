@@ -1,20 +1,21 @@
+@import 'style/variables';
 @import 'style/mixins/grid';
 @import 'style/mixins/clearfix';
 
-.contract-list--tiles {
+.list {
   .make-row();
   margin: 0;
   background: #efefef;
   padding: 0 10px;
 
-  .contract-list__item {
+  .list__item {
     .make-col(12);
     .make-col(6, medium, 20px);
     .make-col(4, large, 20px);
     margin: 20px 0;
   }
 
-  .contract-list__item__header {
+  .list__item__header {
     height: 60px;
     padding: 0 15px;
     overflow: hidden;
@@ -22,7 +23,7 @@
     color: white;
   }
 
-  .contract-list__item__header.icon {
+  .list__item__header.icon {
     &::before {
       float: left;
       padding: 17px 10px 19px 0;
@@ -32,69 +33,69 @@
     }
   }
 
-  .contract-list__item__headline {
+  .list__item__headline {
     padding: 10px 0;
   }
 
-  .contract-list__item__headline__primary {
+  .list__item__headline__primary {
     font-weight: bold;
     font-size: 1.2em;
   }
 
-  .contract-list__item__headline__secondary {
+  .list__item__headline__secondary {
     font-size: 0.9em;
   }
 
-  .contract-list__item__content {
+  .list__item__content {
     background: white;
     padding: 10px 20px 0 20px;
   }
 
-  .contract-list__item__content__item {
+  .list__item__content__item {
     &:extend(.clearfix all);
 
     padding: 15px;
   }
 
-  .contract-list__item__content__item__label {
+  .list__item__content__item__label {
     font-weight: bold;
     float: left;
     font-size: .8em;
     line-height: 1.5;
   }
 
-  .contract-list__item__content__item__value {
+  .list__item__content__item__value {
     float: right;
     font-size: .8em;
     line-height: 1.5;
   }
 
-  .contract-list__item__content__item--key {
+  .list__item__content__item--key {
     background: #efefef;
 
-    .contract-list__item__content__item__value {
+    .list__item__content__item__value {
       font-size: 1.2em;
       line-height: 1;
     }
   }
 
-  .contract-list__item__footer {
+  .list__item__footer {
     background: white;
   }
 
-  .contract-list__item__footer__link {
+  .list__item__footer__link {
     text-align: center;
     display: block;
     padding: 14px;
   }
 
-  .contract-list__item__footer__link--primary {
+  .list__item__footer__link--primary {
     background: @color-ui-alpha;
     font-weight: bold;
     color: white;
   }
 
-  .contract-list__item__footer__link--secondary {
+  .list__item__footer__link--secondary {
     color: @color-ui-alpha;
     font-size: .8em;
     border-top: 1px solid #efefef;

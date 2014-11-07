@@ -1,62 +1,27 @@
 ---
-title: Contract List
-slug: contract-list
+title: List
+slug: list
 collection: visuals
 ---
 
 :sample
-  .contract-list.contract-list--tiles
-    .contract-list__item
-      .contract-list__item__header.icon.icon--home
-        .contract-list__item__headline
-          .contract-list__item__headline__primary BOX
-          .contract-list__item__headline__secondary Die Haushaltsversicherung
-      .contract-list__item__content
-        .contract-list__item__content__item.contract-list__item__content__item--key
-          .contract-list__item__content__item__label Kontrollschild
-          .contract-list__item__content__item__value TG 163090
-        .contract-list__item__content__item
-          .contract-list__item__content__item__label Kontrollschild
-          .contract-list__item__content__item__value TG 163090
-        .contract-list__item__content__item.contract-list__item__content__item--sum
-          .contract-list__item__content__item__label Kontrollschild
-          .contract-list__item__content__item__value TG 163090
-      .contract-list__item__footer
-        a(href='#').contract-list__item__footer__link.contract-list__item__footer__link--secondary Details
-        a(href='#').contract-list__item__footer__link.contract-list__item__footer__link--primary Services
-    .contract-list__item
-      .contract-list__item__header.icon.icon--home
-        .contract-list__item__headline
-          .contract-list__item__headline__primary BOX
-          .contract-list__item__headline__secondary Die Haushaltsversicherung
-      .contract-list__item__content
-        .contract-list__item__content__item.contract-list__item__content__item--key
-          .contract-list__item__content__item__label Kontrollschild
-          .contract-list__item__content__item__value TG 163090
-        .contract-list__item__content__item
-          .contract-list__item__content__item__label Kontrollschild
-          .contract-list__item__content__item__value TG 163090
-        .contract-list__item__content__item.contract-list__item__content__item--sum
-          .contract-list__item__content__item__label Kontrollschild
-          .contract-list__item__content__item__value TG 163090
-      .contract-list__item__footer
-        a(href='#').contract-list__item__footer__link.contract-list__item__footer__link--secondary Details
-        a(href='#').contract-list__item__footer__link.contract-list__item__footer__link--primary Services
-    .contract-list__item
-      .contract-list__item__header.icon.icon--home
-        .contract-list__item__headline
-          .contract-list__item__headline__primary BOX
-          .contract-list__item__headline__secondary Die Haushaltsversicherung
-      .contract-list__item__content
-        .contract-list__item__content__item.contract-list__item__content__item--key
-          .contract-list__item__content__item__label Kontrollschild
-          .contract-list__item__content__item__value TG 163090
-        .contract-list__item__content__item
-          .contract-list__item__content__item__label Kontrollschild
-          .contract-list__item__content__item__value TG 163090
-        .contract-list__item__content__item.contract-list__item__content__item--sum
-          .contract-list__item__content__item__label Kontrollschild
-          .contract-list__item__content__item__value TG 163090
-      .contract-list__item__footer
-        a(href='#').contract-list__item__footer__link.contract-list__item__footer__link--secondary Details
-        a(href='#').contract-list__item__footer__link.contract-list__item__footer__link--primary Services
+  .list
+    each item in ['one', 'two', 'three']
+      .list__item
+        .list__item__header.icon.icon--home
+          .list__item__headline
+            .list__item__headline__primary BOX
+            .list__item__headline__secondary= item
+        .list__item__content
+          .list__item__content__item.list__item__content__item--key
+            .list__item__content__item__label Kontrollschild
+            .list__item__content__item__value TG 163090
+          .list__item__content__item
+            .list__item__content__item__label Kontrollschild
+            .list__item__content__item__value TG 163090
+          .list__item__content__item.list__item__content__item--sum
+            .list__item__content__item__label Kontrollschild
+            .list__item__content__item__value TG 163090
+        .list__item__footer
+          a(href='#').list__item__footer__link.list__item__footer__link--secondary Details
+          a(href='#').list__item__footer__link.list__item__footer__link--primary Services
