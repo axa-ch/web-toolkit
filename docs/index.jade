@@ -12,11 +12,15 @@ template: page.jade
       on the web.
 
     .head__actions
-      a.head__action.button.icon.icon--download(href=config.urls.releases, title="See the releases on GitHub").
-        Download Style Guide
+      a.head__action.button(href=config.urls.releases, title="See the releases on GitHub")
+        i.button__icon.icon.icon--download
+        != ' '
+        span Download Style Guide
 
-      a.head__action.button.button--secondary.icon.icon--source(href=config.repository.url, title=config.repository.name).
-        View project on GitHub
+      a.head__action.button.button--secondary(href=config.repository.url, title=config.repository.name)
+        i.button__icon.icon.icon--source
+        != ' '
+        span View project on GitHub
 
 .l-container
   .l-row
