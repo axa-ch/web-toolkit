@@ -1,0 +1,47 @@
+---
+title: Full width grid
+---
+
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="../css/docs.css")
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(type='text/javascript', src='../js/style.all.js')
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0")
+    meta(name="description", content=config.description)
+    meta(name="keywords", content=config.keywords)
+    meta(name="author", content=config.author)
+
+    style(type='text/css').
+      #container {
+        margin: 0 auto;
+      }
+
+  body
+
+    input(type='text', value='100%')#widthIn
+
+    script.
+      $(function() {
+        var $in = $("#widthIn");
+        var $container = $("#container");
+
+        $in.keyup(function() {
+          $container.css({
+            'width': $in.val()
+          });
+        })
+      })
+
+    #container
+      each j in [1, 2, 3, 4, 6, 12]
+        .l-row
+          - for (var i = 0; i < 12/j; i++) {
+            div.l-col(class='l-col--' + (j))
+              .box #{j}
+          - }
