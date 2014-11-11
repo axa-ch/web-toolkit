@@ -5,6 +5,8 @@
   padding: 20px;
   text-align: center;
 
+  overflow: hidden;
+
   .respond(medium, {
     background-color: #f4f4f4;
 
@@ -38,6 +40,10 @@
   float: left;
   height: 100%;
 
+  font-size: 24px;
+}
+
+.cell--title .cell__icon {
   font-size: 32px;
 }
 
@@ -59,6 +65,31 @@
 }
 
 .cell__action {
+  position: relative;
+
   width: 100%;
-  border-radius: 0;
+}
+
+.cell__action.is-open {
+  position: relative;
+  color: #333;
+  background-color: white;
+
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.cell__action.is-open::after {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+
+  content: ' ';
+
+  display: inline-block;
+  width: 100%;
+  height: 999px;
+
+  background: white;
 }
