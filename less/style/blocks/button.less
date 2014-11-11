@@ -25,6 +25,7 @@
 
 .button {
   display: inline-block;
+  position: relative;
 
   // TODO: franklin gothic medium
   font-weight: bold;
@@ -62,4 +63,11 @@
     @color: @button-secondary-color;
     @hover-bg-color: @button-secondary-hover-bg;
   );
+}
+
+.button__badge {
+  position: absolute;
+
+  top: -5px;
+  right: -5px;
 }
