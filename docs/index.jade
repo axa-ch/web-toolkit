@@ -11,7 +11,21 @@ template: page.jade
       framework for developing responsive, mobile first projects
       on the web.
 
-    .head__actions
+    .head__actions(data-bind='visible: !isAuthenticated()')
+      a.head__action.button(href='#', title="Sign in with GitHub", data-bind="attr: { href: authorizeUrl() }")
+        i.button__icon.icon.icon--github
+        != ' '
+        span Sign in with GitHub
+
+    .head__actions(data-bind='visible: isAuthenticated() && !hasRepoAccess()')
+      span.
+        Unfortunately, you don't have access to the Style Guide repository.
+        But you can ask for it!
+      br
+      a.head__action.button(href='#', title="Ask for permission")
+        span Ask for permission
+
+    .head__actions(data-bind='visible: isAuthenticated() && hasRepoAccess()')
       a.head__action.button(href=config.urls.releases, title="See the releases on GitHub")
         i.button__icon.icon.icon--download
         != ' '
