@@ -23,20 +23,24 @@ p.
   .list
     each item in ['One', 'Two', 'Three']
       .list__item
-        .list__item__cell.list__item__cell--header
-          i.icon.icon--home
-          = ' '
-          span= 'Product Number ' + item
-        .list__item__cell
-          div Kontrollschild
-          div TG 163090
-        .list__item__cell
-          div Kontrollschild
-          div TG 163090
-        .list__item__cell
+        .list__item__cell.cell.cell--title
+          i.cell__icon.icon.icon--home
+          .cell__text
+            strong Product
+            br
+            span= item
+        .list__item__cell.cell
+          span.cell__label Kontrollschild
+          br
+          span.cell__value TG 163090
+        .list__item__cell.cell
+          span.cell__label Kontrollschild
+          br
+          span.cell__value TG 163090
+        .list__item__cell.cell
           a(href='#') Details
-        .list__item__cell.list__item__cell--action
-          a.list__item__cell__action-button.button.button--primary.button--small(href='#')
+        .list__item__cell.cell.cell--action
+          a.cell__action.button.button--primary.button--small(href='#')
             span More
             != ' '
             i.icon.icon--arrow-bottom
