@@ -1,0 +1,64 @@
+@import 'style/variables';
+@import 'style/mixins/respond';
+
+.cell {
+  padding: 20px;
+  text-align: center;
+
+  .respond(medium, {
+    background-color: #f4f4f4;
+
+    padding: 15px;
+
+    text-align: left;
+  });
+}
+
+.cell--title {
+  height: 60px;
+
+  overflow: hidden;
+  background: @color-ui-alpha;
+  color: white;
+  text-align: left;
+
+  .respond(medium, {
+    background: inherit;
+
+    color: white;
+    background-color: #1762a5;
+  });
+}
+
+.cell--action {
+  padding: 10px;
+}
+
+.cell__icon {
+  float: left;
+  height: 100%;
+
+  font-size: 32px;
+}
+
+.cell__text {
+  float: left;
+  height: 100%;
+
+  margin-left: 15px;
+}
+
+.cell__label {
+  color: #666;
+}
+
+.cell__value {
+  font-weight: bold;
+
+  color: black;
+}
+
+.cell__action {
+  width: 100%;
+  border-radius: 0;
+}
