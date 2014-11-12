@@ -1,4 +1,5 @@
 @import 'style/variables';
+@import 'style/blocks/icon';
 @import 'style/mixins/respond';
 
 .list {
@@ -38,4 +39,50 @@
     display: table-cell;
     border: none;
   });
+}
+
+.list__heading {
+  display: none;
+
+  .respond(medium, {
+    display: table-row;
+  });
+}
+
+.list__heading__cell {
+  .respond(medium, { // respond needed? Is visible on medium only anyway
+    display: table-cell;
+
+    padding: 5px 0;
+    text-align: center;
+    font-weight: bold;
+  })
+}
+
+.list__heading__cell__link {
+  text-decoration: none;
+  color: #333;
+
+  .is-sorted & {
+    color: red;
+  }
+
+  &:hover {
+    color: @color-ui-alpha;
+  }
+}
+
+.list__heading__cell__icon {
+  .icon();
+  .icon--cross();
+  padding-left: 8px;
+  font-size: 16px;
+
+  .is-sorted--ascending & {
+    .icon--arrow-top();
+  }
+
+  .is-sorted--descending & {
+    .icon--arrow-bottom();
+  }
 }
