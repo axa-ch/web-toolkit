@@ -24,6 +24,7 @@ class GitHub
         client_id: @oauth.id
         client_secret: @oauth.secret
         code: code
+      crossDomain: true
       headers:
         'Accept': 'application/json'
 
@@ -33,6 +34,7 @@ class GitHub
       $.ajax
         type: 'GET'
         url: @urls.api + '/user'
+        crossDomain: true
         headers:
           'Accept': 'application/vnd.github.v3+json'
           'Authorization': 'token ' + token
@@ -44,6 +46,7 @@ class GitHub
       $.ajax
         type: 'GET'
         url: @urls.api + '/repos/' + owner + '/' + name
+        crossDomain: true
         headers:
           'Accept': 'application/vnd.github.v3+json'
           'Authorization': 'token ' + token
@@ -58,6 +61,7 @@ class GitHub
         url: @urls.api + '/gists/' + gistId + '/comments'
         data: JSON.stringify
           body: body
+        crossDomain: true
         headers:
           'Accept': 'application/vnd.github.v3.raw+json'
           'Authorization': 'token ' + token
