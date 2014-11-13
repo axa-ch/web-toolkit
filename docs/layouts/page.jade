@@ -34,16 +34,14 @@ html
               .header__meta__language.menu.menu--language
               .header__meta__menu.menu.menu--meta
                 if version && version.hash && version.hash.long && version.hash.short
-                  .menu__item
+                  .menu__item(data-bind='visible: !isAuthenticating() && repo() !== null')
                     a.menu__link(href=config.repository.url + '/commit/' + version.hash.long) Build ##{version.hash.short}
             .header__meta__lower
-              .header__meta__social
-                ul.menu.menu--social
-                  li.menu__item
-                    a.icon.icon--github(href=config.repository.url, title=config.repository.name)
               .header__meta__welcome
                 ul
                   li.header__meta__welcome__item Web Style Guide
+                  li.header__meta__welcome__item(data-bind='with: user')
+                    a(title="Your GitHub profile", data-bind='text: name, attr: { href: url }')
 
       nav.main-nav
         ul.menu.menu--main
@@ -69,8 +67,8 @@ html
           .footer__copyline__inner
             .l-container
               ul.copyline-menu
-                li.copyline-menu__item
-                  a.copyline-menu__link(href=config.repository.url, title=config.repository.name) GitHub
+                li.copyline-menu__item(data-bind='with: repo')
+                  a.copyline-menu__link(href='#', data-bind='text: full_name, attr: { href: url, title: description }')
                 li.copyline-menu__item
                   span.copyline-menu__text Copyright AXA Versicherungen AG 2014
 
