@@ -25,6 +25,7 @@ module.exports = exports = function (options) {
     var define = require('metalsmith-define');
     var assets = require('metalsmith-assets');
     var autoprefixer = require('metalsmith-autoprefixer');
+    var coffee = require('metalsmith-coffee');
 
     // Jade filters
     jade.registerFilter('sample', sampleJadeFilter);
@@ -97,6 +98,9 @@ module.exports = exports = function (options) {
         }
       }))
       .use(autoprefixer()));
+
+    // do the scripts
+    metalsmith.use(coffee());
 
     // we no need these files
     metalsmith.use(ignore('layouts/*'));
