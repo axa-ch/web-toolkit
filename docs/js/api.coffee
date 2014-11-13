@@ -10,12 +10,11 @@ class GitHub
       secret: '1d4235c539aaaeb5e7f94454974dffc36d2f4abd'
       scopes: ['user', 'repo', 'gist']
 
-  getAuthUrl: (redirectUri) ->
+  getAuthUrl: () ->
     URI(@urls.authorize)
     .addSearch 'client_id', @oauth.id
     .addSearch 'scope', @oauth.scopes.join(',')
     .addSearch 'state', 'state'
-    .addSearch 'redirect_uri', redirectUri
 
   accessToken: (code) ->
     $.ajax

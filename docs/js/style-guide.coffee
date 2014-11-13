@@ -57,7 +57,7 @@ class StyleGuideViewModel
     ).bind(@)
 
   getAuthUrl: ->
-    @github.getAuthUrl(window.location)
+    @github.getAuthUrl()
 
   getGistUrl: ->
     'https://gist.github.com/' + 'davidknezic' + '/' + '324dc1114e65df211cd5'
