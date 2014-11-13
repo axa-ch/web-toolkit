@@ -19,6 +19,7 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer-core');
 var csswring = require('csswring');
 var uglify = require('gulp-uglify');
+var coffeelint = require('gulp-coffeelint');
 
 var readJSONFile = require('./lib/readJSONFile');
 var writeJSONFile = require('./lib/writeJSONFile');
@@ -157,6 +158,12 @@ gulp.task('scripts-clean', function (cb) {
   del(['./dist/js/**'], cb);
 });
 
+gulp.task('scripts-validate', function() {
+  return gulp.src('./coffee/*.coffee')
+    .pipe(coffeelint())
+    .pipe(coffeelint.reporter('default'));
+});
+
 gulp.task('scripts-compile', function () {
   return gulp.src('./coffee/*.coffee')
     .pipe(sourcemaps.init())
@@ -187,7 +194,7 @@ gulp.task('scripts-compress', function(cb) {
 });
 
 gulp.task('scripts', function (cb) {
-  runSequence('scripts-clean', 'scripts-compile', 'scripts-combine', 'scripts-compress', cb);
+  runSequence('scripts-clean', 'scripts-validate', 'scripts-compile', 'scripts-combine', 'scripts-compress', cb);
 });
 
 gulp.task('create-versions-file', function(cb) {
