@@ -102,13 +102,7 @@ html
         }
       });
 
-      var viewModel = new StyleGuideViewModel({
-        currentUrl: window.location,
-        clientId: '15c93ed0240a9d39c22d',
-        repo: {
-          owner: 'axa-ch',
-          name: 'style-guide'
-        }
-      });
+      var viewModel = new StyleGuideViewModel();
 
       ko.applyBindings(viewModel);
+      viewModel.init();
