@@ -7,7 +7,7 @@ html
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
-  
+
     title= title
 
     link(rel="stylesheet", href="css/docs.css")
@@ -40,7 +40,7 @@ html
               .header__meta__welcome
                 ul
                   li.header__meta__welcome__item Web Style Guide
-                  li.header__meta__welcome__item(data-bind='with: user')
+                  li.header__meta__welcome__item(data-bind='with: user, visible: user')
                     a(title="Your GitHub profile", data-bind='text: name, attr: { href: url }')
 
       nav.main-nav
