@@ -21,20 +21,19 @@ template: page.jade
         span Sign in with GitHub
 
     .head__actions(data-bind='visible: isSignedInAndHasNoAccess')
-      p.head__notice
+      p.head__notice(data-bind="visible: !hasAskedForAccess()")
         span Unfortunately, you don't have access to the Style Guide repository.
         br
         span But you can ask for it!
+
       p(data-bind="visible: !hasAskedForAccess()")
         a.head__action.button(href='#', title="Ask for permission", data-bind="click: askForAccess")
           span Ask for access
+
       p.head__notice(data-bind="visible: hasAskedForAccess")
         | Thank you!
         br
-        | Your request is successfully attached to our request
-        = ' '
-        a(href="#", title="Ask for access Gist", data-bind="attr: { href: getGistUrl() }") Gist
-        | .
+        | We got your request. You'll hear from us soon.
 
     .head__actions(data-bind='visible: isSignedInAndHasAccess')
       a.head__action.button(href=config.urls.releases, title="See the releases on GitHub")

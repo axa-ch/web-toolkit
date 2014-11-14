@@ -27,20 +27,34 @@ class StyleGuideViewModel
     @hasAskedForAccess = ko.observable false
 
   init: ->
-    dataMap = URI(window.location).search(true)
-    authProvider = null
-
-    if dataMap.code
-      authProvider = (-> @authWithCode dataMap.code).bind @
-    else
-      authProvider = (-> @authWithoutCode()).bind @
-
     @isAuthenticating true
+    authProvider = @pickTheRightAuthProvider()
 
+    # authenticate
     authProvider()
     .then (->
       @isAuthenticating false
     ).bind(@)
+
+    # has asked for access?
+    @storage.get 'has_asked_for_access'
+    .then ((hasAsked) ->
+      @hasAskedForAccess hasAsked
+    ).bind(@), ((err) ->
+      # assume no access was requested yet
+      @hasAskedForAccess false
+    ).bind(@)
+
+  pickTheRightAuthProvider: ->
+    dataMap = URI(window.location).search(true)
+    authProvider = null
+
+    if dataMap.code
+      authProvider = (-> @authWithCode dataMap.code).bind(@)
+    else
+      authProvider = (-> @authWithoutCode()).bind(@)
+
+    authProvider
 
   authWithCode: (code) ->
     @github.accessToken code
@@ -76,9 +90,6 @@ class StyleGuideViewModel
   getAuthUrl: ->
     @github.getAuthUrl()
 
-  getGistUrl: ->
-    'https://gist.github.com/' + 'davidknezic' + '/' + '324dc1114e65df211cd5'
-
   askForAccess: (viewModel, e) ->
     e.preventDefault()
 
@@ -90,6 +101,9 @@ class StyleGuideViewModel
     .then (->
       @isAskingForAccess false
       @hasAskedForAccess true
+    ).bind(@)
+    .then (->
+      @storage.set 'has_asked_for_access', true
     ).bind(@)
 
 window.StyleGuideViewModel = StyleGuideViewModel
