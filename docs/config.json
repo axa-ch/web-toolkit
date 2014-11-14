@@ -18,5 +18,24 @@
   },
   "urls": {
     "releases": "https://github.com/axa-ch/style-guide/releases"
+  },
+  "github": {
+    "urls": {
+      "api": "https://api.github.com",
+      "authorize": "https://github.com/login/oauth/authorize",
+      "token": "https://axa-ch-style-guide-dev.herokuapp.com/authenticate"
+    },
+    "oauth": {
+      "id": "dada1d9710e005c88758",
+      "scopes": [
+        "user",
+        "repo",
+        "gist"
+      ]
+    },
+    "access": {
+      "gist": "324dc1114e65df211cd5",
+      "comment": "asking for access"
+    }
   }
 }

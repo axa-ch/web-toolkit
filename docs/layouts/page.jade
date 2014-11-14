@@ -100,7 +100,8 @@ html
         }
       });
 
-      var viewModel = new StyleGuideViewModel();
+      var viewModel = new StyleGuideViewModel(!{JSON.stringify(config)});
 
       ko.applyBindings(viewModel);
+
       viewModel.init();

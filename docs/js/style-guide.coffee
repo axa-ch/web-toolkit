@@ -1,8 +1,9 @@
 class StyleGuideViewModel
-  constructor: ->
+  constructor: (options) ->
+    @options = options
     @storage = new Storage()
+    @github = new GitHub options.github
 
-    @github = new GitHub()
     @github.readAccessToken = (->
       @storage.get 'access_token'
     ).bind @
@@ -93,11 +94,11 @@ class StyleGuideViewModel
   askForAccess: (viewModel, e) ->
     e.preventDefault()
 
-    body = 'asking for access'
+    body = @options.github.access.comment
 
     @isAskingForAccess true
 
-    @github.commentGist('324dc1114e65df211cd5', body)
+    @github.commentGist(@options.github.access.gist, body)
     .then (->
       @isAskingForAccess false
       @hasAskedForAccess true
