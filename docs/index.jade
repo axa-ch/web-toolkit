@@ -11,6 +11,9 @@ template: page.jade
       framework for developing responsive, mobile first projects
       on the web.
 
+    .head__actions(data-bind='visible: isAuthenticating')
+      p.head__notice Authenticating…
+
     .head__actions(data-bind='visible: isNotSignedIn')
       a.head__action.button(href='#', title="Sign in with GitHub", data-bind="attr: { href: getAuthUrl() }")
         i.button__icon.icon.icon--github
