@@ -41,7 +41,7 @@ html
                 ul
                   li.header__meta__welcome__item Web Style Guide
                   li.header__meta__welcome__item(data-bind='with: user, visible: user')
-                    a(title="Your GitHub profile", data-bind='text: name, attr: { href: url }')
+                    a(title="Your GitHub profile", data-bind='text: name, attr: { href: html_url }')
 
       nav.main-nav
         ul.menu.menu--main
@@ -68,7 +68,7 @@ html
             .l-container
               ul.copyline-menu
                 li.copyline-menu__item(data-bind='with: repo')
-                  a.copyline-menu__link(href='#', data-bind='text: full_name, attr: { href: url, title: description }')
+                  a.copyline-menu__link(href='#', data-bind='text: full_name, attr: { href: html_url, title: description }')
                 li.copyline-menu__item
                   span.copyline-menu__text Copyright AXA Versicherungen AG 2014
 
