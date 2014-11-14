@@ -40,17 +40,22 @@ class StyleGuideViewModel
     authProvider()
     .then (->
       @isAuthenticating false
-    ).bind @
+    ).bind(@)
 
   authWithCode: (code) ->
     @github.accessToken code
     .then ((auth) ->
       @storage.set 'access_token', auth.token
-    ).bind @
+    ).bind(@), ((err) ->
+      # unsuccessful request
+      @isAuthenticating false
+    ).bind(@)
     .then ((token) ->
-      # remove code part
-      window.location = URI(window.location).search {}
-    ).bind @
+      @authWithoutCode()
+    ).bind(@), ((err) ->
+      # unsuccessful redirect
+      @isAuthenticating false
+    ).bind(@)
 
   authWithoutCode: ->
     @github.currentUser()
@@ -85,6 +90,6 @@ class StyleGuideViewModel
     .then (->
       @isAskingForAccess false
       @hasAskedForAccess true
-    ).bind @
+    ).bind(@)
 
 window.StyleGuideViewModel = StyleGuideViewModel
