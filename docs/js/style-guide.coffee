@@ -45,7 +45,7 @@ class StyleGuideViewModel
   authWithCode: (code) ->
     @github.accessToken code
     .then ((auth) ->
-      @storage.set 'access_token', auth.access_token
+      @storage.set 'access_token', auth.token
     ).bind @
     .then ((token) ->
       # remove code part

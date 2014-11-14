@@ -3,11 +3,10 @@ class GitHub
     @urls =
       api: 'https://api.github.com'
       authorize: 'https://github.com/login/oauth/authorize'
-      token: 'https://github.com/login/oauth/access_token'
+      token: 'https://axa-ch-style-guide.herokuapp.com/authenticate'
 
     @oauth =
       id: '15c93ed0240a9d39c22d'
-      secret: '1d4235c539aaaeb5e7f94454974dffc36d2f4abd'
       scopes: ['user', 'repo', 'gist']
 
   getAuthUrl: () ->
@@ -18,13 +17,8 @@ class GitHub
 
   accessToken: (code) ->
     $.ajax
-      type: 'POST'
-      url: @urls.token
-      data:
-        client_id: @oauth.id
-        client_secret: @oauth.secret
-        code: code
-      crossDomain: true
+      type: 'GET'
+      url: @urls.token + '/' + code
       headers:
         'Accept': 'application/json'
 
@@ -34,7 +28,6 @@ class GitHub
       $.ajax
         type: 'GET'
         url: @urls.api + '/user'
-        crossDomain: true
         headers:
           'Accept': 'application/vnd.github.v3+json'
           'Authorization': 'token ' + token
@@ -46,7 +39,6 @@ class GitHub
       $.ajax
         type: 'GET'
         url: @urls.api + '/repos/' + owner + '/' + name
-        crossDomain: true
         headers:
           'Accept': 'application/vnd.github.v3+json'
           'Authorization': 'token ' + token
@@ -61,7 +53,6 @@ class GitHub
         url: @urls.api + '/gists/' + gistId + '/comments'
         data: JSON.stringify
           body: body
-        crossDomain: true
         headers:
           'Accept': 'application/vnd.github.v3.raw+json'
           'Authorization': 'token ' + token
