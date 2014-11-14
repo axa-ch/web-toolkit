@@ -11,6 +11,18 @@ class StyleGuideViewModel
     @user = ko.observable null
     @repo = ko.observable null
 
+    @isSignedInAndHasAccess = ko.computed (->
+      (!@isAuthenticating() && @user() != null && @repo() != null)
+    ).bind @
+
+    @isSignedInAndHasNoAccess = ko.computed (->
+      (!@isAuthenticating() && @user() != null && @repo() == null)
+    ).bind @
+
+    @isNotSignedIn = ko.computed (->
+      (!@isAuthenticating() && @user() == null)
+    ).bind @
+
     @isAskingForAccess = ko.observable false
     @hasAskedForAccess = ko.observable false
 
