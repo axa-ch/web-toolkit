@@ -3,39 +3,46 @@
 
 .cell {
   padding: 20px;
+  margin: 20px;
   text-align: center;
+
+  background: #efefef;
 
   overflow: hidden;
 
   .respond(medium, {
     background-color: #f4f4f4;
 
+    margin: 0;
     padding: 15px;
 
     text-align: left;
   });
 }
 
-.cell--title {
+.cell--title,
+.list__item__cell.cell--title {
   height: 60px;
+  margin: 0;
 
   overflow: hidden;
-  background: @color-ui-alpha;
+  background: #1762a5;
   color: white;
   text-align: left;
 
   .respond(medium, {
-    background: inherit;
-
     color: white;
-    background-color: #1762a5;
   });
 }
 
 .cell--action {
-  width: 1%;
-  white-space: nowrap;
-  padding: 10px;
+  margin: 0;
+
+  .respond(medium, {
+    width: 1%;
+    white-space: nowrap;
+    padding: 10px;
+  })
 }
 
 .cell__icon {
@@ -71,9 +78,13 @@
 }
 
 .cell__action {
-  position: relative;
-
   width: 100%;
+
+  .respond(medium, {
+    .button();
+    .button--small();
+  })
+
 }
 
 .cell__action.is-open {
