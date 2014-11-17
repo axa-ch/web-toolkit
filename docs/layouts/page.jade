@@ -12,13 +12,14 @@ html
 
     link(rel="stylesheet", href="css/docs.css")
 
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/localforage/1.1.1/localforage.min.js')
+
     script(src="js/style.all.js")
     script(src="js/api.js")
+    script(src="js/github-integration.js")
     script(src="js/style-guide.js")
 
   body.site
@@ -34,14 +35,16 @@ html
               .header__meta__language.menu.menu--language
               .header__meta__menu.menu.menu--meta
                 if version && version.hash && version.hash.long && version.hash.short
-                  .menu__item(data-bind='visible: !isAuthenticating() && repo() !== null')
+                  .menu__item(data-bind='visible: !hasGitHubIntegration || !isAuthenticating() && repo() !== null')
                     a.menu__link(href=config.repository.url + '/commit/' + version.hash.long) Build ##{version.hash.short}
             .header__meta__lower
               .header__meta__welcome
                 ul
                   li.header__meta__welcome__item Web Style Guide
-                  li.header__meta__welcome__item(data-bind='with: user, visible: user')
+                  // ko if: hasGitHubIntegration && github.user() !== null
+                  li.header__meta__welcome__item(data-bind='with: user')
                     a(title="Your GitHub profile", data-bind='text: name, attr: { href: html_url }')
+                  // /ko
 
       nav.main-nav
         ul.menu.menu--main
@@ -67,8 +70,10 @@ html
           .footer__copyline__inner
             .l-container
               ul.copyline-menu
-                li.copyline-menu__item(data-bind='with: repo')
-                  a.copyline-menu__link(href='#', data-bind='text: full_name, attr: { href: html_url, title: description }')
+                // ko if: hasGitHubIntegration && github.repo() !== null
+                li.copyline-menu__item
+                  a.copyline-menu__link(href=config.repository.url, title=config.repository.name)
+                // /ko
                 li.copyline-menu__item
                   span.copyline-menu__text Copyright AXA Versicherungen AG 2014
 

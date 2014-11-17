@@ -11,6 +11,8 @@ template: page.jade
       framework for developing responsive, mobile first projects
       on the web.
 
+    // ko if: hasGitHubIntegration
+
     .head__actions(data-bind='visible: isAuthenticating')
       p.head__notice Authenticating…
 
@@ -45,6 +47,8 @@ template: page.jade
         i.button__icon.icon.icon--source
         != ' '
         span View project on GitHub
+
+    // /ko
 
 .l-container
   .l-row
