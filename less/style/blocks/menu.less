@@ -71,7 +71,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    border-top: 1px solid #4f5d88;
+    border-top: 1px solid @color-tbd-13;
 
     &:hover {
       color: white;
@@ -87,7 +87,7 @@
     }
 
     &.is-active {
-      background-color: #040b20;
+      background-color: @color-tbd-10;
       color: white;
     }
   }
@@ -117,7 +117,7 @@
       padding-right: 8px;
     }
 
-    background-color: #040b20;
+    background-color: @color-tbd-10;
 
     &:hover {
       color: white;
@@ -128,36 +128,36 @@
 .menu--collapsing {
   // Level 1
   .menu__level .menu__link {
-    background: #22336a;
+    background: @color-tbd-9;
   }
 
   .menu__level .menu__link.is-active {
-    background: #040b20;
+    background: @color-tbd-10;
   }
 
   // Level 2
   .menu__level .menu__level .menu__link {
     padding-left: 35px;
-    background-color: #22336a;
+    background-color: @color-tbd-9;
   }
 
   .menu__level .menu__level .menu__link.is-active {
-    background-color: #131f44;
+    background-color: @color-tbd-11;
   }
 
   // Level 3
   .menu__level .menu__level .menu__level .menu__link {
-    background-color: #f3f6fc;
-    color: #22336a;
+    background-color: @color-tbd-12;
+    color: @color-tbd-9;
     border-top: none;
-    border-bottom: 1px solid #4f5d88;
+    border-bottom: 1px solid @color-tbd-13;
     height: 41px;
     padding-top: 10px;
     padding-bottom: 9px;
   }
 
   .menu__level .menu__level .menu__level .menu__link.is-active {
-    background-color: #f3f6fc;
+    background-color: @color-tbd-12;
   }
 
   .menu__level {
