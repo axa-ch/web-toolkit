@@ -40,7 +40,7 @@
         if not level
           throw new Error 'Provided level not in menu!'
 
-        @$element.css('height', level.height());
+        @$element.css('height', level.height())
 
         parentLevels = level.parentsUntil @$element, '.menu__level'
         parentLinks = level.parentsUntil @$element, '.menu__link'

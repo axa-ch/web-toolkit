@@ -57,13 +57,13 @@
 
   .menu__link {
     display: block;
-    height: 60px;
+    height: 56px;
     box-sizing: border-box;
-    padding: 18px 10px 18px 20px;
+    padding: 17px 15px 16px 15px;
 
     text-decoration: none;
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 22px;
     background-color: @color-tbd-1;
     color: @color-tbd-4;
 
@@ -71,15 +71,23 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    border-top: 1px dotted lighten(@color-tbd-1, 20%);
+    border-top: 1px solid #4f5d88;
 
     &:hover {
       color: white;
     }
 
-    &.is-active,
     &:active {
-      background-color: darken(@color-tbd-1, 5%);
+      //color: @color-text-delta;
+    }
+
+    &.icon:before,
+    &.icon::before {
+      padding-right: 8px;
+    }
+
+    &.is-active {
+      background-color: #040b20;
       color: white;
     }
   }
@@ -88,10 +96,12 @@
     .icon;
     .icon--arrow-right;
 
+    &:before,
     &::before {
       display: block;
       float: right;
       font-size: 1.4em;
+      padding: 0;
     }
   }
 
@@ -99,21 +109,17 @@
     .icon;
     .icon--arrow-left;
 
+    &:before,
     &::before {
       display: block;
       float: left;
       font-size: 1.4em;
+      padding-right: 8px;
     }
 
-    background-color: darken(@color-tbd-1, 10%);
+    background-color: #040b20;
 
     &:hover {
-      color: white;
-    }
-
-    &.is-active,
-    &:active {
-      background-color: darken(@color-tbd-1, 15%);
       color: white;
     }
   }
@@ -131,7 +137,7 @@
 
   // Level 2
   .menu__level .menu__level .menu__link {
-    padding-left: 50px;
+    padding-left: 35px;
     background-color: #22336a;
   }
 
@@ -143,10 +149,15 @@
   .menu__level .menu__level .menu__level .menu__link {
     background-color: #f3f6fc;
     color: #22336a;
+    border-top: none;
+    border-bottom: 1px solid #4f5d88;
+    height: 41px;
+    padding-top: 10px;
+    padding-bottom: 9px;
   }
 
   .menu__level .menu__level .menu__level .menu__link.is-active {
-    background-color: #eaf5fe;
+    background-color: #f3f6fc;
   }
 
   .menu__level {
@@ -173,10 +184,6 @@
 
   .menu__item {
     float: none;
-
-    &:first-of-type .menu__link {
-      border-top: none;
-    }
   }
 
   .menu__link.is-parent.is-active {

@@ -9,10 +9,10 @@
   line-height: @line-height;
   padding: ((@height - @calculated-line-height) / 2) @pad-lr;
 
+  border: none;
   border-radius: @border-radius;
 
-  &.icon::before {
-    margin-right: @icon-pad;
+  & .button__icon {
     font-size: @icon-size;
     display: inline;
   }

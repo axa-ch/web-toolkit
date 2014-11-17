@@ -12,11 +12,15 @@ template: page.jade
       on the web.
 
     .head__actions
-      a.head__action.button.icon.icon--download(href=config.urls.releases, title="See the releases on GitHub").
-        Download Style Guide
+      a.head__action.button(href=config.urls.releases, title="See the releases on GitHub")
+        i.button__icon.icon.icon--download
+        != ' '
+        span Download Style Guide
 
-      a.head__action.button.button--secondary.icon.icon--source(href=config.repository.url, title=config.repository.name).
-        View project on GitHub
+      a.head__action.button.button--secondary(href=config.repository.url, title=config.repository.name)
+        i.button__icon.icon.icon--source
+        != ' '
+        span View project on GitHub
 
 .l-container
   .l-row
@@ -31,11 +35,20 @@ template: page.jade
       .l-row
         .l-third
           a.thumbnail(href="examples/page.html")
-            img.thumbnail__media(src="images/example-simple.png", alt="")
-          h3 Basic template
+            img.thumbnail__media(src="images/example-simple.png", alt="screen of the simple example")
+          h3
+            a(href="examples/page.html") Basic template
           p.
             Basic template with a sliding mobile menu. Make sure your
             browser size is small enough.
+        .l-third
+          a.thumbnail(href="examples/grid.html")
+            img.thumbnail__media(src="images/example-grid.png", alt="screen of the grid example")
+          h3
+            a(href="examples/grid.html") Full page grid
+          p.
+            A full page grid with an input box, where you can set the total
+            width in any unit.
 
       h1#license License
         a.anchor--docs(href="#license")
