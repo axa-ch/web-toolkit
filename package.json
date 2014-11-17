@@ -10,9 +10,8 @@
     "style",
     "guide"
   ],
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,7 @@
     "url": "https://github.com/axa-ch/style-guide/issues"
   },
   "homepage": "https://github.com/axa-ch/style-guide",
-  "dependencies": {
+  "devDependencies": {
     "connect": "^3.1.1",
     "del": "^0.1.3",
     "gulp": "^3.8.8",
