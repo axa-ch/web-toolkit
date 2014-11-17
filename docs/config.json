@@ -23,10 +23,10 @@
     "urls": {
       "api": "https://api.github.com",
       "authorize": "https://github.com/login/oauth/authorize",
-      "token": "https://axa-ch-style-guide-dev.herokuapp.com/authenticate"
+      "token": "https://axa-ch-style-guide.herokuapp.com/authenticate"
     },
     "oauth": {
-      "id": "dada1d9710e005c88758",
+      "id": "15c93ed0240a9d39c22d",
       "scopes": [
         "user",
         "repo",
