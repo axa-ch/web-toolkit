@@ -21,11 +21,17 @@ module.exports = exports = function (options) {
     var ignore = require('metalsmith-ignore');
     var branch = require('metalsmith-branch');
     var less = require('metalsmith-less');
-    var metadata = require('metalsmith-metadata');
     var define = require('metalsmith-define');
     var assets = require('metalsmith-assets');
     var autoprefixer = require('metalsmith-autoprefixer');
     var coffee = require('metalsmith-coffee');
+
+    var config = readJSONFile(path.join(options.src, 'config.json'));
+
+    // GitHub integration
+    if (!process.env.GITHUB_INTEGRATION) {
+      config.github = null;
+    }
 
     // Jade filters
     jade.registerFilter('sample', sampleJadeFilter);
@@ -33,16 +39,12 @@ module.exports = exports = function (options) {
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);
 
-    // add metadata from files
-    metalsmith.use(metadata({
-      config: 'config.json'
-    }));
-
     // add metadata
     metalsmith.use(define({
       icons: readJSONFile(path.join(options.cwd, 'dist/icons.json')),
       colors: readJSONFile(path.join(options.cwd, 'dist/colors.json')),
-      version: readJSONFile(path.join(options.cwd, 'dist/version.json'))
+      version: readJSONFile(path.join(options.cwd, 'dist/version.json')),
+      config: config
     }));
 
     // include fonts

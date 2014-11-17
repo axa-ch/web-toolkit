@@ -8,6 +8,9 @@ env:
 node_js:
   - 0.10.25
 
+env:
+ - GITHUB_INTEGRATION=true
+
 before_install:
   - npm install -g gulp
 
