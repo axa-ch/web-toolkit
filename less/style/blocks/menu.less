@@ -28,13 +28,13 @@
   .menu__link {
     display: block;
     padding: 8px 20px;
-    background: @color-ui-zeta;
-    color: @color-ui-alpha;
+    background: @color-tbd-2;
+    color: @color-blue;
     text-decoration: none;
 
 
     &.is-active {
-      background: @color-ui-alpha;
+      background: @color-blue;
       color: white;
     }
   }
@@ -64,21 +64,21 @@
     text-decoration: none;
     font-size: 16px;
     line-height: 22px;
-    background-color: @color-ui-epsilon;
-    color: @color-text-delta;
+    background-color: @color-tbd-1;
+    color: @color-tbd-4;
 
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    border-top: 1px solid #4f5d88;
+    border-top: 1px solid @color-tbd-13;
 
     &:hover {
       color: white;
     }
 
     &:active {
-      color: @color-text-delta;
+      //color: @color-text-delta;
     }
 
     &.icon:before,
@@ -87,7 +87,7 @@
     }
 
     &.is-active {
-      background-color: #040b20;
+      background-color: @color-tbd-10;
       color: white;
     }
   }
@@ -117,7 +117,7 @@
       padding-right: 8px;
     }
 
-    background-color: #040b20;
+    background-color: @color-tbd-10;
 
     &:hover {
       color: white;
@@ -128,36 +128,36 @@
 .menu--collapsing {
   // Level 1
   .menu__level .menu__link {
-    background: #22336a;
+    background: @color-tbd-9;
   }
 
   .menu__level .menu__link.is-active {
-    background: #040b20;
+    background: @color-tbd-10;
   }
 
   // Level 2
   .menu__level .menu__level .menu__link {
     padding-left: 35px;
-    background-color: #22336a;
+    background-color: @color-tbd-9;
   }
 
   .menu__level .menu__level .menu__link.is-active {
-    background-color: #131f44;
+    background-color: @color-tbd-11;
   }
 
   // Level 3
   .menu__level .menu__level .menu__level .menu__link {
-    background-color: #f3f6fc;
-    color: #22336a;
+    background-color: @color-tbd-12;
+    color: @color-tbd-9;
     border-top: none;
-    border-bottom: 1px solid #4f5d88;
+    border-bottom: 1px solid @color-tbd-13;
     height: 41px;
     padding-top: 10px;
     padding-bottom: 9px;
   }
 
   .menu__level .menu__level .menu__level .menu__link.is-active {
-    background-color: #f3f6fc;
+    background-color: @color-tbd-12;
   }
 
   .menu__level {
@@ -247,14 +247,14 @@
 
     &.is-active,
     &:hover {
-      border-bottom: 5px solid @color-ui-alpha;
+      border-bottom: 5px solid @color-blue;
 
       .menu__link {
-        color: @color-text-beta;
+        color: @color-gray--darker;
       }
 
       .menu__link--home::before {
-        color: @color-text-gamma;
+        color: @color-blue;
       }
     }
 
@@ -265,7 +265,7 @@
 
   .menu__link {
     display: block;
-    color: @color-text-epsilon;
+    color: @color-gray;
     font-size: 14px;
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
@@ -277,7 +277,7 @@
 
     &::before {
       font-size: 16px;
-      color: @color-text-gamma;
+      color: @color-blue;
     }
   }
 }
@@ -298,17 +298,17 @@
 
     padding: 3px 10px;
 
-    color: @color-text-epsilon;
+    color: @color-gray;
     text-decoration: none;
     font-size: @font-size-base;
 
     &:hover {
-      color: @color-text-beta;
+      color: @color-gray--darker;
     }
 
     &.is-active,
     &:active {
-      color: @color-text-gamma;
+      color: @color-blue;
     }
   }
 }
@@ -324,7 +324,7 @@
     &.is-active,
     &:hover {
       a {
-        color: @color-text-gamma;
+        color: @color-blue;
       }
     }
 
@@ -335,7 +335,7 @@
 
   .menu__link {
     text-decoration: none;
-    color: @color-text-beta;
+    color: @color-gray--darker;
   }
 }
 
@@ -344,7 +344,7 @@
 
   .menu__item {
     font-weight: bold;
-    color: @color-text-gamma;
+    color: @color-blue;
     font-size: 20px; // TODO: fixed font-size
   }
 }
