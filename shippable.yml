@@ -1,15 +1,11 @@
-# language setting
 language: node_js
 
-env:
-  - REPO_URL=git@github.com:axa-ch/style-guide.git
-
-# version numbers, testing against two versions of node
 node_js:
   - 0.10.25
 
 env:
- - GITHUB_INTEGRATION=true
+  - REPO_URL=git@github.com:axa-ch/style-guide.git
+  - GITHUB_INTEGRATION=true
 
 before_install:
   - npm install -g gulp
