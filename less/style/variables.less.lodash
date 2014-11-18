@@ -20,11 +20,23 @@
 @transition-fn-fancy: cubic-bezier(0.6, 0.0, 0.735, 0.045);
 @transition-duration-fast: 250ms;
 
+// Primary colors
 <%
-_.forEach(colors, function (category, categoryName) {
-  _.forEach(category, function(color, colorName) {
+_.forEach(colors.primary, function (colorCode, colorName) {
 %>
-@color-<%= categoryName%>-<%= colorName %>: <%= color %>;<%
+@color-<%= colorName %>: <%= colorCode %>;<%
+});
+%>
+
+// Secondary colors
+<%
+_.forEach(colors.secondary, function (colorGroup) {
+%>
+// <%= colorGroup.name %>
+<%
+  _.forEach(colorGroup.colors, function(colorCode, colorName) {
+%>
+@color-<%= colorName %>: <%= colorCode %>;<%
   });
 %>
 <%

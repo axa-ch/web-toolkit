@@ -26,9 +26,10 @@ p
   To transform all container functionality into a custom CSS class,
   just use the following mixin:
 
-pre.hljs: code.less
-  :highlight
-    .make-container([@max-width, [@gutter]]);
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      .make-container([@max-width, [@gutter]]);
 
 dl
   dt @max-width
@@ -44,9 +45,10 @@ dl
 
 h3 Create a custom row
 
-pre.hljs: code.less
-  :highlight
-    .make-row([@gutter]);
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      .make-row([@gutter]);
 
 dl
   dt @gutter
@@ -58,9 +60,10 @@ dl
 
 h3 Create some custom columns
 
-pre.hljs: code.less
-  :highlight
-    .make-col(@columns, [@device, [@gutter]]);
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      .make-col(@columns, [@device, [@gutter]]);
 
 dl
   dt @columns
@@ -82,9 +85,10 @@ dl
 
 h3 Skip columns
 
-pre.hljs: code.less
-  :highlight
-    .make-col-offset(@columns, [@device]);
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      .make-col-offset(@columns, [@device]);
 
 dl
   dt @columns
@@ -99,9 +103,10 @@ dl
 
 h3 Push a column away, push it over another
 
-pre.hljs: code.less
-  :highlight
-    .make-col-push(@columns, [@device]);
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      .make-col-push(@columns, [@device]);
 
 dl
   dt @columns
@@ -117,9 +122,10 @@ dl
 
 h3 Pull a column back, pull it over another
 
-pre.hljs: code.less
-  :highlight
-    .make-col-pull(@columns, [@device]);
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      .make-col-pull(@columns, [@device]);
 
 dl
   dt @columns

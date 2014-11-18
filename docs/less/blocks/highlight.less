@@ -2,14 +2,14 @@
 @import 'style/mixins/respond';
 
 .highlight {
-  margin: 0;
   padding: 0;
+  margin: 0 -15px; // TODO: Use variables for left & right margin
 
   border-width: 1px 0;
   border-style: solid;
-  border-color: @color-ui-delta;
+  border-color: @color-gray--lighter;
 
-  background: lighten(@color-ui-delta, 5%);
+  background: lighten(@color-gray--lighter, 5%);
 
   .respond(medium, {
     margin: 0;
