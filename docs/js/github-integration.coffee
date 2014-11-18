@@ -94,11 +94,11 @@ class GitHubIntegrationViewModel
   askForAccess: (viewModel, e) ->
     e.preventDefault()
 
-    body = @options.github.access.comment
+    body = @options.access.comment
 
     @isAskingForAccess true
 
-    @github.commentGist(@options.github.access.gist, body)
+    @github.commentGist(@options.access.gist, body)
     .then (->
       @isAskingForAccess false
       @hasAskedForAccess true

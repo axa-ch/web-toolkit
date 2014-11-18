@@ -29,7 +29,7 @@ template: page.jade
         span But you can ask for it!
 
       p(data-bind="visible: !github.hasAskedForAccess()")
-        a.head__action.button(href='#', title="Ask for permission", data-bind="click: github.askForAccess")
+        a.head__action.button(href='#', title="Ask for permission", data-bind="click: github.askForAccess.bind(github)")
           span Ask for access
 
       p.head__notice(data-bind="visible: github.hasAskedForAccess()")
