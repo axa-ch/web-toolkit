@@ -13,31 +13,31 @@ template: page.jade
 
     // ko if: hasGitHubIntegration
 
-    .head__actions(data-bind='visible: isAuthenticating')
+    .head__actions(data-bind='visible: github.isAuthenticating()')
       p.head__notice Authenticating…
 
-    .head__actions(data-bind='visible: isNotSignedIn')
-      a.head__action.button(href='#', title="Sign in with GitHub", data-bind="attr: { href: getAuthUrl() }")
+    .head__actions(data-bind='visible: github.isNotSignedIn()')
+      a.head__action.button(href='#', title="Sign in with GitHub", data-bind="attr: { href: github.getAuthUrl() }")
         i.button__icon.icon.icon--github
         != ' '
         span Sign in with GitHub
 
-    .head__actions(data-bind='visible: isSignedInAndHasNoAccess')
-      p.head__notice(data-bind="visible: !hasAskedForAccess()")
+    .head__actions(data-bind='visible: github.isSignedInAndHasNoAccess()')
+      p.head__notice(data-bind="visible: !github.hasAskedForAccess()")
         span Unfortunately, you don't have access to the Style Guide repository.
         br
         span But you can ask for it!
 
-      p(data-bind="visible: !hasAskedForAccess()")
-        a.head__action.button(href='#', title="Ask for permission", data-bind="click: askForAccess")
+      p(data-bind="visible: !github.hasAskedForAccess()")
+        a.head__action.button(href='#', title="Ask for permission", data-bind="click: github.askForAccess")
           span Ask for access
 
-      p.head__notice(data-bind="visible: hasAskedForAccess")
+      p.head__notice(data-bind="visible: github.hasAskedForAccess()")
         | Thank you!
         br
         | We got your request. You'll hear from us soon.
 
-    .head__actions(data-bind='visible: isSignedInAndHasAccess')
+    .head__actions(data-bind='visible: github.isSignedInAndHasAccess()')
       a.head__action.button(href=config.urls.releases, title="See the releases on GitHub")
         i.button__icon.icon.icon--download
         != ' '
