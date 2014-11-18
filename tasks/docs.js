@@ -102,7 +102,12 @@ module.exports = exports = function (options) {
       .use(autoprefixer()));
 
     // do the scripts
-    metalsmith.use(coffee());
+    metalsmith.use(branch('js/*.coffee')
+      .use(coffee({
+        // Fix an error in metalsmith-coffe, where
+        // not all Coffee files are compiled
+        filter: function () { return true; }
+      })));
 
     // we no need these files
     metalsmith.use(ignore('layouts/*'));
