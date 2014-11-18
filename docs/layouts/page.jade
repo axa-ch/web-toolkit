@@ -49,7 +49,7 @@ html
                 ul
                   li.header__meta__welcome__item Web Style Guide
                   // ko if: hasGitHubIntegration && github.user() !== null
-                  li.header__meta__welcome__item(data-bind='with: user')
+                  li.header__meta__welcome__item(data-bind='with: github.user')
                     a(title="Your GitHub profile", data-bind='text: name, attr: { href: html_url }')
                   // /ko
 
@@ -81,7 +81,7 @@ html
               ul.copyline-menu
                 // ko if: hasGitHubIntegration && github.repo() !== null
                 li.copyline-menu__item
-                  a.copyline-menu__link(href=config.repository.url, title=config.repository.name)
+                  a.copyline-menu__link(href=config.repository.url, title=config.repository.name)= config.repository.name
                 // /ko
                 li.copyline-menu__item
                   span.copyline-menu__text Copyright AXA Versicherungen AG 2014
