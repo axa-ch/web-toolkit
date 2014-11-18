@@ -1,5 +1,6 @@
 body {
-  color: #333;
+  color: @color-tbd-3;
+  font-family: ITCFranklinGothicStd, Arial, sans-serif;
 }
 
 p {
@@ -9,7 +10,6 @@ p {
 
 .heading {
   font-weight: 500;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -43,7 +43,7 @@ h6 {
 }
 
 mark {
-  background: lighten(#ffff00, 20%);
+  background: @color-tbd-19;
 }
 
 strong {
@@ -55,10 +55,10 @@ em {
 }
 
 a {
-  color: @color-ui-alpha;
+  color: @color-blue;
   text-decoration: none;
 
   &:hover {
-    color: @color-ui-beta;
+    color: @color-red;
   }
 }
