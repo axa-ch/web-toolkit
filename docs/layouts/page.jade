@@ -35,8 +35,15 @@ html
               .header__meta__language.menu.menu--language
               .header__meta__menu.menu.menu--meta
                 if version && version.hash && version.hash.long && version.hash.short
+                  // ko if: hasGitHubIntegration && github.user() !== null
                   .menu__item(data-bind='visible: !hasGitHubIntegration || !isAuthenticating() && repo() !== null')
                     a.menu__link(href=config.repository.url + '/commit/' + version.hash.long) Build ##{version.hash.short}
+                  // /ko
+                  // ko if: !hasGitHubIntegration
+                  .menu__item
+                    span.menu__link(title=version.hash.long) Build ##{version.hash.short}
+                  // /ko
+
             .header__meta__lower
               .header__meta__welcome
                 ul
