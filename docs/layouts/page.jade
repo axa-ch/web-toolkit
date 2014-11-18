@@ -20,7 +20,7 @@ html
     script(src="js/style.all.js")
     script(src="js/api.js")
     script(src="js/github-integration.js")
-    script(src="js/style-guide.js")
+    script(src="js/main.js")
 
   body.site
     .site__page
@@ -114,7 +114,7 @@ html
         }
       });
 
-      var viewModel = new StyleGuideViewModel(!{JSON.stringify(config)});
+      var viewModel = new MainViewModel(!{JSON.stringify(config)});
 
       ko.applyBindings(viewModel);
 
