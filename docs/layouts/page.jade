@@ -1,17 +1,26 @@
 doctype html
 html
   head
-    title= title
-    link(rel="stylesheet", href="css/docs.css")
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-    script(src="js/style.all.js")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0")
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
+
+    title= title
+
+    link(rel="stylesheet", href="css/docs.css")
+
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/localforage/1.1.1/localforage.min.js')
+
+    script(src="js/style.all.js")
+    script(src="js/api.js")
+    script(src="js/github-integration.js")
+    script(src="js/main.js")
 
   body.site
     .site__page
@@ -26,16 +35,23 @@ html
               .header__meta__language.menu.menu--language
               .header__meta__menu.menu.menu--meta
                 if version && version.hash && version.hash.long && version.hash.short
-                  .menu__item
+                  // ko if: hasGitHubIntegration && github.user() !== null
+                  .menu__item(data-bind='visible: !hasGitHubIntegration || !github.isAuthenticating() && github.repo() !== null')
                     a.menu__link(href=config.repository.url + '/commit/' + version.hash.long) Build ##{version.hash.short}
+                  // /ko
+                  // ko if: !hasGitHubIntegration
+                  .menu__item
+                    span.menu__link(title=version.hash.long) Build ##{version.hash.short}
+                  // /ko
+
             .header__meta__lower
-              .header__meta__social
-                ul.menu.menu--social
-                  li.menu__item
-                    a.icon.icon--github(href=config.repository.url, title=config.repository.name)
               .header__meta__welcome
                 ul
                   li.header__meta__welcome__item Web Style Guide
+                  // ko if: hasGitHubIntegration && github.user() !== null
+                  li.header__meta__welcome__item(data-bind='with: github.user')
+                    a(title="Your GitHub profile", data-bind='text: name, attr: { href: html_url }')
+                  // /ko
 
       nav.main-nav
         ul.menu.menu--main
@@ -63,8 +79,10 @@ html
           .footer__copyline__inner
             .l-container
               ul.copyline-menu
+                // ko if: hasGitHubIntegration && github.repo() !== null
                 li.copyline-menu__item
-                  a.copyline-menu__link(href=config.repository.url, title=config.repository.name) GitHub
+                  a.copyline-menu__link(href=config.repository.url, title=config.repository.name)= config.repository.name
+                // /ko
                 li.copyline-menu__item
                   span.copyline-menu__text Copyright AXA Versicherungen AG 2014
 
@@ -95,3 +113,9 @@ html
           }
         }
       });
+
+      var viewModel = new MainViewModel(!{JSON.stringify(config)});
+
+      ko.applyBindings(viewModel);
+
+      viewModel.init();

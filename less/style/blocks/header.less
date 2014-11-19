@@ -19,116 +19,109 @@
   .respond(large, {
     padding: @padding-top-bottom-large 0;
   });
+}
 
-  &__mobile-trigger {
-    .icon;
-    .icon--burger;
+.header__mobile-trigger {
+  .icon;
+  .icon--burger;
 
-    &::before {
-      font-size: 32px;
-    }
-
-    float: right;
-
-    color: @color-blue;
-    font-size: 1.3em;
-    text-align: center;
-
-    cursor: pointer;
-
-    &:hover {
-      color: lighten(@color-blue, 10%);
-    }
-
-    .respond(large, {
-      display: none;
-    })
+  &::before {
+    font-size: 32px;
   }
 
-  &__brand {
-    float: left;
+  float: right;
+
+  color: @color-blue;
+  font-size: 1.3em;
+  text-align: center;
+
+  cursor: pointer;
+
+  &:hover {
+    color: lighten(@color-blue, 10%);
   }
 
-  &__meta {
-    &:extend(.clearfix all);
-
-    float: right;
+  .respond(large, {
     display: none;
-    height: 16px;
+  })
+}
 
-    .respond(large, {
-      display: block;
-    });
+.header__brand {
+  float: left;
+}
 
-    &__upper {
-      &:extend(.clearfix all);
-    }
+.header__meta {
+  &:extend(.clearfix all);
 
-    &__language {
-      float: right;
-    }
+  float: right;
+  display: none;
+  height: 16px;
 
-    &__menu {
-      float: right;
-    }
+  .respond(large, {
+    display: block;
+  });
+}
 
-    &__lower {
-      &:extend(.clearfix all);
+.header__meta__upper {
+  &:extend(.clearfix all);
+}
 
-      margin-top: 16px;
-    }
+.header__meta__language {
+  float: right;
+}
 
-    &__welcome {
-      &:extend(.clearfix all);
+.header__meta__menu {
+  float: right;
+}
 
-      float: right;
+.header__meta__lower {
+  &:extend(.clearfix all);
 
-      padding: 5px 0 0 0;
+  margin-top: 16px;
+}
 
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
+.header__meta__welcome {
+  &:extend(.clearfix all);
 
-      &__item {
-        float: left;
-        margin: 0 10px 0 0;
-        padding: 0 10px 0 0;
-        height: 16px; // Hack to get the border-right exactly 16px height
-        line-height: 16px;
+  float: right;
 
-        border-right: 1px solid @color-gray--darker; // TODO: Use ui color instead
+  padding: 5px 0 0 0;
 
-        color: @color-blue;
-        font-family: ITCFranklinGothicCondensedDemi, sans-serif;
-        font-size: 20px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
 
-        a {
-          color: @color-blue;
-          text-decoration: none;
-        }
+.header__meta__welcome__item {
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 16px; // Hack to get the border-right exactly 16px height
+  line-height: 16px;
 
-        &:last-of-type {
-          border-right: 0;
-          margin-right: 0;
-          padding-right: 0;
-        }
-      }
-    }
+  color: @color-blue;
+  font-family: ITCFranklinGothicCondensedDemi, sans-serif;
+  font-size: 20px;
 
-    &__social {
-      float: right;
-      min-height: 21px; // TODO
-
-      border-left: 1px solid @color-gray--darker;
-      padding: 0 0 0 10px;
-      margin: 0 0 0 10px;
-    }
+  a {
+    color: @color-blue;
+    text-decoration: none;
   }
 
-  &__social {
-    ul {
-    }
+  & + & {
+    border-left: 1px solid @color-gray--darker;
+    margin-left: 10px;
+    padding-left: 10px;
   }
+}
+
+.header__meta__social {
+  float: right;
+  min-height: 21px; // TODO
+
+  border-left: 1px solid @color-gray--darker;
+  padding: 0 0 0 10px;
+  margin: 0 0 0 10px;
 }

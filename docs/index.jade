@@ -11,7 +11,33 @@ template: page.jade
       framework for developing responsive, mobile first projects
       on the web.
 
-    .head__actions
+    // ko if: hasGitHubIntegration
+
+    .head__actions(data-bind='visible: github.isAuthenticating()')
+      p.head__notice Authenticating…
+
+    .head__actions(data-bind='visible: github.isNotSignedIn()')
+      a.head__action.button(href='#', title="Sign in with GitHub", data-bind="attr: { href: github.getAuthUrl() }")
+        i.button__icon.icon.icon--github
+        != ' '
+        span Sign in with GitHub
+
+    .head__actions(data-bind='visible: github.isSignedInAndHasNoAccess()')
+      p.head__notice(data-bind="visible: !github.hasAskedForAccess()")
+        span Unfortunately, you don't have access to the Style Guide repository.
+        br
+        span But you can ask for it!
+
+      p(data-bind="visible: !github.hasAskedForAccess()")
+        a.head__action.button(href='#', title="Ask for permission", data-bind="click: github.askForAccess.bind(github)")
+          span Ask for access
+
+      p.head__notice(data-bind="visible: github.hasAskedForAccess()")
+        | Thank you!
+        br
+        | We got your request. You'll hear from us soon.
+
+    .head__actions(data-bind='visible: github.isSignedInAndHasAccess()')
       a.head__action.button(href=config.urls.releases, title="See the releases on GitHub")
         i.button__icon.icon.icon--download
         != ' '
@@ -21,6 +47,8 @@ template: page.jade
         i.button__icon.icon.icon--source
         != ' '
         span View project on GitHub
+
+    // /ko
 
 .l-container
   .l-row
