@@ -22,7 +22,11 @@
     "tbd-18": "#cacaca",
     "tbd-19": "#ffff66",
     "tbd-20": "#eaeaea",
-    "tbd-21": "#444444"
+    "tbd-21": "#444444",
+    "tbd-22": "#f4f4f4",
+    "tbd-23": "#1762a5",
+    "tbd-24": "#666666",
+    "tbd-25": "#fcfcfc"
   },
   "secondary": [{
     "name": "light-blue",
