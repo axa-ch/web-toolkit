@@ -22,6 +22,7 @@
       "gray--darker": "#6f6f6f",
       "gray--dark": "#919191",
       "gray": "#b0b0b0",
+      "gray--mid": "#dadada",
       "gray--light": "#e5e5e5",
       "gray--lighter": "#efefef",
       "white": "#ffffff"
