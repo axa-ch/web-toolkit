@@ -1,0 +1,47 @@
+@import 'style/variables';
+@import 'style/blocks/icon';
+@import 'style/mixins/respond';
+
+.auswahl {
+
+  &__header {
+    display: none;
+  }
+
+  &__item {
+    padding: 20px 10px;
+    border-top: 1px solid #999;
+  }
+
+  &__item:nth-of-type(2n) {
+    background: #ccc;
+  }
+
+  &__item__info {
+    .make-row()
+  }
+
+  &__item__info__label {
+    .make-col(6)
+  }
+
+  &__item__info__content {
+    .make-col(6)
+  }
+
+  &__item__info__content__link {
+    font-weight: bold;
+  }
+
+  &__item__info--key {
+
+    .auswahl__item__info__label {
+      display: none;
+    }
+
+    .auswahl__item__info__label {
+      .make-col(12)
+    }
+  }
+
+}
