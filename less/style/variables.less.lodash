@@ -41,3 +41,11 @@ _.forEach(colors.secondary, function (colorGroup) {
 %>
 <%
 }); %>
+
+// TBD colors
+<%
+_.forEach(colors.tbd, function (colorCode, colorName) {
+%>
+@color-<%= colorName %>: <%= colorCode %>;<%
+});
+%>
