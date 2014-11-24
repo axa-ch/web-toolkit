@@ -27,6 +27,7 @@ module.exports = exports = function (options) {
     var coffee = require('metalsmith-coffee');
 
     var config = readJSONFile(path.join(options.src, 'config.json'));
+    var nav = readJSONFile(path.join(options.src, 'nav.json'));
 
     // GitHub integration
     if (!process.env.GITHUB_INTEGRATION) {
@@ -44,7 +45,8 @@ module.exports = exports = function (options) {
       icons: readJSONFile(path.join(options.cwd, 'dist/icons.json')),
       colors: readJSONFile(path.join(options.cwd, 'dist/colors.json')),
       version: readJSONFile(path.join(options.cwd, 'dist/version.json')),
-      config: config
+      config: config,
+      nav: nav
     }));
 
     // include fonts

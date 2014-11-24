@@ -1,0 +1,45 @@
+{
+  "items": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "path": "index.html",
+      "home": true
+    },
+    {
+      "title": "Getting Started",
+      "slug": "getting-started",
+      "path": "getting-started.html"
+    },
+    {
+      "title": "Brand",
+      "slug": "brand",
+      "path": "brand.html"
+    },
+    {
+      "title": "Typography",
+      "slug": "typography",
+      "path": "typography.html"
+    },
+    {
+      "title": "Visuals",
+      "slug": "visuals",
+      "path": "visuals.html"
+    },
+    {
+      "title": "Mixins",
+      "slug": "mixins",
+      "path": "mixins.html"
+    },
+    {
+      "title": "Interactions",
+      "slug": "interactions",
+      "path": "interactions.html"
+    },
+    {
+      "title": "Recommendations",
+      "slug": "recommendations",
+      "path": "recommendations.html"
+    }
+  ]
+}
