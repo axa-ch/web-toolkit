@@ -11,4 +11,4 @@ before_install:
 
 script:
   - gulp build
-  - if [ "$PULL_REQUEST" = false ]; then gulp deploy; fi
+  - if [ "$PULL_REQUEST" = false ] && [ "$BRANCH" = "master" ]; then gulp deploy; fi
