@@ -8,6 +8,10 @@ class MainViewModel
       @github = new GitHubIntegrationViewModel(options.github)
 
   init: ->
+    if window.location.host == 'axa-ch.github.io'
+      if window.location.protocol != 'https:'
+        window.location.protocol = 'https'
+
     if @hasGitHubIntegration
       @github.init()
 
