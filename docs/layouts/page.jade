@@ -40,11 +40,13 @@ html(lang="en")
               .header__meta__language.menu.menu--language
               .header__meta__menu.menu.menu--meta
                 if version && version.hash && version.hash.long && version.hash.short
-                  // ko if: hasGitHubIntegration && github.user() !== null
-                  .menu__item(data-bind='visible: !hasGitHubIntegration || !github.isAuthenticating() && github.repo() !== null')
+
+                  // ko if: hasGitHubIntegration && github.isSignedIn()
+                  .menu__item(data-bind='visible: !github.isAuthenticating() && github.isActiveMember()')
                     a.menu__link(href=config.repository.url + '/commit/' + version.hash.long) Build ##{version.hash.short}
                   // /ko
-                  // ko if: !hasGitHubIntegration
+
+                  // ko if: !hasGitHubIntegration || !github.isSignedIn()
                   .menu__item
                     span.menu__link(title=version.hash.long) Build ##{version.hash.short}
                   // /ko
@@ -53,9 +55,10 @@ html(lang="en")
               .header__meta__welcome
                 ul
                   li.header__meta__welcome__item Web Style Guide
-                  // ko if: hasGitHubIntegration && github.user() !== null
+
+                  // ko if: hasGitHubIntegration && github.isSignedIn()
                   li.header__meta__welcome__item(data-bind='with: github.user')
-                    a(title="Your GitHub profile", data-bind='text: name, attr: { href: html_url }')
+                    a(title="Your GitHub profile", data-bind='text: login, attr: { href: html_url }')
                   // /ko
 
       nav.main-nav
@@ -84,10 +87,12 @@ html(lang="en")
           .footer__copyline__inner
             .l-container
               ul.copyline-menu
-                // ko if: hasGitHubIntegration && github.repo() !== null
+
+                // ko if: hasGitHubIntegration && github.isActiveMember()
                 li.copyline-menu__item
                   a.copyline-menu__link(href=config.repository.url, title=config.repository.name)= config.repository.name
                 // /ko
+
                 li.copyline-menu__item
                   span.copyline-menu__text Copyright AXA Versicherungen AG 2014
 

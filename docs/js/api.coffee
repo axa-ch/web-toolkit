@@ -29,6 +29,21 @@ class GitHub
           'Authorization': 'token ' + token
     ).bind @
 
+  teamMembership: (teamId, username) ->
+    @readAccessToken()
+    .then ((token) ->
+      $.ajax
+        type: 'GET'
+        # Since IE9 XDomainRequest doesn't support custom headers,
+        # we do authentication with query strings
+        url: @options.urls.api + '/teams/' + teamId + '/memberships/' + username + '?access_token=' + token
+        dataType: 'json'
+        headers:
+          # IE9 XDomainRequest ignores custom headers
+          'Accept': 'application/vnd.github.v3+json'
+          'Authorization': 'token ' + token
+    ).bind @
+
   repo: (owner, name) ->
     @readAccessToken()
     .then ((token) ->
