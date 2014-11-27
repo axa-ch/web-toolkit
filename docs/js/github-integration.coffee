@@ -102,9 +102,16 @@ class GitHubIntegrationViewModel
     .then (->
       @isAskingForAccess false
       @hasAskedForAccess true
+    ).bind(@), ((err) ->
+      # commenting failed
+      @isAskingForAccess false
+      @hasAskedForAccess false
     ).bind(@)
     .then (->
       @storage.set 'has_asked_for_access', true
+    ).bind(@), ((err) ->
+      # setting the value failed
+      @hasAskedForAccess true
     ).bind(@)
 
 window.GitHubIntegrationViewModel = GitHubIntegrationViewModel
