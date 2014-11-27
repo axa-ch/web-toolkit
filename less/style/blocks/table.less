@@ -1,6 +1,7 @@
 @import 'style/mixins/respond';
 
 .table {
+  display: block;
 
   .respond(medium, {
     display: table;
@@ -21,10 +22,12 @@
   display: table-cell;
   padding: 7px 10px;
   font-weight: bold;
-
+  text-align: left;
 }
 
 .table__content {
+  display: block;
+
   .respond(medium; {
     display: table-row-group;
     border: 1px solid @color-gray--light;
@@ -32,9 +35,11 @@
 }
 
 .table__item {
+  display: block;
   padding: 15px 20px 5px;
   border-top: 1px solid @color-gray--mid;
   background: white;
+  text-align: left;
 
   &:nth-of-type(2n) {
     background: @color-gray--lighter;
@@ -106,14 +111,17 @@
 
   &:after {
     content: ',';
+    margin-right: 4px;
 
     .respond(medium; {
       content: '' !important;
+      display: none;
     });
   }
 
   &__label {
     display: inline-block;
+    margin-left: 4px;
 
     .respond(medium; {
       display: none;
