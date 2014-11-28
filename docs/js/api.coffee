@@ -11,6 +11,7 @@ class GitHub
   accessToken: (code) ->
     $.ajax
       type: 'GET'
+      dataType: 'json'
       url: @options.urls.token + '/' + code
 
   currentUser: () ->
@@ -18,8 +19,27 @@ class GitHub
     .then ((token) ->
       $.ajax
         type: 'GET'
-        url: @options.urls.api + '/user'
+        # Since IE9 XDomainRequest doesn't support custom headers,
+        # we do authentication with query strings
+        url: @options.urls.api + '/user?access_token=' + token
+        dataType: 'json'
         headers:
+          # IE9 XDomainRequest ignores custom headers
+          'Accept': 'application/vnd.github.v3+json'
+          'Authorization': 'token ' + token
+    ).bind @
+
+  teamMembership: (teamId, username) ->
+    @readAccessToken()
+    .then ((token) ->
+      $.ajax
+        type: 'GET'
+        # Since IE9 XDomainRequest doesn't support custom headers,
+        # we do authentication with query strings
+        url: @options.urls.api + '/teams/' + teamId + '/memberships/' + username + '?access_token=' + token
+        dataType: 'json'
+        headers:
+          # IE9 XDomainRequest ignores custom headers
           'Accept': 'application/vnd.github.v3+json'
           'Authorization': 'token ' + token
     ).bind @
@@ -29,8 +49,12 @@ class GitHub
     .then ((token) ->
       $.ajax
         type: 'GET'
-        url: @options.urls.api + '/repos/' + owner + '/' + name
+        # Since IE9 XDomainRequest doesn't support custom headers,
+        # we do authentication with query strings
+        url: @options.urls.api + '/repos/' + owner + '/' + name + '?access_token=' + token
+        dataType: 'json'
         headers:
+          # IE9 XDomainRequest ignores custom headers
           'Accept': 'application/vnd.github.v3+json'
           'Authorization': 'token ' + token
     ).bind @
@@ -40,11 +64,15 @@ class GitHub
     .then ((token) ->
       $.ajax
         type: 'POST'
-        contentType: 'json',
-        url: @options.urls.api + '/gists/' + gistId + '/comments'
+        #contentType: 'json',
+        # Since IE9 XDomainRequest doesn't support custom headers,
+        # we do authentication with query strings
+        url: @options.urls.api + '/gists/' + gistId + '/comments?access_token=' + token
+        dataType: 'json'
         data: JSON.stringify
           body: body
         headers:
+          # IE9 XDomainRequest ignores custom headers
           'Accept': 'application/vnd.github.v3.raw+json'
           'Authorization': 'token ' + token
     ).bind @

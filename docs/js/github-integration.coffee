@@ -8,21 +8,30 @@ class GitHubIntegrationViewModel
       @storage.get 'access_token'
     ).bind @
 
+    # The state values
     @isAuthenticating = ko.observable false
     @user = ko.observable null
-    @repo = ko.observable null
+    @membership = ko.observable null
 
-    @isSignedInAndHasAccess = ko.computed (->
-      (!@isAuthenticating() && @user() != null && @repo() != null)
-    ).bind @
+    # The convenience values
+    @isSignedIn = ko.computed (->
+      @user() != null
+    ).bind(@)
 
-    @isSignedInAndHasNoAccess = ko.computed (->
-      (!@isAuthenticating() && @user() != null && @repo() == null)
-    ).bind @
+    @isNoMember = ko.computed (->
+      m = @membership()
+      m == null
+    ).bind(@)
 
-    @isNotSignedIn = ko.computed (->
-      (!@isAuthenticating() && @user() == null)
-    ).bind @
+    @isActiveMember = ko.computed (->
+      m = @membership()
+      m != null && m.state == 'active'
+    ).bind(@)
+
+    @isPendingMember = ko.computed (->
+      m = @membership()
+      m != null && m.state == 'pending'
+    ).bind(@)
 
     @isAskingForAccess = ko.observable false
     @hasAskedForAccess = ko.observable false
@@ -76,13 +85,13 @@ class GitHubIntegrationViewModel
     @github.currentUser()
     .then ((user) ->
       @user user
-      @github.repo 'axa-ch', 'style-guide'
+      @github.teamMembership @options.team, user.login
     ).bind(@), ((err) ->
       # not signed in
       @isAuthenticating false
     ).bind(@)
-    .then ((repo) ->
-      @repo repo
+    .then ((membership) ->
+      @membership membership
     ).bind(@), ((err) ->
       # no access rights
       @isAuthenticating false
@@ -102,9 +111,16 @@ class GitHubIntegrationViewModel
     .then (->
       @isAskingForAccess false
       @hasAskedForAccess true
+    ).bind(@), ((err) ->
+      # commenting failed
+      @isAskingForAccess false
+      @hasAskedForAccess false
     ).bind(@)
     .then (->
       @storage.set 'has_asked_for_access', true
+    ).bind(@), ((err) ->
+      # setting the value failed
+      @hasAskedForAccess true
     ).bind(@)
 
 window.GitHubIntegrationViewModel = GitHubIntegrationViewModel

@@ -16,13 +16,13 @@ template: page.jade
     .head__actions(data-bind='visible: github.isAuthenticating()')
       p.head__notice Authenticating…
 
-    .head__actions(data-bind='visible: github.isNotSignedIn()')
+    .head__actions(data-bind='visible: !github.isAuthenticating() && !github.isSignedIn()')
       a.head__action.button(href='#', title="Sign in with GitHub", data-bind="attr: { href: github.getAuthUrl() }")
         i.button__icon.icon.icon--github
         != ' '
         span Sign in with GitHub
 
-    .head__actions(data-bind='visible: github.isSignedInAndHasNoAccess()')
+    .head__actions(data-bind='visible: !github.isAuthenticating() && github.isSignedIn() && github.isNoMember()')
       p.head__notice(data-bind="visible: !github.hasAskedForAccess()")
         span Unfortunately, you don't have access to the Style Guide repository.
         br
@@ -37,7 +37,13 @@ template: page.jade
         br
         | We got your request. You'll hear from us soon.
 
-    .head__actions(data-bind='visible: github.isSignedInAndHasAccess()')
+    .head__actions(data-bind='visible: !github.isAuthenticating() && github.isPendingMember()')
+      p.head__notice
+        span You've got a request!
+        br
+        span Check out your email inbox to join the organization.
+
+    .head__actions(data-bind='visible: !github.isAuthenticating() && github.isActiveMember()')
       a.head__action.button(href=config.urls.releases, title="See the releases on GitHub")
         i.button__icon.icon.icon--download
         != ' '
