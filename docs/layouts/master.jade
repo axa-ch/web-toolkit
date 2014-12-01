@@ -1,5 +1,6 @@
 doctype html
 html
+  block vars
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -10,60 +11,49 @@ html
 
     title= title
 
-    link(rel="stylesheet", href="css/docs.css")
+    link(rel="stylesheet", href="/css/docs.css")
 
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/localforage/1.1.1/localforage.min.js')
 
-    script(src="js/style.all.js")
-    script(src="js/api.js")
-    script(src="js/github-integration.js")
-    script(src="js/main.js")
+    script(src="/js/style.all.js")
+    script(src="/js/api.js")
+    script(src="/js/github-integration.js")
+    script(src="/js/main.js")
 
   body.site
     .site__page
       header.header.header--main
         .l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
-          a.header__brand.brand(href="index.html")
+          a.header__brand.brand(href="/")
             .brand__logo
             .brand__tagline.brand__tagline--de
           .header__meta
             .header__meta__upper
-              .header__meta__language.menu.menu--language
-              .header__meta__menu.menu.menu--meta
-                if version && version.hash && version.hash.long && version.hash.short
-                  // ko if: hasGitHubIntegration && github.user() !== null
-                  .menu__item(data-bind='visible: !hasGitHubIntegration || !github.isAuthenticating() && github.repo() !== null')
-                    a.menu__link(href=config.repository.url + '/commit/' + version.hash.long) Build ##{version.hash.short}
-                  // /ko
-                  // ko if: !hasGitHubIntegration
-                  .menu__item
-                    span.menu__link(title=version.hash.long) Build ##{version.hash.short}
-                  // /ko
-
+              .header__meta__menu
+                ul.menu.menu--meta
+                  li.menu__item(class=(segment == 'design' ? 'is-active' : ''))
+                    a(href='/design').menu__link Design Guidelines
+                  li.menu__item(class=(segment == 'development' ? 'is-active': ''))
+                    a(href='/development').menu__link Developer Toolkit
+                  li.menu__item(class=(segment == 'examples' ? 'is-active': ''))
+                    a(href='/examples').menu__link Examples
             .header__meta__lower
               .header__meta__welcome
                 ul
-                  li.header__meta__welcome__item Web Style Guide
-                  // ko if: hasGitHubIntegration && github.user() !== null
-                  li.header__meta__welcome__item(data-bind='with: github.user')
-                    a(title="Your GitHub profile", data-bind='text: name, attr: { href: html_url }')
-                  // /ko
+                  li.header__meta__welcome__item
+                    if segment == 'design'
+                      span Design Guidelines
+                    else if segment == 'development'
+                      span Developer Toolkit
+                    else if segment == 'examples'
+                      span Examples
 
-      nav.main-nav
-        ul.menu.menu--main
-          each item in nav.items
-            li.menu__item(class=(slug === item.slug ? 'is-active' : undefined))
-              a.menu__link(
-                href=item.path,
-                class=(slug === item.slug ? 'is-active' : undefined),
-                class=(item.home ? 'menu__link--home' : undefined)
-              )= (item.home ? '' : item.title)
-
-      section!= contents
+      .l-container
+        block master
 
       footer.footer
         .footer__copyline
@@ -88,17 +78,6 @@ html
               )= item.title
 
     script(type='text/javascript').
-      $('.js-affix-under-head').affix({
-        offset: {
-          top: function () {
-            var $head = $('.head');
-            return $head.offset().top + $head.height() + 40;
-          }
-        }
-      });
-
       var viewModel = new MainViewModel(!{JSON.stringify(config)});
-
       ko.applyBindings(viewModel);
-
       viewModel.init();

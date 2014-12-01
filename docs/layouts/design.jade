@@ -1,0 +1,13 @@
+extends ./master.jade
+
+block append vars
+  - var segment = 'design'
+
+block master
+  .l-row
+    .l-secondary
+      ul
+        li Menu 1
+        li Menu 2
+    .l-primary
+      block content

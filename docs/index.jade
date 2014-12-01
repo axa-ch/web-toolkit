@@ -1,101 +1,36 @@
 ---
-title: Home
-slug: home
-template: page.jade
+title: test
 ---
 
-.head.head--master
-  .l-container
-    p.head__lead.lead.
-      Meet the AXA Switzerland Web Style Guide – the HTML, CSS and JS
-      framework for developing responsive, mobile first projects
-      on the web.
+extends ./layouts/master.jade
 
-    // ko if: hasGitHubIntegration
-
-    .head__actions(data-bind='visible: github.isAuthenticating()')
-      p.head__notice Authenticating…
-
-    .head__actions(data-bind='visible: github.isNotSignedIn()')
-      a.head__action.button(href='#', title="Sign in with GitHub", data-bind="attr: { href: github.getAuthUrl() }")
-        i.button__icon.icon.icon--github
-        != ' '
-        span Sign in with GitHub
-
-    .head__actions(data-bind='visible: github.isSignedInAndHasNoAccess()')
-      p.head__notice(data-bind="visible: !github.hasAskedForAccess()")
-        span Unfortunately, you don't have access to the Style Guide repository.
-        br
-        span But you can ask for it!
-
-      p(data-bind="visible: !github.hasAskedForAccess()")
-        a.head__action.button(href='#', title="Ask for permission", data-bind="click: github.askForAccess.bind(github)")
-          span Ask for access
-
-      p.head__notice(data-bind="visible: github.hasAskedForAccess()")
-        | Thank you!
-        br
-        | We got your request. You'll hear from us soon.
-
-    .head__actions(data-bind='visible: github.isSignedInAndHasAccess()')
-      a.head__action.button(href=config.urls.releases, title="See the releases on GitHub")
-        i.button__icon.icon.icon--download
-        != ' '
-        span Download Style Guide
-
-      a.head__action.button.button--secondary(href=config.repository.url, title=config.repository.name)
-        i.button__icon.icon.icon--source
-        != ' '
-        span View project on GitHub
-
-    // /ko
-
-.l-container
+block master
   .l-row
-    .l-primary
-      h1#examples Examples
-        a.anchor--docs(href="#examples")
+    .thumbnail.l-third
+      a.thumbnail__img-link(href="design")
+        img.thumbnail__img(src="images/design.png", alt="Design")
+      h2.thumbnail__heading
+        a.thumbnail__link(href="design") Design Guidelines
+      p.thumbnail__text.
+        Our design guidelines define how our applications
+        look and behave to ensure consistency and ease of
+        use.
 
-      p.lead.
-        Need a simple showcase of the things possible
-        with the Web Style Guide? Check out the examples.
+    .thumbnail.l-third
+      a.thumbnail__img-link(href="development")
+        img.thumbnail__img(src="images/development.png", alt="Development")
+      h2.thumbnail__heading
+        a.thumbnail__link(href="development") Developer Toolkit
+      p.thumbnail__text.
+        The developer toolkit is a front-end library which
+        helps you build applications as defined in the design
+        guidelines.
 
-      .l-row
-        .l-third
-          a.thumbnail(href="examples/page.html")
-            img.thumbnail__media(src="images/example-simple.png", alt="screen of the simple example")
-          h3
-            a(href="examples/page.html") Basic template
-          p.
-            Basic template with a sliding mobile menu. Make sure your
-            browser size is small enough.
-        .l-third
-          a.thumbnail(href="examples/grid.html")
-            img.thumbnail__media(src="images/example-grid.png", alt="screen of the grid example")
-          h3
-            a(href="examples/grid.html") Full page grid
-          p.
-            A full page grid with an input box, where you can set the total
-            width in any unit.
-
-      h1#license License
-        a.anchor--docs(href="#license")
-
-      p.
-        The Web Style Guide is <code>Copyright 2014 AXA Versicherungen AG</code>.
-        All rights are reserved. Therefore it's forbidden to do any
-        of the following with the Web Style Guide without
-        permission by the legal copyright holder:
-
-      ul
-        li distribution
-        li modification
-        li sublicensing
-
-    .l-secondary
-      nav.js-affix-under-head.nav.nav--side
-        ul.menu.menu--side
-          li.menu__item
-            a.menu__link(href='#examples') Examples
-          li.menu__item
-            a.menu__link(href='#license') License
+    .thumbnail.l-third
+        a.thumbnail__img-link(href="examples")
+          img.thumbnail__img(src="images/examples.png", alt="Examples")
+        h2.thumbnail__heading
+          a.thumbnail__link(href="examples") Examples
+        p.thumbnail__text.
+          Find great implementations of our design guidelines
+          using the developer toolkit and let them inspire you.
