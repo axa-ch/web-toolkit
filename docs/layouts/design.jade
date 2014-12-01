@@ -1,13 +1,29 @@
-extends ./master.jade
+---
+template: master.jade
+segment: design
+---
 
-block append vars
-  - var segment = 'design'
+.l-row
+  .l-docs-menu
 
-block master
-  .l-row
-    .l-secondary
-      ul
-        li Menu 1
-        li Menu 2
-    .l-primary
-      block content
+    ul.menu.menu--docs--left
+      if (typeof(design) !== 'undefined')
+        each page in design
+          li.menu__item
+            a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+      li.menu__item
+        .menu__link.menu__link--category Fundamentals
+        ul.menu
+          if (typeof(design_fundamentals) !== 'undefined')
+            each page in design_fundamentals
+              li.menu__item
+                a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+      li.menu__item
+        .menu__link.menu__link--category Components
+        ul.menu
+          if (typeof(design_components) !== 'undefined')
+            each page in design_components
+              li.menu__item
+                a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+
+  .l-docs-main!= contents

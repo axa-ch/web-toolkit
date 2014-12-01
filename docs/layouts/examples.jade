@@ -1,13 +1,7 @@
-extends ./master.jade
+---
+template: master.jade
+segment: examples
+---
 
-block append vars
-  - var segment = 'examples'
-
-block master
-  .l-row
-    .l-secondary
-      ul
-        li Menu 1
-        li Menu 2
-    .l-primary
-      block content
+.l-row
+  .l-full!= contents

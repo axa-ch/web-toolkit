@@ -1,100 +1,100 @@
-extends ../../layouts/design.jade
+---
+title: Typography
+collection: design_fundamentals
+template: design.jade
+---
 
-block append vars
-  - var title = 'Typography'
-
-block content
-  .head
-    .l-container
-      h1.head__title Typography
-      p.head__lead.lead.
-        <em>Typography</em> matters! The Style Guide comes packed with
-        lots of typographic elements that make reading a breeze.
-
+.head
   .l-container
-    .l-row
-      .l-primary
-        h1#headings Headings
-          a.anchor--docs(href="#headings")
+    h1.head__title Typography
+    p.head__lead.lead.
+      <em>Typography</em> matters! The Style Guide comes packed with
+      lots of typographic elements that make reading a breeze.
 
-        :sample
-          h1 Heading one
-          h2 Heading two
-          h3 Heading three
-          h4 Heading four
-          h5 Heading five
-          h6 Heading six
+.l-container
+  .l-row
+    .l-primary
+      h1#headings Headings
+        a.anchor--docs(href="#headings")
 
-        h1#paragraphs Paragraphs
-          a.anchor--docs(href="#paragraphs")
+      :sample
+        h1 Heading one
+        h2 Heading two
+        h3 Heading three
+        h4 Heading four
+        h5 Heading five
+        h6 Heading six
 
-        :sample
-          p.
-            Some fancy paragraph followed by a bigger one.
+      h1#paragraphs Paragraphs
+        a.anchor--docs(href="#paragraphs")
 
-          p.
-            Bacon ipsum dolor amet nisi pancetta short ribs
-            sed exercitation andouille landjaeger ad. Ball
-            tip pariatur chuck, officia cupidatat qui eiusmod
-            lorem in. Brisket reprehenderit laborum proident,
-            deserunt filet mignon et sed. Incididunt prosciutto
-            flank exercitation tempor. Beef et in minim. Commodo
-            fatback adipisicing strip steak drumstick mollit sausage,
-            sint deserunt officia eu tongue labore cupidatat kevin.
+      :sample
+        p.
+          Some fancy paragraph followed by a bigger one.
 
-        h1#anchors Anchors
-          a.anchor--docs(href="#anchors")
+        p.
+          Bacon ipsum dolor amet nisi pancetta short ribs
+          sed exercitation andouille landjaeger ad. Ball
+          tip pariatur chuck, officia cupidatat qui eiusmod
+          lorem in. Brisket reprehenderit laborum proident,
+          deserunt filet mignon et sed. Incididunt prosciutto
+          flank exercitation tempor. Beef et in minim. Commodo
+          fatback adipisicing strip steak drumstick mollit sausage,
+          sint deserunt officia eu tongue labore cupidatat kevin.
 
-        :sample
-          p.
-            This paragraph shows an <a href="#" >awesome
-            inline anchor</a> and lose some words about emphasizing.
+      h1#anchors Anchors
+        a.anchor--docs(href="#anchors")
 
-        h1#inline-text Inline text
-          a.anchor--docs(href="#inline-text")
+      :sample
+        p.
+          This paragraph shows an <a href="#" >awesome
+          inline anchor</a> and lose some words about emphasizing.
 
-        h2#marked-text Marked text
-            a.anchor--docs(href="#marked-text")
+      h1#inline-text Inline text
+        a.anchor--docs(href="#inline-text")
 
-        :sample
-          p.
-            You can use the mark tag to <mark>highlight</mark> text.
+      h2#marked-text Marked text
+          a.anchor--docs(href="#marked-text")
 
-        h2#deleted-text Deleted text
-          a.anchor--docs(href="#deleted-text")
+      :sample
+        p.
+          You can use the mark tag to <mark>highlight</mark> text.
 
-        :sample
-          p.
-            Use <code>del</code> to indicate that <del>a part of a</del> some text has been deleted.
+      h2#deleted-text Deleted text
+        a.anchor--docs(href="#deleted-text")
 
-        h2#irrelevant-text Irrelevant text
-          a.anchor--docs(href="#irrelevant-text")
+      :sample
+        p.
+          Use <code>del</code> to indicate that <del>a part of a</del> some text has been deleted.
 
-        :sample
-          p.
-            <s>To show that a text is no longer relevant use the </s><code>s</code><s> tag. </s>
+      h2#irrelevant-text Irrelevant text
+        a.anchor--docs(href="#irrelevant-text")
 
-        h2#inserted-text Inserted text
-          a.anchor--docs(href="#inserted-text")
+      :sample
+        p.
+          <s>To show that a text is no longer relevant use the </s><code>s</code><s> tag. </s>
 
-        :sample
-          p.
-            The <code>ins</code> tag shows that a text <ins>has been inserted.</ins>
+      h2#inserted-text Inserted text
+        a.anchor--docs(href="#inserted-text")
 
-        h2#emphasize Emphasize
-          a.anchor--docs(href="#emphasize")
+      :sample
+        p.
+          The <code>ins</code> tag shows that a text <ins>has been inserted.</ins>
 
-        :sample
-          p.
-            Emphasizing text using <code>strong</code> or <code>em</code>
-            will result in <strong>bold</strong> or <em>italic</em> text.
-            It is not recommended to use <code>b</code> or <code>i</code>
-            tags.
+      h2#emphasize Emphasize
+        a.anchor--docs(href="#emphasize")
 
-      .l-secondary
-        nav.js-affix-under-head.nav.nav--side
-          ul.menu.menu--side
-            li.menu__item: a.menu__link(href="#headings") Headings
-            li.menu__item: a.menu__link(href="#paragraphs") Paragraphs
-            li.menu__item: a.menu__link(href="#anchors") Anchors
-            li.menu__item: a.menu__link(href="#inline-text") Inline text
+      :sample
+        p.
+          Emphasizing text using <code>strong</code> or <code>em</code>
+          will result in <strong>bold</strong> or <em>italic</em> text.
+          It is not recommended to use <code>b</code> or <code>i</code>
+          tags.
+
+    .l-secondary
+      nav.js-affix-under-head.nav.nav--side
+        ul.menu.menu--side
+          li.menu__item: a.menu__link(href="#headings") Headings
+          li.menu__item: a.menu__link(href="#paragraphs") Paragraphs
+          li.menu__item: a.menu__link(href="#anchors") Anchors
+          li.menu__item: a.menu__link(href="#inline-text") Inline text

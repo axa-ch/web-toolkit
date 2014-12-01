@@ -21,6 +21,20 @@
   max-width: 1280px;
 }
 
+.l-docs-menu {
+  display: none;
+
+  .respond(large, {
+    display: block;
+  });
+
+  .make-col(2, large);
+}
+
+.l-docs-main {
+  .make-col(10, large);
+}
+
 dl {
   dt {
     font-weight: bold;

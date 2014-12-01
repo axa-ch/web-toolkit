@@ -1,6 +1,5 @@
 doctype html
 html
-  block vars
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -54,8 +53,7 @@ html
                     else
                       span Web Style Guide
 
-      .l-container
-        block master
+      .l-container!= contents
 
       footer.footer
         .footer__copyline
@@ -70,14 +68,59 @@ html
                   span.copyline-menu__text Copyright AXA Versicherungen AG 2014
 
     .site__mobile-menu
-      nav
-        ul.menu.menu--sliding(data-menu="collapsing")
-          each item in nav.items
-            li.menu__item(class=(slug === item.slug ? 'is-active' : undefined))
-              a.menu__link(
-                href=item.path,
-                class=(slug === item.slug ? 'is-active' : undefined)
-              )= item.title
+      nav.menu.menu--collapsing(data-menu="collapsing", data-exclusive="data-exclusive")
+        ul.menu__level.is-open
+          li.menu__item
+            a(href='/').menu__link.icon.icon--home Home
+          li.menu__item
+            a(href='#').menu__link.is-parent Desgin
+            ul.menu__level
+              if (typeof(design) !== 'undefined')
+                each page in design
+                  li.menu__item
+                    a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+              li.menu__item
+                a(href='#').menu__link.is-parent Fundamentals
+                ul.menu__level
+                  if (typeof(design_fundamentals) !== 'undefined')
+                    each page in design_fundamentals
+                      li.menu__item
+                        a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+              li.menu__item
+                a(href='#').menu__link.is-parent Components
+                ul.menu__level
+                  if (typeof(design_components) !== 'undefined')
+                    each page in design_components
+                      li.menu__item
+                        a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+          li.menu__item
+            a(href='#').menu__link.is-parent Development
+            ul.menu__level
+              if (typeof(development) !== 'undefined')
+                each page in development
+                  li.menu__item
+                    a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+              li.menu__item
+                .menu__link.is-parent Blocks
+                ul.menu__level
+                  if (typeof(development_blocks) !== 'undefined')
+                    each page in development_blocks
+                      li.menu__item
+                        a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+              li.menu__item
+                .menu__link.is-parent Plugins
+                ul.menu__level
+                  if (typeof(development_plugins) !== 'undefined')
+                    each page in development_plugins
+                      li.menu__item
+                        a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+              li.menu__item
+                .menu__link.is-parent Mixins
+                ul.menu__level
+                  if (typeof(development_mixins) !== 'undefined')
+                    each page in development_mixins
+                      li.menu__item
+                        a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
 
     script(type='text/javascript').
       var viewModel = new MainViewModel(!{JSON.stringify(config)});
