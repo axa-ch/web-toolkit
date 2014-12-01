@@ -1,0 +1,46 @@
+---
+title: Colors
+slug: colors
+collection: design_fundamentals
+template: design.jade
+---
+
+h1 Colors
+
+h2 Primary palette
+
+.l-row
+  .color-palette.color-palette--primary
+    each colorCode, colorName in colors.primary
+      .l-col(class='l-col--medium-2')
+        .color-palette__color
+          .color-palette__color__box(style='background: ' + colorCode)
+          .color-palette__color__name #{colorName}
+          .color-palette__color__code #{colorCode}
+          .color-palette__color__var @color-#{colorName}
+
+h2 Secondary palette
+
+each colorGroup in colors.secondary
+  .color-palette.color-palette--secondary
+    h3 #{colorGroup.name}
+    .l-row
+      each colorCode, colorName in colorGroup.colors
+        .l-col(class='l-col--medium-2')
+          .color-palette__color
+            .color-palette__color__box(style='background: ' + colorCode, class=(colorCode == '#ffffff' ? 'color-palette__color__box--white' : ''))
+            .color-palette__color__name #{colorName}
+            .color-palette__color__code #{colorCode}
+            .color-palette__color__var @color-#{colorName}
+
+h2 Colors to be defined
+
+.l-row
+  .color-palette.color-palette--primary
+    each colorCode, colorName in colors.tbd
+      .l-col(class='l-col--medium-2')
+        .color-palette__color
+          .color-palette__color__box(style='background: ' + colorCode)
+          .color-palette__color__name #{colorName}
+          .color-palette__color__code #{colorCode}
+          .color-palette__color__var @color-#{colorName}
