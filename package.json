@@ -58,11 +58,8 @@
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-jade": "0.0.3",
     "metalsmith-less": "^1.0.2",
-    "metalsmith-templates": "^0.6.0",
+    "metalsmith-templates": "axa-ch/metalsmith-templates",
     "run-sequence": "^0.3.6",
     "serve-static": "^1.5.4"
-  },
-  "dependencies": {
-    "metalsmith-templates": "git://github.com/axa-ch/metalsmith-templates"
   }
 }
