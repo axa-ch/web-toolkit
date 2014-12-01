@@ -46,8 +46,7 @@ module.exports = exports = function (options) {
       icons: readJSONFile(path.join(options.cwd, 'dist/icons.json')),
       colors: readJSONFile(path.join(options.cwd, 'dist/colors.json')),
       version: readJSONFile(path.join(options.cwd, 'dist/version.json')),
-      config: config,
-      nav: nav
+      config: config
     }));
 
     // include fonts
