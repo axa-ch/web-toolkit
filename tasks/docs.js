@@ -16,7 +16,6 @@ module.exports = exports = function (options) {
 
     var Metalsmith = require('metalsmith');
     var collections = require('metalsmith-collections');
-    var templates = require('metalsmith-templates');
     var jade = require('metalsmith-jade');
     var ignore = require('metalsmith-ignore');
     var branch = require('metalsmith-branch');
@@ -83,12 +82,8 @@ module.exports = exports = function (options) {
     });
 
     // do the static pages
-    metalsmith.use(branch(['*.jade', 'examples/*.jade'])
-      .use(jade({ locals: metalsmith.metadata() }))
-      .use(templates({
-        engine: 'jade',
-        directory: path.join(options.src, 'layouts')
-      })));
+    metalsmith.use(branch(['**/*.jade', '!layouts/*.jade'])
+      .use(jade({ locals: metalsmith.metadata() })));
 
     // do the styles
     metalsmith.use(branch('less/*')
