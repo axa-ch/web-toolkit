@@ -77,7 +77,8 @@ module.exports = exports = function (options) {
       'development_mixins',
       'design',
       'design_components',
-      'design_fundamentals'
+      'design_fundamentals',
+      'examples'
     ].forEach(function (name) {
       collections_options[name] = { sortBy: 'slug', reverse: false };
     });

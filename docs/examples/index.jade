@@ -5,4 +5,12 @@ segment: examples
 template: examples.jade
 ---
 
-h1 Examples
+h1.heading.heading--1 Examples
+
+.l-row
+  each example in examples
+    .thumbnail.l-fourth
+      a.thumbnail__img-link(href="pages/" + example.filename)
+        img.thumbnail__img(src="images/" + example.thumbnail)
+      h2.thumbnail__heading= example.title
+      p.thumbnail__text= example.description
