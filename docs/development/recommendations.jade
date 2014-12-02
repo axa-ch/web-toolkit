@@ -5,122 +5,113 @@ template: development.jade
 collection: development
 ---
 
-.l-container
-  h1.heading.heading--1 Recommendations
-  p.
-    A technical list of recommendations. Follow these instructions
-    to fully benefit from the Style Guide.
+h1.heading.heading--1 Recommendations
 
-.l-container
-  .l-row
-    .l-primary
-      p.callout.callout--danger.
-        Please note that these recommendations are a working draft.
+ul.menu
+  li.menu__item
+    a.menu__link(href='#viewport') Viewport meta tag
+  li.menu__item
+    a.menu__link(href='#x-ua-compatible') X-UA-Compatible
+  li.menu__item
+    a.menu__link(href='#charset') Character set
+  li.menu__item
+    a.menu__link(href='#less') Less compiler
 
-      h2#viewport Viewport meta tag
-        a(href='#viewport').anchor--docs
+p.callout.callout--danger.
+  Please note that these recommendations are a working draft.
 
-      p.
-        We recommend using the following meta tag:
+h2#viewport Viewport meta tag
+  a(href='#viewport').anchor--docs
 
-      .highlight
-        pre.highlight__listing.hljs: code.less
-          :highlight
-            <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+p.
+  We recommend using the following meta tag:
 
-      p.
-        The <code>width=device-width</code> forces
-        the browsers viewport to have a width that
-        equals the device width.
-        The device width means the width in CSS pixels
-        not in device pixels.
-        This means that normalization is already done.
-        The width for an iPhone (1136 * 640 @ 2x) in
-        portrait mode would be 320px.
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
-      p.
-        The <code>minimum-scale=1.0</code> and
-        <code>maximum-scale=1.0</code> force the browser
-        to start at zoom 1.0 and disable pinch'n'zoom.
-        This will provide the most "native-app-like" experience.
+p.
+  The <code>width=device-width</code> forces
+  the browsers viewport to have a width that
+  equals the device width.
+  The device width means the width in CSS pixels
+  not in device pixels.
+  This means that normalization is already done.
+  The width for an iPhone (1136 * 640 @ 2x) in
+  portrait mode would be 320px.
 
-      p.
-        If you'd like to enable pinch'n'zoom you can
-        replace the min and max scale with an
-        <code>initial-scale=1.0</code>.
+p.
+  The <code>minimum-scale=1.0</code> and
+  <code>maximum-scale=1.0</code> force the browser
+  to start at zoom 1.0 and disable pinch'n'zoom.
+  This will provide the most "native-app-like" experience.
 
-      p.
-        Find more information on the
-        <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag">Mozilla Developer Network</a>
-        or on the
-        <a href="http://www.quirksmode.org/mobile/viewports2.html">Blog of Peter Paul Koch</a>.
+p.
+  If you'd like to enable pinch'n'zoom you can
+  replace the min and max scale with an
+  <code>initial-scale=1.0</code>.
 
-      h2#x-ua-compatible X-UA-Compatible
-        a(href='#x-ua-compatible').anchor--docs
+p.
+  Find more information on the
+  <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag">Mozilla Developer Network</a>
+  or on the
+  <a href="http://www.quirksmode.org/mobile/viewports2.html">Blog of Peter Paul Koch</a>.
 
-      p.
-        We recommend using a <code>X-UA-Compatible</code> meta tag with
-        the content <code>"IE=edge"</code>.
-        This forces Internet Explorer not to use any compatibility mode.
+h2#x-ua-compatible X-UA-Compatible
+  a(href='#x-ua-compatible').anchor--docs
 
-      p.
-        This is required because there are some preferences
-        on the internal Internet Explorer package
-        to fall into compatibility mode on intranet sites as a default.
-        Furthermore invalid markup (HTML5 may
-        be considered invalid in older versions of IE)
-        will result in compatibility mode.
+p.
+  We recommend using a <code>X-UA-Compatible</code> meta tag with
+  the content <code>"IE=edge"</code>.
+  This forces Internet Explorer not to use any compatibility mode.
 
-
-      .highlight
-        pre.highlight__listing.hljs: code.less
-          :highlight
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-      h2#charset Character set
-        a(href='#charset').anchor--docs
-
-      p.
-        We recommend the UTF-8 character set since it is a
-        de facto standard and we are operating in a
-        multilingual country in an international group.
+p.
+  This is required because there are some preferences
+  on the internal Internet Explorer package
+  to fall into compatibility mode on intranet sites as a default.
+  Furthermore invalid markup (HTML5 may
+  be considered invalid in older versions of IE)
+  will result in compatibility mode.
 
 
-      .highlight
-        pre.highlight__listing.hljs: code.less
-          :highlight
-            <meta charset="utf-8">
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-      p.callout.callout--danger.
-        Be aware that your server has to deliver the HTML
-        encoded in the character set specified.
+h2#charset Character set
+  a(href='#charset').anchor--docs
 
-      h2#less Less compiler
-        a(href='#less').anchor--docs
+p.
+  We recommend the UTF-8 character set since it is a
+  de facto standard and we are operating in a
+  multilingual country in an international group.
 
-      p.
-        Whenever you get in touch with Less we recommend
-        using the
-        <a href="http://lesscss.org">official Less compiler</a>
-        (or plugins using this compiler).
-        This compiler is proved to work with the Less specification
-        and this Style Guide is based on it.
 
-      p.callout.
-        Sometimes Less might not be enough.
-        If you need further templating logic in Less files
-        we recommend using Lo-Dash or something similar.
-        Have a look at our <code>icons.less.lodash</code> file for
-        a real world example.
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      <meta charset="utf-8">
 
-    .l-secondary
-      nav.js-affix-under-head.nav.nav--side
-        ul.menu.menu--side
-          li.menu__item
-            a.menu__link(href='#viewport') Viewport meta tag
-          li.menu__item
-            a.menu__link(href='#x-ua-compatible') X-UA-Compatible
-          li.menu__item
-            a.menu__link(href='#charset') Character set
-          li.menu__item
-            a.menu__link(href='#less') Less compiler
+p.callout.callout--danger.
+  Be aware that your server has to deliver the HTML
+  encoded in the character set specified.
+
+h2#less Less compiler
+  a(href='#less').anchor--docs
+
+p.
+  Whenever you get in touch with Less we recommend
+  using the
+  <a href="http://lesscss.org">official Less compiler</a>
+  (or plugins using this compiler).
+  This compiler is proved to work with the Less specification
+  and this Style Guide is based on it.
+
+p.callout.
+  Sometimes Less might not be enough.
+  If you need further templating logic in Less files
+  we recommend using Lo-Dash or something similar.
+  Have a look at our <code>icons.less.lodash</code> file for
+  a real world example.
