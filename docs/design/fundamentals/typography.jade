@@ -1,18 +1,19 @@
 ---
 title: Typography
+slug: typography
 collection: design_fundamentals
 template: design.jade
 ---
 
 h1.heading.heading--1 Typography
 
-ul.menu
+ul.menu.menu--docs-toc
   li.menu__item: a.menu__link(href="#headings") Headings
   li.menu__item: a.menu__link(href="#paragraphs") Paragraphs
   li.menu__item: a.menu__link(href="#anchors") Anchors
   li.menu__item: a.menu__link(href="#inline-text") Inline text
 
-h1#headings Headings
+h2#headings Headings
   a.anchor--docs(href="#headings")
 
 :sample
@@ -23,7 +24,7 @@ h1#headings Headings
   h5 Heading five
   h6 Heading six
 
-h1#paragraphs Paragraphs
+h2#paragraphs Paragraphs
   a.anchor--docs(href="#paragraphs")
 
 :sample
@@ -40,7 +41,7 @@ h1#paragraphs Paragraphs
     fatback adipisicing strip steak drumstick mollit sausage,
     sint deserunt officia eu tongue labore cupidatat kevin.
 
-h1#anchors Anchors
+h2#anchors Anchors
   a.anchor--docs(href="#anchors")
 
 :sample
@@ -48,38 +49,38 @@ h1#anchors Anchors
     This paragraph shows an <a href="#" >awesome
     inline anchor</a> and lose some words about emphasizing.
 
-h1#inline-text Inline text
+h2#inline-text Inline text
   a.anchor--docs(href="#inline-text")
 
-h2#marked-text Marked text
+h3#marked-text Marked text
     a.anchor--docs(href="#marked-text")
 
 :sample
   p.
     You can use the mark tag to <mark>highlight</mark> text.
 
-h2#deleted-text Deleted text
+h3#deleted-text Deleted text
   a.anchor--docs(href="#deleted-text")
 
 :sample
   p.
     Use <code>del</code> to indicate that <del>a part of a</del> some text has been deleted.
 
-h2#irrelevant-text Irrelevant text
+h3#irrelevant-text Irrelevant text
   a.anchor--docs(href="#irrelevant-text")
 
 :sample
   p.
     <s>To show that a text is no longer relevant use the </s><code>s</code><s> tag. </s>
 
-h2#inserted-text Inserted text
+h3#inserted-text Inserted text
   a.anchor--docs(href="#inserted-text")
 
 :sample
   p.
     The <code>ins</code> tag shows that a text <ins>has been inserted.</ins>
 
-h2#emphasize Emphasize
+h3#emphasize Emphasize
   a.anchor--docs(href="#emphasize")
 
 :sample
