@@ -1,6 +1,6 @@
 ---
+title: Home
 template: master.jade
-title: test
 ---
 
 .panel.panel--docs.l-row
@@ -13,6 +13,12 @@ title: test
       Our design guidelines define how our applications
       look and behave to ensure consistency and ease of
       use.
+      p.head__notice
+        span You've got a request!
+        br
+        span Check out your email inbox to join the organization.
+
+    .head__actions(data-bind='visible: !github.isAuthenticating() && github.isActiveMember()')
 
   .thumbnail.l-third
     a.thumbnail__img-link(href="development")

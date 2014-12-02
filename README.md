@@ -58,8 +58,9 @@ Please add every feature/bugfix in a separate branch and create a pull request t
 
 We stick to the following naming conventions for branches:
 
-- ```feature/...``` for feature branches
-- ```bugfix/...``` for bugfix branches
+- `feature/...` for new features
+- `bugfix/...` for bugfixes
+- `improvement/...` for improvements on existing features
 
 ### Commit messages
 

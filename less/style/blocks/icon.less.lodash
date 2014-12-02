@@ -1,6 +1,6 @@
 // Attention: This file is generated automatically!
 
-@import 'style/variables';
+@import '../variables';
 
 @path: @icon-font-path;
 @name: @icon-font-name;

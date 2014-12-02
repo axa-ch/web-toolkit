@@ -1,6 +1,6 @@
-@import 'style/variables';
-@import 'style/mixins/clearfix';
-@import 'style/mixins/respond';
+@import '../variables';
+@import './clearfix';
+@import './respond';
 
 .make-container(@max-width: auto; @gutter: @grid-gutter-width) {
   &:extend(.clearfix all);
