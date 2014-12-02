@@ -7,66 +7,101 @@ template: development.jade
 
 h1.heading.heading--1 Table
 
-h3 Standard table
+p.
+  Please do not include any whitespace in the markup. 
 
 :sample
   table.table
-    caption Peoples ages
     thead
-      tr
-        th First name
-        th Last name
-        th Age
-    tbody
-      tr
-        td Don
-        td Kong
-        td 34
-      tr
-        td Robert
-        td Davis
-        td 30
-      tr
-        td Lina
-        td Grand
-        td 32
-    tfoot
-      tr
-        td(colspan="2") Middle age
-        td 32
-
-h3 Responsive table
-
-:sample
-  .responsive-table
-    table.responsive-table__table.table
-      caption Peoples ages
-      thead
-        tr
-          th
-          th Ron
-          th Donald
-          th Mike
-          th Lina
-          th John
-          th Alicia
-          th Mary
-          th Joe
-          th Claire
-          th Manny
-          th Brent
-          th Jony
-        tr
-          th Age
-          td 51
-          td 68
-          td 46
-          td 28
-          td 33
-          td 12
-          td 94
-          td 21
-          td 54
-          td 45
-          td 13
-          td 37
+      tr.table__header
+        th.table__header__item
+        th.table__header__item Art
+        th.table__header__item Türen
+        th.table__header__item Hubraum
+        th.table__header__item PS
+        th.table__header__item Preis
+    tbody.table__content
+      tr.table__item
+        td.table__item__info.table__item__info--headline
+          .table__item__info__content
+            a.table__item__info__content__link Q5 2.0 TDI Quattro
+        td.table__item__info
+          .table__item__info__label Art
+          .table__item__info__content Kombi
+        td.table__item__info
+          .table__item__info__label Türen
+          .table__item__info__content 5
+            .table__item__info__content__label Türen
+        td.table__item__info
+          .table__item__info__label Hubraum
+          .table__item__info__content 1969 ccm
+        td.table__item__info
+          .table__item__info__label PS
+          .table__item__info__content 170
+            .table__item__info__content__label PS
+        td.table__item__info
+          .table__item__info__label Preis
+          .table__item__info__content CHF 60'000
+      tr.table__item
+        td.table__item__info.table__item__info--headline
+          .table__item__info__content
+            a.table__item__info__content__link Q5 2.0 TDI Quattro
+        td.table__item__info
+          .table__item__info__label Art
+          .table__item__info__content Kombi
+        td.table__item__info
+          .table__item__info__label Türen
+          .table__item__info__content 5
+            .table__item__info__content__label Türen
+        td.table__item__info
+          .table__item__info__label Hubraum
+          .table__item__info__content 1969 ccm
+        td.table__item__info
+          .table__item__info__label PS
+          .table__item__info__content 170
+            .table__item__info__content__label PS
+        td.table__item__info
+          .table__item__info__label Preis
+          .table__item__info__content CHF 60'000
+      tr.table__item
+        td.table__item__info.table__item__info--headline
+          .table__item__info__content
+            a.table__item__info__content__link Q5 2.0 TDI Quattro
+        td.table__item__info
+          .table__item__info__label Art
+          .table__item__info__content Kombi
+        td.table__item__info
+          .table__item__info__label Türen
+          .table__item__info__content 5
+            .table__item__info__content__label Türen
+        td.table__item__info
+          .table__item__info__label Hubraum
+          .table__item__info__content 1969 ccm
+        td.table__item__info
+          .table__item__info__label PS
+          .table__item__info__content 170
+            .table__item__info__content__label PS
+        td.table__item__info
+          .table__item__info__label Preis
+          .table__item__info__content CHF 60'000
+      tr.table__item
+        td.table__item__info.table__item__info--headline
+          .table__item__info__content
+            a.table__item__info__content__link Q5 2.0 TDI Quattro
+        td.table__item__info
+          .table__item__info__label Art
+          .table__item__info__content Kombi
+        td.table__item__info
+          .table__item__info__label Türen
+          .table__item__info__content 5
+            .table__item__info__content__label Türen
+        td.table__item__info
+          .table__item__info__label Hubraum
+          .table__item__info__content 1969 ccm
+        td.table__item__info
+          .table__item__info__label PS
+          .table__item__info__content 170
+            .table__item__info__content__label PS
+        td.table__item__info
+          .table__item__info__label Preis
+          .table__item__info__content CHF 60'000
