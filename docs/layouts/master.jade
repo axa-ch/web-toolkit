@@ -34,11 +34,11 @@ html
               .header__meta__menu
                 ul.menu.menu--meta
                   li.menu__item(class=(segment == 'design' ? 'is-active' : ''))
-                    a(href='/design').menu__link Design Guidelines
+                    a(href=relative('/design')).menu__link Design Guidelines
                   li.menu__item(class=(segment == 'development' ? 'is-active': ''))
-                    a(href='/development').menu__link Developer Toolkit
+                    a(href=relative('/development')).menu__link Developer Toolkit
                   li.menu__item(class=(segment == 'examples' ? 'is-active': ''))
-                    a(href='/examples').menu__link Examples
+                    a(href=relative('/examples')).menu__link Examples
             .header__meta__lower
               .header__meta__welcome
                 ul
