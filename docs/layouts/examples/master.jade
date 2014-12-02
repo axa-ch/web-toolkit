@@ -10,17 +10,17 @@ html
 
     title= title
 
-    link(rel="stylesheet", href="../../css/docs.css")
+    link(rel="stylesheet", href=relative("/css/style.css"))
 
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-    script(src="../../js/style.all.js")
+    script(src=relative("/js/style.all.js"))
 
   body.site
     .site__page
       header.header.header--main
         .l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
-          a.header__brand.brand(href="/")
+          a.header__brand.brand(href=relative("/"))
             .brand__logo
 
           .header__meta
