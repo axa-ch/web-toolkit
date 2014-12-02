@@ -28,7 +28,6 @@ module.exports = exports = function (options) {
     var filepath = require('metalsmith-filepath');
 
     var config = readJSONFile(path.join(options.src, 'config.json'));
-    var nav = readJSONFile(path.join(options.src, 'nav.json'));
 
     // GitHub integration
     if (!process.env.GITHUB_INTEGRATION) {
