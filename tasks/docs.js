@@ -26,6 +26,7 @@ module.exports = exports = function (options) {
     var autoprefixer = require('metalsmith-autoprefixer');
     var coffee = require('metalsmith-coffee');
     var filepath = require('metalsmith-filepath');
+    var relative = require('metalsmith-relative');
 
     var config = readJSONFile(path.join(options.src, 'config.json'));
 
@@ -82,7 +83,8 @@ module.exports = exports = function (options) {
     });
 
     metalsmith.use(branch(['**/*.jade', '!layout/*.jade'])
-      .use(jade({ locals: metalsmith.metadata() }))
+      .use(relative())
+      .use(jade({ useMetadata: true, locals: metalsmith.metadata() }))
       .use(filepath({ absolute: true }))
       .use(collections(collections_options))
       .use(templates({

@@ -10,20 +10,20 @@ segment: design
       if (typeof(design) !== 'undefined')
         each page in design
           li.menu__item
-            a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+            a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
       li.menu__item
         .menu__link.menu__link--category Fundamentals
         ul.menu
           if (typeof(design_fundamentals) !== 'undefined')
             each page in design_fundamentals
               li.menu__item
-                a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+                a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
       li.menu__item
         .menu__link.menu__link--category Components
         ul.menu
           if (typeof(design_components) !== 'undefined')
             each page in design_components
               li.menu__item
-                a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+                a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
 
   .l-docs-main!= contents
