@@ -76,15 +76,16 @@ module.exports = exports = function (options) {
       'development_mixins',
       'design',
       'design_components',
-      'design_fundamentals'
+      'design_fundamentals',
+      'examples'
     ].forEach(function (name) {
       collections_options[name] = { sortBy: 'slug', reverse: false };
     });
 
     metalsmith.use(branch(['**/*.jade', '!layout/*.jade'])
+      .use(collections(collections_options))
       .use(jade({ locals: metalsmith.metadata() }))
       .use(filepath({ absolute: true }))
-      .use(collections(collections_options))
       .use(templates({
         engine: 'jade',
         directory: path.join(options.src, 'layouts')
