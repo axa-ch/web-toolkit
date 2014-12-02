@@ -85,9 +85,9 @@ module.exports = exports = function (options) {
 
     metalsmith.use(branch(['**/*.jade', '!layout/*.jade'])
       .use(relative())
+      .use(collections(collections_options))
       .use(jade({ useMetadata: true, locals: metalsmith.metadata() }))
       .use(filepath({ absolute: true }))
-      .use(collections(collections_options))
       .use(templates({
         engine: 'jade',
         directory: path.join(options.src, 'layouts')
