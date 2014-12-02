@@ -74,9 +74,9 @@ html
       nav.menu.menu--collapsing(data-menu="collapsing", data-exclusive="data-exclusive")
         ul.menu__level.is-open
           li.menu__item
-            a(href='/').menu__link.icon.icon--home Home
+            a(href='/').menu__link Overview
           li.menu__item
-            a(href='#').menu__link.is-parent Desgin
+            a(href='#').menu__link.is-parent Design Guidelines
             ul.menu__level
               if (typeof(design) !== 'undefined')
                 each page in design
@@ -96,8 +96,9 @@ html
                     each page in design_components
                       li.menu__item
                         a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+
           li.menu__item
-            a(href='#').menu__link.is-parent Development
+            a(href='#').menu__link.is-parent Developer Toolkit
             ul.menu__level
               if (typeof(development) !== 'undefined')
                 each page in development
@@ -124,6 +125,9 @@ html
                     each page in development_mixins
                       li.menu__item
                         a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+
+          li.menu__item
+            a(href='/examples').menu__link Examples
 
     script(type='text/javascript').
       var viewModel = new MainViewModel(!{JSON.stringify(config)});
