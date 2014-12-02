@@ -16,6 +16,62 @@
   padding: 0;
 }
 
+.menu--left {
+  font-size: 0.8em;
+  display: block;
+
+  .menu__item {
+    display: block;
+  }
+
+  .menu__link {
+    display: block;
+    padding: 6px 0 6px 12px;
+    margin-left: 8px;
+    position: relative;
+    color: @color-gray--dark;
+    font-weight: bold;
+
+    &::before {
+      display: none;
+      content: '';
+      width: 4px;
+      height: 4px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -2px;
+      background: @color-blue;
+    }
+
+    &:hover,
+    &.is-active {
+      color: @color-blue;
+
+      &::before {
+        display: block;
+      }
+    }
+  }
+
+  .menu__link--category {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .8em;
+    color: @color-gray--light;
+
+    letter-spacing: 1px;
+    margin-top: 12px;
+
+    &:hover {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+
 // TODO: Do styling
 .menu--tabs {
   &:extend(.clearfix all);

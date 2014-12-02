@@ -12,14 +12,19 @@ p {
   font-weight: 500;
 }
 
-h1 {
-  &:extend(.heading all);
-  font-size: 2em;
+.heading--1 {
+  display: block;
+  margin: 0 0 20px 0;
+  padding: 5px 20px 19px;
+  border-bottom: 1px dotted @color-blue;
+  color: @color-blue;
+  font-size: 27px;
+  font-weight: normal;
 }
 
 h2 {
   &:extend(.heading all);
-  font-size: 1.8em;
+  font-size: 1.6em;
 }
 
 h3 {
