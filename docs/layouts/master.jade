@@ -32,13 +32,20 @@ html
           .header__meta
             .header__meta__upper
               .header__meta__menu
+                - var segments = []
+                - segments.push({ name: 'Design Guidelines', slug: 'design', path: '/design' })
+                - segments.push({ name: 'Developer Toolkit', slug: 'development', path: '/development' })
+                - segments.push({ name: 'Examples', slug: 'examples', path: '/examples' })
+                
                 ul.menu.menu--meta
-                  li.menu__item(class=(segment == 'design' ? 'is-active' : ''))
-                    a(href=relative('/design')).menu__link Design Guidelines
-                  li.menu__item(class=(segment == 'development' ? 'is-active': ''))
-                    a(href=relative('/development')).menu__link Developer Toolkit
-                  li.menu__item(class=(segment == 'examples' ? 'is-active': ''))
-                    a(href=relative('/examples')).menu__link Examples
+                  each s in segments
+                    li.menu__item(
+                      class={'is-active': segment == s.slug}
+                    )
+                      a.menu__link(
+                        href=relative(s.path)
+                        class={'is-active': segment == s.slug}
+                      )= s.name
             .header__meta__lower
               .header__meta__welcome
                 ul
@@ -67,91 +74,116 @@ html
                   span.copyline-menu__text= config.copyright
 
     .site__mobile-menu
-      nav.menu.menu--sliding(data-menu="sliding")
-        ul.menu__level.is-open
+
+      nav#menu-mobile.menu.menu--sliding
+        ul.menu__level
           li.menu__item
-            a(href='/').menu__link Overview
+            a.menu__link(
+              href=relative('/index.html')
+              data-link='/index.html'
+            ) Overview
 
           li.menu__item
-            a(href='#').menu__link.is-parent Design Guidelines
+            a.menu__link.menu__link--parent(
+              href='#'
+            ) Design Guidelines
+
             ul.menu__level
               li.menu__item.menu__item--back
-                a(href='#').menu__link.menu__link--back Design Guidelines
+                a.menu__link.menu__link--back(
+                  href='#'
+                ) Design Guidelines
 
               each page in design
                 li.menu__item
-                  a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+                  a.menu__link(
+                    href=relative(page.link)
+                    data-link=page.link
+                  )= page.title
 
-              li.menu__item
-                a(href='#').menu__link.is-parent Fundamentals
+              - var sections = []
+              - sections.push({ name: 'Fundamentals', items: design_fundamentals })
+              - sections.push({ name: 'Components', items: design_components })
 
-                ul.menu__level
-                  li.menu__item.menu__item--back
-                    a(href='#').menu__link.menu__link--back Fundamentals
+              each section in sections
+                li.menu__item
+                  a.menu__link.menu__link--parent(
+                    href='#'
+                  )= section.name
 
-                  each page in design_fundamentals
-                    li.menu__item
-                      a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+                  ul.menu__level
+                    li.menu__item.menu__item--back
+                      a.menu__link.menu__link--back(
+                        href='#'
+                      )= section.name
 
-              li.menu__item
-                a(href='#').menu__link.is-parent Components
-
-                ul.menu__level
-                  li.menu__item.menu__item--back
-                    a(href='#').menu__link.menu__link--back Components
-
-                  each page in design_components
-                    li.menu__item
-                      a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+                    each page in section.items
+                      li.menu__item
+                        a.menu__link(
+                          href=relative(page.link)
+                          data-link=page.link
+                        )= page.title
 
           li.menu__item
-            a(href='#').menu__link.is-parent Developer Toolkit
+            a.menu__link.menu__link--parent(
+              href='#'
+            ) Developer Toolkit
 
             ul.menu__level
               li.menu__item.menu__item--back
-                a(href='#').menu__link.menu__link--back Developer Toolkit
+                a.menu__link.menu__link--back(
+                  href='#'
+                ) Developer Toolkit
 
               each page in development
                 li.menu__item
-                  a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+                  a.menu__link(
+                    href=relative(page.link)
+                    data-link=page.link
+                  )= page.title
+                  
+              - var sections = []
+              - sections.push({ name: 'Blocks', items: development_blocks })
+              - sections.push({ name: 'Mixins', items: development_mixins })
+              - sections.push({ name: 'jQuery Plugins', items: development_plugins })
 
-              li.menu__item
-                a(href='#').menu__link.is-parent Blocks
+              each section in sections
+                li.menu__item
+                  a.menu__link.menu__link--parent(
+                    href='#'
+                  )= section.name
 
-                ul.menu__level
-                  li.menu__item.menu__item--back
-                    a(href='#').menu__link.menu__link--back Blocks
+                  ul.menu__level
+                    li.menu__item.menu__item--back
+                      a.menu__link.menu__link--back(
+                        href='#'
+                      )= section.name
 
-                  each page in development_blocks
-                    li.menu__item
-                      a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
-
-              li.menu__item
-                a(href='#').menu__link.is-parent Plugins
-
-                ul.menu__level
-                  li.menu__item.menu__item--back
-                    a(href='#').menu__link.menu__link--back Plugins
-
-                  each page in development_plugins
-                    li.menu__item
-                      a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
-
-              li.menu__item
-                a(href='#').menu__link.is-parent Mixins
-
-                ul.menu__level
-                  li.menu__item.menu__item--back
-                    a(href='#').menu__link.menu__link--back Mixins
-
-                  each page in development_mixins
-                    li.menu__item
-                      a(href=page.link, class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+                    each page in section.items
+                      li.menu__item
+                        a.menu__link(
+                          href=relative(page.link)
+                          data-link=page.link
+                        )= page.title
 
           li.menu__item
-            a(href='/examples').menu__link Examples
+            a.menu__link(
+              href=relative('/examples')
+              data-link='/examples/index.html'
+            ) Examples
 
     script(type='text/javascript').
+      // Set the right mobile menu level as current
+      var $menu = $("#menu-mobile");
+      var $level = $menu.find("[data-link='!{link}']").closest('.menu__level');
+      
+      $menu.slidingMenu();
+      $menu.slidingMenu('level', $level);
+      
+      // Highlight the right mobile menu link as active
+      $menu.find("[data-link='!{link}']").addClass('is-active')
+      
+      // Setup the fancy GitHub integration
       var viewModel = new MainViewModel(!{JSON.stringify(config)});
       ko.applyBindings(viewModel);
       viewModel.init();

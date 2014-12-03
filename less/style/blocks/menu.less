@@ -30,7 +30,6 @@
     margin-left: 8px;
     position: relative;
     color: @color-gray--dark;
-    font-weight: bold;
 
     &::before {
       display: none;
@@ -56,11 +55,8 @@
 
   .menu__link--category {
     font-weight: bold;
-    text-transform: uppercase;
-    font-size: .8em;
     color: @color-light-blue--light;
 
-    letter-spacing: 1px;
     margin-top: 12px;
 
     //reset hover from above
@@ -151,7 +147,7 @@
     }
   }
 
-  .menu__link.is-parent {
+  .menu__link--parent {
     .icon;
     .icon--arrow-right;
 
@@ -245,7 +241,7 @@
     float: none;
   }
 
-  .menu__link.is-parent.is-active {
+  .menu__link--parent.is-active {
     .icon--arrow-bottom;
   }
 }
