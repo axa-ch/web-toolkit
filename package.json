@@ -61,6 +61,6 @@
     "metalsmith-templates": "git+https://github.com/axa-ch/metalsmith-templates",
     "run-sequence": "^0.3.6",
     "serve-static": "^1.5.4",
-    "metalsmith-relative": "^1.0.2"
+    "metalsmith-relative": "^1.0.3"
   }
 }
