@@ -63,12 +63,8 @@ html
           .footer__copyline__inner
             .l-container
               ul.copyline-menu
-                // ko if: hasGitHubIntegration && github.repo() !== null
                 li.copyline-menu__item
-                  a.copyline-menu__link(href=config.repository.url, title=config.repository.name)= config.repository.name
-                // /ko
-                li.copyline-menu__item
-                  span.copyline-menu__text Copyright AXA Versicherungen AG 2014
+                  span.copyline-menu__text= config.copyright
 
     .site__mobile-menu
       nav.menu.menu--sliding(data-menu="sliding")
