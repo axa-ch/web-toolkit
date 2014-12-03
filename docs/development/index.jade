@@ -117,31 +117,17 @@ template: development.jade
 
       .highlight: pre.highlight__listing.hljs: code.js
         :highlight
-          <!-- Always use an HTML5 doctype. -->
-          <!-- Note that HTML5 is no longer XML, so you do not need to close self closing tags. -->
           <!DOCTYPE html>
-          <!-- The lang attribute helps screen readers having the right accent. -->
-          <!-- It also enables Google Translate and similar to propose a proper translation.-->
           <html lang="en">
             <head>
-              <!-- Set the contents character encoding. (see recommendations) -->
               <meta charset="utf-8">
-
-              <!-- Force IE to NOT use compatibility mode. (see recommendations) -->
               <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-              <!-- Mobile viewport. (see recommendations) -->
               <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
               <title>Style Guide - Basic template</title>
 
-              <!-- Reference precompiled or custom CSS here. -->
-              <!-- Which one depends on whether you use pre-built Less files or not. -->
               <link href="css/style.min.css" rel="stylesheet">
 
-              <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries. -->
-              <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-              <!-- TODO: Review license and bundle them with the Style Guide -->
               <!--[if lt IE 9]>
                 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
                 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -150,10 +136,7 @@ template: development.jade
             <body>
               <h1>Hello, world!</h1>
 
-              <!-- jQuery is necessary if you make use of the Style Guide plugins. -->
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-              <!-- Include all compiled plugins or select individual files as needed. -->
               <script src="js/style.all.min.js"></script>
             </body>
           </html>
