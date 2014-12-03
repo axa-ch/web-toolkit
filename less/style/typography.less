@@ -11,42 +11,37 @@ p {
   margin: .5em 0;
 }
 
-.heading {
-  font-weight: 500;
-}
-
-.heading--1 {
-  display: block;
-  margin: 0 0 20px 0;
-  padding: 5px 20px 19px;
-  border-bottom: 1px dotted @color-blue;
-  color: @color-blue;
-  font-size: 27px;
+.h-base {
   font-weight: normal;
 }
 
-h2 {
-  &:extend(.heading all);
+h1 {
+  &:extend(.h-base all);
   font-size: 1.6em;
 }
 
+h2 {
+  &:extend(.h-base all);
+  font-size: 1.5em;
+}
+
 h3 {
-  &:extend(.heading all);
+  &:extend(.h-base all);
   font-size: 1.4em;
 }
 
 h4 {
-  &:extend(.heading all);
+  &:extend(.h-base all);
   font-size: 1.2em;
 }
 
 h5 {
-  &:extend(.heading all);
+  &:extend(.h-base all);
   font-size: 1.1em;
 }
 
 h6 {
-  &:extend(.heading all);
+  &:extend(.h-base all);
   font-size: 1em;
 }
 
