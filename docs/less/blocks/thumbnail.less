@@ -2,23 +2,31 @@
 @import 'style/mixins/respond';
 
 .thumbnail {
-  display: block;
-  padding: 2px;
-
-  border: 1px solid @color-gray--lighter;
-
-  transition: border-color @transition-duration-fast @transition-fn-fancy;
-
-  &:hover {
-    border-color: @color-tbd-1;
-  }
-
-  .respond(medium, {
-    padding: 5px;
-  });
+  text-align: center;
 }
 
-.thumbnail__media {
-  max-width: 100%;
-  height: auto;
+.thumbnail__img-link {
+  display: block;
+}
+
+.thumbnail__img {
+  width: 100%;
+  max-width: 256px;
+}
+
+.thumbnail__heading {
+  display: block;
+  max-width: 300px; // set max, so it stays readable
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumbnail__link {
+}
+
+.thumbnail__text {
+  display: block;
+  max-width: 300px; // set max, so it stays readable
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -1,0 +1,181 @@
+---
+title: Grid system
+slug: grid
+collection: development_blocks
+template: development.jade
+---
+
+h1.heading.heading--page Grid
+
+p.lead
+  | The Style Guide includes a responsive, mobile-first fluid grid system that
+  | scales up to 12 columns as the device or viewport size increases.
+  | It includes an extensive collection of predefined CSS classes for
+  | easy layout options as well as
+  a(href=relative("/development/mixins/grid.html"))  powerful mixins
+  |  for you to generate more semantic layouts.
+
+h3 Introduction
+
+p.
+  Use the grid system to create page layouts consisting of a series of
+  rows and columns. The columns house your content. Here is an example:
+
+:sample
+  .l-container
+    .l-row
+      .l-col.l-col--medium-12
+        .box Title
+    .l-row
+      .l-col.l-col--medium-8
+        .box Main
+      .l-col.l-col--medium-4
+        .box Side
+
+p.
+  Your content and every row you make should be placed in a
+  <code>.l-container</code>, directly or indirectly. The container
+  ensures that the content is properly aligned and padding is correctly
+  set.
+
+p.
+  Use <code>.l-row</code> to create horizontal groups of columns.
+  Consider that only columns may be immediate children of rows.
+
+p.
+  You get two types of predefined column classes. With generic columns
+  like <code>.l-col.l-col--6</code> or <code>.l-col.l-col--medium-3</code>
+  you can quickly produce very flexible layouts.
+  Semantic columns like
+  <code>.l-primary</code> or <code>.l-half</code> allow you to
+  build standard layouts with responsive behavior.
+
+h3 Grid options
+
+table.table
+  caption Grid options
+  tr
+    th
+    th small
+    th medium
+    th large
+  tr
+    th Breakpoint
+    td < 768px
+    td ≥ 768px
+    td ≥ 1024px
+  tr
+    th Grid behavior
+    td Horizontal at all times
+    td(colspan="2") Collapsed to start, horizontal above breakpoints
+  tr
+    th CSS class prefix
+    td: code .l-col--*
+    td: code .l-col--medium-*
+    td: code .l-col--large-*
+  tr
+    th Number of columns
+    td(colspan="3") 12
+
+h3 Column classes
+
+p.
+  With the inclusion of the Style Guide you get several predefined
+  CSS classes. The <code>.l-container</code> and
+  <code>.l-row</code> are fundamental for creating a grid.
+  When creating grid columns you have two possibilities. You can
+  take the
+  <a href="#generic-classes">generic CSS classes</a> or use the
+  <a href="#semantic-classes">semantic ones</a>. The latter have an
+  already predefined responsive behavior.
+
+p Here you see a thorough example with generic classes:
+
+:sample
+  .l-row
+    .l-col.l-col--medium-12
+      code.box .l-col<br>.l-col--medium-12
+  .l-row
+    .l-col.l-col--medium-8
+      code.box .l-col<br>.l-col--medium-8
+    .l-col.l-col--medium-4
+      code.box .l-col<br>.l-col--medium-4
+
+p Next is an example with semantic classes:
+
+:sample
+  .l-row
+    .l-full
+      code.box .l-full
+  .l-row
+    .l-primary
+      code.box .l-primary
+    .l-secondary
+      code.box .l-secondary
+  .l-row
+    - for (var i = 0; i < 2; i++) {
+      .l-half
+        code.box .l-half
+    - }
+  .l-row
+    - for (var i = 0; i < 3; i++) {
+      .l-third
+        code.box .l-third
+    - }
+  .l-row
+    - for (var i = 0; i < 4; i++) {
+      .l-fourth
+        code.box .l-fourth
+    - }
+  .l-row
+    - for (var i = 0; i < 6; i++) {
+      .l-thumbnail
+        code.box .l-thumbnail
+    - }
+
+h3 Nesting grids
+
+p.
+  It can sometimes be practical to have one grid contained in another.
+  The grid is built in a way that when you nest them, no multiple
+  gutters will add to each other, thus preventing strange behavior.
+
+:sample
+  .l-row
+    .l-primary
+      p: code.box Primary
+      .l-row
+        .l-primary: code.box Primary Primary
+        .l-secondary: code.box Primary Secondary
+    .l-secondary: code.box Secondary
+
+h3 Skip columns
+
+p.
+  Sometimes it is desired to skip columns in a grid. You can do this
+  with the <code>.l-col--offset-*</code> classes.
+
+:sample
+  .l-row
+    .l-col.l-col--4
+      code.box .l-col<br>.l-col--4
+    .l-col.l-col--6.l-col--offset-2
+      code.box .l-col<br>.l-col--6<br>.l-col--offset-2
+  .l-row
+    .l-col.l-col--medium-6
+      code.box .l-col<br>.l-col--medium-6
+    .l-col.l-col--medium-4.l-col--medium-offset-2
+      code.box .l-col<br>.l-col--medium-4
+
+h3 Change column ordering
+
+p.
+  You can easily change the order of columns with the
+  <code>.l-col--push-*</code> and <code>.l-col--pull-*</code> classes.
+
+:sample
+  .l-row
+    .l-col.l-col--8.l-col--push-4
+      code.box .l-col<br>.l-col--8<br>.l-col--push-4
+    .l-col.l-col--4.l-col--pull-8
+      code.box .l-col<br>.l-col--4<br>.l-col--pull-8

@@ -1,0 +1,88 @@
+---
+title: Collapsing Menu
+slug: menu-collapsing
+collection: development_plugins
+template: development.jade
+---
+
+h1.heading.heading--page Collapsing Menu
+
+h3 Intro
+
+p.
+  The collapsing menu plugin provides all functionality for the collapsible
+  menu. It triggers the opening of sub levels when a parent node is
+  clicked.
+
+h3 Example
+
+:sample
+  nav.menu.menu--collapsing(data-menu="collapsing", data-exclusive)
+    ul.menu__level.is-open
+      li.menu__item
+        a(href='#home').menu__link.icon.icon--home Home
+      li.menu__item
+        a(href='#private-individuals').menu__link.is-parent Private individuals
+        ul.menu__level
+          li.menu__item
+            a(href='#contents-insurance').menu__link Contents insurance
+      li.menu__item
+        a(href='#contact-and-service').menu__link.is-parent Contact and service
+        ul.menu__level
+          li.menu__item
+            a(href='#claims-and-benefits').menu__link Claims and benefits
+          li.menu__item
+            a(href='#contracts-and-documents').menu__link Contracts and documents
+          li.menu__item
+            a(href='#guides-and-other-services').menu__link.is-parent Guides and other services
+            ul.menu__level
+              li.menu__item
+                a(href='#guides').menu__link Guides
+              li.menu__item
+                a(href='#publications').menu__link Publications
+              li.menu__item.is-parent
+                a(href='#mobile-apps').menu__link Mobile apps
+
+h3 Usage
+
+p Activate the functionality with JavaScript:
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('#menu').collapsingMenu(options)
+
+p Alternatively, you can activate the plugin with data attributes:
+
+.highlight
+  pre.highlight__listing.hljs: code.html
+    :highlight
+      <nav data-menu="collapsing" data-exclusive></nav>
+
+h4 Options
+
+table.table
+  caption Available options
+  tr
+    th Name
+    th Type
+    th Default
+    th Description
+  tr
+    td: code exclusive
+    td: code boolean
+    td: code false
+    td.
+      Closes all other levels when opening a new one. This option
+      makes the menu behave like an accordion.
+
+h4 Methods
+
+h5: code .collapsingMenu('toggle', menuLevel)
+
+p Manually toggle a menu level.
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('#menu').collapsingMenu('toggle', $('#second.menu__level'))

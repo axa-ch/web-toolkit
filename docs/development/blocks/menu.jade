@@ -1,0 +1,43 @@
+---
+title: Menu
+slug: menu
+collection: development_blocks
+template: development.jade
+---
+
+h1.heading.heading--page Menu
+
+:markdown
+  A menu block represents a list of links with the same subject.
+
+  ### Modifieres
+
+  #### menu--main
+
+  The menu--main is intended to be used for the main menu of the page located under the header.
+
+  #### menu--mobile
+
+  The menu--mobile is intended to be used within the slide in menu. See site__mobile-menu for further information.
+
+  #### menu--meta
+
+  The menu--meta is for meta links. For example it can be used within the header__meta element.
+
+  #### menu--language
+
+  The menu--language menu is used for language switches. This menu is intended to be used within the header__meta element.
+
+:sample
+  nav.main-nav
+    ul.menu.menu--main
+      li.menu__item
+        a(href='#0').menu__link.menu__link--home
+      li.menu__item
+        a(href='#1').menu__link Menu Item 1
+      li.menu__item.is-active
+        a(href='#2').menu__link Menu Item 2
+      li.menu__item
+        a(href='#3').menu__link Menu Item 3
+      li.menu__item
+        a(href='#4').menu__link Menu Item 4

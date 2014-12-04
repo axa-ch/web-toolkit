@@ -1,7 +1,7 @@
 // Attention: This file is generated automatically!
 
 @respond-medium-min-width: 768px;
-@respond-large-min-width: 1024px;
+@respond-large-min-width: 980px;
 
 @icon-font-path: '../fonts';
 @icon-font-name: 'style-guide-font';

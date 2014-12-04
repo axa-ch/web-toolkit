@@ -12,6 +12,7 @@
 @import './blocks/menu';
 @import './blocks/block';
 @import './blocks/nav';
+@import './blocks/panel';
 @import './blocks/thumbnail';
 @import './blocks/callout';
 @import './blocks/sample';
@@ -21,10 +22,27 @@
   max-width: 1280px;
 }
 
+.l-docs-menu {
+  display: none;
+  margin-left: -20px;
+  margin-right: 20px;
+
+  .respond(large, {
+    display: block;
+  });
+
+  .make-col(2, large);
+}
+
+.l-docs-main {
+  .make-col(10, large);
+}
+
 dl {
   dt {
     font-weight: bold;
   }
+
   dt,dd {
     padding: 5px;
   }

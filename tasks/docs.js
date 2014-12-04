@@ -25,6 +25,8 @@ module.exports = exports = function (options) {
     var assets = require('metalsmith-assets');
     var autoprefixer = require('metalsmith-autoprefixer');
     var coffee = require('metalsmith-coffee');
+    var filepath = require('metalsmith-filepath');
+    var relative = require('metalsmith-relative');
 
     var config = readJSONFile(path.join(options.src, 'config.json'));
 
@@ -65,24 +67,27 @@ module.exports = exports = function (options) {
       destination: './js'
     }));
 
+    // do the static pages
+    // TODO: Remove when collection plugin supports undeclared collections
+    var collections_options = {};
     [
-      'visuals',
-      'mixins',
-      'interactions'
+      'development',
+      'development_blocks',
+      'development_plugins',
+      'development_mixins',
+      'design',
+      'design_components',
+      'design_fundamentals',
+      'examples'
     ].forEach(function (name) {
-      // TODO: Remove when collection plugin supports undeclared collections
-      var options = {};
-      options[name] = { sortBy: 'slug', reverse: false };
-
-      metalsmith.use(branch(name + '/*.jade')
-        .use(jade({ locals: metalsmith.metadata() }))
-        .use(collections(options))
-        .use(ignore(name + '/*.jade')));
+      collections_options[name] = { sortBy: 'slug', reverse: false };
     });
 
-    // do the static pages
-    metalsmith.use(branch(['*.jade', 'examples/*.jade'])
-      .use(jade({ locals: metalsmith.metadata() }))
+    metalsmith.use(branch(['**/*.jade', '!layout/*.jade'])
+      .use(relative())
+      .use(collections(collections_options))
+      .use(jade({ useMetadata: true, locals: metalsmith.metadata() }))
+      .use(filepath({ absolute: true }))
       .use(templates({
         engine: 'jade',
         directory: path.join(options.src, 'layouts')

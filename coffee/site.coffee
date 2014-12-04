@@ -34,9 +34,13 @@
     return this.each () ->
       $this = $ this
       data = $this.data('axa.site')
-      options = (typeof option == 'object' and option)
 
       if not data
+        options = (typeof option == 'object' and option)
+        options = options or {}
+
+        $.extend options, $this.data()
+
         data = new Site this, options
         $this.data 'axa.site', data
 

@@ -1,0 +1,36 @@
+---
+template: master.jade
+segment: development
+---
+
+.l-row
+  .l-docs-menu
+
+    ul.menu.menu--left
+      if (typeof(development) !== 'undefined')
+        each page in development
+          li.menu__item
+            a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+      li.menu__item
+        .menu__link.menu__link--category Blocks
+        ul.menu
+          if (typeof(development_blocks) !== 'undefined')
+            each page in development_blocks
+              li.menu__item
+                a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+      li.menu__item
+        .menu__link.menu__link--category Plugins
+        ul.menu
+          if (typeof(development_plugins) !== 'undefined')
+            each page in development_plugins
+              li.menu__item
+                a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+      li.menu__item
+        .menu__link.menu__link--category Mixins
+        ul.menu
+          if (typeof(development_mixins) !== 'undefined')
+            each page in development_mixins
+              li.menu__item
+                a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+
+  .l-docs-main!= contents
