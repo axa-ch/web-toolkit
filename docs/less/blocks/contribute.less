@@ -1,0 +1,33 @@
+@import 'style/variables';
+@import 'style/mixins/clearfix';
+
+.contribute {
+  margin: 20px -15px;
+  padding: 20px;
+  background: @color-gray--lighter;
+
+  &:extend(.clearfix all);
+
+  .respond(medium; {
+    margin-left: 0;
+    margin-right: 0;
+  });
+}
+
+.contribute__image {
+  float: left;
+}
+
+.contribute__octocat {
+  max-width: 100px;
+}
+
+.contribute__content {
+  margin-left: 120px;
+  padding-top: 30px;
+}
+
+.contribute__headline {
+  font-size: 1.2em;
+  font-weight: bold;
+}

@@ -33,4 +33,18 @@ segment: development
               li.menu__item
                 a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
 
-  .l-docs-main!= contents
+  .l-docs-main
+    div!= contents
+    // ko if: hasGitHubIntegration && github.isSignedIn()
+    .contribute
+      .contribute__image
+        img(src='', data-octocat).contribute__octocat
+      .contribute__content
+        .contribute__headline Contribute to this article
+        p.contribute__text
+          | Want to edit or suggest changes
+          | to this content? You can edit and
+          | submit changes to
+          a(href=config.repository.url + '/blob/master/docs' + ((link ? link : '').replace(/\.html$/, '.jade')))  this article
+          |  using GitHub.
+    // /ko
