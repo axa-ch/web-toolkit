@@ -57,7 +57,7 @@ html
                   // ko if: hasGitHubIntegration && github.isSignedIn()
                   .menu__item
                     img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
-                    a(href=config.repository.url).menu__link.icon.icon--github(data-bind='visible: !github.isAuthenticating() && github.isActiveMember()')
+                    a(href=config.repository.url, data-bind='visible: !github.isAuthenticating() && github.isActiveMember()').menu__link.icon.icon--github
                   // /ko
               .header__meta__welcome
                 ul
