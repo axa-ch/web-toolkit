@@ -17,6 +17,22 @@ html
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/localforage/1.1.1/localforage.min.js')
 
+    script(type='text/javascript').
+      // Include the UserVoice JavaScript SDK (only needed once on a page)
+      UserVoice=window.UserVoice||[];
+      UserVoice.push(['set', {
+        accent_color: '#0062a9',
+        screenshot_enabled: false
+      }]);
+      (function(){
+        var uv=document.createElement('script');
+        uv.type='text/javascript';
+        uv.async=true;
+        uv.src='//widget.uservoice.com/O8ex403PfbC0GjKz3DuQ.js';
+        var s=document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(uv,s)
+      })();
+
     script(src=relative("/js/style.all.js"))
     script(src=relative("/js/api.js"))
     script(src=relative("/js/github-integration.js"))
@@ -36,7 +52,7 @@ html
                 - segments.push({ name: 'Design Guidelines', slug: 'design', path: '/design' })
                 - segments.push({ name: 'Developer Toolkit', slug: 'development', path: '/development' })
                 - segments.push({ name: 'Examples', slug: 'examples', path: '/examples' })
-                
+
                 ul.menu.menu--meta
                   each s in segments
                     li.menu__item(
@@ -47,6 +63,10 @@ html
                         class={'is-active': segment == s.slug}
                       )= s.name
             .header__meta__lower
+              .header__meta__social
+                .menu.menu--social
+                  .menu__item
+                      a(href='#', data-uv-trigger).menu__link.icon.icon--feedback
               .header__meta__welcome
                 ul
                   li.header__meta__welcome__item
@@ -141,7 +161,7 @@ html
                     href=relative(page.link)
                     data-link=page.link
                   )= page.title
-                  
+
               - var sections = []
               - sections.push({ name: 'Blocks', items: development_blocks })
               - sections.push({ name: 'Mixins', items: development_mixins })
@@ -176,13 +196,13 @@ html
       // Set the right mobile menu level as current
       var $menu = $("#menu-mobile");
       var $level = $menu.find("[data-link='!{link}']").closest('.menu__level');
-      
+
       $menu.slidingMenu();
       $menu.slidingMenu('level', $level);
-      
+
       // Highlight the right mobile menu link as active
       $menu.find("[data-link='!{link}']").addClass('is-active')
-      
+
       // Setup the fancy GitHub integration
       var viewModel = new MainViewModel(!{JSON.stringify(config)});
       ko.applyBindings(viewModel);
