@@ -43,7 +43,7 @@ segment: development
         .contribute__headline Contribute to this article
         p.contribute__text(data-bind='visible: !github.isSignedIn()').
           To contribute to this article
-          please sing in with GitHub
+          please sign in with GitHub
         p(data-bind='visible: !github.isSignedIn()')
           img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
           a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").button.button--small.button--primary Sign in with GitHub
