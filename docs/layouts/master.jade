@@ -8,7 +8,7 @@ html
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
 
-    title= title
+    title #{title} | Web Design Guide
 
     link(rel="stylesheet", href=relative("/css/docs.css"))
 
@@ -44,7 +44,7 @@ html
       header.header.header--main
         .l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
-          a.header__brand.brand(href=relative("/"))
+          a.header__brand.brand(href=relative("/index.html"))
             .brand__logo
           .header__meta
             .header__meta__upper
@@ -93,7 +93,7 @@ html
                     else if segment == 'examples'
                       span Examples
                     else
-                      span Web Style Guide
+                      span Web Design Guide
 
       .hr
 

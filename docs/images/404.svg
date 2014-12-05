@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1024"
+   height="512"
+   id="svg3003"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="broken.svg">
+  <defs
+     id="defs3005" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="540.66403"
+     inkscape:cy="259.44573"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3808"
+     showgrid="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="962"
+     inkscape:window-x="1358"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3011"
+       empspacing="1"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="32px"
+       spacingy="32px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3008">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-540.36218)">
+    <g
+       id="g3808">
+      <g
+         id="g3825"
+         transform="translate(32,0)">
+        <path
+           style="fill:#79838d;fill-opacity:1;stroke:none"
+           d="m 640,956.36218 -320,0 c 0,-88.36555 71.63444,-160 160,-160 88.36556,0 160,71.63445 160,160 z"
+           id="path2985"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccsc" />
+        <g
+           id="g2999"
+           transform="matrix(0.0625,0,0,0.0625,320,620.36218)"
+           style="fill:#5c91c0;fill-opacity:1">
+          <g
+             transform="matrix(41.893045,0,0,42.018104,-1089.2192,-1092.4707)"
+             style="fill:#5c91c0;fill-opacity:1;stroke:none"
+             sketch:type="MSPage"
+             id="Icons">
+            <g
+               style="fill:#5c91c0;fill-opacity:1"
+               sketch:type="MSArtboardGroup"
+               id="cross">
+              <g
+                 id="g4178"
+                 transform="translate(26,26)"
+                 sketch:type="MSLayerGroup"
+                 style="fill:#5c91c0;fill-opacity:1" />
+            </g>
+          </g>
+          <path
+             sodipodi:nodetypes="ccccccccccccc"
+             inkscape:connector-curvature="0"
+             id="path4188"
+             d="M 320,256 0,576 704,1280 0,1984 320,2304 1024,1600 1728.0001,2304 2048,1984 1344,1280 2048,576 1728,256 1024,960 z"
+             style="fill:#5c91c0;fill-opacity:1;stroke:none" />
+        </g>
+        <g
+           transform="matrix(0.0625,0,0,0.0625,512,620.36218)"
+           id="g3005"
+           style="fill:#5c91c0;fill-opacity:1">
+          <g
+             id="g3007"
+             sketch:type="MSPage"
+             style="fill:#5c91c0;fill-opacity:1;stroke:none"
+             transform="matrix(41.893045,0,0,42.018104,-1089.2192,-1092.4707)">
+            <g
+               id="g3009"
+               sketch:type="MSArtboardGroup"
+               style="fill:#5c91c0;fill-opacity:1">
+              <g
+                 sketch:type="MSLayerGroup"
+                 transform="translate(26,26)"
+                 id="g3011"
+                 style="fill:#5c91c0;fill-opacity:1" />
+            </g>
+          </g>
+          <path
+             style="fill:#5c91c0;fill-opacity:1;stroke:none"
+             d="M 320,256 0,576 704,1280 0,1984 320,2304 1024,1600 1728.0001,2304 2048,1984 1344,1280 2048,576 1728,256 1024,960 z"
+             id="path3013"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="ccccccccccccc" />
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:470.46661376999998000px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Franklin Gothic Medium;-inkscape-font-specification:Franklin Gothic Medium"
+         x="16.149319"
+         y="956.36218"
+         id="text3821"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3823"
+           x="16.149319"
+           y="956.36218">4</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3838"
+         y="956.36218"
+         x="732"
+         style="font-size:470.46661376999998000px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Franklin Gothic Medium;-inkscape-font-specification:Franklin Gothic Medium"
+         xml:space="preserve"><tspan
+           y="956.36218"
+           x="732"
+           id="tspan3840"
+           sodipodi:role="line">4</tspan></text>
+    </g>
+  </g>
+</svg>

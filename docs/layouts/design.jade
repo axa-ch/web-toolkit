@@ -7,23 +7,26 @@ segment: design
   .l-docs-menu
 
     ul.menu.menu--left
-      if (typeof(design) !== 'undefined')
-        each page in design
-          li.menu__item
-            a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
-      li.menu__item
-        .menu__link.menu__link--category Fundamentals
-        ul.menu
-          if (typeof(design_fundamentals) !== 'undefined')
-            each page in design_fundamentals
+      each page in design
+        li.menu__item
+          a.menu__link(
+            href=relative(page.link)
+            class={'is-active': link == page.link}
+          )= page.title
+
+      - var sections = []
+      - sections.push({ name: 'Fundamentals', items: design_fundamentals })
+      - sections.push({ name: 'Components', items: design_components })
+
+      each section in sections
+        li.menu__item
+          .menu__link.menu__link--category= section.name
+          ul.menu
+            each page in section.items
               li.menu__item
-                a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
-      li.menu__item
-        .menu__link.menu__link--category Components
-        ul.menu
-          if (typeof(design_components) !== 'undefined')
-            each page in design_components
-              li.menu__item
-                a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
+                a.menu__link(
+                  href=relative(page.link)
+                  class={'is-active': link == page.link}
+                )= page.title
 
   .l-docs-main!= contents
