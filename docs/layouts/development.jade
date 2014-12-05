@@ -33,4 +33,24 @@ segment: development
               li.menu__item
                 a(href=relative(page.link), class=(link == page.link ? 'is-active' : '')).menu__link= page.title
 
-  .l-docs-main!= contents
+  .l-docs-main
+    div!= contents
+    // ko if: hasGitHubIntegration
+    .contribute
+      .contribute__image
+        img(src='', data-octocat).contribute__octocat
+      .contribute__content
+        .contribute__headline Contribute to this article
+        p.contribute__text(data-bind='visible: !github.isSignedIn()').
+          To contribute to this article
+          please sing in with GitHub
+        p(data-bind='visible: !github.isSignedIn()')
+          img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
+          a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").button.button--small.button--primary Sign in with GitHub
+        p.contribute__text(data-bind='visible: github.isSignedIn()')
+          | Want to edit or suggest changes
+          | to this content? You can edit and
+          | submit changes to
+          a(href=config.repository.url + '/blob/master/docs' + ((link ? link : '').replace(/\.html$/, '.jade')))  this article
+          |  using GitHub.
+    // /ko
