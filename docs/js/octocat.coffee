@@ -52,7 +52,7 @@
   ]
 
   getRandomOctocat = () ->
-    octodex[Math.floor(Math.random() * octodex.length-1)]
+    octodex[Math.floor(Math.random() * (octodex.length-1))]
 
   $(document).ready () ->
     $('[data-octocat]').each (index, element) ->
