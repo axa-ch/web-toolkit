@@ -79,7 +79,7 @@
       padding-bottom: 0;
     });
 
-    .table__item__info__content:after {
+    .table__item__info__content::after {
       content: '';
     }
 
@@ -110,7 +110,7 @@
   display: inline-block;
   font-size: 14px;
 
-  &:after {
+  &::after {
     content: ',\00a0';
 
     .respond(medium; {
@@ -146,7 +146,7 @@
 .table__item__info--headline {
   display: block;
 
-  .table__item__info__content:after {
+  .table__item__info__content::after {
     content: '';
   }
 

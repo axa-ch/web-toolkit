@@ -16,6 +16,7 @@ var template = require('gulp-template');
 var rename = require("gulp-rename");
 var git = require('gulp-git');
 var postcss = require('gulp-postcss');
+var pseudoelements = require('postcss-pseudoelements');
 var autoprefixer = require('autoprefixer-core');
 var csswring = require('csswring');
 var uglify = require('gulp-uglify');
@@ -135,6 +136,13 @@ gulp.task('styles-autoprefix', function() {
     .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('styles-pseudoelements', function() {
+  return gulp.src(['./dist/css/*.css'])
+    .pipe(postcss([ pseudoelements() ]))
+    .on('error', errorify)
+    .pipe(gulp.dest('./dist/css'));
+});
+
 gulp.task('styles-compress', function() {
   return gulp.src(['./dist/css/{style,normalize}.css'])
     .pipe(sourcemaps.init({loadMaps: true}))
@@ -151,7 +159,7 @@ gulp.task('styles', function (cb) {
   runSequence(
     'styles-copy', 'styles-icons', 'styles-generate',
     'styles-copy-colors', 'styles-compile', 'styles-autoprefix',
-    'styles-compress', cb);
+    'styles-pseudoelements', 'styles-compress', cb);
 });
 
 gulp.task('scripts-clean', function (cb) {
