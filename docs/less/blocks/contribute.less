@@ -9,22 +9,41 @@
   &:extend(.clearfix all);
 
   .respond(medium; {
+    display: table;
     margin-left: 0;
     margin-right: 0;
+    padding: 0;
+    width: 100%;
+  });
+}
+
+.contribute__row {
+  .respond(medium; {
+    display: table-row;
+  })
+}
+
+.contribute__content {
+  .respond(medium; {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
   });
 }
 
 .contribute__image {
-  float: left;
+  display: none;
+
+  .respond(medium; {
+    display: table-cell;
+    width: 100px;
+    vertical-align: middle;
+    padding: 20px 0 20px 20px;
+  });
 }
 
 .contribute__octocat {
-  max-width: 100px;
-}
-
-.contribute__content {
-  margin-left: 120px;
-  padding-top: 30px;
+  width: 100px;
 }
 
 .contribute__headline {
