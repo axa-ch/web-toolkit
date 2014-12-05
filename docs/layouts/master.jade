@@ -17,6 +17,22 @@ html
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/localforage/1.1.1/localforage.min.js')
 
+    script(type='text/javascript').
+      // Include the UserVoice JavaScript SDK (only needed once on a page)
+      UserVoice=window.UserVoice||[];
+      UserVoice.push(['set', {
+        accent_color: '#0062a9',
+        screenshot_enabled: false
+      }]);
+      (function(){
+        var uv=document.createElement('script');
+        uv.type='text/javascript';
+        uv.async=true;
+        uv.src='//widget.uservoice.com/O8ex403PfbC0GjKz3DuQ.js';
+        var s=document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(uv,s)
+      })();
+
     script(src=relative("/js/style.all.js"))
     script(src=relative("/js/api.js"))
     script(src=relative("/js/github-integration.js"))
@@ -50,16 +66,23 @@ html
             .header__meta__lower
               .header__meta__social
                 .menu.menu--social
-                  // ko if: hasGitHubIntegration && !github.isSignedIn()
+                  .menu__item
+                    a(href='#', data-uv-trigger).menu__link.icon.icon--feedback
+
+              // ko if: hasGitHubIntegration
+              .header__meta__social
+                .menu.menu--social
+                  // ko if: !github.isSignedIn()
                   .menu__item(data-bind='css: {\'menu__item--docs-signin\': !github.isAuthenticating()}')
                     img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
                     a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").menu__link Sign in with GitHub
                   // /ko
-                  // ko if: hasGitHubIntegration && github.isSignedIn()
+                  // ko if: github.isSignedIn()
                   .menu__item
                     img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
                     a(href=config.repository.url, data-bind='visible: !github.isAuthenticating() && github.isActiveMember()').menu__link.icon.icon--github
                   // /ko
+              // /ko
               .header__meta__welcome
                 ul
                   li.header__meta__welcome__item
