@@ -53,12 +53,12 @@ segment: development
           p(data-bind='visible: !github.isSignedIn()')
             img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
             a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").button.button--small.button--primary Sign in with GitHub
-          p.contribute__text(data-bind='visible: github.isSignedIn()')
-            | Want to edit or suggest changes
-            | to this content? You can edit and
-            | submit changes to this article
-            | using GitHub.
-          p(data-bind='visible: github.isSignedIn()')
-            //-a()  this article
-            a(href=config.repository.url + '/blob/master/docs' + ((link ? link : '').replace(/\.html$/, '.jade'))).button.button--small.button--primary Edit article on GitHub
+          div(data-bind='visible: github.isSignedIn()')
+            p.contribute__text.
+              Want to edit or suggest changes
+              to this content? You can edit and
+              submit changes to this article
+              using GitHub.
+            p
+              a(href=config.repository.url + '/blob/master/docs' + ((link ? link : '').replace(/\.html$/, '.jade'))).button.button--small.button--primary Edit article on GitHub
     // /ko
