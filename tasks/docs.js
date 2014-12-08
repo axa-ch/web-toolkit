@@ -13,11 +13,13 @@ module.exports = exports = function (options) {
   return function (cb) {
     var readJSONFile = require('../lib/readJSONFile');
     var sampleJadeFilter = require('../lib/sampleJadeFilter');
+    var markedRenderer = require('../lib/markedRenderer');
 
     var Metalsmith = require('metalsmith');
     var collections = require('metalsmith-collections');
     var templates = require('metalsmith-templates');
     var jade = require('metalsmith-jade');
+    var markdown = require('metalsmith-markdown');
     var ignore = require('metalsmith-ignore');
     var branch = require('metalsmith-branch');
     var less = require('metalsmith-less');
@@ -83,10 +85,19 @@ module.exports = exports = function (options) {
       collections_options[name] = { sortBy: 'slug', reverse: false };
     });
 
-    metalsmith.use(branch(['**/*.jade', '!layout/*.jade'])
+    metalsmith.use(branch('**/*.md')
       .use(relative())
       .use(collections(collections_options))
-      .use(jade({ useMetadata: true, locals: metalsmith.metadata() }))
+      .use(markdown({
+        renderer: markedRenderer
+      })));
+
+    metalsmith.use(branch(['**/*.jade', '!layout/**/*.jade'])
+      .use(relative())
+      .use(collections(collections_options))
+      .use(jade({ useMetadata: true, locals: metalsmith.metadata() })));
+
+    metalsmith.use(branch(['**/*.html'])
       .use(filepath({ absolute: true }))
       .use(templates({
         engine: 'jade',
@@ -115,7 +126,7 @@ module.exports = exports = function (options) {
       })));
 
     // we no need these files
-    metalsmith.use(ignore('layouts/*'));
+    metalsmith.use(ignore('layouts/**'));
     metalsmith.use(ignore('less/**'));
     metalsmith.use(ignore('config.json'));
 
