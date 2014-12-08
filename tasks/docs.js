@@ -29,6 +29,8 @@ module.exports = exports = function (options) {
     var coffee = require('metalsmith-coffee');
     var filepath = require('metalsmith-filepath');
     var relative = require('metalsmith-relative');
+    var postcss = require('metalsmith-postcss');
+    var pseudoelements = require('postcss-pseudoelements');
 
     var config = readJSONFile(path.join(options.src, 'config.json'));
 
@@ -115,6 +117,9 @@ module.exports = exports = function (options) {
           ]
         }
       }))
+      .use(postcss([
+        pseudoelements()
+      ]))
       .use(autoprefixer()));
 
     // do the scripts

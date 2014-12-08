@@ -20,7 +20,6 @@
   text-decoration: none; // prevent some odd underline in IE
   position: relative; // so we can position elements absolutely
 
-  &:before, // Keep the :before for IE8 support
   &::before {
     display: inline-block;
     font: normal normal normal 14px/1 '@{name}';
