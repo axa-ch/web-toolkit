@@ -58,9 +58,10 @@
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-jade": "0.0.3",
     "metalsmith-less": "^1.0.2",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-relative": "^1.0.3",
     "metalsmith-templates": "git+https://github.com/axa-ch/metalsmith-templates",
     "run-sequence": "^0.3.6",
-    "serve-static": "^1.5.4",
-    "metalsmith-relative": "^1.0.3"
+    "serve-static": "^1.5.4"
   }
 }
