@@ -8,28 +8,33 @@ template: development.jade
 
 .l-container
   h1.heading.heading--page Usage
-  p.
-    Learn how the Developer Toolkit works and
-    how to use it in your next project.
 
 .l-container
   .l-row
     .l-full
-      p.callout
-        | With the Developer Toolkit we want to help you building
-        | awesome responsive web sites and apps with ease.
-        | If you struggle using the assets, miss a component
-        | or face any other problem please feel free to
-        = ' '
-        a(href=config.repository.url, title=config.repository.name) file an issue
-        | .
+      div.callout
+        h4.callout__heading Feedback appreciated!
+        p
+          | With the Developer Toolkit we want to help you building
+          | awesome responsive web sites and apps with ease.
+          | If you struggle using the assets, miss a component
+          | or face any other problem please feel free to
+          = ' '
+          a(href=config.repository.url, title=config.repository.name) file an issue on github
+          |  or
+          a(href='#', data-uv-trigger, data-uv-mode="contact")  use the feedback form
+          | .
 
   .l-row
     .l-full
       h1 What comes with the Developer Toolkit?
-      p.
-        The Developer Toolkit provides all components needed to build
-        responsive apps at AXA Switzerland.
+      p
+        | The Developer Toolkit is a library of HTML, CSS, JavaScript and other
+        | resources you can include in your products.
+        | It provides you components to help you create awesome features.
+        | The components are aligned to the
+        a(href=relative('/design'))  Design Guidelines
+        | .
 
   .l-row
     .l-full
@@ -57,14 +62,16 @@ template: development.jade
         to your project and use it as you like.
         See the <a href="#basic-template">Basic template</a> section
         for further information.
-      p.callout.
-        Note that the resources must be available from the web
-        in the same hierarchy as provided by the Developer Toolkit
-        when using precompiled assets.
-        For example the <code>images/</code> folder has to be
-        in the same location as the <code>css/</code> folder
-        since images are referenced in the CSS
-        with a relative path (<code>../images/</code>).
+      .callout
+        h4.callout__heading Don't break the paths!
+        p.
+          Note that the resources must be available from the web
+          in the same hierarchy as provided by the Developer Toolkit
+          when using precompiled assets.
+          For example the <code>images/</code> folder has to be
+          in the same location as the <code>css/</code> folder
+          since images are referenced in the CSS
+          with a relative path (<code>../images/</code>).
 
     .l-half
       h2 Using the source files (Less, CoffeScript)
@@ -78,19 +85,15 @@ template: development.jade
       p.
         To have the flexibility of
         customizing Less variables of the
-        Developer Toolkit (see section TODO) and use the
+        Developer Toolkit (see below) and use the
         provided mixins you may want to include the
         Less files into your applications Less file.
-      p.
-        You could also compile the Developer Toolkit on its own,
-        but that would not make any sense since you could use
-        the compiled version in this case.
-        For instructions on building the Developer Toolkit
-        on its own see the projects README file.
-      p.callout.
-        We recommend using the official Less compiler
-        provided at <a href='http://lesscss.org' >lesscss.org</a> since
-        the Developer Toolkit is tested with this compiler.
+      .callout
+        h4.callout__heading Less compiler
+        p.
+          We recommend using the official Less compiler
+          provided at <a href='http://lesscss.org' >lesscss.org</a> since
+          the Developer Toolkit is tested with this compiler.
 
       h3 Compiling the CoffeeScript files
       p.
@@ -149,20 +152,20 @@ template: development.jade
 
       table.table
         thead
-          tr
-            th Name
-            th Default
-            th Description
-        tbody
-          tr
-            td: code @icon-font-path
-            td: code '../fonts'
-            td.
+          tr.table__header
+            th.table__header__item Name
+            th.table__header__item Default
+            th.table__header__item Description
+        tbody.table__content
+          tr.table__item
+            td.table__item__info.table__item__info--headline: code @icon-font-path
+            td.table__item__info: code '../fonts'
+            td.table__item__info.
               Relative (to the CSS file) or absolute path
               where the browser should download the icon font files from.
-          tr
-            td: code @images-path
-            td: code '../images'
-            td.
+          tr.table__item
+            td.table__item__info.table__item__info--headline: code @images-path
+            td.table__item__info: code '../images'
+            td.table__item__info.
               Relative (to the CSS file) or absolute path
               where the browser should download the images from.
