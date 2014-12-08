@@ -1,13 +1,22 @@
 @import 'style/variables';
 
 .callout {
-  background: lighten(@color-gray--lighter, 5%);
-  border: 1px solid darken(@color-gray--lighter, 5%);
+  border: 1px solid @color-gray--lighter;
   border-left: 3px solid @color-blue;
   padding: 20px;
   margin: 20px 0;
 }
 
+.callout__heading {
+  font-size: 1.3em;
+  margin: 0 0 .5em 0;
+  color: @color-blue;
+}
+
 .callout--danger {
   border-left-color: @color-red;
+
+  .callout__heading {
+    color: @color-red;
+  }
 }
