@@ -40,7 +40,19 @@ segment: development
                       span.label.label--default= page.status
 
   .l-docs-main
-    div!= contents
+    h1.heading.heading--page
+      span= title
+      if status != undefined
+        = ' '
+        if status == 'experimental'
+          span.label.label--danger= status
+        else if status == 'new'
+          span.label.label--success= status
+        else
+          span.label.label--default= status
+
+    != contents
+
     // ko if: hasGitHubIntegration
     .contribute
       .contribute__row
