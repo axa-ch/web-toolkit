@@ -1,0 +1,74 @@
+@import '../mixins/grid';
+@import '../mixins/clearfix';
+
+.filter {
+  .make-row();
+
+  display: none;
+  padding: 15px 0;
+  margin: 0; // override the .make-col predefined value
+  background: @color-gray--lighter;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.filter__content {
+  .make-col(11);
+  .make-row();
+  margin: 0; //  override the .make-col predefined value
+}
+
+.filter__close {
+  .make-col(1);
+}
+
+.filter__close__link {
+  .icon();
+  .icon--cross();
+  color: @color-gray;
+  float: right;
+  margin-right: 10px;
+}
+
+.filter__item {
+  .make-col(2);
+}
+
+.filter__item--large {
+  .make-col(3);
+}
+
+.filter__item--xlarge {
+  .make-col(3);
+}
+
+.filter__item__heading {
+  font-weight: bold;
+}
+
+.fitler__item__options {
+}
+
+.filter__option {
+  &:extend(.clearfix all);
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.filter__option__checkbox {
+  float: left;
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid @color-gray;
+    background: white;
+  }
+}
+
+.filter__option__label {
+  margin-left: 28px;
+  line-height: 20px;
+}
