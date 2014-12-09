@@ -15,6 +15,7 @@ Describe the behaviour and actions of this element type. Do not describe in tech
 #####Examples
  
 Finally, we show the elment. If this element type is available in different states, sizes, variations and positions give different examples. If possible, an graphical-meassurement overlay should be shown on request.
+#####Design Principles
 
 | Principle     | Value           | Comment  |
 | ------------- |:-------------:  | :--------|
