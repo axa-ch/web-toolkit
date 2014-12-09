@@ -33,15 +33,22 @@
 }
 
 .filter__item {
-  .make-col(2);
+  .make-col(6);
+  .make-col(2, medium);
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .respond(medium, {
+    margin-bottom: 0;
+  });
 }
 
 .filter__item--large {
-  .make-col(3);
-}
-
-.filter__item--xlarge {
-  .make-col(3);
+  .make-col(12);
+  .make-col(3, medium);
 }
 
 .filter__item__heading {
