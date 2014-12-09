@@ -1,6 +1,19 @@
 @import '../variables';
 @import '../mixins/respond';
 
+.table--clickable {
+
+  .table__item:hover {
+    background: @color-gray--mid;
+    cursor: pointer;
+  }
+
+  .table__item__info__content__link:hover {
+    color: @color-light-blue;
+  }
+
+}
+
 .table {
   display: block;
 
@@ -44,11 +57,6 @@
 
   &:nth-of-type(2n) {
     background: @color-gray--lighter;
-  }
-
-  &:hover {
-    background: @color-gray--mid;
-    cursor: pointer;
   }
 
   &:last-of-type {
@@ -135,11 +143,6 @@
 .table__item__info__content__link {
   font-weight: bold;
   color: @color-light-blue;
-
-  &:active,
-  &:hover {
-    color: @color-light-blue;
-  }
 
 }
 
