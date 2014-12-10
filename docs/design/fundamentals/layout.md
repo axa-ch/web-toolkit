@@ -75,6 +75,11 @@ The _footer_ navigation area (<span class="label label--success">4</span>).
 
 # Common layouts
 
+Certain kind of applications can sometimes be assigned to a selected
+range of layouts or even a specific one. If you find your application type
+here, try to use the recommended layout. This gives more consistency
+across different applications.
+
 ## Power user application
 
 ![Power user layout](/images/design/fundamentals/layout/common-power-user.svg)

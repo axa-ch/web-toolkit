@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="480px" height="320px" viewBox="0 0 480 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>common-landing</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="common-landing" sketch:type="MSArtboardGroup">
+            <path d="M10.7640184,44.6069353 L10.7640184,13.2902904 C10.7640184,9.97159529 13.4515521,7.29102802 16.7667928,7.29102802 L462.930819,7.29102802 C466.242937,7.29102802 468.933594,9.97698928 468.933594,13.2902904 L468.933594,44.6069353 L468.933594,75.9235801 L10.7640184,75.9235801 L10.7640184,44.6069353 Z" id="Rectangle-2" stroke="#DADADA" fill="#EFEFEF" sketch:type="MSShapeGroup"></path>
+            <path d="M10.4257812,297.233348 L10.4257812,306.715016 C10.4257812,310.025386 13.116438,312.708972 16.4285557,312.708972 L462.592582,312.708972 C465.907823,312.708972 468.595357,310.02673 468.595357,306.715016 L468.595357,297.233348 L468.595357,287.75168 L10.4257812,287.75168 L10.4257812,297.233348 Z" id="mask-3" stroke="#DADADA" fill="#EFEFEF" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-12" stroke="#DADADA" sketch:type="MSShapeGroup" x="10.6600453" y="75.9235801" width="458.273548" height="212.07642"></rect>
+            <path d="M101.214929,104.5 L375.799729,104.5" id="Line-27" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,116.5 L375.799729,116.5" id="Line-6" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,129.5 L375.799729,129.5" id="Line-12" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,141.5 L375.799729,141.5" id="Line-13" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,154.5 L375.799729,154.5" id="Line-16" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,165.5 L375.799729,165.5" id="Line-7" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,177.5 L375.799729,177.5" id="Line-28" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,189.5 L375.799729,189.5" id="Line-9" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,202.5 L375.799729,202.5" id="Line-15" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,213.5 L375.799729,213.5" id="Line-14" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,227.5 L375.799729,227.5" id="Line-17" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M101.214929,239.5 L375.799729,239.5" id="Line-8" stroke="#DEDEE2" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
