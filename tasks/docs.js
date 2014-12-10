@@ -91,7 +91,8 @@ module.exports = exports = function (options) {
       .use(relative())
       .use(collections(collections_options))
       .use(markdown({
-        renderer: markedRenderer
+        renderer: markedRenderer,
+        useMetadata: true
       })));
 
     metalsmith.use(branch(['**/*.jade', '!layout/**/*.jade'])
