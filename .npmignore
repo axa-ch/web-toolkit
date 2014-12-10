@@ -6,4 +6,5 @@ less/
 lib/
 tasks/
 gulpfile.js
+coffeelint.json
 shippable.yml
