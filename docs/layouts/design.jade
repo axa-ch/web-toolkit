@@ -29,4 +29,7 @@ segment: design
                   class={'is-active': link == page.link}
                 )= page.title
 
-  .l-docs-main!= contents
+  .l-docs-main
+    h1.heading.heading--page= title
+
+    != contents

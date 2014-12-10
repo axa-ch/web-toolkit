@@ -6,58 +6,56 @@ collection: development
 template: development.jade
 ---
 
-.l-container
-  h1.heading.heading--page Usage
-  p.
-    Learn how the Developer Toolkit works and
-    how to use it in your next project.
 
-.l-container
-  .l-row
-    .l-full
-      p.callout
-        | With the Developer Toolkit we want to help you building
-        | awesome responsive web sites and apps with ease.
-        | If you struggle using the assets, miss a component
-        | or face any other problem please feel free to
-        = ' '
-        a(href=config.repository.url, title=config.repository.name) file an issue
-        | .
+div.callout
+  h4.callout__heading Feedback appreciated!
+  p
+    | With the Developer Toolkit we want to help you building
+    | awesome responsive web sites and apps with ease.
+    | If you struggle using the assets, miss a component
+    | or face any other problem please feel free to
+    = ' '
+    a(href=config.repository.url, title=config.repository.name) file an issue on github
+    |  or
+    a(href='#', data-uv-trigger, data-uv-mode="contact")  use the feedback form
+    | .
 
-  .l-row
-    .l-full
-      h1 What comes with the Developer Toolkit?
+h1 What comes with the Developer Toolkit?
+p
+  | The Developer Toolkit is a library of HTML, CSS, JavaScript and other
+  | resources you can include in your products.
+  | It provides you components to help you create awesome features.
+  | The components are aligned to the
+  a(href=relative('/design'))  Design Guidelines
+  | .
+
+h1 Let's get started!
+p
+  | There are two easy ways to get started.
+  | Each of them requires you to
+  = ' '
+  a(href=config.urls.releases, title="See the releases on GitHub") download the release package
+  = ' '
+  | first.
+p.
+  You can use the compiled CSS and JavaScript or you can use
+  the source Less and CoffeScript.
+  We recommend using the source files since it provides
+  you much more flexibility.
+
+.l-row
+  .l-half
+    h2 Using the compiled CSS and JavaScript
+    p.
+      Copy the <code>css/</code>, <code>js/</code>,
+      <code>images/</code> and <code>fonts/</code> folder
+      from the downloaded Developer Toolkit release
+      to your project and use it as you like.
+      See the <a href="#basic-template">Basic template</a> section
+      for further information.
+    .callout
+      h4.callout__heading Don't break the paths!
       p.
-        The Developer Toolkit provides all components needed to build
-        responsive apps at AXA Switzerland.
-
-  .l-row
-    .l-full
-      h1 Let's get started!
-      p
-        | There are two easy ways to get started.
-        | Each of them requires you to
-        = ' '
-        a(href=config.urls.releases, title="See the releases on GitHub") download the release package
-        = ' '
-        | first.
-      p.
-        You can use the compiled CSS and JavaScript or you can use
-        the source Less and CoffeScript.
-        We recommend using the source files since it provides
-        you much more flexibility.
-
-  .l-row
-    .l-half
-      h2 Using the compiled CSS and JavaScript
-      p.
-        Copy the <code>css/</code>, <code>js/</code>,
-        <code>images/</code> and <code>fonts/</code> folder
-        from the downloaded Developer Toolkit release
-        to your project and use it as you like.
-        See the <a href="#basic-template">Basic template</a> section
-        for further information.
-      p.callout.
         Note that the resources must be available from the web
         in the same hierarchy as provided by the Developer Toolkit
         when using precompiled assets.
@@ -66,103 +64,95 @@ template: development.jade
         since images are referenced in the CSS
         with a relative path (<code>../images/</code>).
 
-    .l-half
-      h2 Using the source files (Less, CoffeScript)
-      p.
-        Compiling the source files on your own is a
-        little trickier than using the compiled CSS
-        and JavaScript but provides you with much
-        more flexibility.
+  .l-half
+    h2 Using the source files (Less, CoffeScript)
+    p.
+      Compiling the source files on your own is a
+      little trickier than using the compiled CSS
+      and JavaScript but provides you with much
+      more flexibility.
 
-      h3#compiling-less-files Compiling the Less files
+    h3#compiling-less-files Compiling the Less files
+    p.
+      To have the flexibility of
+      customizing Less variables of the
+      Developer Toolkit (see below) and use the
+      provided mixins you may want to include the
+      Less files into your applications Less file.
+    .callout
+      h4.callout__heading Less compiler
       p.
-        To have the flexibility of
-        customizing Less variables of the
-        Developer Toolkit (see section TODO) and use the
-        provided mixins you may want to include the
-        Less files into your applications Less file.
-      p.
-        You could also compile the Developer Toolkit on its own,
-        but that would not make any sense since you could use
-        the compiled version in this case.
-        For instructions on building the Developer Toolkit
-        on its own see the projects README file.
-      p.callout.
         We recommend using the official Less compiler
         provided at <a href='http://lesscss.org' >lesscss.org</a> since
         the Developer Toolkit is tested with this compiler.
 
-      h3 Compiling the CoffeeScript files
-      p.
-        Since you do not gain anything by compiling the CoffeeScript
-        files on your own we do not recommend it.
-        Simply use the JavaScript files provided.
+    h3 Compiling the CoffeeScript files
+    p.
+      Since you do not gain anything by compiling the CoffeeScript
+      files on your own we do not recommend it.
+      Simply use the JavaScript files provided.
 
-      h3 Copying the other assets
-      p.
-        Make sure to copy the assets from the
-        <code>images/</code> and <code>fonts/</code> folder
-        to a location available from the web.
-        See the section
-        <a href="#compiling-less-files">Compiling the LESS files</a>
-        on how to set the URL root for assets.
+    h3 Copying the other assets
+    p.
+      Make sure to copy the assets from the
+      <code>images/</code> and <code>fonts/</code> folder
+      to a location available from the web.
+      See the section
+      <a href="#compiling-less-files">Compiling the LESS files</a>
+      on how to set the URL root for assets.
 
-  .l-row
-    .l-full
-      h1#basic-template Basic template
-      p.
-        The basic template below should provide you with
-        a starting point for your next web app.
-        See the comments in the template itself for any explanations.
+h1#basic-template Basic template
+p.
+  The basic template below should provide you with
+  a starting point for your next web app.
+  See the comments in the template itself for any explanations.
 
-      .highlight: pre.highlight__listing.hljs: code.js
-        :highlight
-          <!DOCTYPE html>
-          <html lang="en">
-            <head>
-              <meta charset="utf-8">
-              <meta http-equiv="X-UA-Compatible" content="IE=edge">
-              <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+.highlight: pre.highlight__listing.hljs: code.js
+  :highlight
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
-              <title>Developer Toolkit - Basic template</title>
+        <title>Developer Toolkit - Basic template</title>
 
-              <link href="css/style.min.css" rel="stylesheet">
+        <link href="css/style.min.css" rel="stylesheet">
 
-              <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-              <![endif]-->
-            </head>
-            <body>
-              <h1>Hello, world!</h1>
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+      </head>
+      <body>
+        <h1>Hello, world!</h1>
 
-              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-              <script src="js/style.all.min.js"></script>
-            </body>
-          </html>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/style.all.min.js"></script>
+      </body>
+    </html>
 
-  .l-row
-    .l-full
-      h1 Customization
+h1 Customization
 
-      h2 Less Variables
+h2 Less Variables
 
-      table.table
-        thead
-          tr
-            th Name
-            th Default
-            th Description
-        tbody
-          tr
-            td: code @icon-font-path
-            td: code '../fonts'
-            td.
-              Relative (to the CSS file) or absolute path
-              where the browser should download the icon font files from.
-          tr
-            td: code @images-path
-            td: code '../images'
-            td.
-              Relative (to the CSS file) or absolute path
-              where the browser should download the images from.
+table.table
+  thead
+    tr.table__header
+      th.table__header__item Name
+      th.table__header__item Default
+      th.table__header__item Description
+  tbody.table__content
+    tr.table__item
+      td.table__item__info.table__item__info--headline: code @icon-font-path
+      td.table__item__info: code '../fonts'
+      td.table__item__info.
+        Relative (to the CSS file) or absolute path
+        where the browser should download the icon font files from.
+    tr.table__item
+      td.table__item__info.table__item__info--headline: code @images-path
+      td.table__item__info: code '../images'
+      td.table__item__info.
+        Relative (to the CSS file) or absolute path
+        where the browser should download the images from.
