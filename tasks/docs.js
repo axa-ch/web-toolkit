@@ -138,6 +138,7 @@ module.exports = exports = function (options) {
 
     metalsmith.destination(options.dest);
 
+
     return metalsmith.build(function (err) {
       if (err) return cb(err);
       cb();
