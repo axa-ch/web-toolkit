@@ -21,6 +21,8 @@ var autoprefixer = require('autoprefixer-core');
 var csswring = require('csswring');
 var uglify = require('gulp-uglify');
 var coffeelint = require('gulp-coffeelint');
+var gulptar = require('gulp-tar');
+var gulpgzip = require('gulp-gzip');
 
 var readJSONFile = require('./lib/readJSONFile');
 var writeJSONFile = require('./lib/writeJSONFile');
@@ -190,7 +192,7 @@ gulp.task('scripts-combine', function () {
     .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('scripts-compress', function(cb) {
+gulp.task('scripts-compress', function () {
   return gulp.src(['./dist/js/*.js'])
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
@@ -205,7 +207,7 @@ gulp.task('scripts', function (cb) {
   runSequence('scripts-clean', 'scripts-validate', 'scripts-compile', 'scripts-combine', 'scripts-compress', cb);
 });
 
-gulp.task('create-versions-file', function(cb) {
+gulp.task('create-versions-file', function (cb) {
   var data = {
     tag: null,
     hash: {
@@ -233,10 +235,26 @@ gulp.task('create-versions-file', function(cb) {
 
     end();
   });
-})
+});
+
+gulp.task('release-package', function () {
+  return gulp.src('./dist/*')
+    .pipe(gulptar('./release-latest.tar'))
+    .pipe(gulpgzip())
+    .pipe(gulp.dest('dist/docs/'))
+  //tar.pack('./dist').pipe(fs.createWriteStream('./release-latest.tar.gz'));
+  //new targz().compress('./dist/', './release-latest.tar.gz', cb);
+});
+
+// gulp.task('release-copy', function () {
+//   return gulp.src('./release-latest.tar.gz')
+//     .pipe(gulp.dest('./dist/docs/'));
+// });
 
 gulp.task('build', function (cb) {
-  runSequence('icons', 'images', 'styles', 'scripts', 'create-versions-file', 'docs', cb);
+  runSequence(
+    'icons', 'images', 'styles', 'scripts', 'create-versions-file', 'docs',
+    'release-package', cb);
 });
 
 gulp.task('serve', function (next) {
