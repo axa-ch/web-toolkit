@@ -51,29 +51,35 @@ p.
 h3 Grid options
 
 table.table
-  caption Grid options
-  tr
-    th
-    th small
-    th medium
-    th large
-  tr
-    th Breakpoint
-    td < 768px
-    td ≥ 768px
-    td ≥ 1024px
-  tr
-    th Grid behavior
-    td Horizontal at all times
-    td(colspan="2") Collapsed to start, horizontal above breakpoints
-  tr
-    th CSS class prefix
-    td: code .l-col--*
-    td: code .l-col--medium-*
-    td: code .l-col--large-*
-  tr
-    th Number of columns
-    td(colspan="3") 12
+  thead
+    tr.table__header
+      th.table__header__info
+      th.table__header__info small
+      th.table__header__info medium
+      th.table__header__info large
+  tbody.table__content
+    tr.table__item
+      th.table__item__info Breakpoint
+      td.table__item__info < 768px
+      td.table__item__info ≥ 768px
+      td.table__item__info ≥ 1024px
+    tr.table__item
+      th.table__item__info Grid behavior
+      td.table__item__info Horizontal at all times
+      td.table__item__info(colspan="2").
+        Collapsed to start, horizontal above breakpoints
+    tr.table__item
+      th.table__item__info CSS class prefix
+      td.table__item__info
+        code .l-col--*
+      td.table__item__info
+        code .l-col--medium-*
+      td.table__item__info
+        code .l-col--large-*
+    tr.table__item
+      th.table__item__info Number of columns
+      td.table__item__info(colspan="3")
+        .table__item__info__content 12
 
 h3 Column classes
 
