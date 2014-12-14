@@ -58,6 +58,7 @@
     "metalsmith-define": "1.0.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-filepath": "^1.0.1",
+    "metalsmith-ignore": "^0.1.2",
     "metalsmith-jade": "0.0.3",
     "metalsmith-less": "^1.0.2",
     "metalsmith-markdown": "git+https://github.com/axa-ch/metalsmith-markdown",
