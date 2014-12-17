@@ -1,0 +1,26 @@
+@import '../variables';
+@import '../mixins/grid';
+@import '../mixins/respond';
+
+.fieldset {
+  .make-gutter-as-padding();
+  padding-bottom: 60px;
+  margin-bottom: 50px;
+  border-bottom: 1px dotted @color-blue;
+
+  &:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 60px;
+  }
+}
+
+.fieldset__content {
+  .respond(medium, {
+    width: 70%;
+  });
+
+  .form__group:last-of-type {
+    margin-bottom: 0;
+  }
+}
