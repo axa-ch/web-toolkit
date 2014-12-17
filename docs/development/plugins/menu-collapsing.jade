@@ -60,19 +60,24 @@ p Alternatively, you can activate the plugin with data attributes:
 h4 Options
 
 table.table
-  caption Available options
-  tr
-    th Name
-    th Type
-    th Default
-    th Description
-  tr
-    td: code exclusive
-    td: code boolean
-    td: code false
-    td.
-      Closes all other levels when opening a new one. This option
-      makes the menu behave like an accordion.
+  thead
+    tr.table__header
+      th.table__header__item Name
+      th.table__header__item Type
+      th.table__header__item Default
+      th.table__header__item Description
+  tbody.table__content
+    tr.table__content__item
+      td.table__item__info
+        code.table__item__info__content exclusive
+      td.table__item__info
+        code.table__item__info__content boolean
+      td.table__item__info
+        code.table__item__info__content false
+      td.table__item__info
+        p.table__item__info__content.
+          Closes all other levels when opening a new one. This option
+          makes the menu behave like an accordion.
 
 h4 Methods
 

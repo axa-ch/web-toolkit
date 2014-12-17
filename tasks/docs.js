@@ -24,6 +24,7 @@ module.exports = exports = function (options) {
     var branch = require('metalsmith-branch');
     var less = require('metalsmith-less');
     var define = require('metalsmith-define');
+    var drafts = require('metalsmith-drafts');
     var assets = require('metalsmith-assets');
     var autoprefixer = require('metalsmith-autoprefixer');
     var coffee = require('metalsmith-coffee');
@@ -44,6 +45,8 @@ module.exports = exports = function (options) {
 
     var metalsmith = new Metalsmith(options.cwd);
     metalsmith.source(options.src);
+
+    metalsmith.use(drafts());
 
     // add metadata
     metalsmith.use(define({
@@ -91,7 +94,8 @@ module.exports = exports = function (options) {
       .use(relative())
       .use(collections(collections_options))
       .use(markdown({
-        renderer: markedRenderer
+        renderer: markedRenderer,
+        useMetadata: true
       })));
 
     metalsmith.use(branch(['**/*.jade', '!layout/**/*.jade'])

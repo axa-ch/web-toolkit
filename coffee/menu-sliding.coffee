@@ -10,6 +10,8 @@
 
       @init()
       @level(@$element.children('.menu__level'))
+      
+      $(window).on('resize', @onWindowResize);
 
     init: () ->
       @$element.on 'click', '.menu__link--back', @, (event) ->
@@ -25,6 +27,9 @@
 
         if subLevel.length > 0
           event.data.level(subLevel)
+          
+    onWindowResize: (e) =>
+      @$element.css('height', @level().height())
 
     level: (toSet) ->
       if not toSet

@@ -31,19 +31,24 @@ p Activate the functionality with JavaScript:
 h4 Options
 
 table.table
-  caption Available options
-  tr
-    th Name
-    th Type
-    th Default
-    th Description
-  tr
-    td: code mask
-    td: code boolean
-    td: code true
-    td.
-      Includes a backdrop element which darkens the actual page when the
-      menu is open. A click anywhere on the mask closes the menu again.
+  thead
+    tr.table__header
+      th.table__header__item Name
+      th.table__header__item Type
+      th.table__header__item Default
+      th.table__header__item Description
+  tbody.table__content
+    tr.table__item
+      td.table__item__info
+        code.table__item__info__content mask
+      td.table__item__info
+        code.table__item__info__content boolean
+      td.table__item__info
+        code.table__item__info__content true
+      td.table__item__info
+        p.table__item__info__content.
+          Includes a backdrop element which darkens the actual page when the
+          menu is open. A click anywhere on the mask closes the menu again.
 
 h4 Methods
 
@@ -77,10 +82,12 @@ p Manually hides the menu. Doesn't do anything when the menu is already hidden.
 h4 Events
 
 table.table
-  caption Available events
-  tr
-    th Event Type
-    th Description
-  tr
-    td: code show.axa.site-menu
-    td
+  thead
+    tr.table__header
+      th.table__header__item Event Type
+      th.table__header__item Description
+  tbody.table__content
+    tr.table__item
+      td.table__item__info
+        code.table__item__info__content show.axa.site-menu
+      td.table__item__info
