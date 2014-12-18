@@ -6,117 +6,113 @@ template: development.jade
 ---
 
 :sample
-  div
+  .l-container
+      h1.heading.heading--page Motorfahrzeugschaden
+    .progress-container
+      .l-container.progress-container__progress.progress
+        ul.progress__flow
+          li.progress__step.step.step--start.is-active
+            span.step__bullet 1
+          li.progress__step.step.is-active
+            span.step__bullet 2
+          li.progress__step.step.step--end
+            span.step__bullet 3
+      .progress-container__label Foobar
     .l-container
-        h1.heading.heading--page Motorfahrzeugschaden
-      .progress-container
-        .l-container.progress-container__progress.progress
-          ul.progress__flow
-            li.progress__step.step.step--start.is-active
-              span.step__bullet 1
-            li.progress__step.step.is-active
-              span.step__bullet 2
-            li.progress__step.step.step--end
-              span.step__bullet 3
-        .progress-container__label Foobar
-      .l-container
-        div
-          div
-            div
-              .fieldset
-                .fieldset__content
-                  h2.heading.heading--fieldset Schadensobjekt
-                  .form__group
-                    label.form__group__label Was wurde besch&auml;digt?
-                    .form__group__control
-                      .checkbox-group
-                        label.checkbox(data-checkbox)
-                          input.checkbox__checkbox(type='checkbox')
-                          span.checkbox__label Fahrzeug des Versicherungsnehmers
-                        label.checkbox(data-checkbox)
-                          input.checkbox__checkbox(type='checkbox')
-                          span.checkbox__label Fahrzeug einer anderen Partei
-                        label.checkbox(data-checkbox)
-                          input.checkbox__checkbox(type='checkbox')
-                          span.checkbox__label Gegenst&auml;nde / Geb&auml;ude
-                        label.checkbox(data-checkbox)
-                          input.checkbox__checkbox(type='checkbox')
-                          span.checkbox__label Personen
-              .fieldset
-                .fieldset__content
-                  h2.heading.heading--fieldset Schadensobjekt 2
-                  .form__group
-                    label.form__group__label Was wurde besch&auml;digt?
-                    .form__group__control
-                      .checkbox-group.has-error
-                        label.checkbox(data-checkbox)
-                          input.checkbox__checkbox(type='checkbox')
-                          span.checkbox__label Fahrzeug des Versicherungsnehmers
-                        label.checkbox(data-checkbox)
-                          input.checkbox__checkbox(type='checkbox')
-                          span.checkbox__label Fahrzeug einer anderen Partei
-                        label.checkbox(data-checkbox)
-                          input.checkbox__checkbox(type='checkbox')
-                          span.checkbox__label Gegenst&auml;nde / Geb&auml;ude
-                        label.checkbox(data-checkbox)
-                          input.checkbox__checkbox(type='checkbox')
-                          span.checkbox__label Personen
-                      .form_.form__error-message Bitte machen Sie hier eine Angabe.
-              .fieldset
-                .fieldset__content
-                  h2.heading.heading--fieldset Schadensort
-                  .form__group
-                    label.form__group__label Datum
-                    .form__group__control
-                      input.control.control--input(type='text')
-                  .form__group
-                    label.form__group__label Strasse, Nr.
-                    .form__group__control
-                      input.control.control--input(type='text')
-                  .form__group
-                    label.form__group__label PLZ, Ort
-                    .form__group__control
-                      input.control.control--input(type='text')
-                  .form__group
-                    label.form__group__label Land
-                    .form__group__control
-                      .dropdown(data-dropdown)
-                        .dropdown__label
-                        select.dropdown__select
-                          option Schweiz
-                          option Regenbogenland
-              .fieldset
-                .fieldset__content
-                  h2.heading.heading--fieldset Schaden
-                  .form__group
-                    label.form__group__label Wie ist der Schaden entstanden?
-                    .form__group__control
-                      textarea.control.control--textarea
-                  .form__group
-                    label.form__group__label Wurde der Schaden der Polizei gemeldet?
-                    .form__group__control
-                      .segmented-control(data-segmentedControl)
-                        label.segmented-control__item.is-active
-                          input.segmented-control__radio(type='radio', name='polizei')
-                          span.segmented-control__label Ja
-                        label.segmented-control__item
-                          input.segmented-control__radio(type='radio', name='polizei')
-                          span.segmented-control__label Nein
-                  .form__group
-                    label.form__group__label Ist der Versicherungsnehmer aus Ihrer Sicht Schuld am Schaden
-                    .form__group__control
-                      .segmented-control(data-segmentedControl).has-error
-                        label.segmented-control__item
-                          input.segmented-control__radio(type='radio', name='schuld')
-                          span.segmented-control__label Ja
-                        label.segmented-control__item
-                          input.segmented-control__radio(type='radio', name='schuld')
-                          span.segmented-control__label Nein
-                        label.segmented-control__item
-                          input.segmented-control__radio(type='radio', name='schuld')
-                          span.segmented-control__label Vielleicht
-                      .form__error-message Bitte machen Sie hier eine Angabe.
-            .button-row
-              a.button-row__button.button-row__button--right.button.button--primary Weiter
-              a.button-row__button.button.button--secondary Zurück
-            .footnote * Pflichtfelder
+          .fieldset
+            .fieldset__content
+              h2.heading.heading--fieldset Schadensobjekt
+              .form__group
+                label.form__group__label Was wurde besch&auml;digt?
+                .form__group__control
+                  .checkbox-group
+                    label.checkbox(data-checkbox)
+                      input.checkbox__checkbox(type='checkbox')
+                      span.checkbox__label Fahrzeug des Versicherungsnehmers
+                    label.checkbox(data-checkbox)
+                      input.checkbox__checkbox(type='checkbox')
+                      span.checkbox__label Fahrzeug einer anderen Partei
+                    label.checkbox(data-checkbox)
+                      input.checkbox__checkbox(type='checkbox')
+                      span.checkbox__label Gegenst&auml;nde / Geb&auml;ude
+                    label.checkbox(data-checkbox)
+                      input.checkbox__checkbox(type='checkbox')
+                      span.checkbox__label Personen
+          .fieldset
+            .fieldset__content
+              h2.heading.heading--fieldset Schadensobjekt 2
+              .form__group
+                label.form__group__label Was wurde besch&auml;digt?
+                .form__group__control
+                  .checkbox-group.has-error
+                    label.checkbox(data-checkbox)
+                      input.checkbox__checkbox(type='checkbox')
+                      span.checkbox__label Fahrzeug des Versicherungsnehmers
+                    label.checkbox(data-checkbox)
+                      input.checkbox__checkbox(type='checkbox')
+                      span.checkbox__label Fahrzeug einer anderen Partei
+                    label.checkbox(data-checkbox)
+                      input.checkbox__checkbox(type='checkbox')
+                      span.checkbox__label Gegenst&auml;nde / Geb&auml;ude
+                    label.checkbox(data-checkbox)
+                      input.checkbox__checkbox(type='checkbox')
+                      span.checkbox__label Personen
+                  .form_.form__error-message Bitte machen Sie hier eine Angabe.
+          .fieldset
+            .fieldset__content
+              h2.heading.heading--fieldset Schadensort
+              .form__group
+                label.form__group__label Datum
+                .form__group__control
+                  input.control.control--input(type='text')
+              .form__group
+                label.form__group__label Strasse, Nr.
+                .form__group__control
+                  input.control.control--input(type='text')
+              .form__group
+                label.form__group__label PLZ, Ort
+                .form__group__control
+                  input.control.control--input(type='text')
+              .form__group
+                label.form__group__label Land
+                .form__group__control
+                  .dropdown(data-dropdown)
+                    .dropdown__label
+                    select.dropdown__select
+                      option Schweiz
+                      option Regenbogenland
+          .fieldset
+            .fieldset__content
+              h2.heading.heading--fieldset Schaden
+              .form__group
+                label.form__group__label Wie ist der Schaden entstanden?
+                .form__group__control
+                  textarea.control.control--textarea
+              .form__group
+                label.form__group__label Wurde der Schaden der Polizei gemeldet?
+                .form__group__control
+                  .segmented-control(data-segmentedControl)
+                    label.segmented-control__item.is-active
+                      input.segmented-control__radio(type='radio', name='polizei')
+                      span.segmented-control__label Ja
+                    label.segmented-control__item
+                      input.segmented-control__radio(type='radio', name='polizei')
+                      span.segmented-control__label Nein
+              .form__group
+                label.form__group__label Ist der Versicherungsnehmer aus Ihrer Sicht Schuld am Schaden
+                .form__group__control
+                  .segmented-control(data-segmentedControl).has-error
+                    label.segmented-control__item
+                      input.segmented-control__radio(type='radio', name='schuld')
+                      span.segmented-control__label Ja
+                    label.segmented-control__item
+                      input.segmented-control__radio(type='radio', name='schuld')
+                      span.segmented-control__label Nein
+                    label.segmented-control__item
+                      input.segmented-control__radio(type='radio', name='schuld')
+                      span.segmented-control__label Vielleicht
+                  .form__error-message Bitte machen Sie hier eine Angabe.
+        .button-row
+          a.button-row__button.button-row__button--right.button.button--primary Weiter
+          a.button-row__button.button.button--secondary Zurück
+        .footnote * Pflichtfelder
