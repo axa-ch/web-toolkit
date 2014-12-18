@@ -1,0 +1,34 @@
+---
+title: Dropdown
+slug: dropdown
+collection: development_blocks
+template: development.jade
+---
+  
+:markdown
+  The ``dropdown--js`` modifier will add custom styling to dropdowns.
+  Be aware that it **depends on JavaScript**. Therefore you have to 
+  include the jQuery plugin bundled with the style guide or set the 
+  content of the dropdown__label on your own, depending on the selected 
+  option. See the dropdown plugin docs for further information on 
+  this topic.
+  
+h2 Non-enhanced dropdown (no JavaScript)
+
+:sample
+  .dropdown
+    .dropdown__label
+      select.dropdown__select
+        option Schweiz
+        option Regenbogenland
+      
+h2 Enhanved dropdown (JavaScript)
+
+:sample
+  .dropdown
+    .dropdown__label
+      select.dropdown__select
+        option Schweiz
+        option Regenbogenland
+      
+      
