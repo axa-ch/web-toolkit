@@ -5,14 +5,17 @@
   position: relative;
 
   padding: 45px 15px 15px;
-  margin: 0 -15px; // TODO: Use variables for left & right margin
+  margin: 15px -15px 0; // TODO: Use variables for left & right margin
 
   border-width: 1px 0;
   border-style: solid;
   border-color: @color-gray--lighter;
 
+  overflow: hidden;
+
   .respond(medium, {
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
 
     border-width: 1px;
   });
