@@ -1,0 +1,62 @@
+@import '../variables';
+
+.control {
+  display: block;
+  width: 100%;
+
+  background: @color-gray--lighter;
+
+  height: 40px;
+  line-height: 36px;
+
+  padding-left: 13px;
+  padding-right: 13px;
+
+  color: black;
+
+  border: none;
+
+  border-radius: 0;
+}
+
+.control.is-disabled {
+  cursor: not-allowed;
+
+  opacity: 1; // iOS fix for unreadable disabled content
+}
+
+.control--input {
+  &.has-error {
+    border-color: #ff0000;
+  }
+
+  border: @focus-border-width solid @color-gray--lighter;
+  -webkit-appearance: none;
+
+  &:focus {
+    border-color: @color-tbd-23;
+    outline: none;
+  }
+}
+
+.control--textarea {
+  .control--input();
+
+  height: auto; // Reset height for textareas
+  line-height: 1.5;
+  min-height: 90px; // approx. 3 lines of text
+  // TODO: May use border instead of padding because the padding is ignored when
+  //       the textarea scrolls vertically in chrome.
+  //       Con: The resive handle looks ugly when using borders.
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.control--invalid {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ff0000;
+}

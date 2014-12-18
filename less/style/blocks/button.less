@@ -3,32 +3,48 @@
 
 @button-height: 50px;
 @button-pad-lr: 30px;
-@button-border-radius: 7px;
+@button-border-radius: 0;
 @button-icon-pad: 8px;
 @button-icon-size: 16px;
-@button-font-size: 18px; // TODO: Change to 22px for Franlink Gothic
+@button-font-size: 16px;
 
 @button-sm-height: 40px;
 @button-sm-pad-lr: 25px;
 @button-sm-border-radius: 5px;
 @button-sm-icon-pad: 5px;
 @button-sm-icon-size: 14px;
-@button-sm-font-size: 14px; // TODO: Change to 18px for Franlink Gothic
+@button-sm-font-size: 14px;
 
 @button-primary-bg: @color-blue;
 @button-primary-color: white;
 @button-primary-hover-bg: lighten(@color-blue, 5%);
 
-@button-secondary-bg: @color-tbd-2;
-@button-secondary-color: @color-blue;
-@button-secondary-hover-bg: lighten(@color-tbd-2, 5%);
+@button-secondary-bg: @color-gray--dark;
+@button-secondary-color: white;
+@button-secondary-hover-bg: lighten(@color-gray--dark, 5%);
 
 .button {
   display: inline-block;
   position: relative;
+  text-align: center;
 
   // TODO: franklin gothic medium
-  font-weight: bold;
+  font-weight: normal;
+
+  .respond(medium; {
+
+    // TODO: franklin gothic medium
+    font-weight: bold;
+
+    .make-button-size(
+      @height: 50px;
+      @pad-lr: 40px;
+      @border-radius: 0;
+      @icon-pad: @button-icon-pad; // TODO
+      @icon-size: @button-icon-size; // TODO
+      @font-size: 18px;
+    );
+  });
 
   .make-button-size(
     @height: @button-height;

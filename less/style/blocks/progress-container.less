@@ -1,0 +1,36 @@
+@import "../variables";
+@import "../mixins/respond";
+
+.progress-container {
+  margin-top: 40px;
+  overflow: visible;
+  background: @color-tbd-22;
+  padding-bottom: 17px;
+
+  .respond(medium, {
+    margin-top: 60px;
+    padding-bottom: 24px;
+  });
+}
+
+.progress-container__progress {
+  position: relative;
+  top: -10px;
+  margin-bottom: 12px;
+
+  .respond(medium, {
+    top: -20px;
+    margin-bottom: 5px; // TODO
+  });
+}
+
+.progress-container__label {
+  font-size: 17px;
+  color: @color-tbd-23;
+  text-align: center;
+  padding: 0 @grid-gutter-width/2;
+
+  .respond(medium, {
+    font-size: 24px;
+  });
+}

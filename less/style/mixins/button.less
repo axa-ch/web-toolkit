@@ -1,6 +1,6 @@
 @import '../blocks/icon';
 
-.make-button-size(@height, @pad-lr, @border-radius, @icon-pad, @icon-size, @font-size, @line-height: 1.5) {
+.make-button-size(@height, @pad-lr, @border-radius, @icon-pad, @icon-size, @font-size, @line-height: 1.5, @height-md: @height) {
   // TODO: we may support @line-height in pixel or em using css guards
   @calculated-line-height: @font-size * @line-height;
 
@@ -27,6 +27,11 @@
   &:hover {
     background: @hover-bg-color;
     color: @hover-color;
+  }
+  
+  &:focus {
+    outline: none;
+    background: lighten(@bg-color, 10%);
   }
 
   & .button__icon {

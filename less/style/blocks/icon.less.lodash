@@ -30,9 +30,29 @@
   }
 }
 
+.icon-after {
+  text-decoration: none; // prevent some odd underline in IE
+  position: relative; // so we can position elements absolutely
+
+  &::after {
+    display: inline-block;
+    font: normal normal normal 14px/1 '@{name}';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
 <% _.forEach(glyphs, function (glyph) {
 %>.icon--<%= glyph.name %> {
   &::before {
+    content: '\<%= glyph.codepoint.toString(16).toLowerCase() %>';
+  }
+}
+
+.icon-after--<%= glyph.name %> {
+  &::after {
     content: '\<%= glyph.codepoint.toString(16).toLowerCase() %>';
   }
 }

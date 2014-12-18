@@ -1,0 +1,72 @@
+@import '../variables';
+@import '../blocks/icon';
+@import '../mixins/respond';
+@import '../mixins/invisible-input';
+
+.checkbox {
+  display: block;
+  margin-bottom: 15px;
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.checkbox__checkbox {
+  margin-right: 10px;
+  vertical-align: middle;
+
+  .checkbox--js & {
+    &:extend(.invisible-input all);
+  }
+}
+
+.checkbox.checkbox--js.is-active .checkbox__label {
+  .icon();
+  .icon--checkmark();
+}
+
+.checkbox--js .checkbox__label {
+  .respond(medium, {
+    font-size: 15px;
+  });
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid @color-gray;
+    background: white;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0;
+    color: @color-tbd-23;
+    font-size: 26px !important;
+    line-height: 28px !important;
+
+    .respond(medium, {
+      width: 25px;
+      height: 25px;
+      font-size: 20px !important;
+    });
+
+    .checkbox-group.has-error &,
+    .checkbox.has-error & {
+      border-color: #ff0000;
+    }
+
+  }
+
+  &:focus {
+    outline: none;
+
+    &:before {
+      border-color: @color-tbd-23 !important; // !important needed for checkboxes in error state
+      outline: none;
+    }
+
+  }
+}
