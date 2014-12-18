@@ -1,0 +1,29 @@
+---
+title: Checkbox
+slug: checkbox
+collection: development_blocks
+template: development.jade
+---
+
+:markdown
+  The ``checkbox--js`` modifier will add custom styling to checkboxes.
+  Be aware that it **depends on JavaScript**. Therefore you have to 
+  include the jQuery plugin bundled with the style guide or set the 
+  ``.is-active`` state on your own, depending on whether the checkbox 
+  is selected or not. See the checkbox plugin docs for further 
+  information on this topic.
+  
+h2 Non-enhanced checkbox (no JavaScript)
+  
+:sample
+  label.checkbox
+    input.checkbox__checkbox(type='checkbox')
+      span.checkbox__label Fahrzeug des Versicherungsnehmers
+      
+h2 Enhanved checkbox (JavaScript)
+      
+:sample
+  label.checkbox(data-checkbox)
+    input.checkbox__checkbox(type='checkbox')
+      span.checkbox__label Fahrzeug des Versicherungsnehmers
+      
