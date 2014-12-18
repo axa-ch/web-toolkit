@@ -28,21 +28,15 @@
 
     setRadioState: () =>
 
-      console.log('======')
-
       @$radios.each (index, element) ->
 
         $radio = $ element
         $item = $radio.data 'item.element'
 
-        console.log 'set state', $radio, $item, $radio.is ':checked'
-
         if $radio.is ':checked'
           $item.addClass 'is-active'
         else
           $item.removeClass 'is-active'
-
-      console.log('======')
 
   # Plugin definition
   Plugin = (option) ->
