@@ -30,16 +30,16 @@ template: development.jade
                     label.form__group__label Was wurde besch&auml;digt?
                     .form__group__control
                       .checkbox-group
-                        label.checkbox.is-active
+                        label.checkbox(data-checkbox)
                           input.checkbox__checkbox(type='checkbox')
                           span.checkbox__label Fahrzeug des Versicherungsnehmers
-                        label.checkbox
+                        label.checkbox(data-checkbox)
                           input.checkbox__checkbox(type='checkbox')
                           span.checkbox__label Fahrzeug einer anderen Partei
-                        label.checkbox
+                        label.checkbox(data-checkbox)
                           input.checkbox__checkbox(type='checkbox')
                           span.checkbox__label Gegenst&auml;nde / Geb&auml;ude
-                        label.checkbox
+                        label.checkbox(data-checkbox)
                           input.checkbox__checkbox(type='checkbox')
                           span.checkbox__label Personen
               .fieldset
@@ -49,16 +49,16 @@ template: development.jade
                     label.form__group__label Was wurde besch&auml;digt?
                     .form__group__control
                       .checkbox-group.has-error
-                        label.checkbox
+                        label.checkbox(data-checkbox)
                           input.checkbox__checkbox(type='checkbox')
                           span.checkbox__label Fahrzeug des Versicherungsnehmers
-                        label.checkbox
+                        label.checkbox(data-checkbox)
                           input.checkbox__checkbox(type='checkbox')
                           span.checkbox__label Fahrzeug einer anderen Partei
-                        label.checkbox
+                        label.checkbox(data-checkbox)
                           input.checkbox__checkbox(type='checkbox')
                           span.checkbox__label Gegenst&auml;nde / Geb&auml;ude
-                        label.checkbox
+                        label.checkbox(data-checkbox)
                           input.checkbox__checkbox(type='checkbox')
                           span.checkbox__label Personen
                       .form_.form__error-message Bitte machen Sie hier eine Angabe.
@@ -81,7 +81,7 @@ template: development.jade
                     label.form__group__label Land
                     .form__group__control
                       .dropdown(data-dropdown)
-                        .dropdown__label 
+                        .dropdown__label
                         select.dropdown__select
                           option Schweiz
                           option Regenbogenland
