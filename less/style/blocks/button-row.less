@@ -17,6 +17,15 @@
   display: block;
   margin-top: 20px;
 
+  // prevent style collision
+  &.button {
+    display: block;
+
+    .respond(medium, {
+      display: inline-block;
+    });
+  }
+
   &:first-of-type {
     margin-top: 0;
   }
