@@ -24,13 +24,19 @@
     }
   }
 
+  .segmented-control__label {
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      min-height: 1px;
+      margin-left: 3px;
+    }
+  }
+
   .segmented-control__item.is-active .segmented-control__label {
     .icon-after();
     .icon-after--checkmark();
-
-    &:after {
-      margin-left: 5px;
-    }
   }
 
   .segmented-control__radio {
@@ -59,7 +65,7 @@
     height: 40px;
     line-height: 40px;
     padding-left: 25px;
-    padding-right: 25px;
+    padding-right: 8px;
     cursor: pointer;
     border: 1px solid @color-gray;
     border-right-width: 0;
