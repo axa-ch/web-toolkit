@@ -95,7 +95,7 @@ template: development.jade
                   .form__group
                     label.form__group__label Wurde der Schaden der Polizei gemeldet?
                     .form__group__control
-                      .segmented-control
+                      .segmented-control(data-segmentedControl)
                         label.segmented-control__item.is-active
                           input.segmented-control__radio(type='radio', name='polizei')
                           span.segmented-control__label Ja
@@ -105,7 +105,7 @@ template: development.jade
                   .form__group
                     label.form__group__label Ist der Versicherungsnehmer aus Ihrer Sicht Schuld am Schaden
                     .form__group__control
-                      .segmented-control.has-error
+                      .segmented-control(data-segmentedControl).has-error
                         label.segmented-control__item
                           input.segmented-control__radio(type='radio', name='schuld')
                           span.segmented-control__label Ja
