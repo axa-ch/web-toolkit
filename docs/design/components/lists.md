@@ -1,3 +1,10 @@
+---
+title: List
+slug: list
+collection: design_components
+template: design.jade
+---
+
 # Lists
 Do use lists to [show](#) one or multiple rows of similar structured data or information. Every list-element is click/tapable as an navigational item which leads to a new page which provieds deeper information on the list element. Lists can provide additional actions (for example remove, edit, add subitem, renew contract, etc.) . Lists usually contain multiple [list-elements](#listElements) of similar structure. 
 
