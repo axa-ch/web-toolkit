@@ -30,6 +30,9 @@
     # Handle spacebar to toggle the checkbox
     handleKeyUp: (e) =>
       if e.which == 32
+        # prevent scrolling
+        e.preventDefault();
+
         @$checkbox.prop 'checked', !(@$checkbox.is ':checked')
 
         # Emit a change event manually
