@@ -20,11 +20,68 @@
       @init()
 
     init: () ->
+      @$radios.prop 'tabindex', '-1'
+      @$element.prop 'tabindex', '0'
+
       @$element.addClass 'segmented-control--js'
 
       @setRadioState()
 
       @$radios.on 'change', @setRadioState
+
+      @$element.on 'keyup', @handleKeyUp
+
+      @$element.on 'keydown', @handleKeyDown
+
+    # Spacewar will activate first item if none is active
+    handleKeyUp: (e) =>
+      if e.which == 32
+        e.preventDefault()
+        if @$radios.filter(':checked').length == 0
+          $first = $ @$radios[0]
+          $first.prop 'checked', true
+          $first.change()
+
+    # Arrows will activate the next/previous radio
+    handleKeyDown: (e) =>
+      switch e.which
+        # prevent scrolling
+        when 32
+          e.preventDefault()
+        # left / up
+        when 37, 38
+          e.preventDefault()
+
+          $checked = $ @$radios.filter(':checked')
+
+          if $checked.length != 0
+            $previous = $ @$radios[@$radios.index($checked) - 1]
+
+            if $previous? && $previous.length != 0
+              $previous.prop 'checked', true
+              $previous.change()
+
+        # right / down
+        when 39, 40
+          e.preventDefault()
+
+          $checked = $ @$radios.filter(':checked')
+
+          # check second radio when none is checked
+          if $checked.length == 0
+            $first = $ @$radios[1]
+
+            if $first? & $first.length != 0
+              $first.prop 'checked', true
+              $first.change()
+
+          else
+            $next = $ @$radios[@$radios.index($checked) + 1]
+
+            if $next? && $next.length != 0
+              $next.prop 'checked', true
+              $next.change()
+
 
     setRadioState: () =>
 
