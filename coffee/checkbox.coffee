@@ -9,18 +9,33 @@
 
       # TODO: Do not depend on css classes
       @$checkbox = @$element.find '.checkbox__checkbox'
+      @$label = @$element.find '.checkbox__label'
 
       @options = $.extend {}, Checkbox.DEFAULTS, options
 
       @init()
 
     init: () ->
+      @$checkbox.attr 'tabindex', '-1'
+      @$label.attr 'tabindex', '0'
+
       @$element.addClass 'checkbox--js'
 
       @setCheckboxState()
 
       @$checkbox.on 'change', @setCheckboxState
 
+      @$label.on 'keyup', @handleKeyUp
+
+    # Handle spacebar to toggle the checkbox
+    handleKeyUp: (e) =>
+      if e.which == 32
+        @$checkbox.prop 'checked', !(@$checkbox.is ':checked')
+
+        # Emit a change event manually
+        @$checkbox.change()
+
+    # Updates the UI according to the checkbox state
     setCheckboxState: () =>
       if @$checkbox.is ':checked'
         @$element.addClass 'is-active'
