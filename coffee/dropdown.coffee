@@ -16,11 +16,21 @@
       @init()
 
     init: () ->
+      @$select.attr 'tabindex', '-1'
+      @$element.attr 'tabindex', '0'
+
       @$element.addClass 'dropdown--js'
 
       @setLabelText()
 
       @$select.on 'change', @setLabelText
+
+      @$element.on 'keydown', @handleKeyDown
+
+    # Handle spacebar to open the select box
+    handleKeyDown: (e) =>
+      if e.which == 32
+        @$select.focus();
 
     setLabelText: () =>
       @$label.text @$select.find('option:selected').text()
