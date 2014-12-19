@@ -36,15 +36,16 @@
     z-index: 101;
     color: @color-tbd-23;
   }
-
-  .dropdown:focus & {
-    border-color: @color-tbd-23;
-  }
-
-  .dropdown:focus &:after {
-    border-color: @color-tbd-23;
-  }
 }
+
+.dropdown--js.dropdown:focus .dropdown__label {
+  border-color: @color-tbd-23;
+}
+
+.dropdown--js.dropdown:focus .dropdown__label:after {
+  border-color: @color-tbd-23;
+}
+
 .dropdown__select {
   width: 100%;
   height: 40px;
