@@ -114,7 +114,7 @@
 
   # DATA-API
   $(window).on 'load', () ->
-    $('[data-segmentedControl]').each () ->
+    $('[data-segmented-control]').each () ->
       $segmentedControl = $(this)
       data = $segmentedControl.data()
 
