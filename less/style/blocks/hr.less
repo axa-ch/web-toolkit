@@ -2,9 +2,10 @@
 @import '../mixins/respond';
 
 .hr {
-  border-bottom: 1px solid @color-gray;
+  display: none;
 
   .respond(medium, {
+    display: block;
     margin-top: 30px;
     margin-bottom: 30px;
     border-bottom: 5px solid @color-blue;

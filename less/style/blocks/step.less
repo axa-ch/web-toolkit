@@ -1,0 +1,88 @@
+@import '../variables';
+@import '../mixins/respond';
+
+.step {
+  position: relative;
+
+  &::before {
+    z-index: 1;
+    position: absolute;
+
+    content: ' ';
+    display: block;
+
+    height: 5px;
+    width: 100%;
+
+    background-color: @color-tbd-18;
+
+    .respond(medium, {
+      height: 8px;
+    });
+  }
+
+  &::before {
+    left: -50%;
+    top: 9px;
+
+    .respond(medium, {
+      top: 16px;
+    });
+  }
+}
+
+.step.is-active::before,
+.step.is-active .step__bullet {
+  background-color: @color-tbd-23;
+}
+
+.step.is-active .step__bullet:hover {
+  background-color: @color-tbd-9;
+  color: @color-white;
+  cursor: pointer;
+}
+
+.step--start::before {
+  display: none;
+}
+
+.step--end {
+}
+
+.step__bullet {
+  z-index: 2;
+  display: block;
+
+  position: relative;
+  left: -11.5px;
+
+  height: 23px;
+  width: 23px;
+
+  margin-left: 50%;
+
+  text-align: center;
+  line-height: 23px;
+  font-size: 13px;
+
+  border-radius: 50%;
+  background-color: @color-tbd-18;
+  color: @color-white;
+
+  .respond(medium, {
+    left: -20px;
+
+    height: 40px;
+    width: 40px;
+
+    line-height: 40px;
+    font-size: 26px;
+  });
+}
+
+.step__caption {
+  display: block;
+
+  text-align: center;
+  color: @color-tbd-3;
+}

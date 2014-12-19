@@ -1,0 +1,31 @@
+---
+title: Progressbar Container
+slug: progress-container
+collection: development_blocks
+template: development.jade
+---
+
+:markdown
+  The ``.progress-container`` block is designed to contain a
+  ``.progress`` block and conclude it with a label of the
+  current step. The container adds a background to the half
+  of the ``.progress`` block.
+
+.callout
+  :markdown
+    The ``.progress-container`` should never be located
+    inside a ``.l-container`` since its background has to
+    be full width. Instead add the ``.l-container`` class
+    to the ``.progress-container__progress`` element.
+
+:sample
+  .progress-container
+    .l-container.progress-container__progress.progress
+      ul.progress__flow
+        li.progress__step.step.step--start.is-active
+          span.step__bullet 1
+        li.progress__step.step.is-active
+          span.step__bullet 2
+        li.progress__step.step.step--end
+          span.step__bullet 3
+    .progress-container__label Foobar

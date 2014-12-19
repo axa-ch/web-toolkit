@@ -4,9 +4,13 @@
 
 .fieldset {
   .make-gutter-as-padding();
-  padding-bottom: 60px;
+  padding-bottom: 15px;
   margin-bottom: 50px;
   border-bottom: 1px dotted @color-blue;
+
+  .respond(medium, {
+    padding-bottom: 10px;
+  });
 
   &:last-of-type {
     border-bottom: none;
@@ -16,11 +20,5 @@
 }
 
 .fieldset__content {
-  .respond(medium, {
-    width: 70%;
-  });
-
-  .form__group:last-of-type {
-    margin-bottom: 0;
-  }
+  margin-top: 40px;
 }

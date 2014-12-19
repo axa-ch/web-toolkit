@@ -20,6 +20,8 @@
 @transition-fn-fancy: cubic-bezier(0.6, 0.0, 0.735, 0.045);
 @transition-duration-fast: 250ms;
 
+@focus-border-width: 1px;
+
 // Primary colors
 <%
 _.forEach(colors.primary, function (colorCode, colorName) {

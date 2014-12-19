@@ -1,0 +1,30 @@
+---
+title: Form
+slug: form
+collection: development_blocks
+template: development.jade
+---
+
+:markdown
+  The ``form`` block provides structural elements for a form.
+  
+  Use them as follows:
+  
+  - ``.form``
+    - ``.form__group``
+      - ``.form__group__label``
+        - Label text
+      - ``.form__group__control``
+        - Form control
+
+:sample
+  .l-container
+    .form
+      .form__group
+        label.form__group__label Foo
+        .form__group__control
+          input.control.control--input(type='text')
+      .form__group
+        label.form__group__label bar
+        .form__group__control
+          input.control.control--input(type='text')

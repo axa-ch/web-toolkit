@@ -1,0 +1,35 @@
+---
+title: Fieldset
+slug: fieldset
+collection: development_blocks
+template: development.jade
+---
+
+:markdown
+  The ``fieldset`` block is used to group form elements.
+  
+  Be aware that ``.fieldset:last-of-type`` has no 
+  ``border-bottom``. Therefore all ``.fieldset`` blocks 
+  **must** use the same html tag and **may not** be followed 
+  by an additional occurance of this tag which is not
+  itself a ``.fieldset`` block.
+  
+  A fieldset should always be surrounded by a ``.l-container``. 
+  It has not to be the immediate parent element.
+
+:sample
+  .l-container
+    .fieldset
+      .fieldset__content
+        h2.heading.heading--fieldset Foo
+        .form__group
+          label.form__group__label Bar
+          .form__group__control
+            input.control.control--input(type='text')
+    .fieldset
+      .fieldset__content
+        h2.heading.heading--fieldset Baz
+        .form__group
+          label.form__group__label Hello world
+          .form__group__control
+            input.control.control--input(type='text')

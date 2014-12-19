@@ -1,0 +1,90 @@
+@import '../mixins/invisible-input';
+@import '../blocks/icon';
+@import '../blocks/checkbox-group';
+@import '../blocks/checkbox';
+
+.segmented-control {
+  .checkbox-group();
+}
+.segmented-control__item {
+  .checkbox();
+}
+.segmented-control__radio {
+  .checkbox__checkbox();
+}
+
+.segmented-control--js {
+
+  &.segmented-control {
+    margin-top: 0; // reset inheritance of .checkbox-group
+    max-width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .segmented-control__label {
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      min-height: 1px;
+      margin-left: 3px;
+    }
+  }
+
+  .segmented-control__item.is-active .segmented-control__label {
+    .icon-after();
+    .icon-after--checkmark();
+  }
+
+  .segmented-control__radio {
+    &:extend(.invisible-input all);
+  }
+
+  &.segmented-control.has-error .segmented-control__item {
+    border-color: #ff0000 !important; // important is needed when the item .is-active and the control .has-error
+  }
+
+  &.segmented-control:focus .segmented-control__item {
+    border-top-color: @color-tbd-23 !important;
+    border-bottom-color: @color-tbd-23 !important;
+
+    &:first-of-type {
+      border-left-color: @color-tbd-23 !important;
+    }
+
+    &:last-of-type {
+      border-right-color: @color-tbd-23 !important;
+    }
+  }
+
+  .segmented-control__item {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 25px;
+    padding-right: 8px;
+    cursor: pointer;
+    border: 1px solid @color-gray;
+    border-right-width: 0;
+
+    &:last-of-type {
+      border-right-width: 1px;
+    }
+
+    &.is-active {
+      background: @color-tbd-23;
+      border-top-color: @color-tbd-23;
+      border-bottom-color: @color-tbd-23;
+      border-left-color: @color-tbd-23;
+      color: white;
+    }
+
+    &.is-active + .segmented-control__item {
+      border-left-color: @color-tbd-23;
+    }
+  }
+
+}

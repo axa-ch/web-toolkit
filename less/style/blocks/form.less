@@ -1,0 +1,34 @@
+@import '../mixins/grid';
+@import '../mixins/respond';
+
+.form {
+}
+
+.form__group {
+  .make-row();
+
+  margin-bottom: 15px;
+
+  .respond(medium, {
+    margin-bottom: 20px;
+  });
+}
+
+.form__group__label {
+  .make-col(12);
+  .make-col(6, medium);
+  .make-col(5, large);
+
+  margin-bottom: 6px;
+}
+
+.form__group__control {
+  .make-col(12);
+  .make-col(6, medium);
+  .make-col(6, large);
+}
+
+.form__error-message {
+  margin: 5px 0 0 0;
+  color: #ff0000;
+}

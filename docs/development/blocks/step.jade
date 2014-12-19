@@ -1,0 +1,26 @@
+---
+title: Step
+slug: setp
+collection: development_blocks
+template: development.jade
+---
+
+:markdown
+  The ``step`` block is designed to be used within the
+  ``progress`` block. It represents a step within a process.
+
+  Use the ``step--start`` and ``is-active``
+  modifier/state for the first or active step respectively.
+
+
+:sample
+  .step
+    span.step__bullet 1
+
+:sample
+  .step.step--start
+    span.step__bullet 2
+
+:sample
+  .step.is-active
+    span.step__bullet 3

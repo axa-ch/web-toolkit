@@ -1,0 +1,71 @@
+@import '../variables';
+@import '../blocks/icon';
+@import '../blocks/control';
+
+@dropdown-arrow-width: 40px;
+
+.dropdown.dropdown--js {
+  &:focus {
+    outline: none;
+  }
+}
+
+.dropdown__label {
+  display: none;
+}
+
+.dropdown--js .dropdown__label {
+  .control();
+  padding-right: 15px + @dropdown-arrow-width;
+  border: @focus-border-width solid @color-gray--lighter;
+
+  .icon-after();
+  .icon-after--arrow-bottom();
+
+  &:after {
+    width: @dropdown-arrow-width;
+    line-height: 40px;
+    height: 40px;
+    border: @focus-border-width solid @color-blue-gray--light;
+    border-left-width: 0;
+    text-align: center;
+    position: absolute;
+    right: -@focus-border-width;
+    top: -@focus-border-width;
+    background: @color-blue-gray--light;
+    z-index: 101;
+    color: @color-tbd-23;
+  }
+}
+
+.dropdown--js.dropdown:focus .dropdown__label {
+  border-color: @color-tbd-23;
+}
+
+.dropdown--js.dropdown:focus .dropdown__label:after {
+  border-color: @color-tbd-23;
+}
+
+.dropdown__select {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+}
+
+// Firefox is not respecting line-height in select elements
+@-moz-document url-prefix() {
+  .dropdown__select {
+    padding-top: 10px;
+  }
+}
+
+.dropdown--js .dropdown__select {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: -40px 0 0 0;
+  border: none;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  background: @color-gray--lighter;
+}
