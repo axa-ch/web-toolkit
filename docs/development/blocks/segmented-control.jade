@@ -6,14 +6,14 @@ template: development.jade
 ---
 
 :markdown
-  The ``segmented-control--js`` modifier will add custom styling to 
+  The ``segmented-control--js`` modifier will add custom styling to
   radio buttons to look like a segmented-control.
-  Be aware that it **depends on JavaScript**. Therefore you have to 
-  include the jQuery plugin bundled with the style guide or set the 
-  ``.is-active`` state of the ``.segmented-control__item`` on your own, 
-  depending on the radio button option. See the segmented-control 
+  Be aware that it **depends on JavaScript**. Therefore you have to
+  include the jQuery plugin bundled with the style guide or set the
+  ``.is-active`` state of the ``.segmented-control__item`` on your own,
+  depending on the radio button option. See the segmented-control
   plugin docs for further information on this topic.
-  
+
 h2 Non-enhanced segmented-control (no JavaScript)
 
 :sample
@@ -24,17 +24,14 @@ h2 Non-enhanced segmented-control (no JavaScript)
     label.segmented-control__item
       input.segmented-control__radio(type='radio', name='foo')
       span.segmented-control__label Nein
-        
+
 h2 Enhanced segmented-control (JavaScript)
 
 :sample
-  .segmented-control(data-segmentedControl)
+  .segmented-control(data-segmented-control)
     label.segmented-control__item
       input.segmented-control__radio(type='radio', name='bar')
       span.segmented-control__label Ja
     label.segmented-control__item
       input.segmented-control__radio(type='radio', name='bar')
       span.segmented-control__label Nein
-        
-                
-                
