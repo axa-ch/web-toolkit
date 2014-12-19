@@ -6,7 +6,7 @@ template: design.jade
 ---
 
 # Lists
-Do use lists to [show](#) one or multiple rows of similar structured data or information. Every list-element is click/tapable as an navigational item which leads to a new page which provieds deeper information on the list element. Lists can provide additional actions (for example remove, edit, add subitem, renew contract, etc.) . Lists usually contain multiple [list-elements](#listElements) of similar structure. 
+Do use lists to [list](#) one or multiple rows of similar structured data or information. Every list-element is click/tapable as an navigational item which leads to a new page which provieds deeper information on the list element. Lists can provide additional actions (for example remove, edit, add subitem, renew contract, etc.) . Lists usually contain multiple [list-elements](#listElements) of similar structure. 
 
 **Do not** use for bigger amounts of information (see [tables](#tables)) or making a statement (see [bullet-points](#bulletPoints))
 
@@ -39,7 +39,7 @@ In contrast to the simple list, the sortable list has a heading on top of all ro
 ---
 #####Examples
  
-Finally, we shwo the elment. If this element type is available in different states, sizes, variations and positions give different examples. If possible, an graphical-meassurement overlay should be shown on request.
+Finally, we show the elment. If this element type is available in different states, sizes, variations and positions give different examples. If possible, an graphical-meassurement overlay should be shown on request.
 #####Design Principles
 
 | Principle     | Value           | Comment  |
@@ -52,12 +52,14 @@ Finally, we shwo the elment. If this element type is available in different stat
 ##Professional Filter & Sortable List
 *V0.5, depreceated*
 
-In contrast to the simple list the sortable list has a heading on top of all rows instead one for each cell. The headers are clickable to have sorting. On mobile the headers disappear and a dropdown is display to have the sorting functionality. Sortable colums need to have an identical information included (such as price).
+Professional Lists should only be used in [power-user](#poweruser) environments, which excludes customer interfaces from the scope of this element.
+
+Here we will have a detailed explanation of how this element realyl works.
 
 ---
 #####Examples
  
-Finally, we shwo the elment. If this element type is available in different states, sizes, variations and positions give different examples. If possible, an graphical-meassurement overlay should be shown on request.
+Finally, we show the elment. If this element type is available in different states, sizes, variations and positions give different examples. If possible, an graphical-meassurement overlay should be shown on request.
 #####Design Principles
 
 | Principle     | Value           | Comment  |
