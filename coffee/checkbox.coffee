@@ -31,7 +31,7 @@
     handleKeyUp: (e) =>
       if e.which == 32
         # prevent scrolling
-        e.preventDefault();
+        e.preventDefault()
 
         @$checkbox.prop 'checked', !(@$checkbox.is ':checked')
 
