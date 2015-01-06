@@ -1,0 +1,32 @@
+---
+title: Autogrow
+slug: autogrow
+collection: development_plugins
+template: development.jade
+---
+
+h3 Intro
+
+p.
+  The Autogrow plugin is used to make a textarea element grow in height as the
+  user is typing. It respects the min-height and max-height CSS properties
+  of the textarea.
+
+h3 Usage
+
+p Activate the functionality with the data-* API
+
+:sample
+  textarea.control.control--textarea(data-autogrow="autogrow")
+
+p Activate the functionality with JavaScript:
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('.control--textarea').autogrow()
+
+h4 Options
+
+p.
+  None.
