@@ -16,7 +16,6 @@ Use simple lists unless you really need a more interactive version to keep the s
 
 Elements are arranged according to the grid and always full width. Mobile devices show the information in boxes, information are splittet into rows unless needed on the same row.
 
----
 #####Examples
 
 >here we are now, examplain us 
@@ -35,7 +34,6 @@ Elements are arranged according to the grid and always full width. Mobile device
 
 In contrast to the simple list, the sortable list has a heading on top of all rows instead one for each cell. The headers are clickable and allow sorting of all list elements. On mobile the headers disappear and a dropdown is display to have the sorting functionality. Sortable colums need to have an identical information included (such as price).
 
----
 #####Examples
  
 Finally, we show the elment. If this element type is available in different states, sizes, variations and positions give different examples. If possible, an graphical-meassurement overlay should be shown on request.
@@ -55,7 +53,6 @@ Professional Lists should only be used in [power-user](#poweruser) environments,
 
 Here we will have a detailed explanation of how this element realyl works.
 
----
 #####Examples
  
 Finally, we show the elment. If this element type is available in different states, sizes, variations and positions give different examples. If possible, an graphical-meassurement overlay should be shown on request.
