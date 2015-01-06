@@ -27,7 +27,7 @@
         'word-wrap': 'break-word'
       }
 
-      @shadow.appendTo document.body;
+      @shadow.appendTo document.body
 
       @$element.on 'change keyup keydown', @, (event) ->
         event.data.update(event)
