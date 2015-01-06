@@ -9,6 +9,7 @@ Do use lists to [list](#) one or multiple rows of similar structured data or inf
 
 **Do not** use for bigger amounts of information (see [tables](#tables)) or making a statement (see [bullet-points](#bulletPoints))
 
+---
 ##Simple list
 *V1.0, beta*
 
@@ -29,6 +30,7 @@ Elements are arranged according to the grid and always full width. Mobile device
 | Line-Height   | 1.5             |          |
 | Min Width     | 200px           | if smaller, display one element less on the same line. If it's already the only element, break content into multiple rows.|
 
+---
 ##Basic Sortable List
 *V1.0, beta*
 
@@ -46,6 +48,7 @@ Finally, we show the elment. If this element type is available in different stat
 | Line-Height   | 1.5             |          |
 | Min Width     | 200px           | if smaller, display one element less on the same line. If it's already the only element, break content into multiple rows.|
 
+---
 ##Professional Filter & Sortable List
 *V0.5, depreceated*
 
