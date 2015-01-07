@@ -1,0 +1,42 @@
+@info-icon-diameter: 20px;
+@info-icon-diameter--medium: 28px;
+
+.info-icon {
+  &:extend(.clearfix all);
+}
+
+.info-icon__label {
+  display: block;
+  margin-right: @info-icon-diameter + 10px;
+
+  .respond(medium; {
+    margin-right: @info-icon-diameter--medium + 20px;
+  });
+}
+
+.info-icon__icon {
+  display: block;
+  .icon();
+  .icon--info();
+
+  float: right;
+  width: @info-icon-diameter;
+
+  color: @color-gray--darker;
+
+  .respond(medium; {
+    width: @info-icon-diameter--medium;
+  });
+
+  &:hover {
+    color: @color-gray--darker;
+  }
+
+  &::before {
+    font-size: 20px;
+
+    .respond(medium, {
+      font-size: 28px;
+    });
+  }
+}

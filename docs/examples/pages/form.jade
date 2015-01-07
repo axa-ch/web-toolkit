@@ -24,7 +24,10 @@ template: examples/master.jade
         .fieldset__content
           h2.heading.heading--fieldset Schadensobjekt
           .form__group
-            label.form__group__label Was wurde besch&auml;digt?
+            .form__group__label
+              .info-icon
+                a(href='#').info-icon__icon
+                label.info-icon__label Was wurde beschädigt?
             .form__group__control
               .checkbox-group
                 label.checkbox(data-checkbox)
@@ -39,6 +42,10 @@ template: examples/master.jade
                 label.checkbox(data-checkbox)
                   input.checkbox__checkbox(type='checkbox')
                   span.checkbox__label Personen
+          .info-text
+            .info-text__content
+              p.
+                Hallo Welt!
       .fieldset
         .fieldset__content
           h2.heading.heading--fieldset Schadensobjekt 2
