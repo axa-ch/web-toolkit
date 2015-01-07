@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/axa-ch/style-guide/issues"
   },
-  "homepage": "https://github.com/axa-ch/style-guide",
+  "homepage": "http://design.axa.ch",
   "devDependencies": {
     "autoprefixer-core": "~3.1.1",
     "connect": "^3.1.1",
