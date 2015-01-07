@@ -237,24 +237,26 @@ gulp.task('create-versions-file', function (cb) {
   });
 });
 
-gulp.task('release-package', function () {
-  return gulp.src('./dist/*')
-    .pipe(gulptar('./release-latest.tar'))
-    .pipe(gulpgzip())
-    .pipe(gulp.dest('dist/docs/'))
-  //tar.pack('./dist').pipe(fs.createWriteStream('./release-latest.tar.gz'));
-  //new targz().compress('./dist/', './release-latest.tar.gz', cb);
+gulp.task('release-package-description', function () {
+  return gulp.src('./packaging/*')
+    .pipe(gulp.dest('./dist/'));
 });
 
-// gulp.task('release-copy', function () {
-//   return gulp.src('./release-latest.tar.gz')
-//     .pipe(gulp.dest('./dist/docs/'));
-// });
+gulp.task('release-pack', function () {
+  return gulp.src('./dist/**')
+    .pipe(gulptar('./release-latest.tar'))
+    .pipe(gulpgzip())
+    .pipe(gulp.dest('./dist/docs/'));
+});
+
+gulp.task('release', function(cb) {
+  runSequence('release-package-description', 'release-pack', cb);
+});
 
 gulp.task('build', function (cb) {
   runSequence(
     'icons', 'images', 'styles', 'scripts', 'create-versions-file', 'docs',
-    'release-package', cb);
+    'release', cb);
 });
 
 gulp.task('serve', function (next) {
