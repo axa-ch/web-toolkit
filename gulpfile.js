@@ -23,6 +23,7 @@ var uglify = require('gulp-uglify');
 var coffeelint = require('gulp-coffeelint');
 var gulptar = require('gulp-tar');
 var gulpgzip = require('gulp-gzip');
+var npm = require('npm');
 
 var readJSONFile = require('./lib/readJSONFile');
 var writeJSONFile = require('./lib/writeJSONFile');
@@ -242,15 +243,31 @@ gulp.task('release-package-description', function () {
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('release-pack', function () {
+gulp.task('release-tarball', function () {
   return gulp.src('./dist/**')
     .pipe(gulptar('./release-latest.tar'))
     .pipe(gulpgzip())
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('release-npm', function (cb) {
+  npm.load({}, function ()
+  {
+    npm.commands.pack(['./dist'], cb);
+  });
+});
+
+gulp.task('release-copy', function () {
+  gulp.src(['./release-latest.tar.gz', './style-guide-0.0.0.tgz'])
     .pipe(gulp.dest('./dist/docs/'));
 });
 
+gulp.task('release-clean', function (cb) {
+  del(['./release-latest.tar.gz', './style-guide-0.0.0.tgz'], cb);
+});
+
 gulp.task('release', function(cb) {
-  runSequence('release-package-description', 'release-pack', cb);
+  runSequence('release-package-description', 'release-tarball', 'release-npm', 'release-copy', /*'release-clean',*/ cb);
 });
 
 gulp.task('build', function (cb) {
