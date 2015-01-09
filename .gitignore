@@ -18,4 +18,3 @@ style-guide-*.tgz
 .travis/deploy_key
 .travis/deploy_key.pub
 out/
-release-latest.tar
