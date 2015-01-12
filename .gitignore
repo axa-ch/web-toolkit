@@ -11,8 +11,6 @@ src/bower_components
 # project
 build/
 dist/
-release-latest.tar.gz
-style-guide-*.tgz
 
 # deployment
 .travis/deploy_key
