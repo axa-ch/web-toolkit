@@ -7,6 +7,7 @@
   display: block;
   margin-bottom: 15px;
   cursor: pointer;
+  &:extend(.clearfix all);
 
   &:last-of-type {
     margin-bottom: 0;
@@ -14,20 +15,37 @@
 }
 
 .checkbox__checkbox {
-  margin-right: 10px;
   vertical-align: middle;
+  float: left;
+  margin: 2px 0 0 0;
 
   .checkbox--js & {
     &:extend(.invisible-input all);
   }
 }
 
+.checkbox__label {
+  margin-left: 18px;
+}
+
 .checkbox.checkbox--js.is-active .checkbox__label {
   .icon();
   .icon--checkmark();
 }
+.checkbox.checkbox--js .checkbox__label__text {
+  margin-left: 38px;
+  padding-top: 5px;
+  line-height: 1.5; // TODO: use more global definition
+
+  .respond(medium, {
+    margin-left: 33px;
+    padding-top: 2px;
+  });
+}
 
 .checkbox.checkbox--js .checkbox__label {
+  margin-left: 0;
+
   .respond(medium, {
     font-size: 15px;
   });
@@ -45,6 +63,8 @@
     padding: 0;
     font-size: 20px !important;
     line-height: 28px !important;
+    float: left;
+    color: @color-blue;
 
     .respond(medium, {
       width: 25px;
