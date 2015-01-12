@@ -262,12 +262,13 @@ gulp.task('release-copy', function () {
     .pipe(gulp.dest('./dist/docs/'));
 });
 
-gulp.task('release-clean', function (cb) {
-  del(['style-guide-0.0.0.tgz', 'release-latest.tar.gz'], cb);
+gulp.task('release-clean', ['release-copy'], function () {
+  del(['style-guide-0.0.0.tgz', 'release-latest.tar.gz']);
 });
 
 gulp.task('release', function(cb) {
-  runSequence('release-package-description', 'release-tarball', 'release-npm', 'release-copy', 'release-clean', cb);
+  runSequence('release-package-description', 'release-tarball', 'release-npm',
+    'release-copy', 'release-clean', cb);
 });
 
 gulp.task('build', function (cb) {
