@@ -258,16 +258,16 @@ gulp.task('release-npm', function (cb) {
 });
 
 gulp.task('release-copy', function () {
-  gulp.src(['./release-latest.tar.gz', './style-guide-0.0.0.tgz'])
+  return gulp.src(['./style-guide-0.0.0.tgz', './release-latest.tar.gz'])
     .pipe(gulp.dest('./dist/docs/'));
 });
 
 gulp.task('release-clean', function (cb) {
-  del(['./release-latest.tar.gz', './style-guide-0.0.0.tgz'], cb);
+  del(['style-guide-0.0.0.tgz', 'release-latest.tar.gz'], cb);
 });
 
 gulp.task('release', function(cb) {
-  runSequence('release-package-description', 'release-tarball', 'release-npm', 'release-copy', /*'release-clean',*/ cb);
+  runSequence('release-package-description', 'release-tarball', 'release-npm', 'release-copy', 'release-clean', cb);
 });
 
 gulp.task('build', function (cb) {
