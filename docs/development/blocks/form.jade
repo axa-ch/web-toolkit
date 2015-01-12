@@ -7,9 +7,9 @@ template: development.jade
 
 :markdown
   The ``form`` block provides structural elements for a form.
-  
+
   Use them as follows:
-  
+
   - ``.form``
     - ``.form__group``
       - ``.form__group__label``
@@ -28,3 +28,12 @@ template: development.jade
         label.form__group__label bar
         .form__group__control
           input.control.control--input(type='text')
+      .form__group
+        .form__group__control.form__group__control--fullwidth
+          label.checkbox(data-checkbox)
+            input.checkbox__checkbox(type='checkbox')
+            .checkbox__label
+              .checkbox__label__text
+                span Lorem ipsum dolor sit amet consetetur elitr,
+                a  Nutzungsbedingungen
+                span nonumy eirmod tempor invidunt.
