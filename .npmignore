@@ -8,3 +8,5 @@ tasks/
 gulpfile.js
 coffeelint.json
 shippable.yml
+tmp/
+dist/bower.json

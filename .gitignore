@@ -11,6 +11,7 @@ src/bower_components
 # project
 build/
 dist/
+tmp/
 
 # deployment
 .travis/deploy_key
