@@ -32,9 +32,13 @@ p
 h1 Let's get started!
 p
   | There are two easy ways to get started.
-  | Each of them requires you to
+  | Both require you to
   = ' '
-  a(href=relative('/release-latest.tar.gz'), title="Latest Release Package") download the latest release package
+  a(href=relative('/downloads/axa-web-design-guide-dist-'+package.version+'.tar.gz'), title="Latest Release Package") download the latest release package
+  = ' '
+  | which is suitable for manual use or installation through bower or reference the
+  = ' '
+  a(href=relative('/downloads/axa-web-design-guide-'+package.version+'.tgz'), title="npm package") npm package
   = ' '
   | first.
 p.

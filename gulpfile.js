@@ -23,6 +23,8 @@ var uglify = require('gulp-uglify');
 var coffeelint = require('gulp-coffeelint');
 var gulptar = require('gulp-tar');
 var gulpgzip = require('gulp-gzip');
+var generateBowerJson = require('gulp-generate-bower-json');
+var npm = require('npm');
 
 var readJSONFile = require('./lib/readJSONFile');
 var writeJSONFile = require('./lib/writeJSONFile');
@@ -72,7 +74,7 @@ gulp.task('icons', function (cb) {
       var contents = new Buffer(JSON.stringify(glyphs, null, 2));
 
       file('icons.json', contents)
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./tmp'))
         .on('end', end);
     })
     .pipe(gulp.dest('./dist/fonts'))
@@ -123,11 +125,11 @@ gulp.task('styles-generate', function () {
     .pipe(gulp.dest('./dist/less/'));
 });
 
-gulp.task('styles-copy-colors', function () {
+/*gulp.task('styles-copy-colors', function () {
   return gulp.src('./less/colors.json')
     .pipe(rename('./colors.json'))
-    .pipe(gulp.dest('./dist/'));
-});
+    .pipe(gulp.dest('./tmp/'));
+});*/
 
 gulp.task('styles-autoprefix', function() {
   return gulp.src(['./dist/css/*.css'])
@@ -160,7 +162,7 @@ gulp.task('styles-compress', function() {
 gulp.task('styles', function (cb) {
   runSequence(
     'styles-copy', 'styles-icons', 'styles-generate',
-    'styles-copy-colors', 'styles-compile', 'styles-autoprefix',
+    'styles-compile', 'styles-autoprefix',
     'styles-pseudoelements', 'styles-compress', cb);
 });
 
@@ -217,7 +219,7 @@ gulp.task('create-versions-file', function (cb) {
   },
   end = after(2, function (err) {
 
-    writeJSONFile('./dist/version.json', data);
+    writeJSONFile('./tmp/version.json', data);
 
     cb(err);
   }, function (err) {
@@ -237,24 +239,44 @@ gulp.task('create-versions-file', function (cb) {
   });
 });
 
-gulp.task('release-package', function () {
-  return gulp.src('./dist/*')
-    .pipe(gulptar('./release-latest.tar'))
+gulp.task('release-dist-generate-bower-json', function() {
+  return gulp.src('./package.json')
+    .pipe(generateBowerJson())
+    .pipe(gulp.dest('./dist'));
+})
+
+gulp.task('release-dist', ['release-dist-generate-bower-json'], function () {
+  packageJson = readJSONFile('./package.json');
+
+  return gulp.src(['./dist/**', './README.*', 'LICENSE.*', '!./dist/docs/downloads/**/*'])
+    .pipe(gulptar('./axa-web-design-guide-dist-'+packageJson.version+'.tar'))
     .pipe(gulpgzip())
-    .pipe(gulp.dest('dist/docs/'))
-  //tar.pack('./dist').pipe(fs.createWriteStream('./release-latest.tar.gz'));
-  //new targz().compress('./dist/', './release-latest.tar.gz', cb);
+    .pipe(gulp.dest('./dist/docs/downloads/'));
 });
 
-// gulp.task('release-copy', function () {
-//   return gulp.src('./release-latest.tar.gz')
-//     .pipe(gulp.dest('./dist/docs/'));
-// });
+gulp.task('release-npm-pack', function (cb) {
+  npm.load({}, function ()
+  {
+    npm.commands.pack(['./'], cb);
+  });
+});
+
+gulp.task('release-npm-copy', ['release-npm-pack'], function () {
+  return gulp.src(['./axa-web-design-guide-*.tgz'])
+    .pipe(gulp.dest('./dist/docs/downloads/'));
+});
+
+gulp.task('release-npm', ['release-npm-copy'], function () {
+  del(['axa-web-design-guide-*.tgz']);
+});
+
+gulp.task('release', function(cb) {
+  runSequence('release-npm', 'release-dist', cb);
+});
 
 gulp.task('build', function (cb) {
   runSequence(
-    'icons', 'images', 'styles', 'scripts', 'create-versions-file', 'docs',
-    'release-package', cb);
+    'icons', 'images', 'styles', 'scripts', 'create-versions-file', 'docs', cb);
 });
 
 gulp.task('serve', function (next) {
@@ -320,7 +342,7 @@ gulp.task('deploy-push', function (cb) {
 
 gulp.task('deploy', function (cb) {
   runSequence(
-    'deploy-clean', 'deploy-copy', 'deploy-init',
+    'release', 'deploy-clean', 'deploy-copy', 'deploy-init',
     'deploy-config', 'deploy-add', 'deploy-commit', 'deploy-push', cb);
 });
 

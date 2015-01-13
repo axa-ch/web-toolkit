@@ -50,9 +50,10 @@ module.exports = exports = function (options) {
 
     // add metadata
     metalsmith.use(define({
-      icons: readJSONFile(path.join(options.cwd, 'dist/icons.json')),
-      colors: readJSONFile(path.join(options.cwd, 'dist/colors.json')),
-      version: readJSONFile(path.join(options.cwd, 'dist/version.json')),
+      icons: readJSONFile(path.join(options.cwd, 'tmp/icons.json')),
+      colors: readJSONFile(path.join(options.cwd, 'less/colors.json')),
+      version: readJSONFile(path.join(options.cwd, 'tmp/version.json')),
+      package: readJSONFile(path.join(options.cwd, 'package.json')),
       config: config
     }));
 
