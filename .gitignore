@@ -17,3 +17,4 @@ release-latest.tar.gz
 .travis/deploy_key
 .travis/deploy_key.pub
 out/
+npm-debug.log
