@@ -1,0 +1,203 @@
+---
+title: Form summary
+description: An example of a form summary.
+thumbnail: form-summary.png
+collection: examples
+filename: form-summary.html
+template: examples/master.jade
+---
+
+.l-container
+  h1.heading.heading--page Motorfahrzeugschaden
+.progress-container
+  .l-container.progress-container__progress.progress
+    ul.progress__flow
+      li.progress__step.step.step--start.is-active
+        span.step__bullet 1
+      li.progress__step.step.is-active
+        span.step__bullet 2
+      li.progress__step.step
+        span.step__bullet 3
+      li.progress__step.step
+        span.step__bullet 4
+      li.progress__step.step
+        span.step__bullet 5
+      li.progress__step.step.step--end
+        span.step__bullet 6
+  .progress-container__label Zusammenfassung
+.l-container
+  .fieldset
+    .fieldset__content
+      h2.heading.heading--fieldset 1. Beschreibung des Schadens
+
+      h3.heading.heading--summary Schadenobjekt
+
+      .form__group.form__group--condensed
+        label.form__group__label Was wurde beschädigt?
+        .form__group__control
+          ul.ul
+            li.ul__li Fahrzeug des Versicherungsnehmers
+            li.ul__li Fahrzeug einer anderen Partei
+
+      h3.heading.heading--summary Schadenart
+
+      .form__group.form__group--condensed
+        label.form__group__label Datum
+        .form__group__control 19.07.2014
+
+      .form__group.form__group--condensed
+        label.form__group__label Strasse und Hausnummer
+        .form__group__control Mutschellenstrasse 167
+
+      .form__group.form__group--condensed
+        label.form__group__label PLZ, Ort
+        .form__group__control 8037 Zürich
+
+      h3.heading.heading--summary Schaden
+
+      .form__group.form__group--condensed
+        label.form__group__label Wie ist der Schaden entstanden?
+        .form__group__control.
+            Ich bin ein kleiner Blindtext. Und zwar schon so lange
+            ich denken kann. Es war nicht leicht zu verstehen, was
+            es bedeutet, ein blinder Text zu sein. Man macht keinen
+            Sinn. Man wird zusammenhangslos eingeschoben und oftmals
+            gar nicht erst gelesen. Aber bin ich allein deshalb ein
+            schlechter Text?
+      .form__group.form__group--condensed
+        label.form__group__label Wurde der Schaden der Polizei gemeldet?
+        .form__group__control Ja
+      .form__group.form__group--condensed
+        label.form__group__label Wurde das europäische Unfallprotokoll ausgefüllt?
+        .form__group__control Nein
+      .form__group.form__group--condensed
+        label.form__group__label Ist der Versicherungsnehmer aus Ihrer Sicht Schuld am Schaden?
+        .form__group__control Vielleicht
+
+    .fieldset__button
+      a(href='#').fieldset__button__button.button.button--small.button--secondary Ändern
+
+  .fieldset
+    .fieldset__content
+      h2.heading.heading--fieldset 2. Fahrzeuginformationen
+
+      h3.heading.heading--summary Fahrzeug des Versicherungsnehmers
+
+      .form__group.form__group--condensed
+        label.form__group__label Marke
+        .form__group__control VW
+
+      .form__group.form__group--condensed
+        label.form__group__label Typ
+        .form__group__control Golf V
+
+      .form__group.form__group--condensed
+        label.form__group__label Kontrollschild
+        .form__group__control ZH 678 945
+
+      .form__group.form__group--condensed
+        label.form__group__label Was wurde beschädigt?
+        .form__group__control Hinterer linker Kotflügel
+
+      .form__group.form__group--condensed
+        label.form__group__label Wie hoch ist der geschätzt Schaden?
+        .form__group__control CHF 3'000
+
+      .form__group.form__group--condensed
+        label.form__group__label Wünschen Sie, dass die AXA die Reparatur organisiert?
+        .form__group__control Ja
+
+    .fieldset__button
+      a(href='#').fieldset__button__button.button.button--small.button--secondary Ändern
+
+
+  .fieldset
+    .fieldset__content
+      h2.heading.heading--fieldset 3. Personenangaben
+
+      .form__group.form__group--condensed
+        label.form__group__label Sie sind
+        .form__group__control Versicherungsnehmer
+
+      h3.heading.heading--summary Informationen des Versicherungsnehmers
+
+      .form__group.form__group--condensed
+        label.form__group__label Anrede
+        .form__group__control Herr
+
+      .form__group.form__group--condensed
+        label.form__group__label Vorname
+        .form__group__control Hubert
+
+      .form__group.form__group--condensed
+        label.form__group__label Nachname
+        .form__group__control Murschenhoer
+
+      .form__group.form__group--condensed
+        label.form__group__label Telefonnummer
+        .form__group__control 052 444 44 45
+
+      .form__group.form__group--condensed
+        label.form__group__label eMail-Adresse
+        .form__group__control hubert.murschenhofer@gmx.net
+
+      h3.heading.heading--summary Versicherungsinformation
+
+      .form__group.form__group--condensed
+        label.form__group__label Policennummer
+        .form__group__control 12.345.678
+
+      h3.heading.heading--summary Adresse des versicherungsnehmers
+
+      .form__group.form__group--condensed
+        label.form__group__label Strasse und Hausnummer
+        .form__group__control Mutschellenstrasse 167
+
+      .form__group.form__group--condensed
+        label.form__group__label Postfach
+        .form__group__control
+
+      .form__group.form__group--condensed
+        label.form__group__label PLZ, Ort
+        .form__group__control 8037 Zürich
+
+      .form__group.form__group--condensed
+        label.form__group__label Land
+        .form__group__control Schweiz
+
+      h3.heading.heading--summary Fahrzeuglenker
+
+      .form__group.form__group--condensed
+        label.form__group__label Wer war der Fahrzeuglenker?
+        .form__group__control Versicherungsnehmer
+
+    .fieldset__button
+      a(href='#').fieldset__button__button.button.button--small.button--secondary Ändern
+
+
+  .fieldset
+    .fieldset__content
+      h2.heading.heading--fieldset 4. Zusatzinformationen
+
+      .form__group.form__group--condensed
+        label.form__group__label Mitteilung
+        .form__group__control.
+            Ich bin ein kleiner Blindtext. Und zwar schon so lange
+            ich denken kann. Es war nicht leicht zu verstehen, was
+            es bedeutet, ein blinder Text zu sein. Man macht keinen
+            Sinn. Man wird zusammenhangslos eingeschoben und oftmals
+            gar nicht erst gelesen. Aber bin ich allein deshalb ein
+            schlechter Text?
+
+      .form__group.form__group--condensed
+        label.form__group__label Fotos, Berichte oder andere Belege
+        .form__group__control Kotflügel_1.jpg
+
+    .fieldset__button
+      a(href='#').fieldset__button__button.button.button--small.button--secondary Ändern
+
+
+.l-container
+  .button-row
+    a.button-row__button.button-row__button--right.button.button--primary Absenden
+    a.button-row__button.button.button--secondary Zurück

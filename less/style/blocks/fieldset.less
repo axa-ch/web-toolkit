@@ -4,21 +4,28 @@
 
 .fieldset {
   .make-gutter-as-padding();
-  padding-bottom: 15px;
-  margin-bottom: 50px;
+  padding-bottom: 0;
+  margin-bottom: 40px;
   border-bottom: 1px dotted @color-blue;
 
-  .respond(medium, {
-    padding-bottom: 10px;
-  });
-
   &:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 }
 
 .fieldset__content {
   margin-top: 40px;
+  padding-bottom: 15px;
+
+  .respond(medium, {
+    padding-bottom: 10px;
+  });
+}
+
+.fieldset__button {
+  &:extend(.clearfix all);
+}
+
+.fieldset__button__button {
+  float: right;
 }
