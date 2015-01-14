@@ -8,9 +8,11 @@
 @button-icon-pad: 8px;
 @button-icon-size: 16px;
 @button-font-size: 16px;
+@button-font-size--medium: 18px;
 
-@button-sm-height: 40px;
-@button-sm-pad-lr: 25px;
+@button-sm-height: 25px;
+@button-sm-height--medium: 30px;
+@button-sm-pad-lr: 10px;
 @button-sm-icon-pad: 5px;
 @button-sm-icon-size: 14px;
 @button-sm-font-size: 14px;
@@ -31,6 +33,14 @@
   // TODO: franklin gothic medium
   font-weight: normal;
 
+  .make-button-size(
+    @height: @button-height;
+    @pad-lr: @button-pad-lr;
+    @icon-pad: @button-icon-pad;
+    @icon-size: @button-icon-size;
+    @font-size: @button-font-size;
+  );
+
   .respond(medium; {
 
     // TODO: franklin gothic medium
@@ -41,17 +51,9 @@
       @pad-lr: @button-pad-lr--medium;
       @icon-pad: @button-icon-pad;
       @icon-size: @button-icon-size;
-      @font-size: 18px;
+      @font-size: @button-font-size--medium;
     );
   });
-
-  .make-button-size(
-    @height: @button-height;
-    @pad-lr: @button-pad-lr;
-    @icon-pad: @button-icon-pad;
-    @icon-size: @button-icon-size;
-    @font-size: @button-font-size;
-  );
 
   .make-button-color(
     @bg-color: @button-primary-bg;
@@ -68,6 +70,20 @@
     @icon-size: @button-sm-icon-size;
     @font-size: @button-sm-font-size;
   );
+
+  .respond(medium; {
+
+    // TODO: franklin gothic medium
+    font-weight: bold;
+
+    .make-button-size(
+      @height: @button-sm-height--medium;
+      @pad-lr: @button-sm-pad-lr;
+      @icon-pad: @button-sm-icon-pad;
+      @icon-size: @button-sm-icon-size;
+      @font-size: @button-sm-font-size;
+    );
+  });
 }
 
 .button--secondary {
