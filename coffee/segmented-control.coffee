@@ -33,6 +33,16 @@
 
       @$element.on 'keydown', @handleKeyDown
 
+      @stackControlsIfNeeded()
+
+      $('window').on 'resize', @stackControlsIfNeeded
+
+    stackControlsIfNeeded: () ->
+      @$element.removeClass 'segmented-control--stacked'
+
+      if @$element.outerWidth() >= @$element.parent().innerWidth()
+        @$element.addClass 'segmented-control--stacked'
+
     # Spacewar will activate first item if none is active
     handleKeyUp: (e) =>
       if e.which == 32
