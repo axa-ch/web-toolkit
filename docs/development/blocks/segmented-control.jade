@@ -35,3 +35,25 @@ h2 Enhanced segmented-control (JavaScript)
     label.segmented-control__item
       input.segmented-control__radio(type='radio', name='bar')
       span.segmented-control__label Nein
+
+:markdown
+  Add the ``segmented-control--stacked`` modifier to stack segmented
+  controls when there's not enough space.
+
+  The jQuery Plugin will do that automatically for you.
+
+:sample
+  div(style='max-width: 250px;')
+    .segmented-control(data-segmented-control)
+      label.segmented-control__item
+        input.segmented-control__radio(type='radio', name='bar')
+        span.segmented-control__label Foo bar
+      label.segmented-control__item
+        input.segmented-control__radio(type='radio', name='bar')
+        span.segmented-control__label long text
+      label.segmented-control__item
+        input.segmented-control__radio(type='radio', name='bar')
+        span.segmented-control__label and some
+      label.segmented-control__item
+        input.segmented-control__radio(type='radio', name='bar')
+        span.segmented-control__label moar controls

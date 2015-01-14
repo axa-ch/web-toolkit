@@ -15,9 +15,43 @@
 
 .segmented-control--js {
 
+  &.segmented-control--stacked {
+    .segmented-control__item {
+      display: block;
+      width: 100%;
+      margin-bottom: -1px;
+      border-right-width: 1px;
+
+      &.is-active {
+        border-top-color: @color-light-blue !important;
+      }
+
+      &.is-active + .segmented-control__item {
+        border-left-color: @color-gray;
+        border-top-color: @color-light-blue !important;
+      }
+    }
+
+    &.segmented-control:focus .segmented-control__item {
+      border-top-color: @color-gray !important;
+      border-bottom-color: @color-gray !important;
+      border-right-color: @color-light-blue;
+      border-left-color: @color-light-blue;
+
+      &:first-of-type {
+        border-top-color: @color-light-blue !important;
+      }
+
+      &:last-of-type {
+        border-bottom-color: @color-light-blue !important;
+      }
+    }
+  }
+
   &.segmented-control {
     margin-top: 0; // reset inheritance of .checkbox-group
     max-width: 100%;
+    white-space: nowrap;
 
     &:focus {
       outline: none;
@@ -79,6 +113,7 @@
       border-top-color: @color-light-blue;
       border-bottom-color: @color-light-blue;
       border-left-color: @color-light-blue;
+      border-right-color: @color-light-blue;
       color: white;
     }
 
