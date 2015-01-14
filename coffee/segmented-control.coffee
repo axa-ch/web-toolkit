@@ -40,8 +40,6 @@
     stackControlsIfNeeded: () ->
       @$element.removeClass 'segmented-control--stacked'
 
-      console.log @$element.outerWidth(), @$element.parent().innerWidth()
-
       if @$element.outerWidth() >= @$element.parent().innerWidth()
         @$element.addClass 'segmented-control--stacked'
 
