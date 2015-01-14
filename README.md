@@ -44,7 +44,7 @@ $ gulp dev
 
 ## Feedback
 
-We love feedback! File an issue and we'll reach out to you. 
+We love feedback! File an issue and we'll reach out to you.
 
 ## Contributing
 
@@ -77,4 +77,4 @@ Check the collaborators list for the people behind it.
 
 ## License
 
-Copyright 2014 AXA Versicherungen AG. All rights reserved.
+Copyright 2015 AXA Versicherungen AG. All rights reserved.
