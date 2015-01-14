@@ -1,0 +1,79 @@
+---
+title: Slide
+slug: slide
+collection: development_plugins
+template: development.jade
+status: experimental
+---
+
+h3 Intro
+
+p.
+  The ``slide`` plugin is used to toggle whether an element is displayed or not.
+  When toggled, the element slides in or out.
+
+p.
+  Combine it with the ``info-icon`` and the ``info-text`` blocks to display
+  information non-intrusivevely.
+
+h3 Example
+
+:sample
+  .l-container
+    .form
+      .form__group
+        .form__group__label
+          .info-icon(data-slide, data-target='#target')
+            a.info-icon__icon
+            label.info-icon__label Was wurde beschädigt?
+        .form__group__control
+          input.control.control--input(type='text')
+      .info-text(id='target', style='display:none;')
+        .info-text__content
+          p.
+            Hallo Welt!
+
+h3 Usage
+
+p Activate the functionality with the data-* API
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      <div data-slide="data-slide" data-target="#target" ...>...</div>
+      <div id="target" ...>...</div>
+
+p Activate the functionality with Javascript
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      <div id="trigger" ...>...</div>
+      <div id="target" ...>...</div>
+
+      <script>
+        $('#trigger').slide({target: '#target'})
+      </script>
+
+
+
+h4 Options
+
+table.table
+  thead
+    tr.table__header
+      th.table__header__item Name
+      th.table__header__item Type
+      th.table__header__item Default
+      th.table__header__item Description
+  tbody.table__content
+    tr.table__item
+      td.table__item__info
+        code.table__item__info__content target
+      td.table__item__info
+        code.table__item__info__content string
+      td.table__item__info
+        code.table__item__info__content false
+      td.table__item__info
+        p.table__item__info__content.
+          jQuery selector to configure which elements should be toggled.
