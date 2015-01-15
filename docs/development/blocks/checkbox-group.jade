@@ -8,12 +8,14 @@ template: development.jade
 :markdown
   The ``checkbox-group`` is used to wrap multiple
   ``checkbox`` blocks and position them in a form.
-  
+
 :sample
   .checkbox-group
     label.checkbox(data-checkbox)
       input.checkbox__checkbox(type='checkbox')
-      span.checkbox__label Foo
+      span.checkbox__label
+        .checkbox__label__text Foo
     label.checkbox(data-checkbox)
       input.checkbox__checkbox(type='checkbox')
-      span.checkbox__label Bar
+      span.checkbox__label
+        .checkbox__label__text Bar
