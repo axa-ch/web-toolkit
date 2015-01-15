@@ -5,6 +5,16 @@
   font-weight: normal;
 }
 
+.heading--modal {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+
+  .respond(medium, {
+    .heading--page();
+  });
+}
+
 .heading--page {
   .make-gutter-as-padding();
   display: block;
