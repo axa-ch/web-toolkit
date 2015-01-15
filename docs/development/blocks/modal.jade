@@ -7,19 +7,16 @@ status: experimental
 ---
 
 :markdown
-  Foobar
-
-script.
-  $(document).ready(function() { $('body').css({'overflow': 'hidden'}); });
+  TODO
 
 :sample
-  .button(data-modal='#myModal') Toggle modal
+  .button(href='#', data-modal='#myModal') Toggle modal
 
   .modal#myModal
     .modal__backdrop
     .modal__dialog
       .modal__header
-        a(href='#').modal__close
+        a(href='#', data-modal='#myModal').modal__close
         .modal__heading
           .heading.heading--modal Datenschutzbestimmungen
       .modal__wrapper
@@ -89,4 +86,4 @@ script.
         .modal__footer__wrapper
           .modal__buttons
             a(href='#').modal__buttons__button.button.button--small.button--secondary Drucken
-            a(href='#').modal__buttons__button.button.button--small.button--secondary Schliessen
+            a(href='#', data-modal='#myModal').modal__buttons__button.button.button--small.button--secondary Schliessen
