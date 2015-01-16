@@ -1,0 +1,153 @@
+@import '../variables';
+@import './icon';
+
+// TODO: Instead of viewport we should consider usage of a --js which will be added when js is available and it is a non-touch device
+
+.example {
+  overflow: visible !important;
+}
+
+.datepicker {
+  .respond(medium; {
+    &:extend(.clearfix all);
+    max-width: 200px;
+  });
+}
+
+.datepicker__input {
+  .respond(medium; {
+    margin-right: 44px;
+  });
+}
+
+.datepicker__trigger {
+  display: none;
+
+  .respond(medium; {
+    .icon();
+    .icon--calendar();
+    display: block;
+    width: 44px;
+    float: right;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    padding: 0 14px;
+    color: @color-light-blue;
+    font-size: 22px;
+  });
+}
+
+.picker {
+  display: none;
+  position: absolute;
+  margin-top: 6px;
+  z-index: 9999;
+  width: 260px;
+  border-collapse: collapse;
+
+  background: @color-gray--dark;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.picker__header {
+  color: white;
+  padding: 10px 10px 0 10px;
+}
+
+.picker__headline {
+  margin: 0 30px;
+  line-height: 31px;
+  font-size: 1.1428em;
+  text-align: center;
+}
+
+.picker__headline__month {
+  font-weight: bold;
+  display: inline;
+}
+
+.picker__prev,
+.picker__next {
+  display: block;
+  cursor: pointer;
+  width: 30px;
+  line-height: 31px;
+  text-align: center;
+  color: white;
+
+  &:hover {
+    color: @color-gray--light;
+  }
+}
+
+.picker__prev {
+  float: left;
+  .icon();
+  .icon--arrow-left();
+}
+
+.picker__next {
+  float: right;
+  .icon();
+  .icon--arrow-right();
+}
+
+.picker__content {
+  padding: 10px 17px 18px 17px;
+}
+
+.picker__month {
+  display: table;
+  width: 100%;
+}
+
+.picker__week {
+  display: table-row;
+}
+
+.picker__day {
+  display: table-cell;
+  height: 32px;
+  width: 31px;
+  padding: 0;
+  border: 3px solid @color-gray--dark;
+  text-align: center;
+  background: white;
+  color: @color-light-blue;
+  vertical-align: middle;
+
+  &.picker__day--today {
+    background: @color-gray--light;
+  }
+
+  &.picker__day--empty {
+    background: transparent;
+
+    &:hover {
+      cursor: normal;
+      background: transparent;
+    }
+  }
+
+  &.picker__day--headline {
+    background: transparent;
+    color: white;
+    font-size: 0.9285em;
+
+    &:hover {
+      cursor: normal;
+      background: transparent;
+    }
+  }
+
+  &:hover,
+  &.is-active {
+    background: @color-light-blue;
+    color: white;
+    cursor: pointer;
+  }
+}
