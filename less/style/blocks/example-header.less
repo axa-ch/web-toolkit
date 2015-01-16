@@ -1,0 +1,28 @@
+@import '../variables.less';
+
+.example-header {
+  background: @color-blue;
+  line-height: 70px;
+}
+
+.example-header__back {
+  float: left;
+  color: white;
+  font-size: 12px;
+  padding-left: 20px;
+  .icon();
+  .icon--arrow-left();
+
+  &:before {
+    font-size: 28px;
+    vertical-align: middle;
+    margin-top: -2px;
+    padding-right: 10px;
+  }
+}
+
+.example-header__headline {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}

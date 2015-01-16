@@ -9,7 +9,7 @@ template: development.jade
 
 div.callout
   h4.callout__heading Feedback appreciated!
-  p
+  p.paragraph
     | With the Developer Toolkit we want to help you building
     | awesome responsive web sites and apps with ease.
     | If you struggle using the assets, miss a component
@@ -20,8 +20,8 @@ div.callout
     a(href='#', data-uv-trigger, data-uv-mode="contact")  use the feedback form
     | .
 
-h1 What comes with the Developer Toolkit?
-p
+h1 What is the developer toolkit?
+p.paragraph
   | The Developer Toolkit is a library of HTML, CSS, JavaScript and other
   | resources you can include in your products.
   | It provides you components to help you create awesome features.
@@ -30,82 +30,152 @@ p
   | .
 
 h1 Let's get started!
-p
-  | There are two easy ways to get started.
-  | Both require you to
-  = ' '
-  a(href=relative('/downloads/axa-web-design-guide-dist-'+package.version+'.tar.gz'), title="Latest Release Package") download the latest release package
-  = ' '
-  | which is suitable for manual use or installation through bower or reference the
-  = ' '
-  a(href=relative('/downloads/axa-web-design-guide-'+package.version+'.tgz'), title="npm package") npm package
-  = ' '
-  | first.
-p.
-  You can use the compiled CSS and JavaScript or you can use
-  the source Less and CoffeScript.
-  We recommend using the source files since it provides
-  you much more flexibility.
+
+h2 Getting the web design guide
+
+h4 Good old direct download
+
+p.paragraph
+  | You can
+  a(href=relative('/downloads/axa-web-design-guide-dist-'+package.version+'.tar.gz'), title="Latest Release Package")  download the latest release package here.
+
+h4 Use npm (recommended)
+
+p.paragraph.
+  Since we use npm for the web design guide we recommend
+  the use of npm in your project as well. You'll get the
+  web design guide with a simple npm install as follows.
+
+.highlight
+  pre.highlight__listing
+    code npm install –-save-dev http://design.axa.ch/downloads/axa-web-design-guide-#{package.version}.tgz
+
+h4 Use bower
+
+p.paragraph.
+  If you want to use the web design guide install it using a simple bower install.
+
+.highlight
+  pre.highlight__listing
+    code bower install –-save http://design.axa.ch/downloads/axa-web-design-guide-dist-#{package.version}.tar.gz
+
+h2 What's included
+
+p.paragraph.
+  The web design guide is delivered in two diffrent flavours.
+  The npm package and the dist package (raw download and bower).
+  Compare the structures below.
+
+  They both contain the following assets (and some other stuff
+  not descirbed here).
+
+dl
+  dt less
+  dd.
+    Less files you can include in your project.
+    You can either include single blocks/mixins or use the aggregate
+    style.less which includes all blocks. Additionally you should
+    also include the normalize.less to get rid of browser specific
+    stylings.
+
+  dt js
+  dd.
+    Compiled (CoffeeScript) and optionally minified jQuery plugins.
+    You can include each plugin individually or include the
+    style.all(.min).js to include them all.
+
+  dt images
+  dd.
+    Contains all image assets used by the web design guide.
+
+  dt fonts
+  dd.
+    Here you'll find the icon font used within the web design guide
+    in various formats.
+
+  dt docs
+  dd A copy of the docs you're currently reading.
+
+  dt css
+  dd.
+    The precompiled css assets for the style.less and normalize.less.
+    We recommend using the Less assets to maintain configurability
+    (see customization section below).
 
 .l-row
   .l-half
-    h2 Using the compiled CSS and JavaScript
-    p.
-      Copy the <code>css/</code>, <code>js/</code>,
-      <code>images/</code> and <code>fonts/</code> folder
-      from the downloaded Developer Toolkit release
-      to your project and use it as you like.
-      See the <a href="#basic-template">Basic template</a> section
-      for further information.
-    .callout
-      h4.callout__heading Don't break the paths!
-      p.
-        Note that the resources must be available from the web
-        in the same hierarchy as provided by the Developer Toolkit
-        when using precompiled assets.
-        For example the <code>images/</code> folder has to be
-        in the same location as the <code>css/</code> folder
-        since images are referenced in the CSS
-        with a relative path (<code>../images/</code>).
+    h4 npm package
+    .highlight
+      pre.highlight__listing
+        code.
+          axa-web-design-guide/
+          ├── dist/
+          │   ├── less/
+          │   ├── js/
+          │   ├── images/
+          │   ├── fonts/
+          │   ├── docs/
+          │   └── css/
+          ├── README.md
+          ├── package.json
+          ├── LICENSE.md
+          └── .npmignore
 
   .l-half
-    h2 Using the source files (Less, CoffeScript)
-    p.
-      Compiling the source files on your own is a
-      little trickier than using the compiled CSS
-      and JavaScript but provides you with much
-      more flexibility.
+    h4 dist package
+    .highlight
+      pre.highlight__listing
+        code.
+          axa-web-design-guide/
+          ├── less/
+          ├── js/
+          ├── images/
+          ├── fonts/
+          ├── docs/
+          │── css/
+          ├── README.md
+          ├── LICENSE.md
+          └── bower.json
 
-    h3#compiling-less-files Compiling the Less files
-    p.
-      To have the flexibility of
-      customizing Less variables of the
-      Developer Toolkit (see below) and use the
-      provided mixins you may want to include the
-      Less files into your applications Less file.
-    .callout
-      h4.callout__heading Less compiler
-      p.
-        We recommend using the official Less compiler
-        provided at <a href='http://lesscss.org' >lesscss.org</a> since
-        the Developer Toolkit is tested with this compiler.
+h2 What's next
 
-    h3 Compiling the CoffeeScript files
-    p.
-      Since you do not gain anything by compiling the CoffeeScript
-      files on your own we do not recommend it.
-      Simply use the JavaScript files provided.
+p.
+  Make sure the static assets (js, images, fonts, css, etc.)
+  you want to use are available from the web and include the
+  assets to be compiled (e.g. less) in your build mechanism.
 
-    h3 Copying the other assets
-    p.
-      Make sure to copy the assets from the
-      <code>images/</code> and <code>fonts/</code> folder
-      to a location available from the web.
-      See the section
-      <a href="#compiling-less-files">Compiling the LESS files</a>
-      on how to set the URL root for assets.
+p.callout.callout--danger.
+  Watch out to not break paths when using the css assets. The
+  images are referenced with a relative path of ../images from
+  the css. When using less assets you can configure the path as
+  described in the Less variables section below.
 
-h1#basic-template Basic template
+h2 Customization
+
+h4 Less variables
+
+table.table
+  thead
+    tr.table__header
+      th.table__header__item Name
+      th.table__header__item Default
+      th.table__header__item Description
+  tbody.table__content
+    tr.table__item
+      td.table__item__info.table__item__info--headline: code @icon-font-path
+      td.table__item__info: code '../fonts'
+      td.table__item__info.
+        Relative (to the CSS file) or absolute path
+        where the browser should download the icon font files from.
+    tr.table__item
+      td.table__item__info.table__item__info--headline: code @images-path
+      td.table__item__info: code '../images'
+      td.table__item__info.
+        Relative (to the CSS file) or absolute path
+        where the browser should download the images from.
+
+
+h2#basic-template Basic template
 p.
   The basic template below should provide you with
   a starting point for your next web app.
@@ -136,27 +206,3 @@ p.
         <script src="js/style.all.min.js"></script>
       </body>
     </html>
-
-h1 Customization
-
-h2 Less Variables
-
-table.table
-  thead
-    tr.table__header
-      th.table__header__item Name
-      th.table__header__item Default
-      th.table__header__item Description
-  tbody.table__content
-    tr.table__item
-      td.table__item__info.table__item__info--headline: code @icon-font-path
-      td.table__item__info: code '../fonts'
-      td.table__item__info.
-        Relative (to the CSS file) or absolute path
-        where the browser should download the icon font files from.
-    tr.table__item
-      td.table__item__info.table__item__info--headline: code @images-path
-      td.table__item__info: code '../images'
-      td.table__item__info.
-        Relative (to the CSS file) or absolute path
-        where the browser should download the images from.
