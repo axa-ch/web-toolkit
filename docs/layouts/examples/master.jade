@@ -7,6 +7,7 @@ html
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
+    meta(name="robots", content="noindex")
 
     title= title
 
@@ -17,6 +18,9 @@ html
 
   body.site
     .site__page
+      .example-header
+          a(href=relative("/examples")).example-header__back Back to overview
+          .example-header__headline Example
       header.header.header--main
         .l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
