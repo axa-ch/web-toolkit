@@ -3,15 +3,28 @@
 .example-header {
   background: @color-blue;
   line-height: 70px;
+  position: relative;
+  height: 70px;
 }
 
 .example-header__back {
+  position: absolute;
+  z-index: 1000;
   float: left;
   color: white;
-  font-size: 12px;
+  font-size: 0px;
   padding-left: 20px;
+
   .icon();
   .icon--arrow-left();
+
+  .respond(medium; {
+    font-size: 12px;
+  });
+
+  &:hover {
+    color: white;
+  }
 
   &:before {
     font-size: 28px;
@@ -25,4 +38,7 @@
   text-align: center;
   color: white;
   font-size: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
