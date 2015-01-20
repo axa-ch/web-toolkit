@@ -1,7 +1,7 @@
 (($) ->
 
   # Public class definition
-  class Slide
+  class Info
 
     constructor: (element, options) ->
       @$element = $ element
@@ -11,13 +11,14 @@
       selector = options.target if not selector?
 
       @$target = $(selector)
-
+      @$child = @$element.children '.info-icon__icon'
 
       @$element.on 'click', @, (event) ->
         event.data.toggle(event)
 
     toggle: () ->
-      @$target.slideToggle();
+      @$target.slideToggle()
+      @$child.toggleClass 'is-active'
 
   # Plugin definition
   Plugin = (option) ->
@@ -28,20 +29,20 @@
       action = option if typeof option == 'string'
 
       $this = $ this
-      data = $this.data('axa.slide')
+      data = $this.data('axa.info')
 
       if not data
-        data = new Slide this, options
-        $this.data 'axa.slide', data
+        data = new Info this, options
+        $this.data 'axa.info', data
 
   # Plugin registration
-  $.fn.slide = Plugin
-  $.fn.slide.Constructor = Slide
+  $.fn.info = Plugin
+  $.fn.info.Constructor = Info
 
   # DATA-API
   $(window).on 'load', () ->
-    $('[data-slide]').each () ->
-      $slide = $(this)
-      Plugin.call($slide)
+    $('[data-info]').each () ->
+      $info = $(this)
+      Plugin.call($info)
 
 )(jQuery)

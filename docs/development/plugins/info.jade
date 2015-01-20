@@ -1,6 +1,6 @@
 ---
-title: Slide
-slug: slide
+title: Info
+slug: info
 collection: development_plugins
 template: development.jade
 status: experimental
@@ -9,12 +9,12 @@ status: experimental
 h3 Intro
 
 p.
-  The ``slide`` plugin is used to toggle whether an element is displayed or not.
-  When toggled, the element slides in or out.
+  The <code>info</code> plugin is used to toggle an info-text block and switch
+  the icon to the <code>icon--close</code> icon.
 
 p.
-  Combine it with the ``info-icon`` and the ``info-text`` blocks to display
-  information non-intrusivevely.
+  Combine it with the <code>info-icon</code> and the <code>info-text</code>
+  blocks to display information non-intrusivevely.
 
 h3 Example
 
@@ -23,7 +23,7 @@ h3 Example
     .form
       .form__group
         .form__group__label
-          .info-icon(data-slide, data-target='#target')
+          .info-icon(data-info, data-target='#target')
             a.info-icon__icon
             label.info-icon__label Was wurde beschädigt?
         .form__group__control
@@ -40,7 +40,7 @@ p Activate the functionality with the data-* API
 .highlight
   pre.highlight__listing.hljs: code.js
     :highlight
-      <div data-slide="data-slide" data-target="#target" ...>...</div>
+      <div data-info="data-info" data-target="#target" ...>...</div>
       <div id="target" ...>...</div>
 
 p Activate the functionality with Javascript
@@ -52,7 +52,7 @@ p Activate the functionality with Javascript
       <div id="target" ...>...</div>
 
       <script>
-        $('#trigger').slide({target: '#target'})
+        $('#trigger').info({target: '#target'})
       </script>
 
 
