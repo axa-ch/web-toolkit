@@ -3,6 +3,9 @@
 
 .info-icon {
   &:extend(.clearfix all);
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .info-icon__label {
@@ -18,6 +21,10 @@
   display: block;
   .icon();
   .icon--info();
+
+  &.is-active {
+    .icon--close();
+  }
 
   float: right;
   width: @info-icon-diameter;
