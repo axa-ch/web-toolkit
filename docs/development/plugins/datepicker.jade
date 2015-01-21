@@ -1,0 +1,16 @@
+---
+title: Datepicker
+slug: datepicker
+collection: development_plugins
+template: development.jade
+status: new
+---
+  
+:markdown
+  To get localized strings use ``moment.locale`` as described in the [momentjs docs](http://momentjs.com/docs/)
+
+:sample
+  .datepicker#myDatepicker(data-datepicker-watch="#myDatepickerInput")
+    a(href='#', data-datepicker="#myDatepicker").datepicker__trigger
+    .datepicker__input
+      input(type='text').control.control--input#myDatepickerInput
