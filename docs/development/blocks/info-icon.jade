@@ -1,0 +1,28 @@
+---
+title: Info-Icon
+slug: info-icon
+collection: development_blocks
+template: development.jade
+---
+
+:markdown
+  The ``info-icon`` block is used to display icons to hint at an informative
+  text element.
+
+  Use it together with the ``info-text`` block and the ``info``
+  plugin to create slide in / slide out information text blocks.
+
+:sample
+  .l-container
+    .form
+      .form__group
+        .form__group__label
+          .info-icon
+            a(href='#').info-icon__icon
+            label.info-icon__label Was wurde beschädigt?
+        .form__group__control
+          input.control.control--input(type='text')
+        .form__group__info-text
+          .info-text
+            p.
+              Hallo Welt!

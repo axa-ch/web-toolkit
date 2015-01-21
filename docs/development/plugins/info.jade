@@ -1,0 +1,79 @@
+---
+title: Info
+slug: info
+collection: development_plugins
+template: development.jade
+status: experimental
+---
+
+h3 Intro
+
+p.
+  The <code>info</code> plugin is used to toggle an info-text block and switch
+  the icon to the <code>icon--close</code> icon.
+
+p.
+  Combine it with the <code>info-icon</code> and the <code>info-text</code>
+  blocks to display information non-intrusivevely.
+
+h3 Example
+
+:sample
+  .l-container
+    .form
+      .form__group
+        .form__group__label
+          .info-icon(data-info, data-target='#target')
+            a.info-icon__icon
+            label.info-icon__label Was wurde beschädigt?
+        .form__group__control
+          input.control.control--input(type='text')
+        .form__group__info-text(id='target', style='display:none;')
+          .info-text
+            p.
+              Hallo Welt!
+
+h3 Usage
+
+p Activate the functionality with the data-* API
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      <div data-info="data-info" data-target="#target" ...>...</div>
+      <div id="target" ...>...</div>
+
+p Activate the functionality with Javascript
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      <div id="trigger" ...>...</div>
+      <div id="target" ...>...</div>
+
+      <script>
+        $('#trigger').info({target: '#target'})
+      </script>
+
+
+
+h4 Options
+
+table.table
+  thead
+    tr.table__header
+      th.table__header__item Name
+      th.table__header__item Type
+      th.table__header__item Default
+      th.table__header__item Description
+  tbody.table__content
+    tr.table__item
+      td.table__item__info
+        code.table__item__info__content target
+      td.table__item__info
+        code.table__item__info__content string
+      td.table__item__info
+        code.table__item__info__content false
+      td.table__item__info
+        p.table__item__info__content.
+          jQuery selector to configure which elements should be toggled.
