@@ -24,34 +24,43 @@ p.
 
 blockquote.callout.
   We recommend using the same principles for your app, to enhance integration
-  of the Web Design Guide.
+  of the Web Design Guide and enhance your web development expirience.
 
 h2#blocks Blocks
   a(href='#blocks').anchor--docs
 
 p.
   A page consists of several blocks, such as header, footer, menu and more.
+
+p.
   Blocks are always independent. This means that they could appear anywhere on
-  any page.
-  Blocks can appear multiple times on a page. For navigation a menu block may
-  appear on top of the page and one on the side.
-  Blocks can contain other nested blocks and elements and they describe the order
-  in which their children appear.
+  any page or even multiple times on the same page. For example a menu block may
+  appear once on top of the page and once on the side to create a two step
+  navigation.
+
+p.
+  Blocks can contain elements and also other nested blocks to reuse
+  functionality and minimize complexity. A block describes the order
+  in which it's children appear.
 
 h2#elements Elements
   a(href='#elements').anchor--docs
 
 p.
   Elements are always part of a block and are thus context dependent.
-  For example, a menu item can not exist without a menu.
+  They can not exist on their own.
+p.
+  For example, a menu item can only exist inside a menu. Makes sense, right?
 
 h2#modifiers Modifiers
   a(href='#modifiers').anchor--docs
 
 p.
-  Modifiers define the styling of a block or element. This way you can use
-  a menu block for a top navigation, and one for a side navigation and give
-  them both the appropriate styling.
+  Modifiers define the styling of a block or element. Every modifier has it's
+  own CSS class. This way you can use a menu block for a top navigation, and
+  another for a side navigation and give them both the appropriate styling.
+
+p.
   Multiple modifiers in a block or element are allowed.
 
 h2#naming Naming
@@ -78,13 +87,13 @@ p.
   ul
     li.
       HTML elements (<code>h1</code>, <code>p</code>, <code>div</code>)
-      <em>must not</em> be used in CSS selectors.
+      <strong>must not</strong> be used in CSS selectors.
     li.
       Cascading selectors (<code>.menu.menu--item { ... }</code>)
-      <em>should</em> be avoided.
+      <strong>should not</strong> be used.
     li.
-      ID based selectors (<code>#menu { ... }</code>) <em>must not</em> be
-      used.
+      ID based selectors (<code>#menu { ... }</code>) <strong>must not</strong>
+      be used.
 
 
 h2#javascript Javascript
