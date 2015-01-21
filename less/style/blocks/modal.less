@@ -1,7 +1,10 @@
+@import "../variables";
+
+@modal-padding: 15px;
+
 .make-center() {
   width: 780px;
-  left: 50%;
-  margin-left: -390px;
+  margin: 0 auto;
 }
 
 .modal {
@@ -27,23 +30,37 @@
 }
 
 .modal__wrapper {
+  .respond(medium, {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9998;
+    overflow: auto;
+    padding: 0 0;
+  })
+}
+
+.modal__content {
   position: fixed;
   top: 40px;
-  right: 0;
-  left: 0;
   bottom: 51px;
-  z-index: 9998;
+  left: 0;
+  right: 0;
   overflow: auto;
-  padding: 0 15px;
   background: white;
+  z-index: 9999;
+  padding: 0 @modal-padding;
 
-  .respond(medium; {
-    top: 115px;
-    bottom: 85px;
-    padding-left: 30px;
-    padding-right: 30px;
-    .make-center();
-  });
+  .respond(medium, {
+    position: static;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    padding: 0 @grid-gutter-width/2;
+  })
 }
 
 .modal__dialog {
@@ -51,6 +68,14 @@
   min-height: 100%;
 
   background: white;
+
+  .respond(medium; {
+    padding-top: 115px;
+    padding-bottom: 85px;
+    padding-left: 30px;
+    padding-right: 30px;
+    .make-center();
+  });
 }
 
 .modal__header {
@@ -61,14 +86,17 @@
   z-index: 9999;
   width: 100%;
   height: 40px;
-  padding: 0 0 0 15px;
+  padding: 0 @modal-padding;
 
   background: @color-light-blue;
 
   .respond(medium; {
+    left: auto;
+    right: auto;
+    max-width: 720px;
     height: 115px;
+    padding: 0;
     background: white;
-    .make-center();
   });
 }
 
@@ -94,7 +122,8 @@
   padding: 6px 0 5px 0;
 
   .respond(medium; {
-    padding: 0 30px;
+    margin-right: 0;
+    padding: 0;
   });
 }
 
@@ -107,17 +136,19 @@
   width: 100%;
   height: 51px;
   padding: 10px 0 15px 0;
+
   background: @color-tbd-22;
   border-top: 1px solid @color-tbd-16;
 
   .respond(medium; {
+    left: auto;
+    right: auto;
+    max-width: 720px;
     height: 85px;
-    padding-top: 0;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 0;
+
     background: white;
     border-top: none;
-    .make-center();
   });
 }
 
@@ -133,5 +164,5 @@
 }
 
 .modal__buttons__button {
-  margin-right: 15px;
+  margin-right: @modal-padding;
 }
