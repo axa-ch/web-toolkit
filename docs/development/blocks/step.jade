@@ -14,13 +14,19 @@ template: development.jade
 
 
 :sample
-  .step
-    span.step__bullet 1
+  // Add  a wrapper because the step block has overflow
+  div(style='width: 50%; max-width: 200px; margin: 0 auto')
+    .step
+      span.step__bullet 1
 
 :sample
-  .step.step--start
-    span.step__bullet 2
+  // Add  a wrapper because the step block has overflow
+  div(style='width: 50%; max-width: 200px; margin: 0 auto')
+    .step.step--start
+      span.step__bullet 2
 
 :sample
-  .step.is-active
-    span.step__bullet 3
+  // Add  a wrapper because the step block has overflow
+  div(style='width: 50%; max-width: 200px; margin: 0 auto')
+    .step.is-active
+      span.step__bullet 3
