@@ -1,3 +1,5 @@
+require('gulp-coffee/node_modules/coffee-script/register')
+
 var gulp = require('gulp');
 var fs = require('fs');
 var del = require('del');
