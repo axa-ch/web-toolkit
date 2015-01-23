@@ -9,15 +9,15 @@ template: design.jade
 
 A single-page application (SPA), is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application.
 
-##Search Engine Optimization
+##SEO & Analytics
 
-Indexation of SPA can be difficult for search engines like google or bing due to the underlying techniques of single page applications. Eventhough it is a technical task, discoverability is crucial for users coming from google and co.
+Indexation of SPA can be difficult for search engines like google or analytics tools like AT Internet due to the underlying techniques of single page applications. Eventhough it is a technical task, discoverability is crucial for users coming from google and co.
 
 ##Mobile Performance
 Again, a rather technical task - performance on mobile devices may suffer if too many interactions are about to happen on a page. Design thoughtfully and consider adding more interactions for desktops instead of removing them for mobile. Most importantly: Bring it up as early as possible in development.
 
 ##Browser Back Button
-SPAs should react to the browser back button as any other website would. Going back should be fast and not trigger unnecessary animations or effects.
+Single page applications should react to the browser back button as any other website would. Going back should be fast, reliable (data consistency) and not trigger unnecessary animations or effects. Remember: The back button is the single most used button in every webbrowser.
 
 ##Instant Feedback
 Every actions creates a reaction. Users always need to know if the system is working properly. Feedback to actions should always start max. 0.1 seconds after the user took action (pressed a button for example).
