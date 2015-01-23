@@ -1,0 +1,34 @@
+---
+title: Autocomplete
+slug: autocomplete
+collection: development_blocks
+template: development.jade
+status: new
+---
+
+h3 Intro
+
+p.
+  The <code>autocomplete</code> block is used to style form an autocomplete
+  control.
+
+p.
+  It consists of a child <code>control</code> block and an
+  <code>autocomplete-container</code> element with it's
+  <code>autocomplete-item</code> children.
+
+p.
+  Use it to style your own autocomplete elements.
+
+h3 Example
+
+:sample
+  .autocomplete
+    input.control.control--input(type='text')
+    .autocomplete-container
+      .autocomplete-item.
+        8000 Zürich
+      .autocomplete-item.
+        8400 Winterthur
+      .autocomplete-item.
+        8460 Marthalen
