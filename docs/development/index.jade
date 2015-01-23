@@ -150,7 +150,22 @@ p.callout.callout--danger.
   the css. When using less assets you can configure the path as
   described in the Less variables section below.
 
-h2 Customization
+h2 Compiling the less files on your own
+
+h4 Prefixing
+
+p.paragraphy.
+  You should use the autoprefixer to add vendor specific prefixes.
+  Make sure to configure the autoprefixer correctly to add support
+  for the browsers you target.
+
+h4 IE9 support
+
+p.paragraph.
+  To add IE9 support you need to add single-colon CSS 2.1 syntax 
+  psuedo elements (:after) in addition to CSS 3 double-colon 
+  syntax (::after). We wrote the postcss-pseudoelements postcss 
+  plugin which adds those single-color selectors.
 
 h4 Less variables
 
@@ -186,23 +201,25 @@ p.
     <!DOCTYPE html>
     <html lang="en">
       <head>
+        <!-- meta tags as explained in the recommendations page -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
         <title>Developer Toolkit - Basic template</title>
 
+        <!-- styles --> 
         <link href="css/style.min.css" rel="stylesheet">
-
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
       </head>
       <body>
         <h1>Hello, world!</h1>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Required for the jQuery Plugins -->
+        <script src="/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Required for the datepicker plugin -->
+        <script src="/libs/moment.js/2.9.0/moment.js"></script>
+        
+        <!-- optional: jQuery plugins -->
         <script src="js/style.all.min.js"></script>
       </body>
     </html>
