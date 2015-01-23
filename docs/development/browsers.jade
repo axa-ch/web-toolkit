@@ -101,3 +101,28 @@ table.table
       td.table__item__info 
         .table__item__info__content 8.1+
         
+h1 Internet Explorer 8
+p.paragraph.
+  With the current release Internet Explorer 8 is NOT
+  supported. Please consider adding a "Your browser
+  is not supported page" or add support for IE 8.
+
+ul
+  li.
+    IE 8 doesn't like CSS selectors which contain 
+    double-colon CSS 3 pseudo element selectors (
+    ::after). Even the selector "::after, :after"
+    will be ignored because there is one 
+    double-colon CSS 3 pseudo element.
+    
+    To make the CSS work in IE 8 you need to duplicate
+    all rules containing double-colon selectors
+    and replace the double-color with a single-color.
+  li.
+    Include respond.js and HTML5SHIV to support
+    CSS 3 media queries and HTML5 Tags.
+  li.
+    IE8 doesn't support the border-radius property.
+    You should either include a shim or live without
+    round borders.
+        
