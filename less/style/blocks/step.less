@@ -49,6 +49,30 @@
 .step--end {
 }
 
+.step__bullet--checkmark {
+  .icon();
+  .icon--process-checkmark();
+
+  &::before {
+    position: relative;
+    margin-top: -2px;
+    margin-left: 3px;
+    font-size: 19px;
+    color: @color-gray--dark;
+
+
+    .respond(medium, {
+      margin-top: -6px;
+      margin-left: 7px;
+      font-size: 38px;
+    });
+  }
+
+  &.is-active::before {
+    color: @color-green;
+  }
+}
+
 .step__bullet {
   z-index: 2;
   display: block;
