@@ -19,6 +19,9 @@ Again, a rather technical task - performance on mobile devices may suffer if too
 ##Browser Back Button
 Single page applications should react to the browser back button as any other website would. Going back should be fast, reliable (data consistency) and not trigger unnecessary animations or effects. Remember: The back button is the single most used button in every webbrowser.
 
+##Refresh & Links
+-
+
 ##Instant Feedback
 Every actions creates a reaction. Users always need to know if the system is working properly. Feedback to actions should always start max. 0.1 seconds after the user took action (pressed a button for example).
 
