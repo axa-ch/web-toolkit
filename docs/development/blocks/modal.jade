@@ -7,10 +7,13 @@ status: new
 ---
 
 :markdown
-  TODO
+  The modal block represents a modal dialog. It is hidden by default.
+  Add the ``.is-active`` state to make it visible. When the modal is
+  visible you have to add the ``.is-modal-open`` state to the body element
+  of your page to hide the main scrollbar.
 
 :sample
-  .button(href='#', data-modal='#myModal') Toggle modal
+  .button(href='#', data-modal='#myModal') Show modal
 
   .modal#myModal
     .modal__backdrop
