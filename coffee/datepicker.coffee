@@ -107,7 +107,7 @@
       self = this
 
       $day.text date.get 'date'
-      $day.on 'click', (e) =>
+      $day.on 'click', (e) ->
         e.preventDefault()
         self.setSelectedDate(date)
         self.emit 'select', date.format('DD.MM.YYYY')
