@@ -16,6 +16,7 @@
 }
 
 .tile-select__tile {
+  display: block;
   position: relative;
   padding: 10px;
   margin-top: 10px;
@@ -24,6 +25,11 @@
   cursor: pointer;
   .icon();
   .icon--arrow-right();
+
+  &:hover {
+    color: white;
+    background: @color-light-blue--light;
+  }
 
   &::before {
     font-size: 14px;
