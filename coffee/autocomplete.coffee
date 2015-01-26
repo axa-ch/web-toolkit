@@ -10,6 +10,7 @@
       @filtered = @options.source
       @filtered = [] if not @filtered?
       @value = ''
+      @isMouseOver = false
 
       @$dropdown = $ '<div class="autocomplete-container"></div>'
       @$dropdown.hide()
@@ -17,6 +18,10 @@
 
       @$element.on 'keyup', @, (event) ->
         event.data.filter(event)
+
+      @$element.on 'blur', @, (event) ->
+        if not event.data.isMouseOver
+          event.data.$dropdown.hide()
 
     filter: (event) ->
       if @value isnt @element.value
@@ -29,6 +34,12 @@
 
     createItem: (text) ->
       item = $ '<div class="autocomplete-item">' + text + '</div>'
+      item.on 'mouseover', @, (event) ->
+        event.data.isMouseOver = true
+        $(event.target).addClass 'autocomplete-item--selected'
+      item.on 'mouseout', @, (event) ->
+        event.data.isMouseOver = false
+        $(event.target).removeClass 'autocomplete-item--selected'
       item.on 'click', @, (event) ->
         event.data.selectItem(event)
 
