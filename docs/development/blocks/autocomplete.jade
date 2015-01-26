@@ -20,15 +20,21 @@ p.
 p.
   Use it to style your own autocomplete elements.
 
+blockquote.callout.callout--danger.
+  Be aware, this example uses a 'position: relative;' style override on the
+  autocomplete-container, as no behaviors are shown here.
+  Remove the style attribute on autocomplete-container to use default
+  positioning necessary for the correct behaviour.
+
 h3 Example
 
 :sample
   .autocomplete
     input.control.control--input(type='text')
-    .autocomplete-container
+    .autocomplete-container(style='position: relative;')
       .autocomplete-item.
         8000 Zürich
-      .autocomplete-item.autocomplete-item--selected
+      .autocomplete-item.autocomplete-item--selected.
         8400 Winterthur
       .autocomplete-item.
-        8460 Marthalen
+        8472 Seuzach
