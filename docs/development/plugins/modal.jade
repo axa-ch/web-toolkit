@@ -1,0 +1,51 @@
+---
+title: Site
+slug: site
+collection: development_plugins
+template: development.jade
+status: new
+---
+
+h3 Intro
+
+p.
+  This plugin provides the handling of showing a modal. 
+  See the modal block for further information.
+
+h3 Usage
+
+p Activate the functionality with the data-* API
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      <a data-modal="#myModal" ></a>
+
+p Activate the functionality with JavaScript:
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('#myModal').modal(options)
+
+h4 Options
+
+table.table
+  thead
+    tr.table__header
+      th.table__header__item Name
+      th.table__header__item Type
+      th.table__header__item Default
+      th.table__header__item Description
+  tbody.table__content
+
+h4 Methods
+
+h5: code .modal('toggle')
+
+p Manually toggles the modal.
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('#myModal').modal('toggle')
