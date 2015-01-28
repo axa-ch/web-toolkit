@@ -18,7 +18,19 @@ template: development.jade
   div(style='width: 50%; max-width: 200px; margin: 0 auto')
     .step
       span.step__bullet 1
-
+      
+:sample
+  // Add  a wrapper because the step block has overflow
+  div(style='width: 50%; max-width: 200px; margin: 0 auto')
+    .step
+      span.step__bullet.step__bullet--checkmark
+        
+:sample
+  // Add  a wrapper because the step block has overflow
+  div(style='width: 50%; max-width: 200px; margin: 0 auto')
+    .step
+      span.step__bullet.step__bullet--checkmark.is-active
+      
 :sample
   // Add  a wrapper because the step block has overflow
   div(style='width: 50%; max-width: 200px; margin: 0 auto')
