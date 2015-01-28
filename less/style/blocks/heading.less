@@ -5,6 +5,22 @@
   font-weight: normal;
 }
 
+.heading--modal {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+
+  .respond(medium, {
+    padding: 0 @grid-gutter-width/2 18px;
+
+    color: @color-blue;
+    border-bottom: 1px dotted @color-blue;
+    line-height: 1.15;
+    font-size: 38px;
+    margin-top: 54px;
+  });
+}
+
 .heading--page {
   .make-gutter-as-padding();
   display: block;
