@@ -12,11 +12,11 @@ html
 
     link(rel="stylesheet", href=relative("/css/docs.css"))
 
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js')
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js')
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/localforage/1.1.1/localforage.min.js')
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js')
+    script(src=relative('/js/jquery/jquery.min.js'))
+    script(src=relative('/js/knockout/knockout-latest.js'))
+    script(src=relative('/js/urijs/URI.min.js'))
+    script(src=relative('/js/localforage/localforage.min.js'))
+    script(src=relative('/js/moment/moment.min.js'))
 
     script(type='text/javascript').
       // Include the UserVoice JavaScript SDK (only needed once on a page)
@@ -107,6 +107,8 @@ html
           .footer__copyline__inner
             .l-container
               ul.copyline-menu
+                li.copyline-menu__item
+                  a(href=relative('/changelog.html')).copyline-menu__link Changelog
                 li.copyline-menu__item
                   span.copyline-menu__text= config.copyright
 

@@ -75,6 +75,28 @@ module.exports = exports = function (options) {
       destination: './js'
     }));
 
+    // include js libs
+    metalsmith.use(assets({
+      source: './node_modules/jquery/dist',
+      destination: './js/jquery'
+    }));
+    metalsmith.use(assets({
+      source: './node_modules/moment/min',
+      destination: './js/moment'
+    }));
+    metalsmith.use(assets({
+      source: './node_modules/localforage/dist',
+      destination: './js/localforage'
+    }));
+    metalsmith.use(assets({
+      source: './node_modules/knockout/build/output',
+      destination: './js/knockout'
+    }));
+    metalsmith.use(assets({
+      source: './node_modules/URIjs/src',
+      destination: './js/urijs'
+    }));
+
     // do the static pages
     // TODO: Remove when collection plugin supports undeclared collections
     var collections_options = {};
