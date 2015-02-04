@@ -130,6 +130,7 @@ module.exports = exports = function (options) {
       .use(filepath({ absolute: true }))
       .use(templates({
         engine: 'jade',
+        cache: true,
         directory: path.join(options.src, 'layouts')
       })));
 
