@@ -3,17 +3,17 @@
     "blue": "#103184",
     "red": "#ff1821"
   },
-  "secondary": {
+  "secondary": [{ 
+    "colors": { 
       "light-blue": "#0062a9",
       "light-blue--light": "#5c91c0"
+    }
   },{
-    "name": "blue-gray",
     "colors": {
       "blue-gray": "#79838d",
       "blue-gray--light": "#dedee2"
     }
   },{
-    "name": "gray",
     "colors": {
       "black": "#000000",
       "gray--darker": "#6f6f6f",
@@ -25,7 +25,6 @@
       "white": "#ffffff"
     }
   },{
-    "name": "green",
     "colors": {
       "green": "#7a9f35"
     }
