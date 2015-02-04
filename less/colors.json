@@ -3,12 +3,10 @@
     "blue": "#103184",
     "red": "#ff1821"
   },
-  "secondary": [{
-    "name": "light-blue",
-    "colors": {
+  "secondary": {
       "light-blue": "#0062a9",
       "light-blue--light": "#5c91c0"
-    }
+  
   },{
     "name": "blue-gray",
     "colors": {
