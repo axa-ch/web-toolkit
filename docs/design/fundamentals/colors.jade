@@ -14,10 +14,7 @@ h2 Primary palette
       .l-col.l-col--medium-3
         .color-palette__color
           .color-palette__color__box(style='background: ' + colorCode)
-          .color-palette__color__label hex
           .color-palette__color__code #{colorCode}
-          .color-palette__color__label less variable
-          .color-palette__color__var @color-#{colorName}
 
 h2 Secondary palette
 
@@ -28,20 +25,4 @@ each colorGroup in colors.secondary
         .l-col.l-col--medium-3
           .color-palette__color
             .color-palette__color__box(style='background: ' + colorCode, class=(colorCode == '#ffffff' ? 'color-palette__color__box--white' : ''))
-            .color-palette__color__label hex
             .color-palette__color__code #{colorCode}
-            .color-palette__color__label less variable
-            .color-palette__color__var @color-#{colorName}
-
-h2 Colors to be defined
-
-.l-row
-  .color-palette.color-palette--primary
-    each colorCode, colorName in colors.tbd
-      .l-col.l-col--medium-3
-        .color-palette__color
-          .color-palette__color__box(style='background: ' + colorCode)
-          .color-palette__color__label hex
-          .color-palette__color__code #{colorCode}
-          .color-palette__color__label less variable
-          .color-palette__color__var @color-#{colorName}
