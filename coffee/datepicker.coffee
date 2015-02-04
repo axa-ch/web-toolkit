@@ -164,7 +164,7 @@
 
   # Plugin definition
   Plugin = (options) ->
-    opts = $.extend( {}, $.fn.datepicker.defaults, options );
+    opts = $.extend( {}, $.fn.datepicker.defaults, options )
 
     params = arguments
 
