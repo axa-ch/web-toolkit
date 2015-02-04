@@ -81,11 +81,11 @@
   display: inline-block;
   padding: 0 0 10px 0;
 
-  &:last-of-type {
+  .respond(medium, {
+    vertical-align: middle;
+  });
 
-    .respond(medium, {
-      padding-bottom: 0;
-    });
+  &:last-of-type {
 
     .table__item__info__content::after {
       content: '';
