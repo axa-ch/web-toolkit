@@ -13,7 +13,6 @@ h2 Primary palette
       .l-col(class='l-col--medium-2')
         .color-palette__color
           .color-palette__color__box(style='background: ' + colorCode)
-          .color-palette__color__name #{colorName}
           .color-palette__color__code #{colorCode}
           .color-palette__color__var @color-#{colorName}
 
@@ -27,7 +26,6 @@ each colorGroup in colors.secondary
         .l-col(class='l-col--medium-2')
           .color-palette__color
             .color-palette__color__box(style='background: ' + colorCode, class=(colorCode == '#ffffff' ? 'color-palette__color__box--white' : ''))
-            .color-palette__color__name #{colorName}
             .color-palette__color__code #{colorCode}
             .color-palette__color__var @color-#{colorName}
 
@@ -39,6 +37,5 @@ h2 Colors to be defined
       .l-col(class='l-col--medium-2')
         .color-palette__color
           .color-palette__color__box(style='background: ' + colorCode)
-          .color-palette__color__name #{colorName}
           .color-palette__color__code #{colorCode}
           .color-palette__color__var @color-#{colorName}
