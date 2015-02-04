@@ -1,0 +1,34 @@
+---
+title: Colors
+slug: colors
+segment: development
+collection: development
+template: development.jade
+---
+
+.table
+  .table__header
+    .table__header__item
+    .table__header__item HEX
+    .table__header__item LESS Variable
+  .table__content
+    each colorCode, colorName in colors.primary
+      .table__item
+        .table__item__info.table__item__info--headline
+          .color(style='background: ' + colorCode)
+        .table__item__info #{colorCode}
+        .table__item__info @color-#{colorName}
+    each colorGroup in colors.secondary
+      each colorCode, colorName in colorGroup.colors
+        .table__item
+          .table__item__info.table__item__info--headline
+            .color(style='background: ' + colorCode)
+          .table__item__info #{colorCode}
+          .table__item__info @color-#{colorName}
+    each colorCode, colorName in colors.tbd
+      .table__item
+        .table__item__info.table__item__info--headline
+          .color(style='background: ' + colorCode)
+        .table__item__info #{colorCode}
+        .table__item__info @color-#{colorName}
+                

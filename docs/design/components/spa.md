@@ -45,7 +45,13 @@ Bad Example
 http://s3.amazonaws.com/media.nngroup.com/media/editor/2014/09/09/Menu-SlowRepeatedAnimation.mp4
 
 ##Prototyping
-We still need a best practice for animation prototyping.
+Prototyping of transitions & animations are not easily done.
+Following tools allow a certain degree of rapid animation prototyping.
+- Axure
+- Adobe Edge
+- Adobe Flash
+
+Please feel free to send in your recommendations.
 
 ##Source
 http://www.nngroup.com/articles/animation-usability/
