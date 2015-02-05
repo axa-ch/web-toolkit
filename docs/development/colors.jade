@@ -6,6 +6,8 @@ collection: development
 template: development.jade
 ---
 
+h2 Primary palette
+
 .table
   .table__header
     .table__header__item
@@ -13,22 +15,45 @@ template: development.jade
     .table__header__item LESS Variable
   .table__content
     each colorCode, colorName in colors.primary
-      .table__item
+      .table__item(data-clipboard-text=colorCode)
         .table__item__info.table__item__info--headline
           .color(style='background: ' + colorCode)
         .table__item__info #{colorCode}
         .table__item__info @color-#{colorName}
+
+h2 Secondary palette
+
+.table
+  .table__header
+    .table__header__item
+    .table__header__item HEX
+    .table__header__item LESS Variable
+  .table__content
     each colorGroup in colors.secondary
       each colorCode, colorName in colorGroup.colors
-        .table__item
+        .table__item(data-clipboard-text=colorCode)
           .table__item__info.table__item__info--headline
             .color(style='background: ' + colorCode)
           .table__item__info #{colorCode}
           .table__item__info @color-#{colorName}
+
+h2 Colors not in a palette
+
+.table
+  .table__header
+    .table__header__item
+    .table__header__item HEX
+    .table__header__item LESS Variable
+  .table__content
     each colorCode, colorName in colors.tbd
-      .table__item
+      .table__item(data-clipboard-text=colorCode)
         .table__item__info.table__item__info--headline
           .color(style='background: ' + colorCode)
         .table__item__info #{colorCode}
         .table__item__info @color-#{colorName}
-                
+        
+          
+script.
+  $('[data-clipboard-text]').each(function(i, el) {
+    new ZeroClipboard(el);
+  });
