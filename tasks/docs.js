@@ -96,6 +96,10 @@ module.exports = exports = function (options) {
       source: './node_modules/URIjs/src',
       destination: './js/urijs'
     }));
+    metalsmith.use(assets({
+      source: './node_modules/zeroclipboard/dist',
+      destination: './js/zeroclipboard'
+    }));
 
     // do the static pages
     // TODO: Remove when collection plugin supports undeclared collections

@@ -18,17 +18,10 @@
 
   class Picker extends Emitter
 
-    constructor: (date, format) ->
+    constructor: (@moment) ->
       super
 
-      if typeof date == 'object'
-        @date = moment(date)
-        @selectedDate = moment(@date)
-      else if typeof date == 'string' and typeof format == 'string'
-        @date = moment(date, format)
-        @selectedDate = moment(@date)
-      else
-        @date = moment()
+      @date = @moment()
 
       @$element = $ '<div class="picker" ></div>'
 
@@ -67,7 +60,7 @@
       # first week
       $week = append '<div class="picker__week" ></div>', @$month
 
-      dateClone = moment @date
+      dateClone = @moment @date
       month = dateClone.get 'month'
 
       dateClone.set 'date', 1
@@ -94,14 +87,14 @@
             break
 
     createDay: (d) ->
-      date = moment(d) # create a clone
+      date = @moment(d) # create a clone
 
       $day = $ '<div class="picker__day" ></div>'
 
       if @selectedDate? and date.format('DD.MM.YYYY') == @selectedDate.format('DD.MM.YYYY')
         $day.addClass('is-active')
 
-      if date.format('DD.MM.YYYY') == moment().format('DD.MM.YYYY')
+      if date.format('DD.MM.YYYY') == @moment().format('DD.MM.YYYY')
         $day.addClass('picker__day--today')
 
       self = this
@@ -109,6 +102,7 @@
       $day.text date.get 'date'
       $day.on 'click', (e) ->
         e.preventDefault()
+
         self.setSelectedDate(date)
         self.emit 'select', date.format('DD.MM.YYYY')
         self.toggle()
@@ -123,28 +117,34 @@
 
     setSelectedDate: (selectedDate) ->
       @date = selectedDate
-      @selectedDate = moment(selectedDate)
+      @selectedDate = @moment(selectedDate)
       @updateDisplay()
 
-    onPrevClick: ->
+    onPrevClick: (e) ->
+      e.preventDefault()
+
       @date.add -1, 'months'
       @updateDisplay()
 
-    onNextClick: ->
+    onNextClick: (e) ->
+      e.preventDefault()
+
       @date.add 1, 'months'
       @updateDisplay()
 
   class Datepicker
 
-    constructor: (element, options) ->
+    constructor: (element, @moment, input) ->
       @$element = $ element
 
-      @picker = new Picker
+      @picker = new Picker(@moment)
 
-      @$input = $ @$element.data('datepicker-watch')
-      @$input.on 'change', @onChange
+      if input?
+        @$input = $ input
 
-      @onChange()
+        @$input.on 'change', @onChange
+
+        @onChange()
 
       @picker.on 'select', ((date) ->
         @$input.val(date)
@@ -153,7 +153,7 @@
       @$element.append @picker.getDOMNode()
 
     onChange: () =>
-      dat = moment(@$input.val(), 'DD.MM.YYYY')
+      dat = @moment(@$input.val(), 'DD.MM.YYYY')
 
       if dat.isValid()
         @picker.setSelectedDate dat
@@ -163,7 +163,9 @@
       @picker.toggle()
 
   # Plugin definition
-  Plugin = (option) ->
+  Plugin = (options) ->
+    opts = $.extend( {}, $.fn.datepicker.defaults, options )
+
     params = arguments
 
     return this.each () ->
@@ -171,11 +173,18 @@
       data = $this.data('axa.datepicker')
 
       if not data
-        data = new Datepicker(this)
+        if opts.moment?
+          moment = opts.moment
+        else if window.moment?
+          moment = window.moment
+        else
+          $.error("Moment.js must either be passed as an option or be available globally")
+
+        data = new Datepicker(this, moment, opts.input)
         $this.data('axa.datepicker', data)
 
-      if typeof option == 'string'
-        data[option]()
+      if opts.action?
+        data[opts.action]()
 
   # Plugin registration
   $.fn.datepicker = Plugin
@@ -187,6 +196,8 @@
 
     $target = $ $(this).data('datepicker')
 
-    Plugin.call($target, 'toggle')
+    $input = $ $target.data('datepicker-watch')
+
+    Plugin.call($target, { input: $input, action: 'toggle' })
 
 )(jQuery)

@@ -1,6 +1,26 @@
 @import '../variables';
 @import '../mixins/respond';
 
+.make-ie9-block(@display) {
+  display: block;
+  width: 100%;
+  float: left;
+  clear: left;
+  box-sizing: border-box;
+
+  &:extend(.clearfix all);
+
+  .respond(medium, {
+    display: @display;
+    float: none;
+    clear: none;
+
+    &::after {
+      display: none;
+    }
+  });
+}
+
 .table--clickable {
 
   .table__item:hover {
@@ -16,10 +36,11 @@
 
 .table {
   display: block;
+  width: 100%;
+  &:extend(.clearfix all);
 
   .respond(medium, {
     display: table;
-    width: 100%;
   });
 
 }
@@ -40,16 +61,16 @@
 }
 
 .table__content {
-  display: block;
+  .make-ie9-block(table-row-group);
 
   .respond(medium; {
-    display: table-row-group;
     border: 1px solid @color-gray--light;
   });
 }
 
 .table__item {
-  display: block;
+  .make-ie9-block(table-row);
+
   padding: 15px 20px 5px;
   border-top: 1px solid @color-gray--mid;
   background: white;
@@ -70,7 +91,6 @@
   }
 
   .respond(medium; {
-    display: table-row;
     padding: 15px 20px;
     border: none;
   });
@@ -143,7 +163,10 @@
 }
 
 .table__item__info--headline {
-  display: block;
+  .make-ie9-block(table-cell);
+  .respond(medium; {
+    width: auto;
+  });
 
   .table__item__info__content::after {
     content: '';
