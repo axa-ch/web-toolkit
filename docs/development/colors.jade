@@ -51,4 +51,9 @@ h2 Colors not in a palette
           .color(style='background: ' + colorCode)
         .table__item__info #{colorCode}
         .table__item__info @color-#{colorName}
-                
+        
+          
+script.
+  $('[data-clipboard-text]').each(function(i, el) {
+    new ZeroClipboard(el);
+  });
