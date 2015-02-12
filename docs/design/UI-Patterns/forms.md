@@ -77,6 +77,35 @@ similar
 
 ##Additional Inputs
 
+---
+title: SPAM Avoidance
+slug: spamAvoidance
+collection: design_components
+template: design.jade
+---
+
+#Captcha
+
+Traditional captchas that require the user to decode some characters must be avoided due to accessibility and usability drawbacks. 
+
+>images
+
+#Honeypot
+
+Honeypots are hidden form fields that trap spam robots because those robots can't distinguish between shown and hidden form fields. Therefore, a robot will fill the field and therefore fail the test. *Nevertheless* this field should have a clear label which tells users with screen readers to not fill this form. 
+>Best practice translations
+DE: Wenn Sie ein Mensch sind, lassen Sie bitte das nächste Feld leer.
+EN: Are you human? If yes, please don't fill anything into the next field.
+FR:
+IT:
+
+#Timestamps
+If honeypots are not enough to stop spammers, consider to measure the time a user needs to fill in the form. If a user requires less than (for example!) 10 seconds to fill 5 fields, it's probably a spam-robot. This technique should be carefully implemented and take prefilling into account, since this can massively speed up a users data entrance.
+
+
+
+
+
 #Form elements
 
 When it comes to form elements, we follow the touch-first principle. Inputs which require a keyboard should always be chosen last, because text inputs are a burden for many users. 
@@ -96,16 +125,7 @@ Error-messages itself should always be friendly and give clear directions on how
 - Use colour and other graphic elements to make error messages visible. Never forget about colour-blind people or users with black and white screens.
 - Provide clear explanations instead of a generic “An error occurred”. Because if you don’t help them properly, users will make the same mistake again.
 
-##Help Text
 
-Help text can be provided to help users fill in the form and to clear up questions. Still, don’t use labels to fix shortcomings of bad form design or unclear label text. 
-
->Checklist: Help Text
-- Avoid help texts wherever and whenever possible.
-- Use it to explain unfamiliar data or why the question is asked at all.
-- Help text is always placed outside the input field and never inside.
-- Unless you have a lot of help text, use an inline system. This avoid page-jumping and rollover problems.
-- Triggers for user-activated help text should be placed next to labels and not input fields.
 
 ##Action-Buttons
 
