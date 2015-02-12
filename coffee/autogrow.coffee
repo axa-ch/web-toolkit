@@ -33,7 +33,6 @@
         event.data.update(event)
 
       $(window).resize @update
-      @update()
     update: (event) ->
       times: (string, number) ->
         r = ''
@@ -41,24 +40,25 @@
           r += string
         return r
 
-      val = @element.value.replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/&/g, '&amp;')
-        .replace(/\n$/, '<br/>&nbsp;')
-        .replace(/\n/g, '<br/>')
-        .replace(/\s{2,}/g,(space) ->
-          return times('&nbsp;', space.length - 1) + ' '
-        )
+      if @element
+        val = @element.value.replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/&/g, '&amp;')
+          .replace(/\n$/, '<br/>&nbsp;')
+          .replace(/\n/g, '<br/>')
+          .replace(/\s{2,}/g,(space) ->
+            return times('&nbsp;', space.length - 1) + ' '
+          )
 
-      if event? and event.data? and event.data.event is 'keydown' and event.keyCode is 13
-        val += '<br />'
+        if event? and event.data? and event.data.event is 'keydown' and event.keyCode is 13
+          val += '<br />'
 
-      @shadow.css 'width', @$element.width()
-      @shadow.html val
+        @shadow.css 'width', @$element.width()
+        @shadow.html val
 
-      newHeight = Math.max @shadow.height(), @minHeight
+        newHeight = Math.max @shadow.height(), @minHeight
 
-      @$element.height newHeight
+        @$element.height newHeight
 
   # Plugin definition
   Plugin = (option) ->
