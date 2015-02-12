@@ -1,0 +1,44 @@
+---
+title: Single File Upload
+slug: single-file-upload
+collection: development_blocks
+template: development.jade
+status: experimental
+---
+
+:markdown
+  The ``single-file-upload`` block is used to display drag and drop zones for a
+  file and display status info (progress) to the uploaded file.
+
+:sample
+  .l-container
+    .form
+      .form__group
+        .form__group__label.
+          Datei
+        .form__group__control
+          .file-drop-area
+            .file-drop-area__text Drag file here or click to choose.
+      .form__group
+        .form__group__label.
+          Datei (Error)
+        .form__group__control
+          .file-drop-area
+            .file-drop-area__text Drag file here or click to choose.
+          .form__error-message Das Bild ist zu gross.
+      .form__group
+        .form__group__label.
+          Datei (Uploading)
+        .form__group__control
+          .file-uploading
+            .file-uploading__title awesome_image.jpg
+            progress.file-uploading__progress(max='100', value='42')
+            p 42% - noch 1337 Sekunden
+      .form__group
+        .form__group__label.
+          Datei (Uploaded)
+        .form__group__control
+          .file-uploaded
+            .file-uploaded__title awesome_image.gif
+            .file-uploaded__description-label Beschreibung
+            textarea.file-uploaded__description.control.control--textarea(data-autogrow='autogrow')
