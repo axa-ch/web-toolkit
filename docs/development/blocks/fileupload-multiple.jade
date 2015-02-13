@@ -1,0 +1,39 @@
+---
+title: Multi File Upload
+slug: file-upload2
+collection: development_blocks
+template: development.jade
+status: experimental
+---
+
+:markdown
+  The ``multi-file-upload`` block is used to display drag and drop zones for
+  multiple files and display status info (progress) to the uploaded files.
+
+h3 Styles
+
+:sample
+  .l-container
+    .form
+      .form__group
+        .form__group__label.
+          Datei
+        .form__group__control
+          .multi-file-upload
+            .file-dropzone(data-dropzone='dropzone')
+              .file-dropzone__text Drag file here or click to choose.
+            .file-uploading
+              .file-uploading__title awesome_image.jpg
+              .file-uploading__progress-background
+                .file-uploading__progress-foreground(style='width: 42%')
+              .file-uploading__progress-text 42% - noch 1337 Sekunden
+            .file-uploaded
+              .file-uploaded__title axaswitch.gif
+              .file-uploaded__actions
+                a.button.button--small.button--secondary ansehen
+                a.button.button--small.button--secondary löschen
+            .file-uploaded
+              .file-uploaded__title superblock.bmp
+              .file-uploaded__actions
+                a.button.button--small.button--secondary ansehen
+                a.button.button--small.button--secondary löschen

@@ -1,6 +1,6 @@
 ---
 title: Single File Upload
-slug: single-file-upload
+slug: file-upload1
 collection: development_blocks
 template: development.jade
 status: experimental
@@ -14,15 +14,19 @@ h3 States and Behavior
 p.
   Default state of a fileupload control is the file-dropzone block.
   When something is dragged over it, toggle the dragover modifier.
-.callout
+
+.callout.
   Use the dropzone plugin, to handle transitions from and to the dragover state
   of the file-dropzone block.
+
 p.
   Register to the ondrop event to upload the file.
   The file-dropzone block must be replaced by the file-uploading block to
   display a progress bar and info about the upload process.
+
 p.
   A click into the dropzone should open the standard file chooser dialog.
+
 p.
   When the file has finished uploading, replace the file-uploading block
   with the file-uploaded block.
@@ -32,7 +36,7 @@ p.
   The following is an example which fakes a file upload, but displays the
   different states an upload field can have.
 
-p.callout.
+.callout.
   Drag a file and drop it into the dropzone or click on it to select a file
   through the file chooser dialog of your browser to trigger the fake upload.
 
@@ -128,8 +132,6 @@ script.
   })();
 
 h3 Styles
-p.
-  The examples below are no
 
 :sample
   .l-container
@@ -138,39 +140,45 @@ p.
         .form__group__label.
           Datei
         .form__group__control
-          .file-dropzone(data-dropzone='dropzone')
-            .file-dropzone__text Drag file here or click to choose.
+          .single-file-upload
+            .file-dropzone(data-dropzone='dropzone')
+              .file-dropzone__text Drag file here or click to choose.
       .form__group
         .form__group__label.
           Datei (Dragover)
         .form__group__control
-          .file-dropzone.file-dropzone--dragover
-            .file-dropzone__text Drag file here or click to choose.
+          .single-file-upload
+            .file-dropzone.file-dropzone--dragover
+              .file-dropzone__text Drag file here or click to choose.
       .form__group
         .form__group__label.
           Datei (Error)
         .form__group__control
-          .file-dropzone
-            .file-dropzone__text Drag file here or click to choose.
+          .single-file-upload
+            .file-dropzone
+              .file-dropzone__text Drag file here or click to choose.
           .form__error-message Das Bild ist zu gross.
       .form__group
         .form__group__label.
           Datei (Uploading)
         .form__group__control
-          .file-uploading
-            .file-uploading__title awesome_image.jpg
-            .file-uploading__progress-background
-              .file-uploading__progress-foreground(style='width: 42%')
-            .file-uploading__progress-text 42% - noch 1337 Sekunden
+          .single-file-upload
+            .file-uploading
+              .file-uploading__title awesome_image.jpg
+              .file-uploading__progress-background
+                .file-uploading__progress-foreground(style='width: 42%')
+              .file-uploading__progress-text 42% - noch 1337 Sekunden
       .form__group
         .form__group__label.
           Datei (Uploaded)
         .form__group__control
-          .file-uploaded
-            .file-uploaded__title awesome_image.gif
-            .file-uploaded__actions
-              a.button.button--small.button--secondary ansehen
-              a.button.button--small.button--secondary löschen
-              a.button.button--small.button--secondary ändern
-            .file-uploaded__description-label Beschreibung
-            textarea.file-uploaded__description.control.control--textarea(data-autogrow='autogrow')
+          .single-file-upload
+            .file-uploaded
+              .file-uploaded__title awesome_image.gif
+              .file-uploaded__actions
+                a.button.button--small.button--secondary ansehen
+                a.button.button--small.button--secondary löschen
+                a.button.button--small.button--secondary ändern
+              .file-uploaded__description
+                .file-uploaded__description-label Beschreibung
+                textarea.file-uploaded__description-control.control.control--textarea(data-autogrow='autogrow')
