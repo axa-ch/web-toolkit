@@ -72,10 +72,47 @@ On long & paginated forms, an introductory page may be used to give upfront info
 similar
 
 ##Inline Validation
+Sometimes, a lot of answers to a question are possible
+Inline validation can provide several types of feedback: confirmation that an appropriate answer was given, suggestions for valid answers, and real-time updates designed to help people stay within necessary limits. These bits of feedback usually happen when people begin, continue, or stop entering answers within input fields.
 
-##Unnecessary Inputs
 
-##Additional Inputs
+>Inline Validation Checklist
+- Consider using inline validation to confirm or
+suggest valid answers and to help people stay
+within limits.
+- Inline confirmation works best for questions with
+potentially high error rates or specific formatting
+requirements.
+- Inline suggestions work best when there is a
+large set of valid answers people can pick from.
+- Inline quality indicators can guide people to
+better answers to complex questions.
+- When validating people’s answers inline, do so
+after they have finished providing an answer, not
+during the process.
+- If you need to change people’s responses into a
+specific format, make sure you do so after they
+have finished providing an answer, not during
+the process.
+- When input limits exist, communicate their
+boundaries using real-time, dynamic updates.
+
+###Confirmation
+
+
+
+###Suggestions
+
+
+
+###Limits
+
+If there is a limit to the length of a text field or area and the user is likely to exceed, give him a hint. 
+
+>Good / Bad Image
+
+
+
 
 ---
 title: SPAM Avoidance
@@ -102,10 +139,6 @@ IT:
 #Timestamps
 If honeypots are not enough to stop spammers, consider to measure the time a user needs to fill in the form. If a user requires less than (for example!) 10 seconds to fill 5 fields, it's probably a spam-robot. This technique should be carefully implemented and take prefilling into account, since this can massively speed up a users data entrance.
 
-
-
-
-
 #Form elements
 
 When it comes to form elements, we follow the touch-first principle. Inputs which require a keyboard should always be chosen last, because text inputs are a burden for many users. 
@@ -125,21 +158,6 @@ Error-messages itself should always be friendly and give clear directions on how
 - Use colour and other graphic elements to make error messages visible. Never forget about colour-blind people or users with black and white screens.
 - Provide clear explanations instead of a generic “An error occurred”. Because if you don’t help them properly, users will make the same mistake again.
 
-
-
-##Action-Buttons
-
-Primary actions bring people closer to completion, secondary actions allow them to go back. Make it clear to the user what happens after he clicks / taps a button. Placement and behaviour of buttons should avoid mistakes. 
-
->Checklist: Action Buttons
-- Give primary actions the highest colour-contrast of all actions.
-- Avoid secondary actions whenever possible. If you have them, distinguish them visually.
-- Previous always stays left of next
-- Group actions & Align primary actions with input-fields to prevent mistakes
-- When a form is being processed, disable the action-button to prevent multiple clicks & errors
-- For actions like reset or clear, provide people with an easy way to undo it
-- Combine agreement-checkboxes with Buttons to reduce one step from the process
-- Always set a useful label, to let the user know what will happen next
 
 #Example
 
