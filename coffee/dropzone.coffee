@@ -36,8 +36,8 @@
         $this.data 'axa.dropzone', data
 
   # Plugin registration
-  $.fn.autogrow = Plugin
-  $.fn.autogrow.Constructor = Dropzone
+  $.fn.dropzone = Plugin
+  $.fn.dropzone.Constructor = Dropzone
 
   # DATA-API
   $(window).on 'load', () ->
