@@ -10,6 +10,127 @@ status: experimental
   The ``single-file-upload`` block is used to display drag and drop zones for a
   file and display status info (progress) to the uploaded file.
 
+h3 States and Behavior
+p.
+  Default state of a fileupload control is the file-dropzone block.
+  When something is dragged over it, toggle the dragover modifier.
+.callout
+  Use the dropzone plugin, to handle transitions from and to the dragover state
+  of the file-dropzone block.
+p.
+  Register to the ondrop event to upload the file.
+  The file-dropzone block must be replaced by the file-uploading block to
+  display a progress bar and info about the upload process.
+p.
+  A click into the dropzone should open the standard file chooser dialog.
+p.
+  When the file has finished uploading, replace the file-uploading block
+  with the file-uploaded block.
+
+h3 Example
+p.
+  The following is an example which fakes a file upload, but displays the
+  different states an upload field can have.
+
+p.callout.
+  Drag a file and drop it into the dropzone or click on it to select a file
+  through the file chooser dialog of your browser to trigger the fake upload.
+
+.l-container
+  .form
+    .form__group
+      .form__group__label.
+        Datei
+      .form__group__control(id='example')
+        .file-dropzone(data-dropzone='dropzone')
+          input.file-dropzone__input(type='file')
+          .file-dropzone__text Drag file here or click to choose.
+        .file-uploading(style='display:none')
+          .file-uploading__title
+          .file-uploading__progress-background
+            .file-uploading__progress-foreground
+          .file-uploading__progress-text
+        .file-uploaded(style='display:none')
+          .file-uploaded__title
+          .file-uploaded__actions
+            a.button.button--small.button--secondary ansehen
+            a.button.button--small.button--secondary löschen
+            a.button.button--small.button--secondary ändern
+          .file-uploaded__description
+            .file-uploaded__description-label Beschreibung
+            textarea.file-uploaded__description-control.control.control--textarea(data-autogrow='autogrow')
+
+
+script.
+  (function () {
+    var $example = $('#example');
+    var $dropzone = $example.children('.file-dropzone');
+    var $uploading = $example.children('.file-uploading');
+    var $uploaded = $example.children('.file-uploaded');
+
+    var init = function() {
+      $dropzone.on('drop', function(event) {
+        event.preventDefault();
+        upload(event.originalEvent.dataTransfer.files[0].name);
+      });
+
+      $dropzone.on ('click', function() {
+          $example.find('.file-dropzone__input')[0].click();
+        });
+
+      $example.find('.file-dropzone__input').on('change', fileSelected);
+    }
+
+    var fileSelected = function(event) {
+      var name = this.value.replace(/\\/g, '/').replace(/.*\//, '')
+      upload(name);
+    };
+
+    var upload = function (name) {
+      var fakeProgressSteps = 5;
+
+      $uploading.children('.file-uploading__title').text(name);
+      var $progressText = $uploading.children('.file-uploading__progress-text');
+      var $progressBar = $uploading.find('.file-uploading__progress-foreground');
+
+      for (i = 0; i <= fakeProgressSteps ; i++) {
+        (function (j) {
+          setTimeout(function () {
+            var width = 100 / fakeProgressSteps * j;
+            $progressBar.animate({'width': width + '%'}, 400);
+            if (j !== fakeProgressSteps) {
+              $progressText.text(width.toPrecision(2) + '% - ' +
+                (fakeProgressSteps - j) + ' seconds');
+            }
+            else {
+              $progressText.text('100% - finished');
+              $progressBar.animate({'width': '100%'}, 400);
+              setTimeout(function () {
+                displayFileInfo(name)
+              }, 1000);
+            }
+          }, j*1000);
+        })(i);
+      }
+
+      $dropzone.hide();
+      $uploading.show();
+    }
+
+    var displayFileInfo = function (name) {
+      $uploaded.children('.file-uploaded__title').text(name);
+
+      $uploading.hide();
+      $uploaded.show();
+    }
+
+    init();
+  })();
+
+h3 Styles
+p.
+  The examples below are no
+
 :sample
   .l-container
     .form
@@ -17,14 +138,20 @@ status: experimental
         .form__group__label.
           Datei
         .form__group__control
-          .file-drop-area
-            .file-drop-area__text Drag file here or click to choose.
+          .file-dropzone(data-dropzone='dropzone')
+            .file-dropzone__text Drag file here or click to choose.
+      .form__group
+        .form__group__label.
+          Datei (Dragover)
+        .form__group__control
+          .file-dropzone.file-dropzone--dragover
+            .file-dropzone__text Drag file here or click to choose.
       .form__group
         .form__group__label.
           Datei (Error)
         .form__group__control
-          .file-drop-area
-            .file-drop-area__text Drag file here or click to choose.
+          .file-dropzone
+            .file-dropzone__text Drag file here or click to choose.
           .form__error-message Das Bild ist zu gross.
       .form__group
         .form__group__label.
@@ -32,13 +159,18 @@ status: experimental
         .form__group__control
           .file-uploading
             .file-uploading__title awesome_image.jpg
-            progress.file-uploading__progress(max='100', value='42')
-            p 42% - noch 1337 Sekunden
+            .file-uploading__progress-background
+              .file-uploading__progress-foreground(style='width: 42%')
+            .file-uploading__progress-text 42% - noch 1337 Sekunden
       .form__group
         .form__group__label.
           Datei (Uploaded)
         .form__group__control
           .file-uploaded
             .file-uploaded__title awesome_image.gif
+            .file-uploaded__actions
+              a.button.button--small.button--secondary ansehen
+              a.button.button--small.button--secondary löschen
+              a.button.button--small.button--secondary ändern
             .file-uploaded__description-label Beschreibung
             textarea.file-uploaded__description.control.control--textarea(data-autogrow='autogrow')

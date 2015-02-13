@@ -1,14 +1,20 @@
-.file-drop-area {
-  border: 10px dashed #ccc;
+.file-dropzone {
+  border-width: 10px;
+  border-style: dashed;
+  border-color: @color-gray--mid;
   min-height: 90px;
 }
 
-.file-drop-area--dragover {
-  border-color: green;
+.file-dropzone--dragover {
+  border-color: @color-light-blue--light;
 }
 
-.file-drop-area__text {
+.file-dropzone__text {
   text-align: center;
+}
+
+.file-dropzone__input {
+  display: none;
 }
 
 .file-uploading {
@@ -19,8 +25,20 @@
 
 }
 
-.file-uploading__progress {
+.file-uploading__progress-background {
+  background-color: @color-gray--mid;
+  margin-top: 10px;
+  height: 20px;
+}
+
+.file-uploading__progress-foreground {
   background-color: @color-blue;
+  height: 100%;
+  width: 0;
+}
+
+.file-uploading__progress-text {
+
 }
 
 .file-uploaded {
@@ -36,5 +54,9 @@
 }
 
 .file-uploaded__description {
+
+}
+
+.file-uploaded__actions {
 
 }
