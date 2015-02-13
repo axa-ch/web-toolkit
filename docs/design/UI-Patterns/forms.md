@@ -72,9 +72,8 @@ On long & paginated forms, an introductory page may be used to give upfront info
 similar
 
 ##Inline Validation
-Sometimes, a lot of answers to a question are possible
+Sometimes, a lot of answers to a question are possible and we even need it in a certain format. This is when inline validation steps in.
 Inline validation can provide several types of feedback: confirmation that an appropriate answer was given, suggestions for valid answers, and real-time updates designed to help people stay within necessary limits. These bits of feedback usually happen when people begin, continue, or stop entering answers within input fields.
-
 
 >Inline Validation Checklist
 - Consider using inline validation to confirm or
@@ -99,11 +98,12 @@ boundaries using real-time, dynamic updates.
 
 ###Confirmation
 
-
+As many inputs as possible should be validated as soon as the user left the input field. Never validate while the user is still entering information. A good validation example is to check if a username is still available or if the email adress has been used before.
+>GIF einfügen
 
 ###Suggestions
 
-
+If a user has to enter a specific but already known value, an autocomplete suggest functions helps the user to complete his goal. Suggestions should always be designed to fit the usecase but there should never be more than 10 results at a time shown to the user to avoid confusion.
 
 ###Limits
 
