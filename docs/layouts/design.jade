@@ -3,33 +3,55 @@ template: master.jade
 segment: design
 ---
 
-.l-row
-  .l-docs-menu
+- var pathName = function(path) { return path.join('__').replace(/\s/g, '_'); }
+- var getTopLevel = function(collection) { if(!collection) { return null; } for (var i = 0; i < config.design.length; i++) { current = config.design[i]; if (collection.indexOf(pathName([current.name])) != -1) { return current; } if (current.children) { for (var j = 0; j < current.children.length; j++) { if (collection.indexOf(pathName([current.name, current.children[j].name])) != -1) { return current; } } } } return null; }  
+- // TODO
+- var topLevel = getTopLevel(partOfCollections);
+- var getFirstPage = function(item, path) { if(!path) { path = [] } path.push(item.name); var page = null; var collection = collections[pathName(path)]; if(collection) { page = collection[0]; } if(page != null) { return page } else { if(item.children && item.children.length > 0) { return getFirstPage(item.children[0], path); } else { return null; } } }
+  
+.main-nav
+  ul.menu.menu--main
+    each item in config.design
+      - var page = getFirstPage(item);
+      - var isActive = topLevel == item
+      if page
+        li.menu__item(
+          class={'is-active': isActive}  
+        )
+          a.menu__link(
+            href=relative(page.link)
+          )= item.name
 
-    ul.menu.menu--left
-      each page in design
+.l-container
+  .l-row
+    .l-docs-menu
+      
+      mixin pageLink(page)
         li.menu__item
           a.menu__link(
             href=relative(page.link)
             class={'is-active': link == page.link}
           )= page.title
 
-      - var sections = []
-      - sections.push({ name: 'Fundamentals', items: design_fundamentals })
-      - sections.push({ name: 'Components', items: design_components })
+      if topLevel
+        ul.menu.menu--left
+          - var collection = collections[pathName([topLevel.name])]
+          if collection
+            each page in collection
+              mixin pageLink(page)
+          if topLevel.children 
+            each secondLevel in topLevel.children
+              - var path = [topLevel.name, secondLevel.name]
+              - var collection = collections[pathName(path)]
+              if collection && collection.length > 0
+                li.menu__item
+                  a.menu__link= secondLevel.name
+                  ul.menu.menu--left
+                    each page in collection
+                      mixin pageLink(page)
+          
 
-      each section in sections
-        li.menu__item
-          .menu__link.menu__link--category= section.name
-          ul.menu
-            each page in section.items
-              li.menu__item
-                a.menu__link(
-                  href=relative(page.link)
-                  class={'is-active': link == page.link}
-                )= page.title
+    .l-docs-main
+      h1.heading.heading--page= title
 
-  .l-docs-main
-    h1.heading.heading--page= title
-
-    != contents
+      != contents
