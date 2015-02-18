@@ -429,17 +429,148 @@
       float: left;
     });
 
-    margin-left: 8px;
+    margin-left: 10px;
 
     &:first-of-type {
-      margin-left: 0;
+      margin-left: 20px;
     }
 
     .icon {
 
       &::before {
-        font-size: 22px;
+        font-size: 28px;
       }
     }
+  }
+}
+
+
+.menu--footer {
+    .make-col(12);
+    .make-col(6, medium);
+    padding-left: 0px;
+    padding-right: 0px;
+    .menu__item {
+        border-top: 1px solid @color-gray--light;
+        padding: 8px 0 8px 25px;
+        cursor: pointer;
+        .menu__link{
+            font-size: 1.2em;
+        }
+        
+        &:first-child{
+            border-top: none;
+        }
+        &:hover{
+            text-decoration: underline;
+            a{
+                color: @color-blue;
+             }
+        }
+        
+        font-family: "ITCFranklinGothicCondensedDemi", sans-serif;
+        .respond(medium, {
+            font-size: 0.875em; 
+            border: none;
+            padding: 0px;
+
+        });
+    
+   
+  }
+}
+
+.menu--footer ~ .menu--footer{
+    border-top: 1px solid @color-gray--light;
+    .respond(medium, {
+            border-top: none;
+
+        });
+}
+
+
+.menu--keep-in-touch {
+    margin-top: 10px;
+
+    padding: 10px 0 10px 25px;
+     .respond(medium, {
+         margin-top: 0px;
+       padding: 0 ;
+
+    
+    });
+
+  .menu__item {
+   .make-col(3);
+   .make-col(2, medium);
+    padding: 0px;
+    .respond(medium, {
+         padding-left: 0px;
+    
+    });
+    .icon {
+        margin:0 auto;
+        display: block;
+        width: 50%;
+        .respond(medium, {
+            margin:0;
+            display: block;
+        });
+
+      &::before {
+          
+        font-size: 3.125em;
+
+        .respond(medium, {
+            font-size: 2.2em;
+        });
+      }
+    }
+  }
+}
+
+.menu--international{
+    margin-top: 10px;
+  .menu__item{
+    .make-col(6);
+    .make-col(6, medium);
+    padding: 0px;
+
+
+    .icon {
+      margin:0 auto;
+      display: block;
+      width: 50%;
+      .respond(medium, {
+        margin:0;
+        display: block;
+      });
+
+      &::before {
+        font-size: 4em;
+
+    }
+  }
+  }
+}
+.menu--copyline {
+  padding: 5px;
+  float: right;
+
+  .menu__item {
+    font-size: 0.75em;
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-family: ITCFranklinGothicCondensedDemi, sans-serif;
+  }
+  a {
+    color: @color-gray--darkest;
+    text-decoration: none;
+  }
+  .menu__item ~ .menu__item {
+    border-left: 1px solid @color-gray--darkest;
+    margin-left: 10px;
+    padding-left: 10px;
   }
 }
