@@ -4,6 +4,10 @@ slug: changelog
 template: master.jade
 ---
 
+# 0.2.1 - 11 Feb, 2015
+
+- Add missing import statements to info-icon.less
+
 # 0.2.0 - 5 Feb, 2015
 
 - Documentation improvements
