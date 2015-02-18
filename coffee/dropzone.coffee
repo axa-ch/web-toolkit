@@ -13,15 +13,15 @@
     init: () ->
       @$element.bind 'dragover', @, (event) ->
         event.preventDefault()
-        event.data.$element.addClass 'file-dropzone--dragover'
+        event.data.$element.addClass 'dropzone__container--dragover'
 
       @$element.bind 'dragleave', @, (event) ->
         event.preventDefault()
-        event.data.$element.removeClass 'file-dropzone--dragover'
+        event.data.$element.removeClass 'dropzone__container--dragover'
 
       @$element.on 'drop', @, (event) ->
         event.preventDefault()
-        event.data.$element.removeClass 'file-dropzone--dragover'
+        event.data.$element.removeClass 'dropzone__container--dragover'
 
   # Plugin definition
   Plugin = (option) ->

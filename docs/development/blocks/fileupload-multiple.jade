@@ -10,6 +10,11 @@ status: experimental
   The ``multi-file-upload`` block is used to display drag and drop zones for
   multiple files and display status info (progress) to the uploaded files.
 
+h3 Behavior
+p.
+  When a file is dropped into the dropzone or uploaded through the dialog,
+  a card with the status info should be displayed below the dropzone.
+
 h3 Styles
 
 :sample
@@ -20,8 +25,8 @@ h3 Styles
           Datei
         .form__group__control
           .multi-file-upload
-            .file-dropzone(data-dropzone='dropzone')
-              .file-dropzone__text Drag file here or click to choose.
+            .dropzone(data-dropzone='dropzone')
+              .dropzone__text Drag file here or click to choose.
             .file-uploading
               .file-uploading__title awesome_image.jpg
               .file-uploading__progress-background
