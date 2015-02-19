@@ -1,26 +1,33 @@
 .dropzone {
-  height: 80px;
-  // display: table;
-  // width: 100%;
-  background-color: @color-gray--light;
+  background-color: @color-gray--lighter;
 }
 
 .dropzone__container {
-  // vertical-align: middle;
-  // display: table-cell;
   height: 80px;
   border-width: 2px;
   border-style: dashed;
-  border-color: @color-gray--dark;
-  .make-container();
+  border-color: @color-gray;
 }
 
 .dropzone__container--dragover {
-  border-color: @color-green;
+  border-color: @color-light-blue--light;
+}
+
+.dropzone__icon-container {
+  float: left;
+  padding: 0 20px;
+  display:table;
+  height: 100%;
+}
+
+.dropzone__icon {
+  font-size: 2.25em;
+  display:table-cell;
+  vertical-align: middle;
+  color: @color-gray;
 }
 
 .dropzone__text-container {
-  .make-col(10);
   display:table;
   height: 100%;
 }
@@ -28,50 +35,67 @@
 .dropzone__text {
   display:table-cell;
   vertical-align: middle;
-}
-
-.dropzone__icon-container {
-  .make-col(2);
-  display:table;
-  height: 100%;
-}
-
-.dropzone__icon {
-  font-size: 3em;
-  display:table-cell;
-  vertical-align: middle;
+  border-color: @color-gray;
 }
 
 .dropzone__input {
   display: none;
 }
 
-.file-uploading {
-
+.upload-remarks {
+  margin: 10px 0;
 }
 
-.file-uploading__title {
+.file-list {
+  margin-top: 10px;
+}
 
+.file-status {
+  height: 49px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: @color-gray;
+  border-bottom-width: 0;
+
+  &:last-of-type {
+    border-bottom-width: 1px;
+  }
+}
+
+.file-uploading__progress {
+  margin-top: 14px;
+  width: 100%;
+  padding-right: 55px;
 }
 
 .file-uploading__progress-background {
-  background-color: @color-gray--mid;
-  margin-top: 10px;
+  background-color: @color-gray;
   height: 20px;
+  margin-left: 10px;
 }
 
 .file-uploading__progress-foreground {
-  background-color: @color-green;
+  background-color: @color-light-blue;
   height: 100%;
   width: 0;
 }
 
-.file-uploading__progress-text {
-
+.file-uploading__title {
+  position: absolute;
+  margin-top: 14px;
+  margin-left: 14px;
+  color: @color-white;
 }
 
-.file-uploaded {
-
+.file-uploading__percentage {
+  right: 10px;
+  padding: 14px 10px 0 0;
+  text-align: right;
+  width: 55px;
+  float: right;
+  position: absolute;
+  color: @color-light-blue;
+  font-weight: bold;
 }
 
 .file-uploaded__title {
