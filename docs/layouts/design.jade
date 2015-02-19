@@ -44,9 +44,9 @@ segment: design
               - var path = [topLevel.name, secondLevel.name]
               - var collection = collections[pathName(path)]
               if collection && collection.length > 0
-                li.menu__item
-                  a.menu__link= secondLevel.name
-                  ul.menu.menu--left
+                li.menu__item.menu__item--left-category
+                  .menu__link= secondLevel.name
+                  ul.menu.menu--left.menu--left-second
                     each page in collection
                       mixin pageLink(page)
           
