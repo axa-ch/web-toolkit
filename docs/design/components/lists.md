@@ -38,6 +38,11 @@ Do use lists to [list](#) one or multiple rows of similar structured data or inf
 
 # Design Specs
 
+|   | Mobile | Desktop |
+| - | ------ | ------- |
+| Foobar | 5px | 10px |
+| Baz | red | black |
+
 <div class="l-row" >
   <div class="l-col l-col--medium-6" >
     <h3>Desktop</h3>
