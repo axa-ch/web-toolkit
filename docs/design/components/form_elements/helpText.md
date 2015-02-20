@@ -1,13 +1,12 @@
 ---
 title: Help Texts
-slug: helptexts
-collection: design_components
 template: design.jade
+order: 2
 ---
 
 #Help Text
 
-Help text can be provided to help users fill in the form and to clear up questions. Still, don’t use labels to fix shortcomings of bad form design or unclear label text. 
+Help text can be provided to help users fill in the form and to clear up questions. Still, don’t use labels to fix shortcomings of bad form design or unclear label text.
 
 >Checklist: Help Text
 - Avoid help texts wherever and whenever possible.

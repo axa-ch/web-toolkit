@@ -1,8 +1,7 @@
 ---
 title: Single Page Applications
-slug: spa
-collection: design_components
 template: design.jade
+order: 3
 ---
 
 #Single Page Applications

@@ -1,8 +1,7 @@
 ---
 title: Text Field
-slug: textfield
-collection: design_components
 template: design.jade
+order: 1
 ---
 
 #Textfield
