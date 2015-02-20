@@ -35,7 +35,7 @@
 .dropzone__text {
   display:table-cell;
   vertical-align: middle;
-  border-color: @color-gray;
+  color: @color-gray--dark;
 }
 
 .dropzone__input {
@@ -56,6 +56,7 @@
   border-style: solid;
   border-color: @color-gray;
   border-bottom-width: 0;
+  padding: 0 10px;
 
   &:last-of-type {
     border-bottom-width: 1px;
@@ -88,7 +89,7 @@
 }
 
 .file-uploading__percentage {
-  right: 10px;
+  right: 20px;
   padding: 14px 10px 0 0;
   text-align: right;
   width: 55px;
@@ -99,7 +100,14 @@
 }
 
 .file-uploaded__title {
+  margin: 10px;
+  margin-top: 14px;
+  margin-right: 158px;
+}
 
+.dropzone__text__upload-link {
+  font-variant: small-caps;
+  font-size: 17px;
 }
 
 .file-uploaded__description-label {
@@ -107,9 +115,30 @@
 }
 
 .file-uploaded__description {
-
 }
 
 .file-uploaded__actions {
+  float: right;
+  margin-top: 11px;
+  width: 158px;
+}
 
+.file-uploaded__actions__action {
+  font-variant: small-caps;
+  margin: 0px 10px;
+  font-size: 17px;
+}
+
+.file-uploading__progress-error {
+  background-color: @color-red;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.file-uploading__error-delete {
+  color: @color-red;
+}
+
+.upload-errors {
+  color: @color-red;
 }
