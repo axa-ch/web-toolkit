@@ -117,6 +117,29 @@ module.exports = exports = function (options) {
       collections_options[name] = { sortBy: 'slug', reverse: false };
     });
 
+    var addCollectionOption = function(name, pattern) {
+      collections_options[name] = {
+        sortBy: 'order',
+        reverse: false,
+        pattern: pattern
+      }
+    }
+
+    var normalizeCollectionName = function(parts) {
+      return parts.join('__').replace(/\s/g, '_');
+    }
+
+    config.design.forEach(function(topLevelItem) {
+      if(topLevelItem.pattern)
+        addCollectionOption(normalizeCollectionName([topLevelItem.name]), topLevelItem.pattern)
+
+      if(topLevelItem.children)
+        topLevelItem.children.forEach(function(secondLevelItem) {
+          if(secondLevelItem.pattern)
+            addCollectionOption(normalizeCollectionName([topLevelItem.name, secondLevelItem.name]), secondLevelItem.pattern)
+        })
+    })
+
     metalsmith.use(branch('**/*.md')
       .use(relative())
       .use(collections(collections_options))
@@ -125,7 +148,7 @@ module.exports = exports = function (options) {
         useMetadata: true
       })));
 
-    metalsmith.use(branch(['**/*.jade', '!layout/**/*.jade'])
+    metalsmith.use(branch(['**/*.jade', '!layouts/**/*.jade'])
       .use(relative())
       .use(collections(collections_options))
       .use(jade({ useMetadata: true, locals: metalsmith.metadata() })));

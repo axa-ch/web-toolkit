@@ -38,5 +38,19 @@
       "gist": "324dc1114e65df211cd5",
       "comment": "asking for access"
     }
-  }
+  },
+  "design": [{
+    "name": "Fundamentals",
+    "pattern": "design/fundamentals/*"
+  },{
+    "name": "Components",
+    "pattern": "design/components/*",
+    "children": [{
+      "name": "Form elements",
+      "pattern": "design/components/form_elements/*"
+    }]
+  },{
+    "name": "UI Patterns",
+    "pattern": "design/ui_patterns/*"
+  }]
 }

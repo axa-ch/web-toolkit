@@ -5,26 +5,26 @@
   },
   "secondary": [{
     "colors": {
-      "light-blue": "#0062a9",
-      "light-blue--light": "#5c91c0"
+      "light-blue--light": "#5c91c0",
+      "light-blue": "#0062a9"
     }
   },{
     "colors": {
-      "blue-gray": "#79838d",
-      "blue-gray--light": "#dedee2"
+      "blue-gray--light": "#dedee2",
+      "blue-gray": "#79838d"
     }
   },{
     "colors": {
-      "black": "#000000",
-      "gray--darkest": "#333333",
-      "gray--predarkest": "#666666",
-      "gray--darker": "#6f6f6f",
-      "gray--dark": "#919191",
-      "gray": "#b0b0b0",
-      "gray--mid": "#dadada",
-      "gray--light": "#e5e5e5",
+      "white": "#ffffff",
       "gray--lighter": "#efefef",
-      "white": "#ffffff"
+      "gray--light": "#e5e5e5",
+      "gray--mid": "#dadada",
+      "gray": "#b0b0b0",
+      "gray--dark": "#919191",
+      "gray--darker": "#6f6f6f",
+      "gray--predarkest": "#666666",
+      "gray--darkest": "#333333",
+      "black": "#000000"
     }
   },{
     "colors": {

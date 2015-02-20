@@ -1,12 +1,11 @@
 ---
 title: Form Design
-slug: forms
-collection: design_components
 template: design.jade
+order: 1
 ---
 
 #Forms
-…suck. 
+…suck.
 
 If you don’t believe it, try to find people who like filling them in. This is the reason why we built this guide on how to build forms for AXA. We included checklist for most topics, which give you a deeper insight and valuable tipps on how to build less annoying forms.
 
@@ -17,7 +16,7 @@ If you don’t believe it, try to find people who like filling them in. This is 
 
 #Form structure
 
-The architectural structure of a form is crucial for its user experience. 
+The architectural structure of a form is crucial for its user experience.
 
 ###Form Design Principles
 
@@ -37,7 +36,7 @@ Forms rarely exist in a vacuum. They are almost always part of a broader context
 
 ###Ensure Consistent Communication:
 
-Forms are conversations between customers and companies. Therefore ask clear and short questions in a natural language. Speak with one voice, despite questions from different people or departments. 
+Forms are conversations between customers and companies. Therefore ask clear and short questions in a natural language. Speak with one voice, despite questions from different people or departments.
 
 ##Form Organisation
 
@@ -49,7 +48,7 @@ Use the minimal amount of visual information to distinguish different content gr
 - few short topics > one page
 - few topics with large number of questions > multiple pages
 - one topic with large number of questions > one page
-- Use the minimal amount of visual information to distinguish different content groups. 
+- Use the minimal amount of visual information to distinguish different content groups.
 - Avoid visual clutter and don't interrupt scan lines.
 - Speak with one voice, despite questions from different people or departments.
 
@@ -107,7 +106,7 @@ If a user has to enter a specific but already known value, an autocomplete sugge
 
 ###Limits
 
-If there is a limit to the length of a text field or area and the user is likely to exceed, give him a hint. 
+If there is a limit to the length of a text field or area and the user is likely to exceed, give him a hint.
 
 >Good / Bad Image
 
@@ -123,13 +122,13 @@ template: design.jade
 
 #Captcha
 
-Traditional captchas that require the user to decode some characters must be avoided due to accessibility and usability drawbacks. 
+Traditional captchas that require the user to decode some characters must be avoided due to accessibility and usability drawbacks.
 
 >images
 
 #Honeypot
 
-Honeypots are hidden form fields that trap spam robots because those robots can't distinguish between shown and hidden form fields. Therefore, a robot will fill the field and therefore fail the test. *Nevertheless* this field should have a clear label which tells users with screen readers to not fill this form. 
+Honeypots are hidden form fields that trap spam robots because those robots can't distinguish between shown and hidden form fields. Therefore, a robot will fill the field and therefore fail the test. *Nevertheless* this field should have a clear label which tells users with screen readers to not fill this form.
 >Best practice translations
 DE: Wenn Sie ein Mensch sind, lassen Sie bitte das nächste Feld leer.
 EN: Are you human? If yes, please don't fill anything into the next field.
@@ -141,7 +140,7 @@ If honeypots are not enough to stop spammers, consider to measure the time a use
 
 #Form elements
 
-When it comes to form elements, we follow the touch-first principle. Inputs which require a keyboard should always be chosen last, because text inputs are a burden for many users. 
+When it comes to form elements, we follow the touch-first principle. Inputs which require a keyboard should always be chosen last, because text inputs are a burden for many users.
 
 >Checklist: form elements
 - Inputs which require a keyboard should always be the last option
@@ -150,7 +149,7 @@ When it comes to form elements, we follow the touch-first principle. Inputs whic
 
 ##Errors
 
-The best way to handle errors, is not to allow them in the first place. This said, users should always get timely and approximate feedback on their input. Unresolved problems hinder the user to complete the form and therefore should be placed prominently. 
+The best way to handle errors, is not to allow them in the first place. This said, users should always get timely and approximate feedback on their input. Unresolved problems hinder the user to complete the form and therefore should be placed prominently.
 Error-messages itself should always be friendly and give clear directions on how to resolve the problem. The mistake is usually made by us and not the user, because we designed the system which led him to failure: never blame the user.
 
 >Checklist: Errors
