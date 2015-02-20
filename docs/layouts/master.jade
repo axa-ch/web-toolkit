@@ -27,7 +27,7 @@ html
       // Include the UserVoice JavaScript SDK (only needed once on a page)
       UserVoice=window.UserVoice||[];
       UserVoice.push(['set', {
-        accent_color: '#0062a9',
+        accent_color: '#103184',
         screenshot_enabled: false
       }]);
       (function(){
@@ -47,6 +47,9 @@ html
 
   body.site
     .site__page
+      .l-container
+        .docs-floating-action
+          a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating.icon.icon--feedback
       header.header.header--main
         .l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
@@ -70,10 +73,6 @@ html
                         class={'is-active': segment == s.slug}
                       )= s.name
             .header__meta__lower
-              .header__meta__social
-                .menu.menu--social
-                  .menu__item
-                    a(href='#', data-uv-trigger).menu__link.icon.icon--feedback
 
               // ko if: hasGitHubIntegration
               .header__meta__social
