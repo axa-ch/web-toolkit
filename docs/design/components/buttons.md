@@ -9,11 +9,10 @@ Use a label and/or an icon to make it clear to the user what happens when he cli
 - Regular button: A rectangular button that represents a primary or secondary action of a section
 - Floating action button: A circular button representing an *important action that is omnipresent*
 
->Checklist: Buttons
-- Avoid secondary actions whenever possible
-- Previous always stays left of next
-- Group actions
-- Always set a useful label and/or icon, to let the user know what will happen next
+> - Avoid secondary actions whenever possible
+> - Previous always stays left of next
+> - Group actions
+> - Always set a useful label and/or icon, to let the user know what will happen next
 
 # Floating action buttons
 
