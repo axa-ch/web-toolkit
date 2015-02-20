@@ -43,7 +43,7 @@ See the feedback button on the bottom right corner of this page for an example.
 
 ## Should I use a small button?
 
-Use small buttons when there is not enough space for a large button.
+Try to avoid the usage of small buttons. Use them when there is not enough space for a large button.
 
 ## Example
 
