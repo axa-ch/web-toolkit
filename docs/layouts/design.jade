@@ -10,17 +10,18 @@ segment: design
 - var getFirstPage = function(item, path) { if(!path) { path = [] } path.push(item.name); var page = null; var collection = collections[pathName(path)]; if(collection) { page = collection[0]; } if(page != null) { return page } else { if(item.children && item.children.length > 0) { return getFirstPage(item.children[0], path); } else { return null; } } }
   
 .main-nav
-  ul.menu.menu--main
-    each item in config.design
-      - var page = getFirstPage(item);
-      - var isActive = topLevel == item
-      if page
-        li.menu__item(
-          class={'is-active': isActive}  
-        )
-          a.menu__link(
-            href=relative(page.link)
-          )= item.name
+  .l-container
+    ul.menu.menu--main
+      each item in config.design
+        - var page = getFirstPage(item);
+        - var isActive = topLevel == item
+        if page
+          li.menu__item(
+            class={'is-active': isActive}  
+          )
+            a.menu__link(
+              href=relative(page.link)
+            )= item.name
 
 .l-container
   .l-row
