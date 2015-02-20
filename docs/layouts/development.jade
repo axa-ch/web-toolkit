@@ -11,38 +11,40 @@ cache: true
   .l-row
     .l-docs-menu
 
-      ul.menu.menu--left
-        each page in development
-          li.menu__item
-            a.menu__link(
-              href=relative(page.link)
-              class={'is-active': link == page.link}
-            )= page.title
+      nav.left-navigation
+        ul.menu.menu--left
+          each page in development
+            li.menu__item
+              a.menu__link(
+                href=relative(page.link)
+                class={'is-active': link == page.link}
+              )= page.title
 
-        - var sections = []
-        - sections.push({ name: 'Blocks', items: development_blocks })
-        - sections.push({ name: 'Mixins', items: development_mixins })
-        - sections.push({ name: 'jQuery Plugins', items: development_plugins })
+          - var sections = []
+          - sections.push({ name: 'Blocks', items: development_blocks })
+          - sections.push({ name: 'Mixins', items: development_mixins })
+          - sections.push({ name: 'jQuery Plugins', items: development_plugins })
 
-        each section in sections
-          li.menu__item
-            .menu__link.menu__link--category= section.name
-            ul.menu
-              each page in section.items
-                li.menu__item
-                  a.menu__link(
-                    href=relative(page.link)
-                    class={'is-active': link == page.link}
-                  )
-                    span= page.title
-                    if page.status != undefined
-                      = ' '
-                      if page.status == 'experimental'
-                        span.label.label--danger= page.status
-                      else if page.status == 'new'
-                        span.label.label--success= page.status
-                      else
-                        span.label.label--default= page.status
+          each section in sections
+            .left-navigation__category
+              .left-navigation__category__headline= section.name
+              .left-navigation__category__menu
+                ul.menu
+                  each page in section.items
+                    li.menu__item
+                      a.menu__link(
+                        href=relative(page.link)
+                        class={'is-active': link == page.link}
+                      )
+                        span= page.title
+                        if page.status != undefined
+                          = ' '
+                          if page.status == 'experimental'
+                            span.label.label--danger= page.status
+                          else if page.status == 'new'
+                            span.label.label--success= page.status
+                          else
+                            span.label.label--default= page.status
 
     .l-docs-main
       h1.heading.heading--page
