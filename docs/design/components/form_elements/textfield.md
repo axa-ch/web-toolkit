@@ -19,7 +19,7 @@ Bacon ipsum dolor amet ribeye boudin t-bone venison, beef swine jowl shankle fat
 
 # Design specs
 
-|    | <i class="icon icon--cross" ></i> Mobile | <i class="icon icon--cross" ></i> Desktop |
+|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Foobar | 3px | 5px |
-| Baz | red | blue |
+| Foobar | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
+| Baz | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> blue |
