@@ -28,7 +28,9 @@ cache: true
           each section in sections
             .left-navigation__category
               .left-navigation__category__headline= section.name
-              .left-navigation__category__menu
+              - var active = false
+              - section.items.forEach(function(page) { if(page.link == link) { active = true; } })
+              .left-navigation__category__menu(class={'is-active': active})
                 ul.menu
                   each page in section.items
                     li.menu__item
