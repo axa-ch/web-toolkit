@@ -4,15 +4,15 @@ template: design.jade
 order: 1
 ---
 
-# General
+A *text field* is a basic control that enables the user to type text. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
 
-## Optimize the virtual keyboard
+> - Optimize the virtual keyboard for the requested input format (e.g. email address, phone number, URL, PIN, date, ...)
 
-The virtual keyboard should be optimized for the requested input format (e.g. email address, phone number, URL, PIN, date, ...).
-
+<!--
 ## Character counter
 
 To be defined
+-->
 
 # Single-line text field
 
@@ -31,9 +31,18 @@ To be defined
 
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Foobar | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
-| Baz | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> blue |
+| Text | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> Arial 14px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Text color | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #333333 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Text vertical-align | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> middle | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Height | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 40px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Width | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 100% | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #efefef | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div>- |
 
+### Focus
+
+|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
+| -- | -- | -- |
+| Border | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 1px solid #0062A9 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
 
 # Multi-line text field
 
@@ -53,10 +62,12 @@ as soon as the user enters more lines than fit. Add a max height to prevent huge
 
 ## Design specs
 
+Inherits from the single-line text field
+
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Foobar | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
-| Baz | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> blue |
+| Text vertical-align | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 15px from top | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Height | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 65-175px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
 
 
 # Auto-complete text field
@@ -84,7 +95,25 @@ accuracy and efficiency.
 
 ## Design specs
 
+Inherits from the single-line text field
+
+### Dropdown
+
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Foobar | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
-| Baz | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> blue |
+| Max items | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 5 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 7 |
+
+### Dropdown item
+
+Inherits from the single-line text field
+
+|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
+| -- | -- | -- |
+| Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #DADADB | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+
+#### hover/selected
+
+|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
+| -- | -- | -- |
+| Text color | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> white | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #0062A9 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
