@@ -22,7 +22,7 @@ To be defined
   <div class="form__group">
     <label class="form__group__label">Single-line text field</label>
     <div class="form__group__control">
-      <input type="text" class="control control--input"/>
+      <input type="text" class="control control--input" value="Foo bar" />
     </div>
   </div>
 </div>
@@ -55,7 +55,8 @@ as soon as the user enters more lines than fit. Add a max height to prevent huge
   <div class="form__group">
     <label class="form__group__label">Multi-line text field</label>
     <div class="form__group__control">
-      <textarea type="text" class="control control--textarea"></textarea>
+      <textarea type="text" class="control control--textarea">Foo
+Bar</textarea>
     </div>
   </div>
 </div>
