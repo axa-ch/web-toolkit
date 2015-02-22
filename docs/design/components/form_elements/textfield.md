@@ -4,7 +4,7 @@ template: design.jade
 order: 1
 ---
 
-A *text field* is a basic control that enables the user to type text. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
+A **text field** is a basic control that enables the user to type text. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
 
 > - Optimize the virtual keyboard for the requested input format (e.g. email address, phone number, URL, PIN, date, ...)
 
@@ -18,13 +18,8 @@ To be defined
 
 ## Example
 
-<div class="form">
-  <div class="form__group">
-    <label class="form__group__label">Single-line text field</label>
-    <div class="form__group__control">
-      <input type="text" class="control control--input" value="Foo bar" />
-    </div>
-  </div>
+<div style="max-width: 700px" >
+  <input type="text" class="control control--input" value="Foo bar" />
 </div>
 
 ## Design specs
@@ -51,14 +46,9 @@ as soon as the user enters more lines than fit. Add a max height to prevent huge
 
 ## Example
 
-<div class="form">
-  <div class="form__group">
-    <label class="form__group__label">Multi-line text field</label>
-    <div class="form__group__control">
-      <textarea type="text" class="control control--textarea">Foo
+<div style="max-width: 700px" >
+  <textarea type="text" class="control control--textarea">Foo
 Bar</textarea>
-    </div>
-  </div>
 </div>
 
 ## Design specs
@@ -78,18 +68,13 @@ accuracy and efficiency.
 
 ## Example
 
-<div class="form">
-  <div class="form__group">
-    <label class="form__group__label">Multi-line text field</label>
-    <div class="form__group__control">
-      <div class="autocomplete">
-        <input type="text" value="8" class="control control--input"/>
-        <div style="position: relative;" class="autocomplete-container">
-          <div class="autocomplete-item">8000 Zürich</div>
-          <div class="autocomplete-item autocomplete-item--selected">8400 Winterthur</div>
-          <div class="autocomplete-item">8472 Seuzach</div>
-        </div>
-      </div>
+<div style="max-width: 700px" >
+  <div class="autocomplete">
+    <input type="text" value="8" class="control control--input"/>
+    <div style="position: relative;" class="autocomplete-container">
+      <div class="autocomplete-item">8000 Zürich</div>
+      <div class="autocomplete-item autocomplete-item--selected">8400 Winterthur</div>
+      <div class="autocomplete-item">8472 Seuzach</div>
     </div>
   </div>
 </div>
