@@ -142,6 +142,9 @@ module.exports = exports = function (options) {
       .use(collections(collections_options))
       .use(markdown({
         renderer: markedRenderer,
+        highlight: function (code) {
+          return require('highlight.js').highlightAuto(code).value;
+        },
         useMetadata: true
       })));
 
