@@ -12,7 +12,7 @@ collection: development
 We recommend using the following meta tag:
 
 ```html
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 ```
 
 The <code>width=device-width</code> forces
@@ -52,7 +52,7 @@ be considered invalid in older versions of IE)
 will result in compatibility mode.
 
 ```html
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 ```
 
 # Character set
@@ -62,7 +62,7 @@ de facto standard and we are operating in a
 multilingual country in an international group.
 
 ```html
-  <meta charset="utf-8">
+<meta charset="utf-8">
 ```
 
 > Be aware that your server has to deliver the HTML
