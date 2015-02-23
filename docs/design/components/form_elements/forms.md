@@ -27,9 +27,9 @@ There is the possiblity to add an error message and/or an info text.
 |    | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- | -- |
 | Label width | 12 columns | 6 columns | 5 columns |
-| Label text | Arial 14px | - | - |
-| Label color | #333333 | - | - |
-| Label vertical-align | 10px offset to the control | middle of top 40px | - |
+| Label text | Arial 14px | Arial 14px | Arial 14px |
+| Label color | #333333 | #333333 | #333333 |
+| Label vertical-align | 10px offset to the control | middle of top 40px | middle of top 40px |
 | Control width | 12 columns | 6 columns | 6 columns |
 
 # Error message
@@ -54,7 +54,7 @@ There is the possiblity to add an error message and/or an info text.
 
 |    | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- | -- |
-| TBD | - | - | - |
+| TBD | TBD | TBD | TBD |
 
 ## Info text closed
 
@@ -76,7 +76,7 @@ There is the possiblity to add an error message and/or an info text.
 
 |    | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- | -- |
-| TBD | - | - | - |
+| TBD | TBD | TBD | TBD |
 
 # Info text opened
 
@@ -103,7 +103,7 @@ There is the possiblity to add an error message and/or an info text.
 
 |    | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- | -- |
-| TBD | - | - | - |
+| TBD | TBD | TBD | TBD |
 
 # Form group without label
 

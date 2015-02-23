@@ -26,18 +26,18 @@ To be defined
 
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Text | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> Arial 14px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
-| Text color | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #333333 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
-| Text vertical-align | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> middle | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
-| Height | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 40px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
-| Width | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 100% | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
-| Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #efefef | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div>- |
+| Text | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> Arial 14px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> Arial 14px |
+| Text color | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #333333 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> #333333 |
+| Text vertical-align | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> middle | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> middle |
+| Height | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 40px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 40px |
+| Width | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 100% | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 100% |
+| Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #efefef | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> #efefef |
 
 ### Focus
 
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Border | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 1px solid #0062A9 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Border | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 1px solid #0062A9 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 1px solid #0062A9 |
 
 # Multi-line text field
 
@@ -57,8 +57,8 @@ Inherits from the single-line text field
 
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Text vertical-align | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 15px from top | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
-| Height | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 65-175px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Text vertical-align | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 15px from top | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 15px from top |
+| Height | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 65-175px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 65-175px |
 
 
 # Auto-complete text field
@@ -95,11 +95,11 @@ Inherits from the single-line text field
 
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #DADADB | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #DADADB | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> #DADADB |
 
 #### hover/selected
 
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Text color | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> white | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
-| Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #0062A9 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> - |
+| Text color | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> white | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> white |
+| Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #0062A9 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> #0062A9 |
