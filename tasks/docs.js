@@ -109,9 +109,6 @@ module.exports = exports = function (options) {
       'development_blocks',
       'development_plugins',
       'development_mixins',
-      'design',
-      'design_components',
-      'design_fundamentals',
       'examples'
     ].forEach(function (name) {
       collections_options[name] = { sortBy: 'slug', reverse: false };
