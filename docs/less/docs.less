@@ -22,6 +22,21 @@
 @import './blocks/thumbnail';
 @import './blocks/typeface';
 
+.docs-floating-action {
+  float: right;
+  width: 50px; // TODO
+
+  .docs-floating-action__button {
+    position: fixed;
+    bottom: 10px;
+    z-index: 98;
+  }
+}
+
+.table--docs {
+  max-width: 700px;
+}
+
 .menu__item--docs-signin {
   background: red;
   padding: 5px 10px;

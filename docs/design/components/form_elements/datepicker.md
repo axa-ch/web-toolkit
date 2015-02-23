@@ -1,8 +1,7 @@
 ---
 title: Datepicker
-slug: datepicker
-collection: design_components
 template: design.jade
+order: 4
 ---
 
 #Datepicker

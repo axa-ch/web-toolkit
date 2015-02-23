@@ -1,8 +1,7 @@
 ---
 title: Action Buttons in Forms
-slug: formbutton
-collection: design_components
 template: design.jade
+order: 3
 ---
 
 #Action-Buttons
