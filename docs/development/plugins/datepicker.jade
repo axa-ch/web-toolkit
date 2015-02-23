@@ -15,22 +15,19 @@ status: new
     .datepicker__input
       input(type='text').control.control--input#myDatepickerInput
 
-
 :sample
-
   script.
     var handleDatepickerClick = function(e) {
       e.preventDefault();
-      
+
       $('#myDatepicker2').datepicker({
         input: $('#myDatepickerInput2'),
         moment: window.moment,
         action: 'toggle'
       })
     }
-    
+
   .datepicker#myDatepicker2
     a(href='#', onclick="handleDatepickerClick(event)").datepicker__trigger
     .datepicker__input
       input(type='text').control.control--input#myDatepickerInput2
-    
