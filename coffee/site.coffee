@@ -14,7 +14,7 @@
       @options = $.extend {}, Site.DEFAULTS, options
 
       @$element.on 'click', '.site__page.is-masked', @, (event) ->
-        event.data.hideMenu();
+        event.data.hideMenu()
 
     toggleMenu: (show) ->
       show = not @$page.hasClass('is-pushed') if not show?
@@ -58,6 +58,6 @@
 
     e.preventDefault if $this.is 'a'
 
-    Plugin.call($target, 'toggleMenu');
+    Plugin.call($target, 'toggleMenu')
 
 )(jQuery)

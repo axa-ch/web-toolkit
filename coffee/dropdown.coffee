@@ -30,7 +30,7 @@
     # Handle spacebar to open the select box
     handleKeyDown: (e) =>
       if e.which == 32
-        @$select.focus();
+        @$select.focus()
 
     setLabelText: () =>
       @$label.text @$select.find('option:selected').text()
