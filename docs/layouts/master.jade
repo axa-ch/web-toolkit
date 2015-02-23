@@ -43,6 +43,7 @@ html
     script(src=relative("/js/api.js"))
     script(src=relative("/js/github-integration.js"))
     script(src=relative("/js/main.js"))
+    script(src=relative("/js/left-navigation.js"))
     script(src=relative("/js/octocat.js"))
 
   body.site
@@ -127,43 +128,70 @@ html
             a.menu__link.menu__link--parent(
               href='#'
             ) Design Guidelines
+            
+            - var pathName = function(path) { return path.join('__').replace(/\s/g, '_'); }
+            mixin pageLink(page)
+              li.menu__item
+                a.menu__link(
+                  href=relative(page.link)
+                  data-link=page.link
+                )= page.title
 
             ul.menu__level
               li.menu__item.menu__item--back
                 a.menu__link.menu__link--back(
                   href='#'
                 ) Design Guidelines
-
-              each page in design
-                li.menu__item
-                  a.menu__link(
-                    href=relative(page.link)
-                    data-link=page.link
-                  )= page.title
-
-              - var sections = []
-              - sections.push({ name: 'Fundamentals', items: design_fundamentals })
-              - sections.push({ name: 'Components', items: design_components })
-
-              each section in sections
+              
+              - // Top level
+              each topLevel in config.design
                 li.menu__item
                   a.menu__link.menu__link--parent(
                     href='#'
-                  )= section.name
-
+                  )= topLevel.name
+                    
+                  - // Top level back
+                  
                   ul.menu__level
                     li.menu__item.menu__item--back
                       a.menu__link.menu__link--back(
                         href='#'
-                      )= section.name
-
-                    each page in section.items
-                      li.menu__item
-                        a.menu__link(
-                          href=relative(page.link)
-                          data-link=page.link
-                        )= page.title
-
+                      )= topLevel.name
+                      
+                    - // Top level pages
+                    - var collection = collections[pathName([topLevel.name])]
+                    if collection
+                      each page in collection
+                        mixin pageLink(page)
+                
+                    - // Top level children
+                    if topLevel.children 
+                      each secondLevel in topLevel.children
+                        
+                        - var path = [topLevel.name, secondLevel.name]
+                        - var collection = collections[pathName(path)]
+                        
+                        if collection && collection.length > 0
+                          - // Second level
+                          li.menu__item
+                            a.menu__link.menu__link--parent(
+                              href='#'
+                            )= secondLevel.name
+                              
+                            - // Second level back
+                            ul.menu__level
+                              li.menu__item.menu__item--back
+                                a.menu__link.menu__link--back(
+                                  href='#'
+                                )= secondLevel.name
+                                
+                              - // Second level pages
+                              if collection
+                                each page in collection
+                                  mixin pageLink(page)
+                        
+                        
+                        
           li.menu__item
             a.menu__link.menu__link--parent(
               href='#'

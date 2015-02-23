@@ -49,8 +49,10 @@ segment: design
               - var collection = collections[pathName(path)]
               if collection && collection.length > 0
               .left-navigation__category
+                - var active = false
+                - collection.forEach(function(page) { if(page.link == link) { active = true; } })
                 .left-navigation__category__headline= secondLevel.name
-                .left-navigation__category__menu
+                .left-navigation__category__menu(class={'is-active': active})
                   ul.menu.menu--left
                     each page in collection
                       mixin pageLink(page)

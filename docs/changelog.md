@@ -4,6 +4,18 @@ slug: changelog
 template: master.jade
 ---
 
+# 0.3.0 - not yet released
+
+- Restructured and redesigned design guidelines
+- Added wireframe recommendations 
+- Improved developer toolkit docs
+  - You can now copy less color variable names (requires flash)
+  - Added some words about media queries
+- New components
+  - File upload
+  - List
+  - Floating action button
+
 # 0.2.1 - 11 Feb, 2015
 
 - Add missing import statements to info-icon.less

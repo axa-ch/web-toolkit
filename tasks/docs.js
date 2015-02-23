@@ -109,9 +109,6 @@ module.exports = exports = function (options) {
       'development_blocks',
       'development_plugins',
       'development_mixins',
-      'design',
-      'design_components',
-      'design_fundamentals',
       'examples'
     ].forEach(function (name) {
       collections_options[name] = { sortBy: 'slug', reverse: false };
@@ -145,6 +142,10 @@ module.exports = exports = function (options) {
       .use(collections(collections_options))
       .use(markdown({
         renderer: markedRenderer,
+        langPrefix: '',
+        highlight: function (code, lang) {
+          return require('highlight.js').highlight(lang, code).value;
+        },
         useMetadata: true
       })));
 
