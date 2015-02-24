@@ -1,76 +1,85 @@
 ---
 template: master.jade
 segment: development
+filename: development.jade
+cache: true
 ---
+  
+.hr
 
-.l-row
-  .l-docs-menu
+.l-container
+  .l-row
+    .l-docs-menu
 
-    ul.menu.menu--left
-      each page in development
-        li.menu__item
-          a.menu__link(
-            href=relative(page.link)
-            class={'is-active': link == page.link}
-          )= page.title
+      nav.left-navigation
+        ul.menu.menu--left
+          each page in development
+            li.menu__item
+              a.menu__link(
+                href=relative(page.link)
+                class={'is-active': link == page.link}
+              )= page.title
 
-      - var sections = []
-      - sections.push({ name: 'Blocks', items: development_blocks })
-      - sections.push({ name: 'Mixins', items: development_mixins })
-      - sections.push({ name: 'jQuery Plugins', items: development_plugins })
+          - var sections = []
+          - sections.push({ name: 'Blocks', items: development_blocks })
+          - sections.push({ name: 'Mixins', items: development_mixins })
+          - sections.push({ name: 'jQuery Plugins', items: development_plugins })
 
-      each section in sections
-        li.menu__item
-          .menu__link.menu__link--category= section.name
-          ul.menu
-            each page in section.items
-              li.menu__item
-                a.menu__link(
-                  href=relative(page.link)
-                  class={'is-active': link == page.link}
-                )
-                  span= page.title
-                  if page.status != undefined
-                    = ' '
-                    if page.status == 'experimental'
-                      span.label.label--danger= page.status
-                    else if page.status == 'new'
-                      span.label.label--success= page.status
-                    else
-                      span.label.label--default= page.status
+          each section in sections
+            .left-navigation__category
+              .left-navigation__category__headline= section.name
+              - var active = false
+              - section.items.forEach(function(page) { if(page.link == link) { active = true; } })
+              .left-navigation__category__menu(class={'is-active': active})
+                ul.menu
+                  each page in section.items
+                    li.menu__item
+                      a.menu__link(
+                        href=relative(page.link)
+                        class={'is-active': link == page.link}
+                      )
+                        span= page.title
+                        if page.status != undefined
+                          = ' '
+                          if page.status == 'experimental'
+                            span.label.label--danger= page.status
+                          else if page.status == 'new'
+                            span.label.label--success= page.status
+                          else
+                            span.label.label--default= page.status
 
-  .l-docs-main
-    h1.heading.heading--page
-      span= title
-      if status != undefined
-        = ' '
-        if status == 'experimental'
-          span.label.label--danger= status
-        else if status == 'new'
-          span.label.label--success= status
-        else
-          span.label.label--default= status
+    .l-docs-main
+      h1.heading.heading--page
+        span= title
+        if status != undefined
+          = ' '
+          if status == 'experimental'
+            span.label.label--danger= status
+          else if status == 'new'
+            span.label.label--success= status
+          else
+            span.label.label--default= status
 
-    != contents
+      != contents
 
-    // ko if: hasGitHubIntegration
-    .contribute
-      .contribute__row
-        .contribute__image
-          img(src='', data-octocat).contribute__octocat
-        .contribute__content
-          .contribute__headline Contribute to this article
-          p.contribute__text(data-bind='visible: !github.isSignedIn()').
-            To contribute to this article please sign in with GitHub
-          p(data-bind='visible: !github.isSignedIn()')
-            img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
-            a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").button.button--small.button--primary Sign in with GitHub
-          div(data-bind='visible: github.isSignedIn()')
-            p.contribute__text.
-              Want to edit or suggest changes
-              to this content? You can edit and
-              submit changes to this article
-              using GitHub.
-            p
-              a(href=config.repository.url + '/blob/master/docs' + ((link ? link : '').replace(/\.html$/, '.jade'))).button.button--small.button--primary Edit article on GitHub
-    // /ko
+      // ko if: hasGitHubIntegration
+      .contribute
+        .contribute__row
+          .contribute__image
+            img(src='', data-octocat).contribute__octocat
+          .contribute__content
+            .contribute__headline Contribute to this article
+            p.contribute__text(data-bind='visible: !github.isSignedIn()').
+              To contribute to this article please sign in with GitHub
+            p(data-bind='visible: !github.isSignedIn()')
+              img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
+              a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").button.button--small.button--primary Sign in with GitHub
+            div(data-bind='visible: github.isSignedIn()')
+              p.contribute__text.
+                Want to edit or suggest changes
+                to this content? You can edit and
+                submit changes to this article
+                using GitHub.
+              p
+                a(href=config.repository.url + '/blob/master/docs' + ((link ? link : '').replace(/\.html$/, '.jade'))).button.button--small.button--primary Edit article on GitHub
+      // /ko

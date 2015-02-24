@@ -1,3 +1,7 @@
+---
+filename: master.jade
+---
+  
 doctype html
 html
   head
@@ -17,12 +21,13 @@ html
     script(src=relative('/js/urijs/URI.min.js'))
     script(src=relative('/js/localforage/localforage.min.js'))
     script(src=relative('/js/moment/moment.min.js'))
+    script(src=relative('/js/zeroclipboard/ZeroClipboard.min.js'))
 
     script(type='text/javascript').
       // Include the UserVoice JavaScript SDK (only needed once on a page)
       UserVoice=window.UserVoice||[];
       UserVoice.push(['set', {
-        accent_color: '#0062a9',
+        accent_color: '#103184',
         screenshot_enabled: false
       }]);
       (function(){
@@ -38,10 +43,14 @@ html
     script(src=relative("/js/api.js"))
     script(src=relative("/js/github-integration.js"))
     script(src=relative("/js/main.js"))
+    script(src=relative("/js/left-navigation.js"))
     script(src=relative("/js/octocat.js"))
 
   body.site
     .site__page
+      .l-container
+        .docs-floating-action
+          a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating.icon.icon--feedback
       header.header.header--main
         .l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
@@ -51,7 +60,7 @@ html
             .header__meta__upper
               .header__meta__menu
                 - var segments = []
-                - segments.push({ name: 'Design Guidelines', slug: 'design', path: '/design' })
+                - segments.push({ name: 'Design Guidelines', slug: 'design', path: '/design/fundamentals' })
                 - segments.push({ name: 'Developer Toolkit', slug: 'development', path: '/development' })
                 - segments.push({ name: 'Examples', slug: 'examples', path: '/examples' })
 
@@ -65,10 +74,6 @@ html
                         class={'is-active': segment == s.slug}
                       )= s.name
             .header__meta__lower
-              .header__meta__social
-                .menu.menu--social
-                  .menu__item
-                    a(href='#', data-uv-trigger).menu__link.icon.icon--feedback
 
               // ko if: hasGitHubIntegration
               .header__meta__social
@@ -95,10 +100,7 @@ html
                       span Examples
                     else
                       span Web Design Guide
-
-      .hr
-
-      .l-container!= contents
+      div!= contents
 
       .hr
 
@@ -126,43 +128,70 @@ html
             a.menu__link.menu__link--parent(
               href='#'
             ) Design Guidelines
+            
+            - var pathName = function(path) { return path.join('__').replace(/\s/g, '_'); }
+            mixin pageLink(page)
+              li.menu__item
+                a.menu__link(
+                  href=relative(page.link)
+                  data-link=page.link
+                )= page.title
 
             ul.menu__level
               li.menu__item.menu__item--back
                 a.menu__link.menu__link--back(
                   href='#'
                 ) Design Guidelines
-
-              each page in design
-                li.menu__item
-                  a.menu__link(
-                    href=relative(page.link)
-                    data-link=page.link
-                  )= page.title
-
-              - var sections = []
-              - sections.push({ name: 'Fundamentals', items: design_fundamentals })
-              - sections.push({ name: 'Components', items: design_components })
-
-              each section in sections
+              
+              - // Top level
+              each topLevel in config.design
                 li.menu__item
                   a.menu__link.menu__link--parent(
                     href='#'
-                  )= section.name
-
+                  )= topLevel.name
+                    
+                  - // Top level back
+                  
                   ul.menu__level
                     li.menu__item.menu__item--back
                       a.menu__link.menu__link--back(
                         href='#'
-                      )= section.name
-
-                    each page in section.items
-                      li.menu__item
-                        a.menu__link(
-                          href=relative(page.link)
-                          data-link=page.link
-                        )= page.title
-
+                      )= topLevel.name
+                      
+                    - // Top level pages
+                    - var collection = collections[pathName([topLevel.name])]
+                    if collection
+                      each page in collection
+                        mixin pageLink(page)
+                
+                    - // Top level children
+                    if topLevel.children 
+                      each secondLevel in topLevel.children
+                        
+                        - var path = [topLevel.name, secondLevel.name]
+                        - var collection = collections[pathName(path)]
+                        
+                        if collection && collection.length > 0
+                          - // Second level
+                          li.menu__item
+                            a.menu__link.menu__link--parent(
+                              href='#'
+                            )= secondLevel.name
+                              
+                            - // Second level back
+                            ul.menu__level
+                              li.menu__item.menu__item--back
+                                a.menu__link.menu__link--back(
+                                  href='#'
+                                )= secondLevel.name
+                                
+                              - // Second level pages
+                              if collection
+                                each page in collection
+                                  mixin pageLink(page)
+                        
+                        
+                        
           li.menu__item
             a.menu__link.menu__link--parent(
               href='#'
