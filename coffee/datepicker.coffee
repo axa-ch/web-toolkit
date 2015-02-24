@@ -148,6 +148,7 @@
 
       @picker.on 'select', ((date) ->
         @$input.val(date)
+        @$input.trigger 'change'
       ).bind(this)
 
       @$element.append @picker.getDOMNode()
