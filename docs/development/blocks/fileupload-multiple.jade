@@ -43,25 +43,25 @@ h3 Styles
               | Die Datei awesome_image.jpg konnte nicht hochgeladen werden.
               | Bitte löschen Sie sie aus der Liste und laden sie erneut hoch.
             .file-list
-              .file-status
-                .file-uploading__title awesome_image.jpg
-                .file-uploading__percentage 22%
-                .file-uploading__progress
-                  .file-uploading__progress-background
-                    .file-uploading__progress-foreground(style='width: 22%')
-              .file-status
+              .file-status.file-uploading.progressbar
+                .progressbar__description awesome_image.jpg
+                .progressbar__percentage 22%
+                .progressbar__progress
+                  .progressbar__progress-background
+                    .progressbar__progress-foreground(style='width: 22%')
+              .file-status.file-uploaded
                 .file-uploaded__actions
                   a.file-uploaded__actions__action ansehen
                   a.file-uploaded__actions__action löschen
                 .file-uploaded__title axaswitch.gif
-              .file-status
+              .file-status.file-uploaded
                 .file-uploaded__actions
                   a.file-uploaded__actions__action ansehen
                   a.file-uploaded__actions__action löschen
                 .file-uploaded__title superblock.bmp
-              .file-status
-                .file-uploading__title awesome_image.jpg (Error)
-                .file-uploading__percentage
-                  a.file-uploading__error-delete.icon.icon--modal-close(href='#')
-                .file-uploading__progress
-                  .file-uploading__progress-error
+              .file-status.file-error.progressbar
+                .progressbar__description awesome_image.jpg (Error)
+                .progressbar__error
+                  a.progressbar__error-delete.icon.icon--modal-close(href='#')
+                .progressbar__progress
+                  .progressbar__progress-error

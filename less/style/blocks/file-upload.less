@@ -51,44 +51,47 @@
 }
 
 .file-status {
-  height: 49px;
   border-width: 1px;
   border-style: solid;
   border-color: @color-gray;
   border-bottom-width: 0;
-  padding: 0 10px;
 
   &:last-of-type {
     border-bottom-width: 1px;
   }
 }
 
-.file-uploading__progress {
+.file-uploading, .file-uploaded, .file-error {
+  height: 49px;
+  padding: 0 10px;
+}
+
+.progressbar__progress {
   margin-top: 14px;
   width: 100%;
   padding-right: 55px;
 }
 
-.file-uploading__progress-background {
+.progressbar__progress-background {
   background-color: @color-gray;
   height: 20px;
   margin-left: 10px;
 }
 
-.file-uploading__progress-foreground {
+.progressbar__progress-foreground {
   background-color: @color-light-blue;
   height: 100%;
   width: 0;
 }
 
-.file-uploading__title {
+.progressbar__description {
   position: absolute;
   margin-top: 14px;
   margin-left: 14px;
   color: @color-white;
 }
 
-.file-uploading__percentage {
+.progressbar__percentage, .progressbar__error {
   right: 20px;
   padding: 14px 10px 0 0;
   text-align: right;
@@ -129,13 +132,13 @@
   font-size: 17px;
 }
 
-.file-uploading__progress-error {
+.progressbar__progress-error {
   background-color: @color-red;
   height: 20px;
   margin-left: 10px;
 }
 
-.file-uploading__error-delete {
+.progressbar__error-delete {
   color: @color-red;
 }
 
