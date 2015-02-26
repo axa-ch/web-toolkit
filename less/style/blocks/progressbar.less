@@ -1,5 +1,8 @@
+.progressbar {
+}
+
 .progressbar__progress {
-  margin-top: 14px;
+  // margin-top: 14px;
   width: 100%;
   padding-right: 55px;
 }
@@ -14,18 +17,19 @@
   background-color: @color-light-blue;
   height: 100%;
   width: 0;
+  transition: width 0.4s ease-out;
 }
 
 .progressbar__description {
   position: absolute;
-  margin-top: 14px;
+  // margin-top: 14px;
   margin-left: 14px;
   color: @color-white;
 }
 
 .progressbar__percentage, .progressbar__error {
   right: 20px;
-  padding: 14px 10px 0 0;
+  padding: 0 10px 0 0;
   text-align: right;
   width: 55px;
   float: right;
