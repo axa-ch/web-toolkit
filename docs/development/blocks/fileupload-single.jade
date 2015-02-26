@@ -11,25 +11,30 @@ status: experimental
   file and display status info (progress) to the uploaded file.
 
 h3 States and Behavior
-p.
-  Default state of a fileupload control is the file-dropzone block.
-  When something is dragged over it, toggle the dragover modifier.
+:markdown
+  Default state of a fileupload control is the dropzone block.
+  When something is dragged over it, toggle the ``dragover`` modifier.
 
 .callout.
   Use the dropzone plugin, to handle transitions from and to the dragover state
-  of the file-dropzone block.
+  of the <code>dropzone</code> block.
 
-p.
-  Register to the ondrop event to upload the file.
-  The file-dropzone block must be replaced by the file-uploading block to
-  display a progress bar and info about the upload process.
+:markdown
+  Register to the ``ondrop`` event to upload the file.
+  The dropzone block must be replaced by the ``single-file-upload__status``
+  block to display a ``progressbar`` and info about the upload process.
 
-p.
-  A click into the dropzone should open the standard file chooser dialog.
+:markdown
+  A ``click`` into the ``dropzone`` should open the browser file chooser dialog.
 
-p.
-  When the file has finished uploading, replace the file-uploading block
-  with the file-uploaded block.
+.callout.
+  Use Javascript to invoke a click event ``input`` element with class
+  ``dropzone__input`` to open the file dialog, when the user clicks the link.
+
+:markdown
+  When the file upload is finished, replace contents of the
+  ``single-file-upload__uploading`` block to display the
+  ``single-file-upload__status__uploaded`` block.
 
 h3 Example
 p.
@@ -46,30 +51,30 @@ p.
       .form__group__label.
         Datei
       .form__group__control(id='example')
-        .dropzone
-          .dropzone__container(data-dropzone='dropzone')
-            input.dropzone__input(type='file')
-            .dropzone__icon-container
-              i.dropzone__icon.icon.icon--upload
-            .dropzone__text-container
-              .dropzone__text
-                span Drag file here or
-                | &nbsp;
-                a.dropzone__text__upload-link click to choose
-        .file-uploading(style='display:none')
-          .file-uploading__title
-          .file-uploading__progress-background
-            .file-uploading__progress-foreground
-          .file-uploading__progress-text
-        .file-uploaded(style='display:none')
-          .file-uploaded__title
-          .file-uploaded__actions
-            a.button.button--small.button--secondary ansehen
-            a.button.button--small.button--secondary löschen
-            a.button.button--small.button--secondary ändern
-          .file-uploaded__description
-            .file-uploaded__description-label Beschreibung
-            textarea.file-uploaded__description-control.control.control--textarea(data-autogrow='autogrow')
+        .single-file-upload
+          .dropzone
+            .dropzone__container(data-dropzone='dropzone')
+              input.dropzone__input(type='file')
+              .dropzone__icon-container
+                i.dropzone__icon.icon.icon--upload
+              .dropzone__text-container
+                .dropzone__text
+                  span Drag file here or
+                  | &nbsp;
+                  a.dropzone__text__upload-link click to choose
+          .single-file-upload__uploading(style='display:none')
+            .file-uploading__title
+            .file-uploading__progress-background
+              .file-uploading__progress-foreground
+            .file-uploading__progress-text
+          .single-file-upload__uploaded(style='display:none')
+            .file-uploaded__title
+            .file-uploaded__actions
+              a.button.button--small.button--secondary ansehen
+              a.button.button--small.button--secondary l�schen
+            .file-uploaded__description
+              .file-uploaded__description-label Beschreibung
+              textarea.file-uploaded__description-control.control.control--textarea(data-autogrow='autogrow')
 
 
 script.
@@ -194,22 +199,24 @@ h3 Styles
           Datei (Uploading)
         .form__group__control
           .single-file-upload
-            .file-uploading
-              .file-uploading__title awesome_image.jpg
-              .file-uploading__progress-background
-                .file-uploading__progress-foreground(style='width: 42%')
-              .file-uploading__progress-text 42% - noch 1337 Sekunden
+            .single-file-upload__status
+              .single-file-upload__progress__icon-container
+                i.single-file-upload__progress__icon.icon.icon--upload
+              .single-file-upload__progressbar-container
+                .single-file-upload__progressbar.progressbar
+                  .progressbar__description awesome_image.jpg
+                  .progressbar__percentage 22%
+                  .progressbar__progress
+                    .progressbar__progress-background
+                      .progressbar__progress-foreground(style='width: 22%')
       .form__group
         .form__group__label.
           Datei (Uploaded)
         .form__group__control
           .single-file-upload
-            .file-uploaded
-              .file-uploaded__title awesome_image.gif
-              .file-uploaded__actions
-                a.button.button--small.button--secondary ansehen
-                a.button.button--small.button--secondary löschen
-                a.button.button--small.button--secondary ändern
-              .file-uploaded__description
-                .file-uploaded__description-label Beschreibung
-                textarea.file-uploaded__description-control.control.control--textarea(data-autogrow='autogrow')
+            .single-file-upload__status
+              .single-file-upload__status__uploaded
+                .single-file-upload__status__uploaded__actions.file-uploaded__actions
+                  a.file-uploaded__actions__action ansehen
+                  a.file-uploaded__actions__action löschen
+                .single-file-upload__status__uploaded__title axaswitch.gif
