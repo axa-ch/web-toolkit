@@ -1,0 +1,45 @@
+.progressbar__progress {
+  margin-top: 14px;
+  width: 100%;
+  padding-right: 55px;
+}
+
+.progressbar__progress-background {
+  background-color: @color-gray;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.progressbar__progress-foreground {
+  background-color: @color-light-blue;
+  height: 100%;
+  width: 0;
+}
+
+.progressbar__description {
+  position: absolute;
+  margin-top: 14px;
+  margin-left: 14px;
+  color: @color-white;
+}
+
+.progressbar__percentage, .progressbar__error {
+  right: 20px;
+  padding: 14px 10px 0 0;
+  text-align: right;
+  width: 55px;
+  float: right;
+  position: absolute;
+  color: @color-light-blue;
+  font-weight: bold;
+}
+
+.progressbar__progress-error {
+  background-color: @color-red;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.progressbar__error-delete {
+  color: @color-red;
+}
