@@ -1,0 +1,36 @@
+---
+title: Progressbar
+slug: progressbar
+collection: development_blocks
+template: development.jade
+status: new
+---
+
+h3 Intro
+
+:markdown
+  The ``progressbar`` block is used to display progress in a process such as
+  uploading files or waiting for expensive operations.
+
+:markdown
+  The normal version displays a standard progressbar. Modify the width of
+  the ``progressbar__percentage`` block when your process made any progress.
+  There's also another version to show, when something went wrong.
+
+h3 Example
+
+:sample
+  .progressbar
+    .progressbar__description awesome_image.jpg
+    .progressbar__percentage 22%
+    .progressbar__progress
+      .progressbar__progress-background
+        .progressbar__progress-foreground(style='width: 22%')
+
+  div(style='height: 20px')
+  .progressbar
+    .progressbar__description awesome_image.jpg (Error)
+    .progressbar__error
+      a.progressbar__error-icon.icon.icon--modal-close(href='#')
+    .progressbar__progress
+      .progressbar__progress-error
