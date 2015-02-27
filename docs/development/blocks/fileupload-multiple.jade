@@ -16,7 +16,21 @@ h3 Behavior
   a new element with the status info about this file should be displayed in the
   ``file-list`` block below the ``dropzone``.
 
+.callout.
+  Use the dropzone plugin, to handle transitions from and to the dragover state
+  of the <code>dropzone</code> block.
+
+:markdown
+  Register to the ``ondrop`` event to start uploading the files.
+
 h3 Example
+p.
+  The following is an example which displays the
+  different states an upload field can have.
+
+.callout.
+  Drag a file and drop it into the dropzone or click on it to select a file
+  through the file chooser dialog of your browser to trigger the upload.
 
 .l-container
   .form
@@ -40,6 +54,59 @@ h3 Example
             br
             | Maximal 2 MB pro Datei
           .file-list
+
+h3 Styles
+
+:sample
+  .l-container
+    .form
+      .form__group
+        .form__group__label.
+          Datei
+        .form__group__control
+          .multi-file-upload
+            .dropzone
+              .dropzone__container(data-dropzone='dropzone')
+                input.dropzone__input(type='file')
+                .dropzone__icon-container
+                  i.dropzone__icon.icon.icon--upload
+                .dropzone__text-container
+                  .dropzone__text
+                    span Drag file here or
+                    | &nbsp;
+                    a.dropzone__text__upload-link click to choose
+            .upload-remarks
+              | Nur Bilder (.jpg, .png, .gif) oder Dokumente (.pdf, .docx).
+              br
+              | Maximal 2 MB pro Datei
+            .upload-errors
+              | Die Datei awesome_image.jpg konnte nicht hochgeladen werden.
+              | Bitte löschen Sie sie aus der Liste und laden sie erneut hoch.
+            .file-list
+              .file-status.file-uploading
+                .progressbar
+                  .progressbar__description awesome_image.jpg
+                  .progressbar__percentage 22%
+                  .progressbar__progress
+                    .progressbar__progress-background
+                      .progressbar__progress-foreground(style='width: 22%')
+              .file-status.file-uploaded
+                .file-uploaded__actions
+                  a.file-uploaded__actions__action ansehen
+                  a.file-uploaded__actions__action löschen
+                .file-uploaded__title axaswitch.gif
+              .file-status.file-uploaded
+                .file-uploaded__actions
+                  a.file-uploaded__actions__action ansehen
+                  a.file-uploaded__actions__action löschen
+                .file-uploaded__title superblock.bmp
+              .file-status.file-error
+                .progressbar
+                  .progressbar__description awesome_image.jpg (Error)
+                  .progressbar__error
+                    a.progressbar__error-icon.icon.icon--modal-close(href='#')
+                  .progressbar__progress
+                    .progressbar__progress-error
 
 script.
   (function () {
@@ -143,56 +210,3 @@ script.
 
     init();
   })();
-
-h3 Styles
-
-:sample
-  .l-container
-    .form
-      .form__group
-        .form__group__label.
-          Datei
-        .form__group__control
-          .multi-file-upload
-            .dropzone
-              .dropzone__container(data-dropzone='dropzone')
-                input.dropzone__input(type='file')
-                .dropzone__icon-container
-                  i.dropzone__icon.icon.icon--upload
-                .dropzone__text-container
-                  .dropzone__text
-                    span Drag file here or
-                    | &nbsp;
-                    a.dropzone__text__upload-link click to choose
-            .upload-remarks
-              | Nur Bilder (.jpg, .png, .gif) oder Dokumente (.pdf, .docx).
-              br
-              | Maximal 2 MB pro Datei
-            .upload-errors
-              | Die Datei awesome_image.jpg konnte nicht hochgeladen werden.
-              | Bitte löschen Sie sie aus der Liste und laden sie erneut hoch.
-            .file-list
-              .file-status.file-uploading
-                .progressbar
-                  .progressbar__description awesome_image.jpg
-                  .progressbar__percentage 22%
-                  .progressbar__progress
-                    .progressbar__progress-background
-                      .progressbar__progress-foreground(style='width: 22%')
-              .file-status.file-uploaded
-                .file-uploaded__actions
-                  a.file-uploaded__actions__action ansehen
-                  a.file-uploaded__actions__action löschen
-                .file-uploaded__title axaswitch.gif
-              .file-status.file-uploaded
-                .file-uploaded__actions
-                  a.file-uploaded__actions__action ansehen
-                  a.file-uploaded__actions__action löschen
-                .file-uploaded__title superblock.bmp
-              .file-status.file-error
-                .progressbar
-                  .progressbar__description awesome_image.jpg (Error)
-                  .progressbar__error
-                    a.progressbar__error-icon.icon.icon--modal-close(href='#')
-                  .progressbar__progress
-                    .progressbar__progress-error
