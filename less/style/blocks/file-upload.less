@@ -72,7 +72,10 @@
 
 .single-file-upload__status {
   height: 80px;
-  background-color: @color-gray--lighter;
+  // background-color: @color-gray--lighter;
+  border-width: 1px;
+  border-style: solid;
+  border-color: @color-gray;
 }
 
 .single-file-upload__progress__icon-container {
@@ -93,23 +96,30 @@
   display:table;
   height: 100%;
   width: 100%;
+  padding-left: 72px;
+  padding-right: 10px;
 }
 
 .single-file-upload__progressbar {
   display:table-cell;
   vertical-align: middle;
-  padding-left: 72px;
 }
 
 .single-file-upload__status__uploaded__actions {
   float: right;
-  margin-top: 28px;
+  margin-top: 25px;
   margin-right: 10px;
   width: 158px;
 }
 
 
 .single-file-upload__status__uploaded__title {
-  margin: 28px 20px;
+  padding-right: 188px;
+  margin-top: 28px;
   position: absolute;
+  padding-left: 72px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
 }
