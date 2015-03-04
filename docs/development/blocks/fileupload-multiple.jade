@@ -79,9 +79,6 @@ h3 Styles
               | Nur Bilder (.jpg, .png, .gif) oder Dokumente (.pdf, .docx).
               br
               | Maximal 2 MB pro Datei
-            .upload-errors
-              | Die Datei awesome_image.jpg konnte nicht hochgeladen werden.
-              | Bitte löschen Sie sie aus der Liste und laden sie erneut hoch.
             .file-list
               .file-status.file-uploading
                 .progressbar
@@ -107,6 +104,9 @@ h3 Styles
                     a.progressbar__error-icon.icon.icon--modal-close(href='#')
                   .progressbar__progress
                     .progressbar__progress-error
+                .file-error__message
+                  | Die Datei konnte nicht hochgeladen werden.
+                  | Bitte löschen Sie sie aus der Liste und laden sie erneut hoch.
 
 script.
   (function () {

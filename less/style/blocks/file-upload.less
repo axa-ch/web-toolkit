@@ -11,8 +11,7 @@
   border-style: solid;
   border-color: @color-gray;
   border-bottom-width: 0;
-  height: 49px;
-  padding: 0 10px;
+  padding: 15px 10px;
 
   &:last-of-type {
     border-bottom-width: 1px;
@@ -20,20 +19,27 @@
 }
 
 .file-uploading {
-  padding-top: 14px;
+  padding-top: 16px;
 }
 
 .file-error {
-  padding-top: 14px;
+  padding-top: 16px;
+}
+
+.file-error__message {
+  color: red;
+  margin: 10px 10px 0 10px;
 }
 
 .file-uploaded {
 }
 
 .file-uploaded__title {
-  margin: 10px;
-  margin-top: 14px;
+  margin-left: 10px;
   margin-right: 158px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .dropzone__text__upload-link {
@@ -50,7 +56,7 @@
 
 .file-uploaded__actions {
   float: right;
-  margin-top: 11px;
+  margin-top: -3px;
   width: 158px;
 }
 
