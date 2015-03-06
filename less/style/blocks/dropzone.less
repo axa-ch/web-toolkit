@@ -20,7 +20,7 @@
   height: 100%;
 }
 
-.dropzone__icon {
+.dropzone__icon{
   font-size: 2.25em;
   display:table-cell;
   vertical-align: middle;
@@ -38,6 +38,22 @@
   color: @color-gray--dark;
 }
 
-.dropzone__input {
+.dropzone__input,
+.dropzone-fallback__input {
   display: none;
+}
+
+.dropzone-fallback {
+  height: 80px;
+}
+
+.dropzone-fallback__button {
+}
+
+.dropzone-fallback__button__icon {
+
+}
+
+.dropzone-fallback__button__text {
+  margin-left: 10px;
 }
