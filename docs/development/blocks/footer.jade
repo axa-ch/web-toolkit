@@ -18,31 +18,36 @@ template: development.jade
               .footer__item__headline Keep in touch
               ul.menu.menu--keep-in-touch
                 li.menu__item
-                  a(href='#facebook').icon.icon--facebook
+                  a(href='#facebook').menu__link.icon.icon--facebook
+                !='&nbsp;' 
+                // necessary for text align justify
                 li.menu__item
-                  a(href='#twitter').icon.icon--twitter
+                  a(href='#twitter').menu__link.icon.icon--twitter
+                !='&nbsp;'
                 li.menu__item
-                  a(href='#twitter').icon.icon--xing
+                  a(href='#twitter').menu__link.icon.icon--xing
+                !='&nbsp;'
                 li.menu__item
-                  a(href='#twitter').icon.icon--google-plus
+                  a(href='#twitter').menu__link.icon.icon--google-plus
 
 
           .footer__item.footer__item--links
               .footer__item__headline AXA & You
-              ul.menu.menu--footer
-                  li.menu__item.is-active
-                      a(href='#').menu__link Contact Us
-                  li.menu__item
-                      a(href='#').menu__link Help & Advice
-                  li.menu__item
-                      a(href='#').menu__link Latest News
-              ul.menu.menu--footer
-                  li.menu__item.is-active
-                      a(href='#').menu__link Lorem ipsum
-                  li.menu__item
-                      a(href='#').menu__link Lorem ipsum
-                  li.menu__item
-                      a(href='#').menu__link Lorem ipsum
+              .footer__item__menu
+                ul.menu.menu--footer
+                    li.menu__item.is-active
+                        a(href='#').menu__link Contact Us
+                    li.menu__item
+                        a(href='#').menu__link Help & Advice
+                    li.menu__item
+                        a(href='#').menu__link Latest News
+                ul.menu.menu--footer
+                    li.menu__item.is-active
+                        a(href='#').menu__link Lorem ipsum
+                    li.menu__item
+                        a(href='#').menu__link Lorem ipsum
+                    li.menu__item
+                        a(href='#').menu__link Lorem ipsum
 
           .footer__item.footer__item--international
               .footer__item__headline AXA worldwide
@@ -51,8 +56,6 @@ template: development.jade
               ul.menu.menu--international
                 li.menu__item
                   a(href='#facebook').icon.icon--facebook
-                li.menu__item
-                  a(href='#twitter').icon.icon--xing
 
       .footer__copyline
           ul.menu.menu--copyline
@@ -62,10 +65,10 @@ template: development.jade
                   a(href='#').menu__link Privacy
               li.menu__item
                   a(href='#').menu__link Disclaimer
-              li.menu__item AXA 2014 ©
+              li.menu__item
+                .menu__link AXA 2014 ©
                 
     
     
     
     
-
