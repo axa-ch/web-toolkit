@@ -51,3 +51,14 @@ _.forEach(colors.tbd, function (colorCode, colorName) {
 @color-<%= colorName %>: <%= colorCode %>;<%
 });
 %>
+
+@z-index-progress-step: 15;
+@z-index-progress-step-bullet: 16;
+@z-index-dropdown: 30;
+@z-index-dropdown-select: 31;
+@z-index-datepicker: 32;
+@z-index-site-mobile-nav: 9980;
+@z-index-site-page-masked: 9981;
+@z-index-example-header: 9990;
+@z-index-modal-wrapper: 9998;
+@z-index-modal: 9999;
