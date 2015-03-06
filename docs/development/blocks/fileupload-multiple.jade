@@ -32,6 +32,10 @@ p.
   Drag a file and drop it into the dropzone or click on it to select a file
   through the file chooser dialog of your browser to trigger the upload.
 
+.callout.callout--danger.
+  IE9... *sigh*<br />
+  There's some information about how to implement file uploads in IE 9 below the examples.
+
 .l-container
   .form
     .form__group
@@ -107,6 +111,36 @@ h3 Styles
                 .file-error__message
                   | Die Datei konnte nicht hochgeladen werden.
                   | Bitte löschen Sie sie aus der Liste und laden sie erneut hoch.
+      .form__group
+        .form__group__label.
+          Fallback for dropzone on IE 9
+        .form__group__control
+          .multi-file-upload
+            .dropzone-fallback
+              input.dropzone-fallback__input(type='file')
+              a.dropzone-fallback__button.button.button--primary
+                i.dropzone-fallback__button__icon.icon.icon--upload
+                span.dropzone-fallback__button__text Click to upload files
+
+h3 IE 9
+
+p.
+  IE 9 does not support drag and drop functionality for files. It also doesn't
+  support the <code>FileReader</code> API. So, just do it like its 2007:
+
+ul.list.list--unordered
+  li.list__item.
+    Use <code>Modernizr.draganddrop && window.FileReader</code> to detect
+    whether drag and drop and the <code>FileReader</code> API are supported so
+    you can activate the fallback implementation for the file upload.
+  li.list__item.
+    Create upload functionality using a hidden <code>iframe</code>.
+  li.list__item.
+    Replace the <code>dropzone</code> block with the <code>dropzone__fallback</code> block.
+    A click on <code>dropzone-fallback__button</code> block must open the
+    file chooser dialog.
+    After a file is selected, the upload should start. Display status info in the
+    <code>file-list</code> block as usual.
 
 script.
   (function () {
