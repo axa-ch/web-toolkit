@@ -1,12 +1,11 @@
 ---
 title: Form Design
-slug: forms
-collection: design_components
 template: design.jade
+order: 1
 ---
 
 #Forms
-…suck. 
+…suck.
 
 If you don’t believe it, try to find people who like filling them in. This is the reason why we built this guide on how to build forms for AXA. We included checklist for most topics, which give you a deeper insight and valuable tipps on how to build less annoying forms.
 
@@ -17,7 +16,7 @@ If you don’t believe it, try to find people who like filling them in. This is 
 
 #Form structure
 
-The architectural structure of a form is crucial for its user experience. 
+The architectural structure of a form is crucial for its user experience.
 
 ###Form Design Principles
 
@@ -37,7 +36,7 @@ Forms rarely exist in a vacuum. They are almost always part of a broader context
 
 ###Ensure Consistent Communication:
 
-Forms are conversations between customers and companies. Therefore ask clear and short questions in a natural language. Speak with one voice, despite questions from different people or departments. 
+Forms are conversations between customers and companies. Therefore ask clear and short questions in a natural language. Speak with one voice, despite questions from different people or departments.
 
 ##Form Organisation
 
@@ -49,7 +48,7 @@ Use the minimal amount of visual information to distinguish different content gr
 - few short topics > one page
 - few topics with large number of questions > multiple pages
 - one topic with large number of questions > one page
-- Use the minimal amount of visual information to distinguish different content groups. 
+- Use the minimal amount of visual information to distinguish different content groups.
 - Avoid visual clutter and don't interrupt scan lines.
 - Speak with one voice, despite questions from different people or departments.
 
@@ -72,14 +71,76 @@ On long & paginated forms, an introductory page may be used to give upfront info
 similar
 
 ##Inline Validation
+Sometimes, a lot of answers to a question are possible and we even need it in a certain format. This is when inline validation steps in.
+Inline validation can provide several types of feedback: confirmation that an appropriate answer was given, suggestions for valid answers, and real-time updates designed to help people stay within necessary limits. These bits of feedback usually happen when people begin, continue, or stop entering answers within input fields.
 
-##Unnecessary Inputs
+>Inline Validation Checklist
+- Consider using inline validation to confirm or
+suggest valid answers and to help people stay
+within limits.
+- Inline confirmation works best for questions with
+potentially high error rates or specific formatting
+requirements.
+- Inline suggestions work best when there is a
+large set of valid answers people can pick from.
+- Inline quality indicators can guide people to
+better answers to complex questions.
+- When validating people’s answers inline, do so
+after they have finished providing an answer, not
+during the process.
+- If you need to change people’s responses into a
+specific format, make sure you do so after they
+have finished providing an answer, not during
+the process.
+- When input limits exist, communicate their
+boundaries using real-time, dynamic updates.
 
-##Additional Inputs
+###Confirmation
+
+As many inputs as possible should be validated as soon as the user left the input field. Never validate while the user is still entering information. A good validation example is to check if a username is still available or if the email adress has been used before.
+>GIF einfügen
+
+###Suggestions
+
+If a user has to enter a specific but already known value, an autocomplete suggest functions helps the user to complete his goal. Suggestions should always be designed to fit the usecase but there should never be more than 10 results at a time shown to the user to avoid confusion.
+
+###Limits
+
+If there is a limit to the length of a text field or area and the user is likely to exceed, give him a hint.
+
+>Good / Bad Image
+
+
+
+
+---
+title: SPAM Avoidance
+slug: spamAvoidance
+collection: design_components
+template: design.jade
+---
+
+#Captcha
+
+Traditional captchas that require the user to decode some characters must be avoided due to accessibility and usability drawbacks.
+
+>images
+
+#Honeypot
+
+Honeypots are hidden form fields that trap spam robots because those robots can't distinguish between shown and hidden form fields. Therefore, a robot will fill the field and therefore fail the test. *Nevertheless* this field should have a clear label which tells users with screen readers to not fill this form.
+>Best practice translations
+DE: Wenn Sie ein Mensch sind, lassen Sie bitte das nächste Feld leer.
+EN: Are you human? If yes, please don't fill anything into the next field.
+FR:
+IT:
+
+#Timestamps
+If honeypots are not enough to stop spammers, consider to measure the time a user needs to fill in the form. If a user requires less than (for example!) 10 seconds to fill 5 fields, it's probably a spam-robot. This technique should be carefully implemented and take prefilling into account, since this can massively speed up a users data entrance.
 
 #Form elements
 
-When it comes to form elements, we follow the touch-first principle. Inputs which require a keyboard should always be chosen last, because text inputs are a burden for many users. 
+When it comes to form elements, we follow the touch-first principle. Inputs which require a keyboard should always be chosen last, because text inputs are a burden for many users.
 
 >Checklist: form elements
 - Inputs which require a keyboard should always be the last option
@@ -88,7 +149,7 @@ When it comes to form elements, we follow the touch-first principle. Inputs whic
 
 ##Errors
 
-The best way to handle errors, is not to allow them in the first place. This said, users should always get timely and approximate feedback on their input. Unresolved problems hinder the user to complete the form and therefore should be placed prominently. 
+The best way to handle errors, is not to allow them in the first place. This said, users should always get timely and approximate feedback on their input. Unresolved problems hinder the user to complete the form and therefore should be placed prominently.
 Error-messages itself should always be friendly and give clear directions on how to resolve the problem. The mistake is usually made by us and not the user, because we designed the system which led him to failure: never blame the user.
 
 >Checklist: Errors
@@ -96,30 +157,6 @@ Error-messages itself should always be friendly and give clear directions on how
 - Use colour and other graphic elements to make error messages visible. Never forget about colour-blind people or users with black and white screens.
 - Provide clear explanations instead of a generic “An error occurred”. Because if you don’t help them properly, users will make the same mistake again.
 
-##Help Text
-
-Help text can be provided to help users fill in the form and to clear up questions. Still, don’t use labels to fix shortcomings of bad form design or unclear label text. 
-
->Checklist: Help Text
-- Avoid help texts wherever and whenever possible.
-- Use it to explain unfamiliar data or why the question is asked at all.
-- Help text is always placed outside the input field and never inside.
-- Unless you have a lot of help text, use an inline system. This avoid page-jumping and rollover problems.
-- Triggers for user-activated help text should be placed next to labels and not input fields.
-
-##Action-Buttons
-
-Primary actions bring people closer to completion, secondary actions allow them to go back. Make it clear to the user what happens after he clicks / taps a button. Placement and behaviour of buttons should avoid mistakes. 
-
->Checklist: Action Buttons
-- Give primary actions the highest colour-contrast of all actions.
-- Avoid secondary actions whenever possible. If you have them, distinguish them visually.
-- Previous always stays left of next
-- Group actions & Align primary actions with input-fields to prevent mistakes
-- When a form is being processed, disable the action-button to prevent multiple clicks & errors
-- For actions like reset or clear, provide people with an easy way to undo it
-- Combine agreement-checkboxes with Buttons to reduce one step from the process
-- Always set a useful label, to let the user know what will happen next
 
 #Example
 

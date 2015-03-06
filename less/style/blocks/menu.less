@@ -26,48 +26,22 @@
 
   .menu__link {
     display: block;
-    padding: 12px 0 12px 12px;
-    margin-left: 8px;
-    position: relative;
-    color: @color-gray--dark;
+    padding: 7px 0;
+    color: @color-gray--darkest;
 
-    &::before {
-      display: none;
-      content: '';
-      width: 4px;
-      height: 4px;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      margin-top: -2px;
-      background: @color-blue;
-    }
-
-    &:hover,
     &.is-active {
-      color: @color-blue;
-
-      &::before {
-        display: block;
-      }
+      color: @color-light-blue;
+      font-weight: bold;
     }
   }
 
-  .menu__link--category {
-    margin-top: 12px;
+  .menu__item--left-category {
     font-weight: bold;
-    color: @color-light-blue--light;
-    font-size: 1.1em;
-
-    //reset hover from above
-    &:hover {
-      color: @color-light-blue--light;
-
-      &::before {
-        display: none;
-      }
-    }
   }
+}
+
+.menu--left-second {
+  font-size: 1em;
 }
 
 

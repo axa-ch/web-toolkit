@@ -1,8 +1,7 @@
 ---
 title: Login
-slug: logins
-collection: design_components
 template: design.jade
+order: 2
 ---
 
 #Login
@@ -19,7 +18,7 @@ Every password field should feature an additional checkbox which allows the user
 
 At AXA we are consitent with sign-in and registration wording. Avoid words that could cover registration and loggin such as "Anmelden".
 
-|Language |Create new Account | Log into Service | 
+|Language |Create new Account | Log into Service |
 |---|-----|-----|
 |EN |Register |Sign In |
 |DE | Registrieren  | Einloggen |
