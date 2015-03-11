@@ -17,10 +17,17 @@ template: other.jade
   - Floating action button
 - Renamed `progress` block to `progress-tracker`
 - Bugfixes
-  - Autocomplete z-index [#200](https://github.com/axa-ch/style-guide/issues/200)
-    - Introduced z-index-* variables in the `variables.less.lodash` file.
-  - Vertical center form labels (in relation to a `control--input` block)
-    - ATTENTION! This requires a markup change for the `form__group__label`!
+  - Autocomplete
+    - Solved z-index issues [#200](https://github.com/axa-ch/style-guide/issues/200)
+      - Introduced z-index-* variables in the `variables.less.lodash` file.
+    - Add mouse over effect to autocomplete entries
+  - Form
+    - Vertical center form labels (in relation to a `control--input` block)
+      - ATTENTION! This requires a markup change for the `form__group__label`!
+  - Datepicker plugin
+    - The datepicker plugin now emits the jQuery change event on the bound input field
+      - ATTENTION! The change event is NOT a raw JS change event. It will be
+        catched by jQuery listeners only.
 
 # 0.2.1 - 11 Feb, 2015
 
