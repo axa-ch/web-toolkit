@@ -25,9 +25,10 @@ template: examples/master.jade
           h2.heading.heading--fieldset Schadensobjekt
           .form__group
             .form__group__label
-              .info-icon(data-info, data-target='#slideTarget')
-                a.info-icon__icon
-                label.info-icon__label Was wurde beschädigt?
+              .form__group__label__info-icon
+                a.info-icon(data-info, data-target='#slideTarget')
+              label.form__group__label__info-icon-text-wrapper
+                .form__group__label__text Was wurde beschädigt?
             .form__group__control
               .checkbox-group
                 label.checkbox(data-checkbox)

@@ -16,9 +16,10 @@ template: development.jade
     .form
       .form__group
         .form__group__label
-          .info-icon
-            a(href='#').info-icon__icon
-            label.info-icon__label Was wurde beschädigt?
+          .form__group__label__info-icon
+            .info-icon
+          label.form__group__label__info-icon-text-wrapper
+            .form__group__label__text Form label
         .form__group__control
           input.control.control--input(type='text')
           .form__info-text
