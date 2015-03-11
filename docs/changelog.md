@@ -6,17 +6,21 @@ template: other.jade
 
 # 0.3.0 - 11 Mar, 2015
 
-- Restructured and redesigned design guidelines
-- Improved developer toolkit docs
-  - You can now copy less color variable names (requires flash)
-  - Added some words about media queries
-- Renamed `progress` block to `progress-tracker`
-- Bugfix
-  - Autocomplete z-index [#200](https://github.com/axa-ch/style-guide/issues/200)
+- Documentation changes
+  - Restructured and redesigned design guidelines
+  - Improved developer toolkit docs
+    - You can now copy less color variable names (requires flash)
+    - Added some words about media queries
 - New components
-  - File upload
+  - File upload (single and multi file upload)
   - List
   - Floating action button
+- Renamed `progress` block to `progress-tracker`
+- Bugfixes
+  - Autocomplete z-index [#200](https://github.com/axa-ch/style-guide/issues/200)
+    - Introduced z-index-* variables in the `variables.less.lodash` file.
+  - Vertical center form labels (in relation to a `control--input` block)
+    - ATTENTION! This requires a markup change for the `form__group__label`!
 
 # 0.2.1 - 11 Feb, 2015
 
