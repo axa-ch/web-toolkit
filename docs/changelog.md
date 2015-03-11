@@ -4,13 +4,15 @@ slug: changelog
 template: other.jade
 ---
 
-# 0.3.0 - not yet released
+# 0.3.0 - 11 Mar, 2015
 
 - Restructured and redesigned design guidelines
-- Added wireframe recommendations 
 - Improved developer toolkit docs
   - You can now copy less color variable names (requires flash)
   - Added some words about media queries
+- Renamed `progress` block to `progress-tracker`
+- Bugfix
+  - Autocomplete z-index [#200](https://github.com/axa-ch/style-guide/issues/200)
 - New components
   - File upload
   - List
