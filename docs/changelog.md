@@ -1,7 +1,7 @@
 ---
 title: Changelog
 slug: changelog
-template: master.jade
+template: other.jade
 ---
 
 # 0.3.0 - not yet released
