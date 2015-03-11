@@ -1,4 +1,5 @@
-.upload-remarks {
+.multi-file-upload__remarks,
+.single-file-upload__remarks {
   margin: 10px 0;
 }
 
@@ -6,7 +7,7 @@
   margin-top: 10px;
 }
 
-.file-status {
+.file-list__file {
   border-width: 1px;
   border-style: solid;
   border-color: @color-gray;
@@ -16,14 +17,6 @@
   &:last-of-type {
     border-bottom-width: 1px;
   }
-}
-
-.file-uploading {
-  padding-top: 16px;
-}
-
-.file-error {
-  padding-top: 16px;
 }
 
 .file-error__message {
@@ -37,21 +30,10 @@
 .file-uploaded__title {
   margin-left: 10px;
   margin-right: 158px;
+  margin-top: -1px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.dropzone__text__upload-link {
-  font-variant: small-caps;
-  font-size: 17px;
-}
-
-.file-uploaded__description-label {
-
-}
-
-.file-uploaded__description {
 }
 
 .file-uploaded__actions {
@@ -64,10 +46,6 @@
   font-variant: small-caps;
   margin: 0px 10px;
   font-size: 17px;
-}
-
-.upload-errors {
-  color: @color-red;
 }
 
 .single-file-upload__status {
