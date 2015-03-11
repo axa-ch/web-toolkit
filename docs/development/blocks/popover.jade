@@ -1,0 +1,26 @@
+---
+title: Popover
+slug: popover
+collection: development_blocks
+template: development.jade
+status: new
+---
+
+:markdown
+  The modal block represents a modal dialog. It is hidden by default.
+  Add the ``.is-active`` state to make it visible. When the modal is
+  visible you have to add the ``.is-modal-open`` state to the body element
+  of your page to hide the main scrollbar.
+
+:sample
+  .button Show Popover
+
+  .popover
+    .popover__header Hallo welt
+    .popover__content__wrapper
+      .popover__content Lorem ipsum dolor sit amet
+    .popover__footer
+      .popover__footer__buttons
+        a.button.button--small.button--secondary(href="#") Schliessen
+
+  div(style="height:300px;")
