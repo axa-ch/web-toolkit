@@ -10,14 +10,14 @@ template: examples/master.jade
 .l-container
   h1.heading.heading--page Motorfahrzeugschaden
 .progress-container
-  .l-container.progress-container__progress.progress
-    ul.progress__flow
-      li.progress__step.step.step--start.is-active
+  .l-container.progress-container__progress.progress-tracker
+    ul.progress-tracker__flow
+      li.progress-tracker__step.step.step--start.is-active
         span.step__bullet 1
-      li.progress__step.step.is-active
+      li.progress-tracker__step.step.is-active
         span.step__bullet 2
-      li.progress__step.step.step--end
-        span.step__bullet 3
+      li.progress-tracker__step.step.step--end
+        span.step__bullet.step__bullet--checkmark
   .progress-container__label Foobar
 .l-container
       .fieldset

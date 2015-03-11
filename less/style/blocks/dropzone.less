@@ -1,0 +1,59 @@
+.dropzone {
+  background-color: @color-gray--lighter;
+}
+
+.dropzone__container {
+  height: 80px;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: @color-gray;
+}
+
+.dropzone__container--dragover {
+  border-color: @color-light-blue--light;
+}
+
+.dropzone__icon-container {
+  float: left;
+  padding: 0 20px;
+  display:table;
+  height: 100%;
+}
+
+.dropzone__icon{
+  font-size: 2.25em;
+  display:table-cell;
+  vertical-align: middle;
+  color: @color-gray;
+}
+
+.dropzone__text-container {
+  display:table;
+  height: 100%;
+}
+
+.dropzone__text {
+  display:table-cell;
+  vertical-align: middle;
+  color: @color-gray--dark;
+}
+
+.dropzone__input,
+.dropzone-fallback__input {
+  display: none;
+}
+
+.dropzone-fallback {
+  height: 80px;
+}
+
+.dropzone-fallback__button {
+}
+
+.dropzone-fallback__button__icon {
+
+}
+
+.dropzone-fallback__button__text {
+  margin-left: 10px;
+}

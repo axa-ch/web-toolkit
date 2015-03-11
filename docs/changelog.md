@@ -1,20 +1,33 @@
 ---
 title: Changelog
 slug: changelog
-template: master.jade
+template: other.jade
 ---
 
-# 0.3.0 - not yet released
+# 0.3.0 - 11 Mar, 2015
 
-- Restructured and redesigned design guidelines
-- Added wireframe recommendations 
-- Improved developer toolkit docs
-  - You can now copy less color variable names (requires flash)
-  - Added some words about media queries
+- Documentation changes
+  - Restructured and redesigned design guidelines
+  - Improved developer toolkit docs
+    - You can now copy less color variable names (requires flash)
+    - Added some words about media queries
 - New components
-  - File upload
+  - File upload (single and multi file upload)
   - List
   - Floating action button
+- Renamed `progress` block to `progress-tracker`
+- Bugfixes
+  - Autocomplete
+    - Solved z-index issues [#200](https://github.com/axa-ch/style-guide/issues/200)
+      - Introduced z-index-* variables in the `variables.less.lodash` file.
+    - Add mouse over effect to autocomplete entries
+  - Form
+    - Vertical center form labels (in relation to a `control--input` block)
+      - ATTENTION! This requires a markup change for the `form__group__label`!
+  - Datepicker plugin
+    - The datepicker plugin now emits the jQuery change event on the bound input field
+      - ATTENTION! The change event is NOT a raw JS change event. It will be
+        catched by jQuery listeners only.
 
 # 0.2.1 - 11 Feb, 2015
 

@@ -1,5 +1,5 @@
 ---
-title: Progressbar Container
+title: Progress Container
 slug: progress-container
 collection: development_blocks
 template: development.jade
@@ -7,9 +7,9 @@ template: development.jade
 
 :markdown
   The ``.progress-container`` block is designed to contain a
-  ``.progress`` block and conclude it with a label of the
+  ``.progress-tracker`` block and conclude it with a label of the
   current step. The container adds a background to the half
-  of the ``.progress`` block.
+  of the ``.progress-tracker`` block.
 
 .callout
   :markdown
@@ -20,12 +20,12 @@ template: development.jade
 
 :sample
   .progress-container
-    .l-container.progress-container__progress.progress
-      ul.progress__flow
-        li.progress__step.step.step--start.is-active
+    .l-container.progress-container__progress.progress-tracker
+      ul.progress-tracker__flow
+        li.progress-tracker__step.step.step--start.is-active
           span.step__bullet 1
-        li.progress__step.step.is-active
+        li.progress-tracker__step.step.is-active
           span.step__bullet 2
-        li.progress__step.step.step--end
-          span.step__bullet 3
+        li.progress-tracker__step.step.step--end
+          span.step__bullet.step__bullet--checkmark
     .progress-container__label Foobar

@@ -36,7 +36,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: 9998;
+    z-index: @z-index-modal-wrapper;
     overflow: auto;
     padding: 0 0;
   })
@@ -50,7 +50,7 @@
   right: 0;
   overflow: auto;
   background: white;
-  z-index: 9999;
+  z-index: @z-index-modal;
   padding: 0 @modal-padding;
 
   .respond(medium, {
@@ -83,7 +83,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: @z-index-modal;
   width: 100%;
   height: 40px;
   padding: 0 @modal-padding;
@@ -142,7 +142,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: @z-index-modal;
   width: 100%;
   height: 51px;
   padding: 10px 0 15px 0;
