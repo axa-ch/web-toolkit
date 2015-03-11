@@ -34,7 +34,7 @@
     right: -@focus-border-width;
     top: -@focus-border-width;
     background: @color-blue-gray--light;
-    z-index: 100;
+    z-index: @z-index-dropdown;
     color: @color-light-blue;
   }
 }
@@ -52,7 +52,7 @@
   height: 40px;
   line-height: 40px;
   position: relative;
-  z-index: 101;
+  z-index: @z-index-dropdown-select;
 }
 
 // Firefox is not respecting line-height in select elements
