@@ -1,0 +1,32 @@
+---
+title: Dropzone
+slug: dropzone
+collection: development_plugins
+template: development.jade
+status: experimental
+---
+
+h3 Intro
+
+p.
+  The Dropzone plugin is used to handle transition from and to the dragover
+  state on a file-dropzone block.
+p.
+  It handles the dragover, dragleave and drop events of the dropzone to add
+  and remove the dragover modifier to the file-dropzone block.
+
+h3 Usage
+
+p Activate the functionality with the data-* API
+
+:sample
+  .file-dropzone(data-dropzone='dropzone')
+    input.file-dropzone__input(type='file')
+    .file-dropzone__text Drag file here or click to choose.
+
+p Activate the functionality with JavaScript:
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      $('.file-dropzone').dropzone();
