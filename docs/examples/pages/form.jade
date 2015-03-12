@@ -10,14 +10,14 @@ template: examples/master.jade
 .l-container
   h1.heading.heading--page Motorfahrzeugschaden
 .progress-container
-  .l-container.progress-container__progress.progress
-    ul.progress__flow
-      li.progress__step.step.step--start.is-active
+  .l-container.progress-container__progress.progress-tracker
+    ul.progress-tracker__flow
+      li.progress-tracker__step.step.step--start.is-active
         span.step__bullet 1
-      li.progress__step.step.is-active
+      li.progress-tracker__step.step.is-active
         span.step__bullet 2
-      li.progress__step.step.step--end
-        span.step__bullet 3
+      li.progress-tracker__step.step.step--end
+        span.step__bullet.step__bullet--checkmark
   .progress-container__label Foobar
 .l-container
       .fieldset
@@ -25,9 +25,10 @@ template: examples/master.jade
           h2.heading.heading--fieldset Schadensobjekt
           .form__group
             .form__group__label
-              .info-icon(data-info, data-target='#slideTarget')
-                a.info-icon__icon
-                label.info-icon__label Was wurde beschädigt?
+              .form__group__label__info-icon
+                a.info-icon(data-info, data-target='#slideTarget')
+              label.form__group__label__info-icon-text-wrapper
+                .form__group__label__text Was wurde beschädigt?
             .form__group__control
               .checkbox-group
                 label.checkbox(data-checkbox)
@@ -42,10 +43,10 @@ template: examples/master.jade
                 label.checkbox(data-checkbox)
                   input.checkbox__checkbox(type='checkbox')
                   span.checkbox__label Personen
-            .form__group__info-text(id='slideTarget', style='display:none;')
-              .info-text
-                p.
-                  Hallo Welt!
+              .form__info-text(id='slideTarget', style='display:none;')
+                .info-text
+                  p.
+                    Hallo Welt!
       .fieldset
         .fieldset__content
           h2.heading.heading--fieldset Schadensobjekt 2

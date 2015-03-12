@@ -1,5 +1,6 @@
 @import '../mixins/grid';
 @import '../mixins/respond';
+@import '../blocks/info-icon';
 
 .form {
 }
@@ -17,10 +18,6 @@
 .form__group--condensed {
   margin-bottom: 14px;
 
-  .respond(medium, {
-
-  });
-
   .form__group__label {
     color: @color-gray--darker;
     margin-bottom: 0;
@@ -37,7 +34,39 @@
   .make-col(6, medium);
   .make-col(5, large);
 
+  &:extend(.clearfix all);
+
   margin-bottom: 6px;
+
+  .respond(medium; {
+    line-height: 40px; // used for vertical-alignment
+  });
+
+  .form__group__label__text {
+    display: inline-block;
+    line-height: 1.5; // reset
+    vertical-align: middle;
+  }
+
+  .form__group__label__info-icon {
+    width: @info-icon-diameter;
+    float: right;
+
+    .respond(medium; {
+      width: @info-icon-diameter--medium;
+      margin-top: 5px;
+    });
+  }
+
+  .form__group__label__info-icon-text-wrapper {
+    display: block;
+    margin-right: @info-icon-diameter + 10px;
+
+    .respond(medium; {
+      line-height: 40px;
+      margin-right: @info-icon-diameter--medium + 20px;
+    });
+  }
 }
 
 .form__group__control {

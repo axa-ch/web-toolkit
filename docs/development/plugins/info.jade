@@ -20,11 +20,12 @@ h3 Example
 :sample
   .l-container
     .form
-      .form__group
+      .form__group          
         .form__group__label
-          .info-icon(data-info, data-target='#target')
-            a.info-icon__icon
-            label.info-icon__label Was wurde beschädigt?
+          .form__group__label__info-icon
+            a.info-icon(data-info, data-target='#target')
+          label.form__group__label__info-icon-text-wrapper
+            .form__group__label__text Was wurde beschädigt?
         .form__group__control
           input.control.control--input(type='text')
           .form__info-text(id='target', style='display:none;')

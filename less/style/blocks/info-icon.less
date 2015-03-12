@@ -5,38 +5,23 @@
 @info-icon-diameter--medium: 28px;
 
 .info-icon {
-  &:extend(.clearfix all);
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.info-icon__label {
-  display: block;
-  margin-right: @info-icon-diameter + 10px;
-
-  .respond(medium; {
-    margin-right: @info-icon-diameter--medium + 20px;
-  });
-}
-
-.info-icon__icon {
-  display: block;
   .icon();
   .icon--info();
-
-  &.is-active {
-    .icon--close();
-  }
-
-  float: right;
+  display: block;
   width: @info-icon-diameter;
-
   color: @color-gray--darker;
 
   .respond(medium; {
     width: @info-icon-diameter--medium;
   });
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.is-active {
+    .icon--close();
+  }
 
   &:hover {
     color: @color-gray--darker;
