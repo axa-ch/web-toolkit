@@ -13,14 +13,41 @@ status: new
   of your page to hide the main scrollbar.
 
 :sample
-  .button Show Popover
+  a.button(id='toggleButton') Show Popover
 
-  .popover
-    .popover__header Hallo welt
-    .popover__content__wrapper
-      .popover__content Lorem ipsum dolor sit amet
-    .popover__footer
-      .popover__footer__buttons
-        a.button.button--small.button--secondary(href="#") Schliessen
+  .popover(id='popover', style='display:none')
+    .popover__tail.popover__tail--top
+    .popover__wrapper
+      .popover__wrapper__header Hallo welt
+      .popover__wrapper__content__wrapper
+        .popover__wrapper__content
+          textarea.control.control--textarea
+      .popover__wrapper__footer
+        .popover__wrapper__footer__buttons
+          a.button.button--small.button--secondary(href="#") Schliessen
 
-  div(style="height:300px;")
+  .l-container
+    .form
+      .form__group
+        label.form__group__label
+          .form__group__label__text Form label
+        .form__group__control
+          input.control.control--input(type='text')
+      .form__group
+        label.form__group__label
+          .form__group__label__text Form label
+        .form__group__control
+          input.control.control--input(type='text')
+      .form__group
+        .form__group__label
+          .form__group__label__info-icon
+            .info-icon
+          label.form__group__label__info-icon-text-wrapper
+            .form__group__label__text Form label
+        .form__group__control
+          input.control.control--input(type='text')
+
+  div(style="height:300px;display:none;")
+
+script.
+  $('#toggleButton').on('click', function () { $('#popover').toggle(); });
