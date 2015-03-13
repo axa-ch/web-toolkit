@@ -426,16 +426,17 @@
   padding-right: 0px;
 
   .menu__item {
-    border-top: 1px solid @color-gray--light;
-    padding: 8px (@grid-gutter-width/2 + 10px) 8px (@grid-gutter-width/2 + 10px);
-    cursor: pointer;
 
-    .menu__link{
+    .menu__link {
+      display: block;
       font-size: 12px;
+      padding: 8px (@grid-gutter-width/2 + 10px) 8px (@grid-gutter-width/2 + 10px);
       line-height: 2;
+      border-top: 1px solid @color-gray--light;
+      color: @color-blue;
     }
 
-    &:first-child{
+    &:first-child .menu__link {
       border-top: none;
     }
 
@@ -455,7 +456,7 @@
   }
 }
 
-.menu--footer ~ .menu--footer{
+.menu--footer ~ .menu--footer {
   border-top: 1px solid @color-gray--light;
 
   .respond(medium, {
