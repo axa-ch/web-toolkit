@@ -31,11 +31,6 @@
   .make-col(12);
   .make-col(4, medium);
 
-  .respond(medium, {
-
-    //padding: 1.25em 0 1.25em 1.875em;
-  });
-
 }
 
 .footer__item__menu {
@@ -71,57 +66,79 @@
 
 .footer__item--links {
   .make-col-pull(4, medium);
+  .footer__item__headline {
+    margin-bottom: 12px;
+
+    .respond(medium; {
+      margin-bottom: 0;
+    });
+  }
 }
 
+/*.footer__item--international {
+  margin: 0 -@grid-gutter-width/2;
+
+  .respond(medium; {
+    margin: 0;
+  });
+}*/
+
 .footer__item--international {
+  margin-top: 0;
+
+  .respond(medium; {
+    margin-top: 18px;
+  });
 
   .footer__item__headline {
     display: none;
-    font-size: 1.125em;
 
-    .respond(medium, { display: block; });
-  }
-  .footer__item__headline--button {
-    .footer-select__tile();
-    font-size: 1.125em;
-    font-family: ITCFranklinGothicCondensedDemi, sans-serif;
-    padding-left: 25px;
-    .respond(medium, { display: none; });
-  }
-  .menu {
-    display: none;
-    .respond(medium, { display: block; });
+    .respond(medium; {
+      display: block;
+    });
   }
 }
 
-.footer__item__headline--button ~ .footer__item__headline--button {
-  border-top: 1px solid white;
-}
-
-.footer-select__tile() {
+.footer__international {
   display: block;
-  position: relative;
-  line-height: 3.5em;
-  background: @color-blue;
-  color: white;
-  cursor: pointer;
-  .icon();
-  .icon--arrow-right();
+  margin: 0 -@grid-gutter-width/2;
 
-  &:hover {
-    color: white;
-    background: @color-blue;
-  }
+  .respond(medium; {
+    margin: 0;
+  });
+}
+
+.footer__international__icon {
+  display: none;
 
   &::before {
-    font-size: 14px;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    margin-top: -7px;
-
-    .respond(medium, { right: 20px; });
+    font-size: 52px;
   }
 
-  .respond(medium, { margin-top: 0; display: table-cell; padding: 20px; border: 20px solid white; vertical-align: middle; });
+  .respond(medium; {
+    display: block;
+  });
+}
+
+.footer__international__text {
+  display: block;
+  padding: 0 (@grid-gutter-width/2 + 10px);
+  line-height: 55px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: @color-blue;
+  color: white;
+  .icon-after();
+  .icon-after--arrow-right();
+
+  &::after {
+    color: white;
+    line-height: 55px;
+    font-size: 16px;
+    float: right;
+  }
+
+  .respond(medium; {
+    display: none;
+  });
 }
