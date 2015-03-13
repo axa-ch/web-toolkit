@@ -13,41 +13,18 @@ status: new
   of your page to hide the main scrollbar.
 
 :sample
-  a.button(id='toggleButton') Show Popover
+  a.button(id='toggleButton',data-popover='#popover',style='float: left;width: 25%;margin-left: 75%;') Show Popover
 
-  .popover(id='popover', style='display:none')
+  div(style='height:100px;')
+  .popover(id='popover', style='visibility:hidden')
     .popover__tail.popover__tail--top
-    .popover__wrapper
-      .popover__wrapper__header Hallo welt
-      .popover__wrapper__content__wrapper
-        .popover__wrapper__content
+    .popover__box
+      .popover__box__header Hallo welt
+      .popover__box__content__wrapper
+        .popover__box__content
           textarea.control.control--textarea
-      .popover__wrapper__footer
-        .popover__wrapper__footer__buttons
+      .popover__box__footer
+        .popover__box__footer__buttons
           a.button.button--small.button--secondary(href="#") Schliessen
 
-  .l-container
-    .form
-      .form__group
-        label.form__group__label
-          .form__group__label__text Form label
-        .form__group__control
-          input.control.control--input(type='text')
-      .form__group
-        label.form__group__label
-          .form__group__label__text Form label
-        .form__group__control
-          input.control.control--input(type='text')
-      .form__group
-        .form__group__label
-          .form__group__label__info-icon
-            .info-icon
-          label.form__group__label__info-icon-text-wrapper
-            .form__group__label__text Form label
-        .form__group__control
-          input.control.control--input(type='text')
-
   div(style="height:300px;display:none;")
-
-script.
-  $('#toggleButton').on('click', function () { $('#popover').toggle(); });

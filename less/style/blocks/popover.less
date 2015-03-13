@@ -2,7 +2,7 @@
 
 }
 
-.popover__wrapper {
+.popover__box {
   position: fixed;
   top: 0;
   left: 0;
@@ -47,25 +47,25 @@
 .popover__tail--top {
   margin-left: 80px;
   margin-top: -20px;
-  border-bottom: 20px solid lightgray;
+  border-bottom: 20px solid @color-gray--dark;
 }
 
 .popover__tail--right {
   margin-right: -20px;
-  border-left: 20px solid lightgray;
+  border-left: 20px solid @color-gray--dark;
 }
 
 .popover__tail--bottom {
   margin-bottom: -20px;
-  border-top: 20px solid lightgray;
+  border-top: 20px solid @color-gray--dark;
 }
 
 .popover__tail--left {
   margin-left: -20px;
-  border-right: 20px solid lightgray;
+  border-right: 20px solid @color-gray--dark;
 }
 
-.popover__wrapper__header {
+.popover__box__header {
   background: #0062a9;
   padding: 15px;
   color: white;
@@ -76,7 +76,7 @@
   });
 }
 
-.popover__wrapper__content__wrapper {
+.popover__box__content__wrapper {
   height: 100%;
   margin-top: -57px;
   padding-top: 57px;
@@ -90,7 +90,7 @@
   });
 }
 
-.popover__wrapper__content {
+.popover__box__content {
   height: 100%;
   background: @color-gray--dark;
   padding: 15px;
@@ -99,7 +99,7 @@
   });
 }
 
-.popover__wrapper__footer {
+.popover__box__footer {
   height: 60px;
   background: #efefef;
   padding: 15px;
@@ -108,6 +108,6 @@
   });
 }
 
-.popover__wrapper__footer__buttons {
+.popover__box__footer__buttons {
   float:right;
 }
