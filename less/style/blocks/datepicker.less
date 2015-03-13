@@ -22,6 +22,9 @@
 
 .datepicker__trigger {
   display: none;
+  &:hover {
+    cursor: pointer;
+  }
 
   .respond(medium; {
     .icon();
@@ -80,6 +83,7 @@
   color: white;
 
   &:hover {
+    cursor: pointer;
     color: @color-gray--light;
   }
 }
@@ -124,6 +128,13 @@
   color: @color-light-blue;
   vertical-align: middle;
 
+  &:hover,
+  &.is-active {
+    background: @color-light-blue;
+    color: white;
+    cursor: pointer;
+  }
+
   &.picker__day--today {
     background: @color-gray--light;
   }
@@ -132,7 +143,7 @@
     background: transparent;
 
     &:hover {
-      cursor: normal;
+      cursor: default;
       background: transparent;
     }
   }
@@ -143,15 +154,8 @@
     font-size: 0.9285em;
 
     &:hover {
-      cursor: normal;
+      cursor: default;
       background: transparent;
     }
-  }
-
-  &:hover,
-  &.is-active {
-    background: @color-light-blue;
-    color: white;
-    cursor: pointer;
   }
 }
