@@ -13,11 +13,9 @@ status: new
   of your page to hide the main scrollbar.
 
 :sample
-  a.button(id='toggleButton',data-popover='#popover',style='float: left;width: 25%;margin-left: 75%;') Show Popover
-
-  div(style='height:100px;')
+  a.button(id='toggleButton',data-popover='#popover') Show Popover
   .popover(id='popover', style='visibility:hidden')
-    .popover__tail.popover__tail--top
+    .popover__tail
     .popover__box
       .popover__box__header Hallo welt
       .popover__box__content__wrapper
@@ -26,5 +24,3 @@ status: new
       .popover__box__footer
         .popover__box__footer__buttons
           a.button.button--small.button--secondary(href="#") Schliessen
-
-  div(style="height:300px;display:none;")
