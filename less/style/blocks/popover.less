@@ -68,9 +68,12 @@
   padding: 15px;
   color: white;
   font-size: 18px;
+  height: 57px;
   .respond(medium, {
     background: @color-gray--dark;
     color: #0062a9;
+    height: 42px;
+    padding-bottom: 0;
   });
 }
 
@@ -78,8 +81,6 @@
   height: 100%;
   margin-top: -57px;
   padding-top: 57px;
-  padding-bottom: 60px;
-  margin-bottom: -60px;
 
   .respond(medium, {
     background: @color-gray--dark;
@@ -94,18 +95,11 @@
   padding: 15px;
   .respond(medium, {
     height: auto;
+    padding-bottom: 0;
+    margin-bottom: 15px;
   });
 }
 
-.popover__box__footer {
-  height: 60px;
-  background: #efefef;
-  padding: 15px;
-  .respond(medium, {
-    background: @color-gray--dark;
-  });
-}
-
-.popover__box__footer__buttons {
+.popover__close {
   float:right;
 }
