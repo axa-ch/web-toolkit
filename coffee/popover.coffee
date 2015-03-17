@@ -20,14 +20,12 @@
       $(window).on 'resize', @position
 
     toggle: (event) ->
+      event.data.isOpen = not event.data.isOpen
       event.data.position()
       event.data.$target.css 'visibility',
         if event.data.$target.css('visibility') == 'visible' then 'hidden' else 'visible'
 
     position: () =>
-      @$element.outerWidth()
-      @$element.outerHeight()
-      @$element.offset().top
       $box = @$target.find '.popover__box'
       $tail = @$target.find '.popover__tail'
 
@@ -56,7 +54,6 @@
 
         #tail
         $tail.removeClass 'popover__tail--top popover__tail--bottom'
-        console.log $tail
         tailOffset = { top: 0, left: 0 }
         tailOffset.top = @$element.offset().top + @$element.outerHeight() - 20
         tailOffset.left = @$element.offset().left + @$element.outerWidth() / 2 - 20
