@@ -17,10 +17,10 @@ status: experimental
   .popover(id='popover', style='visibility:hidden')
     .popover__tail
     .popover__box
-      .popover__box__header Hallo welt
+      .popover__box__header
+        a.popover__close.icon.icon--modal-close
       .popover__box__content__wrapper
         .popover__box__content
           textarea.control.control--textarea
-      .popover__box__footer
-        .popover__box__footer__buttons
-          a.button.button--small.button--secondary(href="#") Schliessen
+          p
+            a.button.button--small 'clicky click'
