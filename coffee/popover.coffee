@@ -10,6 +10,8 @@
       @$target = $ @$element.data('popover')
       @$closeIcon = @$target.find '.popover__close'
 
+      @isOpen = false
+
       @$target.css 'visibility', 'hidden'
 
       @$element.on 'click', @, @toggle
@@ -37,7 +39,11 @@
         isSmall = $(window).outerWidth() < 768
 
       if isSmall
-        $('body').addClass 'is-modal-open'
+        if @isOpen
+          $('body').addClass 'is-modal-open'
+        else
+          $('body').removeClass 'is-modal-open'
+
         $box.css { top: 0, left: 0 }
       else
         $('body').removeClass 'is-modal-open'
