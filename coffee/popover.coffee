@@ -14,13 +14,16 @@
 
       @$target.css 'visibility', 'hidden'
 
-      @$element.on 'click', @, (event) ->
-        event.data.$target.css 'visibility',
-          if event.data.$target.css('visibility') == 'visible' then 'hidden' else 'visible'
+      @$element.on 'click', @, @toggle
 
       @position()
 
       $(window).on 'resize', @position
+
+    toggle: (event) ->
+      event.data.position()
+      event.data.$target.css 'visibility',
+        if event.data.$target.css('visibility') == 'visible' then 'hidden' else 'visible'
 
     position: () =>
       @$element.outerWidth()
