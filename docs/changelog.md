@@ -11,6 +11,11 @@ template: other.jade
 - Refactoring
   - Refactored structure of the `autocomplete` block.
     - ATTENTION! This requires a markup change for the `autocomplete` block.
+  - Renamed `single-file-upload` to `single-upload`
+    - Renamed `single-upload__progress__icon-container` to `single-upload__status__icon-container`
+    - ATTENTION! This requires a markup change for the `single-file-upload` block.
+  - Renamed `multi-file-upload` to `multi-upload`
+    - ATTENTION! This requires a markup change for the `multi-file-upload` block.
 
 # 0.3.0 - 11 Mar, 2015
 
