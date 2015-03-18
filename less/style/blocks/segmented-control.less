@@ -9,7 +9,7 @@
 .segmented-control__item {
   .checkbox();
 }
-.segmented-control__radio {
+.segmented-control__item__radio {
   .checkbox__checkbox();
 }
 
@@ -58,7 +58,7 @@
     }
   }
 
-  .segmented-control__label {
+  .segmented-control__item__label {
     &:after {
       content: '';
       display: inline-block;
@@ -68,12 +68,12 @@
     }
   }
 
-  .segmented-control__item.is-active .segmented-control__label {
+  .segmented-control__item.is-active .segmented-control__item__label {
     .icon-after();
     .icon-after--checkmark();
   }
 
-  .segmented-control__radio {
+  .segmented-control__item__radio {
     &:extend(.invisible-input all);
   }
 

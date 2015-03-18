@@ -16,6 +16,11 @@ template: other.jade
     - ATTENTION! This requires a markup change for the `single-file-upload` block.
   - Renamed `multi-file-upload` to `multi-upload`
     - ATTENTION! This requires a markup change for the `multi-file-upload` block.
+  - Renamed elements of the `segmented-control` block.
+    - Renamed `segmented-control__radio` to `segmented-control__item__radio`
+    - Renamed `segmented-control__label` to `segmented-control__item__label`
+    - ATTENTION! This requires a markup change for the `segmented-control` block.
+
 
 # 0.3.0 - 11 Mar, 2015
 
