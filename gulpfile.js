@@ -251,7 +251,7 @@ gulp.task('release-dist', ['release-dist-generate-bower-json'], function () {
   packageJson = readJSONFile('./package.json');
 
   return gulp.src(['./dist/**', './README.*', 'LICENSE.*', '!./dist/docs/downloads/**/*'])
-    .pipe(gulptar('./axa-web-design-guide-dist-'+packageJson.version+'.tar'))
+    .pipe(gulptar('./axa-web-style-guide-dist-'+packageJson.version+'.tar'))
     .pipe(gulpgzip())
     .pipe(gulp.dest('./dist/docs/downloads/'));
 });
@@ -264,12 +264,12 @@ gulp.task('release-npm-pack', function (cb) {
 });
 
 gulp.task('release-npm-copy', ['release-npm-pack'], function () {
-  return gulp.src(['./axa-web-design-guide-*.tgz'])
+  return gulp.src(['./axa-web-style-guide-*.tgz'])
     .pipe(gulp.dest('./dist/docs/downloads/'));
 });
 
 gulp.task('release-npm', ['release-npm-copy'], function () {
-  del(['axa-web-design-guide-*.tgz']);
+  del(['axa-web-style-guide-*.tgz']);
 });
 
 gulp.task('release', function(cb) {
