@@ -1,5 +1,5 @@
 ---
-title: Single File Upload
+title: Single Upload
 slug: file-upload1
 collection: development_blocks
 template: development.jade
@@ -7,7 +7,7 @@ status: experimental
 ---
 
 :markdown
-  The ``single-file-upload`` block is used to display drag and drop zones for a
+  The ``single-upload`` block is used to display drag and drop zones for a
   file and display status info (progress) to the uploaded file.
 
 h3 States and Behavior
@@ -21,7 +21,7 @@ h3 States and Behavior
 
 :markdown
   Register to the ``ondrop`` event to upload the file.
-  The dropzone block must be replaced by the ``single-file-upload__status``
+  The dropzone block must be replaced by the ``single-upload__status``
   block to display a ``progressbar`` and info about the upload process.
 
 :markdown
@@ -33,10 +33,10 @@ h3 States and Behavior
 
 :markdown
   When the file upload is finished, replace contents of the
-  ``single-file-upload__uploading`` block to display the
-  ``single-file-upload__status__uploaded`` block.
+  ``single-upload__uploading`` block to display the
+  ``single-upload__status__uploaded`` block.
 
-.callout.callout--danger
+.callout.callout--danger.
   Look at the bottom of the page for some info about file uploads on IE 9.
 
 h3 Styles
@@ -48,7 +48,7 @@ h3 Styles
         .form__group__label.
           Datei
         .form__group__control
-          .single-file-upload
+          .single-upload
             .dropzone
               .dropzone__container(data-dropzone='dropzone')
                 input.dropzone__input(type='file')
@@ -63,7 +63,7 @@ h3 Styles
         .form__group__label.
           Datei (Dragover)
         .form__group__control
-          .single-file-upload
+          .single-upload
             .dropzone
               .dropzone__container.dropzone__container--dragover
                 input.dropzone__input(type='file')
@@ -78,7 +78,7 @@ h3 Styles
         .form__group__label.
           Datei (Error)
         .form__group__control
-          .single-file-upload
+          .single-upload
             .dropzone
               .dropzone__container
                 input.dropzone__input(type='file')
@@ -94,12 +94,12 @@ h3 Styles
         .form__group__label.
           Datei (Uploading)
         .form__group__control
-          .single-file-upload
-            .single-file-upload__status
-              .single-file-upload__progress__icon-container
-                i.single-file-upload__progress__icon.icon.icon--upload
-              .single-file-upload__progressbar-container
-                .single-file-upload__progressbar.progressbar
+          .single-upload
+            .single-upload__status
+              .single-upload__progress__icon-container
+                i.single-upload__progress__icon.icon.icon--upload
+              .single-upload__progressbar-container
+                .single-upload__progressbar.progressbar
                   .progressbar__description awesome_image.jpg
                   .progressbar__percentage 22%
                   .progressbar__progress
@@ -109,15 +109,15 @@ h3 Styles
         .form__group__label.
           Datei (Uploaded)
         .form__group__control
-          .single-file-upload
-            .single-file-upload__status
-              .single-file-upload__progress__icon-container
-                i.single-file-upload__progress__icon.icon.icon--upload
-              .single-file-upload__status__uploaded
-                .single-file-upload__status__uploaded__actions.file-uploaded__actions
+          .single-upload
+            .single-upload__status
+              .single-upload__progress__icon-container
+                i.single-upload__progress__icon.icon.icon--upload
+              .single-upload__status__uploaded
+                .single-upload__status__uploaded__actions.file-uploaded__actions
                   a.file-uploaded__actions__action ansehen
                   a.file-uploaded__actions__action löschen
-                .single-file-upload__status__uploaded__title axaswitch.gif
+                .single-upload__status__uploaded__title axaswitch.gif
       .form__group
         .form__group__label.
           Fallback for dropzone on IE 9
@@ -147,4 +147,4 @@ ul.list.list--unordered
     A click on <code>dropzone-fallback__button</code> block must open the
     file chooser dialog.
     After a file is selected, the upload should start. Display status info in the
-    <code>single-file-upload__status</code> block as usual.
+    <code>single-upload__status</code> block as usual.
