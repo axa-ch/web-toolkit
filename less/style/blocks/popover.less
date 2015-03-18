@@ -1,5 +1,9 @@
 .popover {
+  visibility: hidden;
 
+  &.is-active {
+    visibility: visible;
+  }
 }
 
 .popover__box {
@@ -66,14 +70,19 @@
 .popover__box__header {
   background: #0062a9;
   padding: 15px;
-  color: white;
-  font-size: 18px;
   height: 57px;
   .respond(medium, {
     background: @color-gray--dark;
-    color: #0062a9;
     height: 42px;
     padding-bottom: 0;
+  });
+}
+
+.popover__box__header__headline{
+  color: white;
+  font-size: 18px;
+  .respond(medium, {
+    color: #0062a9;
   });
 }
 
