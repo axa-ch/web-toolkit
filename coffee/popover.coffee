@@ -12,8 +12,6 @@
 
       @isOpen = false
 
-      @$target.css 'visibility', 'hidden'
-
       @$element.on 'click', @, @toggle
       @$closeIcon.on 'click', @, @toggle
 
@@ -24,8 +22,7 @@
     toggle: (event) ->
       event.data.isOpen = not event.data.isOpen
       event.data.position()
-      event.data.$target.css 'visibility',
-        if event.data.$target.css('visibility') == 'visible' then 'hidden' else 'visible'
+      event.data.$target.toggleClass 'is-active'
 
     position: () =>
       $box = @$target.find '.popover__box'
