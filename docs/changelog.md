@@ -4,6 +4,14 @@ slug: changelog
 template: other.jade
 ---
 
+# Sprint 11
+
+- Documentation changes
+  - Added remark regarding autogrow functionality to the `control` block.
+- Refactoring
+  - Refactored structure of the `autocomplete` block.
+    - ATTENTION! This requires a markup change for the `autocomplete` block.
+
 # 0.3.0 - 11 Mar, 2015
 
 - Documentation changes
