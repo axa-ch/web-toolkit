@@ -20,7 +20,8 @@ template: other.jade
     - Renamed `segmented-control__radio` to `segmented-control__item__radio`
     - Renamed `segmented-control__label` to `segmented-control__item__label`
     - ATTENTION! This requires a markup change for the `segmented-control` block.
-
+  - Renamed the `label` block to `tag`
+    - ATTENTION! This requires a markup change for the `label` block.
 
 # 0.3.0 - 11 Mar, 2015
 

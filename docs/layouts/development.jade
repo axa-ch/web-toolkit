@@ -4,16 +4,16 @@ segment: development
 filename: development.jade
 cache: true
 ---
-  
+
 mixin status(status)
   if status != undefined
     = ' '
     if status == 'experimental'
-      span.label.label--danger= status
+      span.tag.tag--danger= status
     else if status == 'new'
-      span.label.label--success= status
+      span.tag.tag--success= status
     else
-      span.label.label--default= status
+      span.tag.tag--default= status
 
 mixin pageLink(page)
   li.menu__item
@@ -23,7 +23,7 @@ mixin pageLink(page)
     )
       span= page.title
       mixin status(page.status)
-  
+
 .hr
 
 .l-container
