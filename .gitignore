@@ -18,3 +18,5 @@ tmp/
 .travis/deploy_key.pub
 out/
 npm-debug.log
+*.iml
+.idea/
