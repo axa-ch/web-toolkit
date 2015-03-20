@@ -151,6 +151,7 @@ module.exports = exports = function (options) {
 
     // Configure marked to use custom highlight
     require('marked').setOptions({
+      langPrefix: '',
       highlight: function (code, lang) {
         return require('highlight.js').highlight(lang, code).value;
       }
