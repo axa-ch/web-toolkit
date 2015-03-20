@@ -38,7 +38,7 @@ h4 Good old direct download
 
 p.paragraph
   | You can
-  a(href=relative('/downloads/axa-web-design-guide-dist-'+package.version+'.tar.gz'), title="Latest Release Package")  download the latest release package here.
+  a(href=relative('/downloads/' + package.name + '-dist-'+package.version+'.tar.gz'), title="Latest Release Package")  download the latest release package here.
 
 h4 Use npm (recommended)
 
@@ -49,7 +49,7 @@ p.paragraph.
 
 .highlight
   pre.highlight__listing
-    code npm install –-save-dev http://design.axa.ch/downloads/axa-web-design-guide-#{package.version}.tgz
+    code npm install –-save-dev http://design.axa.ch/downloads/#{package.name}-#{package.version}.tgz
 
 h4 Use bower
 
@@ -58,7 +58,7 @@ p.paragraph.
 
 .highlight
   pre.highlight__listing
-    code bower install http://design.axa.ch/downloads/axa-web-design-guide-dist-#{package.version}.tar.gz --save
+    code bower install http://design.axa.ch/downloads/#{package.name}-dist-#{package.version}.tar.gz --save
 
 h2 What's included
 

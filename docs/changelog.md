@@ -4,7 +4,9 @@ slug: changelog
 template: other.jade
 ---
 
-# Sprint 11
+# 0.4.0 - not yet released
+
+- Rename the package to `axa-web-style-guide`
 
 - Documentation changes
   - Added remark regarding autogrow functionality to the `control` block.
