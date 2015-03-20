@@ -24,6 +24,8 @@ template: other.jade
     - ATTENTION! This requires a markup change for the `segmented-control` block.
   - Renamed the `label` block to `tag`
     - ATTENTION! This requires a markup change for the `label` block.
+  - Renamed the `table__item` and `table__item__row` elements to `table__row` and `table__row__item`
+    - ATTENTION! This requires a markup change for the `table` block.
 
 # 0.3.0 - 11 Mar, 2015
 
