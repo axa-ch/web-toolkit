@@ -432,6 +432,21 @@
   padding-right: 0px;
 
   .menu__item {
+    font-family: "ITCFranklinGothicCondensedDemi", sans-serif;
+
+    &:first-child .menu__link {
+      border-top: none;
+    }
+
+    &:hover{
+      text-decoration: underline;
+    }
+
+    .respond(medium, {
+      font-size: 12px;
+      border: none;
+      padding: 0px;
+    });
 
     .menu__link {
       display: block;
@@ -440,25 +455,14 @@
       line-height: 2;
       border-top: 1px solid @color-gray--light;
       color: @color-blue;
-    }
 
-    &:first-child .menu__link {
-      border-top: none;
+      .respond(medium, {
+        border-top: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+      });
     }
-
-    &:hover{
-      text-decoration: underline;
-      a {
-        color: @color-blue;
-      }
-    }
-
-    font-family: "ITCFranklinGothicCondensedDemi", sans-serif;
-    .respond(medium, {
-      font-size: 12px;
-      border: none;
-      padding: 0px;
-    });
   }
 }
 
