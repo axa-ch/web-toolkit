@@ -14,7 +14,6 @@
 
   padding: @padding-top-bottom 0;
 
-  border-bottom: 1px solid @color-gray--lighter;
 
   .respond(large, {
     padding: @padding-top-bottom-large 0;
@@ -124,4 +123,20 @@
   border-left: 1px solid @color-gray--darker;
   padding: 0 0 0 10px;
   margin: 0 0 0 10px;
+}
+
+.header__menu {
+  margin-top: 20px;
+  border-top: 1px solid @color-gray--lighter;
+}
+
+.header__separator {
+  display: none;
+
+  .respond(medium, {
+    display: block;
+    // margin-top: 30px;
+    margin-bottom: 30px;
+    border-bottom: 5px solid @color-blue;
+    });
 }
