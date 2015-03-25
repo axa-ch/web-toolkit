@@ -26,7 +26,9 @@ template: other.jade
     - ATTENTION! This requires a markup change for the `label` block.
   - Renamed the `table__item` and `table__item__row` elements to `table__row` and `table__row__item`
     - ATTENTION! This requires a markup change for the `table` block.
-
+  - Moved the `footnote` block to the `form` block. It's renamed to `form__fotnote`
+    - ATTENTION! This requires a markup change for the `footnote` block.
+    
 # 0.3.0 - 11 Mar, 2015
 
 - Documentation changes
