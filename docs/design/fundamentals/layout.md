@@ -90,3 +90,4 @@ across different applications.
 ## Landing page
 
 ![Landing page layout](/images/design/fundamentals/layout/common-landing.svg)
+<!-- Copyright AXA Versicherungen AG 2015 -->

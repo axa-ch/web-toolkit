@@ -103,3 +103,4 @@ Inherits from the single-line text field
 | -- | -- | -- |
 | Text color | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> white | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> white |
 | Background | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> #0062A9 | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> #0062A9 |
+<!-- Copyright AXA Versicherungen AG 2015 -->

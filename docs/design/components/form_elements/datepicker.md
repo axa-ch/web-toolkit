@@ -5,3 +5,4 @@ order: 4
 ---
 
 #Datepicker
+<!-- Copyright AXA Versicherungen AG 2015 -->

@@ -54,3 +54,4 @@ Please feel free to send in your recommendations.
 
 ##Source
 http://www.nngroup.com/articles/animation-usability/
+<!-- Copyright AXA Versicherungen AG 2015 -->
