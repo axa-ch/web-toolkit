@@ -22,3 +22,4 @@ status: experimental
 
 We defined several media queries/breakpoints. You can use them with the
 [respond mixin](/development/mixins/respond.html).
+<!-- Copyright AXA Versicherungen AG 2015 -->
