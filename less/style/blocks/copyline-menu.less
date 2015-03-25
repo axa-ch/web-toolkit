@@ -5,8 +5,8 @@
 .copyline-menu {
   &:extend(.clearfix all);
 
-  margin: 0 -12.5px;
   padding: 0;
+  margin: 0 -12.5px;
 
   list-style-type: none;
 }
@@ -14,6 +14,7 @@
 .copyline-menu__item {
   .respond(medium, {
     float: left;
+
     border-right: 1px dotted @color-gray--mid;
 
     &:last-child {
@@ -28,7 +29,6 @@
 
   width: 100%;
   height: 40px;
-
   padding: 0 12.5px;
 
   line-height: 40px;
