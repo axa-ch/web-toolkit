@@ -198,3 +198,4 @@ module.exports = exports = function (options) {
     });
   };
 };
+/* Copyright AXA Versicherungen AG 2015 */

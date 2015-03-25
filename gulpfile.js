@@ -349,3 +349,4 @@ gulp.task('deploy', function (cb) {
 });
 
 gulp.task('default', ['build']);
+/* Copyright AXA Versicherungen AG 2015 */
