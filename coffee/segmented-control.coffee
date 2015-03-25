@@ -131,3 +131,4 @@
       Plugin.call($segmentedControl, data)
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

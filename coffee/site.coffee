@@ -61,3 +61,4 @@
     Plugin.call($target, 'toggleMenu')
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

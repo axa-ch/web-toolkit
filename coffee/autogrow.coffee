@@ -83,3 +83,4 @@
       Plugin.call($autogrow)
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

@@ -57,3 +57,4 @@
     Plugin.call($(this), 'show')
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015
