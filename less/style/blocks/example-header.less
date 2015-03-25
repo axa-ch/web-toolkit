@@ -3,8 +3,8 @@
 @example-header__sticky-height--medium: 70px;
 
 .example-header {
-  background: @color-blue;
   padding-top: @example-header__sticky-height;
+  background: @color-blue;
 }
 
 .example-header__text {
@@ -22,6 +22,7 @@
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
+
   text-align: center;
 }
 
@@ -30,9 +31,11 @@
   top: 0;
   left: 0;
   right: 0;
-  height: @example-header__sticky-height;
-  background: @color-blue;
   z-index: @z-index-example-header;
+
+  height: @example-header__sticky-height;
+
+  background: @color-blue;
 
   .respond(medium, {
     height: @example-header__sticky-height--medium;
@@ -51,14 +54,18 @@
 .example-header__back {
   .icon();
   .icon--arrow-left();
+
   display: block;
   position: absolute;
   left: 0;
-  color: white;
-  font-size: 0px;
-  padding-left: 20px;
+
   height: @example-header__sticky-height;
+  padding-left: 20px;
+
   line-height: @example-header__sticky-height;
+  font-size: 0px;
+
+  color: white;
 
   .respond(medium, {
     height: @example-header__sticky-height--medium;
@@ -71,18 +78,20 @@
   }
 
   &:before {
+    padding-right: 10px;
+    margin-top: -2px;
+
     font-size: 28px;
     vertical-align: middle;
-    margin-top: -2px;
-    padding-right: 10px;
   }
 }
 
 .example-header__headline {
   text-align: center;
-  color: white;
   font-size: 20px;
   line-height: @example-header__sticky-height;
+
+  color: white;
 
   .respond(medium, {
     line-height: @example-header__sticky-height--medium;
