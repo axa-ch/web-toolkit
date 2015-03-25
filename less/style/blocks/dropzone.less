@@ -4,9 +4,7 @@
 
 .dropzone__container {
   height: 80px;
-  border-width: 2px;
-  border-style: dashed;
-  border-color: @color-gray;
+  border-width: 2px dashed @color-gray;
 }
 
 .dropzone__container--dragover {
@@ -15,15 +13,18 @@
 
 .dropzone__icon-container {
   float: left;
-  padding: 0 20px;
   display:table;
+
   height: 100%;
+  padding: 0 20px;
 }
 
 .dropzone__icon{
-  font-size: 2.25em;
   display:table-cell;
+
+  font-size: 2.25em;
   vertical-align: middle;
+
   color: @color-gray;
 }
 
@@ -41,6 +42,7 @@
 .dropzone__text__upload-link {
   font-variant: small-caps;
   font-size: 17px;
+
   &:hover {
     cursor: pointer;
   }
@@ -59,7 +61,6 @@
 }
 
 .dropzone-fallback__button__icon {
-
 }
 
 .dropzone-fallback__button__text {
