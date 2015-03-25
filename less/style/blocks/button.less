@@ -6,26 +6,27 @@
   // TODO: we may support @line-height in pixel or em using css guards
   @calculated-line-height: @font-size * @line-height;
 
-  font-size: @font-size;
-
-  line-height: @line-height;
   padding: ((@height - @calculated-line-height) / 2) @pad-lr;
-
   border: none;
 
-  & .button__icon {
-    font-size: @icon-size;
-    display: inline;
-  }
+  font-size: @font-size;
+  line-height: @line-height;
 
   border-radius: @border-radius;
+
+  & .button__icon {
+    display: inline;
+
+    font-size: @icon-size;
+  }
 }
 
 .make-button-color(@bg-color, @color, @highlight-bg-color: @bg-color, @highlight-color: @color) {
-  background: @bg-color;
-  color: @color;
 
   text-decoration: none;
+
+  background: @bg-color;
+  color: @color;
 
   &:hover {
     background: @highlight-bg-color;
@@ -46,7 +47,7 @@
     }
   }
 
-  & .button__icon {
+  &.button__icon {
     color: @color;
   }
 }
@@ -78,13 +79,14 @@
 .button {
   display: inline-block;
   position: relative;
-  text-align: center;
-  &:hover {
-    cursor: pointer;
-  }
 
   // TODO: franklin gothic medium
   font-weight: normal;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   .make-button-size(
     @height: @button-height;
@@ -94,10 +96,6 @@
   );
 
   .respond(medium; {
-
-    // TODO: franklin gothic medium
-    font-weight: normal;
-
     .make-button-size(
       @height: @button-height--medium;
       @pad-lr: @button-pad-lr--medium;
@@ -122,9 +120,6 @@
   );
 
   .respond(medium; {
-
-    // TODO: franklin gothic medium
-
     .make-button-size(
       @height: @button-sm-height--medium;
       @pad-lr: @button-sm-pad-lr;
@@ -144,7 +139,6 @@
 
 .button__badge {
   position: absolute;
-
   top: -5px;
   right: -5px;
 }
@@ -154,11 +148,8 @@
   border-radius: 50%;
   padding-left: 0;
   padding-right: 0;
+
   text-align: center;
-
-  &:before {
-
-  }
 
   &.button--small { // TODO
     width: @button-sm-height;
