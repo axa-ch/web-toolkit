@@ -50,43 +50,6 @@
   font-size: 1em;
 }
 
-
-// TODO: Do styling
-.menu--tabs {
-  &:extend(.clearfix all);
-
-  .menu__item {
-    float: left;
-    margin-right: 1px;
-  }
-
-  .menu__link {
-    display: block;
-    padding: 8px 20px;
-    background: #bcd9f4;
-    color: @color-blue;
-    text-decoration: none;
-
-
-    &.is-active {
-      background: @color-blue;
-      color: white;
-    }
-  }
-
-  .menu__item {
-    overflow: hidden;
-
-    &:first-of-type {
-      border-top-left-radius: 5px;
-    }
-
-    &:last-of-type {
-      border-top-right-radius: 5px;
-    }
-  }
-}
-
 .menu--collapsing,
 .menu--sliding {
 
