@@ -31,14 +31,15 @@
 .worldwide__link {
   position: relative;
   display: block;
+
   width: 100%;
   height: 50px;
-
   padding: 0 12.5px;
+  border-bottom: 1px solid #fff;
 
   line-height: 50px;
+
   background-color: @color-blue;
-  border-bottom: 1px solid #fff;
   text-decoration: none;
   color: #fff;
 
@@ -53,12 +54,13 @@
     padding-top: 52px;
     padding-left: 12.5px;
     padding-right: 12.5px;
-
     border: 1px solid @color-tbd-6;
-    background-color: @color-tbd-5;
+
     text-align: center;
     font-size: @font-size-small;
     line-height: 20px;
+
+    background-color: @color-tbd-5;
     color: @color-gray--darkest;
 
     &:hover {
@@ -68,16 +70,15 @@
 
   &::after {
     .respond(medium, {
+      content: '';
+
       position: absolute;
+      display: block;
       top: 0;
       left: 0;
 
-      content: '';
-
-      display: block;
       width: 100%;
       height: 35px;
-
       margin-top: 10px;
 
       background-repeat: no-repeat;
