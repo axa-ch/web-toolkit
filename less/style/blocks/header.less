@@ -14,7 +14,6 @@
 
   padding: @padding-top-bottom 0;
 
-
   .respond(large, {
     padding: @padding-top-bottom-large 0;
   });
@@ -30,9 +29,10 @@
 
   float: right;
 
-  color: @color-blue;
   font-size: 1.3em;
   text-align: center;
+
+  color: @color-blue;
 
   cursor: pointer;
 
@@ -54,6 +54,7 @@
 
   float: right;
   display: none;
+
   height: 16px;
 
   .respond(large, {
@@ -87,22 +88,25 @@
   padding: 5px 0 0 0;
 
   ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
+
+    list-style-type: none;
   }
 }
 
 .header__meta__welcome__item {
   float: left;
-  margin: 0;
-  padding: 0;
+
   height: 16px; // Hack to get the border-right exactly 16px height
+  padding: 0;
+  margin: 0;
+
   line-height: 16px;
+  font-size: 20px;
+  font-family: ITCFranklinGothicCondensedDemi, sans-serif;
 
   color: @color-blue;
-  font-family: ITCFranklinGothicCondensedDemi, sans-serif;
-  font-size: 20px;
 
   a {
     color: @color-blue;
@@ -110,24 +114,24 @@
   }
 
   & + & {
+    padding-left: 10px;
     border-left: 1px solid @color-gray--darker;
     margin-left: 10px;
-    padding-left: 10px;
   }
 }
 
 .header__meta__social {
   float: right;
-  min-height: 21px; // TODO
 
-  border-left: 1px solid @color-gray--darker;
+  min-height: 21px; // TODO
   padding: 0 0 0 10px;
+  border-left: 1px solid @color-gray--darker;
   margin: 0 0 0 10px;
 }
 
 .header__menu {
-  margin-top: 20px;
   border-top: 1px solid @color-gray--lighter;
+  margin-top: 20px;
 }
 
 .header__separator {
@@ -135,7 +139,6 @@
 
   .respond(medium, {
     display: block;
-    // margin-top: 30px;
     margin-bottom: 30px;
     border-bottom: 5px solid @color-blue;
     });
