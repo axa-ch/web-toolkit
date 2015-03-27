@@ -9,10 +9,10 @@
 
 .modal {
   display: none;
-}
 
-.modal.is-active {
-  display: block;
+  &.is-active  {
+    display: block;
+  }
 }
 
 .is-modal-open {
@@ -20,13 +20,14 @@
 }
 
 .modal__backdrop {
-  background: black;
-  opacity: .75;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+
+  opacity: .75;
+  background: black;
 }
 
 .modal__wrapper {
@@ -34,31 +35,35 @@
     position: fixed;
     top: 0;
     right: 0;
-    left: 0;
     bottom: 0;
+    left: 0;
     z-index: @z-index-modal-wrapper;
-    overflow: auto;
+
     padding: 0 0;
+    overflow: auto;
   })
 }
 
 .modal__content {
   position: fixed;
   top: 40px;
+  right: 0;
   bottom: 51px;
   left: 0;
-  right: 0;
+  z-index: @z-index-modal;
+
+  padding: 0 @modal-padding;
+
   overflow: auto;
   background: white;
-  z-index: @z-index-modal;
-  padding: 0 @modal-padding;
 
   .respond(medium, {
     position: static;
     top: auto;
     right: auto;
-    left: auto;
     bottom: auto;
+    left: auto;
+
     padding: 0 @grid-gutter-width/2;
   })
 }
@@ -70,20 +75,22 @@
   background: white;
 
   .respond(medium; {
+    .make-center();
+
     padding-top: 115px;
     padding-bottom: 85px;
     padding-left: 30px;
     padding-right: 30px;
-    .make-center();
   });
 }
 
 .modal__header {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   z-index: @z-index-modal;
+
   width: 100%;
   height: 40px;
   padding: 0 @modal-padding;
@@ -91,11 +98,13 @@
   background: @color-light-blue;
 
   .respond(medium; {
-    left: auto;
     right: auto;
+    left: auto;
+
     max-width: 720px;
     height: 115px;
     padding: 0;
+
     background: white;
   });
 }
@@ -103,14 +112,18 @@
 .modal__close {
   .icon();
   .icon--modal-close();
+
   display: block;
-  height: 40px;
   float: right;
+
+  height: 40px;
   width: 44px;
+
   font-size: 14px;
-  color: white;
   text-align: center;
   line-height: 40px;
+
+  color: white;
 
   &:hover {
     color: white;
@@ -119,7 +132,9 @@
 
   .respond(medium; {
     padding-top: 20px;
+
     font-size: 21px;
+
     color: @color-light-blue;
 
     &:hover {
@@ -129,37 +144,39 @@
 }
 
 .modal__heading {
-  margin-right: 44px;
   padding: 6px 0 5px 0;
+  margin-right: 44px;
 
   .respond(medium; {
-    margin-right: 0;
     padding: 0;
+    margin-right: 0;
   });
 }
 
 .modal__footer {
   position: fixed;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
   z-index: @z-index-modal;
+
   width: 100%;
   height: 51px;
   padding: 10px 0 15px 0;
-
-  background: @color-gray--lighter;
   border-top: 1px solid @color-gray--light;
 
+  background: @color-gray--lighter;
+
   .respond(medium; {
-    left: auto;
     right: auto;
+    left: auto;
+
     max-width: 720px;
     height: 85px;
     padding: 0;
+    border-top: none;
 
     background: white;
-    border-top: none;
   });
 }
 
