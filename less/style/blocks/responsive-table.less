@@ -2,12 +2,13 @@
 @import '../mixins/respond';
 
 .responsive-table {
-  overflow-x: auto;
   width: auto;
+  border: 1px solid @color-gray--lighter;
   margin-bottom: 0;
+
+  overflow-x: auto;
   overflow-y: hidden;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  border: 1px solid @color-gray--lighter;
 
   // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
   min-height: 0.01%;
@@ -15,8 +16,8 @@
 
 // Tighten up spacing
 .responsive-table .responsive-table__table {
-  margin-bottom: 0;
   border: 0;
+  margin-bottom: 0;
 
   // Ensure the content doesn't wrap
   > thead,
