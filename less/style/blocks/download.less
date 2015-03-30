@@ -1,0 +1,22 @@
+@import '../variables';
+@import '../blocks/icon';
+
+.download {
+  .icon();
+  .icon--download();
+
+  display: block;
+  margin: 30px 0 40px 0;
+
+  text-transform: uppercase;
+  color: @color-blue;
+  font-size: 12px;
+  font-weight: bold;
+
+  &:before {
+    font-size: 21px;
+    color: @color-blue-gray;
+    vertical-align: middle;
+    padding-right: 10px;
+  }
+}
