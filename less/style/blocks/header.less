@@ -14,6 +14,10 @@
 
   padding: @padding-top-bottom 0;
 
+  .respond(medium, {
+    border-bottom: 5px solid @color-blue;
+    });
+
   .respond(large, {
     padding: @padding-top-large 0 0 0;
   });
@@ -136,13 +140,4 @@
 .header__menu {
   .make-container();
   border-top: 1px solid @color-gray--lighter;
-}
-
-.header__separator {
-  display: none;
-
-  .respond(medium, {
-    display: block;
-    border-bottom: 5px solid @color-blue;
-    });
 }
