@@ -4,10 +4,7 @@ template: design.jade
 order: 1
 ---
 
-#Forms
-…suck.
-
-If you don’t believe it, try to find people who like filling them in. This is the reason why we built this guide on how to build forms for AXA. We included checklist for most topics, which give you a deeper insight and valuable tipps on how to build less annoying forms.
+Try to find someone who likes filling forms, you won't. This is the reason why we built this guide on how to build forms for AXA. We included checklist for most topics, which give you a deeper insight and valuable tipps on how to build less annoying forms.
 
 >Checklist: Form Basics
 - What are your users’ needs and how will they use the form?
@@ -109,16 +106,6 @@ If a user has to enter a specific but already known value, an autocomplete sugge
 If there is a limit to the length of a text field or area and the user is likely to exceed, give him a hint.
 
 >Good / Bad Image
-
-
-
-
----
-title: SPAM Avoidance
-slug: spamAvoidance
-collection: design_components
-template: design.jade
----
 
 #Captcha
 

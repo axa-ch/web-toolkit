@@ -41,7 +41,11 @@
   },
   "design": [{
     "name": "Fundamentals",
-    "pattern": "design/fundamentals/*"
+    "pattern": "design/fundamentals/*",
+    "children": [{
+      "name": "Styles",
+      "pattern": "design/fundamentals/styles/*"
+    }]
   },{
     "name": "Components",
     "pattern": "design/components/*",
