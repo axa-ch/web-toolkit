@@ -2,8 +2,6 @@
 filename: master.jade
 ---
 
-//- console.log(menu);
-
 - var pathName = function(path) { return path.join('__').replace(/\s/g, '_'); }
 - var getTopLevel = function(collection) { if(!collection) { return null; } for (var i = 0; i < config.design.length; i++) { current = config.design[i]; if (collection.indexOf(pathName([current.name])) != -1) { return current; } if (current.children) { for (var j = 0; j < current.children.length; j++) { if (collection.indexOf(pathName([current.name, current.children[j].name])) != -1) { return current; } } } } return null; }
 - // TODO
