@@ -28,7 +28,9 @@ template: other.jade
     - ATTENTION! This requires a markup change for the `table` block.
   - Moved the `footnote` block to the `form` block. It's renamed to `form__fotnote`
     - ATTENTION! This requires a markup change for the `footnote` block.
-    
+  - Refactored the `header` block. The optional main navigation is now part of it.
+    - ATTENTION! This requires markup changes for pages with a main navigation.
+
 # 0.3.0 - 11 Mar, 2015
 
 - Documentation changes
