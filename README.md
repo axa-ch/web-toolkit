@@ -70,6 +70,14 @@ We stick to the following naming conventions for branches:
 - Second line should be empty
 - Third and following lines can optionally contain a longer description
 
+### Code Style Guidelines
+
+Rule number one: Consistency is key; So when you contribute follow the code style
+patterns you see in the code you're changing.
+
+For LESS code, we stick to the guidelines formulated by [@mdo](https://twitter.com/mdo).
+Take a look at http://codeguide.co/#css.
+
 ## Who's behind it?
 
 The project is developed by UX, design and IT people at AXA Switzerland.
