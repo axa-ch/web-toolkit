@@ -1,7 +1,7 @@
 ---
 title: Single Page Applications
 template: design.jade
-order: 3
+order: 9
 ---
 
 #Single Page Applications
@@ -54,3 +54,4 @@ Please feel free to send in your recommendations.
 
 ##Source
 http://www.nngroup.com/articles/animation-usability/
+<!-- Copyright AXA Versicherungen AG 2015 -->

@@ -124,3 +124,4 @@ class GitHubIntegrationViewModel
     ).bind(@)
 
 window.GitHubIntegrationViewModel = GitHubIntegrationViewModel
+# Copyright AXA Versicherungen AG 2015

@@ -10,15 +10,14 @@
       selector = @$element.data 'target'
       selector = options.target if not selector?
 
-      @$target = $(selector)
-      @$child = @$element.children '.info-icon__icon'
+      @$target = $ selector
 
       @$element.on 'click', @, (event) ->
-        event.data.toggle(event)
+        event.data.toggle event
 
     toggle: () ->
       @$target.slideToggle()
-      @$child.toggleClass 'is-active'
+      @$element.toggleClass 'is-active'
 
   # Plugin definition
   Plugin = (option) ->
@@ -46,3 +45,4 @@
       Plugin.call($info)
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

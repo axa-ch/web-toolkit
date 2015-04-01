@@ -13,16 +13,16 @@ p.
   control.
 
 p.
-  It consists of a child <code>control</code> block and an
-  <code>autocomplete-container</code> element with it's
-  <code>autocomplete-item</code> children.
+  It consists of a child <code>autocomplete__input</code> block and an
+  <code>autocomplete__suggestions</code> element with it's
+  <code>autocomplete__suggestions__item</code> children.
 
 p.
   Use it to style your own autocomplete elements.
-  
+
 p.callout.
   Do not add an excessive amount of autocomplete suggestions since
-  this will bloat your page. 
+  this will bloat your page.
 
 blockquote.callout.callout--danger.
   Be aware, this example uses a 'position: relative;' style override on the
@@ -35,10 +35,11 @@ h3 Example
 :sample
   .autocomplete
     input.control.control--input(type='text')
-    .autocomplete-container(style='position: relative;')
-      .autocomplete-item.
+    .autocomplete__suggestions(style='position: relative;')
+      .autocomplete__suggestions__item.
         8000 Zürich
-      .autocomplete-item.autocomplete-item--selected.
+      .autocomplete__suggestions__item.autocomplete__suggestions__item--selected.
         8400 Winterthur
-      .autocomplete-item.
+      .autocomplete__suggestions__item.
         8472 Seuzach
+// Copyright AXA Versicherungen AG 2015

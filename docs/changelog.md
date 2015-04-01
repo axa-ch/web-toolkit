@@ -4,6 +4,38 @@ slug: changelog
 template: other.jade
 ---
 
+# 0.4.0 - 1. April 2015
+
+- Rename the package to `axa-web-style-guide`
+
+- Documentation changes
+  - Added remark regarding autogrow functionality to the `control` block.
+- Popover component
+  - Added a popover block
+  - Added a popover plugin
+- Refactoring
+  - Refactored structure of the `autocomplete` block.
+    - ATTENTION! This requires a markup change for the `autocomplete` block.
+  - Renamed `single-file-upload` to `single-upload`
+    - Renamed `single-upload__progress__icon-container` to `single-upload__status__icon-container`
+    - ATTENTION! This requires a markup change for the `single-file-upload` block.
+  - Renamed `multi-file-upload` to `multi-upload`
+    - ATTENTION! This requires a markup change for the `multi-file-upload` block.
+  - Renamed elements of the `segmented-control` block.
+    - Renamed `segmented-control__radio` to `segmented-control__item__radio`
+    - Renamed `segmented-control__label` to `segmented-control__item__label`
+    - ATTENTION! This requires a markup change for the `segmented-control` block.
+  - Renamed the `label` block to `tag`
+    - ATTENTION! This requires a markup change for the `label` block.
+  - Renamed the `table__item` and `table__item__row` elements to `table__row` and `table__row__item`
+    - ATTENTION! This requires a markup change for the `table` block.
+  - Moved the `footnote` block to the `form` block. It's renamed to `form__fotnote`
+    - ATTENTION! This requires a markup change for the `footnote` block.
+  - Refactored the `header` block.
+    - The optional main navigation is now part of the header.
+    - `header--main` does no longer exist as a modifier but as a block `header__main`.
+    - ATTENTION! This requires markup changes for most pages.
+
 # 0.3.0 - 11 Mar, 2015
 
 - Documentation changes
@@ -62,3 +94,4 @@ template: other.jade
 # 0.1.0 - 22 Jan, 2015
 
 Initial release
+<!-- Copyright AXA Versicherungen AG 2015 -->

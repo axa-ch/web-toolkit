@@ -4,16 +4,16 @@ segment: development
 filename: development.jade
 cache: true
 ---
-  
+
 mixin status(status)
   if status != undefined
     = ' '
     if status == 'experimental'
-      span.label.label--danger= status
+      span.tag.tag--danger= status
     else if status == 'new'
-      span.label.label--success= status
+      span.tag.tag--success= status
     else
-      span.label.label--default= status
+      span.tag.tag--default= status
 
 mixin pageLink(page)
   li.menu__item
@@ -23,8 +23,6 @@ mixin pageLink(page)
     )
       span= page.title
       mixin status(page.status)
-  
-.hr
 
 .l-container
   .l-row
@@ -68,7 +66,7 @@ mixin pageLink(page)
               To contribute to this article please sign in with GitHub
             p(data-bind='visible: !github.isSignedIn()')
               img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
-              a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").button.button--small.button--primary Sign in with GitHub
+              a(data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").button.button--small.button--primary Sign in with GitHub
             div(data-bind='visible: github.isSignedIn()')
               p.contribute__text.
                 Want to edit or suggest changes
@@ -78,3 +76,4 @@ mixin pageLink(page)
               p
                 a(href=config.repository.url + '/blob/master/docs' + ((link ? link : '').replace(/\.html$/, '.jade'))).button.button--small.button--primary Edit article on GitHub
       // /ko
+// Copyright AXA Versicherungen AG 2015

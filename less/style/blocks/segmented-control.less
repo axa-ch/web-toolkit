@@ -9,18 +9,18 @@
 .segmented-control__item {
   .checkbox();
 }
-.segmented-control__radio {
+.segmented-control__item__radio {
   .checkbox__checkbox();
 }
 
 .segmented-control--js {
-
   &.segmented-control--stacked {
     .segmented-control__item {
       display: block;
+
       width: 100%;
-      margin-bottom: -1px;
       border-right-width: 1px;
+      margin-bottom: -1px;
 
       &.is-active {
         border-top-color: @color-light-blue !important;
@@ -49,8 +49,9 @@
   }
 
   &.segmented-control {
-    margin-top: 0; // reset inheritance of .checkbox-group
     max-width: 100%;
+    margin-top: 0; // reset inheritance of .checkbox-group
+
     white-space: nowrap;
 
     &:focus {
@@ -58,22 +59,24 @@
     }
   }
 
-  .segmented-control__label {
+  .segmented-control__item__label {
     &:after {
       content: '';
+
       display: inline-block;
+
       width: 14px;
       min-height: 1px;
       margin-left: 5px;
     }
   }
 
-  .segmented-control__item.is-active .segmented-control__label {
+  .segmented-control__item.is-active .segmented-control__item__label {
     .icon-after();
     .icon-after--checkmark();
   }
 
-  .segmented-control__radio {
+  .segmented-control__item__radio {
     &:extend(.invisible-input all);
   }
 
@@ -96,13 +99,16 @@
 
   .segmented-control__item {
     display: inline-block;
+
     height: 40px;
-    line-height: 40px;
     padding-left: 25px;
     padding-right: 8px;
-    cursor: pointer;
     border: 1px solid @color-gray;
     border-right-width: 0;
+
+    line-height: 40px;
+
+    cursor: pointer;
 
     &:last-of-type {
       border-right-width: 1px;
@@ -110,16 +116,16 @@
 
     &.is-active {
       background: @color-light-blue;
+      color: white;
       border-top-color: @color-light-blue;
       border-bottom-color: @color-light-blue;
       border-left-color: @color-light-blue;
       border-right-color: @color-light-blue;
-      color: white;
     }
 
     &.is-active + .segmented-control__item {
       border-left-color: @color-light-blue;
     }
   }
-
 }
+/* Copyright AXA Versicherungen AG 2015 */

@@ -27,10 +27,10 @@
 
       @$header = append '<div class="picker__header" ></div>', @$element
 
-      @$prev = append '<a class="picker__prev" href="#" ></a>', @$header
+      @$prev = append '<a class="picker__prev"></a>', @$header
       @$prev.on 'click', @onPrevClick.bind(this)
 
-      @$next = append '<a class="picker__next" href="#" ></a>', @$header
+      @$next = append '<a class="picker__next"></a>', @$header
       @$next.on 'click', @onNextClick.bind(this)
 
       @$headline = append '<div class="picker__headline" ></div>', @$header
@@ -202,3 +202,4 @@
     Plugin.call($target, { input: $input, action: 'toggle' })
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

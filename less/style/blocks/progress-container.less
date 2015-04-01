@@ -2,10 +2,11 @@
 @import "../mixins/respond";
 
 .progress-container {
+  padding-bottom: 17px;
   margin-top: 40px;
+
   overflow: visible;
   background: @color-gray--lighter;
-  padding-bottom: 17px;
 
   .respond(medium, {
     margin-top: 60px;
@@ -16,21 +17,25 @@
 .progress-container__progress {
   position: relative;
   top: -10px;
+
   margin-bottom: 12px;
 
   .respond(medium, {
     top: -20px;
-    margin-bottom: 5px; // TODO
+    margin-bottom: 5px;
   });
 }
 
 .progress-container__label {
-  font-size: 17px;
-  color: @color-light-blue;
-  text-align: center;
   padding: 0 @grid-gutter-width/2;
+
+  font-size: 17px;
+  text-align: center;
+
+  color: @color-light-blue;
 
   .respond(medium, {
     font-size: 24px;
   });
 }
+/* Copyright AXA Versicherungen AG 2015 */

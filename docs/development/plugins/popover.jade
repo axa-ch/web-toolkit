@@ -1,0 +1,34 @@
+---
+title: Popover
+slug: popover
+collection: development_plugins
+template: development.jade
+status: experimental
+---
+
+h3 Intro
+
+p.
+  This plugin handles displaying a popover dialog. It handles the positioning
+  of the popover box and tail components.
+  See the popover block description for further information.
+
+h3 Usage
+
+p Activate the functionality with the data-* API
+
+.highlight
+  pre.highlight__listing.hljs: code.js
+    :highlight
+      <a data-popover="#popover" ></a>
+
+h4 Options
+
+table.table
+  thead
+    tr.table__header
+      th.table__header__item Name
+      th.table__header__item Type
+      th.table__header__item Default
+      th.table__header__item Description
+  tbody.table__content

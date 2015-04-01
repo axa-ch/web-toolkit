@@ -1,7 +1,13 @@
 ---
 filename: master.jade
 ---
-  
+
+- var pathName = function(path) { return path.join('__').replace(/\s/g, '_'); }
+- var getTopLevel = function(collection) { if(!collection) { return null; } for (var i = 0; i < config.design.length; i++) { current = config.design[i]; if (collection.indexOf(pathName([current.name])) != -1) { return current; } if (current.children) { for (var j = 0; j < current.children.length; j++) { if (collection.indexOf(pathName([current.name, current.children[j].name])) != -1) { return current; } } } } return null; }
+- // TODO
+- var topLevel = getTopLevel(partOfCollections);
+- var getFirstPage = function(item, path) { if(!path) { path = [] } path.push(item.name); var page = null; var collection = collections[pathName(path)]; if(collection) { page = collection[0]; } if(page != null) { return page } else { if(item.children && item.children.length > 0) { return getFirstPage(item.children[0], path); } else { return null; } } }
+
 doctype html
 html
   head
@@ -51,8 +57,8 @@ html
       .l-container
         .docs-floating-action
           a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating.icon.icon--feedback
-      header.header.header--main
-        .l-container
+      header.header
+        .header__main.l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
           a.header__brand.brand(href=relative("/index.html"))
             .brand__logo
@@ -81,7 +87,7 @@ html
                   // ko if: !github.isSignedIn()
                   .menu__item(data-bind='css: {\'menu__item--docs-signin\': !github.isAuthenticating()}')
                     img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
-                    a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").menu__link Sign in with GitHub
+                    a(data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").menu__link Sign in with GitHub
                   // /ko
                   // ko if: github.isSignedIn()
                   .menu__item
@@ -100,6 +106,21 @@ html
                       span Examples
                     else
                       span Web Design Guide
+
+        if menu
+          .header__menu
+            ul.menu.menu--main
+              each item in config[menu]
+                - var page = getFirstPage(item);
+                - var isActive = topLevel == item
+                if page
+                li.menu__item(
+                  class={'is-active': isActive}
+                )
+                  a.menu__link(
+                  href=relative(page.link)
+                  )= item.name
+
       div!= contents
 
       .hr
@@ -128,7 +149,7 @@ html
             a.menu__link.menu__link--parent(
               href='#'
             ) Design Guidelines
-            
+
             - var pathName = function(path) { return path.join('__').replace(/\s/g, '_'); }
             mixin pageLink(page)
               li.menu__item
@@ -142,56 +163,56 @@ html
                 a.menu__link.menu__link--back(
                   href='#'
                 ) Design Guidelines
-              
+
               - // Top level
               each topLevel in config.design
                 li.menu__item
                   a.menu__link.menu__link--parent(
                     href='#'
                   )= topLevel.name
-                    
+
                   - // Top level back
-                  
+
                   ul.menu__level
                     li.menu__item.menu__item--back
                       a.menu__link.menu__link--back(
                         href='#'
                       )= topLevel.name
-                      
+
                     - // Top level pages
                     - var collection = collections[pathName([topLevel.name])]
                     if collection
                       each page in collection
                         mixin pageLink(page)
-                
+
                     - // Top level children
-                    if topLevel.children 
+                    if topLevel.children
                       each secondLevel in topLevel.children
-                        
+
                         - var path = [topLevel.name, secondLevel.name]
                         - var collection = collections[pathName(path)]
-                        
+
                         if collection && collection.length > 0
                           - // Second level
                           li.menu__item
                             a.menu__link.menu__link--parent(
                               href='#'
                             )= secondLevel.name
-                              
+
                             - // Second level back
                             ul.menu__level
                               li.menu__item.menu__item--back
                                 a.menu__link.menu__link--back(
                                   href='#'
                                 )= secondLevel.name
-                                
+
                               - // Second level pages
                               if collection
                                 each page in collection
                                   mixin pageLink(page)
-                        
-                        
-                        
+
+
+
           li.menu__item
             a.menu__link.menu__link--parent(
               href='#'
@@ -255,3 +276,4 @@ html
       var viewModel = new MainViewModel(!{JSON.stringify(config)});
       ko.applyBindings(viewModel);
       viewModel.init();
+// Copyright AXA Versicherungen AG 2015

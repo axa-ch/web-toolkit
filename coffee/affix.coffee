@@ -134,3 +134,4 @@
       Plugin.call($spy, data)
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

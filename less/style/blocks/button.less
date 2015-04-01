@@ -1,12 +1,63 @@
 @import '../variables';
-@import '../mixins/button';
 @import '../blocks/icon';
+
+// Button mixins
+.make-button-size(@height, @pad-lr, @icon-size, @font-size, @line-height: 1.5, @border-radius: 0) {
+  // TODO: we may support @line-height in pixel or em using css guards
+  @calculated-line-height: @font-size * @line-height;
+
+  padding: ((@height - @calculated-line-height) / 2) @pad-lr;
+  border: none;
+
+  font-size: @font-size;
+  line-height: @line-height;
+
+  border-radius: @border-radius;
+
+  & .button__icon {
+    display: inline;
+
+    font-size: @icon-size;
+  }
+}
+
+.make-button-color(@bg-color, @color, @highlight-bg-color: @bg-color, @highlight-color: @color) {
+
+  text-decoration: none;
+
+  background: @bg-color;
+  color: @color;
+
+  &:hover {
+    background: @highlight-bg-color;
+    color: @highlight-color;
+
+    & .button__icon {
+      color: @highlight-color;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    background: @highlight-bg-color;
+    color: @highlight-color;
+
+    & .button__icon {
+      color: @highlight-color;
+    }
+  }
+
+  &.button__icon {
+    color: @color;
+  }
+}
+
+// Button-styles
 
 @button-height: 50px;
 @button-height--medium: 50px;
 @button-pad-lr: 30px;
 @button-pad-lr--medium: 40px;
-@button-icon-pad: 8px;
 @button-icon-size: 16px;
 @button-font-size: 16px;
 @button-font-size--medium: 18px;
@@ -14,43 +65,40 @@
 @button-sm-height: 30px;
 @button-sm-height--medium: 30px;
 @button-sm-pad-lr: 15px;
-@button-sm-icon-pad: 5px;
 @button-sm-icon-size: 14px;
 @button-sm-font-size: 14px;
 
 @button-primary-bg: @color-blue;
 @button-primary-color: white;
-@button-primary-hover-bg: lighten(@color-blue, 5%);
+@button-primary-highlight-bg: lighten(@color-blue, 5%);
 
 @button-secondary-bg: @color-gray--dark;
 @button-secondary-color: white;
-@button-secondary-hover-bg: lighten(@color-gray--dark, 5%);
+@button-secondary-highlight-bg: lighten(@color-gray--dark, 5%);
 
 .button {
   display: inline-block;
   position: relative;
-  text-align: center;
 
   // TODO: franklin gothic medium
   font-weight: normal;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   .make-button-size(
     @height: @button-height;
     @pad-lr: @button-pad-lr;
-    @icon-pad: @button-icon-pad;
     @icon-size: @button-icon-size;
     @font-size: @button-font-size;
   );
 
   .respond(medium; {
-
-    // TODO: franklin gothic medium
-    font-weight: normal;
-
     .make-button-size(
       @height: @button-height--medium;
       @pad-lr: @button-pad-lr--medium;
-      @icon-pad: @button-icon-pad;
       @icon-size: @button-icon-size;
       @font-size: @button-font-size--medium;
     );
@@ -59,7 +107,7 @@
   .make-button-color(
     @bg-color: @button-primary-bg;
     @color: @button-primary-color;
-    @hover-bg-color: @button-primary-hover-bg;
+    @highlight-bg-color: @button-primary-highlight-bg;
   );
 }
 
@@ -67,19 +115,14 @@
   .make-button-size(
     @height: @button-sm-height;
     @pad-lr: @button-sm-pad-lr;
-    @icon-pad: @button-sm-icon-pad;
     @icon-size: @button-sm-icon-size;
     @font-size: @button-sm-font-size;
   );
 
   .respond(medium; {
-
-    // TODO: franklin gothic medium
-
     .make-button-size(
       @height: @button-sm-height--medium;
       @pad-lr: @button-sm-pad-lr;
-      @icon-pad: @button-sm-icon-pad;
       @icon-size: @button-sm-icon-size;
       @font-size: @button-sm-font-size;
     );
@@ -90,13 +133,12 @@
   .make-button-color(
     @bg-color: @button-secondary-bg;
     @color: @button-secondary-color;
-    @hover-bg-color: @button-secondary-hover-bg;
+    @highlight-bg-color: @button-secondary-highlight-bg;
   );
 }
 
 .button__badge {
   position: absolute;
-
   top: -5px;
   right: -5px;
 }
@@ -106,13 +148,11 @@
   border-radius: 50%;
   padding-left: 0;
   padding-right: 0;
+
   text-align: center;
-
-  &:before {
-
-  }
 
   &.button--small { // TODO
     width: @button-sm-height;
   }
 }
+/* Copyright AXA Versicherungen AG 2015 */

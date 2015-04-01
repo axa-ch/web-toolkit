@@ -12,7 +12,7 @@
       @value = ''
       @isMouseOver = false
 
-      @$dropdown = $ '<div class="autocomplete-container"></div>'
+      @$dropdown = $ '<div class="autocomplete__suggestions"></div>'
       @$dropdown.hide()
       @$element.after @$dropdown
 
@@ -33,13 +33,13 @@
         @$dropdown.show()
 
     createItem: (text) ->
-      item = $ '<div class="autocomplete-item">' + text + '</div>'
+      item = $ '<div class="autocomplete__suggestions__item">' + text + '</div>'
       item.on 'mouseover', @, (event) ->
         event.data.isMouseOver = true
-        $(event.target).addClass 'autocomplete-item--selected'
+        $(event.target).addClass 'autocomplete__suggestions__item--selected'
       item.on 'mouseout', @, (event) ->
         event.data.isMouseOver = false
-        $(event.target).removeClass 'autocomplete-item--selected'
+        $(event.target).removeClass 'autocomplete__suggestions__item--selected'
       item.on 'click', @, (event) ->
         event.data.selectItem(event)
 
@@ -74,3 +74,4 @@
       Plugin.call($autocomplete)
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

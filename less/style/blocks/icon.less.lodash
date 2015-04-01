@@ -17,8 +17,8 @@
 }
 
 .icon {
-  text-decoration: none; // prevent some odd underline in IE
   position: relative; // so we can position elements absolutely
+  text-decoration: none; // prevent some odd underline in IE
 
   &::before {
     display: inline-block;
@@ -92,3 +92,4 @@
 .icon--xing {
   .make-color(#00605e);
 }
+// Copyright AXA Versicherungen AG 2015

@@ -19,22 +19,22 @@ h2 Non-enhanced segmented-control (no JavaScript)
 :sample
   .segmented-control
     label.segmented-control__item
-      input.segmented-control__radio(type='radio', name='foo')
-      span.segmented-control__label Ja
+      input.segmented-control__item__radio(type='radio', name='foo')
+      span.segmented-control__item__label Ja
     label.segmented-control__item
-      input.segmented-control__radio(type='radio', name='foo')
-      span.segmented-control__label Nein
+      input.segmented-control__item__radio(type='radio', name='foo')
+      span.segmented-control__item__label Nein
 
 h2 Enhanced segmented-control (JavaScript)
 
 :sample
   .segmented-control(data-segmented-control)
     label.segmented-control__item
-      input.segmented-control__radio(type='radio', name='bar')
-      span.segmented-control__label Ja
+      input.segmented-control__item__radio(type='radio', name='bar')
+      span.segmented-control__item__label Ja
     label.segmented-control__item
-      input.segmented-control__radio(type='radio', name='bar')
-      span.segmented-control__label Nein
+      input.segmented-control__item__radio(type='radio', name='bar')
+      span.segmented-control__item__label Nein
 
 :markdown
   Add the ``segmented-control--stacked`` modifier to stack segmented
@@ -46,14 +46,15 @@ h2 Enhanced segmented-control (JavaScript)
   div(style='max-width: 250px;')
     .segmented-control(data-segmented-control)
       label.segmented-control__item
-        input.segmented-control__radio(type='radio', name='bar')
-        span.segmented-control__label Foo bar
+        input.segmented-control__item__radio(type='radio', name='bar')
+        span.segmented-control__item__label Foo bar
       label.segmented-control__item
-        input.segmented-control__radio(type='radio', name='bar')
-        span.segmented-control__label long text
+        input.segmented-control__item__radio(type='radio', name='bar')
+        span.segmented-control__item__label long text
       label.segmented-control__item
-        input.segmented-control__radio(type='radio', name='bar')
-        span.segmented-control__label and some
+        input.segmented-control__item__radio(type='radio', name='bar')
+        span.segmented-control__item__label and some
       label.segmented-control__item
-        input.segmented-control__radio(type='radio', name='bar')
-        span.segmented-control__label moar controls
+        input.segmented-control__item__radio(type='radio', name='bar')
+        span.segmented-control__item__label moar controls
+// Copyright AXA Versicherungen AG 2015

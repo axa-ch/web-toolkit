@@ -20,7 +20,7 @@ Do use lists to [list](#) one or multiple rows of similar structured data or inf
       <div class="list__item__cell cell"><i class="cell__icon icon icon--cross"></i>
         <div class="cell__text"><span>01.01.2012</span><br/><span>31.12.2015</span></div>
       </div>
-      <div class="list__item__cell cell cell--action"><a href="#" class="cell__action"><span>Schaden melden</span></a></div>
+      <div class="list__item__cell cell cell--action"><a class="cell__action"><span>Schaden melden</span></a></div>
     </div>
     <div class="list__item">
       <div class="list__item__cell cell cell--title"><i class="cell__icon icon icon--home"></i>
@@ -31,7 +31,7 @@ Do use lists to [list](#) one or multiple rows of similar structured data or inf
       <div class="list__item__cell cell"><i class="cell__icon icon icon--cross"></i>
         <div class="cell__text"><span>01.01.2012</span><br/><span>31.12.2015</span></div>
       </div>
-      <div class="list__item__cell cell cell--action"><a href="#" class="cell__action"><span>Schaden melden</span></a></div>
+      <div class="list__item__cell cell cell--action"><a class="cell__action"><span>Schaden melden</span></a></div>
     </div>
   </div>
 </div>
@@ -117,3 +117,4 @@ Finally, we show the elment. If this element type is available in different stat
 | Border Style  | 5px, solid      | -        |
 | Line-Height   | 1.5             |          |
 | Min Width     | 200px           | if smaller, display one element less on the same line. If it's already the only element, break content into multiple rows.|
+<!-- Copyright AXA Versicherungen AG 2015 -->

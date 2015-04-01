@@ -8,7 +8,7 @@
       @$element = $ element
 
       # TODO: Do not depend on css classes
-      @$radios = @$element.find '.segmented-control__radio'
+      @$radios = @$element.find '.segmented-control__item__radio'
 
       @$radios.each (index, element) ->
         $radio = $ element
@@ -131,3 +131,4 @@
       Plugin.call($segmentedControl, data)
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

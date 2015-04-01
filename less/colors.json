@@ -10,6 +10,10 @@
     }
   },{
     "colors": {
+      "green": "#7a9f35"
+    }
+  },{
+    "colors": {
       "blue-gray--light": "#dedee2",
       "blue-gray": "#79838d"
     }
@@ -25,10 +29,6 @@
       "gray--predarkest": "#666666",
       "gray--darkest": "#333333",
       "black": "#000000"
-    }
-  },{
-    "colors": {
-      "green": "#7a9f35"
     }
   }],
   "tbd": {

@@ -22,3 +22,4 @@ At AXA we are consitent with sign-in and registration wording. Avoid words that 
 |---|-----|-----|
 |EN |Register |Sign In |
 |DE | Registrieren  | Einloggen |
+<!-- Copyright AXA Versicherungen AG 2015 -->

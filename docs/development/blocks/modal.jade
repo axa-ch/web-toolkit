@@ -13,14 +13,14 @@ status: new
   of your page to hide the main scrollbar.
 
 :sample
-  .button(href='#', data-modal='#myModal') Show modal
+  .button(data-modal='#myModal') Show modal
 
   .modal#myModal
     .modal__backdrop
     .modal__wrapper
       .modal__dialog
         .modal__header
-          a(href='#', data-modal='#myModal').modal__close
+          a(data-modal='#myModal').modal__close
           .modal__heading
             .heading.heading--modal Datenschutzbestimmungen
         .modal__content-wrapper
@@ -89,5 +89,6 @@ status: new
         .modal__footer
           .modal__footer__wrapper
             .modal__buttons
-              a(href='#').modal__buttons__button.button.button--small.button--secondary Drucken
-              a(href='#', data-modal='#myModal').modal__buttons__button.button.button--small.button--secondary Schliessen
+              a.modal__buttons__button.button.button--small.button--secondary Drucken
+              a(data-modal='#myModal').modal__buttons__button.button.button--small.button--secondary Schliessen
+// Copyright AXA Versicherungen AG 2015

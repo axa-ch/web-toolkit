@@ -31,3 +31,4 @@ scheme, which are described in the following table.
     <td>A meaningful and identifying name for the icon.</td>
   </tr>
 </table>
+<!-- Copyright AXA Versicherungen AG 2015 -->

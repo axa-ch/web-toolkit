@@ -18,3 +18,7 @@ tmp/
 .travis/deploy_key.pub
 out/
 npm-debug.log
+
+# webstorm
+*.iml
+.idea/

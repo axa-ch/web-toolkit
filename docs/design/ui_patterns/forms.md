@@ -4,10 +4,7 @@ template: design.jade
 order: 1
 ---
 
-#Forms
-…suck.
-
-If you don’t believe it, try to find people who like filling them in. This is the reason why we built this guide on how to build forms for AXA. We included checklist for most topics, which give you a deeper insight and valuable tipps on how to build less annoying forms.
+Try to find someone who likes filling forms, you won't. This is the reason why we built this guide on how to build forms for AXA. We included checklist for most topics, which give you a deeper insight and valuable tipps on how to build less annoying forms.
 
 >Checklist: Form Basics
 - What are your users’ needs and how will they use the form?
@@ -110,16 +107,6 @@ If there is a limit to the length of a text field or area and the user is likely
 
 >Good / Bad Image
 
-
-
-
----
-title: SPAM Avoidance
-slug: spamAvoidance
-collection: design_components
-template: design.jade
----
-
 #Captcha
 
 Traditional captchas that require the user to decode some characters must be avoided due to accessibility and usability drawbacks.
@@ -165,3 +152,4 @@ A best practice form as described on this site is available on the [example sect
 #Source
 
 Most research conducted lead one way or another to the book Web Form Design by Luke Wroblewski. This book is highly recommended as an deep-dive on web forms.
+<!-- Copyright AXA Versicherungen AG 2015 -->

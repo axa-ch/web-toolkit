@@ -149,6 +149,13 @@ module.exports = exports = function (options) {
         useMetadata: true
       })));
 
+    // Configure marked to use custom highlight
+    require('marked').setOptions({
+      langPrefix: '',
+      highlight: function (code, lang) {
+        return require('highlight.js').highlight(lang, code).value;
+      }
+    });
     metalsmith.use(branch(['**/*.jade', '!layouts/**/*.jade'])
       .use(relative())
       .use(collections(collections_options))
@@ -198,3 +205,4 @@ module.exports = exports = function (options) {
     });
   };
 };
+/* Copyright AXA Versicherungen AG 2015 */

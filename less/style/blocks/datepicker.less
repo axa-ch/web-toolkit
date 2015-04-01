@@ -1,7 +1,8 @@
 @import '../variables';
 @import './icon';
 
-// TODO: Instead of viewport we should consider usage of a --js which will be added when js is available and it is a non-touch device
+// TODO: Instead of viewport we should consider usage of a --js which will be
+// added when js is available and it is a non-touch device
 
 .example {
   overflow: visible !important;
@@ -26,25 +27,34 @@
   .respond(medium; {
     .icon();
     .icon--calendar();
+
     display: block;
-    width: 44px;
     float: right;
-    line-height: 40px;
+
+    width: 44px;
     height: 40px;
-    text-align: center;
     padding: 0 14px;
-    color: @color-light-blue;
+
+    line-height: 40px;
+    text-align: center;
     font-size: 22px;
+
+    color: @color-light-blue;
   });
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .picker {
   display: none;
   position: absolute;
-  margin-top: 6px;
-  z-index: @z-index-datepicker;
+
   width: 260px;
   border-collapse: collapse;
+  margin-top: 6px;
+  z-index: @z-index-datepicker;
 
   background: @color-gray--dark;
 
@@ -54,30 +64,35 @@
 }
 
 .picker__header {
-  color: white;
   padding: 10px 10px 0 10px;
+  color: white;
 }
 
 .picker__headline {
   margin: 0 30px;
+
   line-height: 31px;
   font-size: 1.1428em;
   text-align: center;
 }
 
 .picker__headline__month {
-  font-weight: bold;
   display: inline;
+  font-weight: bold;
 }
 
 .picker__prev,
 .picker__next {
   display: block;
-  cursor: pointer;
+
   width: 30px;
+
   line-height: 31px;
   text-align: center;
+
   color: white;
+
+  cursor: pointer;
 
   &:hover {
     color: @color-gray--light;
@@ -85,15 +100,17 @@
 }
 
 .picker__prev {
-  float: left;
   .icon();
   .icon--arrow-left();
+
+  float: left;
 }
 
 .picker__next {
-  float: right;
   .icon();
   .icon--arrow-right();
+
+  float: right;
 }
 
 .picker__content {
@@ -115,14 +132,24 @@
 
 .picker__day {
   display: table-cell;
+
   height: 32px;
   width: 31px;
   padding: 0;
   border: 3px solid @color-gray--dark;
+
   text-align: center;
-  background: white;
-  color: @color-light-blue;
   vertical-align: middle;
+
+  color: @color-light-blue;
+  background: white;
+
+  &:hover,
+  &.is-active {
+    background: @color-light-blue;
+    color: white;
+    cursor: pointer;
+  }
 
   &.picker__day--today {
     background: @color-gray--light;
@@ -132,26 +159,21 @@
     background: transparent;
 
     &:hover {
-      cursor: normal;
+      cursor: default;
       background: transparent;
     }
   }
 
   &.picker__day--headline {
-    background: transparent;
-    color: white;
     font-size: 0.9285em;
 
+    background: transparent;
+    color: white;
+
     &:hover {
-      cursor: normal;
       background: transparent;
+      cursor: default;
     }
   }
-
-  &:hover,
-  &.is-active {
-    background: @color-light-blue;
-    color: white;
-    cursor: pointer;
-  }
 }
+/* Copyright AXA Versicherungen AG 2015 */

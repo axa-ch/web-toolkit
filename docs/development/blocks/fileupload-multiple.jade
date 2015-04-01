@@ -1,13 +1,12 @@
 ---
-title: Multi File Upload
+title: Multi Upload
 slug: file-upload2
 collection: development_blocks
 template: development.jade
-status: experimental
 ---
 
 :markdown
-  The ``multi-file-upload`` block is used to display drag and drop zones for
+  The ``multi-upload`` block is used to display drag and drop zones for
   multiple files and display status info (progress) to the uploaded files.
 
 h3 Behavior
@@ -33,7 +32,6 @@ p.
   through the file chooser dialog of your browser to trigger the upload.
 
 .callout.callout--danger.
-  IE9... *sigh*<br />
   There's some information about how to implement file uploads in IE 9 below the examples.
 
 .l-container
@@ -42,7 +40,7 @@ p.
       .form__group__label.
         Datei
       .form__group__control
-        .multi-file-upload(id='example')
+        .multi-upload(id='example')
           .dropzone
             .dropzone__container(data-dropzone='dropzone')
               input.dropzone__input(type='file')
@@ -53,7 +51,7 @@ p.
                   span Drag file here or
                   | &nbsp;
                   a.dropzone__text__upload-link click to choose
-          .multi-file-upload__remarks
+          .multi-upload__remarks
             | Nur Bilder (.jpg, .png, .gif) oder Dokumente (.pdf, .docx).
             br
             | Maximal 2 MB pro Datei
@@ -68,7 +66,7 @@ h3 Styles
         .form__group__label.
           Datei
         .form__group__control
-          .multi-file-upload
+          .multi-upload
             .dropzone
               .dropzone__container(data-dropzone='dropzone')
                 input.dropzone__input(type='file')
@@ -79,7 +77,7 @@ h3 Styles
                     span Drag file here or
                     | &nbsp;
                     a.dropzone__text__upload-link click to choose
-            .multi-file-upload__remarks
+            .multi-upload__remarks
               | Nur Bilder (.jpg, .png, .gif) oder Dokumente (.pdf, .docx).
               br
               | Maximal 2 MB pro Datei
@@ -108,7 +106,7 @@ h3 Styles
                   .file-error__progressbar.progressbar
                     .progressbar__description awesome_image.jpg
                     .progressbar__error
-                      a.progressbar__error-icon.icon.icon--modal-close(href='#')
+                      a.progressbar__error-icon.icon.icon--modal-close
                     .progressbar__progress
                       .progressbar__progress-error
                   .file-error__message
@@ -118,7 +116,7 @@ h3 Styles
         .form__group__label.
           Fallback for dropzone on IE 9
         .form__group__control
-          .multi-file-upload
+          .multi-upload
             .dropzone-fallback
               input.dropzone-fallback__input(type='file')
               a.dropzone-fallback__button.button.button--primary
@@ -249,3 +247,4 @@ script.
 
     init();
   })();
+// Copyright AXA Versicherungen AG 2015

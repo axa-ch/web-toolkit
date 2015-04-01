@@ -4,10 +4,13 @@
 @import '../mixins/invisible-input';
 
 .checkbox {
-  display: block;
-  margin-bottom: 15px;
-  cursor: pointer;
   &:extend(.clearfix all);
+
+  display: block;
+
+  margin-bottom: 15px;
+
+  cursor: pointer;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -15,9 +18,11 @@
 }
 
 .checkbox__checkbox {
-  vertical-align: middle;
   float: left;
+
   margin: 2px 0 0 0;
+
+  vertical-align: middle;
 
   .checkbox--js & {
     &:extend(.invisible-input all);
@@ -32,14 +37,16 @@
   .icon();
   .icon--checkmark();
 }
+
 .checkbox.checkbox--js .checkbox__label__text {
-  margin-left: 38px;
   padding-top: 5px;
+  margin-left: 38px;
+
   line-height: 1.5; // TODO: use more global definition
 
   .respond(medium, {
-    margin-left: 33px;
     padding-top: 2px;
+    margin-left: 33px;
   });
 }
 
@@ -52,18 +59,22 @@
 
   &:before {
     content: '';
+
     display: inline-block;
+    float: left;
+
     width: 30px;
     height: 30px;
-    margin-right: 10px;
-    border: 1px solid @color-gray;
-    background: white;
-    vertical-align: middle;
-    text-align: center;
     padding: 0;
-    font-size: 20px !important;
+    border: 1px solid @color-gray;
+    margin-right: 10px;
+
+    vertical-align: middle;
     line-height: 28px !important;
-    float: left;
+    font-size: 20px !important;
+    text-align: center;
+
+    background: white;
     color: @color-light-blue;
 
     .respond(medium, {
@@ -87,6 +98,6 @@
       border-color: @color-light-blue !important; // !important needed for checkboxes in error state
       outline: none;
     }
-
   }
 }
+/* Copyright AXA Versicherungen AG 2015 */

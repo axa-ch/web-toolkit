@@ -1,34 +1,134 @@
 @import '../variables';
 @import '../mixins/respond';
+@import '../mixins/grid';
 
-.footer {}
-
-.footer__content-container {
-  border-top: 1px solid @color-gray--light;
-
-  .respond(medium, {
-    border-top: 5px solid @color-blue;
-  });
+.footer {
 }
 
 .footer__content {
-  .respond(medium, {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  });
+  border-top: 1px solid@color-gray--light;
+
+  .respond(medium, { border-top: 5px solid@color-blue; });
+}
+
+.footer__content {
+  .make-row();
+  .respond(medium, { padding-top: 10px; padding-bottom: 10px; }
+  );
 }
 
 .footer__copyline {
+  .make-row();
   background-color: @color-gray--lighter;
 
-  .respond(medium, {
-    border-top: 1px solid @color-gray--light;
+  .respond(medium, { border-top: 1px solid@color-gray--light; }
+  );
+}
+
+.footer__item {
+  margin: 18px 0 0 0;
+
+  .make-col(12);
+  .make-col(4, medium);
+
+}
+
+.footer__item__menu {
+  margin: 0 -@grid-gutter-width/2;
+  &:extend(.clearfix all);
+
+  .respond(medium; {
+    margin: 0;
   });
 }
 
-.footer__copyline__inner {
+.footer__item__headline {
+  margin: 0;
+  padding: 8px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: @color-blue;
+  border-bottom: 1px dotted @color-blue;
+
   .respond(medium, {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border-bottom: none;
+  });
+
+}
+
+.footer__item--keep-in-touch {
+  .make-col-push(4, medium);
+
+  .respond(medium, {
+    background-color: white;
   });
 }
+
+.footer__item--links {
+  .make-col-pull(4, medium);
+  .footer__item__headline {
+    margin-bottom: 12px;
+
+    .respond(medium; {
+      margin-bottom: 0;
+    });
+  }
+}
+
+.footer__item--international {
+  margin-top: 0;
+
+  .respond(medium; {
+    margin-top: 18px;
+  });
+
+  .footer__item__headline {
+    display: none;
+
+    .respond(medium; {
+      display: block;
+    });
+  }
+}
+
+.footer__international {
+  display: block;
+  margin: 0 -@grid-gutter-width/2;
+  cursor: pointer;
+
+  .respond(medium; {
+    margin: 0;
+  });
+}
+
+.footer__international__image {
+  display: none;
+
+  .respond(medium; {
+    display: inline-block;
+  });
+}
+
+.footer__international__text {
+  display: block;
+  padding: 0 (@grid-gutter-width/2 + 10px);
+  line-height: 55px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: @color-blue;
+  color: white;
+  .icon-after();
+  .icon-after--arrow-right();
+
+  &::after {
+    color: white;
+    line-height: 55px;
+    font-size: 16px;
+    float: right;
+  }
+
+  .respond(medium; {
+    display: none;
+  });
+}
+/* Copyright AXA Versicherungen AG 2015 */

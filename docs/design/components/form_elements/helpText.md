@@ -14,3 +14,4 @@ Help text can be provided to help users fill in the form and to clear up questio
 - Help text is always placed outside the input field and never inside.
 - Unless you have a lot of help text, use an inline system. This avoid page-jumping and rollover problems.
 - Triggers for user-activated help text should be placed next to labels and not input fields.
+<!-- Copyright AXA Versicherungen AG 2015 -->

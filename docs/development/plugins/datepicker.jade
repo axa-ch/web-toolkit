@@ -3,7 +3,6 @@ title: Datepicker
 slug: datepicker
 collection: development_plugins
 template: development.jade
-status: new
 ---
 
 :markdown
@@ -11,7 +10,7 @@ status: new
 
 :sample
   .datepicker#myDatepicker(data-datepicker-watch="#myDatepickerInput")
-    a(href='#', data-datepicker="#myDatepicker").datepicker__trigger
+    a(data-datepicker="#myDatepicker").datepicker__trigger
     .datepicker__input
       input(type='text').control.control--input#myDatepickerInput
 
@@ -28,6 +27,7 @@ status: new
     }
 
   .datepicker#myDatepicker2
-    a(href='#', onclick="handleDatepickerClick(event)").datepicker__trigger
+    a(onclick="handleDatepickerClick(event)").datepicker__trigger
     .datepicker__input
       input(type='text').control.control--input#myDatepickerInput2
+// Copyright AXA Versicherungen AG 2015
