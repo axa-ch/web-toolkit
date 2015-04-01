@@ -17,7 +17,7 @@ div.callout
     = ' '
     a(href=config.repository.url, title=config.repository.name) file an issue on github
     |  or
-    a(href='#', data-uv-trigger, data-uv-mode="contact")  use the feedback form
+    a(data-uv-trigger, data-uv-mode="contact")  use the feedback form
     | .
 
 h1 What is the developer toolkit?
@@ -28,7 +28,7 @@ p.paragraph
   | The components are aligned to the
   a(href=relative('/design'))  Design Guidelines
   | . Please read the Design Guidelines carefully before you design a new
-  | User Interface. 
+  | User Interface.
 
 h1 Let's get started!
 
@@ -163,9 +163,9 @@ p.paragraphy.
 h4 IE9 support
 
 p.paragraph.
-  To add IE9 support you need to add single-colon CSS 2.1 syntax 
-  psuedo elements (:after) in addition to CSS 3 double-colon 
-  syntax (::after). We wrote the postcss-pseudoelements postcss 
+  To add IE9 support you need to add single-colon CSS 2.1 syntax
+  psuedo elements (:after) in addition to CSS 3 double-colon
+  syntax (::after). We wrote the postcss-pseudoelements postcss
   plugin which adds those single-color selectors.
 
 h4 Less variables
@@ -209,7 +209,7 @@ p.
 
         <title>Developer Toolkit - Basic template</title>
 
-        <!-- styles --> 
+        <!-- styles -->
         <link href="css/style.min.css" rel="stylesheet">
       </head>
       <body>
@@ -219,7 +219,7 @@ p.
         <script src="/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Required for the datepicker plugin -->
         <script src="/libs/moment.js/2.9.0/moment.js"></script>
-        
+
         <!-- optional: jQuery plugins -->
         <script src="js/style.all.min.js"></script>
       </body>
