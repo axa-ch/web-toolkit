@@ -4,12 +4,15 @@ slug: changelog
 template: other.jade
 ---
 
-# 0.4.0 - not yet released
+# 0.4.0 - 1. April 2015
 
 - Rename the package to `axa-web-style-guide`
 
 - Documentation changes
   - Added remark regarding autogrow functionality to the `control` block.
+- Popover component
+  - Added a popover block
+  - Added a popover plugin
 - Refactoring
   - Refactored structure of the `autocomplete` block.
     - ATTENTION! This requires a markup change for the `autocomplete` block.
