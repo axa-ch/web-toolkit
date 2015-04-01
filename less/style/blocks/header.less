@@ -5,7 +5,7 @@
 
 .header {
   @padding-top-bottom: 9.5px;
-  @padding-top-bottom-large: 20px;
+  @padding-top-large: 20px;
   @padding-left-right: 10px;
   @padding-left-right-large: 20px;
   @mobile-trigger-size: 41px;
@@ -14,11 +14,18 @@
 
   padding: @padding-top-bottom 0;
 
-  border-bottom: 1px solid @color-gray--lighter;
+  .respond(medium, {
+    border-bottom: 5px solid @color-blue;
+    margin-bottom: 30px;
+    });
 
   .respond(large, {
-    padding: @padding-top-bottom-large 0;
+    padding: @padding-top-large 0 0 0;
   });
+}
+
+.header__main {
+  padding-bottom: 20px;
 }
 
 .header__mobile-trigger {
@@ -31,9 +38,10 @@
 
   float: right;
 
-  color: @color-blue;
   font-size: 1.3em;
   text-align: center;
+
+  color: @color-blue;
 
   cursor: pointer;
 
@@ -55,6 +63,7 @@
 
   float: right;
   display: none;
+
   height: 16px;
 
   .respond(large, {
@@ -88,22 +97,25 @@
   padding: 5px 0 0 0;
 
   ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
+
+    list-style-type: none;
   }
 }
 
 .header__meta__welcome__item {
   float: left;
-  margin: 0;
-  padding: 0;
+
   height: 16px; // Hack to get the border-right exactly 16px height
+  padding: 0;
+  margin: 0;
+
   line-height: 16px;
+  font-size: 20px;
+  font-family: ITCFranklinGothicCondensedDemi, sans-serif;
 
   color: @color-blue;
-  font-family: ITCFranklinGothicCondensedDemi, sans-serif;
-  font-size: 20px;
 
   a {
     color: @color-blue;
@@ -111,18 +123,23 @@
   }
 
   & + & {
+    padding-left: 10px;
     border-left: 1px solid @color-gray--darker;
     margin-left: 10px;
-    padding-left: 10px;
   }
 }
 
 .header__meta__social {
   float: right;
-  min-height: 21px; // TODO
 
-  border-left: 1px solid @color-gray--darker;
+  min-height: 21px; // TODO
   padding: 0 0 0 10px;
+  border-left: 1px solid @color-gray--darker;
   margin: 0 0 0 10px;
+}
+
+.header__menu {
+  .make-container();
+  border-top: 1px solid @color-gray--lighter;
 }
 /* Copyright AXA Versicherungen AG 2015 */

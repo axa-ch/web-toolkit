@@ -18,11 +18,14 @@
 .tile-select__tile {
   display: block;
   position: relative;
+
   padding: 10px;
   margin-top: 10px;
+
   background: @color-light-blue;
   color: white;
   cursor: pointer;
+
   .icon();
   .icon--arrow-right();
 
@@ -33,11 +36,13 @@
   }
 
   &::before {
-    font-size: 14px;
     position: absolute;
     top: 50%;
     right: 10px;
+
     margin-top: -7px;
+
+    font-size: 14px;
 
     .respond(medium, {
       right: 20px;
@@ -45,10 +50,12 @@
   }
 
   .respond(medium, {
-    margin-top: 0;
     display: table-cell;
+
     padding: 20px;
     border: 20px solid white;
+    margin-top: 0;
+
     vertical-align: middle;
   });
 }

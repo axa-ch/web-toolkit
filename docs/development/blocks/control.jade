@@ -7,14 +7,19 @@ template: development.jade
 
 :markdown
   The ``control`` block is used to style form controls.
-  
-  Use the modifieres ``control--input`` or 
-  ``control--textarea `` for input fields or textareas 
+
+  Use the modifieres ``control--input`` or
+  ``control--textarea`` for input fields or textareas
   respectively.
-    
+
+.callout.
+  Textareas are supposed to grow as a user types longer texts. But do not override
+  the specified <code>max-height</code> of 240 pixels.
+  The <code>autogrow</code> plugin already implements this behavior.
+
 :sample
   input.control.control--input(type='text')
-    
+
 :sample
   textarea.control.control--textarea
 // Copyright AXA Versicherungen AG 2015

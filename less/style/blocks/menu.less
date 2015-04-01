@@ -6,14 +6,15 @@
 .menu {
   &:extend(.clearfix all);
 
-  margin: 0;
   padding: 0;
+  margin: 0;
+
   list-style-type: none;
 }
 
 .menu__item {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .menu__link {
@@ -23,8 +24,8 @@
 }
 
 .menu--left {
-  font-size: 0.9em;
   display: block;
+  font-size: 0.9em;
 
   .menu__item {
     display: block;
@@ -32,12 +33,14 @@
 
   .menu__link {
     display: block;
+
     padding: 7px 0;
+
     color: @color-gray--darkest;
 
     &.is-active {
-      color: @color-light-blue;
       font-weight: bold;
+      color: @color-light-blue;
     }
   }
 
@@ -50,70 +53,30 @@
   font-size: 1em;
 }
 
-
-// TODO: Do styling
-.menu--tabs {
-  &:extend(.clearfix all);
-
-  .menu__item {
-    float: left;
-    margin-right: 1px;
-  }
-
-  .menu__link {
-    display: block;
-    padding: 8px 20px;
-    background: #bcd9f4;
-    color: @color-blue;
-    text-decoration: none;
-
-
-    &.is-active {
-      background: @color-blue;
-      color: white;
-    }
-  }
-
-  .menu__item {
-    overflow: hidden;
-
-    &:first-of-type {
-      border-top-left-radius: 5px;
-    }
-
-    &:last-of-type {
-      border-top-right-radius: 5px;
-    }
-  }
-}
-
 .menu--collapsing,
 .menu--sliding {
 
   .menu__link {
     display: block;
-    height: 56px;
+
     box-sizing: border-box;
+    height: 56px;
     padding: 17px 15px 16px 15px;
+    border-top: 1px solid @color-tbd-13;
 
     text-decoration: none;
     font-size: 16px;
     line-height: 22px;
-    background-color: @color-blue;
-    color: @color-tbd-4;
-
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    border-top: 1px solid @color-tbd-13;
+    background-color: @color-blue;
+    color: @color-tbd-4;
+
 
     &:hover {
       color: white;
-    }
-
-    &:active {
-      //color: @color-tbd-4;
     }
 
     &.icon::before {
@@ -133,8 +96,10 @@
     &::before {
       display: block;
       float: right;
-      font-size: 1.4em;
+
       padding: 0;
+
+      font-size: 1.4em;
     }
   }
 
@@ -142,14 +107,16 @@
     .icon;
     .icon--arrow-left;
 
+    background-color: @color-tbd-10;
+
     &::before {
       display: block;
       float: left;
-      font-size: 1.4em;
-      padding-right: 8px;
-    }
 
-    background-color: @color-tbd-10;
+      padding-right: 8px;
+
+      font-size: 1.4em;
+    }
 
     &:hover {
       color: white;
@@ -179,13 +146,14 @@
 
   // Level 3
   .menu__level .menu__level .menu__level .menu__link {
-    background-color: @color-tbd-12;
-    color: @color-tbd-9;
-    border-top: none;
-    border-bottom: 1px solid @color-tbd-13;
     height: 41px;
     padding-top: 10px;
     padding-bottom: 9px;
+    border-top: none;
+    border-bottom: 1px solid @color-tbd-13;
+
+    background-color: @color-tbd-12;
+    color: @color-tbd-9;
   }
 
   .menu__level .menu__level .menu__level .menu__link.is-active {
@@ -193,15 +161,16 @@
   }
 
   .menu__level {
-    margin: 0;
     padding: 0;
-    list-style-type: none;
+    margin: 0;
+    visibility: hidden;
 
     width: 100%;
     max-height: 0px;
 
-    visibility: hidden;
     overflow: hidden;
+
+    list-style-type: none;
 
     // Watch out: prevent delayed closing with a bezier
     transition: max-height @transition-duration cubic-bezier(0, 1.05, 0, 1), visibility @transition-duration;
@@ -225,24 +194,25 @@
 
 .menu--sliding {
   position: relative;
+
   overflow-x: hidden;
   overflow-y: hidden;
 
   transition: height @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
 
   .menu__level {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-
-    display: block;
-    width: 100%;
-
     position: absolute;
+    display: block;
     top: 0;
     left: 100%;
-
     visibility: hidden;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+
     transition: left @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
 
     &.is-previous {
@@ -263,10 +233,10 @@
 }
 
 .menu--main {
+  display: none;
+
   padding-top: 10px;
   margin-left: (@grid-gutter-width / -2);
-
-  display: none;
 
   .respond(large, {
     display: block;
@@ -274,8 +244,9 @@
 
   .menu__item {
     height: 44px;
-    line-height: 44px;
     margin: 0 (@grid-gutter-width / 2);
+
+    line-height: 44px;
 
     &.is-active,
     &:hover {
@@ -297,10 +268,12 @@
 
   .menu__link {
     display: block;
-    color: @color-gray;
+
     font-size: 14px;
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
+
+    color: @color-gray;
   }
 
   .menu__link--home {
@@ -326,13 +299,14 @@
 
   .menu__link {
     display: block;
-    width: 100%;
 
+    width: 100%;
     padding: 3px 10px;
 
-    color: @color-gray;
     text-decoration: none;
     font-size: @font-size-base;
+
+    color: @color-gray;
 
     &:hover {
       color: @color-gray--darker;
@@ -348,6 +322,7 @@
 .menu--meta,
 .menu--language {
   margin-left: 7px;
+
   font-size: 12px; // TODO: fixed font-size
 
   .menu__item {
@@ -375,18 +350,19 @@
   margin-top: 15px;
 
   .menu__item {
+    font-size: 20px; // TODO: fixed font-size
     font-weight: bold;
     color: @color-blue;
-    font-size: 20px; // TODO: fixed font-size
   }
 }
 
 .menu--meta {
 
   .menu__item {
+    padding-left: 8px;
     margin-top: 2px;
     margin-left: 12px;
-    padding-left: 8px;
+
     font-size: 12px; // TODO: fixed font-size
     font-weight: bold;
     font-family: "ITCFranklinGothicCondensedDemi", sans-serif;
@@ -405,18 +381,17 @@
 .menu--social {
 
   .menu__item {
+    margin-left: 8px;
+
     .respond(large, {
       float: left;
     });
-
-    margin-left: 10px;
 
     &:first-of-type {
       margin-left: 20px;
     }
 
     .icon {
-
       &::before {
         font-size: 28px;
       }

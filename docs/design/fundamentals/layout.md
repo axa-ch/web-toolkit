@@ -58,19 +58,19 @@ follows the following guidelines.
 
 ## Meta navigation area
 
-The _meta_ navigation area (<span class="label label--success">1</span>).
+The _meta_ navigation area (<span class="tag tag--success">1</span>).
 
 ## Horizontal navigation area
 
-The _horizontal_ navigation area (<span class="label label--success">2</span>).
+The _horizontal_ navigation area (<span class="tag tag--success">2</span>).
 
 ## Vertical navigation area
 
-The _vertical_ navigation area (<span class="label label--success">3</span>).
+The _vertical_ navigation area (<span class="tag tag--success">3</span>).
 
 ## Footer navigation area
 
-The _footer_ navigation area (<span class="label label--success">4</span>).
+The _footer_ navigation area (<span class="tag tag--success">4</span>).
 
 # Common layouts
 

@@ -2,53 +2,50 @@
 @import '../mixins/respond';
 @import '../mixins/invisible-font';
 
-.brand {
+.brand__logo {
+  .invisible-font();
 
-  &__logo {
-    .invisible-font;
+  width: 173px;
+  height: 41px;
 
-    width: 173px;
-    height: 41px;
+  background-color: transparent;
+  background-image: url('@{images-path}/logo.svg');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 
-    background-color: transparent;
-    background-image: url('@{images-path}/logo.svg');
-    background-position: top left;
-    background-repeat: no-repeat;
+  .respond(large, {
+    width: 230px;
+    height: 54px;
     background-size: auto 100%;
+  });
 
+}
+
+.brand__tagline {
+  .invisible-font();
+
+  display: none;
+
+  width: 230px;
+  margin-top: 4px;
+
+  background-color: transparent;
+  background-image: url('@{images-path}/tagline-de.svg');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+
+  &--de,
+  &--fr,
+  &--it {
     .respond(large, {
-      width: 230px;
-      height: 54px;
-      background-size: auto 100%;
+      display: block;
     });
-
   }
 
-  &__tagline {
-    .invisible-font;
-
-    display: none;
-
-    width: 230px;
-    margin-top: 4px;
-
-    background-color: transparent;
-    background-image: url('@{images-path}/tagline-de.svg');
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-
-    &--de,
-    &--fr,
-    &--it {
-      .respond(large, {
-        display: block;
-      });
-    }
-
-    &--de {
-      height: 14px;
-    }
+  &--de {
+    height: 14px;
   }
 }
 /* Copyright AXA Versicherungen AG 2015 */

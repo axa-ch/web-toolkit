@@ -2,14 +2,14 @@
 title: Form
 slug: form
 collection: development_blocks
-template: development.jade 
+template: development.jade
 ---
 
 :markdown
   The ``form`` block provides structural elements for a form.
-  
+
   The form is structured as follows:
-  
+
 .highlight
   pre.highlight__listing
     code.
@@ -20,11 +20,12 @@ template: development.jade
           |       └── Label text
           └── .form__group__control
               └── Form control
+      └── .form__fotnote * Pflichtfelder
 
 :markdown
   To use an info-icon in the `form__group__label` the structure
   is as follows:
-  
+
 .highlight
   pre.highlight__listing
     code.
@@ -36,10 +37,10 @@ template: development.jade
                   └── Label text
 
 :markdown
-  Some form groups don't need a label (e.g. "accept terms and 
-  condition"). For those use cases simply omit the 
-  ``.form__group__label`` element and add the 
-  ``.form__group__control--fullwidth`` modifier to the 
+  Some form groups don't need a label (e.g. "accept terms and
+  condition"). For those use cases simply omit the
+  ``.form__group__label`` element and add the
+  ``.form__group__control--fullwidth`` modifier to the
   ``.form__group__control`` element.
 
 
@@ -47,19 +48,19 @@ template: development.jade
   pre.highlight__listing
     code.
       .form
-      └── .form__group 
+      └── .form__group
           └── .form__group__control.form__group__control--fullwidth
               └── Form control
-                
-p.paragraph 
-  | For a complete example please head over to the 
+
+p.paragraph
+  | For a complete example please head over to the
   a(href=relative('/example'))  Design Guidelines
 
 :sample
   .l-container
     .form
       .form__group
-        label.form__group__label 
+        label.form__group__label
           .form__group__label__text Form label
         .form__group__control
           input.control.control--input(type='text')
@@ -83,4 +84,5 @@ p.paragraph
             .checkbox__label
               .checkbox__label__text
                 span Full width control
+      .form__footnote * Pflichtfelder
 // Copyright AXA Versicherungen AG 2015

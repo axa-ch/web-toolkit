@@ -3,6 +3,26 @@ title: Site
 slug: site
 collection: development_blocks
 template: development.jade
-draft: true
 ---
+:markdown
+  The `site` block should be the root block of your page. So it makes sense
+  to assign it directly to the `body` element.
+  It consists of only two elements; the `site__mobile-menu` block,
+  which contains the menu for mobile devices and the `site__page` block,
+  which contains everything else of your page.
+
+.highlight.highlight__listing.hljs
+  :markdown
+    ```html
+    <body class="site">
+      <div class="site__page">Your content here!</div>
+      <div class="site__mobile-menu">
+        <nav class="menu menu--sliding">
+          <ul class="menu__level">
+            <li class="menu__item"><a class="menu__link">Overview</a></li>
+          </ul>
+        </nav>
+      </div>
+    </body>
+    ```
 // Copyright AXA Versicherungen AG 2015

@@ -5,11 +5,11 @@
   position: relative;
 
   &::before {
-    z-index: @z-index-progress-step;
-    position: absolute;
-
     content: ' ';
+
+    position: absolute;
     display: block;
+    z-index: @z-index-progress-step;
 
     height: 5px;
     width: 100%;
@@ -57,9 +57,10 @@
     position: relative;
     margin-top: -2px;
     margin-left: 3px;
-    font-size: 19px;
-    color: @color-gray--dark;
 
+    font-size: 19px;
+
+    color: @color-gray--dark;
 
     .respond(medium, {
       margin-top: -6px;
@@ -74,15 +75,13 @@
 }
 
 .step__bullet {
-  z-index: @z-index-progress-step-bullet;
   display: block;
-
   position: relative;
   left: -11.5px;
+  z-index: @z-index-progress-step-bullet;
 
   height: 23px;
   width: 23px;
-
   margin-left: 50%;
 
   text-align: center;

@@ -1,10 +1,11 @@
 ---
 template: master.jade
 segment: design
+menu: design
 ---
 
 - var pathName = function(path) { return path.join('__').replace(/\s/g, '_'); }
-- var getTopLevel = function(collection) { if(!collection) { return null; } for (var i = 0; i < config.design.length; i++) { current = config.design[i]; if (collection.indexOf(pathName([current.name])) != -1) { return current; } if (current.children) { for (var j = 0; j < current.children.length; j++) { if (collection.indexOf(pathName([current.name, current.children[j].name])) != -1) { return current; } } } } return null; }  
+- var getTopLevel = function(collection) { if(!collection) { return null; } for (var i = 0; i < config.design.length; i++) { current = config.design[i]; if (collection.indexOf(pathName([current.name])) != -1) { return current; } if (current.children) { for (var j = 0; j < current.children.length; j++) { if (collection.indexOf(pathName([current.name, current.children[j].name])) != -1) { return current; } } } } return null; }
 - // TODO
 - var topLevel = getTopLevel(partOfCollections);
 - var getFirstPage = function(item, path) { if(!path) { path = [] } path.push(item.name); var page = null; var collection = collections[pathName(path)]; if(collection) { page = collection[0]; } if(page != null) { return page } else { if(item.children && item.children.length > 0) { return getFirstPage(item.children[0], path); } else { return null; } } }
@@ -15,20 +16,6 @@ mixin pageLink(page)
       href=relative(page.link)
       class={'is-active': link == page.link}
     )= page.title
-    
-.main-nav
-  .l-container
-    ul.menu.menu--main
-      each item in config.design
-        - var page = getFirstPage(item);
-        - var isActive = topLevel == item
-        if page
-          li.menu__item(
-            class={'is-active': isActive}  
-          )
-            a.menu__link(
-              href=relative(page.link)
-            )= item.name
 
 .l-container
   .l-row
@@ -42,8 +29,8 @@ mixin pageLink(page)
               ulmenu.menu--left
                 each page in collection
                   mixin pageLink(page)
-                  
-          if topLevel.children 
+
+          if topLevel.children
             each secondLevel in topLevel.children
               - var path = [topLevel.name, secondLevel.name]
               - var collection = collections[pathName(path)]
@@ -56,7 +43,7 @@ mixin pageLink(page)
                   ul.menu.menu--left
                     each page in collection
                       mixin pageLink(page)
-          
+
 
     .l-docs-main
       h1.heading.heading--page= title

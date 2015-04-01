@@ -17,8 +17,8 @@
 }
 
 .icon {
-  text-decoration: none; // prevent some odd underline in IE
   position: relative; // so we can position elements absolutely
+  text-decoration: none; // prevent some odd underline in IE
 
   &::before {
     display: inline-block;

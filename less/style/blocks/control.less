@@ -2,30 +2,27 @@
 
 .control {
   display: block;
+
   width: 100%;
-
-  background: @color-gray--lighter;
-
   height: 40px;
-  line-height: 36px;
-
+  border: none;
   padding-left: 13px;
   padding-right: 13px;
 
+  line-height: 36px;
+
+  background: @color-gray--lighter;
   color: black;
-
-  border: none;
-
   border-radius: 0;
 }
 
 .control--input {
+  border: @focus-border-width solid @color-gray--lighter;
+  -webkit-appearance: none;
+
   &.has-error {
     border-color: #ff0000;
   }
-
-  border: @focus-border-width solid @color-gray--lighter;
-  -webkit-appearance: none;
 
   &:focus {
     border-color: @color-light-blue;
@@ -37,17 +34,17 @@
   .control--input();
 
   height: auto; // Reset height for textareas
-  line-height: 1.5;
   min-height: 90px; // approx. 3 lines of text
+  max-height: 232px; // 10x line-height + padding + border (needed to prevent
+  //                    autogrow textareas from growing indefinitely)
+  min-width: 100%;
+  max-width: 100%;
   // TODO: May use border instead of padding because the padding is ignored when
   //       the textarea scrolls vertically in chrome.
   //       Con: The resive handle looks ugly when using borders.
   padding-top: 10px;
   padding-bottom: 10px;
 
-  max-width: 100%;
-  min-width: 100%;
-  max-height: 240px; // approx. 10 lines of text (needed to prevent autogrow
-                     // textareas from growing indefinitely)
+  line-height: 1.5;
 }
 /* Copyright AXA Versicherungen AG 2015 */

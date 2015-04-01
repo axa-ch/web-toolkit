@@ -20,8 +20,8 @@ template: development.jade
   The ``header__meta__upper`` element contains a ``header__meta__menu`` element and a ``header__meta__language`` element.
   The ``header__meta__lower`` element contains a ``header__meta__welcome`` element and a ``header__meta__social`` element.
 :sample
-  header.header.header--main
-    .l-container
+  header.header
+    .header--main.l-container
       .header__mobile-trigger
       .header__brand.brand
         .brand__logo
@@ -58,4 +58,16 @@ template: development.jade
               li.header__meta__welcome__item Welcome to AXA
               li.header__meta__welcome__item
                 a(href='tel:0800809809') 0800 809 809
+    .header__menu
+      ul.menu.menu--main
+        li.menu__item
+          a(href='#0').menu__link.menu__link--home
+        li.menu__item
+          a(href='#1').menu__link Menu Item 1
+        li.menu__item.is-active
+          a(href='#2').menu__link Menu Item 2
+        li.menu__item
+          a(href='#3').menu__link Menu Item 3
+        li.menu__item
+          a(href='#4').menu__link Menu Item 4
 // Copyright AXA Versicherungen AG 2015
