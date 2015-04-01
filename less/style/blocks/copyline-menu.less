@@ -1,0 +1,51 @@
+@import '../variables';
+@import '../mixins/clearfix';
+@import '../mixins/respond';
+
+.copyline-menu {
+  &:extend(.clearfix all);
+
+  margin: 0 -12.5px;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.copyline-menu__item {
+  .respond(medium, {
+    float: left;
+    border-right: 1px dotted @color-gray--mid;
+
+    &:last-child {
+      border-right: none;
+    }
+  });
+}
+
+.copyline-menu__text,
+.copyline-menu__link {
+  display: block;
+
+  width: 100%;
+  height: 40px;
+
+  padding: 0 12.5px;
+
+  line-height: 40px;
+
+  .respond(medium, {
+    height: auto;
+
+    line-height: 30px;
+    font-size: @font-size-small;
+  });
+}
+
+.copyline-menu__link {
+  color: @color-gray--darkest;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
