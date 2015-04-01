@@ -20,4 +20,5 @@ out/
 npm-debug.log
 
 # webstorm
+*.iml
 .idea/

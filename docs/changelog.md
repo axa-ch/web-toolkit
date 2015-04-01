@@ -4,6 +4,10 @@ slug: changelog
 template: other.jade
 ---
 
+# 0.4.0 - not yet released
+
+- Rename the package to `axa-web-style-guide`
+
 # 0.3.0 - 11 Mar, 2015
 
 - Documentation changes

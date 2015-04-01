@@ -1,7 +1,7 @@
 ---
 title: Layout
 template: design.jade
-order: 6
+order: 7
 ---
 
 Layouts are an essential part in web design since

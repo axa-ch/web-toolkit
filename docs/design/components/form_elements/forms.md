@@ -62,7 +62,7 @@ There is the possiblity to add an error message and/or an info text.
   <div class="form__group">
     <label class="form__group__label">
       <div class="info-icon">
-        <a href="#" class="info-icon__icon"></a>
+        <a class="info-icon__icon"></a>
         <label class="info-icon__label">Some label</label>
       </div>
     </label>
@@ -86,7 +86,7 @@ There is the possiblity to add an error message and/or an info text.
   <div class="form__group">
     <label class="form__group__label">
       <div class="info-icon">
-        <a href="#" class="info-icon__icon is-active"></a>
+        <a class="info-icon__icon is-active"></a>
         <label class="info-icon__label">Some label</label>
       </div>
     </label>
