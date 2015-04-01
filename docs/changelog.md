@@ -66,3 +66,4 @@ template: other.jade
 # 0.1.0 - 22 Jan, 2015
 
 Initial release
+<!-- Copyright AXA Versicherungen AG 2015 -->

@@ -61,3 +61,4 @@
       Plugin.call($dropdown, data)
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

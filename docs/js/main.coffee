@@ -16,3 +16,4 @@ class MainViewModel
       @github.init()
 
 window.MainViewModel = MainViewModel
+# Copyright AXA Versicherungen AG 2015

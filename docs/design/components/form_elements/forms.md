@@ -129,3 +129,4 @@ You can omit the label in some use cases (e.g. privacy checkmark).
 | | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- | -- |
 | Control width | 12 columns | 12 columns | 11 columns |
+<!-- Copyright AXA Versicherungen AG 2015 -->

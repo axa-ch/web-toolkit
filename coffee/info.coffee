@@ -45,3 +45,4 @@
       Plugin.call($info)
 
 )(jQuery)
+# Copyright AXA Versicherungen AG 2015

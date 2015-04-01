@@ -64,3 +64,4 @@ Try to avoid the usage of small buttons. Use them when there is not enough space
 | -- | -- | -- |
 | Foobar | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
 | Baz | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> blue |
+<!-- Copyright AXA Versicherungen AG 2015 -->

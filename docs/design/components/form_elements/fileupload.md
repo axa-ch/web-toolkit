@@ -27,3 +27,4 @@ draft: true
 -
 - Fallback for older browsers?
   - Progressive enhancement
+<!-- Copyright AXA Versicherungen AG 2015 -->
