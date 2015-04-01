@@ -3,6 +3,7 @@ title: Fileupload
 slug: fileupload
 collection: design_components
 template: design.jade
+draft: true
 ---
 
 - Communicate restrictions

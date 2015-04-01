@@ -4,7 +4,7 @@ segment: development
 filename: development.jade
 cache: true
 ---
-  
+
 mixin status(status)
   if status != undefined
     = ' '
@@ -23,7 +23,7 @@ mixin pageLink(page)
     )
       span= page.title
       mixin status(page.status)
-  
+
 .hr
 
 .l-container
@@ -68,7 +68,7 @@ mixin pageLink(page)
               To contribute to this article please sign in with GitHub
             p(data-bind='visible: !github.isSignedIn()')
               img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
-              a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").button.button--small.button--primary Sign in with GitHub
+              a(data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").button.button--small.button--primary Sign in with GitHub
             div(data-bind='visible: github.isSignedIn()')
               p.contribute__text.
                 Want to edit or suggest changes

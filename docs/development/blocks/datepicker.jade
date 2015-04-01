@@ -11,16 +11,16 @@ p.
 
 :sample
   .datepicker
-    a(href='#', data-datepicker="#myDatepickerInput").datepicker__trigger
+    a(data-datepicker="#myDatepickerInput").datepicker__trigger
     .datepicker__input
       input(type='text')#myDatepickerInput.control.control--input
-  
+
     .picker.is-active
       .picker__header
-        a(href='#').picker__prev
-        a(href='#').picker__next
-        .picker__headline 
-          span.picker__headline__month Januar 
+        a.picker__prev
+        a.picker__next
+        .picker__headline
+          span.picker__headline__month Januar
           span 2015
       .picker__content
         .picker__month
@@ -41,7 +41,7 @@ p.
             .picker__day 3
             .picker__day 4
           .picker__week
-            .picker__day 5 
+            .picker__day 5
             .picker__day 6
             .picker__day 7
             .picker__day 8
@@ -49,7 +49,7 @@ p.
             .picker__day 10
             .picker__day 11
           .picker__week
-            .picker__day 12 
+            .picker__day 12
             .picker__day 13
             .picker__day 14
             .picker__day 15
@@ -57,7 +57,7 @@ p.
             .picker__day 17
             .picker__day 18
           .picker__week
-            .picker__day 19 
+            .picker__day 19
             .picker__day 20
             .picker__day 21
             .picker__day 22
@@ -65,7 +65,7 @@ p.
             .picker__day 24
             .picker__day 25
           .picker__week
-            .picker__day 26 
+            .picker__day 26
             .picker__day 27
             .picker__day 28
             .picker__day 29
@@ -73,5 +73,4 @@ p.
             .picker__day 31
             .picker__day.picker__day--empty
   div(style='height: 280px')
-        
 // Copyright AXA Versicherungen AG 2015

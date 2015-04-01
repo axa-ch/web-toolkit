@@ -1,7 +1,7 @@
 ---
 filename: master.jade
 ---
-  
+
 doctype html
 html
   head
@@ -81,7 +81,7 @@ html
                   // ko if: !github.isSignedIn()
                   .menu__item(data-bind='css: {\'menu__item--docs-signin\': !github.isAuthenticating()}')
                     img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
-                    a(href='#', data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").menu__link Sign in with GitHub
+                    a(data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").menu__link Sign in with GitHub
                   // /ko
                   // ko if: github.isSignedIn()
                   .menu__item
@@ -128,7 +128,7 @@ html
             a.menu__link.menu__link--parent(
               href='#'
             ) Design Guidelines
-            
+
             - var pathName = function(path) { return path.join('__').replace(/\s/g, '_'); }
             mixin pageLink(page)
               li.menu__item
@@ -142,56 +142,56 @@ html
                 a.menu__link.menu__link--back(
                   href='#'
                 ) Design Guidelines
-              
+
               - // Top level
               each topLevel in config.design
                 li.menu__item
                   a.menu__link.menu__link--parent(
                     href='#'
                   )= topLevel.name
-                    
+
                   - // Top level back
-                  
+
                   ul.menu__level
                     li.menu__item.menu__item--back
                       a.menu__link.menu__link--back(
                         href='#'
                       )= topLevel.name
-                      
+
                     - // Top level pages
                     - var collection = collections[pathName([topLevel.name])]
                     if collection
                       each page in collection
                         mixin pageLink(page)
-                
+
                     - // Top level children
-                    if topLevel.children 
+                    if topLevel.children
                       each secondLevel in topLevel.children
-                        
+
                         - var path = [topLevel.name, secondLevel.name]
                         - var collection = collections[pathName(path)]
-                        
+
                         if collection && collection.length > 0
                           - // Second level
                           li.menu__item
                             a.menu__link.menu__link--parent(
                               href='#'
                             )= secondLevel.name
-                              
+
                             - // Second level back
                             ul.menu__level
                               li.menu__item.menu__item--back
                                 a.menu__link.menu__link--back(
                                   href='#'
                                 )= secondLevel.name
-                                
+
                               - // Second level pages
                               if collection
                                 each page in collection
                                   mixin pageLink(page)
-                        
-                        
-                        
+
+
+
           li.menu__item
             a.menu__link.menu__link--parent(
               href='#'
