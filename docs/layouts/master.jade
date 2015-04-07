@@ -109,17 +109,18 @@ html
 
         if menu
           .header__menu
-            ul.menu.menu--main
-              each item in config[menu]
-                - var page = getFirstPage(item);
-                - var isActive = topLevel == item
-                if page
-                li.menu__item(
-                  class={'is-active': isActive}
-                )
-                  a.menu__link(
-                  href=relative(page.link)
-                  )= item.name
+            .l-container
+              ul.menu.menu--main
+                each item in config[menu]
+                  - var page = getFirstPage(item);
+                  - var isActive = topLevel == item
+                  if page
+                  li.menu__item(
+                    class={'is-active': isActive}
+                  )
+                    a.menu__link(
+                    href=relative(page.link)
+                    )= item.name
 
       div!= contents
 
