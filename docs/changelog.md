@@ -4,6 +4,13 @@ slug: changelog
 template: other.jade
 ---
 
+# 0.4.1 - 7. April 2015
+
+- Bugfix header & footer
+- Bugfix documentation
+  - Markdown tables
+  - Colors within dev toolkit
+
 # 0.4.0 - 1. April 2015
 
 - Rename the package to `axa-web-style-guide`
