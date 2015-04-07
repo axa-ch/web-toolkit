@@ -123,17 +123,15 @@ html
 
       div!= contents
 
-      .hr
-
       footer.footer
+        .footer__content
         .footer__copyline
-          .footer__copyline__inner
-            .l-container
-              ul.copyline-menu
-                li.copyline-menu__item
-                  a(href=relative('/changelog.html')).copyline-menu__link Changelog
-                li.copyline-menu__item
-                  span.copyline-menu__text= config.copyright
+          .l-container
+            ul.menu.menu--copyline
+              li.menu__item
+                a(href=relative('/changelog.html')).menu__link Changelog
+              li.menu__item
+                span.menu__link AXA 2014 ©
 
     .site__mobile-menu
 
