@@ -44,7 +44,7 @@ should support based on analytics data per
 | Internet Explorer | Windows | 9+ |
 | Firefox |	Desktop	| 34.0+ |
 | Chrome |	Desktop, Android, iOS	| 39.0.2171+ |
-| Android | Browser	Android	| 4.0+ |
+| Android Browser |	Android	| 4.0+ |
 | Safari |	Mac	| 8.0+ |
 | Safari |	iOS	| 8.0+ |
 | Chrome |	iOS	| 8.1+ |
