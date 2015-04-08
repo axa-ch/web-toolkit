@@ -5,5 +5,8 @@ cache: true
 filename: other.jade
 ---
 
-.l-container!= contents
+.l-container
+  h1.heading.heading--page= title
+
+  != contents
 // Copyright AXA Versicherungen AG 2015
