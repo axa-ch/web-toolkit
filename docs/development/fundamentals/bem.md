@@ -1,9 +1,8 @@
 ---
 title: BEM
-slug: 2bem
 template: development.jade
-collection: development
 status: experimental
+order: 3
 ---
 
 # What is BEM?

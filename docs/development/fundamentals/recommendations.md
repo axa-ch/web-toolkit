@@ -1,8 +1,7 @@
 ---
 title: Recommendations
-slug: 4recommendations
 template: development.jade
-collection: development
+order: 6
 ---
 
 > Please note that these recommendations are a working draft.

@@ -1,9 +1,7 @@
 ---
 title: Browser support
-slug: 3browsers
-segment: development
-collection: development
 template: development.jade
+order: 4
 ---
 
 > The following article is based on data collected
