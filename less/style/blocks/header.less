@@ -133,12 +133,34 @@
   float: right;
 
   min-height: 21px; // TODO
-  padding: 0 0 0 10px;
-  border-left: 1px solid @color-gray--darker;
-  margin: 0 0 0 10px;
 }
 
 .header__menu {
   border-top: 1px solid @color-gray--lighter;
 }
+
+.header__meta__action {
+  float: right;
+}
+
+.header__action {
+  margin-left: 8px;
+  margin-top: -4px;
+  margin-bottom: -4px;
+
+  .respond(large, {
+    float: left;
+    });
+
+  &:first-of-type {
+    margin-left: 20px;
+  }
+
+  .icon {
+    &::before {
+      font-size: 28px;
+    }
+  }
+}
+
 /* Copyright AXA Versicherungen AG 2015 */
