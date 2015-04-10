@@ -4,9 +4,7 @@ slug: captchas
 collection: design_components
 template: design.jade
 ---
-
-#Captcha
-
+Captchas are a technical solution to prevent spam, submitted by robots through online forms. This document describes a technical way to prevent spam by using a honeypot.
 Traditional captchas that require the user to decode some characters must be avoided due to accessibility and usability drawbacks.
 
 >images
