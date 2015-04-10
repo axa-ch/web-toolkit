@@ -1,5 +1,5 @@
 ---
-title: labels
+title: Labels
 template: design.jade
 order: 1
 ---
