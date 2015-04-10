@@ -4,6 +4,18 @@
 // TODO: Instead of viewport we should consider usage of a --js which will be
 // added when js is available and it is a non-touch device
 
+.make-picker-cell() {
+  display: table-cell;
+
+  height: 32px;
+  width: 31px;
+  padding: 0;
+  border: 3px solid @color-gray--dark;
+
+  text-align: center;
+  vertical-align: middle;
+}
+
 .example {
   overflow: visible !important;
 }
@@ -24,6 +36,8 @@
 .datepicker__trigger {
   display: none;
 
+  cursor: pointer;
+
   .respond(medium; {
     .icon();
     .icon--calendar();
@@ -41,10 +55,6 @@
 
     color: @color-light-blue;
   });
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 .picker {
@@ -131,49 +141,63 @@
 }
 
 .picker__day {
-  display: table-cell;
-
-  height: 32px;
-  width: 31px;
-  padding: 0;
-  border: 3px solid @color-gray--dark;
-
-  text-align: center;
-  vertical-align: middle;
+  .make-picker-cell();
 
   color: @color-light-blue;
   background: white;
+
+  cursor: pointer;
 
   &:hover,
   &.is-active {
     background: @color-light-blue;
     color: white;
-    cursor: pointer;
-  }
-
-  &.picker__day--today {
-    background: @color-gray--light;
-  }
-
-  &.picker__day--empty {
-    background: transparent;
-
-    &:hover {
-      cursor: default;
-      background: transparent;
-    }
-  }
-
-  &.picker__day--headline {
-    font-size: 0.9285em;
-
-    background: transparent;
-    color: white;
-
-    &:hover {
-      background: transparent;
-      cursor: default;
-    }
   }
 }
+
+.picker__day--today {
+  background: @color-gray--light;
+}
+
+.picker__day--headline {
+  font-size: 0.9285em;
+
+  background: transparent;
+  color: white;
+
+  cursor: default;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+.picker__day--prev-month,
+.picker__day--next-month {
+  background: @color-gray;
+  color: white;
+}
+
+.picker__day--disabled {
+  background: @color-gray--dark;
+  color: white;
+
+  cursor: default;
+
+  &:hover {
+    background: @color-gray--dark;
+    color: white;
+  }
+}
+
+.picker__weeknumber {
+  .make-picker-cell();
+  background: transparent;
+  color: white;
+}
+
+.picker__weeknumber--headline {
+
+}
+
 /* Copyright AXA Versicherungen AG 2015 */

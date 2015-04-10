@@ -3,11 +3,14 @@ title: Datepicker
 template: development.jade
 ---
 
+script.
+  moment.locale('de')
+
 :markdown
-  To get localized strings use ``moment.locale`` as described in the [momentjs docs](http://momentjs.com/docs/)
+  To get localized strings use ``moment.locale`` as described in the [momentjs docs](http://momentjs.com/docs/) before opening the datepicker for the first time.
 
 :sample
-  .datepicker#myDatepicker(data-datepicker-watch="#myDatepickerInput")
+  .datepicker#myDatepicker(data-datepicker-watch="#myDatepickerInput", data-datepicker-display-week="false")
     a(data-datepicker="#myDatepicker").datepicker__trigger
     .datepicker__input
       input(type='text').control.control--input#myDatepickerInput
@@ -20,7 +23,8 @@ template: development.jade
       $('#myDatepicker2').datepicker({
         input: $('#myDatepickerInput2'),
         moment: window.moment,
-        action: 'toggle'
+        action: 'toggle',
+        displayWeek: true
       })
     }
 
