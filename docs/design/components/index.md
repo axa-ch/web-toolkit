@@ -1,7 +1,7 @@
 ---
 title: Components
 template: design.jade
-order: 1
+order: 0
 ---
 
 On your lefthand side you'll find all available components.
