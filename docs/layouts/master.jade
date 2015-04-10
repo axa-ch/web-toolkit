@@ -138,7 +138,13 @@ html
                 span.menu__link AXA 2014 ©
 
     .site__mobile-menu
-
+      .site__mobile-menu__header
+        h1.heading.heading--mobile-menu AXA CH Web Style Guide
+        // ko if: github.isSignedIn()
+        p
+          // ko:text viewModel.github.user().login
+          // /ko
+        // /ko
       nav#menu-mobile.menu.menu--sliding
         ul.menu__level
           li.menu__item
