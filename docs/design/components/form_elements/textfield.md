@@ -6,6 +6,8 @@ order: 1
 
 A **text field** is a basic control that enables the user to type text. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
 
+Most systems support placeholder text within text fields. Placeholder text is only used if necessary and needs to be visually distinguishable from entered data. Placeholder text must not be used to replace a [label](http://design.axa.ch/design/components/form_elements/labels.html).
+
 > - Optimize the virtual keyboard for the requested input format (e.g. email address, phone number, URL, PIN, date, ...)
 
 <!--
