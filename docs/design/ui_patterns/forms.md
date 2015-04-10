@@ -113,7 +113,7 @@ When it comes to form elements, we follow the touch-first principle. Inputs whic
 For a list of items please see the [form elements](/design/components/form_elements) in the [components](/design/components/) section
 
 >**Checklist: form elements**
-- Inputs which require a keyboard should always be the last option
+- Inputs which require a keyboard should always be the last option  
 - Stay on Keypad: condense UI where appropriate
 - Skip Steps: get people into input mode asap
 
