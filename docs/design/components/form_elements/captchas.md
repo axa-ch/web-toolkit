@@ -1,3 +1,10 @@
+---
+title: Captchas
+slug: captchas
+collection: design_components
+template: design.jade
+---
+
 #Captcha
 
 Traditional captchas that require the user to decode some characters must be avoided due to accessibility and usability drawbacks.
