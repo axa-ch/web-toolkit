@@ -3,6 +3,9 @@ title: Form Design
 template: design.jade
 order: 1
 ---
+>Important: eForms
+Whenever possible, forms that face external customers should be built with the eForms solutions which already incooperates the whole styleguide. To learn more see the [do I need to use the eForms solution checklist](# "eForms Checklist")
+
 
 Try to find someone who likes filling forms, you won't. This is the reason why we built this guide on how to build forms for AXA. We included checklist for most topics, which give you a deeper insight and valuable tipps on how to build less annoying forms.
 
