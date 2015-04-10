@@ -193,6 +193,16 @@ module.exports = exports = function (options) {
         filter: function () { return true; }
       })));
 
+    // do the ng scripts
+    metalsmith.use(assets({
+      source: './docs/ng/',
+      destination: './ng'
+    }));
+    metalsmith.use(assets({
+      source: './ng/',
+      destination: './ng'
+    }));
+
     // we no need these files
     metalsmith.use(ignore('layouts/**'));
     metalsmith.use(ignore('less/**'));
