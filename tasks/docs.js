@@ -69,9 +69,9 @@ module.exports = exports = function (options) {
       destination: './images'
     }));
 
-    // include js files
+    // include jquery files
     metalsmith.use(assets({
-      source: './dist/js',
+      source: './dist/jquery',
       destination: './js'
     }));
 
