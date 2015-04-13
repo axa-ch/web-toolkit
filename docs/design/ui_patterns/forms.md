@@ -98,13 +98,13 @@ As many inputs as possible should be validated as soon as the user left the inpu
 
 ###Suggestions
 
-If a user has to enter a specific but already known value, an autocomplete suggest functions helps the user to complete his goal. Suggestions should always be designed to fit the usecase but there should never be more than 10 results at a time shown to the user to avoid confusion.
+If a user has to enter a specific but already known value, an autocomplete suggest functions helps the user to complete his goal. Suggestions should always be designed to fit the usecase but there should never be more than 10 results at a time shown to the user to avoid confusion. Instead, give him the option to show all results.
 
 ###Limits
 
 If there is a limit to the length of a text field or area and the user is likely to exceed, give him a hint.
 
->Good / Bad Image
+![Good Example of a length indicator](/images/design/length_indicator.png)
 
 
 #Form elements

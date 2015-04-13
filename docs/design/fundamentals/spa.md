@@ -26,7 +26,8 @@ Every actions creates a reaction. Users always need to know if the system is wor
 
 ###Load Spinners
 Load spinners tell a user that the site is working / loading / rendering or any other action. AXA created a custom spinner which should be used whenever a delay is possible. The text in front of the spinner should be adapted to the action happening. A generic "loading" may not always be the best solution.
-![A load spinner](http://spiffygif.com/?color=000)
+
+![A generic load spinner](/images/design/ajax-loader.gif)
 
 ##Animations & Transitions
 Moving elements are a powerful tool to attract and or waste users’ attention. When designing an animation consider its goal, its frequency of occurrence, and its mechanics.
