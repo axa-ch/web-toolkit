@@ -38,13 +38,17 @@ Employ them sparingly and only when they add meaning to the interaction. Think a
 - Slower transitions are less likely to cause an attention shift and are thus less distracting. They are appropriate for animations indirectly triggered by the user or not user initiated in any way. In these situations, the new element should appear with little or no change in position to minimize distraction.
 - Fast animations are more likely to attract attention when they happen outside the user’s focus of attention. They are suitable for important elements that users must attend to and act upon.
 
-Good Example
-[![Good Animation](/images/design/goodAnimation.png)](http://s3.amazonaws.com/media.nngroup.com/media/editor/2014/09/09/AppearingFormFields.mp4)
-click video to play
+###Good Example
+<video width="100%" height="auto" controls>
+  <source src="http://s3.amazonaws.com/media.nngroup.com/media/editor/2014/09/09/AppearingFormFields.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
-Bad Example
-[![Bad Animation](/images/design/badAnimation.png)](http://s3.amazonaws.com/media.nngroup.com/media/editor/2014/09/09/Menu-SlowRepeatedAnimation.mp4)
-click video to play
+###Bad Example
+<video width="100%" height="auto" controls>
+  <source src="http://s3.amazonaws.com/media.nngroup.com/media/editor/2014/09/09/Menu-SlowRepeatedAnimation.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 ##Prototyping
 Prototyping of transitions & animations are not easily done.
