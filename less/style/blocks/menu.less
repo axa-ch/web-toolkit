@@ -65,14 +65,14 @@
     border-bottom: 1px solid @color-tbd-13;
 
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 22px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 
     background-color: @color-blue;
-    color: @color-tbd-4;
+    color: @color-white;
 
 
     &:hover {
@@ -84,7 +84,7 @@
     }
 
     &.is-active {
-      background-color: @color-tbd-10;
+      background-color: @color-tbd-24;
       color: white;
     }
   }
@@ -107,7 +107,7 @@
     .icon;
     .icon--arrow-left;
 
-    background-color: @color-tbd-10;
+    background-color: @color-tbd-24;
 
     &::before {
       display: block;
@@ -117,7 +117,6 @@
 
       font-size: 1.4em;
     }
-
     &:hover {
       color: white;
     }
@@ -225,6 +224,12 @@
 
   .menu__item {
     float: none;
+
+    &:first-of-type {
+      .menu__link {
+        border-top: 1px solid @color-tbd-13;
+      }
+    }
   }
 }
 

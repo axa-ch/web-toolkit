@@ -139,9 +139,16 @@ html
 
     .site__mobile-menu
       .site__mobile-menu__header
-        h1.heading.heading--mobile-menu AXA CH Web Style Guide
+        if segment == 'design'
+          h1.site__mobile-menu__title Design Guidelines
+        else if segment == 'development'
+          h1.site__mobile-menu__title Developer Toolkit
+        else if segment == 'examples'
+          h1.site__mobile-menu__title Examples
+        else
+          h1.site__mobile-menu__title Web Design Guide
         // ko if: github.isSignedIn()
-        p
+        p.site__mobile-menu__user
           // ko:text viewModel.github.user().login
           // /ko
         // /ko
@@ -228,6 +235,17 @@ html
               href=relative('/examples')
               data-link='/examples/index.html'
             ) Examples
+      .site__mobile-menu__logout
+        a.site__mobile-menu__logout__link Logout
+      ul.site__mobile-menu__languages
+        li.language-item
+          a.language-link DE
+        li.language-item
+          a.language-link FR
+        li.language-item
+          a.language-link IT
+        li.language-item
+          a.language-link EN
 
     script(type='text/javascript').
       // Set the right mobile menu level as current

@@ -70,9 +70,24 @@
 }
 
 .site__mobile-menu__header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.site__mobile-menu__title {
+  margin: 0;
+
+  font-size: 24px;
   text-align: center;
-  color: @color-tbd-4;
-  margin-bottom: 20px;
+
+  color: white;
+}
+
+.site__mobile-menu__user {
+  font-size: 15px;
+  text-align: center;
+
+  color: @color-tbd-25;
 }
 
 .site__mobile-menu__logout {
@@ -84,16 +99,20 @@
 
   padding: 17px 15px 16px 15px;
 
+  font-size: 17px;
+
   background: @color-blue-gray;
   color: @color-white;
 
   &:hover {
-    color: @color-gray--light;
+    cursor: pointer;
+    color: @color-white;
   }
 }
 
 .site__mobile-menu__languages {
   display: table;
+  table-layout: fixed;
 
   width: 100%;
   padding: 0;
@@ -113,6 +132,10 @@
     &:last-of-type {
       border-right: none;
     }
+
+    &.is-active {
+      background-color: @color-tbd-24;
+    }
   }
 
   .language-link {
@@ -120,11 +143,11 @@
 
     padding: 10px 15px 10px 15px;
 
-    font-size: 16px;
+    font-size: 17px;
     line-height: 22px;
     text-align: center;
 
-    color: @color-tbd-4;
+    color: @color-white;
 
     &:hover {
       cursor: pointer;
