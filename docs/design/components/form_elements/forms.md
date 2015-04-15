@@ -2,6 +2,7 @@
 title: Form groups
 template: design.jade
 order: 0
+draft: true
 ---
 
 A **form group** is used to group a label and a form control (e.g. text field).
@@ -56,54 +57,6 @@ There is the possiblity to add an error message and/or an info text.
 | -- | -- | -- | -- |
 | TBD | TBD | TBD | TBD |
 
-## Info text closed
-
-<div style="max-width: 700px" >
-  <div class="form__group">
-    <label class="form__group__label">
-      <div class="info-icon">
-        <a class="info-icon__icon"></a>
-        <label class="info-icon__label">Some label</label>
-      </div>
-    </label>
-    <div class="form__group__control">
-      <input type="text" class="control control--input" value="form control" />
-    </div>
-  </div>
-</div>
-
-## Design specs
-
-|    | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- | -- |
-| TBD | TBD | TBD | TBD |
-
-# Info text opened
-
-## Example
-
-<div style="max-width: 700px" >
-  <div class="form__group">
-    <label class="form__group__label">
-      <div class="info-icon">
-        <a class="info-icon__icon is-active"></a>
-        <label class="info-icon__label">Some label</label>
-      </div>
-    </label>
-    <div class="form__group__control">
-      <input type="text" class="control control--input" value="form control" />
-      <div class="form__info-text info-text">
-        <p>Place explanations here!</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-## Design specs
-
-|    | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- | -- |
-| TBD | TBD | TBD | TBD |
 
 # Form group without label
 

@@ -6,13 +6,7 @@ order: 2
 
 #Login
 
-Login form are different from regular forms and follow specific guidelines.
-
-##Show Password
-
-Every password field should feature an additional checkbox which allows the user to show his password in plain text. This is highly appreciated feature by many users and considered good practice.
-
->image
+Login forms are different from regular forms and follow specific guidelines.
 
 ##Submit Buttons
 
