@@ -1,5 +1,5 @@
 ---
-title: Form Element
+title: Form Elements
 template: design.jade
 order: 0
 ---

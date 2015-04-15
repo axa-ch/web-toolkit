@@ -7,7 +7,7 @@ order: 2
 #Help Text
 
 Help text can be provided to help users fill in the form and to clear up questions. Still, don’t use labels to fix shortcomings of bad form design or unclear label text.
-Help text slides in after the user clicks or taps on the information icon.
+Help text slides in after the user clicks or taps on the information icon. It is always displayed just below the affected element(s).
 
 >Checklist: Help Text
 - Avoid help texts wherever and whenever possible.
