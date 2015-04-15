@@ -94,8 +94,8 @@ html
                       )= s.name
             .header__meta__lower
               .header__meta__welcome
-                ul
-                  li.header__meta__welcome__item
+                div
+                  .header__meta__welcome__main
                     if segment == 'design'
                       span Design Guidelines
                     else if segment == 'development'
@@ -104,6 +104,12 @@ html
                       span Examples
                     else
                       span Web Design Guide
+
+                  // ko if: github.isSignedIn()
+                  .header__meta__welcome__secondary
+                    // ko:text viewModel.github.user().login
+                    // /ko
+                  // /ko
 
         if menu
           .header__menu

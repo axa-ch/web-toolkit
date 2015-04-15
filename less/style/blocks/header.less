@@ -104,7 +104,7 @@
   }
 }
 
-.header__meta__welcome__item {
+.header__meta__welcome__main {
   float: left;
 
   height: 16px; // Hack to get the border-right exactly 16px height
@@ -112,7 +112,8 @@
   margin: 0;
 
   line-height: 16px;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
   font-family: ITCFranklinGothicCondensedDemi, sans-serif;
 
   color: @color-blue;
@@ -121,13 +122,30 @@
     color: @color-blue;
     text-decoration: none;
   }
-
-  & + & {
-    padding-left: 10px;
-    border-left: 1px solid @color-gray--darker;
-    margin-left: 10px;
-  }
 }
+
+.header__meta__welcome__secondary {
+  float: left;
+
+  height: 16px; // Hack to get the border-right exactly 16px height
+  padding: 0;
+  margin: 0;
+
+  line-height: 16px;
+  font-size: 16px;
+  font-family: ITCFranklinGothicCondensedDemi, sans-serif;
+
+  color: @color-blue;
+
+  a {
+    color: @color-blue;
+    text-decoration: none;
+  }
+  padding-left: 10px;
+  border-left: 1px solid @color-gray--darker;
+  margin-left: 10px;
+}
+
 
 .header__meta__social {
   float: right;
