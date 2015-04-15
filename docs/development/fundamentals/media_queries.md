@@ -1,9 +1,8 @@
 ---
 title: Media Queries
-slug: 2media
+segment: development
 template: development.jade
-collection: development
-status: experimental
+order: 5
 ---
 
 # Definition

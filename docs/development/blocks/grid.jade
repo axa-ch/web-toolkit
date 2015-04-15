@@ -1,7 +1,5 @@
 ---
 title: Grid system
-slug: grid
-collection: development_blocks
 template: development.jade
 ---
 
@@ -58,28 +56,28 @@ table.table
       th.table__header__info medium
       th.table__header__info large
   tbody.table__content
-    tr.table__item
-      th.table__item__info Breakpoint
-      td.table__item__info < 768px
-      td.table__item__info ≥ 768px
-      td.table__item__info ≥ 1024px
-    tr.table__item
-      th.table__item__info Grid behavior
-      td.table__item__info Horizontal at all times
-      td.table__item__info(colspan="2").
+    tr.table__row
+      th.table__row__item Breakpoint
+      td.table__row__item < 768px
+      td.table__row__item ≥ 768px
+      td.table__row__item ≥ 1024px
+    tr.table__row
+      th.table__row__item Grid behavior
+      td.table__row__item Horizontal at all times
+      td.table__row__item(colspan="2").
         Collapsed to start, horizontal above breakpoints
-    tr.table__item
-      th.table__item__info CSS class prefix
-      td.table__item__info
+    tr.table__row
+      th.table__row__item CSS class prefix
+      td.table__row__item
         code .l-col--*
-      td.table__item__info
+      td.table__row__item
         code .l-col--medium-*
-      td.table__item__info
+      td.table__row__item
         code .l-col--large-*
-    tr.table__item
-      th.table__item__info Number of columns
-      td.table__item__info(colspan="3")
-        .table__item__info__content 12
+    tr.table__row
+      th.table__row__item Number of columns
+      td.table__row__item(colspan="3")
+        .table__row__item__content 12
 
 h3 Column classes
 

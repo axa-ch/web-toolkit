@@ -3,7 +3,6 @@ title: Form Design
 template: design.jade
 order: 1
 ---
-
 Try to find someone who likes filling forms, you won't. This is the reason why we built this guide on how to build forms for AXA. We included checklist for most topics, which give you a deeper insight and valuable tipps on how to build less annoying forms.
 
 >Checklist: Form Basics
@@ -71,7 +70,7 @@ similar
 Sometimes, a lot of answers to a question are possible and we even need it in a certain format. This is when inline validation steps in.
 Inline validation can provide several types of feedback: confirmation that an appropriate answer was given, suggestions for valid answers, and real-time updates designed to help people stay within necessary limits. These bits of feedback usually happen when people begin, continue, or stop entering answers within input fields.
 
->Inline Validation Checklist
+>**Inline Validation Checklist**
 - Consider using inline validation to confirm or
 suggest valid answers and to help people stay
 within limits.
@@ -99,38 +98,22 @@ As many inputs as possible should be validated as soon as the user left the inpu
 
 ###Suggestions
 
-If a user has to enter a specific but already known value, an autocomplete suggest functions helps the user to complete his goal. Suggestions should always be designed to fit the usecase but there should never be more than 10 results at a time shown to the user to avoid confusion.
+If a user has to enter a specific but already known value, an autocomplete suggest functions helps the user to complete his goal. Suggestions should always be designed to fit the usecase but there should never be more than 10 results at a time shown to the user to avoid confusion. Instead, give him the option to show all results.
 
 ###Limits
 
 If there is a limit to the length of a text field or area and the user is likely to exceed, give him a hint.
 
->Good / Bad Image
+![Good Example of a length indicator](/images/design/length_indicator.png)
 
-#Captcha
-
-Traditional captchas that require the user to decode some characters must be avoided due to accessibility and usability drawbacks.
-
->images
-
-#Honeypot
-
-Honeypots are hidden form fields that trap spam robots because those robots can't distinguish between shown and hidden form fields. Therefore, a robot will fill the field and therefore fail the test. *Nevertheless* this field should have a clear label which tells users with screen readers to not fill this form.
->Best practice translations
-DE: Wenn Sie ein Mensch sind, lassen Sie bitte das nächste Feld leer.
-EN: Are you human? If yes, please don't fill anything into the next field.
-FR:
-IT:
-
-#Timestamps
-If honeypots are not enough to stop spammers, consider to measure the time a user needs to fill in the form. If a user requires less than (for example!) 10 seconds to fill 5 fields, it's probably a spam-robot. This technique should be carefully implemented and take prefilling into account, since this can massively speed up a users data entrance.
 
 #Form elements
 
 When it comes to form elements, we follow the touch-first principle. Inputs which require a keyboard should always be chosen last, because text inputs are a burden for many users.
+For a list of items please see the [form elements](/design/components/form_elements) in the [components](/design/components/) section
 
->Checklist: form elements
-- Inputs which require a keyboard should always be the last option
+>**Checklist: form elements**
+- Inputs which require a keyboard should always be the last option  
 - Stay on Keypad: condense UI where appropriate
 - Skip Steps: get people into input mode asap
 

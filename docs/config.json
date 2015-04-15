@@ -56,5 +56,21 @@
   },{
     "name": "UI Patterns",
     "pattern": "design/ui_patterns/*"
+  }],
+  "development": [{
+    "name": "Fundamentals",
+    "pattern": "development/fundamentals/*"
+  },{
+    "name": "Blocks",
+    "pattern": "development/blocks/*"
+  },{
+    "name": "Less Mixins",
+    "pattern": "development/mixins/*"
+  },{
+    "name": "jQuery Plugins",
+    "pattern": "development/plugins/*"
+  },{
+    "name": "ng directives",
+    "pattern": "development/directives/*"
   }]
 }

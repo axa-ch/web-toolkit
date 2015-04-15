@@ -105,10 +105,6 @@ module.exports = exports = function (options) {
     // TODO: Remove when collection plugin supports undeclared collections
     var collections_options = {};
     [
-      'development',
-      'development_blocks',
-      'development_plugins',
-      'development_mixins',
       'examples'
     ].forEach(function (name) {
       collections_options[name] = { sortBy: 'slug', reverse: false };
@@ -120,22 +116,27 @@ module.exports = exports = function (options) {
         reverse: false,
         pattern: pattern
       }
-    }
+    };
 
     var normalizeCollectionName = function(parts) {
       return parts.join('__').replace(/\s/g, '_');
-    }
+    };
 
-    config.design.forEach(function(topLevelItem) {
-      if(topLevelItem.pattern)
-        addCollectionOption(normalizeCollectionName([topLevelItem.name]), topLevelItem.pattern)
+    var addMenu = function(prefix) {
+      return function(topLevelItem) {
+        if(topLevelItem.pattern)
+          addCollectionOption(normalizeCollectionName([prefix, topLevelItem.name]), topLevelItem.pattern);
 
-      if(topLevelItem.children)
-        topLevelItem.children.forEach(function(secondLevelItem) {
-          if(secondLevelItem.pattern)
-            addCollectionOption(normalizeCollectionName([topLevelItem.name, secondLevelItem.name]), secondLevelItem.pattern)
-        })
-    })
+        if(topLevelItem.children)
+          topLevelItem.children.forEach(function(secondLevelItem) {
+            if(secondLevelItem.pattern)
+              addCollectionOption(normalizeCollectionName([prefix, topLevelItem.name, secondLevelItem.name]), secondLevelItem.pattern)
+          })
+      }
+    };
+
+    config.design.forEach(addMenu("design"));
+    config.development.forEach(addMenu("development"));
 
     metalsmith.use(branch('**/*.md')
       .use(relative())

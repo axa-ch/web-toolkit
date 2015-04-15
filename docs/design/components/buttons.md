@@ -35,8 +35,8 @@ See the feedback button on the bottom right corner of this page for an example.
 
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Foobar | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
-| Baz | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> blue |
+| Foobar | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
+| Baz | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> blue |
 
 # Regular buttons
 
@@ -62,6 +62,6 @@ Try to avoid the usage of small buttons. Use them when there is not enough space
 
 |    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
 | -- | -- | -- |
-| Foobar | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
-| Baz | <div class="table__item__info__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__item__info__content__label" ><i class="icon icon--desktop" ></i></div> blue |
+| Foobar | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
+| Baz | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> blue |
 <!-- Copyright AXA Versicherungen AG 2015 -->
