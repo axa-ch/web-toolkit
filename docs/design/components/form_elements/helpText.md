@@ -17,24 +17,20 @@ Help text slides in after the user clicks or taps on the information icon. It is
 - Triggers for user-activated help text should be placed next to labels and not input fields.
 
 ##Example
-#HIER MUSS EIN FUNKTIONIERENDES i-ICON EINGEBAUT WERDEN
-<div class="l-container">
-  <div class="form">
-    <div class="form__group">
-      <div class="form__group__label">
-        <div class="form__group__label__info-icon">
-          <div class="info-icon"></div>
-        </div>
-        <label class="form__group__label__info-icon-text-wrapper">
-          <div class="form__group__label__text">Form label</div>
-        </label>
-      </div>
-      <div class="form__group__control">
-        <input type="text" class="control control--input"/>
-        <div class="form__info-text">
-          <div class="info-text">
-            <p>Hallo Welt!</p>
-          </div>
+
+<div class="form">
+  <div class="form__group">
+    <div class="form__group__label">
+      <div class="form__group__label__info-icon"><a data-info="data-info" data-target="#target" class="info-icon is-active"></a></div>
+      <label class="form__group__label__info-icon-text-wrapper">
+        <div class="form__group__label__text">Was wurde beschädigt?</div>
+      </label>
+    </div>
+    <div class="form__group__control">
+      <input type="text" class="control control--input">
+      <div id="target" style="display: block;" class="form__info-text">
+        <div class="info-text">
+          <p>Hallo Welt!</p>
         </div>
       </div>
     </div>
