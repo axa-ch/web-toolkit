@@ -4,6 +4,8 @@ template: design.jade
 order: 1
 ---
 
+<a href="../psd/form.psd" class="download" >Download Photoshop files</a>
+
 A **checkbox** is a basic control that enables the user to select or deselect one or multiple options.
 
 ##Example

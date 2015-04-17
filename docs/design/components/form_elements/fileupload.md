@@ -4,6 +4,8 @@ collection: design_components
 template: design.jade
 ---
 
+<a href="../psd/form.psd" class="download" >Download Photoshop files</a>
+
 The fileupload functionality allows the user to upload images or documents.
 The Web Style Guide provides two controls to upload files. The `single-upload`
 is designed for use cases where only one document should be uploaded and the

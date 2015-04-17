@@ -4,6 +4,8 @@ template: design.jade
 order: 3
 ---
 
+<a href="./psd/form.psd" class="download" >Download Photoshop files</a>
+
 Use a label and/or an icon to make it clear to the user what happens when he clicks / taps a button. Placement and behaviour of buttons should avoid mistakes. There are two types of buttons:
 
 - Regular button: A rectangular button that represents a primary or secondary action of a section

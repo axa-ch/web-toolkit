@@ -4,6 +4,8 @@ template: design.jade
 order: 0
 ---
 
+<a href="../psd/form.psd" class="download" >Download Photoshop files</a>
+
 ## Example
 
 <div style="max-width: 700px" >

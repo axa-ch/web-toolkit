@@ -4,6 +4,8 @@ template: design.jade
 order: 2
 ---
 
+<a href="../psd/form.psd" class="download" >Download Photoshop files</a>
+
 #Help Text
 
 Help text can be provided to help users fill in the form and to clear up questions. Still, don’t use labels to fix shortcomings of bad form design or unclear label text.

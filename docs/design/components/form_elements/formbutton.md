@@ -4,6 +4,8 @@ template: design.jade
 order: 3
 ---
 
+<a href="../psd/form.psd" class="download" >Download Photoshop files</a>
+
 #Action-Buttons
 
 Primary actions bring people closer to completion, secondary actions allow them to go back. Make it clear to the user what happens after he clicks / taps a button. Placement and behaviour of buttons should avoid mistakes.

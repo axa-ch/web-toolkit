@@ -4,6 +4,8 @@ template: design.jade
 order: 1
 ---
 
+<a href="../psd/form.psd" class="download" >Download Photoshop files</a>
+
 A **segmented control** is a basic control that enables the user to make a single selection from just a few options. A single tab or click enables the user to choose a value. Default values can be set if appropriate - if in doubt, do not set defaults.
 
 Do not use a segmented control if the user has to choose from many different options. In this case, use a [dropdown element](#) or a grid view.
