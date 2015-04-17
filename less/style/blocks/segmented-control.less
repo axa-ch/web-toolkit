@@ -1,4 +1,5 @@
 @import '../mixins/invisible-input';
+@import '../mixins/invisible-font';
 @import '../blocks/icon';
 @import '../blocks/checkbox-group';
 @import '../blocks/checkbox';
@@ -14,6 +15,8 @@
 }
 
 .segmented-control--js {
+  .invisible-font();
+
   &.segmented-control--stacked {
     .segmented-control__item {
       display: block;
@@ -60,6 +63,7 @@
   }
 
   .segmented-control__item__label {
+
     &:after {
       content: '';
 
@@ -98,6 +102,8 @@
   }
 
   .segmented-control__item {
+    .undo-invisible-font();
+    
     display: inline-block;
 
     height: 40px;
