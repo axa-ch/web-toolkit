@@ -14,12 +14,33 @@ template: development.jade
     ```html
     <body class="site">
       <div class="site__page">Your content here!</div>
+      <div class="site__mobile-menu__header">
+        <h1 class="heading heading--mobile-menu">AXA CH Web Style Guide</h1>
+        <p>Max Muster</p>
+      </div>
       <div class="site__mobile-menu">
         <nav class="menu menu--sliding">
           <ul class="menu__level">
             <li class="menu__item"><a class="menu__link">Overview</a></li>
           </ul>
         </nav>
+        <div class="site__mobile-menu__logout">
+          <a class="site__mobile-menu__logout__link">Logout</a>
+        </div>
+        <ul class="site__mobile-menu__languages">
+          <li class="language-item">
+            <a class="language-link">DE</a>
+          </li>
+          <li class="language-item">
+            <a class="language-link">FR</a>
+          </li>
+          <li class="language-item">
+            <a class="language-link">IT</a>
+          </li>
+          <li class="language-item">
+            <a class="language-link">EN</a>
+          </li>
+        </ul>
       </div>
     </body>
     ```

@@ -142,7 +142,20 @@ html
                 span.menu__link AXA 2014 ©
 
     .site__mobile-menu
-
+      .site__mobile-menu__header
+        if segment == 'design'
+          h1.site__mobile-menu__title Design Guidelines
+        else if segment == 'development'
+          h1.site__mobile-menu__title Developer Toolkit
+        else if segment == 'examples'
+          h1.site__mobile-menu__title Examples
+        else
+          h1.site__mobile-menu__title Web Design Guide
+        // ko if: github.isSignedIn()
+        p.site__mobile-menu__user
+          // ko:text viewModel.github.user().login
+          // /ko
+        // /ko
       nav#menu-mobile.menu.menu--sliding
         ul.menu__level
           li.menu__item
