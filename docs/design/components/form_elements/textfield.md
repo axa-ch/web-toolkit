@@ -4,7 +4,9 @@ template: design.jade
 order: 1
 ---
 
-<a href="../psd/form.psd" class="download" >Download Photoshop files</a>
+<a href="../psd/AXA_forms_desktop.psd" class="download download--desktop" >Download PSD (Desktop)</a>
+
+<a href="../psd/AXA_forms_mobile.psd" class="download download--mobile" >Download PSD (Mobile)</a>
 
 A **text field** is a basic control that enables the user to type text. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
 

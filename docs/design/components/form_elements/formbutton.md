@@ -4,7 +4,9 @@ template: design.jade
 order: 3
 ---
 
-<a href="../psd/form.psd" class="download" >Download Photoshop files</a>
+<a href="../psd/AXA_forms_desktop.psd" class="download download--desktop" >Download PSD (Desktop)</a>
+
+<a href="../psd/AXA_forms_mobile.psd" class="download download--mobile" >Download PSD (Mobile)</a>
 
 #Action-Buttons
 
