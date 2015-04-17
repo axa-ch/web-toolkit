@@ -36,29 +36,6 @@ Do use lists to [list](#) one or multiple rows of similar structured data or inf
   </div>
 </div>
 
-# Design Specs
-
-|   | Mobile | Desktop |
-| - | ------ | ------- |
-| Foobar | 5px | 10px |
-| Baz | red | black |
-
-<div class="l-row" >
-  <div class="l-col l-col--medium-6" >
-    <h3>Desktop</h3>
-    <ul>
-      <li>Foo</li>
-    </ul>
-  </div>
-  <div class="l-col l-col--medium-6" >
-    <h3>Mobile</h3>
-    <ul>
-      <li>Bar</li>
-      <li>Baz</li>
-    </ul>
-  </div>
-</div>
-
 
 # Simple list
 *V1.0, beta*
@@ -71,15 +48,6 @@ Elements are arranged according to the grid and always full width. Mobile device
 
 >here we are now, examplain us
 
-## Design Principles
-
-| Principle     | Value           | Comment  |
-| ------------- |:-------------:  | :--------|
-| Border Color  |   #fff          |     -    |
-| Border Style  | 5px, solid      | -        |
-| Line-Height   | 1.5             |          |
-| Min Width     | 200px           | if smaller, display one element less on the same line. If it's already the only element, break content into multiple rows.|
-
 ---
 # Basic Sortable List
 *V1.0, beta*
@@ -89,14 +57,6 @@ In contrast to the simple list, the sortable list has a heading on top of all ro
 ## Examples
 
 Finally, we show the elment. If this element type is available in different states, sizes, variations and positions give different examples. If possible, an graphical-meassurement overlay should be shown on request.
-## Design Principles
-
-| Principle     | Value           | Comment  |
-| ------------- |:-------------:  | :--------|
-| Border Color  |   #fff          |     -    |
-| Border Style  | 5px, solid      | -        |
-| Line-Height   | 1.5             |          |
-| Min Width     | 200px           | if smaller, display one element less on the same line. If it's already the only element, break content into multiple rows.|
 
 ---
 # Professional Filter & Sortable List
@@ -109,12 +69,5 @@ Here we will have a detailed explanation of how this element realyl works.
 ## Examples
 
 Finally, we show the elment. If this element type is available in different states, sizes, variations and positions give different examples. If possible, an graphical-meassurement overlay should be shown on request.
-## Design Principles
 
-| Principle     | Value           | Comment  |
-| ------------- |:-------------:  | :--------|
-| Border Color  |   #fff          |     -    |
-| Border Style  | 5px, solid      | -        |
-| Line-Height   | 1.5             |          |
-| Min Width     | 200px           | if smaller, display one element less on the same line. If it's already the only element, break content into multiple rows.|
 <!-- Copyright AXA Versicherungen AG 2015 -->

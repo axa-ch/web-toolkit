@@ -25,16 +25,6 @@ There is the possiblity to add an error message and/or an info text.
   </div>
 </div>
 
-## Design specs
-
-|    | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- | -- |
-| Label width | 12 columns | 6 columns | 5 columns |
-| Label text | Arial 14px | Arial 14px | Arial 14px |
-| Label color | #333333 | #333333 | #333333 |
-| Label vertical-align | 10px offset to the control | middle of top 40px | middle of top 40px |
-| Control width | 12 columns | 6 columns | 6 columns |
-
 # Error message
 
 ## Example
@@ -52,13 +42,6 @@ There is the possiblity to add an error message and/or an info text.
     </div>
   </div>
 </div>
-
-## Design specs
-
-|    | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- | -- |
-| TBD | TBD | TBD | TBD |
-
 
 # Form group without label
 
@@ -79,9 +62,4 @@ You can omit the label in some use cases (e.g. privacy checkmark).
   </div>
 </div>
 
-## Design specs
-
-| | <i class="icon icon--mobile" ></i>| <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- | -- |
-| Control width | 12 columns | 12 columns | 11 columns |
 <!-- Copyright AXA Versicherungen AG 2015 -->

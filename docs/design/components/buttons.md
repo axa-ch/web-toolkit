@@ -33,13 +33,6 @@ See the feedback button on the bottom right corner of this page for an example.
   <a class="button button--floating icon icon--feedback"></a>
 </div>
 
-## Design specs
-
-|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- |
-| Foobar | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
-| Baz | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> blue |
-
 # Regular buttons
 
 ## Should I use a small button?
@@ -60,10 +53,4 @@ Try to avoid the usage of small buttons. Use them when there is not enough space
   <a class="button button--small">Primary action</a>
 </div>
 
-## Design specs
-
-|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- |
-| Foobar | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 3px | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 5px |
-| Baz | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> red | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> blue |
 <!-- Copyright AXA Versicherungen AG 2015 -->

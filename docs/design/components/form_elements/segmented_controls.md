@@ -21,4 +21,4 @@ Do not use a segmented control if the user has to choose from many different opt
   </label>
 </div>
 
-## Design specs
+<!-- Copyright AXA Versicherungen AG 2015 -->
