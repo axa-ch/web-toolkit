@@ -4,14 +4,15 @@ collection: design_components
 template: design.jade
 ---
 
-<a href="../psd/AXA_forms_desktop.psd" class="download download--desktop" >Download PSD (Desktop)</a>
-
-<a href="../psd/AXA_forms_mobile.psd" class="download download--mobile" >Download PSD (Mobile)</a>
-
 The fileupload functionality allows the user to upload images or documents.
 The Web Style Guide provides two controls to upload files. The `single-upload`
 is designed for use cases where only one document should be uploaded and the
 `multi-upload` allows an uncertain amount of documents.
+
+<span class="downloads" >
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+</span>
 
 # Multi and Single Uploads
 The multi file upload has a list of files. When you drop a new file over the

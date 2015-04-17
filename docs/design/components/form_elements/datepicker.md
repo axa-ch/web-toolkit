@@ -4,13 +4,14 @@ template: design.jade
 order: 4
 ---
 
-<a href="../psd/AXA_forms_desktop.psd" class="download download--desktop" >Download PSD (Desktop)</a>
-
-<a href="../psd/AXA_forms_mobile.psd" class="download download--mobile" >Download PSD (Mobile)</a>
-
 The **datepicker** component is meant to help a user select an appropriate date.
 You can use a placeholder to display a sample date. In some cases, such as
 search, default values may be used.
+
+<span class="downloads" >
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+</span>
 
 # Mobile
 

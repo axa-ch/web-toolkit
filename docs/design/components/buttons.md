@@ -4,10 +4,6 @@ template: design.jade
 order: 3
 ---
 
-<a href="./psd/AXA_forms_desktop.psd" class="download download--desktop" >Download PSD (Desktop)</a>
-
-<a href="./psd/AXA_forms_mobile.psd" class="download download--mobile" >Download PSD (Mobile)</a>
-
 Use a label and/or an icon to make it clear to the user what happens when he clicks / taps a button. Placement and behaviour of buttons should avoid mistakes. There are two types of buttons:
 
 - Regular button: A rectangular button that represents a primary or secondary action of a section
@@ -17,6 +13,10 @@ Use a label and/or an icon to make it clear to the user what happens when he cli
 > - Previous always stays left of next
 > - Group actions
 > - Always set a useful label and/or icon, to let the user know what will happen next
+
+<span class="downloads" >
+  <a href="./psd/AXA_forms_desktop.psd" class="downloads__link downloads__link--inactive" >COMMING SOON</a>
+</span>
 
 # Floating action buttons
 

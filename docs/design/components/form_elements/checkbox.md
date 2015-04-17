@@ -4,11 +4,12 @@ template: design.jade
 order: 1
 ---
 
-<a href="../psd/AXA_forms_desktop.psd" class="download download--desktop" >Download PSD (Desktop)</a>
-
-<a href="../psd/AXA_forms_mobile.psd" class="download download--mobile" >Download PSD (Mobile)</a>
-
 A **checkbox** is a basic control that enables the user to select or deselect one or multiple options.
+
+<span class="downloads" >
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+</span>
 
 ##Example
 

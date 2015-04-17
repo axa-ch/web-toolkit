@@ -1,7 +1,8 @@
 @import '../variables';
 @import '../blocks/icon';
 
-.download {
+.downloads {
+
   .icon();
   .icon--download();
 
@@ -13,17 +14,26 @@
   font-size: 12px;
 
   &:before {
+    float: left;
     font-size: 21px;
     color: @color-blue-gray;
     vertical-align: middle;
     padding-right: 10px;
   }
+
 }
 
-.download--desktop {
-  .icon--desktop();
+.downloads__link {
+  display: block;
+  margin-top: 10px;
+  margin-left: 30px;
 }
 
-.download--mobile {
-  .icon--mobile();
+.downloads__link--inactive {
+  cursor: default;
+  color: @color-gray;
+
+  &:hover {
+    color: @color-gray;
+  }
 }

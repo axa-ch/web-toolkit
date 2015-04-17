@@ -4,10 +4,6 @@ template: design.jade
 order: 1
 ---
 
-<a href="../psd/AXA_forms_desktop.psd" class="download download--desktop" >Download PSD (Desktop)</a>
-
-<a href="../psd/AXA_forms_mobile.psd" class="download download--mobile" >Download PSD (Mobile)</a>
-
 A **text field** is a basic control that enables the user to type text. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
 
 Most systems support placeholder text within text fields. Placeholder text is only used if necessary and needs to be visually distinguishable from entered data. Placeholder text must not be used to replace a [label](http://design.axa.ch/design/components/form_elements/labels.html).
@@ -19,6 +15,11 @@ Most systems support placeholder text within text fields. Placeholder text is on
 
 To be defined
 -->
+
+<span class="downloads" >
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+</span>
 
 # Single-line text field
 
