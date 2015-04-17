@@ -139,6 +139,11 @@
 }
 
 .header__menu {
-  border-top: 1px solid @color-gray--lighter;
+  display: none;
+
+  .respond(large, {
+    display: block;
+    border-top: 1px solid @color-gray--lighter;
+  });
 }
 /* Copyright AXA Versicherungen AG 2015 */
