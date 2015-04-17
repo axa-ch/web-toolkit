@@ -19,6 +19,7 @@
     toggleMenu: (show) ->
       show = not @$page.hasClass('is-pushed') if not show?
 
+      @$element.toggleClass('is-mobile-nav-open', show)
       @$page.toggleClass('is-pushed', show)
       @$page.toggleClass('is-masked', show) if @options.mask
       @$menu.toggleClass('is-visible', show)

@@ -5,6 +5,14 @@
 
 .site {
   overflow-x: hidden;
+
+  &.is-mobile-nav-open {
+    overflow-y: hidden;
+
+    .respond(large, {
+      overflow-y: inherit;
+    });
+  }
 }
 
 .site__page {
