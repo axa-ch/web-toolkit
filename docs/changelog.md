@@ -7,6 +7,12 @@ template: other.jade
 # 0.5.0 - 
 
 - Bugfix whitespace issue within segmented-control
+- Refactored the `header__meta__welcome` element.
+  - `header__meta__welcome__item` element is replaced by `header__meta__welcome__main` and `header__meta__welcome__secondary`.
+  - Removed `header__meta__social` element.
+  - Added `header__meta__action` element.
+  - Renamed `header__main` to `header__container`
+  - ATTENTION! This requires markup changes for most pages.
 
 # 0.4.1 - 7. April 2015
 
@@ -44,7 +50,7 @@ template: other.jade
     - ATTENTION! This requires a markup change for the `footnote` block.
   - Refactored the `header` block.
     - The optional main navigation is now part of the header.
-    - `header--main` does no longer exist as a modifier but as a block `header__main`.
+    - `header--main` does no longer exist as a modifier but as a element `header__main`.
     - ATTENTION! This requires markup changes for most pages.
 
 # 0.3.0 - 11 Mar, 2015

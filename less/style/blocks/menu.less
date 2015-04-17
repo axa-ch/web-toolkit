@@ -253,7 +253,7 @@
       border-bottom: 5px solid @color-blue;
 
       .menu__link {
-        color: @color-gray--darker;
+        color: @color-blue;
       }
 
       .menu__link--home::before {
@@ -273,7 +273,7 @@
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
 
-    color: @color-gray;
+    color: @color-gray--darker;
   }
 
   .menu__link--home {
@@ -375,27 +375,6 @@
     font-size: 14px; // TODO: fixed font-size
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-transform: uppercase;
-  }
-}
-
-.menu--social {
-
-  .menu__item {
-    margin-left: 8px;
-
-    .respond(large, {
-      float: left;
-    });
-
-    &:first-of-type {
-      margin-left: 20px;
-    }
-
-    .icon {
-      &::before {
-        font-size: 28px;
-      }
-    }
   }
 }
 
