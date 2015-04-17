@@ -70,9 +70,9 @@ html
               // ko if: hasGitHubIntegration
               .header__meta__action
                 // ko if: !github.isSignedIn()
-                .header__action(data-bind='css: {\'menu__item--docs-signin\': !github.isAuthenticating()}')
+                .header__action
                   img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link.docs-github-loading
-                  a(data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").menu__link Sign in with GitHub
+                  a(data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").header__action__button Sign in with GitHub
                 // /ko
                 // ko if: github.isSignedIn()
                 .header__action

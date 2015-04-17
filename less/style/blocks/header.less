@@ -163,8 +163,7 @@
 
 .header__action {
   margin-left: 8px;
-  margin-top: -4px;
-  margin-bottom: -4px;
+  margin-bottom: -3px;
 
   .respond(large, {
     float: left;
@@ -178,6 +177,20 @@
     &::before {
       font-size: 28px;
     }
+  }
+}
+
+.header__action__button {
+  background: red;
+  padding: 5px 10px;
+
+  font-weight: bold;
+
+  color: white;
+
+  &:hover {
+    color: white;
+    cursor: pointer;
   }
 }
 

@@ -12,6 +12,8 @@ template: other.jade
   - Colors within dev toolkit
 - Refactored the `header__meta__welcome` block.
   - `header__meta__welcome__item` block is renamed.
+  - Removed `header__meta__social` block.
+  - Added `header__meta__action` block.
   - ATTENTION! This requires markup changes for most pages.
 
 # 0.4.0 - 1. April 2015
