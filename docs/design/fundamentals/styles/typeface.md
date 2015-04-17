@@ -17,9 +17,10 @@ styles – Book and  Medium.
 > are not approved styles and should not
 > be used.
 
-> ITC Franklin Gothic is not yet implemented.
-> Your browsers default
-> font will render in the examples below.
+<div class="callout callout--danger">
+    <h4 class="callout__heading">Coming soon!</h4>
+    <p class="paragraph">ITC Franklin Gothic is not yet implemented. Your browsers default font will render in the examples below.</p>
+</div>
 
 ## ITC Franklin Gothic Book
 

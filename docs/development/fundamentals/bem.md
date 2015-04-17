@@ -1,7 +1,6 @@
 ---
 title: BEM
 template: development.jade
-status: experimental
 order: 3
 ---
 

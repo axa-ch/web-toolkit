@@ -15,7 +15,7 @@ Use a label and/or an icon to make it clear to the user what happens when he cli
 > - Always set a useful label and/or icon, to let the user know what will happen next
 
 <span class="downloads" >
-  <a href="./psd/AXA_forms_desktop.psd" class="downloads__link downloads__link--inactive" >COMMING SOON</a>
+  <a class="downloads__link downloads__link--inactive" >COMING SOON</a>
 </span>
 
 # Floating action buttons
