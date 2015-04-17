@@ -7,6 +7,11 @@ template: other.jade
 # 0.5.0 - 
 
 - Bugfix whitespace issue within segmented-control
+- Refactored the `header__meta__welcome` element.
+  - `header__meta__welcome__item` element is replaced by `header__meta__welcome__main` and `header__meta__welcome__secondary`.
+  - Removed `header__meta__social` element.
+  - Added `header__meta__action` element.
+  - ATTENTION! This requires markup changes for most pages.
 
 # 0.4.1 - 7. April 2015
 
@@ -14,11 +19,6 @@ template: other.jade
 - Bugfix documentation
   - Markdown tables
   - Colors within dev toolkit
-- Refactored the `header__meta__welcome` block.
-  - `header__meta__welcome__item` block is renamed.
-  - Removed `header__meta__social` block.
-  - Added `header__meta__action` block.
-  - ATTENTION! This requires markup changes for most pages.
 
 # 0.4.0 - 1. April 2015
 
