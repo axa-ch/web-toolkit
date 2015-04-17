@@ -4,6 +4,10 @@ slug: changelog
 template: other.jade
 ---
 
+# 0.5.0 - 
+
+- Bugfix whitespace issue within segmented-control
+
 # 0.4.1 - 7. April 2015
 
 - Bugfix header & footer
