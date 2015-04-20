@@ -4,20 +4,20 @@ template: master.jade
 ---
 
 .error
-  p
+  div
     img.error__image(
       src=relative('/images/404.svg')
       alt='Page not Found'
     )
   .error__title Page not Found
   .error__message
-    p.
+    p.paragraph.
       This page you were trying to reach at this address
       doesn't seem to exist.
       This is usually the result of a bad or outdated link.
       <br>We apologize for any inconvenience.
 
-    p
+    p.paragraph
       a.button.button--primary(
         href=relative('/index.html')
       ) Return to Overview

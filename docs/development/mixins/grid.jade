@@ -3,31 +3,33 @@ title: Grid
 template: development.jade
 ---
 
-p.
+p.paragraph.
   The grid is a central component which enables you to position
   multiple elements in one row. This can be done for all the different
   device and screen sizes.
 
-p
+p.paragraph
   | If you can't make use of the
   a(href=relative("/development/blocks/grid.html"))  predefined grid classes
   |  you can use the grid mixins which are documented here.
 
-h3 Create a custom container
+h2.heading.heading--secondary Create a custom container
 
-p.
+p.paragraph.
   The container is here to contain the whole content of the page.
   It ensures that the page doesn't exceed a certain width and that
   everything is centered on a large device.
 
-p
+p.paragraph
   To transform all container functionality into a custom CSS class,
   just use the following mixin:
 
 .highlight
   pre.highlight__listing.hljs: code.less
     :highlight
-      .make-container([@max-width, [@gutter]]);
+      selector {
+        .make-container([@max-width, [@gutter]]);
+      }
 
 dl
   dt @max-width
@@ -41,12 +43,14 @@ dl
     If no value is provided, the default value
     <code>@grid-gutter-width</code> is taken.
 
-h3 Create a custom row
+h2.heading.heading--secondary Create a custom row
 
 .highlight
   pre.highlight__listing.hljs: code.less
     :highlight
-      .make-row([@gutter]);
+      selector {
+        .make-row([@gutter]);
+      }
 
 dl
   dt @gutter
@@ -56,12 +60,14 @@ dl
     If no value is provided, the default value
     <code>@grid-gutter-width</code> is taken.
 
-h3 Create some custom columns
+h2.heading.heading--secondary Create some custom columns
 
 .highlight
   pre.highlight__listing.hljs: code.less
     :highlight
-      .make-col(@columns, [@device, [@gutter]]);
+      selector {
+        .make-col(@columns, [@device, [@gutter]]);
+      }
 
 dl
   dt @columns
@@ -81,12 +87,14 @@ dl
     If no value is provided, the default value
     <code>@grid-gutter-width</code> is taken.
 
-h3 Skip columns
+h2.heading.heading--secondary Skip columns
 
 .highlight
   pre.highlight__listing.hljs: code.less
     :highlight
-      .make-col-offset(@columns, [@device]);
+      selector {
+        .make-col-offset(@columns, [@device]);
+      }
 
 dl
   dt @columns
@@ -99,12 +107,14 @@ dl
     The default value is <code>small</code> which corresponds to mobile
     devices.
 
-h3 Push a column away, push it over another
+h2.heading.heading--secondary Push a column away, push it over another
 
 .highlight
   pre.highlight__listing.hljs: code.less
     :highlight
-      .make-col-push(@columns, [@device]);
+      selector {
+        .make-col-push(@columns, [@device]);
+      }
 
 dl
   dt @columns
@@ -118,12 +128,14 @@ dl
     The default value is <code>small</code> which corresponds to mobile
     devices.
 
-h3 Pull a column back, pull it over another
+h2.heading.heading--secondary Pull a column back, pull it over another
 
 .highlight
   pre.highlight__listing.hljs: code.less
     :highlight
-      .make-col-pull(@columns, [@device]);
+      selector {
+        .make-col-pull(@columns, [@device]);
+      }
 
 dl
   dt @columns

@@ -3,14 +3,14 @@ title: Collapsing Menu
 template: development.jade
 ---
 
-h3 Intro
+h2.heading.heading--secondary Intro
 
-p.
+p.paragraph.
   The collapsing menu plugin provides all functionality for the collapsible
   menu. It triggers the opening of sub levels when a parent node is
   clicked.
 
-h3 Example
+h2.heading.heading--secondary Example
 
 :sample
   nav.menu.menu--collapsing(data-menu="collapsing", data-exclusive)
@@ -39,23 +39,23 @@ h3 Example
               li.menu__item.is-parent
                 a(href='#mobile-apps').menu__link Mobile apps
 
-h3 Usage
+h2.heading.heading--secondary Usage
 
-p Activate the functionality with JavaScript:
+p.paragraph Activate the functionality with JavaScript:
 
 .highlight
   pre.highlight__listing.hljs: code.js
     :highlight
       $('#menu').collapsingMenu(options)
 
-p Alternatively, you can activate the plugin with data attributes:
+p.paragraph Alternatively, you can activate the plugin with data attributes:
 
 .highlight
   pre.highlight__listing.hljs: code.html
     :highlight
       <nav data-menu="collapsing" data-exclusive></nav>
 
-h4 Options
+h3 Options
 
 table.table
   thead
@@ -77,11 +77,11 @@ table.table
           Closes all other levels when opening a new one. This option
           makes the menu behave like an accordion.
 
-h4 Methods
+h3 Methods
 
-h5: code .collapsingMenu('toggle', menuLevel)
+h4: code .collapsingMenu('toggle', menuLevel)
 
-p Manually toggle a menu level.
+p.paragraph Manually toggle a menu level.
 
 .highlight
   pre.highlight__listing.hljs: code.js

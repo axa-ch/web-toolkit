@@ -4,7 +4,7 @@ template: development.jade
 status: experimental
 ---
 
-h2.heading Intro
+h2.heading.heading--secondary Intro
 :markdown
   The popover block represents a small context dependent dialog to display
   arbitrary elements. It is hidden by default. Add the ``.is-active`` state
@@ -19,7 +19,7 @@ h2.heading Intro
 :markdown
   The popover has a fixed width of 320 pixels. On mobile it's full width.
 
-h2.heading Structure
+h2.heading.heading--secondary Structure
 :markdown
   The ``popover__tail`` block is used to display a small angle to show on which
   element the popover was activated.
@@ -38,5 +38,5 @@ h2.heading Structure
       .popover__box__content__wrapper
         .popover__box__content
           textarea.control.control--textarea
-          p
+          p.paragraph
             a.button.button--small 'clicky click'

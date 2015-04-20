@@ -10,7 +10,7 @@ These are the typography styles for all AXA Webapplications:
 
 # Headline
 
-<h1 class="heading heading--page" >Page heading</h1>
+<h1 class="heading heading--page" >This is a primary headline</h1>
 
 Font Family | Size | Line height | Weight
 --- | --- | --- | ---
@@ -19,7 +19,7 @@ Arial | 38px | 53px | normal
 
 # Subheadline
 
-<h2 class="heading heading--secondary" >Subheadline</h2>
+<h2 class="heading heading--secondary" >This is a secondary headline</h2>
 
 Font Family | Size | Line height | Weight
 --- | --- | --- | ---

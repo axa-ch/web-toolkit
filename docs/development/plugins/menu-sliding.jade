@@ -3,14 +3,14 @@ title: Sliding Menu
 template: development.jade
 ---
 
-h3 Intro
+h2.heading.heading--secondary Intro
 
-p.
+p.paragraph.
   The sliding menu plugin provides all functionality for the sliding
   menu. It manages the menu level change and links the back menu item
   to a back action.
 
-h3 Example
+h2.heading.heading--secondary Example
 
 :sample
   nav.menu.menu--sliding(data-menu="sliding")
@@ -45,16 +45,16 @@ h3 Example
               li.menu__item.is-parent
                 a(href='#mobile-apps').menu__link Mobile apps
 
-h3 Usage
+h2.heading.heading--secondary Usage
 
-p Activate the functionality with JavaScript:
+p.paragraph Activate the functionality with JavaScript:
 
 .highlight
   pre.highlight__listing.hljs: code.js
     :highlight
       $('#menu').slidingMenu()
 
-p Alternatively, you can activate the plugin with a data attribute:
+p.paragraph Alternatively, you can activate the plugin with a data attribute:
 
 .highlight
   pre.highlight__listing.hljs: code.html
@@ -65,7 +65,7 @@ h4 Methods
 
 h5: code .slidingMenu('level', [levelToSet])
 
-p Get the currently active level or set one.
+p.paragraph Get the currently active level or set one.
 
 .highlight
   pre.highlight__listing.hljs: code.js
