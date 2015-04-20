@@ -27,8 +27,6 @@ Every actions creates a reaction. Users always need to know if the system is wor
 ###Load Spinners
 Load spinners tell a user that the site is working / loading / rendering or any other action. AXA created a custom spinner which should be used whenever a delay is possible. The text in front of the spinner should be adapted to the action happening. A generic "loading" may not always be the best solution.
 
-![A generic load spinner](/images/design/ajax-loader.gif)
-
 ##Animations & Transitions
 Moving elements are a powerful tool to attract and or waste users’ attention. When designing an animation consider its goal, its frequency of occurrence, and its mechanics.
 Employ them sparingly and only when they add meaning to the interaction. Think about whether the animation will cause an attention shift or not and whether the same user is likely to stumble over it again and again. Will the animation reinforce relationships between UI elements? Will users trigger it directly or not? All these aspects matter in the design of a successful animation.
@@ -38,27 +36,4 @@ Employ them sparingly and only when they add meaning to the interaction. Think a
 - Slower transitions are less likely to cause an attention shift and are thus less distracting. They are appropriate for animations indirectly triggered by the user or not user initiated in any way. In these situations, the new element should appear with little or no change in position to minimize distraction.
 - Fast animations are more likely to attract attention when they happen outside the user’s focus of attention. They are suitable for important elements that users must attend to and act upon.
 
-###Good Example
-<video width="100%" height="auto" controls>
-  <source src="http://s3.amazonaws.com/media.nngroup.com/media/editor/2014/09/09/AppearingFormFields.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-
-###Bad Example
-<video width="100%" height="auto" controls>
-  <source src="http://s3.amazonaws.com/media.nngroup.com/media/editor/2014/09/09/Menu-SlowRepeatedAnimation.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-
-##Prototyping
-Prototyping of transitions & animations are not easily done.
-Following tools allow a certain degree of rapid animation prototyping.
-- Axure
-- Adobe Edge
-- Adobe Flash
-
-Please feel free to send in your recommendations.
-
-##Source
-http://www.nngroup.com/articles/animation-usability/
 <!-- Copyright AXA Versicherungen AG 2015 -->

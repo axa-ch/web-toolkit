@@ -9,6 +9,11 @@ The Web Style Guide provides two controls to upload files. The `single-upload`
 is designed for use cases where only one document should be uploaded and the
 `multi-upload` allows an uncertain amount of documents.
 
+<span class="downloads" >
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+</span>
+
 # Multi and Single Uploads
 The multi file upload has a list of files. When you drop a new file over the
 dropzone, a new item will be added to the list.
@@ -173,33 +178,4 @@ The following examples display the three main states of the single upload.
   </div>
 </div>
 
-<!-- # TODO: Design Specs
-Coming soon -->
-
-
-<!--
-
-# Draft
-- Communicate restrictions
-  - File endings/types
-  - File size
-- Display current uploaded file
-  - Image preview?
-  - Document dowload
-- Multiple Files (communicate clearly)
-- "Instant-Upload"
-  - Allows (server side) validation
-  - Upload progress
-  - Blocks form submit
-  - "Delete" files
-- Image crop
-- Validate
-  - File endings on client and server side
-  - File size on client and server side
-  - File contents on server side (maleware, valid image/rar/zip/whatever)
-- Allow for drag'n'drop
--
-- Fallback for older browsers?
-  - Progressive enhancement
--->
 <!-- Copyright AXA Versicherungen AG 2015 -->

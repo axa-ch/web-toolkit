@@ -17,6 +17,7 @@ styles – Book, Medium and Demi.
 > are not approved styles and should not
 > be used.
 
+</div>
 ## ITC Franklin Gothic Book
 
 <p class="typeface typeface--franklin-gothic-book" >

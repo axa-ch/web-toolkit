@@ -104,9 +104,6 @@ If a user has to enter a specific but already known value, an autocomplete sugge
 
 If there is a limit to the length of a text field or area and the user is likely to exceed, give him a hint.
 
-![Good Example of a length indicator](/images/design/length_indicator.png)
-
-
 #Form elements
 
 When it comes to form elements, we follow the touch-first principle. Inputs which require a keyboard should always be chosen last, because text inputs are a burden for many users.

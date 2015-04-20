@@ -19,13 +19,16 @@ template: development.jade
   The ``header__meta__lower`` element contains a ``header__meta__welcome`` element and a ``header__meta__social`` element.
 :sample
   header.header
-    .header--main.l-container
+    .header__container.l-container
       .header__mobile-trigger
       .header__brand.brand
         .brand__logo
         .brand__tagline.brand__tagline--de
       .header__meta
         .header__meta__upper
+          .header__meta__action
+            .header__action
+              a.menu__link.header__action__button Logout
           .header__meta__language
             ul.menu.menu--language
               li.menu__item
@@ -45,16 +48,10 @@ template: development.jade
               li.menu__item
                 a.menu__link Business
         .header__meta__lower
-          .header__meta__social
-            ul.menu.menu--social
-              li.menu__item
-                a(href='#facebook').icon.icon--facebook
-              li.menu__item
-                a(href='#twitter').icon.icon--twitter
           .header__meta__welcome
-            ul
-              li.header__meta__welcome__item Welcome to AXA
-              li.header__meta__welcome__item
+            div
+              .header__meta__welcome__main Welcome to AXA
+              .header__meta__welcome__secondary
                 a(href='tel:0800809809') 0800 809 809
     .header__menu
       .l-container

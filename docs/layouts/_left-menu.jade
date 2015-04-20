@@ -15,7 +15,16 @@ mixin pageLink(page)
     a.menu__link(
       href=relative(page.link)
       class={'is-active': link == page.link}
-    )= page.title
+    )
+      = page.title
+      if page.status != undefined
+        = ' '
+        if page.status == 'experimental'
+          span.tag.tag--danger= page.status
+        else if page.status == 'new'
+          span.tag.tag--success= page.status
+        else
+          span.tag.tag--default= page.status
 
 .l-container
   .l-row

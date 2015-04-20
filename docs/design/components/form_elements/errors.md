@@ -4,6 +4,11 @@ template: design.jade
 order: 0
 ---
 
+<span class="downloads" >
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+</span>
+
 ## Example
 
 <div style="max-width: 700px" >

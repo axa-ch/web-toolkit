@@ -7,7 +7,9 @@ template: design.jade
 Captchas are a technical solution to prevent spam, submitted by robots through online forms. This document describes a technical way to prevent spam by using a honeypot.
 Traditional captchas that require the user to decode some characters must be avoided due to accessibility and usability drawbacks.
 
+<span style="display: block; max-width: 400px;" >
 ![Bad Captcha](/images/design/captcha_bad.png)
+</span>
 
 #Honeypot
 

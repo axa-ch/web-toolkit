@@ -8,6 +8,10 @@ A **segmented control** is a basic control that enables the user to make a singl
 
 Do not use a segmented control if the user has to choose from many different options. In this case, use a [dropdown element](#) or a grid view.
 
+<span class="downloads" >
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+</span>
 
 ## Example
 <div data-segmented-control="data-segmented-control" class="segmented-control">
@@ -19,4 +23,4 @@ Do not use a segmented control if the user has to choose from many different opt
   </label>
 </div>
 
-## Design specs
+<!-- Copyright AXA Versicherungen AG 2015 -->
