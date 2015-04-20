@@ -1,4 +1,5 @@
 @import 'style/variables';
+@import 'style/blocks/heading';
 @import 'style/mixins/respond';
 
 .thumbnail {
@@ -16,6 +17,8 @@
 }
 
 .thumbnail__heading {
+  .heading();
+  .heading--secondary();
   display: block;
   max-width: 300px; // set max, so it stays readable
   margin-left: auto;
@@ -23,6 +26,8 @@
 }
 
 .thumbnail__link {
+  text-decoration: none;
+  color: @color-blue;
 }
 
 .thumbnail__text {

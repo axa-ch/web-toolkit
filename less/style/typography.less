@@ -1,46 +1,20 @@
 @import './variables';
 
-@import url(https://fast.fonts.net/t/1.css?apiType=css&projectid=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca);
-
-@font-face {
-  font-family: "ITCFranklinGothic";
-  font-weight: normal;
-  src: url("https://fast.fonts.net/dv2/2/03dda592-ab39-4f26-9535-fdea194854cf.eot?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca#iefix");
-  src: url("https://fast.fonts.net/dv2/2/03dda592-ab39-4f26-9535-fdea194854cf.eot?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca#iefix") format("eot"), url("https://fast.fonts.net/dv2/14/84083fa0-6a9d-40f7-806f-63add8cde800.woff2?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca") format("woff2"), url("https://fast.fonts.net/dv2/3/41c174b1-68c1-41b7-a19f-5ec80929b115.woff?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca") format("woff"), url("https://fast.fonts.net/dv2/1/06d99598-12aa-461b-b57e-81a137da1b9f.ttf?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca") format("truetype"), url("https://fast.fonts.net/dv2/11/427cca04-e0ee-4395-a5d3-b7d45feeff62.svg?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca#427cca04-e0ee-4395-a5d3-b7d45feeff62") format("svg");
-}
-
-@font-face {
-  font-family: "ITCFranklinGothic";
-  font-weight: @font-weight-medium;
-  src: url("https://fast.fonts.net/dv2/2/7745efd8-d203-4df8-b9be-eee8c80851e6.eot?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca#iefix");
-  src: url("https://fast.fonts.net/dv2/2/7745efd8-d203-4df8-b9be-eee8c80851e6.eot?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca#iefix") format("eot"), url("https://fast.fonts.net/dv2/14/225d6837-49e0-40f2-802a-114552f2b6b1.woff2?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca") format("woff2"), url("https://fast.fonts.net/dv2/3/af312497-11c0-4e85-8ee4-5a83120194be.woff?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca") format("woff"), url("https://fast.fonts.net/dv2/1/48f6f00c-1835-49d7-aa63-c4d84d522a24.ttf?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca") format("truetype"), url("https://fast.fonts.net/dv2/11/cf4776a5-63c5-4245-8417-043e5f148a52.svg?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca#cf4776a5-63c5-4245-8417-043e5f148a52") format("svg");
-}
-
-@font-face {
-  font-family: "ITCFranklinGothic";
-  font-weight: bold;
-  src: url("https://fast.fonts.net/dv2/2/498d8f5c-6dfe-4a07-9fdf-321bcc11909c.eot?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca#iefix");
-  src: url("https://fast.fonts.net/dv2/2/498d8f5c-6dfe-4a07-9fdf-321bcc11909c.eot?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca#iefix") format("eot"), url("https://fast.fonts.net/dv2/14/ea7dcf5e-c101-46d3-a553-bb46f78ca7e4.woff2?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca") format("woff2"), url("https://fast.fonts.net/dv2/3/08fe22ab-0517-4203-bcc9-1ba2ca45f40c.woff?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca") format("woff"), url("https://fast.fonts.net/dv2/1/6adc2e3a-d0c4-4c48-ba68-91b4107515d7.ttf?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca") format("truetype"), url("https://fast.fonts.net/dv2/11/426ce955-d5bd-4a77-b077-402088f77e65.svg?d44f19a684109620e4841470a690e818f50f15501a2e3740a21687bfe07361cc26e33f7b001980192bae3022e204de16a7802f95b0e93066bf9fad28eec560361f239f5f7e2b50d87e5d88058229480e511e9e5ce3e34baf9d3fa9&projectId=1da4c08a-73a4-4e34-8997-1c1eeb1a8cca#426ce955-d5bd-4a77-b077-402088f77e65") format("svg");
-}
-
 body {
   color: @font-color;
-  font-family: "ITCFranklinGothic", Arial, sans-serif;
+  font-family: "ITC Franklin Gothic W01", Arial, sans-serif;
   font-size: @font-size;
   line-height: @line-height;
 }
 
-p {
-  line-height: 1.78;
-  margin: .7em 0;
-}
+/*
 
 .h-base {
   font-weight: normal;
   margin: 1.3em 0 0.6em 0;
 }
 
-h1 {
+.heading--page {
   &:extend(.h-base all);
   font-size: 1.6em;
 }
@@ -90,5 +64,7 @@ a {
     color: @color-red;
   }
 }
+
+*/
 
 /* Copyright AXA Versicherungen AG 2015 */

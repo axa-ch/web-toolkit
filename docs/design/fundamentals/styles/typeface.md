@@ -10,16 +10,12 @@ ITC Franklin Gothic is our corporate
 typeface, which has been selected for use
 with all AXA applications.
 
-ITC Franklin Gothic may be used in two
-styles – Book and  Medium.
+ITC Franklin Gothic may be used in three
+styles – Book, Medium and Demi.
 
 > ITC Franklin Gothic Condensed and Italic
 > are not approved styles and should not
 > be used.
-
-> ITC Franklin Gothic is not yet implemented.
-> Your browsers default
-> font will render in the examples below.
 
 ## ITC Franklin Gothic Book
 

@@ -6,11 +6,11 @@
 @icon-font-path: '../fonts';
 @icon-font-name: 'style-guide-font';
 
-@font-size: 14px;
-@font-size-small: 0.9285em;
-@font-size-large: 1.1428em;
+@font-size: 16px;
+@font-size-small: 0.875em;
+@font-size-large: 1.125em;
 @font-weight-medium: 600;
-@line-height: 1.5;
+@line-height: 1.375;
 @font-color: @color-gray--darkest;
 
 @transition-duration: 0.5s;
