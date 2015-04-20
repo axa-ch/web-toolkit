@@ -9,7 +9,7 @@ Help text slides in after the user clicks or taps on the information icon. It is
 
 <span class="downloads" >
   <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
-  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+  <a href="../psd/AXA_forms_mobile.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
 </span>
 
 >Checklist: Help Text

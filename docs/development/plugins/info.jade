@@ -3,17 +3,17 @@ title: Info
 template: development.jade
 ---
 
-h3 Intro
+h2.heading.heading--secondary Intro
 
-p.
+p.paragraph.
   The <code>info</code> plugin is used to toggle an info-text block and switch
   the icon to the <code>icon--close</code> icon.
 
-p.
+p.paragraph.
   Combine it with the <code>info-icon</code> and the <code>info-text</code>
   blocks to display information non-intrusivevely.
 
-h3 Example
+h2.heading.heading--secondary Example
 
 :sample
   .l-container
@@ -28,11 +28,11 @@ h3 Example
           input.control.control--input(type='text')
           .form__info-text(id='target', style='display:none;')
             .info-text
-              p.
+              p.paragraph.
                 Hallo Welt!
-h3 Usage
+h2.heading.heading--secondary Usage
 
-p Activate the functionality with the data-* API
+p.paragraph Activate the functionality with the data-* API
 
 .highlight
   pre.highlight__listing.hljs: code.js
@@ -40,7 +40,7 @@ p Activate the functionality with the data-* API
       <div data-info="data-info" data-target="#target" ...>...</div>
       <div id="target" ...>...</div>
 
-p Activate the functionality with Javascript
+p.paragraph Activate the functionality with Javascript
 
 .highlight
   pre.highlight__listing.hljs: code.js
@@ -54,7 +54,7 @@ p Activate the functionality with Javascript
 
 
 
-h4 Options
+h3 Options
 
 table.table
   thead

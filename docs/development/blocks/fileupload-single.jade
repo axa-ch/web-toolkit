@@ -7,7 +7,7 @@ template: development.jade
   The ``single-upload`` block is used to display drag and drop zones for a
   file and display status info (progress) to the uploaded file.
 
-h3 States and Behavior
+h2.heading.heading--secondary States and Behavior
 :markdown
   Default state of a fileupload control is the dropzone block.
   When something is dragged over it, toggle the ``dragover`` modifier.
@@ -36,7 +36,7 @@ h3 States and Behavior
 .callout.callout--danger.
   Look at the bottom of the page for some info about file uploads on IE 9.
 
-h3 Styles
+h2.heading.heading--secondary Styles
 
 :sample
   .l-container
@@ -126,9 +126,9 @@ h3 Styles
                 i.dropzone-fallback__button__icon.icon.icon--upload
                 span.dropzone-fallback__button__text Click to upload files
 
-h3 IE 9
+h2.heading.heading--secondary IE 9
 
-p.
+p.paragraph.
   IE 9 does not support drag and drop functionality for files. It also doesn't
   support the <code>FileReader</code> API. So, just do it like its 2007:
 
@@ -145,4 +145,5 @@ ul.list.list--unordered
     file chooser dialog.
     After a file is selected, the upload should start. Display status info in the
     <code>single-upload__status</code> block as usual.
+
 // Copyright AXA Versicherungen AG 2015

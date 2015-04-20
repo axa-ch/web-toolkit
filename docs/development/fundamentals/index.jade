@@ -5,40 +5,40 @@ template: development.jade
 ---
 
 
-div.callout
-  h4.callout__heading Feedback appreciated!
+aside.callout
+  h2.callout__heading Feedback appreciated!
   p.paragraph
     | With the Developer Toolkit we want to help you building
     | awesome responsive web sites and apps with ease.
     | If you struggle using the assets, miss a component
     | or face any other problem please feel free to
     = ' '
-    a(href=config.repository.url, title=config.repository.name) file an issue on github
-    |  or
-    a(data-uv-trigger, data-uv-mode="contact")  use the feedback form
+    a(href=config.repository.url, title=config.repository.name).link file an issue on github
+    |  or&nbsp;
+    a(data-uv-trigger, data-uv-mode="contact").link use the feedback form
     | .
 
-h1 What is the developer toolkit?
+h2.heading.heading--secondary What is the developer toolkit?
 p.paragraph
   | The Developer Toolkit is a library of HTML, CSS, JavaScript and other
   | resources you can include in your products.
   | It provides you components to help you create awesome features.
-  | The components are aligned to the
-  a(href=relative('/design'))  Design Guidelines
+  | The components are aligned to the&nbsp;
+  a(href=relative('/design')).link Design Guidelines
   | . Please read the Design Guidelines carefully before you design a new
   | User Interface.
 
-h1 Let's get started!
+h2.heading.heading--secondary Let's get started!
 
-h2 Getting the web design guide
+h3 Getting the web design guide
 
-h4 Good old direct download
+h5 Good old direct download
 
 p.paragraph
-  | You can
-  a(href=relative('/downloads/' + package.name + '-dist-'+package.version+'.tar.gz'), title="Latest Release Package")  download the latest release package here.
+  | You can&nbsp;
+  a(href=relative('/downloads/' + package.name + '-dist-'+package.version+'.tar.gz'), title="Latest Release Package").link download the latest release package here.
 
-h4 Use npm (recommended)
+h5 Use npm (recommended)
 
 p.paragraph.
   Since we use npm for the web design guide we recommend
@@ -49,7 +49,7 @@ p.paragraph.
   pre.highlight__listing
     code npm install –-save-dev http://design.axa.ch/downloads/#{package.name}-#{package.version}.tgz
 
-h4 Use bower
+h5 Use bower
 
 p.paragraph.
   If you want to use the web design guide install it using a simple bower install.
@@ -58,7 +58,7 @@ p.paragraph.
   pre.highlight__listing
     code bower install http://design.axa.ch/downloads/#{package.name}-dist-#{package.version}.tar.gz --save
 
-h2 What's included
+h5 What's included
 
 p.paragraph.
   The web design guide is delivered in two diffrent flavours.
@@ -103,7 +103,7 @@ dl
 
 .l-row
   .l-half
-    h4 npm package
+    h5 npm package
     .highlight
       pre.highlight__listing
         code.
@@ -121,7 +121,7 @@ dl
           └── .npmignore
 
   .l-half
-    h4 dist package
+    h5 dist package
     .highlight
       pre.highlight__listing
         code.
@@ -136,9 +136,9 @@ dl
           ├── LICENSE.md
           └── bower.json
 
-h2 What's next
+h3 What's next
 
-p.
+p.paragraph.
   Make sure the static assets (js, images, fonts, css, etc.)
   you want to use are available from the web and include the
   assets to be compiled (e.g. less) in your build mechanism.
@@ -149,16 +149,16 @@ p.callout.callout--danger.
   the css. When using less assets you can configure the path as
   described in the Less variables section below.
 
-h2 Compiling the less files on your own
+h3 Compiling the less files on your own
 
-h4 Prefixing
+h5 Prefixing
 
-p.paragraphy.
+p.paragraph.
   You should use the autoprefixer to add vendor specific prefixes.
   Make sure to configure the autoprefixer correctly to add support
   for the browsers you target.
 
-h4 IE9 support
+h5 IE9 support
 
 p.paragraph.
   To add IE9 support you need to add single-colon CSS 2.1 syntax
@@ -166,7 +166,7 @@ p.paragraph.
   syntax (::after). We wrote the postcss-pseudoelements postcss
   plugin which adds those single-color selectors.
 
-h4 Less variables
+h5 Less variables
 
 table.table
   thead
@@ -189,8 +189,8 @@ table.table
         where the browser should download the images from.
 
 
-h2#basic-template Basic template
-p.
+h3#basic-template Basic template
+p.paragraph.
   The basic template below should provide you with
   a starting point for your next web app.
   See the comments in the template itself for any explanations.

@@ -8,12 +8,12 @@ p.lead
   | scales up to 12 columns as the device or viewport size increases.
   | It includes an extensive collection of predefined CSS classes for
   | easy layout options as well as
-  a(href=relative("/development/mixins/grid.html"))  powerful mixins
+  a(href=relative("/development/mixins/grid.html")).link powerful mixins
   |  for you to generate more semantic layouts.
 
-h3 Introduction
+h2.heading.heading--secondary Introduction
 
-p.
+p.paragraph.
   Use the grid system to create page layouts consisting of a series of
   rows and columns. The columns house your content. Here is an example:
 
@@ -28,17 +28,17 @@ p.
       .l-col.l-col--medium-4
         .box Side
 
-p.
+p.paragraph.
   Your content and every row you make should be placed in a
   <code>.l-container</code>, directly or indirectly. The container
   ensures that the content is properly aligned and padding is correctly
   set.
 
-p.
+p.paragraph.
   Use <code>.l-row</code> to create horizontal groups of columns.
   Consider that only columns may be immediate children of rows.
 
-p.
+p.paragraph.
   You get two types of predefined column classes. With generic columns
   like <code>.l-col.l-col--6</code> or <code>.l-col.l-col--medium-3</code>
   you can quickly produce very flexible layouts.
@@ -46,7 +46,7 @@ p.
   <code>.l-primary</code> or <code>.l-half</code> allow you to
   build standard layouts with responsive behavior.
 
-h3 Grid options
+h2.heading.heading--secondary Grid options
 
 table.table
   thead
@@ -79,19 +79,19 @@ table.table
       td.table__row__item(colspan="3")
         .table__row__item__content 12
 
-h3 Column classes
+h2.heading.heading--secondary Column classes
 
-p.
+p.paragraph.
   With the inclusion of the Developer Toolkit you get several predefined
   CSS classes. The <code>.l-container</code> and
   <code>.l-row</code> are fundamental for creating a grid.
   When creating grid columns you have two possibilities. You can
   take the
-  <a href="#generic-classes">generic CSS classes</a> or use the
-  <a href="#semantic-classes">semantic ones</a>. The latter have an
+  <a href="#generic-classes" class="link" >generic CSS classes</a> or use the
+  <a href="#semantic-classes" class="link" >semantic ones</a>. The latter have an
   already predefined responsive behavior.
 
-p Here you see a thorough example with generic classes:
+p.paragraph Here you see a thorough example with generic classes:
 
 :sample
   .l-row
@@ -103,7 +103,7 @@ p Here you see a thorough example with generic classes:
     .l-col.l-col--medium-4
       code.box .l-col<br>.l-col--medium-4
 
-p Next is an example with semantic classes:
+p.paragraph Next is an example with semantic classes:
 
 :sample
   .l-row
@@ -135,9 +135,9 @@ p Next is an example with semantic classes:
         code.box .l-thumbnail
     - }
 
-h3 Nesting grids
+h2.heading.heading--secondary Nesting grids
 
-p.
+p.paragraph.
   It can sometimes be practical to have one grid contained in another.
   The grid is built in a way that when you nest them, no multiple
   gutters will add to each other, thus preventing strange behavior.
@@ -151,9 +151,9 @@ p.
         .l-secondary: code.box Primary Secondary
     .l-secondary: code.box Secondary
 
-h3 Skip columns
+h2.heading.heading--secondary Skip columns
 
-p.
+p.paragraph.
   Sometimes it is desired to skip columns in a grid. You can do this
   with the <code>.l-col--offset-*</code> classes.
 
@@ -169,9 +169,9 @@ p.
     .l-col.l-col--medium-4.l-col--medium-offset-2
       code.box .l-col<br>.l-col--medium-4
 
-h3 Change column ordering
+h2.heading.heading--secondary Change column ordering
 
-p.
+p.paragraph.
   You can easily change the order of columns with the
   <code>.l-col--push-*</code> and <code>.l-col--pull-*</code> classes.
 
@@ -181,4 +181,5 @@ p.
       code.box .l-col<br>.l-col--8<br>.l-col--push-4
     .l-col.l-col--4.l-col--pull-8
       code.box .l-col<br>.l-col--4<br>.l-col--pull-8
+
 // Copyright AXA Versicherungen AG 2015

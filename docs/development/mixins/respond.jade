@@ -3,16 +3,19 @@ title: Respond
 template: development.jade
 ---
 
-p.
-  A longer description about the respond mixin provided by this Developer Toolkit.
-  Let's clarify where to use these mixins, why and how. And show some fancy
-  examples!
+:markdown
+  The respond mixin can be used to add conditional rules. The rules can restrict on the viewport size or type (e.g. print).
+
+h2.heading.heading--secondary Usage
 
 .highlight
-  pre.highlight__listing.hljs
-    code.less
-      :highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      selector {
         .respond(@device, @rules);
+      }
+
+h3 Options
 
 dl
   dt @device
@@ -20,27 +23,21 @@ dl
   dt @rules
   dd Rules to apply
 
-table.table
-  caption Available devices
-  tr
-    th Device name
-    th Media query
-  tr
-    td medium
-    td min-width: 768px
-  tr
-    td large
-    td min-width: 1024px
-  tr
-    td print
-    td print
+h4 Available rules
 
-p An example how you can use the mixin:
+:markdown
+  Device name | Media query
+  --- | ---
+  medium | min-width: 768px
+  large | min-width: 1024px
+  print | print
+
+h2.heading.heading--secondary Example
 
 .highlight
   pre.highlight__listing.hljs: code.less
     :highlight
-      .custom-responsive-block {
+      selector {
         background: red; // default
 
         .respond('medium', {
@@ -51,4 +48,5 @@ p An example how you can use the mixin:
           background: blue; // large devices
         })
       }
+
 // Copyright AXA Versicherungen AG 2015
