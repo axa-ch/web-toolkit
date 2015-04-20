@@ -122,54 +122,18 @@ opens the standard file chooser dialog as a fallback.
 # Single Upload Design Example
 The following examples display the three main states of the single upload.
 
-<div class="l-container">
-  <div class="form">
-    <div class="form__group">
-      <div class="form__group__label">Datei</div>
-      <div class="form__group__control">
-        <div class="single-upload">
-          <div class="dropzone">
-            <div data-dropzone="dropzone" class="dropzone__container">
-              <input type="file" class="dropzone__input"/>
-              <div class="dropzone__icon-container"><i class="dropzone__icon icon icon--upload"></i></div>
-              <div class="dropzone__text-container">
-                <div class="dropzone__text"><span>Drag file here or</span>&nbsp;<a class="dropzone__text__upload-link">click to choose</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="form__group">
-      <div class="form__group__label">Datei (Uploading)</div>
-      <div class="form__group__control">
-        <div class="single-upload">
-          <div class="single-upload__status">
-            <div class="single-upload__status__icon-container"><i class="single-upload__status__icon icon icon--upload"></i></div>
-            <div class="single-upload__progressbar-container">
-              <div class="single-upload__progressbar progressbar">
-                <div class="progressbar__description">awesome_image.jpg</div>
-                <div class="progressbar__percentage">22%</div>
-                <div class="progressbar__progress">
-                  <div class="progressbar__progress-background">
-                    <div style="width: 22%" class="progressbar__progress-foreground"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="form__group">
-      <div class="form__group__label">Datei (Uploaded)</div>
-      <div class="form__group__control">
-        <div class="single-upload">
-          <div class="single-upload__status">
-            <div class="single-upload__status__icon-container"><i class="single-upload__status__icon icon icon--upload"></i></div>
-            <div class="single-upload__status__uploaded">
-              <div class="single-upload__status__uploaded__actions file-uploaded__actions"><a class="file-uploaded__actions__action">ansehen</a><a class="file-uploaded__actions__action">löschen</a></div>
-              <div class="single-upload__status__uploaded__title">axaswitch.gif</div>
+
+<div class="form">
+  <div class="form__group">
+    <div class="form__group__label">Datei</div>
+    <div class="form__group__control">
+      <div class="single-upload">
+        <div class="dropzone">
+          <div data-dropzone="dropzone" class="dropzone__container">
+            <input type="file" class="dropzone__input"/>
+            <div class="dropzone__icon-container"><i class="dropzone__icon icon icon--upload"></i></div>
+            <div class="dropzone__text-container">
+              <div class="dropzone__text"><span>Drag file here or</span>&nbsp;<a class="dropzone__text__upload-link">click to choose</a></div>
             </div>
           </div>
         </div>
@@ -177,5 +141,49 @@ The following examples display the three main states of the single upload.
     </div>
   </div>
 </div>
+
+
+<div class="form">
+  <div class="form__group">
+    <div class="form__group__label">Datei (Uploading)</div>
+    <div class="form__group__control">
+      <div class="single-upload">
+        <div class="single-upload__status">
+          <div class="single-upload__status__icon-container"><i class="single-upload__status__icon icon icon--upload"></i></div>
+          <div class="single-upload__progressbar-container">
+            <div class="single-upload__progressbar progressbar">
+              <div class="progressbar__description">awesome_image.jpg</div>
+              <div class="progressbar__percentage">22%</div>
+              <div class="progressbar__progress">
+                <div class="progressbar__progress-background">
+                  <div style="width: 22%" class="progressbar__progress-foreground"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="form">
+  <div class="form__group">
+    <div class="form__group__label">Datei (Uploaded)</div>
+    <div class="form__group__control">
+      <div class="single-upload">
+        <div class="single-upload__status">
+          <div class="single-upload__status__icon-container"><i class="single-upload__status__icon icon icon--upload"></i></div>
+          <div class="single-upload__status__uploaded">
+            <div class="single-upload__status__uploaded__actions file-uploaded__actions"><a class="file-uploaded__actions__action">ansehen</a><a class="file-uploaded__actions__action">löschen</a></div>
+            <div class="single-upload__status__uploaded__title">axaswitch.gif</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Copyright AXA Versicherungen AG 2015 -->
