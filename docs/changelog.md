@@ -4,15 +4,24 @@ slug: changelog
 template: other.jade
 ---
 
-# 0.5.0 - 
+# 0.5.0 - 20. April 2015
 
-- Bugfix whitespace issue within segmented-control
-- Refactored the `header__meta__welcome` element.
-  - `header__meta__welcome__item` element is replaced by `header__meta__welcome__main` and `header__meta__welcome__secondary`.
-  - Removed `header__meta__social` element.
-  - Added `header__meta__action` element.
-  - Renamed `header__main` to `header__container`
-  - ATTENTION! This requires markup changes for most pages.
+- Design Guidelines
+  - Introduce ITC Franklin Gothic in Typeface section
+  - Introduce Typography section
+  - Introduce AXA_forms_desktop.psd/AXA_forms_mobile.psd downloads
+  - Update Form components documentation
+  - Introduce Adobe Color Swatch download
+- Developer Toolkit
+  - Introduce main navigation
+  - 
+  - Bugfix whitespace issue within segmented-control
+  - Refactored the `header__meta__welcome` element.
+    - `header__meta__welcome__item` element is replaced by `header__meta__welcome__main` and `header__meta__welcome__secondary`.
+    - Removed `header__meta__social` element.
+    - Added `header__meta__action` element.
+    - Renamed `header__main` to `header__container`
+    - ATTENTION! This requires markup changes for most pages.
 
 # 0.4.1 - 7. April 2015
 
