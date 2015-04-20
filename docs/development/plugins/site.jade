@@ -1,27 +1,25 @@
 ---
 title: Site
-slug: site
-collection: development_plugins
 template: development.jade
 ---
 
-h3 Intro
+h2.heading.heading--secondary Intro
 
-p.
+p.paragraph.
   The main functionality this plugin provides is the side menu handling for
   mobile devices. It binds to the <em>burger</em> icon and triggers the
   toggling of the menu.
 
-h3 Usage
+h2.heading.heading--secondary Usage
 
-p Activate the functionality with the data-* API
+p.paragraph Activate the functionality with the data-* API
 
 .highlight
   pre.highlight__listing.hljs: code.js
     :highlight
       <a data-toggle="site-menu" data-target=".site" ></a>
 
-p Activate the functionality with JavaScript:
+p.paragraph Activate the functionality with JavaScript:
 
 .highlight
   pre.highlight__listing.hljs: code.js
@@ -38,15 +36,15 @@ table.table
       th.table__header__item Default
       th.table__header__item Description
   tbody.table__content
-    tr.table__item
-      td.table__item__info
-        code.table__item__info__content mask
-      td.table__item__info
-        code.table__item__info__content boolean
-      td.table__item__info
-        code.table__item__info__content true
-      td.table__item__info
-        p.table__item__info__content.
+    tr.table__row
+      td.table__row__item
+        code.table__row__item__content mask
+      td.table__row__item
+        code.table__row__item__content boolean
+      td.table__row__item
+        code.table__row__item__content true
+      td.table__row__item
+        p.table__row__item__content.
           Includes a backdrop element which darkens the actual page when the
           menu is open. A click anywhere on the mask closes the menu again.
 
@@ -54,7 +52,7 @@ h4 Methods
 
 h5: code .site('toggleMenu')
 
-p Manually toggles the menu.
+p.paragraph Manually toggles the menu.
 
 .highlight
   pre.highlight__listing.hljs: code.js
@@ -63,7 +61,7 @@ p Manually toggles the menu.
 
 h5: code .site('showMenu')
 
-p Manually shows the menu. Doesn't do anything when the menu is already open.
+p.paragraph Manually shows the menu. Doesn't do anything when the menu is already open.
 
 .highlight
   pre.highlight__listing.hljs: code.js
@@ -72,7 +70,7 @@ p Manually shows the menu. Doesn't do anything when the menu is already open.
 
 h5: code .site('hideMenu')
 
-p Manually hides the menu. Doesn't do anything when the menu is already hidden.
+p.paragraph Manually hides the menu. Doesn't do anything when the menu is already hidden.
 
 .highlight
   pre.highlight__listing.hljs: code.js
@@ -87,8 +85,9 @@ table.table
       th.table__header__item Event Type
       th.table__header__item Description
   tbody.table__content
-    tr.table__item
-      td.table__item__info
-        code.table__item__info__content show.axa.site-menu
-      td.table__item__info
+    tr.table__row
+      td.table__row__item
+        code.table__row__item__content show.axa.site-menu
+      td.table__row__item
+
 // Copyright AXA Versicherungen AG 2015

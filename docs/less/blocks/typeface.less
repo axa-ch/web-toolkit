@@ -1,25 +1,34 @@
 .typeface {
   white-space: pre-wrap;
+}
 
-  &--franklin-gothic-book,
-  &--franklin-gothic-medium {
-    &, & * {
-      // TODO: Add web font
-      font-family: "FranklinGothic" !important;
-    }
-  }
+.typeface--franklin-gothic-book,
+.typeface--franklin-gothic-medium,
+.typeface--franklin-gothic-demi {
+ &, & * {
+   font-family: "ITC Franklin Gothic W01" !important;
+ }
+}
 
-  &--arial-regular,
-  &--arial-bold {
-    &, & * {
-      font-family: Arial !important;
-    }
-  }
+.typeface--franklin-gothic-medium {
+  font-weight: @font-weight-medium;
+}
 
-  &--arial-bold {
-    &, & * {
-      font-weight: bold;
-    }
+.typeface--franklin-gothic-demi {
+  font-weight: bold;
+}
+
+.typeface--arial-regular,
+.typeface--arial-bold {
+  &, & * {
+    font-family: Arial !important;
   }
 }
+
+.typeface--arial-bold {
+  &, & * {
+    font-weight: bold;
+  }
+}
+
 /* Copyright AXA Versicherungen AG 2015 */

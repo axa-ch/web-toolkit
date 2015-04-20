@@ -1,5 +1,14 @@
+@import "../variables.less";
+
 .invisible-font {
   font-size: 0;
   color: transparent;
 }
+
+.undo-invisible-font {
+  font-size: @font-size; // 8 IE Fallback
+  font-size: 1rem;
+  color: @font-color;
+}
+
 /* Copyright AXA Versicherungen AG 2015 */

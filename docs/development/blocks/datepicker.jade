@@ -1,12 +1,17 @@
 ---
 title: Datepicker
-slug: datepicker
-collection: development_blocks
 template: development.jade
 ---
 
-p.
-  Foobar
+:markdown
+  The `datepicker` block displays an input field a calendar icon and a
+  calendar to select a date.
+
+h2.heading.heading--secondary Behavior
+p.paragraph.
+  The calendar should not be displayed when the page loads and should appear, when
+  the user clicks the calendar icon.
+  A click in the textbox should not toggle the calendar appearance.
 
 :sample
   .datepicker
@@ -72,4 +77,5 @@ p.
             .picker__day 31
             .picker__day.picker__day--empty
   div(style='height: 280px')
+
 // Copyright AXA Versicherungen AG 2015

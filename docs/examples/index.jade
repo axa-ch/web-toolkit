@@ -7,7 +7,7 @@ template: examples.jade
 
 .l-row
   each example in examples
-    .thumbnail.l-fourth
+    .thumbnail.l-third
       a.thumbnail__img-link(href="pages/" + example.filename)
         img.thumbnail__img(src="images/" + example.thumbnail)
       h2.thumbnail__heading= example.title

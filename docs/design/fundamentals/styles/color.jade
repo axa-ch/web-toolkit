@@ -7,9 +7,10 @@ order: 1
 :markdown
   Use these colors to guide your designs and to ensure you’re staying consistent with the AXA brand.
 
-a(href=relative('design/fundamentals/AXA.aco')).download Download swatches
+.downloads
+  a(href="./AXA.aco").downloads__link Download swatches
 
-h2 Primary palette
+h2.heading.heading--secondary Primary palette
 
 .l-row
   .color-palette.color-palette--primary
@@ -19,7 +20,7 @@ h2 Primary palette
           .color-palette__color__box(style='background: ' + colorCode)
           .color-palette__color__code #{colorCode}
 
-h2 Secondary palette
+h2.heading.heading--secondary Secondary palette
 
 each colorGroup in colors.secondary
   .color-palette.color-palette--secondary

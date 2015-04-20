@@ -27,6 +27,8 @@ var gulptar = require('gulp-tar');
 var gulpgzip = require('gulp-gzip');
 var generateBowerJson = require('gulp-generate-bower-json');
 var npm = require('npm');
+var jshint = require('gulp-jshint');
+var ngAnnotate = require('gulp-ng-annotate');
 
 var readJSONFile = require('./lib/readJSONFile');
 var writeJSONFile = require('./lib/writeJSONFile');
@@ -168,47 +170,78 @@ gulp.task('styles', function (cb) {
     'styles-pseudoelements', 'styles-compress', cb);
 });
 
-gulp.task('scripts-clean', function (cb) {
-  del(['./dist/js/**'], cb);
+gulp.task('jquery-clean', function (cb) {
+  del(['./dist/jquery/**'], cb);
 });
 
-gulp.task('scripts-validate', function() {
-  return gulp.src('./coffee/*.coffee')
+gulp.task('jquery-validate', function() {
+  return gulp.src('./jquery/**/*.coffee')
     .pipe(coffeelint())
     .pipe(coffeelint.reporter('default'));
 });
 
-gulp.task('scripts-compile', function () {
-  return gulp.src('./coffee/*.coffee')
+gulp.task('jquery-compile', function () {
+  return gulp.src('./jquery/**/*.coffee')
     .pipe(sourcemaps.init())
     .pipe(coffee())
     .on('error', errorify)
     .pipe(sourcemaps.write('.', {sourceRoot: './'}))
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest('./dist/jquery'));
 });
 
-gulp.task('scripts-combine', function () {
-  return gulp.src(['./dist/js/*.js', '!./dist/js/*.all.js'])
+gulp.task('jquery-combine', function () {
+  return gulp.src(['./dist/jquery/*.js', '!./dist/jquery/*.all.js'])
     .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(concat('style.all.js'))
+    .pipe(concat('axa-wsg.jquery.all.js'))
     .on('error', errorify)
     .pipe(sourcemaps.write('.', {sourceRoot: './'}))
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest('./dist/jquery'));
 });
 
-gulp.task('scripts-compress', function () {
-  return gulp.src(['./dist/js/*.js'])
+gulp.task('jquery-compress', function () {
+  return gulp.src(['./dist/jquery/*.js'])
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
     .pipe(rename({
       extname: '.min.js'
     }))
     .pipe(sourcemaps.write('.', {sourceRoot: './'}))
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest('./dist/jquery'));
 });
 
-gulp.task('scripts', function (cb) {
-  runSequence('scripts-clean', 'scripts-validate', 'scripts-compile', 'scripts-combine', 'scripts-compress', cb);
+gulp.task('jquery', function (cb) {
+  runSequence('jquery-clean', 'jquery-validate', 'jquery-compile', 'jquery-combine', 'jquery-compress', cb);
+});
+
+gulp.task('ng-clean', function (cb) {
+  del(['./dist/ng/**'], cb);
+});
+
+gulp.task('ng-validate', function() {
+  return gulp.src('./ng/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+
+gulp.task('ng-copy', function() {
+  return gulp.src(['./ng/**/*'])
+    .pipe(gulp.dest('./dist/ng'));
+});
+
+gulp.task('ng-compress', function () {
+  return gulp.src(['./dist/ng/**/*.js'])
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(ngAnnotate())
+    .pipe(uglify())
+    .pipe(rename({
+      extname: '.min.js'
+    }))
+    .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+    .pipe(gulp.dest('./dist/ng'));
+});
+
+gulp.task('ng', function (cb) {
+  runSequence('ng-clean', 'ng-validate', 'ng-copy', 'ng-compress', cb)
 });
 
 gulp.task('create-versions-file', function (cb) {
@@ -245,7 +278,7 @@ gulp.task('release-dist-generate-bower-json', function() {
   return gulp.src('./package.json')
     .pipe(generateBowerJson())
     .pipe(gulp.dest('./dist'));
-})
+});
 
 gulp.task('release-dist', ['release-dist-generate-bower-json'], function () {
   packageJson = readJSONFile('./package.json');
@@ -278,7 +311,7 @@ gulp.task('release', function(cb) {
 
 gulp.task('build', function (cb) {
   runSequence(
-    'icons', 'images', 'styles', 'scripts', 'create-versions-file', 'docs', cb);
+    'icons', 'images', 'styles', 'jquery', 'ng', 'create-versions-file', 'docs', cb);
 });
 
 gulp.task('serve', function (next) {
@@ -294,7 +327,9 @@ gulp.task('dev', ['build', 'serve'], function () {
     './docs/**',
     './less/**',
     './icons/**',
-    './coffee/**'
+    './images/**',
+    './jquery/**',
+    './ng/**'
   ], function (files, callback) {
     runSequence('build', function (arguments) {
       livereload.changed();

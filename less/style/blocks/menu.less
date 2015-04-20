@@ -37,6 +37,7 @@
     padding: 7px 0;
 
     color: @color-gray--darkest;
+    text-decoration: none;
 
     &.is-active {
       font-weight: bold;
@@ -62,17 +63,17 @@
     box-sizing: border-box;
     height: 56px;
     padding: 17px 15px 16px 15px;
-    border-top: 1px solid @color-tbd-13;
+    border-bottom: 1px solid @color-tbd-13;
 
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 22px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 
     background-color: @color-blue;
-    color: @color-tbd-4;
+    color: @color-white;
 
 
     &:hover {
@@ -84,7 +85,7 @@
     }
 
     &.is-active {
-      background-color: @color-tbd-10;
+      background-color: @color-tbd-24;
       color: white;
     }
   }
@@ -107,7 +108,7 @@
     .icon;
     .icon--arrow-left;
 
-    background-color: @color-tbd-10;
+    background-color: @color-tbd-24;
 
     &::before {
       display: block;
@@ -117,7 +118,6 @@
 
       font-size: 1.4em;
     }
-
     &:hover {
       color: white;
     }
@@ -226,8 +226,10 @@
   .menu__item {
     float: none;
 
-    &:first-of-type .menu__link {
-      border-top: none;
+    &:first-of-type {
+      .menu__link {
+        border-top: 1px solid @color-tbd-13;
+      }
     }
   }
 }
@@ -253,7 +255,7 @@
       border-bottom: 5px solid @color-blue;
 
       .menu__link {
-        color: @color-gray--darker;
+        color: @color-blue;
       }
 
       .menu__link--home::before {
@@ -273,7 +275,7 @@
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
 
-    color: @color-gray;
+    color: @color-gray--darker;
   }
 
   .menu__link--home {
@@ -304,7 +306,7 @@
     padding: 3px 10px;
 
     text-decoration: none;
-    font-size: @font-size-base;
+    font-size: 1em;
 
     color: @color-gray;
 
@@ -375,27 +377,6 @@
     font-size: 14px; // TODO: fixed font-size
     font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-transform: uppercase;
-  }
-}
-
-.menu--social {
-
-  .menu__item {
-    margin-left: 8px;
-
-    .respond(large, {
-      float: left;
-    });
-
-    &:first-of-type {
-      margin-left: 20px;
-    }
-
-    .icon {
-      &::before {
-        font-size: 28px;
-      }
-    }
   }
 }
 

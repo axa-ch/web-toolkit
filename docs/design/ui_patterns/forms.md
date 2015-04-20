@@ -70,7 +70,7 @@ similar
 Sometimes, a lot of answers to a question are possible and we even need it in a certain format. This is when inline validation steps in.
 Inline validation can provide several types of feedback: confirmation that an appropriate answer was given, suggestions for valid answers, and real-time updates designed to help people stay within necessary limits. These bits of feedback usually happen when people begin, continue, or stop entering answers within input fields.
 
->Inline Validation Checklist
+>**Inline Validation Checklist**
 - Consider using inline validation to confirm or
 suggest valid answers and to help people stay
 within limits.
@@ -98,21 +98,19 @@ As many inputs as possible should be validated as soon as the user left the inpu
 
 ###Suggestions
 
-If a user has to enter a specific but already known value, an autocomplete suggest functions helps the user to complete his goal. Suggestions should always be designed to fit the usecase but there should never be more than 10 results at a time shown to the user to avoid confusion.
+If a user has to enter a specific but already known value, an autocomplete suggest functions helps the user to complete his goal. Suggestions should always be designed to fit the usecase but there should never be more than 10 results at a time shown to the user to avoid confusion. Instead, give him the option to show all results.
 
 ###Limits
 
 If there is a limit to the length of a text field or area and the user is likely to exceed, give him a hint.
 
->Good / Bad Image
-
-
 #Form elements
 
 When it comes to form elements, we follow the touch-first principle. Inputs which require a keyboard should always be chosen last, because text inputs are a burden for many users.
+For a list of items please see the [form elements](/design/components/form_elements) in the [components](/design/components/) section
 
->Checklist: form elements
-- Inputs which require a keyboard should always be the last option
+>**Checklist: form elements**
+- Inputs which require a keyboard should always be the last option  
 - Stay on Keypad: condense UI where appropriate
 - Skip Steps: get people into input mode asap
 

@@ -1,24 +1,22 @@
 ---
 title: Autocomplete
-slug: autocomplete
-collection: development_plugins
 template: development.jade
 ---
 
-h3 Intro
+h2.heading.heading--secondary Intro
 
 p.callout.callout--danger.
   This plugin is only a very basic example of an autocomplete component.
   It is by no means complete.
 
-p.
+p.paragraph.
   Use your own library to create appropriate autocomplete components and style
   it according to the <code>autocomplete</code> block.
 
 p.callout.
   Try typing '8' to toggle the autocomplete dropdown.
 
-h3 Example
+h2.heading.heading--secondary Example
 
 :sample
   .autocomplete
@@ -28,7 +26,7 @@ script.
   $('#autocomplete-input').autocomplete({
     source: ['8000 Zürich', '8400 Winterthur', '8460 Marthalen']});
 
-p Activate the functionality with Javascript
+p.paragraph Activate the functionality with Javascript
 
 .highlight
   pre.highlight__listing.hljs: code.js
@@ -44,7 +42,7 @@ p Activate the functionality with Javascript
 
 
 
-h4 Options
+h3 Options
 
 table.table
   thead
@@ -54,14 +52,14 @@ table.table
       th.table__header__item Default
       th.table__header__item Description
   tbody.table__content
-    tr.table__item
-      td.table__item__info
-        code.table__item__info__content source
-      td.table__item__info
-        code.table__item__info__content array
-      td.table__item__info
-        code.table__item__info__content false
-      td.table__item__info
-        p.table__item__info__content.
+    tr.table__row
+      td.table__row__item
+        code.table__row__item__content source
+      td.table__row__item
+        code.table__row__item__content array
+      td.table__row__item
+        code.table__row__item__content false
+      td.table__row__item
+        p.table__row__item__content.
           Source to filter and create the dropdown-list.
 // Copyright AXA Versicherungen AG 2015

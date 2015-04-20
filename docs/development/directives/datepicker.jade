@@ -1,0 +1,21 @@
+---
+title: Datepicker
+template: development.jade
+order: a
+---
+
+script(src=relative('ng/angular.min.js'))
+
+// AXA Web Style Guide
+script(src=relative('ng/datepicker/datepicker.module.js'))
+script(src=relative('ng/datepicker/directives/datepicker.directive.js'))
+script(src=relative('ng/axa-wsg.module.js'))
+
+// Mini NG app for the docs
+script(src=relative('ng/app.module.js'))
+script(src=relative('ng/app.run.js'))
+script(src=relative('ng/noop.controller.js'))
+
+
+div(ng-app='app', ng-controller='noopController')
+  div(axa-wsg-datepicker)

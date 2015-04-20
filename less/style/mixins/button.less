@@ -1,46 +1,55 @@
 @import '../blocks/icon';
 
-.make-button-size(@height, @pad-lr, @icon-pad, @icon-size, @font-size, @line-height: 1.5, @border-radius: 0) {
+
+// Button mixins
+.make-button-size(@height, @pad-lr, @icon-size, @font-size, @line-height: 1.5, @border-radius: 0) {
   // TODO: we may support @line-height in pixel or em using css guards
   @calculated-line-height: @font-size * @line-height;
 
-  font-size: @font-size;
-
-  line-height: @line-height;
   padding: ((@height - @calculated-line-height) / 2) @pad-lr;
-
   border: none;
 
-  & .button__icon {
-    font-size: @icon-size;
-    display: inline;
-  }
+  font-size: @font-size;
+  line-height: @line-height;
 
   border-radius: @border-radius;
+
+  & .button__icon {
+    display: inline;
+
+    font-size: @icon-size;
+  }
 }
 
-.make-button-color(@bg-color, @color, @hover-bg-color: @bg-color, @hover-color: @color) {
-  background: @bg-color;
-  color: @color;
+.make-button-color(@bg-color, @color, @highlight-bg-color: @bg-color, @highlight-color: @color) {
 
   text-decoration: none;
 
+  background: @bg-color;
+  color: @color;
+
   &:hover {
-    background: @hover-bg-color;
-    color: @hover-color;
+    background: @highlight-bg-color;
+    color: @highlight-color;
+
+    & .button__icon {
+      color: @highlight-color;
+    }
   }
 
   &:focus {
     outline: none;
-    background: lighten(@bg-color, 10%);
-  }
+    background: @highlight-bg-color;
+    color: @highlight-color;
 
-  & .button__icon {
-    color: @color;
-
-    &:hover {
-      color: @hover-color;
+    & .button__icon {
+      color: @highlight-color;
     }
   }
+
+  &.button__icon {
+    color: @color;
+  }
 }
+
 /* Copyright AXA Versicherungen AG 2015 */

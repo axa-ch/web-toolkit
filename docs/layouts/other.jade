@@ -1,9 +1,12 @@
 ---
 template: master.jade
 segment: other
+cache: true
+filename: other.jade
 ---
 
+.l-container
+  h1.heading.heading--page= title
 
-
-.l-container!= contents
+  != contents
 // Copyright AXA Versicherungen AG 2015

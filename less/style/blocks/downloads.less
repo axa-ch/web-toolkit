@@ -1,0 +1,40 @@
+@import '../variables';
+@import '../blocks/icon';
+
+.downloads {
+
+  .icon();
+  .icon--download();
+
+  display: block;
+  margin: 30px 0;
+
+  text-transform: uppercase;
+  color: @color-blue;
+  font-size: 13px;
+
+  &:before {
+    float: left;
+    font-size: 21px;
+    color: @color-blue-gray;
+    vertical-align: middle;
+    padding-right: 10px;
+  }
+
+}
+
+.downloads__link {
+  .link();
+  display: block;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.downloads__link--inactive {
+  cursor: default;
+  color: @color-gray;
+
+  &:hover {
+    color: @color-gray;
+  }
+}
