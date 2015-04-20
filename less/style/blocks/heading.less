@@ -8,13 +8,21 @@
 .heading--page {
   .make-gutter-as-padding();
 
+  .heading--primary();
+
+  border-bottom: 1px dotted @color-blue;
+  padding-bottom: 15px;
+
+  .respond(medium, {
+    padding-bottom: 12px;
+  })
+}
+
+.heading--primary {
   display: block;
 
-  padding-top: 0;
-  padding-bottom: 15px;
-  border-bottom: 1px dotted @color-blue;
-  margin-top: 26px;
-  margin-bottom: 40px;
+  padding: 0;
+  margin: 26px 0 40px 0;
 
   font-size: 21px;
   line-height: 1.15;
@@ -22,7 +30,6 @@
   color: @color-blue;
 
   .respond(medium, {
-    padding-bottom: 12px;
     margin-top: 48px;
     font-size: 39px;
     line-height: 1.4103;
