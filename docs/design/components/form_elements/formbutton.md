@@ -4,12 +4,11 @@ template: design.jade
 order: 3
 ---
 
-
 Primary actions bring people closer to completion, secondary actions allow them to go back. Make it clear to the user what happens after he clicks / taps a button. Placement and behaviour of buttons should avoid mistakes.
 
 <span class="downloads" >
   <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
-  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+  <a href="../psd/AXA_forms_mobile.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
 </span>
 
 >Checklist: Action Buttons

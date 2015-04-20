@@ -8,10 +8,10 @@ A **checkbox** is a basic control that enables the user to select or deselect on
 
 <span class="downloads" >
   <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
-  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+  <a href="../psd/AXA_forms_mobile.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
 </span>
 
-##Example
+# Example
 
 <label data-checkbox="data-checkbox" class="checkbox">
   <input type="checkbox" class="checkbox__checkbox"/>
