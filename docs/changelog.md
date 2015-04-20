@@ -13,8 +13,8 @@ template: other.jade
   - Update Form components documentation
   - Introduce Adobe Color Swatch download
 - Developer Toolkit
-  - Introduce main navigation
-  - 
+  - Add language switch and logout button to mobile navigation.
+  - Add info about the mobile navigation in site documentation.
   - Bugfix whitespace issue within segmented-control
   - Refactored the `header__meta__welcome` element.
     - `header__meta__welcome__item` element is replaced by `header__meta__welcome__main` and `header__meta__welcome__secondary`.
