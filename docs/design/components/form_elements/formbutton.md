@@ -20,4 +20,5 @@ Primary actions bring people closer to completion, secondary actions allow them 
 - For actions like reset or clear, provide people with an easy way to undo it
 - Combine agreement-checkboxes with Buttons to reduce one step from the process
 - Always set a useful label, to let the user know what will happen next
+
 <!-- Copyright AXA Versicherungen AG 2015 -->

@@ -19,3 +19,5 @@ A **checkbox** is a basic control that enables the user to select or deselect on
     <div class="checkbox__label__text">I would like to recieve every possible mail in the universe.</div>
   </div>
 </label>
+
+<!-- Copyright AXA Versicherungen AG 2015 -->
