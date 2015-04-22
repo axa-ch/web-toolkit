@@ -13,6 +13,7 @@
   &:extend(.clearfix all);
 
   padding: @padding-top-bottom 0;
+  border-bottom: 1px solid @color-blue-gray--light;
 
   .respond(medium, {
     border-bottom: 5px solid @color-blue;
@@ -25,7 +26,9 @@
 }
 
 .header__container {
-  padding-bottom: 20px;
+  .respond(medium, {
+    padding-bottom: 20px;
+  });
 }
 
 .header__mobile-trigger {
