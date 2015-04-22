@@ -13,5 +13,8 @@ Very few elements don’t need a visible label such as *terms & conditions* chec
   <a href="../psd/AXA_forms_mobile.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
 </span>
 
-###Example
+# Example
+
 label example
+
+<!-- Copyright AXA Versicherungen AG 2015 -->

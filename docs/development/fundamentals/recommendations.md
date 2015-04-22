@@ -80,4 +80,5 @@ and this Developer Toolkit is based on it.
 > we recommend using Lo-Dash or something similar.
 > Have a look at our <code>icons.less.lodash</code> file for
 > a real world example.
+
 <!-- Copyright AXA Versicherungen AG 2015 -->

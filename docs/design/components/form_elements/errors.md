@@ -24,3 +24,5 @@ order: 0
     </div>
   </div>
 </div>
+
+<!-- Copyright AXA Versicherungen AG 2015 -->

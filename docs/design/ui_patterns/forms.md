@@ -3,6 +3,7 @@ title: Form Design
 template: design.jade
 order: 1
 ---
+
 Try to find someone who likes filling forms, you won't. This is the reason why we built this guide on how to build forms for AXA. We included checklist for most topics, which give you a deeper insight and valuable tipps on how to build less annoying forms.
 
 >Checklist: Form Basics
@@ -132,4 +133,5 @@ A best practice form as described on this site is available on the [example sect
 #Source
 
 Most research conducted lead one way or another to the book Web Form Design by Luke Wroblewski. This book is highly recommended as an deep-dive on web forms.
+
 <!-- Copyright AXA Versicherungen AG 2015 -->

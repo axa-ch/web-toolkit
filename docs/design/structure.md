@@ -23,4 +23,5 @@ Finally, we show the elment. If this element type is available in different stat
 | Border Style  | 5px, solid      | -        |
 | Line-Height   | 1.5             |          |
 | Min Width     | 200px           | if smaller, display one element less on the same line. If it's already the only element, break content into multiple rows.|
+
 <!-- Copyright AXA Versicherungen AG 2015 -->
