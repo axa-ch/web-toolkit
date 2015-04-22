@@ -15,6 +15,17 @@ Very few elements don’t need a visible label such as *terms & conditions* chec
 
 # Example
 
-label example
+<div class="l-container">
+  <div class="form">
+    <div class="form__group">
+      <label class="form__group__label">
+        <div class="form__group__label__text">Form label</div>
+      </label>
+      <div class="form__group__control">
+        <input type="text" class="control control--input"/>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Copyright AXA Versicherungen AG 2015 -->
