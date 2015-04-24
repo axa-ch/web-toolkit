@@ -17,11 +17,20 @@ template: development.jade
           .form__group__label__info-icon
             .info-icon
           label.form__group__label__info-icon-text-wrapper
-            .form__group__label__text Form label
+            .form__group__label__text Hide info-text (default)
+        .form__group__control
+          input.control.control--input(type='text')
+      .form__group
+        .form__group__label
+          .form__group__label__info-icon
+            .info-icon.is-active
+          label.form__group__label__info-icon-text-wrapper
+            .form__group__label__text Display info-text
         .form__group__control
           input.control.control--input(type='text')
           .form__info-text
             .info-text
               p.paragraph.
                 Hallo Welt!
+
 // Copyright AXA Versicherungen AG 2015

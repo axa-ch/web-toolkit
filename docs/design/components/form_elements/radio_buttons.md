@@ -12,3 +12,5 @@ At AXA we don't use this element due to its limitations on mobile devices. See [
   <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
   <a href="../psd/AXA_forms_mobile.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
 </span>
+
+<!-- Copyright AXA Versicherungen AG 2015 -->

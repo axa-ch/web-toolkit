@@ -97,3 +97,5 @@
       Plugin.call($popover)
 
 )(jQuery)
+
+#! Copyright AXA Versicherungen AG 2015

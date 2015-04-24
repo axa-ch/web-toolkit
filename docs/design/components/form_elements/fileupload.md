@@ -185,5 +185,4 @@ The following examples display the three main states of the single upload.
   </div>
 </div>
 
-
 <!-- Copyright AXA Versicherungen AG 2015 -->

@@ -100,4 +100,5 @@ class Storage
 
 window.GitHub = GitHub
 window.Storage = Storage
-# Copyright AXA Versicherungen AG 2015
+
+#! Copyright AXA Versicherungen AG 2015

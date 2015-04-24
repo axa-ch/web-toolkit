@@ -86,4 +86,5 @@
       Plugin.call($menu, data)
 
 )(jQuery)
-# Copyright AXA Versicherungen AG 2015
+
+#! Copyright AXA Versicherungen AG 2015
