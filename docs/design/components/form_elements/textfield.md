@@ -16,6 +16,11 @@ Most systems support placeholder text within text fields. Placeholder text is on
 To be defined
 -->
 
+<span class="downloads" >
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
+  <a href="../psd/AXA_forms_mobile.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+</span>
+
 # Single-line text field
 
 ## Example
@@ -23,23 +28,6 @@ To be defined
 <div style="max-width: 700px" >
   <input type="text" class="control control--input" value="Foo bar" />
 </div>
-
-## Design specs
-
-|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- |
-| Text | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> Arial 14px | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> Arial 14px |
-| Text color | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> #333333 | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> #333333 |
-| Text vertical-align | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> middle | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> middle |
-| Height | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 40px | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 40px |
-| Width | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 100% | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 100% |
-| Background | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> #efefef | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> #efefef |
-
-### Focus
-
-|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- |
-| Border | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 1px solid #0062A9 | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 1px solid #0062A9 |
 
 # Multi-line text field
 
@@ -53,16 +41,6 @@ as soon as the user enters more lines than fit. Add a max height to prevent huge
 Bar</textarea>
 </div>
 
-## Design specs
-
-Inherits from the single-line text field
-
-|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- |
-| Text vertical-align | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 15px from top | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 15px from top |
-| Height | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 65-175px | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 65-175px |
-
-
 # Auto-complete text field
 
 Use the auto-complete feature to provide real-time completions in dropdowns to enhance
@@ -70,39 +48,13 @@ accuracy and efficiency.
 
 ## Example
 
-<div style="max-width: 700px" >
-  <div class="autocomplete">
-    <input type="text" value="8" class="control control--input"/>
-    <div style="position: relative;" class="autocomplete-container">
-      <div class="autocomplete-item">8000 Zürich</div>
-      <div class="autocomplete-item autocomplete-item--selected">8400 Winterthur</div>
-      <div class="autocomplete-item">8472 Seuzach</div>
-    </div>
+<div class="autocomplete" style="max-width: 700px">
+  <input type="text" class="control control--input"/>
+  <div style="position: relative;" class="autocomplete__suggestions">
+    <div class="autocomplete__suggestions__item">8000 Zürich</div>
+    <div class="autocomplete__suggestions__item autocomplete__suggestions__item--selected">8400 Winterthur</div>
+    <div class="autocomplete__suggestions__item">8472 Seuzach</div>
   </div>
 </div>
 
-## Design specs
-
-Inherits from the single-line text field
-
-### Dropdown
-
-|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- |
-| Max items | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> 5 | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> 7 |
-
-### Dropdown item
-
-Inherits from the single-line text field
-
-|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- |
-| Background | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> #DADADB | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> #DADADB |
-
-#### hover/selected
-
-|    | <i class="icon icon--mobile" ></i> | <i class="icon icon--desktop" ></i> |
-| -- | -- | -- |
-| Text color | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> white | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> white |
-| Background | <div class="table__row__item__content__label" ><i class="icon icon--mobile" ></i></div> #0062A9 | <div class="table__row__item__content__label" ><i class="icon icon--desktop" ></i></div> #0062A9 |
 <!-- Copyright AXA Versicherungen AG 2015 -->

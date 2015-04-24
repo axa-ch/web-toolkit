@@ -1,26 +1,86 @@
 // Attention: This file is generated automatically!
 
+// #############################
+// # Respond
+// #############################
+
 @respond-medium-min-width: 768px;
 @respond-large-min-width: 980px;
+
+// #############################
+// # Icon font
+// #############################
 
 @icon-font-path: '../fonts';
 @icon-font-name: 'style-guide-font';
 
-@font-size-base: 14px;
-@font-size-large: 16px;
-@font-size-small: 13px;
+// #############################
+// # Buttons
+// #############################
+
+@font-size: 16px;
+@font-size-small: 0.875em;
+@font-size-large: 1.125em;
+@font-weight-medium: 600;
+@line-height: 1.375;
+@font-color: @color-gray--darkest;
+
+// #############################
+// # Transitions
+// #############################
 
 @transition-duration: 0.5s;
+@transition-fn-fancy: cubic-bezier(0.6, 0.0, 0.735, 0.045);
+@transition-duration-fast: 250ms;
+
+// #############################
+// # Images
+// #############################
 
 @images-path: '../images';
+
+// #############################
+// # Grid
+// #############################
 
 @grid-columns: 12;
 @grid-gutter-width: 20px;
 
-@transition-fn-fancy: cubic-bezier(0.6, 0.0, 0.735, 0.045);
-@transition-duration-fast: 250ms;
+// #############################
+// # Focus
+// #############################
 
 @focus-border-width: 1px;
+
+// #############################
+// # Buttons
+// #############################
+
+@button-height: 50px;
+@button-height--medium: 50px;
+@button-pad-lr: 30px;
+@button-pad-lr--medium: 40px;
+@button-icon-size: 16px;
+@button-font-size: 16px;
+@button-font-size--medium: 18px;
+
+@button-sm-height: 30px;
+@button-sm-height--medium: 30px;
+@button-sm-pad-lr: 15px;
+@button-sm-icon-size: 14px;
+@button-sm-font-size: 14px;
+
+@button-primary-bg: @color-blue;
+@button-primary-color: white;
+@button-primary-highlight-bg: lighten(@color-blue, 5%);
+
+@button-secondary-bg: @color-gray--dark;
+@button-secondary-color: white;
+@button-secondary-highlight-bg: lighten(@color-gray--dark, 5%);
+
+// #############################
+// # Colors
+// #############################
 
 // Primary colors
 <%
@@ -51,6 +111,10 @@ _.forEach(colors.tbd, function (colorCode, colorName) {
 @color-<%= colorName %>: <%= colorCode %>;<%
 });
 %>
+
+// #############################
+// # z-index
+// #############################
 
 @z-index-progress-step: 15;
 @z-index-progress-step-bullet: 16;

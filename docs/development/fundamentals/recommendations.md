@@ -70,8 +70,7 @@ multilingual country in an international group.
 # Less compiler
 
 Whenever you get in touch with Less we recommend
-using the
-<a href="http://lesscss.org">official Less compiler</a>
+using the [official Less compiler](http://lesscss.org")
 (or plugins using this compiler).
 This compiler is proved to work with the Less specification
 and this Developer Toolkit is based on it.
@@ -81,4 +80,5 @@ and this Developer Toolkit is based on it.
 > we recommend using Lo-Dash or something similar.
 > Have a look at our <code>icons.less.lodash</code> file for
 > a real world example.
+
 <!-- Copyright AXA Versicherungen AG 2015 -->

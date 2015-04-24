@@ -1,7 +1,6 @@
 ---
 title: BEM
 template: development.jade
-status: experimental
 order: 3
 ---
 
@@ -80,4 +79,5 @@ select every instance of a block on your page.
 
 If you have the need, you can also write a Javascript libraray to easily
 access blocks and elements.
+
 <!-- Copyright AXA Versicherungen AG 2015 -->

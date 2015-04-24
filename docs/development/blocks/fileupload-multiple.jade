@@ -7,7 +7,7 @@ template: development.jade
   The ``multi-upload`` block is used to display drag and drop zones for
   multiple files and display status info (progress) to the uploaded files.
 
-h3 Behavior
+h2.heading.heading--secondary Behavior
 :markdown
   When a file is dropped into the dropzone or uploaded through the dialog,
   a new element with the status info about this file should be displayed in the
@@ -20,8 +20,8 @@ h3 Behavior
 :markdown
   Register to the ``ondrop`` event to start uploading the files.
 
-h3 Example
-p.
+h2.heading.heading--secondary Example
+p.paragraph.
   The following is an example which displays the
   different states an upload field can have.
 
@@ -55,7 +55,7 @@ p.
             | Maximal 2 MB pro Datei
           .file-list
 
-h3 Styles
+h2.heading.heading--secondary Styles
 
 :sample
   .l-container
@@ -121,9 +121,9 @@ h3 Styles
                 i.dropzone-fallback__button__icon.icon.icon--upload
                 span.dropzone-fallback__button__text Click to upload files
 
-h3 IE 9
+h2.heading.heading--secondary IE 9
 
-p.
+p.paragraph.
   IE 9 does not support drag and drop functionality for files. It also doesn't
   support the <code>FileReader</code> API. So, just do it like its 2007:
 
@@ -245,4 +245,5 @@ script.
 
     init();
   })();
+
 // Copyright AXA Versicherungen AG 2015

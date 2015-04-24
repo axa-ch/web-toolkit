@@ -4,12 +4,17 @@ template: development.jade
 ---
 
 :markdown
-  The ``info-icon`` block is used to display icons to hint at an informative
+  The `info-icon` block is used to display icons to hint at an informative
   text element.
 
-  Use it together with the ``info-text`` block and the ``info``
-  plugin to create slide in / slide out information text blocks.
+  Use it together with the `info-text` block and the ``info`` plugin to
+  create slide in / slide out information text blocks and switch the
+  `is-active` modifier.
+
+  Use the `is-active` modifier to toggle the displayed icon.
 
 :sample
   .info-icon
+  .info-icon.is-active
+
 // Copyright AXA Versicherungen AG 2015

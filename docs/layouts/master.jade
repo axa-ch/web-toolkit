@@ -22,7 +22,7 @@ html
     meta(name="author", content=config.author)
 
     title #{title} | Web Design Guide
-
+    link(rel="stylesheet", href="http://fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
     link(rel="stylesheet", href=relative("/css/docs.css"))
 
     script(src=relative('/js/jquery/jquery.min.js'))
@@ -48,7 +48,7 @@ html
         s.parentNode.insertBefore(uv,s)
       })();
 
-    script(src=relative("/js/style.all.js"))
+    script(src=relative("/js/axa-wsg.jquery.all.js"))
     script(src=relative("/js/api.js"))
     script(src=relative("/js/github-integration.js"))
     script(src=relative("/js/main.js"))
@@ -61,12 +61,25 @@ html
         .docs-floating-action
           a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating.icon.icon--feedback
       header.header
-        .header__main.l-container
+        .header__container.l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
           a.header__brand.brand(href=relative("/index.html"))
             .brand__logo
           .header__meta
             .header__meta__upper
+              // ko if: hasGitHubIntegration
+              .header__meta__action
+                // ko if: !github.isSignedIn()
+                .header__action
+                  img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link.docs-github-loading
+                  a(data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").header__action__button Sign in with GitHub
+                // /ko
+                // ko if: github.isSignedIn()
+                .header__action
+                  img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
+                  a(href=config.repository.url, data-bind='visible: !github.isAuthenticating() && github.isActiveMember()').menu__link.icon.icon--github.docs-github-icon
+                // /ko
+              // /ko
               .header__meta__menu
                 - var segments = []
                 - segments.push({ name: 'Design Guidelines', slug: 'design', path: '/design/fundamentals/index.html' })
@@ -83,24 +96,9 @@ html
                         class={'is-active': segment == s.slug}
                       )= s.name
             .header__meta__lower
-
-              // ko if: hasGitHubIntegration
-              .header__meta__social
-                .menu.menu--social
-                  // ko if: !github.isSignedIn()
-                  .menu__item(data-bind='css: {\'menu__item--docs-signin\': !github.isAuthenticating()}')
-                    img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
-                    a(data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").menu__link Sign in with GitHub
-                  // /ko
-                  // ko if: github.isSignedIn()
-                  .menu__item
-                    img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
-                    a(href=config.repository.url, data-bind='visible: !github.isAuthenticating() && github.isActiveMember()').menu__link.icon.icon--github
-                  // /ko
-              // /ko
               .header__meta__welcome
-                ul
-                  li.header__meta__welcome__item
+                div
+                  .header__meta__welcome__main
                     if segment == 'design'
                       span Design Guidelines
                     else if segment == 'development'
@@ -109,6 +107,12 @@ html
                       span Examples
                     else
                       span Web Design Guide
+
+                  // ko if: github.isSignedIn()
+                  .header__meta__welcome__secondary
+                    // ko text: github.user().login
+                    // /ko
+                  // /ko
 
         if menu
           .header__menu
@@ -135,10 +139,23 @@ html
               li.menu__item
                 a(href=relative('/changelog.html')).menu__link Changelog
               li.menu__item
-                span.menu__link AXA 2014 ©
+                span.menu__link AXA 2015 ©
 
     .site__mobile-menu
-
+      .site__mobile-menu__header
+        if segment == 'design'
+          h1.site__mobile-menu__title Design Guidelines
+        else if segment == 'development'
+          h1.site__mobile-menu__title Developer Toolkit
+        else if segment == 'examples'
+          h1.site__mobile-menu__title Examples
+        else
+          h1.site__mobile-menu__title Web Design Guide
+        // ko if: github.isSignedIn()
+        p.site__mobile-menu__user
+          // ko text: github.user().login
+          // /ko
+        // /ko
       nav#menu-mobile.menu.menu--sliding
         ul.menu__level
           li.menu__item
@@ -238,4 +255,5 @@ html
       var viewModel = new MainViewModel(!{JSON.stringify(config)});
       ko.applyBindings(viewModel);
       viewModel.init();
+
 // Copyright AXA Versicherungen AG 2015

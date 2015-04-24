@@ -86,4 +86,5 @@ Check the collaborators list for the people behind it.
 ## License
 
 Copyright 2015 AXA Versicherungen AG. All rights reserved.
+
 <!-- Copyright AXA Versicherungen AG 2015 -->

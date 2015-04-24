@@ -68,4 +68,5 @@ is not supported page" or add support for IE 8.
   round borders.
 * Since jQuery 2.0 dropped support for IE 8 in favour
   of a performance boost you need to use jQuery &lt;2.0
+
 <!-- Copyright AXA Versicherungen AG 2015 -->

@@ -1,8 +1,9 @@
+/*! AXA Web Style Guide | Copyright AXA Versicherungen AG 2015 */
+
 @import 'normalize';
 @import 'style';
 @import 'highlight';
 
-@import './blocks/anchor';
 @import './blocks/block';
 @import './blocks/box';
 @import './blocks/callout';
@@ -33,18 +34,21 @@
   }
 }
 
-.table--docs {
-  max-width: 700px;
+.docs-github-icon {
+  line-height: 21px;
+  font-size: 17px;
+  &::before {
+    font-size: 17px !important;
+  }
 }
 
-.menu__item--docs-signin {
-  background: red;
-  padding: 5px 10px;
+.docs-github-loading {
+  height: 21px;
+  margin-bottom: -5px;
+}
 
-  .menu__link {
-    color: white;
-    font-weight: bold;
-  }
+.table--docs {
+  max-width: 700px;
 }
 
 .l-container {
@@ -94,4 +98,5 @@ p code {
 
   font-size: @font-size-small;
 }
+
 /* Copyright AXA Versicherungen AG 2015 */

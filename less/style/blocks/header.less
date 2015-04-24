@@ -13,6 +13,7 @@
   &:extend(.clearfix all);
 
   padding: @padding-top-bottom 0;
+  border-bottom: 1px solid @color-blue-gray--light;
 
   .respond(medium, {
     border-bottom: 5px solid @color-blue;
@@ -24,8 +25,10 @@
   });
 }
 
-.header__main {
-  padding-bottom: 20px;
+.header__container {
+  .respond(medium, {
+    padding-bottom: 20px;
+  });
 }
 
 .header__mobile-trigger {
@@ -104,7 +107,7 @@
   }
 }
 
-.header__meta__welcome__item {
+.header__meta__welcome__main {
   float: left;
 
   height: 16px; // Hack to get the border-right exactly 16px height
@@ -112,7 +115,8 @@
   margin: 0;
 
   line-height: 16px;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
   font-family: ITCFranklinGothicCondensedDemi, sans-serif;
 
   color: @color-blue;
@@ -121,24 +125,83 @@
     color: @color-blue;
     text-decoration: none;
   }
-
-  & + & {
-    padding-left: 10px;
-    border-left: 1px solid @color-gray--darker;
-    margin-left: 10px;
-  }
 }
+
+.header__meta__welcome__secondary {
+  float: left;
+
+  height: 16px; // Hack to get the border-right exactly 16px height
+  padding: 0;
+  margin: 0;
+
+  line-height: 16px;
+  font-size: 16px;
+  font-family: ITCFranklinGothicCondensedDemi, sans-serif;
+
+  color: @color-blue;
+
+  a {
+    color: @color-blue;
+    text-decoration: none;
+  }
+  padding-left: 10px;
+  border-left: 1px solid @color-gray--darker;
+  margin-left: 10px;
+}
+
 
 .header__meta__social {
   float: right;
 
   min-height: 21px; // TODO
-  padding: 0 0 0 10px;
-  border-left: 1px solid @color-gray--darker;
-  margin: 0 0 0 10px;
 }
 
 .header__menu {
-  border-top: 1px solid @color-gray--lighter;
+  display: none;
+
+  .respond(large, {
+    display: block;
+    border-top: 1px solid @color-gray--lighter;
+  });
 }
+
+.header__meta__action {
+  float: right;
+}
+
+.header__action {
+  margin-left: 8px;
+  margin-bottom: -4px;
+
+  .respond(large, {
+    float: left;
+    });
+
+  &:first-of-type {
+    margin-left: 20px;
+  }
+
+  .icon {
+    &::before {
+      font-size: 28px;
+    }
+  }
+}
+
+.header__action__button {
+  background: red;
+  padding: 5px 10px;
+
+  font-weight: @font-weight-medium;
+  font-size: 15px;
+
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
 /* Copyright AXA Versicherungen AG 2015 */

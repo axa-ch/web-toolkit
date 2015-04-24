@@ -4,13 +4,29 @@ template: development.jade
 ---
 
 :markdown
-  The ``.invisible-font`` mixin can be used to text that you still need to keep
+  The `.invisible-font` mixin can be used to text that you still need to keep
   in the DOM. Be aware, that it sets the font-size to 0 and makes it
   transparent, but the containing element might still affect your layout.
+  
+.highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      selector {
+        .invisible-font();
+      }
+
+:markdown
+  The `undo-invisible-font` mixin can be used in child elements to undo the `invisible-font` declaration.
 
 .highlight
-  pre.highlight__listing.hljs
-    code.less
-      :highlight
+  pre.highlight__listing.hljs: code.less
+    :highlight
+      parent-selector {
         .invisible-font();
+
+        selector {
+          .undo-invisible-font();
+        }
+      }
+
 // Copyright AXA Versicherungen AG 2015

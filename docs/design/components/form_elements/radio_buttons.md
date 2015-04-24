@@ -4,12 +4,13 @@ template: design.jade
 order: 1
 ---
 
-A **radio button** is a basic control that enables the user to make a single selection from just a few options. Only apply it, if [segmented control](#) can not be used.
+A **radio button** is a basic control that enables the user to make a single selection from just a few options.
 
-Do not use radio buttons if the user has to choose from many different options. In this case, use a [dropdown element](#) or a grid view.
+At AXA we don't use this element due to its limitations on mobile devices. See [segmented control](/design/form_elements/segmented_controls.html) for a single selection element.
 
+<span class="downloads" >
+  <a href="../psd/AXA_forms_desktop.psd" class="downloads__link" >AXA_forms_desktop.psd</a>
+  <a href="../psd/AXA_forms_mobile.psd" class="downloads__link" >AXA_forms_mobile.psd</a>
+</span>
 
-## Example
-
-
-## Design specs
+<!-- Copyright AXA Versicherungen AG 2015 -->
