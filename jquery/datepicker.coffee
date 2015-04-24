@@ -157,21 +157,31 @@
     constructor: (element, @moment, input, displayWeek) ->
       @$element = $ element
 
-      @picker = new Picker(@moment, displayWeek)
+      if navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/(iOS|iPhone|iPad|iPod)/i) || navigator.userAgent.match(/Windows Phone/i)
 
-      if input?
         @$input = $ input
 
-        @$input.on 'change', @onChange
+        @$input.prop 'type', 'date'
 
-        @onChange()
+        @$input.focus()
 
-      @picker.on 'select', ((date) ->
-        @$input.val(date)
-        @$input.trigger 'change'
-      ).bind(this)
+      else
 
-      @$element.append @picker.getDOMNode()
+        @picker = new Picker(@moment, displayWeek)
+
+        if input?
+          @$input = $ input
+
+          @$input.on 'change', @onChange
+
+          @onChange()
+
+        @picker.on 'select', ((date) ->
+          @$input.val(date)
+          @$input.trigger 'change'
+        ).bind(this)
+
+        @$element.append @picker.getDOMNode()
 
     onChange: () =>
       dat = @moment(@$input.val(), 'DD.MM.YYYY')

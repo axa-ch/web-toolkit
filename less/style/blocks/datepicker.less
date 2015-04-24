@@ -21,40 +21,31 @@
 }
 
 .datepicker {
-  .respond(medium; {
-    &:extend(.clearfix all);
-    max-width: 200px;
-  });
+  &:extend(.clearfix all);
+  max-width: 200px;
 }
 
 .datepicker__input {
-  .respond(medium; {
-    margin-right: 44px;
-  });
+  margin-right: 44px;
 }
 
 .datepicker__trigger {
-  display: none;
-
   cursor: pointer;
+  .icon();
+  .icon--calendar();
 
-  .respond(medium; {
-    .icon();
-    .icon--calendar();
+  display: block;
+  float: right;
 
-    display: block;
-    float: right;
+  width: 44px;
+  height: 40px;
+  padding: 0 14px;
 
-    width: 44px;
-    height: 40px;
-    padding: 0 14px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
 
-    line-height: 40px;
-    text-align: center;
-    font-size: 22px;
-
-    color: @color-light-blue;
-  });
+  color: @color-light-blue;
 }
 
 .picker {
