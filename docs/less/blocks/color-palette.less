@@ -2,37 +2,22 @@
 @import 'style/mixins/clearfix';
 @import 'style/grid';
 
-@color-palette-padding: 20px;
-
-.color-palette {
-  &:extend(.clearfix all);
-  padding: 20px 20px + @color-palette-padding @color-palette-padding + 20px 20px;
-}
-
 .color-palette__color {
-  float: left;
-  width: 25%;
-  padding: @color-palette-padding 0 0 @color-palette-padding;
-}
-
-.color-palette__color--secondary {
-  width: 20%;
+  border: 1px solid #dadada;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 20px 0;
 }
 
 .color-palette__color__content {
   background: white;
+  border-top: 1px solid #dadada;
   padding: 20px 10px;
   text-align: center;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  overflow: hidden;
 }
 
 .color-palette__color__box {
-  height: 190px;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-  overflow: hidden;
+  height: 250px;
 }
 
 .color-palette__color__box--secondary {
@@ -41,6 +26,7 @@
 }
 
 .color-palette__color__code {
+  text-transform: uppercase;
 }
 
 .color-palette__color__less {
