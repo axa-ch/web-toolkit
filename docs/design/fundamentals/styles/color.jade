@@ -10,25 +10,46 @@ order: 1
 .downloads
   a(href="../AXA.aco").downloads__link Download swatches
 
+
 h2.heading.heading--secondary Primary palette
 
-.l-row
-  .color-palette.color-palette--primary
+div(style="background: #efefef")
+
+  .color-palette
     each colorCode, colorName in colors.primary
-      .l-col.l-col--medium-3
-        .color-palette__color
-          .color-palette__color__box(style='background: ' + colorCode)
-          .color-palette__color__code #{colorCode}
+      .color-palette__color
+        .color-palette__color__box(style='background: ' + colorCode)
+        .color-palette__color__content
+          .color-palette__color__code(data-clipboard-text=colorCode) #{colorCode}
+          .color-palette__color__less(data-clipboard-text='@color-' + colorName) @color-#{colorName}
 
 h2.heading.heading--secondary Secondary palette
 
-each colorGroup in colors.secondary
-  .color-palette.color-palette--secondary
-    .l-row
-      each colorCode, colorName in colorGroup.colors
-        .l-col.l-col--medium-3
-          .color-palette__color
-            .color-palette__color__box(style='background: ' + colorCode, class=(colorCode == '#ffffff' ? 'color-palette__color__box--white' : ''))
-            .color-palette__color__code #{colorCode}
+div(style="background: #efefef")
 
+  each colorGroup in colors.secondary
+    .color-palette
+      each colorCode, colorName in colorGroup.colors
+        .color-palette__color.color-palette__color--secondary
+          .color-palette__color__box.color-palette__color__box--secondary(style='background: ' + colorCode)
+          .color-palette__color__content
+            .color-palette__color__code(data-clipboard-text=colorCode) #{colorCode}
+            .color-palette__color__less(data-clipboard-text='@color-' + colorName) @color-#{colorName}
+
+h2.heading.heading--secondary Colors not in a palette
+
+div(style="background: #efefef")
+
+  .color-palette
+    each colorCode, colorName in colors.tbd
+      .color-palette__color.color-palette__color--secondary
+        .color-palette__color__box.color-palette__color__box--secondary(style='background: ' + colorCode)
+        .color-palette__color__content
+          .color-palette__color__code(data-clipboard-text=colorCode) #{colorCode}
+          .color-palette__color__less(data-clipboard-text='@color-' + colorName) @color-#{colorName}
+
+  script.
+    $('[data-clipboard-text]').each(function (i, el) {
+      new ZeroClipboard(el);
+    });
 // Copyright AXA Versicherungen AG 2015
