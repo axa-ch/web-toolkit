@@ -1,0 +1,22 @@
+---
+title: Chips
+order: 4
+collection: nav__components
+template: page.jade
+lunr: true
+---
+
+p.paragraph.
+  The `chips can be used for stuff.
+
+.example(data-example-relative-base=relative('/'))
+  include ./includes/example-header.jade
+  .example__content
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html(data-example-centered)
+        include:ignorefrontmatter ./snippets/chips.jade
+
+// Copyright AXA Versicherungen AG 2015
