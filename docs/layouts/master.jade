@@ -21,7 +21,7 @@ html
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
 
-    title #{title} | Web Design Guide
+    title #{title} | Web Style Guide
     link(rel="stylesheet", href="http://fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
     link(rel="stylesheet", href=relative("/css/docs.css"))
 
@@ -99,16 +99,8 @@ html
               .header__meta__welcome
                 div
                   .header__meta__welcome__main
-                    if segment == 'design'
-                      span Design Guidelines
-                    else if segment == 'development'
-                      span Developer Toolkit
-                    else if segment == 'examples'
-                      span Examples
-                    else
-                      span Web Design Guide
-
                   // ko if: github.isSignedIn()
+                    span Web Style Guide
                   .header__meta__welcome__secondary
                     // ko text: github.user().login
                     // /ko
@@ -143,15 +135,8 @@ html
 
     .site__mobile-menu
       .site__mobile-menu__header
-        if segment == 'design'
-          h1.site__mobile-menu__title Design Guidelines
-        else if segment == 'development'
-          h1.site__mobile-menu__title Developer Toolkit
-        else if segment == 'examples'
-          h1.site__mobile-menu__title Examples
-        else
-          h1.site__mobile-menu__title Web Design Guide
         // ko if: github.isSignedIn()
+        h1.site__mobile-menu__title Web Style Guide
         p.site__mobile-menu__user
           // ko text: github.user().login
           // /ko
