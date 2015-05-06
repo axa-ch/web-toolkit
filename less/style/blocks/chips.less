@@ -17,7 +17,7 @@
     border-color: #ff0000;
   }
 
-  &:focus {
+  &.is-active {
     border-color: @color-light-blue;
     outline: none;
   }
@@ -69,8 +69,13 @@
 
 .chips__input {
   border: none;
+  margin-left: 10px;
 
   background: transparent;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 /* Copyright AXA Versicherungen AG 2015 */
