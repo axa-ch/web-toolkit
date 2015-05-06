@@ -99,8 +99,9 @@ html
               .header__meta__welcome
                 div
                   .header__meta__welcome__main
-                  // ko if: github.isSignedIn()
                     span Web Style Guide
+
+                  // ko if: hasGitHubIntegration && github.isSignedIn()
                   .header__meta__welcome__secondary
                     // ko text: github.user().login
                     // /ko
@@ -135,8 +136,9 @@ html
 
     .site__mobile-menu
       .site__mobile-menu__header
-        // ko if: github.isSignedIn()
         h1.site__mobile-menu__title Web Style Guide
+
+        // ko if: hasGitHubIntegration && github.isSignedIn()
         p.site__mobile-menu__user
           // ko text: github.user().login
           // /ko
