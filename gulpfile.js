@@ -28,6 +28,7 @@ var generateBowerJson = require('gulp-generate-bower-json');
 var npm = require('npm');
 var jshint = require('gulp-jshint');
 var ngAnnotate = require('gulp-ng-annotate');
+var filter = require('gulp-filter');
 
 var readJSONFile = require('./lib/readJSONFile');
 var writeJSONFile = require('./lib/writeJSONFile');
@@ -138,8 +139,10 @@ gulp.task('jquery-compile', function() {
         .pipe(coffeelint.reporter('default'))
         .pipe(sourcemaps.init())
         .pipe(coffee())
+        .pipe(sourcemaps.write('.', {sourceRoot: './'}))
         .on('error', errorify)
         .pipe(gulp.dest('./dist/jquery'))
+        .pipe(filter(['*','!**/*.map']))
         .pipe(concat('axa-wsg.jquery.all.js'))
         .pipe(sourcemaps.write('.', {sourceRoot: './'}))
         .pipe(gulp.dest('./dist/jquery'));
