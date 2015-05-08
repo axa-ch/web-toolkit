@@ -1,9 +1,7 @@
 require('gulp-coffee/node_modules/coffee-script/register')
 
 var gulp = require('gulp');
-var fs = require('fs');
 var del = require('del');
-var merge = require('merge-stream');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
@@ -32,7 +30,6 @@ var filter = require('gulp-filter');
 var iconfont = require('gulp-iconfont');
 
 var readJSONFile = require('./lib/readJSONFile');
-var writeJSONFile = require('./lib/writeJSONFile');
 var errorify = require('./lib/errorify');
 var file = require('./lib/file');
 var after = require('./lib/after');
