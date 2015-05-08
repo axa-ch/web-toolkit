@@ -4,7 +4,6 @@ var gulp = require('gulp');
 var fs = require('fs');
 var del = require('del');
 var merge = require('merge-stream');
-var iconfont = require('gulp-iconfont');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
@@ -37,53 +36,18 @@ var file = require('./lib/file');
 var after = require('./lib/after');
 
 var config = require('./package.json');
-var docs = require('./tasks/docs');
 
 gulp.task('clean', function (cb) {
   del(['./dist/**/*'], cb);
 });
 
-gulp.task('docs', docs({
+gulp.task('docs', require('./tasks/docs')({
   cwd: __dirname,
   src: './docs',
   dest: './dist/docs'
 }));
 
-gulp.task('icons', function (cb) {
-  // Notify execution end on second call, when...
-  // * icons.json file is written
-  // * fonts are created
-  var end = after(2, function (err) {
-    cb(err);
-  }, function (err) {
-    if (err) cb(err);
-  });
-
-  gulp.src(['./icons/*.svg'])
-    .pipe(iconfont({
-      fontName: 'style-guide-font',
-      appendCodepoints: true
-    }))
-    .on('error', errorify)
-    .on('codepoints', function (points) {
-      var glyphs = [];
-
-      points.forEach(function (point) {
-        glyphs.push({
-          name: point.name,
-          codepoint: point.codepoint.toString(16).toUpperCase()
-        });
-      });
-
-      var contents = new Buffer(JSON.stringify(glyphs, null, 2));
-
-      file('icons.json', contents)
-        .pipe(gulp.dest('./tmp'))
-        .on('end', end);
-    })
-    .pipe(gulp.dest('./dist/fonts'))
-    .on('end', end);
-});
+gulp.task('icons', require('./tasks/icons')());
 
 gulp.task('images', function () {
   return gulp.src(['./images/**'], { base: './images' })
@@ -128,12 +92,6 @@ gulp.task('styles-generate', function () {
     .pipe(rename({ extname: '' }))
     .pipe(gulp.dest('./dist/less/'));
 });
-
-/*gulp.task('styles-copy-colors', function () {
-  return gulp.src('./less/colors.json')
-    .pipe(rename('./colors.json'))
-    .pipe(gulp.dest('./tmp/'));
-});*/
 
 gulp.task('styles-autoprefix', function() {
   return gulp.src(['./dist/css/*.css'])
@@ -244,35 +202,7 @@ gulp.task('ng', function (cb) {
   runSequence('ng-clean', 'ng-validate', 'ng-copy', 'ng-compress', cb)
 });
 
-gulp.task('create-versions-file', function (cb) {
-  var data = {
-    tag: null,
-    hash: {
-      long: null,
-      short: null
-    }
-  },
-  end = after(2, function (err) {
-
-    writeJSONFile('./tmp/version.json', data);
-
-    cb(err);
-  }, function (err) {
-    if (err) cb(err);
-  });
-
-  git.revParse({args:'--short HEAD'}, function (err, hash) {
-    data.hash.short = hash;
-
-    end();
-  });
-
-  git.revParse({args:'HEAD'}, function (err, hash) {
-    data.hash.long = hash;
-
-    end();
-  });
-});
+gulp.task('create-versions-file', require('./tasks/create-versions-file')());
 
 gulp.task('release-dist-generate-bower-json', function() {
   return gulp.src('./package.json')
