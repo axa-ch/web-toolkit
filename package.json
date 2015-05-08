@@ -33,6 +33,7 @@
     "gulp-coffee": "^2.2.0",
     "gulp-coffeelint": "^0.4.0",
     "gulp-concat": "^2.4.0",
+    "gulp-filter": "^2.0.2",
     "gulp-generate-bower-json": "1.0.0",
     "gulp-git": "0.5.2",
     "gulp-gzip": "^0.0.8",

@@ -97,16 +97,9 @@ gulp.task('styles-generate', function() {
 gulp.task('styles-autoprefix', function() {
     return gulp.src(['./dist/css/*.css'])
         .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(postcss([autoprefixer()]))
+        .pipe(postcss([autoprefixer(), pseudoelements()]))
         .on('error', errorify)
         .pipe(sourcemaps.write('.', {sourceRoot: './'}))
-        .pipe(gulp.dest('./dist/css'));
-});
-
-gulp.task('styles-pseudoelements', function() {
-    return gulp.src(['./dist/css/*.css'])
-        .pipe(postcss([pseudoelements()]))
-        .on('error', errorify)
         .pipe(gulp.dest('./dist/css'));
 });
 
@@ -125,8 +118,7 @@ gulp.task('styles-compress', function() {
 gulp.task('styles', function(cb) {
     runSequence(
         'styles-copy', 'styles-icons', 'styles-generate',
-        'styles-compile', 'styles-autoprefix',
-        'styles-pseudoelements', 'styles-compress', cb);
+        'styles-compile', 'styles-autoprefix', 'styles-compress', cb);
 });
 
 gulp.task('jquery-clean', function(cb) {
