@@ -143,15 +143,8 @@ gulp.task('jquery-compile', function () {
     .pipe(sourcemaps.init())
     .pipe(coffee())
     .on('error', errorify)
-    .pipe(sourcemaps.write('.', {sourceRoot: './'}))
-    .pipe(gulp.dest('./dist/jquery'));
-});
-
-gulp.task('jquery-combine', function () {
-  return gulp.src(['./dist/jquery/*.js', '!./dist/jquery/*.all.js'])
-    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(gulp.dest('./dist/jquery'))
     .pipe(concat('axa-wsg.jquery.all.js'))
-    .on('error', errorify)
     .pipe(sourcemaps.write('.', {sourceRoot: './'}))
     .pipe(gulp.dest('./dist/jquery'));
 });
@@ -160,6 +153,7 @@ gulp.task('jquery-compress', function () {
   return gulp.src(['./dist/jquery/*.js'])
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
+    .on('error', errorify)
     .pipe(rename({
       extname: '.min.js'
     }))
@@ -168,7 +162,7 @@ gulp.task('jquery-compress', function () {
 });
 
 gulp.task('jquery', function (cb) {
-  runSequence('jquery-clean', 'jquery-validate', 'jquery-compile', 'jquery-combine', 'jquery-compress', cb);
+  runSequence('jquery-clean', 'jquery-validate', 'jquery-compile', 'jquery-compress', cb);
 });
 
 gulp.task('ng-clean', function (cb) {
