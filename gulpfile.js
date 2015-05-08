@@ -132,14 +132,10 @@ gulp.task('jquery-clean', function (cb) {
   del(['./dist/jquery/**'], cb);
 });
 
-gulp.task('jquery-validate', function() {
-  return gulp.src('./jquery/**/*.coffee')
-    .pipe(coffeelint())
-    .pipe(coffeelint.reporter('default'));
-});
-
 gulp.task('jquery-compile', function () {
   return gulp.src('./jquery/**/*.coffee')
+    .pipe(coffeelint())
+    .pipe(coffeelint.reporter('default'))
     .pipe(sourcemaps.init())
     .pipe(coffee())
     .on('error', errorify)
@@ -162,7 +158,7 @@ gulp.task('jquery-compress', function () {
 });
 
 gulp.task('jquery', function (cb) {
-  runSequence('jquery-clean', 'jquery-validate', 'jquery-compile', 'jquery-compress', cb);
+  runSequence('jquery-clean', 'jquery-compile', 'jquery-compress', cb);
 });
 
 gulp.task('ng-clean', function (cb) {
