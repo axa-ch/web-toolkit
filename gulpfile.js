@@ -165,19 +165,15 @@ gulp.task('ng-clean', function(cb) {
     del(['./dist/ng/**'], cb);
 });
 
-gulp.task('ng-validate', function() {
-    return gulp.src('./ng/**/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'));
-});
-
 gulp.task('ng-copy', function() {
     return gulp.src(['./ng/**/*'])
         .pipe(gulp.dest('./dist/ng'));
 });
 
-gulp.task('ng-compress', function() {
+gulp.task('ng-scripts', function() {
     return gulp.src(['./dist/ng/**/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'))
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(ngAnnotate())
         .pipe(uglify())
@@ -189,7 +185,7 @@ gulp.task('ng-compress', function() {
 });
 
 gulp.task('ng', function(cb) {
-    runSequence('ng-clean', 'ng-validate', 'ng-copy', 'ng-compress', cb)
+    runSequence('ng-clean', 'ng-copy', 'ng-scripts', cb)
 });
 
 gulp.task('create-versions-file', require('./tasks/create-versions-file')());
