@@ -53,6 +53,10 @@ gulp.task('images', function() {
         .pipe(gulp.dest('./dist/images'));
 });
 
+gulp.task('styles-clean', function(cb) {
+    del(['./dist/{less,css}/**'], cb);
+});
+
 gulp.task('styles-copy', function() {
     return gulp.src(['./less/**/*.less'], {base: './less'})
         .pipe(gulp.dest('./dist/less'));
@@ -110,7 +114,7 @@ gulp.task('styles-postcss', function() {
 
 gulp.task('styles', function(cb) {
     runSequence(
-        'styles-copy', 'styles-icons', 'styles-generate',
+        'styles-clean', 'styles-copy', 'styles-icons', 'styles-generate',
         'styles-compile', 'styles-postcss', cb);
 });
 
