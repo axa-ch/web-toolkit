@@ -240,6 +240,8 @@
   padding-top: 10px;
   margin-left: (@grid-gutter-width / -2);
 
+  font-size: 0.9em;
+
   .respond(large, {
     display: block;
   });
@@ -271,8 +273,6 @@
   .menu__link {
     display: block;
 
-    font-size: 14px;
-    font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
 
     color: @color-gray--darker;
@@ -325,10 +325,11 @@
 .menu--language {
   margin-left: 7px;
 
-  font-size: 12px; // TODO: fixed font-size
-
   .menu__item {
+    margin-top: 2px;
     margin-left: 7px;
+
+    font-size: 0.8em;
 
     &.is-active,
     &:hover {
@@ -365,17 +366,12 @@
     margin-top: 2px;
     margin-left: 12px;
 
-    font-size: 12px; // TODO: fixed font-size
     font-weight: bold;
-    font-family: "ITCFranklinGothicCondensedDemi", sans-serif;
   }
 }
 
 .menu--language {
-
   .menu__item {
-    font-size: 14px; // TODO: fixed font-size
-    font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-transform: uppercase;
   }
 }
