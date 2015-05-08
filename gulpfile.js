@@ -29,6 +29,7 @@ var npm = require('npm');
 var jshint = require('gulp-jshint');
 var ngAnnotate = require('gulp-ng-annotate');
 var filter = require('gulp-filter');
+var iconfont = require('gulp-iconfont');
 
 var readJSONFile = require('./lib/readJSONFile');
 var writeJSONFile = require('./lib/writeJSONFile');
@@ -76,6 +77,13 @@ gulp.task('styles-icons', function(cb) {
         });
 });
 
+gulp.task('styles-generate', function() {
+    return gulp.src(['./less/**/*.less.lodash', '!./less/style/blocks/icon.less.lodash'])
+        .pipe(template({colors: readJSONFile('./less/colors.json')}))
+        .pipe(rename({extname: ''}))
+        .pipe(gulp.dest('./dist/less/'));
+});
+
 gulp.task('styles-compile', function() {
     return gulp.src(['./dist/less/{style,normalize}.less'])
         .pipe(sourcemaps.init())
@@ -87,27 +95,15 @@ gulp.task('styles-compile', function() {
         .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('styles-generate', function() {
-    return gulp.src(['./less/**/*.less.lodash', '!./less/style/blocks/icon.less.lodash'])
-        .pipe(template({colors: readJSONFile('./less/colors.json')}))
-        .pipe(rename({extname: ''}))
-        .pipe(gulp.dest('./dist/less/'));
-});
-
-gulp.task('styles-autoprefix', function() {
+gulp.task('styles-postcss', function() {
     return gulp.src(['./dist/css/*.css'])
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(postcss([autoprefixer(), pseudoelements()]))
         .on('error', errorify)
         .pipe(sourcemaps.write('.', {sourceRoot: './'}))
-        .pipe(gulp.dest('./dist/css'));
-});
-
-gulp.task('styles-compress', function() {
-    return gulp.src(['./dist/css/{style,normalize}.css'])
-        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(filter(['*', '!**/*.map']))
         .pipe(postcss([csswring()]))
-        .on('error', errorify)
         .pipe(rename({
             extname: '.min.css'
         }))
@@ -118,7 +114,7 @@ gulp.task('styles-compress', function() {
 gulp.task('styles', function(cb) {
     runSequence(
         'styles-copy', 'styles-icons', 'styles-generate',
-        'styles-compile', 'styles-autoprefix', 'styles-compress', cb);
+        'styles-compile', 'styles-postcss', cb);
 });
 
 gulp.task('jquery-clean', function(cb) {
