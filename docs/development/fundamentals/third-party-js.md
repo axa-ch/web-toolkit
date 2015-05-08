@@ -10,9 +10,9 @@ status: experimental
 
 # What JavaScript libraries does the Web Style Guide need?
 To stay independent from any client or server side UI logic, we always develop
-the HTML markup and LESS/CSS styles first, for any component. You can use this
-to create your application and write all the behavior using your preferred
-frameworks and libraries.
+the HTML markup and LESS/CSS styles first, for any component. You can use
+the static markup and styles to create your application and write
+all the behavior using your preferred frameworks and libraries.
 
 > JavaScript is required to implement certain behaviours the Web Style Guide
 > defines.
@@ -29,13 +29,14 @@ In this case it's often better to let go of our plugins, and implement the
 behavior the way, your library intends to. Of course you may reuse code from
 the Web Style Guide.
 
-# Recommended libraries? (Draft)
-* jQuery
-* moment.js
-* Knockout
-* AngularJS
-* select2
-* typeahead.js
-* ...
+# Recommended libraries (Draft)
+| Library | Remarks |
+| -- | -- |
+| [Knockout](http://knockoutjs.com/) | A simple, but powerful binding and templating engine |
+| [Moment.js](http://momentjs.com/) | Use moment.js to handle date and time data |
+| [typeahead.js](https://github.com/twitter/typeahead.js) | Simple library to create exceptional typeahead controls |
+| [Select2](https://select2.github.io/) | Powerful library to create chips controls |
+| [AngularJS](https://angularjs.org/) | A very powerful framework for single page web apps |
+| [jQuery](https://jquery.com/) | You can use jQuery to create much of your UI behaviour |
 
 <!-- Copyright AXA Versicherungen AG 2015 -->
