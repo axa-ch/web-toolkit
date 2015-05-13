@@ -119,15 +119,18 @@ html
               each page in collections[collectionName]
 
                 - var nestedNavCollection = page.navigationSubCollection
-                - var isActive = page.link == link || (nestedNavCollection && isCollectionOpen(nestedNavCollection, navCollection));
+                - var isActive = page.link == link;
+                - var isOpen = nestedNavCollection && isCollectionOpen(nestedNavCollection, navCollection);
 
                 li.menu__item
                   a.menu__link(
                     href=relative(page.link),
-                    class={'is-active': isActive }
+                    class={'is-active': isActive, 'is-open': isOpen }
                   ) #{page.title}
-                    //-if nestedNavCollection && isCollectionOpen(nestedNavCollection, navCollection)
-                      //-span &nbsp;isOpenByDefault
+                    if nestedNavCollection
+                      i.menu__dropdown-icon(
+                        class={ 'is-open': isOpen }
+                      )
 
                   if nestedNavCollection
                     +displayMenu(nestedNavCollection, true)

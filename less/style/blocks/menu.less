@@ -38,19 +38,29 @@
 
     color: @color-gray--darkest;
     text-decoration: none;
-
-    &.is-active {
+    
+    &.is-active, &.is-open {
       font-weight: @font-weight-medium;
       color: @color-blue;
     }
 
     &:hover, :focus {
-        color: @color-red;
+      color: @color-red;
     }
   }
 
   .menu__level {
       padding-left: 19px;
+  }
+
+  .menu__dropdown-icon {
+    .icon();
+    .icon--arrow-right();
+
+    &.is-open {
+      .icon();
+      .icon--arrow-bottom();
+    }
   }
 }
 
