@@ -89,6 +89,37 @@ table.table.table--docs
       td.table__row__item
         .table__row__item__content 7.0+
 
+
+h2.heading.heading--secondary Internet Explorer 8
+p.
+  With the current release Internet Explorer 8 is
+  NOT supported. Please consider adding a "Your
+  browser is not supported page" or add support
+  for IE 8 on your own.
+
+ul.list.list--unordered
+  li.list__item.
+    IE 8 doesn't like CSS selectors which contain
+    double-colon CSS 3 pseudo element selectors
+    ( ::after). Even the selector "::after, :after" will
+    be ignored because there is one double-colon CSS 3
+    pseudo element.
+  li.list__item.
+    To make the CSS work in IE 8 you need to duplicate
+    all rules containing double-colon selectors and
+    replace the double-color with a single-color.
+  li.list__item.
+    Include respond.js and HTML5SHIV to support CSS 3
+    media queries and HTML5 Tags.
+  li.list__item.
+    IE8 doesn't support the border-radius property.
+    You should either include a shim or live without
+    round borders.
+  li.list__item.
+    Since jQuery 2.0 dropped support for IE 8 in
+    favour of a performance boost you need to use
+    jQuery <2.0
+
 script.
   google.setOnLoadCallback(drawCharts);
   function drawCharts() {
