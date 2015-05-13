@@ -6,13 +6,10 @@ template: page.jade
 ---
 
 p.paragraph.
-  Bacon ipsum dolor amet bacon tail ribeye jowl,
-  pork chop prosciutto turducken pork shankle.
-  Landjaeger short ribs capicola, frankfurter
-  pork belly meatloaf picanha.
+  A button indicates one or multiple actions to the user.
 
 .toc
-  .toc__title Inhalte auf dieser Seite
+  .toc__title Table of contents
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
       a(href='#primary').toc__anchor-navigation__link Primary button
@@ -24,10 +21,7 @@ p.paragraph.
 h2.heading.heading--secondary#primary Primary button
 
 p.paragraph.
-  Strip steak brisket shoulder, kielbasa meatloaf
-  short ribs beef salami ball tip filet mignon pork
-  loin cow boudin flank. Shank ham fatback, shoulder
-  sirloin spare ribs kielbasa.
+  A call to action always has a meaningful text. An additional icon can be added.
 
 .example
   .example__header
@@ -43,23 +37,14 @@ p.paragraph.
     div.example__separator
       .button.icon-after.icon-after--cross!='Foobar '
 
-
 .toggle
   .toggle__button.icon.icon--source See code
   .toggle__content
     .tab-panel
       .tab-panel__header
         .tab-panel__header__tab HTML
-        .tab-panel__header__tab JS
-        .tab-panel__header__tab JS
       .tab-panel__content
         .tab-panel__content__tab.is-active
-          p.paragraph.
-            Strip steak brisket shoulder, kielbasa meatloaf
-            short ribs beef salami ball tip filet mignon pork
-            loin cow boudin flank. Shank ham fatback, shoulder
-            sirloin spare ribs kielbasa.
-
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
@@ -77,19 +62,14 @@ p.paragraph.
                   <div class="button icon-after icon-after--cross">Foobar </div>
                 </div>
 
-h3.heading.heading--tertiary Checklist
+h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
-  li.checklist__item Foo<br/>bar
-  li.checklist__item Foobar
-  li.checklist__item Foobar
+  li.checklist__item There is always only one call to action on any given page
 
 h2.heading.heading--secondary#secondary Secondary button
 p.paragraph.
-  Strip steak brisket shoulder, kielbasa meatloaf
-  short ribs beef salami ball tip filet mignon pork
-  loin cow boudin flank. Shank ham fatback, shoulder
-  sirloin spare ribs kielbasa.
+  TODO
 
 .example
   .example__header
@@ -109,15 +89,8 @@ p.paragraph.
     .tab-panel
       .tab-panel__header
         .tab-panel__header__tab HTML
-        .tab-panel__header__tab JS
-        .tab-panel__header__tab JS
       .tab-panel__content
         .tab-panel__content__tab.is-active
-          p.paragraph.
-            Strip steak brisket shoulder, kielbasa meatloaf
-            short ribs beef salami ball tip filet mignon pork
-            loin cow boudin flank. Shank ham fatback, shoulder
-            sirloin spare ribs kielbasa.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
@@ -135,18 +108,13 @@ p.paragraph.
                   <div class="button button--secondary icon-after icon-after--cross">Foobar </div>
                 </div>
 
-h3.heading.heading--tertiary Checklist
+h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Foo<br/>bar
-  li.checklist__item Foobar
-  li.checklist__item Foobar
+  li.checklist__item TODO
 
 h2.heading.heading--secondary#floating Floating action button
 p.paragraph.
-  Strip steak brisket shoulder, kielbasa meatloaf
-  short ribs beef salami ball tip filet mignon pork
-  loin cow boudin flank. Shank ham fatback, shoulder
-  sirloin spare ribs kielbasa.
+  The floating action button consists of an icon only, it can't contain a label. This type of button is used to represent an action that is important and ubiquitous.
 
 .example
   .example__header
@@ -160,22 +128,13 @@ p.paragraph.
     .tab-panel
       .tab-panel__header
         .tab-panel__header__tab HTML
-        .tab-panel__header__tab JS
-        .tab-panel__header__tab JS
       .tab-panel__content
         .tab-panel__content__tab.is-active
-          p.paragraph.
-            Strip steak brisket shoulder, kielbasa meatloaf
-            short ribs beef salami ball tip filet mignon pork
-            loin cow boudin flank. Shank ham fatback, shoulder
-            sirloin spare ribs kielbasa.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
                 <div class="button button--floating icon icon--feedback" ><div>
 
-h3.heading.heading--tertiary Checklist
+h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Foo<br/>bar
-  li.checklist__item Foobar
-  li.checklist__item Foobar
+  li.checklist__item Avoid this type of button for destructive actions like delete, nonspecific actions, alerts or errors.
