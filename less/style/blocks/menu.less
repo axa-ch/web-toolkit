@@ -32,7 +32,7 @@
   }
 
   .menu__link {
-    display: block;
+    display: inline-block;
 
     padding: 7px 0;
 
@@ -50,10 +50,18 @@
   }
 
   .menu__level {
-      padding-left: 19px;
+    padding-left: 19px;
+    display: none;
+
+    &.is-open {
+      display: block;
+    }
   }
 
   .menu__dropdown-icon {
+    padding-left: 8px;
+    font-size: 0.7rem;
+
     .icon();
     .icon--arrow-right();
 

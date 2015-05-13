@@ -114,8 +114,12 @@ html
           // start with the second level nav__xxx
           - var currentNavCollection = joinCollectionName(splitCollectionName(navCollection).slice(0, 2));
 
-          mixin displayMenu(collectionName, isNestedLevel)
-            ul(class= { 'menu': !isNestedLevel, 'menu--left': !isNestedLevel, 'menu__level': isNestedLevel })
+          mixin displayMenu(collectionName, isNestedLevel, isNestedLevelOpen)
+            ul(class= { 'left__menu': !isNestedLevel,
+              'menu': !isNestedLevel,
+              'menu--left': !isNestedLevel,
+              'menu__level': isNestedLevel,
+              'is-open': isNestedLevelOpen })
               each page in collections[collectionName]
 
                 - var nestedNavCollection = page.navigationSubCollection
@@ -133,11 +137,11 @@ html
                       )
 
                   if nestedNavCollection
-                    +displayMenu(nestedNavCollection, true)
+                    +displayMenu(nestedNavCollection, true, isOpen)
 
           .l-row
             nav.l-col.l-col--3
-              +displayMenu(currentNavCollection, false)
+              +displayMenu(currentNavCollection, false, false)
             .l-col.l-col--9
               h1.heading.heading--page #{title}
               div!= contents
