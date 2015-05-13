@@ -31,7 +31,7 @@ p.paragraph.
     label.checkbox(data-checkbox)
       input.checkbox__checkbox(type='checkbox')
       .checkbox__label
-        .checkbox__label__text Fahrzeug des Versicherungsnehmers
+        .checkbox__label__text Sample checkbox
 
 .toggle
   .toggle__button.icon.icon--source See code
@@ -41,10 +41,20 @@ p.paragraph.
         .tab-panel__header__tab HTML
       .tab-panel__content
         .tab-panel__content__tab.is-active
+          :markdown
+            The jQuery plugin bound with `data-checkbox` wil add the
+            `checkbox--js` modifier for styling and `tabindex`
+            attributes to allow keyboard interactions.
+
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
-                TODO
+                <label data-checkbox class="checkbox">
+                  <input type="checkbox" class="checkbox__checkbox" >
+                  <div class="checkbox__label" >
+                    <div class="checkbox__label__text">Sample checkbox</div>
+                  </div>
+                </label>
 
 h3.heading.heading--tertiary UX Checklist
 
@@ -81,7 +91,19 @@ p.paragraph.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
-                TODO
+                <div class="checkbox-group">
+                  <label data-checkbox class="checkbox">
+                    <input type="checkbox" class="checkbox__checkbox" >
+                    <span class="checkbox__label">
+                      <div class="checkbox__label__text">Sample checkbox one</div>
+                    </span>
+                  </label>
+                  <label data-checkbox class="checkbox">
+                    <input type="checkbox" class="checkbox__checkbox">
+                      <div class="checkbox__label__text">Sample checkbox two</div>
+                    </span>
+                  </label>
+                </div>
 
 h2.heading.heading--secondary#non-enhanced Non enhanced checkbox
 
@@ -96,7 +118,7 @@ p.paragraph.
     label.checkbox
       input.checkbox__checkbox(type='checkbox')
       .checkbox__label
-        .checkbox__label__text Fahrzeug des Versicherungsnehmers
+        .checkbox__label__text Sample checkbox
 
 .toggle
   .toggle__button.icon.icon--source See code
@@ -109,4 +131,9 @@ p.paragraph.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
-                TODO
+                <label class="checkbox">
+                  <input type="checkbox" class="checkbox__checkbox">
+                  <div class="checkbox__label">
+                     <div class="checkbox__label__text">Sample checkbox</div>
+                  </div>
+                </label>
