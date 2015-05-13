@@ -118,17 +118,17 @@ module.exports = exports = function (options) {
       collections_options[name] = { sortBy: 'order', reverse: false };
     });
 
-//    metalsmith.use(branch('**/*.md')
-//      .use(relative())
-//      .use(collections(collections_options))
-//      .use(markdown({
-//        renderer: markedRenderer,
-//        langPrefix: '',
-//        highlight: function (code, lang) {
-//          return require('highlight.js').highlight(lang, code).value;
-//        },
-//        useMetadata: true
-//      })));
+    metalsmith.use(branch('**/*.md', '!_*/**/*.md')
+      .use(relative())
+      .use(collections(collections_options))
+      .use(markdown({
+        renderer: markedRenderer,
+        langPrefix: '',
+        highlight: function (code, lang) {
+          return require('highlight.js').highlight(lang, code).value;
+        },
+        useMetadata: true
+      })));
 
     // Configure marked to use custom highlight
     require('marked').setOptions({
@@ -140,7 +140,7 @@ module.exports = exports = function (options) {
     });
 
     // TODO: use **/*.jade
-    metalsmith.use(branch(['index.jade', '{fundamentals,components,patterns,inspiration}/**/*.jade', '!layouts/**/*.jade'])
+    metalsmith.use(branch(['**/*.jade', '!_*/**/*.jade', '!layouts/**/*.jade'])
       .use(relative())
       .use(collections(collections_options))
       .use(jade({ useMetadata: true, locals: metalsmith.metadata() })));
