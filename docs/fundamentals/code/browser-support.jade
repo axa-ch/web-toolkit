@@ -59,8 +59,11 @@ table.table.table--docs
 
 h3 Mobile & Tablet
 
-#android-piechart.l-half.chart-container Android Chart
-#ios-piechart.l-half.chart-container iOS Chart
+.l-row
+  .l-half
+    .docs-chart-container#android-piechart Android Chart
+  .l-half
+    .docs-chart-container#ios-piechart iOS Chart
 
 table.table.table--docs
   thead
@@ -208,7 +211,7 @@ script.
       ['older',  246]
     ]);
 
-    $('.chart-container').height(200);
+    $('.docs-chart-container').addClass('is-active');
     var androidChart = new google.visualization.PieChart(document.getElementById('android-piechart'));
     var iosChart = new google.visualization.PieChart(document.getElementById('ios-piechart'));
 

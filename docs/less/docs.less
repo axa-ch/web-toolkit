@@ -71,8 +71,14 @@ body {
   margin-bottom: -5px;
 }
 
-.table--docs {
-  max-width: 700px;
+.docs-chart-container {
+  &.is-active {
+    height: 202px;
+    margin: 20px 0 40px 0;
+    border: 1px solid @color-gray--lighter;
+    box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+  }
 }
 
 dl {
