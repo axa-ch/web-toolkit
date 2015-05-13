@@ -135,10 +135,13 @@ html
           .l-row
             nav.l-col.l-col--3
               +displayMenu(currentNavCollection, false)
-            .l-col.l-col--9!= contents
+            .l-col.l-col--9
+              h1.heading.heading--page #{title}
+              div!= contents
 
         else
-          !=contents
+          h1.heading.heading--page #{title}
+          div!= contents
 
       footer.footer
         .footer__content

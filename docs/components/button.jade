@@ -5,57 +5,138 @@ collection: nav__components
 template: page.jade
 ---
 
-p.paragraph
-  Bacon ipsum dolor amet bacon tail ribeye jowl,
-  pork chop prosciutto turducken pork shankle.
-  Landjaeger short ribs capicola, frankfurter
-  pork belly meatloaf picanha.
+p.paragraph.
+  A button indicates one or multiple actions to the user.
 
-ul.anchor-navigation
-  li.anchor-navigation__item
-    a(href='#').anchor-navigation__link Primary button
-  li.anchor-navigation__item
-    a(href='#').anchor-navigation__link Secondary button
-  li.anchor-navigation__item
-    a(href='#').anchor-navigation__link Floating Action Button
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#primary').toc__anchor-navigation__link Primary button
+    li.toc__anchor-navigation__item
+      a(href='#secondary').toc__anchor-navigation__link Secondary button
+    li.toc__anchor-navigation__item
+      a(href='#floating').toc__anchor-navigation__link Floating action button
 
-h2.heading.heading--secondary Primary button
+h2.heading.heading--secondary#primary Primary button
 
-p.paragraph
-  Strip steak brisket shoulder, kielbasa meatloaf
-  short ribs beef salami ball tip filet mignon pork
-  loin cow boudin flank. Shank ham fatback, shoulder
-  sirloin spare ribs kielbasa.
+p.paragraph.
+  A call to action always has a meaningful text. An additional icon can be added.
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    div.example__separator
+      .button Foobar
+    div.example__separator
+      .button.icon.icon--cross!=' Foobar'
+    div.example__separator
+      .button.icon-after.icon-after--cross!='Foobar '
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="example__separator">
+                  <div class="button">Foobar</div>
+                </div>
+
+                <div class="example__separator">
+                  <!-- See the space at beginning -->
+                  <div class="button icon icon--cross"> Foobar</div>
+                </div>
+
+                <div class="example__separator">
+                  <!-- See the space at end -->
+                  <div class="button icon-after icon-after--cross">Foobar </div>
+                </div>
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item There is always only one call to action on any given page
+
+h2.heading.heading--secondary#secondary Secondary button
+p.paragraph.
+  TODO
 
 .example
   .example__header
     .example__device-selection
       .example__break-selection__device
   .example__content
-    .button Foobar
-  .example__code
-    .example__code__trigger
-    .example__code__tabs.tab-panel
+    div.example__separator
+      .button.button--secondary Foobar
+    div.example__separator
+      .button.button--secondary.icon.icon--cross!=' Foobar'
+    div.example__separator
+      .button.button--secondary.icon-after.icon-after--cross!='Foobar '
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
       .tab-panel__header
-        .tab-panel__header__tab
-        .tab-panel__header__tab
+        .tab-panel__header__tab HTML
       .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="example__separator">
+                  <div class="button button--secondary">Foobar</div>
+                </div>
 
+                <div class="example__separator">
+                  <!-- See the space at beginning -->
+                  <div class="button button--secondary icon icon--cross"> Foobar</div>
+                </div>
 
-:markdown
-  - Foobar
-  - Other
-  - Cool
+                <div class="example__separator">
+                  <!-- See the space at end -->
+                  <div class="button button--secondary icon-after icon-after--cross">Foobar </div>
+                </div>
 
-h2.heading.heading--secondary Secondary button
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item TODO
 
-p.paragraph
-  Strip steak brisket shoulder, kielbasa meatloaf
-  short ribs beef salami ball tip filet mignon pork
-  loin cow boudin flank. Shank ham fatback, shoulder
-  sirloin spare ribs kielbasa.
+h2.heading.heading--secondary#floating Floating action button
+p.paragraph.
+  The floating action button consists of an icon only, it can't contain a label. This type of button is used to represent an action that is important and ubiquitous.
 
-:markdown
-  - Foobar
-  - Other
-  - Cool
+.example
+  .example__header
+    .example__device-selection
+      .example__break-selection__device
+  .example__content
+    .button.button--floating.icon.icon--feedback
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="button button--floating icon icon--feedback" ><div>
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item Avoid this type of button for destructive actions like delete, nonspecific actions, alerts or errors.
+
+// Copyright AXA Versicherungen AG 2015
