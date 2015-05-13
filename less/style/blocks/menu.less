@@ -40,9 +40,17 @@
     text-decoration: none;
 
     &.is-active {
-      font-weight: bold;
-      color: @color-light-blue;
+      font-weight: @font-weight-medium;
+      color: @color-blue;
     }
+
+    &:hover, :focus {
+        color: @color-red;
+    }
+  }
+
+  .menu__level {
+      padding-left: 19px;
   }
 }
 
