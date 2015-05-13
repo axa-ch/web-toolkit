@@ -1,0 +1,36 @@
+@import '../variables';
+@import '../mixins/respond';
+@import '../mixins/clearfix';
+
+.tab-panel {
+
+}
+
+.tab-panel__header {
+  &:extend(.clearfix all);
+}
+
+.tab-panel__header__tab {
+  float: left;
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+.tab-panel__content {
+  border: 1px solid gray;
+}
+
+.tab-panel__content__tab {
+  display: none;
+  padding: 0 20px;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.tab-panel__content__tab__fullwidth-content {
+  margin: 0 -20px;
+}
+
+/* Copyright AXA Versicherungen AG 2015 */
