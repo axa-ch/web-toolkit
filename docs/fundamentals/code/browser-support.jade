@@ -4,3 +4,112 @@ order: 3
 collection: nav__fundamentals__code
 template: page.jade
 ---
+
+p.
+  Customers, partners and employees are using an
+  extensive amount of different browsers.
+  Therefore, websites and applications should cater
+  to all of them and not rely on proprietary
+  technologies in or for different browsers.
+  The W3C standards are also our standards.
+
+h2.heading.heading--secondary What browsers to support?
+
+p.
+  Based on data from the 13th of may 2015, we are
+  supporting the following browsers and mobile
+  operating systems:
+
+h3 Desktop
+table.table.table--docs
+  thead
+    tr.table__header
+      th.table__header__item Browser
+      th.table__header__item Platform
+      th.table__header__item Version
+  tbody.table__content
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Internet Explorer
+      td.table__row__item
+        .table__row__item__content Windows
+      td.table__row__item
+        .table__row__item__content 9+
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Firefox
+      td.table__row__item
+        .table__row__item__content Desktop
+      td.table__row__item
+        .table__row__item__content 34.0+
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Chrome
+      td.table__row__item
+        .table__row__item__content Windows / Mac OS X
+      td.table__row__item
+        .table__row__item__content 39.0.2171+
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Safari
+      td.table__row__item
+        .table__row__item__content Mac OS X
+      td.table__row__item
+        .table__row__item__content 7.0+
+
+h3 Mobile & Tablet
+#android-piechart.l-half.chart-container Android Chart
+#ios-piechart.l-half.chart-container iOS Chart
+table.table.table--docs
+  thead
+    tr.table__header
+      th.table__header__item Browser
+      th.table__header__item Platform
+      th.table__header__item Version
+  tbody.table__content
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Android Browser
+      td.table__row__item
+        .table__row__item__content Android
+      td.table__row__item
+        .table__row__item__content 4.0+
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Chrome
+      td.table__row__item
+        .table__row__item__content Android, iOS
+      td.table__row__item
+        .table__row__item__content 39.0.2171+
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Safari
+      td.table__row__item
+        .table__row__item__content iOS
+      td.table__row__item
+        .table__row__item__content 7.0+
+
+script.
+  google.setOnLoadCallback(drawCharts);
+  function drawCharts() {
+    var androidData = google.visualization.arrayToDataTable([
+      ['Android Version', 'Visits'],
+      ['5.x',     3532],
+      ['4.x',      6321],
+      ['older',  147]
+    ]);
+  
+    var iosData = google.visualization.arrayToDataTable([
+      ['iOS Version', 'Visits'],
+      ['8.x',     8249],
+      ['7.x',      1504],
+      ['older',  246]
+    ]);
+
+    $('.chart-container').height(200);
+    var androidChart = new google.visualization.PieChart(document.getElementById('android-piechart'));
+    var iosChart = new google.visualization.PieChart(document.getElementById('ios-piechart'));
+
+    androidChart.draw(androidData, { title: 'Android Version Share' });
+    iosChart.draw(iosData, { title: 'iOS Version Share' });
+  }
