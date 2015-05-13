@@ -218,7 +218,7 @@ gulp.task('release', function(cb) {
 
 gulp.task('build', function(cb) {
     runSequence(
-        'icons', 'images', 'styles', 'jquery', 'ng', 'create-versions-file', 'docs', cb);
+        'icons', 'images', 'styles', 'jquery', 'create-versions-file', 'docs', cb);
 });
 
 gulp.task('serve', function(next) {

@@ -105,50 +105,30 @@ module.exports = exports = function (options) {
     // TODO: Remove when collection plugin supports undeclared collections
     var collections_options = {};
     [
-      'examples'
+      'nav',
+      'nav__fundamentals',
+      'nav__fundamentals__layout',
+      'nav__fundamentals__design',
+      'nav__fundamentals__code',
+      'nav__components',
+      'nav__components__forms',
+      'nav__patterns',
+      'nav__inspiration'
     ].forEach(function (name) {
-      collections_options[name] = { sortBy: 'slug', reverse: false };
+      collections_options[name] = { sortBy: 'order', reverse: false };
     });
 
-    var addCollectionOption = function(name, pattern) {
-      collections_options[name] = {
-        sortBy: 'order',
-        reverse: false,
-        pattern: pattern
-      }
-    };
-
-    var normalizeCollectionName = function(parts) {
-      return parts.join('__').replace(/\s/g, '_');
-    };
-
-    var addMenu = function(prefix) {
-      return function(topLevelItem) {
-        if(topLevelItem.pattern)
-          addCollectionOption(normalizeCollectionName([prefix, topLevelItem.name]), topLevelItem.pattern);
-
-        if(topLevelItem.children)
-          topLevelItem.children.forEach(function(secondLevelItem) {
-            if(secondLevelItem.pattern)
-              addCollectionOption(normalizeCollectionName([prefix, topLevelItem.name, secondLevelItem.name]), secondLevelItem.pattern)
-          })
-      }
-    };
-
-    config.design.forEach(addMenu("design"));
-    config.development.forEach(addMenu("development"));
-
-    metalsmith.use(branch('**/*.md')
-      .use(relative())
-      .use(collections(collections_options))
-      .use(markdown({
-        renderer: markedRenderer,
-        langPrefix: '',
-        highlight: function (code, lang) {
-          return require('highlight.js').highlight(lang, code).value;
-        },
-        useMetadata: true
-      })));
+//    metalsmith.use(branch('**/*.md')
+//      .use(relative())
+//      .use(collections(collections_options))
+//      .use(markdown({
+//        renderer: markedRenderer,
+//        langPrefix: '',
+//        highlight: function (code, lang) {
+//          return require('highlight.js').highlight(lang, code).value;
+//        },
+//        useMetadata: true
+//      })));
 
     // Configure marked to use custom highlight
     require('marked').setOptions({
@@ -158,7 +138,9 @@ module.exports = exports = function (options) {
         return require('highlight.js').highlight(lang, code).value;
       }
     });
-    metalsmith.use(branch(['**/*.jade', '!layouts/**/*.jade'])
+
+    // TODO: use **/*.jade
+    metalsmith.use(branch(['index.jade', '{fundamentals,components,patterns,inspiration}/**/*.jade', '!layouts/**/*.jade'])
       .use(relative())
       .use(collections(collections_options))
       .use(jade({ useMetadata: true, locals: metalsmith.metadata() })));
@@ -195,14 +177,14 @@ module.exports = exports = function (options) {
       })));
 
     // do the ng scripts
-    metalsmith.use(assets({
-      source: './docs/ng/',
-      destination: './ng'
-    }));
-    metalsmith.use(assets({
-      source: './ng/',
-      destination: './ng'
-    }));
+//    metalsmith.use(assets({
+//      source: './docs/ng/',
+//      destination: './ng'
+//    }));
+//    metalsmith.use(assets({
+//      source: './ng/',
+//      destination: './ng'
+//    }));
 
     // we no need these files
     metalsmith.use(ignore('layouts/**'));
