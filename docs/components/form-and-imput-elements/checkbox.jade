@@ -4,3 +4,109 @@ order: 2
 collection: nav__components__form
 template: page.jade
 ---
+
+p.paragraph.
+  A checkbox is a basic control that enables the user to select or deselect one or multiple options.
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#ehanced').toc__anchor-navigation__link JS enhanced checkbox
+    li.toc__anchor-navigation__item
+      a(href='#group').toc__anchor-navigation__link Checkbox group
+    li.toc__anchor-navigation__item
+      a(href='#non-enhanced').toc__anchor-navigation__link Non enhanced checkbox
+
+h2.heading.heading--secondary#ehanced JS enhanced checkbox
+p.paragraph.
+  Use the enhanced checkbox as progressive enhancement when JavaScript is available.
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    label.checkbox(data-checkbox)
+      input.checkbox__checkbox(type='checkbox')
+      .checkbox__label
+        .checkbox__label__text Fahrzeug des Versicherungsnehmers
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                TODO
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item If you have more than 10 checkboxes to answer one question, a [chips](/components/form-and-imput-elements/textfield.html#chips) design may be more useful
+
+h2.heading.heading--secondary#group Checkbox group
+p.paragraph.
+  TODO
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    .checkbox-group
+      label.checkbox(data-checkbox)
+        input.checkbox__checkbox(type='checkbox')
+        span.checkbox__label
+          .checkbox__label__text Sample checkbox one
+      label.checkbox(data-checkbox)
+        input.checkbox__checkbox(type='checkbox')
+        span.checkbox__label
+          .checkbox__label__text Sample checkbox two
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                TODO
+
+h2.heading.heading--secondary#non-enhanced Non enhanced checkbox
+
+p.paragraph.
+  Use the non-enhanced checkbox as a fallback only.
+
+.example
+  .example__header
+    .example__device-selection
+      .example__break-selection__device
+  .example__content
+    label.checkbox
+      input.checkbox__checkbox(type='checkbox')
+      .checkbox__label
+        .checkbox__label__text Fahrzeug des Versicherungsnehmers
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                TODO
