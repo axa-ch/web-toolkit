@@ -4,3 +4,98 @@ order: 4
 collection: nav__components__form
 template: page.jade
 ---
+
+p.paragraph.
+  A dropdown is always a great choice if it comes
+  to selecting a single value out of a big list of values.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#enhanced').toc__anchor-navigation__link JS enhanced dropdown
+    li.toc__anchor-navigation__item
+      a(href='#non-enhanced').toc__anchor-navigation__link Non enhanced dropdown
+
+h2.heading.heading--secondary#enhanced JS enhanced dropdown
+
+p.paragraph.
+  TODO
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    .dropdown(data-dropdown)
+      .dropdown__label
+      select.dropdown__select
+        option Schweiz
+        option Regenbogenland
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div data-dropdown="data-dropdown" class="dropdown">
+                  <div class="dropdown__label"></div>
+                  <select class="dropdown__select">
+                    <option>Schweiz</option>
+                    <option>Regenbogenland</option>
+                  </select>
+                </div>
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item Generally, if you have less than 5 options, a segmented control might be the better option.
+  li.checklist__item On mobile devices, use native dropdown pickers.
+
+h2.heading.heading--secondary#non-enhanced Non enhanced dropdown
+
+p.paragraph.
+  TODO
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    .dropdown
+      .dropdown__label
+      select.dropdown__select
+        option Schweiz
+        option Regenbogenland
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="dropdown">
+                  <div class="dropdown__label"></div>
+                  <select class="dropdown__select">
+                    <option>Schweiz</option>
+                    <option>Regenbogenland</option>
+                  </select>
+                </div>
+
+// Copyright AXA Versicherungen AG 2015
+  
