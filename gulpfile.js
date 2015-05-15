@@ -28,6 +28,8 @@ var jshint = require('gulp-jshint');
 var ngAnnotate = require('gulp-ng-annotate');
 var filter = require('gulp-filter');
 var iconfont = require('gulp-iconfont');
+var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
 
 var readJSONFile = require('./lib/readJSONFile');
 var errorify = require('./lib/errorify');
@@ -47,6 +49,13 @@ gulp.task('docs', require('./tasks/docs')({
 }));
 
 gulp.task('icons', require('./tasks/icons')());
+
+gulp.task('icons-svg', function () {
+    return gulp.src('icons/*.svg')
+        .pipe(svgmin())
+        .pipe(svgstore())
+        .pipe(gulp.dest('./dist/images/'))
+});
 
 gulp.task('images', function() {
     return gulp.src(['./images/**'], {base: './images'})
@@ -218,7 +227,7 @@ gulp.task('release', function(cb) {
 
 gulp.task('build', function(cb) {
     runSequence(
-        'icons', 'images', 'styles', 'jquery', 'create-versions-file', 'docs', cb);
+        'icons', 'icons-svg', 'images', 'styles', 'jquery', 'create-versions-file', 'docs', cb);
 });
 
 gulp.task('serve', function(next) {
