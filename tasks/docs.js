@@ -111,7 +111,7 @@ module.exports = exports = function (options) {
       'nav__fundamentals__design',
       'nav__fundamentals__code',
       'nav__components',
-      'nav__components__forms',
+      'nav__components__form',
       'nav__patterns',
       'nav__inspiration'
     ].forEach(function (name) {

@@ -8,26 +8,32 @@
 
   display: block;
   margin: 30px 0;
+  padding: -5px 0 0 0;
 
   text-transform: uppercase;
-  color: @color-blue;
-  font-size: 13px;
 
   &:before {
+    position: relative;
+    top: -5px;
     float: left;
-    font-size: 21px;
-    color: @color-blue-gray;
+    font-size: 32px;
     vertical-align: middle;
     padding-right: 10px;
+    color: @color-light-blue;
   }
 
 }
 
 .downloads__link {
-  .link();
   display: block;
-  margin-top: 10px;
   margin-left: 30px;
+  color: @color-light-blue;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    color: @color-green;
+  }
 }
 
 .downloads__link--inactive {
