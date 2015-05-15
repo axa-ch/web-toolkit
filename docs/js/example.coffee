@@ -18,18 +18,28 @@ class Example
 
     @$devMobile.on 'click', @setWidth.bind @, '320px', @$devMobile
     @$devTablet.on 'click', @setWidth.bind @, '768px', @$devTablet
-    @$devDesktop.on 'click', @setWidth.bind @, '100%', @$devDesktop
+    @$devDesktop.on 'click', @setWidth.bind @, null, @$devDesktop
 
-    contents = @$frame.contents();
+    @$contents = @$frame.contents()
 
-    contents.find("head").html(head);
+    @$contents.find("head").html head
 
     html = @$html.html()
 
-    if @$html.data('example-centered')
-      html = '<div style="text-align: center;" ><div style="display: inline-block; text-align: left;" >' + html + '</div></div>'
+    if @$html.data 'example-centered'
+      html = '<div style="text-align: center;" class="example" ><div style="display: inline-block; text-align: left;" >' + html + '</div></div>'
+    else
+      html = '<div class="example" >' + html + '</div>'
 
-    contents.find("body").html(html);
+    @$shadow = $ "<div style='position: absolute; top: -10000px;' ></div>"
+
+    @$shadow.html html
+
+    @$el.append @$shadow
+
+    @$contents.find("body").html html
+
+    @setWidth null, @$devDesktop
 
   setWidth: (width, activeBtn) ->
     @$devMobile.removeClass 'is-active'
@@ -37,8 +47,17 @@ class Example
     @$devDesktop.removeClass 'is-active'
     activeBtn.addClass 'is-active'
 
+    w = if width == null then @$el.width() + 'px' else width
+
+    @$shadow.css {
+      width: w
+    }
+
+    h = parseInt(@$frame.css('padding-top'), 10) + parseInt(@$frame.css('padding-bottom'), 10) + @$shadow.find(".example").height() + 'px'
+
     @$frame.animate {
-      width: width
+      width: w
+      height: h
     }
 
 $ () ->

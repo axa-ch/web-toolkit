@@ -100,13 +100,14 @@ p.paragraph.
       .example__device-selection__device.example__device-selection__device--phone
       .example__device-selection__device.example__device-selection__device--tablet
       .example__device-selection__device.example__device-selection__device--desktop.is-active
-  .example__content
-    div.example__separator
-      .button.button--secondary Foobar
-    div.example__separator
-      .button.button--secondary.icon.icon--cross Foobar
-    div.example__separator
-      .button.button--secondary.icon-after.icon-after--cross Foobar
+  .example__content.example__content--centered
+      iframe.example__iframe
+      .example__html(data-example-centered)
+        .button.button--secondary Foobar
+        !=' ' 
+        .button.button--secondary.icon.icon--cross Foobar
+        !=' ' 
+        .button.button--secondary.icon-after.icon-after--cross Foobar
 
 .toggle
   .toggle__button.icon.icon--source See code
@@ -145,8 +146,10 @@ p.paragraph.
   .example__header
     .example__device-selection
       .example__break-selection__device
-  .example__content
-    .button.button--floating.icon.icon--feedback
+  .example__content.example__content--centered
+    iframe.example__iframe
+    .example__html(data-example-centered)
+      .button.button--floating.icon.icon--feedback
 .toggle
   .toggle__button.icon.icon--source See code
   .toggle__content
