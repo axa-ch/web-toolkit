@@ -5,7 +5,7 @@ collection: nav__fundamentals__code
 template: page.jade
 ---
 
-p.
+p.paragraph.
   Customers, partners and employees are using an
   extensive amount of different browsers.
   Therefore, websites and applications should cater
@@ -15,7 +15,7 @@ p.
 
 h2.heading.heading--secondary What browsers to support?
 
-p.
+p.paragraph.
   Based on data from the 13th of may 2015, we are
   supporting the following browsers and mobile
   operating systems:
@@ -58,8 +58,13 @@ table.table.table--docs
         .table__row__item__content 7.0+
 
 h3 Mobile & Tablet
-#android-piechart.l-half.chart-container Android Chart
-#ios-piechart.l-half.chart-container iOS Chart
+
+.l-row
+  .l-half
+    .docs-chart-container#android-piechart Android Chart
+  .l-half
+    .docs-chart-container#ios-piechart iOS Chart
+
 table.table.table--docs
   thead
     tr.table__header
@@ -90,35 +95,104 @@ table.table.table--docs
         .table__row__item__content 7.0+
 
 
-h2.heading.heading--secondary Internet Explorer 8
-p.
+h2.heading.heading--secondary Internet Explorer 8 & 9
+
+p.paragraph.
+  You'll need to add some of the polyfills listed
+  below to add support for IE 9.
+
+p.paragraph.
   With the current release Internet Explorer 8 is
   NOT supported. Please consider adding a "Your
   browser is not supported page" or add support
-  for IE 8 on your own.
+  for IE 8 on your own. The polyfills listed below
+  will do the major parts of the job.
 
-ul.list.list--unordered
-  li.list__item.
-    IE 8 doesn't like CSS selectors which contain
-    double-colon CSS 3 pseudo element selectors
-    ( ::after). Even the selector "::after, :after" will
-    be ignored because there is one double-colon CSS 3
-    pseudo element.
-  li.list__item.
-    To make the CSS work in IE 8 you need to duplicate
-    all rules containing double-colon selectors and
-    replace the double-color with a single-color.
-  li.list__item.
-    Include respond.js and HTML5SHIV to support CSS 3
-    media queries and HTML5 Tags.
-  li.list__item.
-    IE8 doesn't support the border-radius property.
-    You should either include a shim or live without
-    round borders.
-  li.list__item.
-    Since jQuery 2.0 dropped support for IE 8 in
-    favour of a performance boost you need to use
-    jQuery <2.0
+
+table.table.table--docs
+  thead
+    tr.table__header
+      th.table__header__item Version
+      th.table__header__item Polyfill
+  tbody.table__content
+    tr.table__row
+      td.table__row__item(style="min-width: 100px")
+        .table__row__item__content up to IE 9
+      td.table__row__item
+        .table__row__item__content.
+          HTML 5 Elements
+          <br/><br />
+          Don't use HTML 5 tags or add the
+          <a href="https://github.com/afarkas/html5shiv" class="link" >HTML5SHIV</a>
+          polyfill.
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content up to IE 8
+      td.table__row__item
+        .table__row__item__content.
+          Media queries
+          <br/><br/>
+          Add the
+          <a href="https://github.com/scottjehl/Respond" class="link" >respond.js</a>
+          polyfill to support media queries.
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content up to IE 8
+      td.table__row__item
+        .table__row__item__content.
+          CSS 3 pseudo element selectors (::selector)
+          <br/><br/>
+          Replace every double colon selector (::selector)
+          with a single colon one (:selector).
+          <br/><br/>
+          We recommend to use
+          <a href="https://www.npmjs.com/package/postcss-pseudoelements" >postcss-pseudoelements</a>
+          postcss plugin to automate this task.
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content up to IE 8
+      td.table__row__item
+        .table__row__item__content.
+          Border radius
+          <br/><br/>
+          Accept the square corners or add the
+          <a href="http://css3pie.com/" >css3pie</a>
+          polyfill. Note that this polyfill may slow
+          down the page rendering on IE 8.
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content up to IE 8
+      td.table__row__item
+        .table__row__item__content.
+          Background size
+          <br/><br/>
+          Add the
+          <a href="https://github.com/louisremi/background-size-polyfill" >background-size-polyfill</a>
+          to support this property in IE 7/8.
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content up to IE 8
+      td.table__row__item
+        .table__row__item__content.
+          jQuery
+          <br/><br/>
+          jQuery 2.0 dropped support for IE 8 in favour
+          of a major performance boost. Use the 1.x Version
+          instead to support IE 8.
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content -
+      td.table__row__item
+        .table__row__item__content.
+          Other
+          <br/><br/>
+          Use
+          <a href="http://caniuse.com" >caniuse.com</a>
+          to look up browser support for a specific feature.
+          <br/><br/>
+          Take a look at the
+          <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills" >Modernizr wiki</a>
+          to find further polyfills.
 
 script.
   google.setOnLoadCallback(drawCharts);
@@ -137,7 +211,7 @@ script.
       ['older',  246]
     ]);
 
-    $('.chart-container').height(200);
+    $('.docs-chart-container').addClass('is-active');
     var androidChart = new google.visualization.PieChart(document.getElementById('android-piechart'));
     var iosChart = new google.visualization.PieChart(document.getElementById('ios-piechart'));
 
