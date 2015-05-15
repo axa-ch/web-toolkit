@@ -17,6 +17,21 @@ p.paragraph.
       a(href='#secondary').toc__anchor-navigation__link Secondary button
     li.toc__anchor-navigation__item
       a(href='#floating').toc__anchor-navigation__link Floating action button
+      
+.bubble
+  .bubble__image
+  .bubble__content
+    .bubble__title
+      .bubble__title__text PSD File
+    .bubble__text
+      p.paragraph.
+        Hallo Designer. hier kannst du unsere PSD mit allen Buttons 
+        herunterladen und gleich mit dem Layout anfanagen
+      
+.downloads
+  a(href="../AXA.aco").downloads__link BUTTONS.PSD
+      
+.hr
 
 h2.heading.heading--secondary#primary Primary button
 
@@ -29,22 +44,26 @@ p.paragraph.
       a.example__device-selection__device.example__device-selection__device--mobile
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
-  .example__content
-    div.example__separator
+  .example__content.example__content--centered
       .button Foobar
-    div.example__separator
+      !=' ' 
       .button.icon.icon--cross Foobar
-    div.example__separator
+      !=' ' 
       .button.icon-after.icon-after--cross Foobar
 
 .toggle
-  .toggle__button.icon.icon--source See code
-  .toggle__content
+  .toggle__button.icon.icon--source(data-info, data-target='#code-1') See code
+  .toggle__content#code-1
     .tab-panel
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+          .tab-panel__header__tab CSS
+          .tab-panel__header__tab JS
       .tab-panel__content
         .tab-panel__content__tab.is-active
+          p.paragraph.
+            Test bla bla <br /> test 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
@@ -67,6 +86,8 @@ h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item There is always only one call to action on any given page
 
+.hr
+
 h2.heading.heading--secondary#secondary Secondary button
 p.paragraph.
   TODO
@@ -74,7 +95,9 @@ p.paragraph.
 .example
   .example__header
     .example__device-selection
-      .example__break-selection__device
+      .example__device-selection__device.example__device-selection__device--phone
+      .example__device-selection__device.example__device-selection__device--tablet
+      .example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
     div.example__separator
       .button.button--secondary Foobar
