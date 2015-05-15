@@ -45,11 +45,13 @@ p.paragraph.
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content.example__content--centered
-      .button Foobar
-      !=' ' 
-      .button.icon.icon--cross Foobar
-      !=' ' 
-      .button.icon-after.icon-after--cross Foobar
+      iframe.example__iframe
+      .example__html(data-example-centered)
+        .button Foobar
+        !=' ' 
+        .button.icon.icon--cross Foobar
+        !=' ' 
+        .button.icon-after.icon-after--cross Foobar
 
 .toggle
   .toggle__button.icon.icon--source(data-info, data-target='#code-1') See code
