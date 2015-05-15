@@ -9,7 +9,7 @@
       $headline.on 'click', (e) ->
         e.preventDefault()
 
-#        $el.toggleClass 'is-open'
+        $headline.children('.menu__dropdown-icon').toggleClass 'is-open'
         $el.slideToggle 'fast', () -> 
           $el.toggleClass 'is-open'
   )
