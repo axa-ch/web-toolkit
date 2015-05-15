@@ -33,9 +33,9 @@ p.paragraph.
     div.example__separator
       .button Foobar
     div.example__separator
-      .button.icon.icon--cross!=' Foobar'
+      .button.icon.icon--cross Foobar
     div.example__separator
-      .button.icon-after.icon-after--cross!='Foobar '
+      .button.icon-after.icon-after--cross Foobar
 
 .toggle
   .toggle__button.icon.icon--source See code
@@ -53,13 +53,13 @@ p.paragraph.
                 </div>
 
                 <div class="example__separator">
-                  <!-- See the space at beginning -->
-                  <div class="button icon icon--cross"> Foobar</div>
+                  <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
+                  <div class="button icon icon--cross">Foobar</div>
                 </div>
 
                 <div class="example__separator">
-                  <!-- See the space at end -->
-                  <div class="button icon-after icon-after--cross">Foobar </div>
+                  <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
+                  <div class="button icon-after icon-after--cross">Foobar</div>
                 </div>
 
 h3.heading.heading--tertiary UX Checklist
@@ -79,9 +79,9 @@ p.paragraph.
     div.example__separator
       .button.button--secondary Foobar
     div.example__separator
-      .button.button--secondary.icon.icon--cross!=' Foobar'
+      .button.button--secondary.icon.icon--cross Foobar
     div.example__separator
-      .button.button--secondary.icon-after.icon-after--cross!='Foobar '
+      .button.button--secondary.icon-after.icon-after--cross Foobar
 
 .toggle
   .toggle__button.icon.icon--source See code
@@ -99,13 +99,13 @@ p.paragraph.
                 </div>
 
                 <div class="example__separator">
-                  <!-- See the space at beginning -->
-                  <div class="button button--secondary icon icon--cross"> Foobar</div>
+                  <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
+                  <div class="button button--secondary icon icon--cross">Foobar</div>
                 </div>
 
                 <div class="example__separator">
-                  <!-- See the space at end -->
-                  <div class="button button--secondary icon-after icon-after--cross">Foobar </div>
+                  <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
+                  <div class="button button--secondary icon-after icon-after--cross">Foobar</div>
                 </div>
 
 h3.heading.heading--tertiary UX Checklist
@@ -133,6 +133,7 @@ p.paragraph.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
+                <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
                 <div class="button button--floating icon icon--feedback" ><div>
 
 h3.heading.heading--tertiary UX Checklist

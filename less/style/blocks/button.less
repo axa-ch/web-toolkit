@@ -14,6 +14,21 @@
     cursor: pointer;
   }
 
+  // TODO: Find a nicer solution to position icons
+  &::before,
+  &::after {
+    position: relative;
+    top: 2px;
+  }
+
+  &::before {
+    margin-right: 10px;
+  }
+
+  &::after {
+    margin-left: 10px;
+  }
+
   .make-button-size(
     @height: @button-height;
     @pad-lr: @button-pad-lr;
@@ -79,6 +94,14 @@
 
   &.button--small { // TODO
     width: @button-sm-height;
+  }
+
+  &::before {
+    margin-right: 0;
+  }
+
+  &::after {
+    margin-left: 0;
   }
 }
 
