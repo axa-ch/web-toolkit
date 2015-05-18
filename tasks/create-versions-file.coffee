@@ -1,34 +1,32 @@
-module.exports = () ->
+$ = require('gulp-load-plugins')()
 
-    return (cb) ->
+writeJSONFile = require '../lib/writeJSONFile'
+after = require '../lib/after'
 
-        gulp = require 'gulp'
-        git = require 'gulp-git'
+module.exports = (cb) ->
+    data =
+        tag: null
+        hash:
+            long: null
+            short: null
 
-        writeJSONFile = require '../lib/writeJSONFile'
-        after = require '../lib/after'
+    end = after 2, ((err) ->
 
-        data =
-            tag: null
-            hash:
-                long: null
-                short: null
+        writeJSONFile './tmp/version.json', data
 
-        end = after 2, ((err) ->
+        cb err
 
-            writeJSONFile './tmp/version.json', data
+    ), (err) ->
+        if err then cb err
 
-            cb err
+    $.git.revParse { args: '--short HEAD' } , (err, hash) ->
+        data.hash.short = hash
 
-        ), (err) ->
-            if err then cb err
+        end()
 
-        git.revParse { args: '--short HEAD' } , (err, hash) ->
-            data.hash.short = hash
+    $.git.revParse { args: 'HEAD' } , (err, hash) ->
+        data.hash.long = hash
 
-            end()
+        end()
 
-        git.revParse { args: 'HEAD' } , (err, hash) ->
-            data.hash.long = hash
-
-            end()
+# Copyright AXA Versicherungen AG 2015
