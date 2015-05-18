@@ -9,6 +9,7 @@ module.exports = (cb) ->
     'images',
     'styles',
     'jquery',
+    'ng',
     'create-versions-file',
     'docs',
     cb

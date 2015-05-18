@@ -1,9 +1,9 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
+webserver = require 'gulp-webserver'
 
 module.exports = (cb) ->
   gulp.src [ './dist/docs' ]
-    .pipe $.webserver
+    .pipe webserver
       port: process.env.PORT or 3000
       livereload: true
       open: false

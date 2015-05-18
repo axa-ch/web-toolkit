@@ -1,5 +1,5 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
+watch = require 'gulp-watch'
 
 module.exports = [
   [
@@ -13,14 +13,14 @@ module.exports = [
     #
     #######################
     ###
-    $.watch [
+    watch [
     ], [ '' ]
     ###
 
     #######################
     # docs-pages
     #######################
-    $.watch [
+    watch [
       './docs/pages/**/*'
       './docs/layouts/**/*'
       './tmp/icons.json'
@@ -33,7 +33,7 @@ module.exports = [
     #######################
     # docs-scripts
     #######################
-    $.watch [
+    watch [
       './docs/js/**/*.coffee'
       #'./node_modules/jquery/dist/jquery.js' # Ignore since we do not assume that this changes
       #'./node_modules/moment/min/moment-with-locales.js' # Ignore since we do not assume that this changes
@@ -48,7 +48,7 @@ module.exports = [
     #######################
     # docs-styles
     #######################
-    $.watch [
+    watch [
         './docs/less/**/*.less'
         # Listen on css instead of less to ensure all the styles-* task finished
         # TODO: styles task could throw an event instead?!
@@ -59,7 +59,7 @@ module.exports = [
     #######################
     # docs-assets
     #######################
-    $.watch [
+    watch [
         #'./node_modules/zeroclipboard/dist/ZeroClipboard.swf' # Ignore since we do not assume that this changes
         './docs/images/**/*'
     ], ->
@@ -68,7 +68,7 @@ module.exports = [
     #######################
     # icons
     #######################
-    $.watch [
+    watch [
       'icons/**/*.svg'
     ], ->
       gulp.start 'icons-svg', 'icons'
@@ -76,7 +76,7 @@ module.exports = [
     #######################
     # images
     #######################
-    $.watch [
+    watch [
       './images/**/*'
     ], ->
       gulp.start 'images'
@@ -84,7 +84,7 @@ module.exports = [
     #######################
     # jquery
     #######################
-    $.watch [
+    watch [
       './jquery/**/*'
     ], ->
       gulp.start 'jquery'
@@ -92,7 +92,7 @@ module.exports = [
     #######################
     # ng
     #######################
-    $.watch [
+    watch [
       './jquery/**/*'
     ], ->
       gulp.start 'ng'
@@ -100,7 +100,7 @@ module.exports = [
     #######################
     # styles
     #######################
-    $.watch [
+    watch [
       './less/**/*.less'
       './icons/*.svg'
       './less/colors.json'

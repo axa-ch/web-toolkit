@@ -1,18 +1,20 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
+iconfont = require 'gulp-iconfont'
+rename = require 'gulp-rename'
+template = require 'gulp-template'
 
 errorify = require '../lib/errorify'
 
 module.exports = (cb) ->
 
   gulp.src [ './icons/*.svg' ]
-    .pipe $.iconfont { fontName: 'temporary' }
+    .pipe iconfont { fontName: 'temporary' }
     .on 'error', errorify
     .on 'codepoints', (codepoints) ->
       gulp.src './less/style/blocks/icon.less.lodash', { base: './less' }
-        .pipe $.template { glyphs: codepoints }
+        .pipe template { glyphs: codepoints }
         .on 'error', errorify
-        .pipe $.rename('style/blocks/icon.less')
+        .pipe rename('style/blocks/icon.less')
         .pipe gulp.dest './dist/less'
         .on 'end', ->
           cb()

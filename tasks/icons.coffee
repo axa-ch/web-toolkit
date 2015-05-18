@@ -1,5 +1,5 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
+iconfont = require 'gulp-iconfont'
 
 errorify = require '../lib/errorify'
 after = require '../lib/after'
@@ -18,7 +18,7 @@ module.exports = (cb) ->
   )
 
   gulp.src [ './icons/**/*.svg' ]
-    .pipe $.iconfont {
+    .pipe iconfont {
       fontName: 'style-guide-font'
       appendCodepoints: true
     }

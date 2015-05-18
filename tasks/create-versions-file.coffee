@@ -1,4 +1,4 @@
-$ = require('gulp-load-plugins')()
+git = require 'gulp-git'
 
 writeJSONFile = require '../lib/writeJSONFile'
 after = require '../lib/after'
@@ -19,12 +19,12 @@ module.exports = (cb) ->
     ), (err) ->
         if err then cb err
 
-    $.git.revParse { args: '--short HEAD' } , (err, hash) ->
+    git.revParse { args: '--short HEAD' } , (err, hash) ->
         data.hash.short = hash
 
         end()
 
-    $.git.revParse { args: 'HEAD' } , (err, hash) ->
+    git.revParse { args: 'HEAD' } , (err, hash) ->
         data.hash.long = hash
 
         end()

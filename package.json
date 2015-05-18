@@ -41,7 +41,6 @@
     "gulp-iconfont": "^0.1.2",
     "gulp-jshint": "^1.10.0",
     "gulp-less": "^1.3.5",
-    "gulp-load-plugins": "^0.10.0",
     "gulp-load-tasks": "sventschui/gulp-load-tasks",
     "gulp-ng-annotate": "^0.5.2",
     "gulp-plumber": "^1.0.0",

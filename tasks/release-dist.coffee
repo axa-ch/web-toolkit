@@ -1,5 +1,6 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')({ extensions: [ 'coffee' ] } )
+tar = require 'gulp-tar'
+gzip = require 'gulp-gzip'
 
 readJSONFile = require '../lib/readJSONFile'
 
@@ -14,8 +15,8 @@ module.exports = [
       'LICENSE.*'
       '!./dist/docs/downloads/**/*'
     ]
-    .pipe $.tar './axa-web-style-guide-dist-' + packageJson.version + '.tar'
-    .pipe $.gzip()
+    .pipe tar './axa-web-style-guide-dist-' + packageJson.version + '.tar'
+    .pipe gzip()
     .pipe gulp.dest './dist/docs/downloads/'
 ]
 

@@ -1,5 +1,9 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
+sourcemaps = require 'gulp-sourcemaps'
+coffee = require 'gulp-coffee'
+addSrc = require 'gulp-add-src'
+concat = require 'gulp-concat'
+uglify = require 'gulp-uglify'
 
 errorify = require '../lib/errorify'
 
@@ -7,11 +11,11 @@ module.exports = ->
   return gulp.src [
       './docs/js/**/*.coffee'
     ]
-    .pipe $.sourcemaps.init()
+    .pipe sourcemaps.init()
     .on 'error', errorify
-    .pipe $.sourcemaps.init()
-    .pipe $.coffee()
-    .pipe $.addSrc.prepend [
+    .pipe sourcemaps.init()
+    .pipe coffee()
+    .pipe addSrc.prepend [
       './node_modules/jquery/dist/jquery.js'
       './node_modules/moment/min/moment-with-locales.js'
       './node_modules/localforage/dist/localforage.js'
@@ -21,7 +25,7 @@ module.exports = ->
       './dist/jquery/**/*.js'
       '!./dist/jquery/**/*.min.js'
     ]
-    .pipe $.concat 'docs.all.min.js'
-    .pipe $.uglify()
-    .pipe $.sourcemaps.write('.', sourceRoot: './')
+    .pipe concat 'docs.all.min.js'
+    .pipe uglify()
+    .pipe sourcemaps.write('.', sourceRoot: './')
     .pipe gulp.dest './dist/docs/js'

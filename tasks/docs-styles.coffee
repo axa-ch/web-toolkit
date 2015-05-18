@@ -1,5 +1,4 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
 
 path = require 'path'
 

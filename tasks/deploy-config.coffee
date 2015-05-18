@@ -1,8 +1,8 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
+git = require 'gulp-git'
 
 module.exports = (cb) ->
-  $.git.addRemote(
+  git.addRemote(
     'deploy',
     if process.env.REPO_URL then process.env.REPO_URL else config.repository.url,
     { cwd: './out' } ,

@@ -1,7 +1,7 @@
-$ = require('gulp-load-plugins')()
+git = require 'gulp-git'
 
 module.exports = (cb) ->
-  $.git.push('deploy', 'master:gh-pages', {
+  git.push('deploy', 'master:gh-pages', {
     args: '--force'
     cwd: './out'
   } , cb).end()

@@ -1,9 +1,9 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
+git = require 'gulp-git'
 
 module.exports = ->
   gulp.src [ './*' ], cwd: './out'
-    .pipe $.git.commit(
+    .pipe git.commit(
       'Deploy to GitHub Pages',
       args: '--author="Robo Coder <robo@coder>"'
       cwd: './out'
