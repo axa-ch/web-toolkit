@@ -24,4 +24,4 @@ module.exports = ->
     .pipe $.concat 'docs.all.min.js'
     .pipe $.uglify()
     .pipe $.sourcemaps.write('.', sourceRoot: './')
-    .pipe gulp.dest './dist/docs'
+    .pipe gulp.dest './dist/docs/js'

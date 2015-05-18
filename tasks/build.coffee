@@ -1,15 +1,16 @@
 runSequence = require 'run-sequence'
 
 module.exports = (cb) ->
-  runSequence( [
-      'icons',
-      'icons-svg',
-      'images',
-      'styles',
-      'jquery',
-      'create-versions-file',
-      'docs',
-    ],
+  # TODO: parellel (without docs)?
+  runSequence(
+    'clean',
+    'icons',
+    'icons-svg',
+    'images',
+    'styles',
+    'jquery',
+    'create-versions-file',
+    'docs',
     cb
   )
 

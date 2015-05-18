@@ -1,19 +1,6 @@
-runAndWatch = require '../lib/run-and-watch'
+runSequence = require 'run-sequence'
 
-module.exports = [
-  [
-    'jquery-clean'
-  ],
-  (cb) ->
-
-    runAndWatch [
-      './jquery/**/*'
-    ], [
-      'jquery-compile',
-      'jquery-compress'
-    ],
-    cb
-
-]
+module.exports = (cb) ->
+  runSequence 'jquery-clean', 'jquery-compile', 'jquery-compress', cb
 
 # Copyright AXA Versicherungen AG 2015

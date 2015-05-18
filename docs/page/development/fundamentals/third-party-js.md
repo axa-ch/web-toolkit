@@ -1,6 +1,6 @@
 ---
 title: Third Party JavaScript
-template: development.jade
+template: page.jade
 order: 7
 status: experimental
 ---

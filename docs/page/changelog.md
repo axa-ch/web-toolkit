@@ -1,7 +1,7 @@
 ---
 title: Changelog
 slug: changelog
-template: other.jade
+template: page.jade
 ---
 
 # 0.5.0 - 20. April 2015

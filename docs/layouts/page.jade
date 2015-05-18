@@ -17,12 +17,7 @@ html
     link(rel="stylesheet", href="http://fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
     link(rel="stylesheet", href=relative("/css/docs.css"))
 
-    script(src=relative('/js/jquery/jquery.min.js'))
-    script(src=relative('/js/knockout/knockout-latest.js'))
-    script(src=relative('/js/urijs/URI.min.js'))
-    script(src=relative('/js/localforage/localforage.min.js'))
-    script(src=relative('/js/moment/moment.min.js'))
-    script(src=relative('/js/zeroclipboard/ZeroClipboard.min.js'))
+    script(src=relative('/js/docs.all.min.js'))
     script(src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
     
     script(type='text/javascript').
@@ -40,14 +35,6 @@ html
         var s=document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(uv,s)
       })();
-
-    script(src=relative("/js/axa-wsg.jquery.all.js"))
-    script(src=relative("/js/api.js"))
-    script(src=relative("/js/github-integration.js"))
-    script(src=relative("/js/main.js"))
-    script(src=relative("/js/left-navigation.js"))
-    script(src=relative("/js/octocat.js"))
-    script(src=relative("/js/example.js"))
 
   body.site
     .site__page

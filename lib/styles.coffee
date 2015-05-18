@@ -7,10 +7,8 @@ pseudoelements = require 'postcss-pseudoelements'
 autoprefixer = require 'autoprefixer-core'
 csswring = require 'csswring'
 
-module.exports = ->
-
-  return (glob, dest, paths) ->
-    return gulp.src glob
+module.exports = (glob, paths, dest) ->
+  return gulp.src glob
     .pipe $.sourcemaps.init()
     .pipe $.less { paths: paths }
     .on 'error', errorify
