@@ -5,7 +5,7 @@ module.exports = (cb) ->
   $.git.addRemote(
     'deploy',
     if process.env.REPO_URL then process.env.REPO_URL else config.repository.url,
-    { cwd: './out' },
+    { cwd: './out' } ,
     cb
   )
 

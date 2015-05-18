@@ -1,5 +1,5 @@
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')({ extensions: [ 'coffee' ] })
+$ = require('gulp-load-plugins')({ extensions: [ 'coffee' ] } )
 
 readJSONFile = require '../lib/readJSONFile'
 

@@ -4,6 +4,6 @@ module.exports = (cb) ->
   git.init {
     args: '--quiet'
     cwd: './out'
-  }, cb
+  } , cb
 
 # Copyright AXA Versicherungen AG 2015
