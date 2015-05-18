@@ -2,34 +2,14 @@ require('gulp-coffee/node_modules/coffee-script/register')
 
 var gulp = require('gulp');
 var del = require('del');
-var less = require('gulp-less');
-var sourcemaps = require('gulp-sourcemaps');
-var livereload = require('gulp-livereload');
-var coffee = require('gulp-coffee');
-var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
-var watch = require('gulp-watch');
 var connect = require('connect');
 var serveStatic = require('serve-static');
-var template = require('gulp-template');
-var rename = require("gulp-rename");
-var git = require('gulp-git');
-var postcss = require('gulp-postcss');
 var pseudoelements = require('postcss-pseudoelements');
 var autoprefixer = require('autoprefixer-core');
 var csswring = require('csswring');
-var uglify = require('gulp-uglify');
-var coffeelint = require('gulp-coffeelint');
-var gulptar = require('gulp-tar');
-var gulpgzip = require('gulp-gzip');
-var generateBowerJson = require('gulp-generate-bower-json');
 var npm = require('npm');
-var jshint = require('gulp-jshint');
-var ngAnnotate = require('gulp-ng-annotate');
-var filter = require('gulp-filter');
-var iconfont = require('gulp-iconfont');
-var svgstore = require('gulp-svgstore');
-var svgmin = require('gulp-svgmin');
+var $ = require('gulp-load-plugins')();
 
 var readJSONFile = require('./lib/readJSONFile');
 var errorify = require('./lib/errorify');
@@ -52,8 +32,8 @@ gulp.task('icons', require('./tasks/icons')());
 
 gulp.task('icons-svg', function () {
     return gulp.src('icons/*.svg')
-        .pipe(svgmin())
-        .pipe(svgstore())
+        .pipe($.svgmin())
+        .pipe($.svgstore())
         .pipe(gulp.dest('./dist/images/'))
 });
 
@@ -73,13 +53,13 @@ gulp.task('styles-copy', function() {
 
 gulp.task('styles-icons', function(cb) {
     gulp.src(['./icons/*.svg'])
-        .pipe(iconfont({fontName: 'temporary'}))
+        .pipe($.iconfont({fontName: 'temporary'}))
         .on('error', errorify)
         .on('codepoints', function(codepoints) {
             gulp.src('./less/style/blocks/icon.less.lodash', {base: './less'})
-                .pipe(template({glyphs: codepoints}))
+                .pipe($.template({glyphs: codepoints}))
                 .on('error', errorify)
-                .pipe(rename('style/blocks/icon.less'))
+                .pipe($.rename('style/blocks/icon.less'))
                 .pipe(gulp.dest('./dist/less'))
                 .on('end', function() {
                     cb();
@@ -89,35 +69,35 @@ gulp.task('styles-icons', function(cb) {
 
 gulp.task('styles-generate', function() {
     return gulp.src(['./less/**/*.less.lodash', '!./less/style/blocks/icon.less.lodash'])
-        .pipe(template({colors: readJSONFile('./less/colors.json')}))
-        .pipe(rename({extname: ''}))
+        .pipe($.template({colors: readJSONFile('./less/colors.json')}))
+        .pipe($.rename({extname: ''}))
         .pipe(gulp.dest('./dist/less/'));
 });
 
 gulp.task('styles-compile', function() {
     return gulp.src(['./dist/less/{style,normalize}.less'])
-        .pipe(sourcemaps.init())
-        .pipe(less({
+        .pipe($.sourcemaps.init())
+        .pipe($.less({
             paths: ['./dist/less']
         }))
         .on('error', errorify)
-        .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+        .pipe($.sourcemaps.write('.', {sourceRoot: './'}))
         .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('styles-postcss', function() {
     return gulp.src(['./dist/css/*.css'])
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(postcss([autoprefixer(), pseudoelements()]))
+        .pipe($.sourcemaps.init({loadMaps: true}))
+        .pipe($.postcss([autoprefixer(), pseudoelements()]))
         .on('error', errorify)
-        .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+        .pipe($.sourcemaps.write('.', {sourceRoot: './'}))
         .pipe(gulp.dest('./dist/css'))
-        .pipe(filter(['*', '!**/*.map']))
-        .pipe(postcss([csswring()]))
-        .pipe(rename({
+        .pipe($.filter(['*', '!**/*.map']))
+        .pipe($.postcss([csswring()]))
+        .pipe($.rename({
             extname: '.min.css'
         }))
-        .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+        .pipe($.sourcemaps.write('.', {sourceRoot: './'}))
         .pipe(gulp.dest('./dist/css'));
 });
 
@@ -133,28 +113,28 @@ gulp.task('jquery-clean', function(cb) {
 
 gulp.task('jquery-compile', function() {
     return gulp.src('./jquery/**/*.coffee')
-        .pipe(coffeelint())
-        .pipe(coffeelint.reporter('default'))
-        .pipe(sourcemaps.init())
-        .pipe(coffee())
-        .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+        .pipe($.coffeelint())
+        .pipe($.coffeelint.reporter('default'))
+        .pipe($.sourcemaps.init())
+        .pipe($.coffee())
+        .pipe($.sourcemaps.write('.', {sourceRoot: './'}))
         .on('error', errorify)
         .pipe(gulp.dest('./dist/jquery'))
-        .pipe(filter(['*','!**/*.map']))
-        .pipe(concat('axa-wsg.jquery.all.js'))
-        .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+        .pipe($.filter(['*','!**/*.map']))
+        .pipe($.concat('axa-wsg.jquery.all.js'))
+        .pipe($.sourcemaps.write('.', {sourceRoot: './'}))
         .pipe(gulp.dest('./dist/jquery'));
 });
 
 gulp.task('jquery-compress', function() {
     return gulp.src(['./dist/jquery/*.js'])
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(uglify())
+        .pipe($.sourcemaps.init({loadMaps: true}))
+        .pipe($.uglify())
         .on('error', errorify)
-        .pipe(rename({
+        .pipe($.rename({
             extname: '.min.js'
         }))
-        .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+        .pipe($.sourcemaps.write('.', {sourceRoot: './'}))
         .pipe(gulp.dest('./dist/jquery'));
 });
 
@@ -173,15 +153,15 @@ gulp.task('ng-copy', function() {
 
 gulp.task('ng-scripts', function() {
     return gulp.src(['./dist/ng/**/*.js'])
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(ngAnnotate())
-        .pipe(uglify())
-        .pipe(rename({
+        .pipe($.jshint())
+        .pipe($.jshint.reporter('jshint-stylish'))
+        .pipe($.sourcemaps.init({loadMaps: true}))
+        .pipe($.ngAnnotate())
+        .pipe($.uglify())
+        .pipe($.rename({
             extname: '.min.js'
         }))
-        .pipe(sourcemaps.write('.', {sourceRoot: './'}))
+        .pipe($.sourcemaps.write('.', {sourceRoot: './'}))
         .pipe(gulp.dest('./dist/ng'));
 });
 
@@ -193,7 +173,7 @@ gulp.task('create-versions-file', require('./tasks/create-versions-file')());
 
 gulp.task('release-dist-generate-bower-json', function() {
     return gulp.src('./package.json')
-        .pipe(generateBowerJson())
+        .pipe($.generateBowerJson())
         .pipe(gulp.dest('./dist'));
 });
 
@@ -201,8 +181,8 @@ gulp.task('release-dist', ['release-dist-generate-bower-json'], function() {
     packageJson = readJSONFile('./package.json');
 
     return gulp.src(['./dist/**', './README.*', 'LICENSE.*', '!./dist/docs/downloads/**/*'])
-        .pipe(gulptar('./axa-web-style-guide-dist-' + packageJson.version + '.tar'))
-        .pipe(gulpgzip())
+        .pipe($.tar('./axa-web-style-guide-dist-' + packageJson.version + '.tar'))
+        .pipe($.gzip())
         .pipe(gulp.dest('./dist/docs/downloads/'));
 });
 
@@ -237,9 +217,9 @@ gulp.task('serve', function(next) {
 });
 
 gulp.task('dev', ['build', 'serve'], function() {
-    livereload.listen();
+    $.livereload.listen();
 
-    watch([
+    $.watch([
         './docs/**',
         './less/**',
         './icons/**',
@@ -248,7 +228,7 @@ gulp.task('dev', ['build', 'serve'], function() {
         './ng/**'
     ], function(files, callback) {
         runSequence('build', function(arguments) {
-            livereload.changed();
+            $.livereload.changed();
             callback.apply(this, arguments);
         });
     });
