@@ -1,20 +1,20 @@
 require 'gulp-coffee/node_modules/coffee-script/register'
 
-gulp = require('gulp')
-del = require('del')
-runSequence = require('run-sequence')
-connect = require('connect')
-serveStatic = require('serve-static')
-pseudoelements = require('postcss-pseudoelements')
-autoprefixer = require('autoprefixer-core')
-csswring = require('csswring')
-npm = require('npm')
+gulp = require 'gulp'
+del = require 'del'
+runSequence = require 'run-sequence'
+connect = require 'connect'
+serveStatic = require 'serve-static'
+pseudoelements = require 'postcss-pseudoelements'
+autoprefixer = require 'autoprefixer-core'
+csswring = require 'csswring'
+npm = require 'npm'
 $ = require('gulp-load-plugins')()
-readJSONFile = require('./lib/readJSONFile')
-errorify = require('./lib/errorify')
-file = require('./lib/file')
-after = require('./lib/after')
-config = require('./package.json')
+readJSONFile = require './lib/readJSONFile'
+errorify = require './lib/errorify'
+file = require './lib/file'
+after = require './lib/after'
+config = require './package.json'
 
 ##################################
 # CLEAN
