@@ -23,12 +23,12 @@ module.exports = () ->
         ), (err) ->
             if err then cb err
 
-        git.revParse { args: '--short HEAD' }, (err, hash) ->
+        git.revParse { args: '--short HEAD' } , (err, hash) ->
             data.hash.short = hash
 
             end()
 
-        git.revParse { args: 'HEAD' }, (err, hash) ->
+        git.revParse { args: 'HEAD' } , (err, hash) ->
             data.hash.long = hash
 
             end()

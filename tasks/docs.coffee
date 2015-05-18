@@ -11,9 +11,9 @@ module.exports = (options) ->
   options.dest = options.dest || './dest'
 
   return (cb) ->
-    readJSONFile = require('../lib/readJSONFile');
-    sampleJadeFilter = require('../lib/sampleJadeFilter');
-    markedRenderer = require('../lib/markedRenderer');
+    readJSONFile = require '../lib/readJSONFile'
+    sampleJadeFilter = require '../lib/sampleJadeFilter'
+    markedRenderer = require '../lib/markedRenderer'
 
     Metalsmith = require 'metalsmith'
     collections = require 'metalsmith-collections'
@@ -102,7 +102,7 @@ module.exports = (options) ->
 
     # do the static pages
     # TODO: Remove when collection plugin supports undeclared collections
-    collections_options = {};
+    collections_options = {}
 
     [
       'nav',
