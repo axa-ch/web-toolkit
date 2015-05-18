@@ -9,8 +9,6 @@ module.exports = [
   ],
   ->
 
-    $.livereload.listen()
-
     $.watch [
       './docs/**'
       './less/**'
@@ -19,9 +17,7 @@ module.exports = [
       './jquery/**'
       './ng/**'
     ], (files, callback) ->
-      runSequence 'build', (args) ->
-        $.livereload.changed()
-        callback.apply this, args
+      runSequence 'build'
 
 ]
 

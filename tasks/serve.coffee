@@ -1,7 +1,11 @@
-connect = require 'connect'
-serveStatic = require 'serve-static'
+gulp = require 'gulp'
+$ = require('gulp-load-plugins')()
 
-module.exports = (cb) ->
-  connect().use(serveStatic('./dist/docs')).listen process.env.PORT or 3000, cb
+module.exports = ->
+  gulp.src [ './dist/docs' ]
+    .pipe $.webserver
+      port: process.env.PORT or 3000
+      livereload: true
+      open: false
 
 # Copyright AXA Versicherungen AG 2015
