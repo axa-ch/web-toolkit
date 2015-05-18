@@ -1,7 +1,6 @@
 require 'gulp-coffee/node_modules/coffee-script/register'
 
 gulp = require 'gulp'
-$ = require('gulp-load-plugins')({ extensions: [ 'coffee' ] })
 del = require 'del'
 runSequence = require 'run-sequence'
 npm = require 'npm'
@@ -11,8 +10,7 @@ file = require './lib/file'
 after = require './lib/after'
 config = require './package.json'
 
-
-$.loadTasks()
+require('gulp-load-tasks')({ extensions: [ '.coffee' ] })
 
 gulp.task 'default', [ 'build' ]
 
