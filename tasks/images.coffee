@@ -1,7 +1,21 @@
 gulp = require 'gulp'
 
-module.exports = ->
-  gulp.src [ './images/**' ], { base: './images' }
-    .pipe gulp.dest './dist/images'
+runAndWatch = require '../lib/run-and-watch'
+
+module.exports = [
+  [
+    'images-clean'
+  ],
+  (cb) ->
+
+    runAndWatch [
+      './images/**/*'
+    ],
+    [
+      'images-copy'
+    ],
+    cb
+]
+
 
 # Copyright AXA Versicherungen AG 2015

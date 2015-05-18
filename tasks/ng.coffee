@@ -1,11 +1,21 @@
 runSequence = require 'run-sequence'
 
-module.exports = (cb) ->
-  runSequence(
-    'ng-clean',
-    'ng-copy',
-    'ng-scripts',
+runAndWatch = require '../lib/run-and-watch'
+
+module.exports = [
+  [
+    'ng-clean'
+  ],
+  (cb) ->
+
+    runAndWatch [
+      './ng/**/*'
+    ], [
+      'ng-compile'
+    ],
     cb
-  )
+
+
+]
 
 # Copyright AXA Versicherungen AG 2015

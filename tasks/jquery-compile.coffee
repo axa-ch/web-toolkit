@@ -13,8 +13,8 @@ module.exports = ->
     .on 'error', errorify
     .pipe gulp.dest './dist/jquery'
     .pipe $.filter [
-      '*'
-      '!**/*.map'
+      '**/*.js'
+      '!**/*.min.js'
     ]
     .pipe $.concat 'axa-wsg.jquery.all.js'
     .pipe $.sourcemaps.write('.', sourceRoot: './')

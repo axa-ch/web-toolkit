@@ -1,14 +1,7 @@
-gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
-
-errorify = require '../lib/errorify'
+styles = require '../lib/styles'
 
 module.exports = ->
-  gulp.src [ './dist/less/{style,normalize}.less' ]
-    .pipe $.sourcemaps.init()
-    .pipe $.less { paths: [ './dist/less' ] }
-    .on 'error', errorify
-    .pipe $.sourcemaps.write('.', sourceRoot: './')
-    .pipe gulp.dest './dist/css'
+
+  return styles [ './dist/less/{style,normalize}.less' ], [ './dist/less' ], './dist/css'
 
 # Copyright AXA Versicherungen AG 2015

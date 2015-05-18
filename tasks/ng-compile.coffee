@@ -2,7 +2,10 @@ gulp = require 'gulp'
 $ = require('gulp-load-plugins')()
 
 module.exports = ->
-  gulp.src [ './dist/ng/**/*.js' ]
+
+  gulp.src [ './ng/**/*' ]
+    .pipe gulp.dest './dist/ng'
+    .pipe $.filter [ './dist/ng/**/*.js' ]
     .pipe $.jshint()
     .pipe $.jshint.reporter { 'jshint-stylish' }
     .pipe $.sourcemaps.init { loadMaps: true }

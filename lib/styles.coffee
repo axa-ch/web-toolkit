@@ -8,15 +8,18 @@ autoprefixer = require 'autoprefixer-core'
 csswring = require 'csswring'
 
 module.exports = ->
-  gulp.src [ './dist/css/*.css' ]
-    .pipe $.sourcemaps.init { loadMaps: true }
+
+  return (glob, dest, paths) ->
+    return gulp.src glob
+    .pipe $.sourcemaps.init()
+    .pipe $.less { paths: paths }
+    .on 'error', errorify
     .pipe $.postcss [
       autoprefixer()
       pseudoelements()
     ]
-    .on 'error', errorify
     .pipe $.sourcemaps.write('.', sourceRoot: './')
-    .pipe gulp.dest './dist/css'
+    .pipe gulp.dest dest
     .pipe $.filter [
       '*'
       '!**/*.map'
@@ -24,6 +27,4 @@ module.exports = ->
     .pipe $.postcss [ csswring() ]
     .pipe $.rename { extname: '.min.css' }
     .pipe $.sourcemaps.write('.', sourceRoot: './')
-    .pipe gulp.dest './dist/css'
-
-# Copyright AXA Versicherungen AG 2015
+    .pipe gulp.dest dest

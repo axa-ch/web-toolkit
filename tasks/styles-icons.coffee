@@ -4,6 +4,7 @@ $ = require('gulp-load-plugins')()
 errorify = require '../lib/errorify'
 
 module.exports = (cb) ->
+
   gulp.src [ './icons/*.svg' ]
     .pipe $.iconfont { fontName: 'temporary' }
     .on 'error', errorify

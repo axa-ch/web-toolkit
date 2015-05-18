@@ -2,7 +2,8 @@ gulp = require 'gulp'
 $ = require('gulp-load-plugins')()
 
 module.exports = ->
-  gulp.src 'icons/*.svg'
+
+  gulp.src [ 'icons/**/*.svg' ]
     .pipe $.svgmin()
     .pipe $.svgstore()
     .pipe gulp.dest './dist/images/'

@@ -2,23 +2,10 @@ $ = require('gulp-load-plugins')()
 
 runSequence = require 'run-sequence'
 
-module.exports = [
-  [
-    'build'
-    'serve'
-  ],
-  ->
+module.exports = (cb) ->
 
-    $.watch [
-      './docs/**'
-      './less/**'
-      './icons/**'
-      './images/**'
-      './jquery/**'
-      './ng/**'
-    ], (files, callback) ->
-      runSequence 'build'
+  process.env.WATCH = true;
 
-]
+  runSequence ['build', 'serve']
 
 # Copyright AXA Versicherungen AG 2015
