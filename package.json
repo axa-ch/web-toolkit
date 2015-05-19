@@ -38,7 +38,6 @@
     "gulp-git": "0.5.2",
     "gulp-gzip": "^0.0.8",
     "gulp-iconfont": "^0.1.2",
-    "gulp-if": "^1.2.5",
     "gulp-jshint": "^1.10.0",
     "gulp-less": "^1.3.5",
     "gulp-load-tasks": "sventschui/gulp-load-tasks",
