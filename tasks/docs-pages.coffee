@@ -114,7 +114,8 @@ module.exports = (cb) ->
   )
 
   # Output
-  metalsmith.destination './dist/docs'
+  metalsmith.clean false
+  metalsmith.destination './dist/docs/'
 
   return metalsmith.build (err) ->
     if err then cb(err) else cb()

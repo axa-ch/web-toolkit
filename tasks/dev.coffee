@@ -21,14 +21,14 @@ module.exports = [
     # docs-pages
     #######################
     watch [
-      './docs/pages/**/*'
+      './docs/page/**/*'
       './docs/layouts/**/*'
       './tmp/icons.json'
       './less/colors.json'
       './package.json',
       './docs/config.json'
-    ], ->
-      gulp.start 'docs-pages'
+    ], (files, cb) ->
+      gulp.start 'docs-pages', cb
 
     #######################
     # docs-scripts
@@ -41,9 +41,10 @@ module.exports = [
       #'./node_modules/knockout/build/output/knockout-latest.js' # Ignore since we do not assume that this changes
       #'./node_modules/URIjs/src/URI.js' # Ignore since we do not assume that this changes
       #'./node_modules/zeroclipboard/dist/ZeroClipboard.js' # Ignore since we do not assume that this changes
-      './dist/jquery/**/*.js'
-      '!./dist/jquery/**/*.min.js'
-    ], [ 'docs-scripts' ]
+      './dist/jquery/axa-wsg.jquery.all.js'
+    ], ->
+      gulp.start 'docs-scripts'
+      return
 
     #######################
     # docs-styles
@@ -53,8 +54,8 @@ module.exports = [
         # Listen on css instead of less to ensure all the styles-* task finished
         # TODO: styles task could throw an event instead?!
         './dist/css/style.css'
-    ], ->
-      gulp.start 'docs-styles'
+    ], (files, cb) ->
+      gulp.start 'docs-styles', cb
 
     #######################
     # docs-assets
@@ -62,40 +63,40 @@ module.exports = [
     watch [
         #'./node_modules/zeroclipboard/dist/ZeroClipboard.swf' # Ignore since we do not assume that this changes
         './docs/images/**/*'
-    ], ->
-      gulp.start 'docs-assets'
+    ], (files, cb) ->
+      gulp.start 'docs-assets', cb
 
     #######################
     # icons
     #######################
     watch [
       'icons/**/*.svg'
-    ], ->
-      gulp.start 'icons-svg', 'icons'
+    ], (files, cb) ->
+      gulp.start 'icons-svg', 'icons', cb
 
     #######################
     # images
     #######################
     watch [
       './images/**/*'
-    ], ->
-      gulp.start 'images'
+    ], (files, cb) ->
+      gulp.start 'images', cb
 
     #######################
     # jquery
     #######################
     watch [
       './jquery/**/*'
-    ], ->
-      gulp.start 'jquery'
+    ], (files, cb) ->
+      gulp.start 'jquery', cb
 
     #######################
     # ng
     #######################
     watch [
-      './jquery/**/*'
-    ], ->
-      gulp.start 'ng'
+      './ng/**/*'
+    ], (files, cb) ->
+      gulp.start 'ng', cb
 
     #######################
     # styles
@@ -104,8 +105,8 @@ module.exports = [
       './less/**/*.less'
       './icons/*.svg'
       './less/colors.json'
-    ], ->
-      gulp.start 'styles'
+    ], (files, cb) ->
+      gulp.start 'styles', cb
 
 ]
 

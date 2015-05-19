@@ -20,8 +20,7 @@ module.exports = [
         './node_modules/knockout/build/output/knockout-latest.js'
         './node_modules/URIjs/src/URI.js'
         './node_modules/zeroclipboard/dist/ZeroClipboard.js'
-        './dist/jquery/**/*.js'
-        '!./dist/jquery/**/*.min.js'
+        './dist/jquery/axa-wsg.jquery.all.js'
       ]
       .pipe sourcemaps.init { loadMaps: true }
       .on 'error', errorify
