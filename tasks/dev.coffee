@@ -63,6 +63,9 @@ module.exports = [
     watch [
         #'./node_modules/zeroclipboard/dist/ZeroClipboard.swf' # Ignore since we do not assume that this changes
         './docs/images/**/*'
+        './dist/images/**/*'
+        './dist/fonts/**/*'
+        './dist/css/{style,normalize}.min.css{,.map}'
     ], ->
       gulp.start 'docs-assets'
 

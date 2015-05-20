@@ -1,6 +1,7 @@
 
 head = ' \
-<link rel="stylesheet" href="/css/style.css" />\
+<link rel="stylesheet" href="/css/normalize.min.css" />\
+<link rel="stylesheet" href="/css/style.min.css" />\
 '
 
 class Example
@@ -35,6 +36,7 @@ class Example
 
     @$shadow.html html
 
+    @$html.remove()
     @$el.append @$shadow
 
     @$contents.find("body").html html
