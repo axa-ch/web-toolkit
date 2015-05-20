@@ -51,7 +51,17 @@ p.paragraph.
         !=' ' 
         .button.icon.icon--cross Foobar
         !=' ' 
+        .button
+          svg.button__icon.button__icon--left.icon-svg
+            use(xlink:href='/images/icons.svg#cross')
+          | Foobar 
+        !=' ' 
         .button.icon-after.icon-after--cross Foobar
+        !=' ' 
+        .button
+          | Foobar 
+          svg.button__icon.button__icon--right.icon-svg
+            use(xlink:href='/images/icons.svg#cross')
 
 .toggle
   .toggle__button.icon.icon--source(data-info, data-target='#code-1') See code
