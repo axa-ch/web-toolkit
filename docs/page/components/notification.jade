@@ -6,14 +6,8 @@ template: page.jade
 ---
 
 p.paragraph.
-  TODO
+  Notifications are presented to users to indicate that an background action came to an end. The used animations are a key element for this component since it should get the users attention.
 
-.toc
-  .toc__title Table of contents
-  ul.toc__anchor-navigation
-    li.toc__anchor-navigation__item
-      a(href='#notification').toc__anchor-navigation__link Notification
-      
 .bubble
   .bubble__image
   .bubble__content
@@ -21,12 +15,12 @@ p.paragraph.
       .bubble__title__text PSD File
     .bubble__text
       p.paragraph.
-        Hallo Designer. hier kannst du unsere PSD mit allen Buttons 
+        Hallo Designer. hier kannst du unsere PSD mit allen Buttons
         herunterladen und gleich mit dem Layout anfanagen
-      
+
 .downloads
   a(href="../AXA.aco").downloads__link NOTIFICATION.PSD
-      
+
 .hr
 
 h2.heading.heading--secondary#notification Notification
@@ -70,13 +64,13 @@ p.paragraph.
               label(data-checkbox="data-checkbox").checkbox
                 input(type="checkbox").checkbox__checkbox#notification_html
                 div.checkbox__label
-                  div.checkbox__label__text HTML 
+                  div.checkbox__label__text HTML
           .form__group
             .form__group__label
               .form__group__text
             .form__group__control
               .button#showNotification Show notification
-              
+
 script.
   $("#showNotification").on('click', function() {
     $("#notification").notification({
@@ -98,7 +92,7 @@ script.
       .tab-panel__content
         .tab-panel__content__tab.is-active
           p.paragraph.
-            Test bla bla <br /> test 
+            Test bla bla <br /> test
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
@@ -107,6 +101,8 @@ script.
 h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
-  li.checklist__item TODO
+  li.checklist__item Use notifications to indicate the state of background actions like copying to the clipboard.
+  li.checklist__item This component guarantees the attention of the user. Don't overuse it.
+  li.checklist__item It is not to be used as an confirmation page.
 
 // Copyright AXA Versicherungen AG 2015
