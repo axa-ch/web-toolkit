@@ -1,7 +1,7 @@
 runSequence = require 'run-sequence'
 
 module.exports = (cb) ->
-  runSequence 'docs-clean', [
+  runSequence [
       'docs-pages',
       'docs-scripts',
       'docs-styles',
