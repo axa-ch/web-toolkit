@@ -54,8 +54,8 @@ module.exports = [
         # Listen on css instead of less to ensure all the styles-* task finished
         # TODO: styles task could throw an event instead?!
         './dist/css/style.css'
-    ], (files, cb) ->
-      gulp.start 'docs-styles', cb
+    ], ->
+      gulp.start 'docs-styles'
 
     #######################
     # docs-assets
@@ -63,40 +63,40 @@ module.exports = [
     watch [
         #'./node_modules/zeroclipboard/dist/ZeroClipboard.swf' # Ignore since we do not assume that this changes
         './docs/images/**/*'
-    ], (files, cb) ->
-      gulp.start 'docs-assets', cb
+    ], ->
+      gulp.start 'docs-assets'
 
     #######################
     # icons
     #######################
     watch [
       'icons/**/*.svg'
-    ], (files, cb) ->
-      gulp.start 'icons-svg', 'icons', cb
+    ], ->
+      gulp.start 'icons-svg', 'icons'
 
     #######################
     # images
     #######################
     watch [
       './images/**/*'
-    ], (files, cb) ->
-      gulp.start 'images', cb
+    ], ->
+      gulp.start 'images'
 
     #######################
     # jquery
     #######################
     watch [
       './jquery/**/*'
-    ], (files, cb) ->
-      gulp.start 'jquery', cb
+    ], ->
+      gulp.start 'jquery'
 
     #######################
     # ng
     #######################
     watch [
       './ng/**/*'
-    ], (files, cb) ->
-      gulp.start 'ng', cb
+    ], ->
+      gulp.start 'ng'
 
     #######################
     # styles
@@ -105,8 +105,8 @@ module.exports = [
       './less/**/*.less'
       './icons/*.svg'
       './less/colors.json'
-    ], (files, cb) ->
-      gulp.start 'styles', cb
+    ], ->
+      gulp.start 'styles'
 
 ]
 
