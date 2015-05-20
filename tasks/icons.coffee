@@ -17,7 +17,7 @@ module.exports = (cb) ->
       cb err
   )
 
-  gulp.src [ './icons/**/*.svg' ]
+  gulp.src [ './icon-font/**/*.svg' ]
     .pipe iconfont {
       fontName: 'style-guide-font'
       appendCodepoints: true

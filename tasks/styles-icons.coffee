@@ -7,7 +7,7 @@ errorify = require '../lib/errorify'
 
 module.exports = (cb) ->
 
-  gulp.src [ './icons/*.svg' ]
+  gulp.src [ './icon-font/*.svg' ]
     .pipe iconfont { fontName: 'temporary' }
     .on 'error', errorify
     .on 'codepoints', (codepoints) ->
