@@ -1,4 +1,3 @@
-$ = require('gulp-load-plugins')()
 runSequence = require 'run-sequence'
 
 module.exports = (glob, tasks, tasksIfNotWatch) ->
