@@ -123,6 +123,7 @@ _.forEach(colors.tbd, function (colorCode, colorName) {
 @z-index-datepicker: 32;
 @z-index-autocomplete: 33;
 @z-index-popover: 9900;
+@z-index-notifications: 9950;
 @z-index-site-mobile-nav: 9980;
 @z-index-site-page-masked: 9981;
 @z-index-example-header: 9990;

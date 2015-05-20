@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../blocks/icon';
 @import '../mixins/respond';
 
 .notifications {
@@ -6,16 +7,78 @@
   top: 0;
   right: 0;
   width: 100%;
-  max-width: 480px;
+  max-width: 400px;
+  z-index: @z-index-notifications;
 }
 
 .notifications__item {
   min-height: 60px;
   margin: 20px;
-  padding: 20px 30px;
+  padding: 20px 30px 20px 60px;
   background: white;
-  border-left: 3px solid @color-light-blue;
-  box-shadow: 0 0 3px rgba(0,0,0,.1);
+  border: 1px solid transparent;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  animation: notifications__item--fade-in 0.5s;
+  transition: opacity 0.5s ease, height 0.5s ease, margin 0.5s ease, top 0.5s ease;
+  position: relative; // used for animations
+  top: 0;
+  opacity: 1;
+  .icon();
+  .icon--info();
+
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  .make-notification__item-colors(@color-light-blue);
+}
+
+@keyframes notifications__item--fade-in {
+  from {
+    top: -10px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.make-notification__item-colors(@color, @icon-color: white) {
+  border-color: @color;
+
+  &::before {
+    background: @color;
+    color: @icon-color;
+  }
+}
+
+.notifications__item--success {
+  .make-notification__item-colors(@color-green);
+
+  .icon--checkmark();
+
+}
+
+.notifications__item--error {
+  .make-notification__item-colors(@color-red);
+
+  .icon--cross();
+
+}
+
+.notifications__item--fade-out {
+  opacity: 0;
+  height: 0;
+  min-height: auto;
+  margin-top: 2 * (-1px + -20px) + -20px; // 2 * (-border + -padding) + -margin-bottom
 }
 
 /* Copyright AXA Versicherungen AG 2015 */

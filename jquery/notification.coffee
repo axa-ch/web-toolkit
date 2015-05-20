@@ -19,6 +19,8 @@
       else
         $notification.text notification.content
 
+      if notification.modifier
+        $notification.addClass 'notifications__item--'+notification.modifier
 
       timeout = 2000
 
@@ -32,11 +34,10 @@
       @$element.append $notification
 
     hideNotification: ($notification) ->
-      $notification.fadeTo 200, 0, ->
-        console.log 'fadeTo'
-        $notification.slideUp 200, 'linear', ->
-          console.log 'slideUp'
-          $notification.remove()
+      $notification.addClass 'notifications__item--fade-out'
+      setTimeout (->
+        $notification.remove()
+      ), 500
 
   # Plugin definition
   Plugin = (option) ->
@@ -70,7 +71,10 @@
 
     $target = $ $this.data('notification')
 
-    Plugin.call($target, $this.data('notification-content'))
+    Plugin.call $target, {
+      content: $this.data('notification-content')
+      modifier: $this.data('notification-modifier')
+    }
 
 )(jQuery)
 
