@@ -25,10 +25,12 @@
 
 @import 'style/mixins/respond';
 
+@docs-width: 1260px;
+
 // Undo responsiveness of the style guide
 html,
 body {
-  min-width: 1280px;
+  min-width: @docs-width;
   overflow: auto;
 }
 
@@ -42,7 +44,7 @@ body {
 
 // increase max-width
 .l-container {
-  max-width: 1280px;
+  max-width: @docs-width;
 }
 
 // floating feedback button
