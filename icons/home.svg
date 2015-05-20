@@ -72,12 +72,10 @@
   <g
      id="Page-1"
      sketch:type="MSPage"
-     style="fill:none;stroke:none"
      transform="matrix(34.015656,0,0,34.015656,-680.31312,-537.103)">
     <g
        id="home"
-       sketch:type="MSArtboardGroup"
-       style="fill:#000000">
+       sketch:type="MSArtboardGroup">
       <path
          d="M 50.137776,19.552845 20,49.656632 l 7.525946,0 0,22.577841 15.051893,0 0,-18.814871 15.051892,0 0,18.814871 15.051893,0 0,-22.577841 7.525946,0 z"
          id="rect3085"

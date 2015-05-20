@@ -33,20 +33,20 @@
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-width="1280"
-   inkscape:window-height="1002"
+   inkscape:window-height="940"
    id="namedview5"
    showgrid="false"
    inkscape:zoom="0.27798718"
    inkscape:cx="668.33222"
    inkscape:cy="840.67715"
-   inkscape:window-x="1272"
+   inkscape:window-x="-8"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
    inkscape:current-layer="Ebene_1" />
+   <title>Modal-Close</title>
 <path
-   clip-rule="evenodd"
-   d="M 0,1886.4621 862.33123,1024.1463 0,161.7329 161.71759,-9e-5 1024.0488,862.3157 1886.2825,-9e-5 2047.9026,161.63535 1185.6689,1023.9512 2048.0001,1886.267 1886.2825,2048 1023.9513,1185.5867 161.62005,2048 0,1886.4621 z"
-   id="path3"
-   inkscape:connector-curvature="0"
-   style="fill-rule:evenodd" />
+   style="fill-rule:evenodd"
+   d="M 161.71875 0 L 0 161.71875 L 862.34375 1024.1562 L 0 1886.4688 L 161.625 2048 L 1023.9375 1185.5938 L 1886.2812 2048 L 2048 1886.2812 L 1185.6562 1023.9375 L 2047.9062 161.625 L 1886.2812 0 L 1024.0625 862.3125 L 161.71875 0 z "
+   transform="translate(0,-1e-4)"
+   id="path3" />
 </svg>

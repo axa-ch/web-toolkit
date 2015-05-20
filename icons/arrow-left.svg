@@ -58,7 +58,7 @@
   </sodipodi:namedview>
   <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
   <title
-     id="title3036">arrow-left</title>
+     id="title3036">Arrow-Left</title>
   <desc
      id="desc3038">Created with Sketch.</desc>
   <defs
@@ -66,12 +66,10 @@
   <g
      id="Page-1"
      sketch:type="MSPage"
-     style="fill:none;stroke:none"
      transform="matrix(34.594595,0,0,34.711864,-595.02703,-728.94912)">
     <g
        id="arrow-left"
-       sketch:type="MSArtboardGroup"
-       style="fill:#000000">
+       sketch:type="MSArtboardGroup">
       <path
          d="M 32,50.518027 60.339638,21 68.458307,29.095661 46.985723,50.455753 69,71.832232 61.103392,80 32,50.518027 l 0,0 z"
          id="left"

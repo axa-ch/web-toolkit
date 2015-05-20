@@ -20,6 +20,7 @@
    xml:space="preserve"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="upload.svg">
+  <title>Upload</title>
 <metadata
    id="metadata13">
 <rdf:RDF>
@@ -58,14 +59,12 @@
    transform="matrix(51.446943,0,0,51.446947,-238.32799,-438.84247)">
 <polygon
    points="19.726,25.294 19.726,38.942 29.347,38.942 29.347,25.294 38.372,25.294 24.537,8.53 10.701,25.294 "
-   id="polygon5"
-   style="fill:#231f20" />
+   id="polygon5" />
 <rect
    x="7.9299998"
    y="42.258999"
    width="33.213001"
    height="6.079"
-   id="rect7"
-   style="fill:#231f20" />
+   id="rect7" />
 </g>
 </svg>

@@ -26,6 +26,7 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <title>AXA Switch</title>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -66,12 +67,10 @@
   <g
      id="Icons"
      sketch:type="MSPage"
-     style="fill:none;stroke:none"
      transform="matrix(25.108936,0,0,25.108936,-215.923,-225.98044)">
     <g
        id="switch"
-       sketch:type="MSArtboardGroup"
-       style="fill:#000000">
+       sketch:type="MSArtboardGroup">
       <g
          sketch:type="MSLayerGroup"
          transform="translate(14,9)"
