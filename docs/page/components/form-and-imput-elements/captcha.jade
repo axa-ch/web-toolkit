@@ -1,0 +1,28 @@
+---
+title: Captcha and honeypot
+order: 1
+collection: nav__components__form
+template: page.jade
+---
+
+p.paragraph.
+  Do not use captchas ever. Use honeypots instead.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#honeypots').toc__anchor-navigation__link Honeypots
+
+h2.heading.heading--secondary#honeypots Honeypots
+
+p.paragprah.
+  Honeypots are hidden form fields that trick spam robots into entering information.
+  If such a field contains a value, the form can be rejected.
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item Honeypot fields should still have a clear label (e.g. "Do not fill this field if you are human") due to accessibility reasons
+
+// Copyright AXA Versicherungen AG 2015

@@ -1,0 +1,681 @@
+[
+    {
+        title: 'UI Patterns',
+        order: 1,
+        collection: ['nav'],
+        navigationSubCollection: 'nav__patterns',
+        contents: null,
+        mode: '0666',
+        stats: {
+            dev: 0,
+            mode: 33206,
+            nlink: 1,
+            uid: 0,
+            gid: 0,
+            rdev: 0,
+            ino: 0,
+            size: 95,
+            atime: "Fri May 08
+                2015
+            16: 26
+:
+52
+GMT
++
+0
+200
+(
+    W
+        .
+        Europe
+Daylight
+Time
+)
+",
+mtime: Fri
+May
+0
+8
+2015
+16
+:
+26
+:
+52
+GMT
++
+0
+200
+(
+    W
+        .
+        Europe
+Daylight
+Time
+),
+ctime: Fri
+May
+0
+8
+2015
+16
+:
+26
+:
+40
+GMT
++
+0
+200
+(
+    W
+        .
+        Europe
+Daylight
+Time
+)
+}
+,
+relative: [Function],
+    partOfCollections
+:
+['nav'],
+    next
+:
+{
+    title: 'Fundamentals',
+        order
+:
+    1,
+        collection
+:
+    [Object],
+        navigationSubCollection
+:
+    'nav__fundamentals',
+        template
+:
+    'page.jade',
+        contents
+:
+    '',
+        mode
+:
+    '0666',
+        stats
+:
+    [Object],
+        relative
+:
+    [Function],
+        partOfCollections
+:
+    [Object],
+        previous
+:
+    [Circular],
+        next
+:
+    [Object],
+        link
+:
+    '/fundamentals/index.html'
+}
+,
+link: '/patterns/index.html'
+},
+{
+    title: 'Fundamentals',
+        order
+:
+    1,
+        collection
+:
+    ['nav'],
+        navigationSubCollection
+:
+    'nav__fundamentals',
+        template
+:
+    'page.jade',
+        contents
+:
+    '',
+        mode
+:
+    '0666',
+        stats
+:
+    {
+        dev: 0,
+            mode
+    :
+        33206,
+            nlink
+    :
+        1,
+            uid
+    :
+        0,
+            gid
+    :
+        0,
+            rdev
+    :
+        0,
+            ino
+    :
+        0,
+            size
+    :
+        121,
+            atime
+    :
+        Fri
+        May
+        0
+        8
+        2015
+        16
+    :
+        36
+    :
+        48
+        GMT
+        +
+        0
+        200
+        (
+            W
+                .
+                Europe
+        Daylight
+        Time
+    ),
+        mtime: Fri
+        May
+        0
+        8
+        2015
+        16
+    :
+        36
+    :
+        48
+        GMT
+        +
+        0
+        200
+        (
+            W
+                .
+                Europe
+        Daylight
+        Time
+    ),
+        ctime: Fri
+        May
+        0
+        8
+        2015
+        16
+    :
+        0
+        0
+    :
+        57
+        GMT
+        +
+        0
+        200
+        (
+            W
+                .
+                Europe
+        Daylight
+        Time
+    )
+    }
+,
+    relative: [Function],
+        partOfCollections
+:
+    ['nav'],
+        previous
+:
+    {
+        title: 'UI Patterns',
+            order
+    :
+        1,
+            collection
+    :
+        [Object],
+            navigationSubCollection
+    :
+        'nav__patterns',
+            contents
+    :
+    <
+        Buffer
+        >,
+            mode
+    :
+        '0666',
+            stats
+    :
+        [Object],
+            relative
+    :
+        [Function],
+            partOfCollections
+    :
+        [Object],
+            next
+    :
+        [Circular],
+            link
+    :
+        '/patterns/index.html'
+    }
+,
+    next: {
+        title: 'Components',
+            order
+    :
+        2,
+            collection
+    :
+        [Object],
+            navigationSubCollection
+    :
+        'nav__components',
+            template
+    :
+        'page.jade',
+            contents
+    :
+        '<Components></Components><TOC>goes here</TOC>',
+            mode
+    :
+        '0666',
+            stats
+    :
+        [Object],
+            relative
+    :
+        [Function],
+            partOfCollections
+    :
+        [Object],
+            previous
+    :
+        [Circular],
+            next
+    :
+        [Object],
+            link
+    :
+        '/components/index.html'
+    }
+,
+    link: '/fundamentals/index.html'
+}
+,
+{
+    title: 'Components',
+        order
+:
+    2,
+        collection
+:
+    ['nav'],
+        navigationSubCollection
+:
+    'nav__components',
+        template
+:
+    'page.jade',
+        contents
+:
+    '<Components></Components><TOC>goes here</TOC>',
+        mode
+:
+    '0666',
+        stats
+:
+    {
+        dev: 0,
+            mode
+    :
+        33206,
+            nlink
+    :
+        1,
+            uid
+    :
+        0,
+            gid
+    :
+        0,
+            rdev
+    :
+        0,
+            ino
+    :
+        0,
+            size
+    :
+        152,
+            atime
+    :
+        Fri
+        May
+        0
+        8
+        2015
+        16
+    :
+        34
+    :
+        49
+        GMT
+        +
+        0
+        200
+        (
+            W
+                .
+                Europe
+        Daylight
+        Time
+    ),
+        mtime: Fri
+        May
+        0
+        8
+        2015
+        16
+    :
+        34
+    :
+        49
+        GMT
+        +
+        0
+        200
+        (
+            W
+                .
+                Europe
+        Daylight
+        Time
+    ),
+        ctime: Fri
+        May
+        0
+        8
+        2015
+        13
+    :
+        42
+    :
+        17
+        GMT
+        +
+        0
+        200
+        (
+            W
+                .
+                Europe
+        Daylight
+        Time
+    )
+    }
+,
+    relative: [Function],
+        partOfCollections
+:
+    ['nav'],
+        previous
+:
+    {
+        title: 'Fundamentals',
+            order
+    :
+        1,
+            collection
+    :
+        [Object],
+            navigationSubCollection
+    :
+        'nav__fundamentals',
+            template
+    :
+        'page.jade',
+            contents
+    :
+        '',
+            mode
+    :
+        '0666',
+            stats
+    :
+        [Object],
+            relative
+    :
+        [Function],
+            partOfCollections
+    :
+        [Object],
+            previous
+    :
+        [Object],
+            next
+    :
+        [Circular],
+            link
+    :
+        '/fundamentals/index.html'
+    }
+,
+    next: {
+        title: 'Inspiration',
+            order
+    :
+        3,
+            collection
+    :
+        [Object],
+            template
+    :
+        'page.jade',
+            contents
+    :
+        '',
+            mode
+    :
+        '0666',
+            stats
+    :
+        [Object],
+            relative
+    :
+        [Function],
+            partOfCollections
+    :
+        [Object],
+            previous
+    :
+        [Circular],
+            link
+    :
+        '/inspiration/index.html'
+    }
+,
+    link: '/components/index.html'
+}
+,
+{
+    title: 'Inspiration',
+        order
+:
+    3,
+        collection
+:
+    ['nav'],
+        template
+:
+    'page.jade',
+        contents
+:
+    '',
+        mode
+:
+    '0666',
+        stats
+:
+    {
+        dev: 0,
+            mode
+    :
+        33206,
+            nlink
+    :
+        1,
+            uid
+    :
+        0,
+            gid
+    :
+        0,
+            rdev
+    :
+        0,
+            ino
+    :
+        0,
+            size
+    :
+        76,
+            atime
+    :
+        Fri
+        May
+        0
+        8
+        2015
+        16
+    :
+        36
+    :
+        55
+        GMT
+        +
+        0
+        200
+        (
+            W
+                .
+                Europe
+        Daylight
+        Time
+    ),
+        mtime: Fri
+        May
+        0
+        8
+        2015
+        16
+    :
+        36
+    :
+        55
+        GMT
+        +
+        0
+        200
+        (
+            W
+                .
+                Europe
+        Daylight
+        Time
+    ),
+        ctime: Fri
+        May
+        0
+        8
+        2015
+        15
+    :
+        58
+    :
+        45
+        GMT
+        +
+        0
+        200
+        (
+            W
+                .
+                Europe
+        Daylight
+        Time
+    )
+    }
+,
+    relative: [Function],
+        partOfCollections
+:
+    ['nav'],
+        previous
+:
+    {
+        title: 'Components',
+            order
+    :
+        2,
+            collection
+    :
+        [Object],
+            navigationSubCollection
+    :
+        'nav__components',
+            template
+    :
+        'page.jade',
+            contents
+    :
+        '<Components></Components><TOC>goes here</TOC>',
+            mode
+    :
+        '0666',
+            stats
+    :
+        [Object],
+            relative
+    :
+        [Function],
+            partOfCollections
+    :
+        [Object],
+            previous
+    :
+        [Object],
+            next
+    :
+        [Circular],
+            link
+    :
+        '/components/index.html'
+    }
+,
+    link: '/inspiration/index.html'
+}
+,
+metadata
+    :
+    undefined
+]

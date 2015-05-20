@@ -1,38 +1,75 @@
 @import 'style/variables';
 @import 'style/mixins/respond';
+@import 'style/blocks/icon';
 
 .example {
-  position: relative;
+  margin: 0 0 25px 0;
+}
 
-  padding: 45px 15px 15px;
-  margin: 15px -15px 0; // TODO: Use variables for left & right margin
+.example__header {
+  &:extend(.clearfix all);
+}
 
-  border-width: 1px 0;
-  border-style: solid;
-  border-color: @color-gray--lighter;
+.example__device-selection {
+  float: right;
+  margin: 0 0 4px 0;
+}
 
-  overflow: hidden;
+.example__device-selection__device {
+  .icon();
 
-  .respond(medium, {
-    margin-left: 0;
-    margin-right: 0;
+  float: left;
+  width: 50px;
+  height: 40px;
+  margin: 0 0 0 3px;
+  background: #dfdfdf;
+  cursor: pointer;
+  text-align: center;
 
-    border-width: 1px;
-  });
-
-  &::after {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-
-    content: 'example';
-
-    font-size: @font-size-small;
-    font-weight: normal;
-    color: @color-gray;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  &::before {
+    font-size: 18px;
+    line-height: 40px;
   }
+
+  &.is-active,
+  &:hover {
+    background: @color-light-blue;
+    color: white;
+  }
+}
+
+.example__device-selection__device--mobile {
+  .icon--mobile();
+}
+
+.example__device-selection__device--tablet {
+  .icon--mobile();
+}
+
+.example__device-selection__device--desktop {
+  .icon--desktop();
+}
+
+.example__content {
+  background: #dfdfdf;
+}
+
+.example__html {
+}
+
+.example__iframe {
+  background: #fcfcfc; // Not in the palette to not collide with any example
+  border: none;
+  padding: 80px 0;
+  width: 100%;
+}
+
+.example__content--centered {
+  text-align: center;
+}
+
+.example__separator {
+  margin: 10px 0;
 }
 
 /* Copyright AXA Versicherungen AG 2015 */

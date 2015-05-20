@@ -32,26 +32,44 @@
   }
 
   .menu__link {
-    display: block;
+    display: inline-block;
 
     padding: 7px 0;
 
     color: @color-gray--darkest;
     text-decoration: none;
+    
+    &.is-active, &.is-open {
+      font-weight: @font-weight-medium;
+      color: @color-blue;
+    }
 
-    &.is-active {
-      font-weight: bold;
-      color: @color-light-blue;
+    &:hover, :focus {
+      color: @color-red;
     }
   }
 
-  .menu__item--left-category {
-    font-weight: bold;
-  }
-}
+  .menu__level {
+    padding-left: 19px;
+    display: none;
 
-.menu--left-second {
-  font-size: 1em;
+    &.is-open {
+      display: block;
+    }
+  }
+
+  .menu__dropdown-icon {
+    padding-left: 8px;
+    font-size: 0.7rem;
+
+    .icon();
+    .icon--arrow-right();
+
+    &.is-open {
+      .icon();
+      .icon--arrow-bottom();
+    }
+  }
 }
 
 .menu--collapsing,

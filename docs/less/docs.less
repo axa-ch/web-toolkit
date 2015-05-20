@@ -23,6 +23,29 @@
 @import './blocks/thumbnail';
 @import './blocks/typeface';
 
+@import 'style/mixins/respond';
+
+// Undo responsiveness of the style guide
+html,
+body {
+  min-width: 1280px;
+  overflow: auto;
+}
+
+.respond(medium, @rules) {
+  @rules();
+}
+
+.respond(large, @rules) {
+  @rules();
+}
+
+// increase max-width
+.l-container {
+  max-width: 1280px;
+}
+
+// floating feedback button
 .docs-floating-action {
   float: right;
   width: 50px; // TODO
@@ -34,6 +57,7 @@
   }
 }
 
+// github icon
 .docs-github-icon {
   line-height: 21px;
   font-size: 17px;
@@ -47,34 +71,14 @@
   margin-bottom: -5px;
 }
 
-.table--docs {
-  max-width: 700px;
-}
-
-.l-container {
-  max-width: 1280px;
-}
-
-.l-docs-menu {
-  display: none;
-  margin-left: -20px;
-  margin-right: 20px;
-
-  .respond(large, {
-    display: block;
-  });
-
-  .make-col(2, large);
-}
-
-.l-docs-main {
-  .make-col(10, large);
-
-  padding-top: 15px;
-
-  .respond(medium, {
-    padding-top: 0;
-  });
+.docs-chart-container {
+  &.is-active {
+    height: 202px;
+    margin: 20px 0 40px 0;
+    border: 1px solid @color-gray--lighter;
+    box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+  }
 }
 
 dl {
