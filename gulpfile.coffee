@@ -1,5 +1,3 @@
-require 'gulp-coffee/node_modules/coffee-script/register.js'
-
 gulp = require 'gulp'
 del = require 'del'
 runSequence = require 'run-sequence'
