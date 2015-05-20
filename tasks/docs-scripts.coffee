@@ -1,7 +1,6 @@
 gulp = require 'gulp'
 sourcemaps = require 'gulp-sourcemaps'
 coffee = require 'gulp-coffee'
-addSrc = require 'gulp-add-src'
 concat = require 'gulp-concat'
 uglify = require 'gulp-uglify'
 

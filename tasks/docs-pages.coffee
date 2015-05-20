@@ -12,18 +12,11 @@ collections = require 'metalsmith-collections'
 templates = require 'metalsmith-templates'
 jade = require 'metalsmith-jade'
 markdown = require 'metalsmith-markdown'
-ignore = require 'metalsmith-ignore'
 branch = require 'metalsmith-branch'
-less = require 'metalsmith-less'
 define = require 'metalsmith-define'
 drafts = require 'metalsmith-drafts'
-assets = require 'metalsmith-assets'
-autoprefixer = require 'metalsmith-autoprefixer'
-coffee = require 'metalsmith-coffee'
 filepath = require 'metalsmith-filepath'
 relative = require 'metalsmith-relative'
-postcss = require 'metalsmith-postcss'
-pseudoelements = require 'postcss-pseudoelements'
 
 module.exports = (cb) ->
 
