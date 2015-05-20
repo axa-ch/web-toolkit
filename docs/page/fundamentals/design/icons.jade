@@ -20,7 +20,8 @@ p.paragraph.
   ul.icons-list
     each icon in icons
       li.icons-list__item
-        span.icons-list__icon.icon(class='icon--' + icon.name)
-        span.icons-list__text= '.icon.icon--' + icon.name
+        svg.icons-list__icon.icon-svg
+          use(xlink:href='/images/icons.svg#' + icon.name)
+        span.icons-list__text=icon.name
 
 // Copyright AXA Versicherungen AG 2015
