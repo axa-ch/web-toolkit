@@ -4,3 +4,63 @@ order: 3
 collection: nav__patterns
 template: page.jade
 ---
+
+p.paragraph. Login forms are different from regular forms and follow specific guidelines.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#simpleLogin').toc__anchor-navigation__link Simple Login Form
+    li.toc__anchor-navigation__item
+      a(href='#submit').toc__anchor-navigation__link Loading Spinner
+
+h2.heading.heading--secondary#simpleLogin Simple Login Form
+p.paragraph. A login form consists of a username  / email and a password field, as well as a sign in button.
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item Always give the user the possibility to retrieve his password if forgotten.
+  li.checklist__item	Follow web conventions so that password managers can store the username and password for the user.
+  li.checklist__item 	Avoid ads or other distractions on login pages.
+  li.checklist__item	Don’t forget to give the user an easy way to register to your service.
+
+h2.heading.heading--secondary#submit Submit Buttons
+
+p.paragraph. At AXA we are consitent with sign-in and registration wording. Avoid words that could cover registration and loggin such as "Anmelden".
+
+table.table.table--docs
+  thead
+    tr.table__header
+      th.table__header__item Language
+      th.table__header__item Create New Account
+      th.table__header__item Login Into Service
+  tbody.table__content
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content EN
+      td.table__row__item
+        .table__row__item__content Register
+      td.table__row__item
+        .table__row__item__content Sign In
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content DE
+      td.table__row__item
+        .table__row__item__content Registrieren
+      td.table__row__item
+        .table__row__item__content Login
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content FR
+      td.table__row__item
+        .table__row__item__content Conexxion
+      td.table__row__item
+        .table__row__item__content Inscription
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content IT
+      td.table__row__item
+        .table__row__item__content Accedi
+      td.table__row__item
+        .table__row__item__content Iscriviti
