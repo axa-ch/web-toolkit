@@ -39,4 +39,21 @@
   font-size: .7em;
 }
 
+.color-palette__color__copy {
+  .icon();
+  .icon--cross(); // TODO
+  cursor: pointer;
+
+  &::before {
+    color: @color-light-blue;
+  }
+
+  &:hover,
+  &.zeroclipboard-is-hover {
+    &::before {
+      color: @color-green;
+    }
+  }
+}
+
 /* Copyright AXA Versicherungen AG 2015 */
