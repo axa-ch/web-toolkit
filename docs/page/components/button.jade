@@ -47,11 +47,12 @@ p.paragraph.
   .example__content.example__content--centered
       iframe.example__iframe
       .example__html(data-example-centered)
-        .button Foobar
+        .button Sample button
         !=' ' 
-        .button.icon.icon--cross Foobar
+        .button.icon.icon--cross Icon and badge
+          span.button__badge.badge 159
         !=' ' 
-        .button.icon-after.icon-after--cross Foobar
+        .button.icon-after.icon-after--cross Icon right
 
 .toggle
   .toggle__button.icon.icon--source(data-info, data-target='#code-1') See code
@@ -60,28 +61,30 @@ p.paragraph.
       .tab-panel__header
         .tab-panel__header__tabs
           .tab-panel__header__tab.is-active HTML
-          .tab-panel__header__tab CSS
-          .tab-panel__header__tab JS
+          .tab-panel__header__tab LESS
       .tab-panel__content
         .tab-panel__content__tab.is-active
-          p.paragraph.
-            Test bla bla <br /> test 
+          
+          ul.checklist
+            li.checklist__item.
+              Prevent whitespace at the start and the end
+              of the button. It will add some additional spacing 
+              between the icon and the button.
+            
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
-                <div class="example__separator">
-                  <div class="button">Foobar</div>
-                </div>
+                <div class="button">Sample button</div>
+                
+                <div class="button icon icon--cross">Icon and badge<span class="button__badge badge">159</span></div>
+                
+                <div class="button icon-after icon-after--cross">Icon right</div>
 
-                <div class="example__separator">
-                  <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
-                  <div class="button icon icon--cross">Foobar</div>
-                </div>
-
-                <div class="example__separator">
-                  <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
-                  <div class="button icon-after icon-after--cross">Foobar</div>
-                </div>
+        .tab-panel__content__tab
+          
+          p.paragraph.
+            Use the CSS classes mentioned in the HTML tab
+            as mixins.
 
 h3.heading.heading--tertiary UX Checklist
 
@@ -103,36 +106,34 @@ p.paragraph.
   .example__content.example__content--centered
       iframe.example__iframe
       .example__html(data-example-centered)
-        .button.button--secondary Foobar
+        .button.button--secondary Sample button
         !=' ' 
-        .button.button--secondary.icon.icon--cross Foobar
+        .button.button--secondary.icon.icon--cross Icon and badge
+          span.button__badge.badge 159
         !=' ' 
-        .button.button--secondary.icon-after.icon-after--cross Foobar
+        .button.button--secondary.icon-after.icon-after--cross Icon right
 
 .toggle
-  .toggle__button.icon.icon--source See code
-  .toggle__content
+  .toggle__button.icon.icon--source(data-info, data-target='#code-2') See code
+  .toggle__content#code-2
     .tab-panel
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+          .tab-panel__header__tab LESS
       .tab-panel__content
-        .tab-panel__content__tab.is-active
+        .tab-panel__content__tab.is-active          
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
-                <div class="example__separator">
-                  <div class="button button--secondary">Foobar</div>
-                </div>
+                <div class="button button--secondary">Sample button</div>
+                <div class="button button--secondary icon icon--cross">Icon and badge<span class="button__badge badge">159</span></div>
+                <div class="button button--secondary icon-after icon-after--cross">Icon right</div></div>
 
-                <div class="example__separator">
-                  <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
-                  <div class="button button--secondary icon icon--cross">Foobar</div>
-                </div>
-
-                <div class="example__separator">
-                  <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
-                  <div class="button button--secondary icon-after icon-after--cross">Foobar</div>
-                </div>
+        .tab-panel__content__tab
+          p.paragraph.
+            Use the CSS classes mentioned in the HTML tab
+            as mixins.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
@@ -153,19 +154,27 @@ p.paragraph.
     .example__html(data-example-centered)
       .button.button--floating.icon.icon--feedback
 .toggle
-  .toggle__button.icon.icon--source See code
-  .toggle__content
+  .toggle__button.icon.icon--source(data-info, data-target='#code-3') See code
+  .toggle__content#code-3
     .tab-panel
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+          .tab-panel__header__tab LESS
       .tab-panel__content
         .tab-panel__content__tab.is-active
+          ul.checklist
+            li.checklist__item Do not add any whitespace within the button since it would miss-position the icon
+          
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
-                <!-- Do not add any whitespace within the .button since it would miss-position the icon -->
                 <div class="button button--floating icon icon--feedback" ><div>
 
+        .tab-panel__content__tab
+          p.paragraph.
+            Use the CSS classes mentioned in the HTML tab
+            as mixins.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item Avoid this type of button for destructive actions like delete, nonspecific actions, alerts or errors.

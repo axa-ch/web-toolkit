@@ -9,5 +9,7 @@ module.exports = ->
       './dist/[i]mages/**/*'
       # use an [f] to set the gulp base path to ./fonts/
       './dist/[f]onts/**/*'
+      # use a [c] to set the gulp base path to ./css/
+      './dist/[c]ss/{style,normalize}.min.css{,.map}'
     ]
     .pipe gulp.dest './dist/docs/'
