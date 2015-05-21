@@ -76,6 +76,7 @@
     "npm": "^2.1.18",
     "postcss-pseudoelements": "^1.0.0",
     "run-sequence": "^0.3.6",
-    "zeroclipboard": "^2.2.0"
+    "zeroclipboard": "^2.2.0",
+    "svg4everybody": "git+https://github.com/jonathantneal/svg4everybody.git"
   }
 }
