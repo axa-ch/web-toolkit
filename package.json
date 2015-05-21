@@ -41,7 +41,7 @@
     "gulp-if": "^1.2.5",
     "gulp-jshint": "^1.10.0",
     "gulp-less": "^1.3.5",
-    "gulp-load-tasks": "git+https://github.com/axa-ch/sventschui/gulp-load-tasks",
+    "gulp-load-tasks": "git+https://github.com/sventschui/gulp-load-tasks",
     "gulp-ng-annotate": "^0.5.2",
     "gulp-plumber": "^1.0.0",
     "gulp-postcss": "~2.0.0",
