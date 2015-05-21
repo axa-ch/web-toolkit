@@ -57,9 +57,6 @@ p.paragraph.
         !=' ' 
         .button
           | Icon right
-        !=' ' 
-        .button
-          | Foobar 
           svg.button__icon.button__icon--right.icon-svg
             use(xlink:href='/images/icons.svg#cross')
 
@@ -88,9 +85,9 @@ p.paragraph.
               :highlight
                 <div class="button">Sample button</div>
 
-                <div class="button icon icon--cross">Icon and badge<span class="button__badge badge">159</span></div>
+                <div class="button"><svg class="button__icon button__icon--left icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg>Icon and badge<span class="button__badge badge">159</span></div>
 
-                <div class="button icon-after icon-after--cross">Icon right</div>
+                <div class="button">Icon right<svg class="button__icon button__icon--right icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg></div>
 
         .tab-panel__content__tab
           

@@ -17,7 +17,7 @@ module.exports = ->
         './node_modules/zeroclipboard/dist/ZeroClipboard.js'
         './node_modules/svg4everybody/svg4everybody.js'
         './dist/jquery/axa-wsg.jquery.all.js'
-      './docs/js/**/*.coffee'
+        './docs/js/**/*.coffee'
       ]
     .pipe gIf('**/*.coffee', coffee())
       .pipe sourcemaps.init { loadMaps: true }
