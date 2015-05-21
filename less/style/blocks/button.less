@@ -5,9 +5,8 @@
 .button {
   display: inline-block;
   position: relative;
-
-  // TODO: franklin gothic medium
-  font-weight: normal;
+  margin: 10px 0;
+  font-weight: 600;
   text-align: center;
 
   &:hover {
@@ -96,6 +95,7 @@
   position: absolute;
   top: -5px;
   right: -5px;
+  z-index: @z-index-button__badge;
 }
 
 .button--floating {
