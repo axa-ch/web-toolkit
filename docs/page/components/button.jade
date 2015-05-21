@@ -117,10 +117,16 @@ p.paragraph.
       .example__html(data-example-centered)
         .button.button--secondary Sample button
         !=' ' 
-        .button.button--secondary.icon.icon--cross Icon and badge
+        .button.button--secondary
+          svg.button__icon.button__icon--left.icon-svg
+            use(xlink:href='/images/icons.svg#cross')
+          | Icon and badge
           span.button__badge.badge 159
         !=' ' 
-        .button.button--secondary.icon-after.icon-after--cross Icon right
+        .button.button--secondary
+          | Icon right
+          svg.button__icon.button__icon--right.icon-svg
+            use(xlink:href='/images/icons.svg#cross')
 
 .toggle
   .toggle__button(data-info, data-target='#code-2')
@@ -139,9 +145,10 @@ p.paragraph.
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
                 <div class="button button--secondary">Sample button</div>
-                <div class="button button--secondary icon icon--cross">Icon and badge<span class="button__badge badge">159</span></div>
-                <div class="button button--secondary icon-after icon-after--cross">Icon right</div></div>
-
+                
+                <div class="button button--secondary"><svg class="button__icon button__icon--left icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg>Icon and badge<span class="button__badge badge">159</span></div>
+                
+                <div class="button button--secondary">Icon right<svg class="button__icon button__icon--right icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg></div>
         .tab-panel__content__tab
           p.paragraph.
             Use the CSS classes mentioned in the HTML tab
@@ -164,7 +171,9 @@ p.paragraph.
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html(data-example-centered)
-      .button.button--floating.icon.icon--feedback
+      .button.button--floating
+        svg.button__icon.icon-svg
+          use(xlink:href='/images/icons.svg#feedback')
 .toggle
   .toggle__button(data-info, data-target='#code-3')
     svg.icon-svg.toggle__icon
