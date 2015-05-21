@@ -64,7 +64,10 @@ p.paragraph.
             use(xlink:href='/images/icons.svg#cross')
 
 .toggle
-  .toggle__button.icon.icon--source(data-info, data-target='#code-1') See code
+  .toggle__button(data-info, data-target='#code-1')
+    svg.icon-svg.toggle__icon
+      use(xlink:href='/images/icons.svg#source')
+    span See code
   .toggle__content#code-1
     .tab-panel
       .tab-panel__header
@@ -120,7 +123,10 @@ p.paragraph.
         .button.button--secondary.icon-after.icon-after--cross Foobar
 
 .toggle
-  .toggle__button.icon.icon--source See code
+  .toggle__button
+    svg.icon-svg.toggle__icon
+      use(xlink:href='/images/icons.svg#source')
+    span See code
   .toggle__content
     .tab-panel
       .tab-panel__header
@@ -163,7 +169,10 @@ p.paragraph.
     .example__html(data-example-centered)
       .button.button--floating.icon.icon--feedback
 .toggle
-  .toggle__button.icon.icon--source See code
+  .toggle__button
+    svg.icon-svg.toggle__icon
+      use(xlink:href='/images/icons.svg#source')
+    span See code
   .toggle__content
     .tab-panel
       .tab-panel__header
