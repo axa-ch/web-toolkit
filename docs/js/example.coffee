@@ -2,6 +2,7 @@
 head = ' \
 <link rel="stylesheet" href="/css/normalize.min.css" />\
 <link rel="stylesheet" href="/css/style.min.css" />\
+<script type="text/javascript" src="/js/docs-examples.all.min.js"></script>\
 '
 
 class Example
