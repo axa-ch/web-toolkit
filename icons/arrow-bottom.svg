@@ -13,7 +13,7 @@
    viewBox="0 0 2048 2048"
    version="1.1"
    id="svg4011"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="arrow-bottom.svg">
   <metadata
      id="metadata4024">
@@ -36,18 +36,18 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1280"
-     inkscape:window-height="1002"
+     inkscape:window-height="962"
      id="namedview4022"
      showgrid="true"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="0.2085965"
-     inkscape:cx="629.70591"
-     inkscape:cy="510.70159"
-     inkscape:window-x="1272"
+     inkscape:cx="-66.688273"
+     inkscape:cy="458.20768"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4011">
+     inkscape:current-layer="Page-1">
     <inkscape:grid
        type="xygrid"
        id="grid4026"
@@ -72,15 +72,17 @@
   <g
      id="Page-1"
      sketch:type="MSPage"
-     transform="matrix(35.308383,0,0,35.308383,-711.05986,-767.07846)">
+     transform="matrix(35.308383,0,0,35.308383,-709.52392,-394.6945)">
     <g
        id="arrow-bottom"
-       sketch:type="MSArtboardGroup">
+       sketch:type="MSArtboardGroup"
+       transform="translate(0,-10.875604)">
       <path
-         d="M 49.157889,68.852727 20.138556,42.052273 28.097444,34.374546 49.096667,54.680909 70.112,33.862273 78.141778,41.33 49.157889,68.852727 l 0,0 z"
+         d="M 49.096667,69.181715 20.095056,40.180104 27.345458,32.929701 49.096667,54.68091 70.847875,32.929701 78.098278,40.180104 49.096667,69.181715 z"
          id="bottom"
          sketch:type="MSShapeGroup"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccc" />
     </g>
   </g>
 </svg>

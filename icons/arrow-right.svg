@@ -8,12 +8,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2048"
+   width="1280"
    height="2048"
-   viewBox="0 0 2048 2048"
+   viewBox="0 0 1280 2048"
    version="1.1"
    id="svg3000"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="arrow-right.svg">
   <metadata
      id="metadata3013">
@@ -36,15 +36,15 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1280"
-     inkscape:window-height="1002"
+     inkscape:window-height="962"
      id="namedview3011"
      showgrid="true"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="0.2085965"
-     inkscape:cx="1645.591"
-     inkscape:cy="926.84962"
-     inkscape:window-x="1272"
+     inkscape:zoom="0.25"
+     inkscape:cx="1801.9002"
+     inkscape:cy="1146.2262"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg3000">
@@ -63,7 +63,8 @@
        id="guide3017" />
   </sodipodi:namedview>
   <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
-  <title id="title3002">Arrow-Right</title>
+  <title
+     id="title3002">Arrow-Right</title>
   <desc
      id="desc3004">Created with Sketch.</desc>
   <defs
@@ -71,15 +72,16 @@
   <g
      id="Page-1"
      sketch:type="MSPage"
-     transform="matrix(34.604031,0,0,34.709937,-542.36907,-747.81406)">
+     transform="matrix(34.604031,0,0,34.709937,-1054.3691,-747.18831)">
     <g
        id="arrow-right"
        sketch:type="MSArtboardGroup">
       <path
-         d="M 67.459455,51.028278 39.127545,80.547944 31.011091,72.451833 52.477818,51.090556 30.469545,29.712889 38.364,21.544667 l 29.095455,29.483611 0,0 z"
+         d="M 67.459455,51.028278 37.867528,80.529916 30.469546,73.154506 52.663492,51.028278 30.469546,28.902049 37.867528,21.52664 67.459456,51.028278 z"
          id="right"
          sketch:type="MSShapeGroup"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccc" />
     </g>
   </g>
 </svg>

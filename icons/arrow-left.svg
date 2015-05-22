@@ -8,12 +8,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2048"
+   width="1280"
    height="2048"
-   viewBox="0 0 2048 2048"
+   viewBox="0 0 1280 2048"
    version="1.1"
    id="svg3034"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="arrow-left.svg">
   <metadata
      id="metadata3047">
@@ -39,13 +39,13 @@
      inkscape:window-height="1002"
      id="namedview3045"
      showgrid="true"
-     inkscape:zoom="0.2085965"
-     inkscape:cx="1768.7942"
-     inkscape:cy="589.26187"
+     inkscape:zoom="0.1475"
+     inkscape:cx="1654.1382"
+     inkscape:cy="639.52688"
      inkscape:window-x="1272"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3034">
+     inkscape:current-layer="Page-1">
     <inkscape:grid
        type="xygrid"
        id="grid3049"
@@ -66,15 +66,10 @@
   <g
      id="Page-1"
      sketch:type="MSPage"
-     transform="matrix(34.594595,0,0,34.711864,-595.02703,-728.94912)">
-    <g
-       id="arrow-left"
-       sketch:type="MSArtboardGroup">
-      <path
-         d="M 32,50.518027 60.339638,21 68.458307,29.095661 46.985723,50.455753 69,71.832232 61.103392,80 32,50.518027 l 0,0 z"
-         id="left"
-         sketch:type="MSShapeGroup"
-         inkscape:connector-curvature="0" />
-    </g>
+     transform="matrix(34.594595,0,0,34.711864,-723.02704,-729.57488)">
+    <path
+       d="M 1024 0 L 0 1024 L 1024 2048 L 1280 1792 L 512 1024 L 1280 256 L 1024 0 z "
+       transform="matrix(0.02890625,0,0,0.02880859,20.9,21.018027)"
+       id="left" />
   </g>
 </svg>

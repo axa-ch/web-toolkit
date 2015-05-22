@@ -14,7 +14,7 @@
    xml:space="preserve"
    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"
    id="svg2"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="desktop.svg"><metadata
    id="metadata13"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -29,27 +29,49 @@
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-width="1280"
-   inkscape:window-height="1002"
+   inkscape:window-height="962"
    id="namedview9"
-   showgrid="false"
-   inkscape:zoom="0.11523438"
-   inkscape:cx="1024"
-   inkscape:cy="1024"
-   inkscape:window-x="1272"
+   showgrid="true"
+   inkscape:zoom="0.32593203"
+   inkscape:cx="837.20736"
+   inkscape:cy="-71.594388"
+   inkscape:window-x="-8"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
-   inkscape:current-layer="svg2" />
-  <title>Desktop</title>
+   inkscape:current-layer="svg2"><inkscape:grid
+     empspacing="5"
+     visible="true"
+     enabled="true"
+     snapvisiblegridlinesonly="true"
+     spacingx="128px"
+     spacingy="128px"
+     type="xygrid"
+     id="grid2986" /><inkscape:grid
+     type="xygrid"
+     id="grid2988"
+     empspacing="5"
+     visible="true"
+     enabled="true"
+     snapvisiblegridlinesonly="true"
+     spacingx="64px"
+     spacingy="64px"
+     color="#ff0000"
+     opacity="0.1254902"
+     empcolor="#ff0000"
+     empopacity="0.25098039" /></sodipodi:namedview>
+  <title
+   id="title6">Desktop</title>
 <g
    id="Ebene_1"
    transform="translate(0,-255.66)">
 <g
    id="g5">
 <path
-   d="m 1278.45,1935.35 c -4.3,-18.76 -7.19,-37.28 -9.3,-54.79 l -490.296,0 c -4.455,35.1 -12.192,74.8 -25.948,111.61 -13.756,36.97 -33.14,70.35 -59.714,94.03 -26.574,23.53 -59.557,38.3 -105.671,38.45 l 0,44.01 872.719,0 0,-44.01 c -46.11,-0.15 -79.09,-14.92 -105.67,-38.45 -39.62,-35.33 -63.46,-93.63 -76.12,-150.85 z M 1989.69,391.4 58.3066,391.4 C 26.1051,391.4 0,417.505 0,449.707 L 0,1718.85 c 0,32.2 26.1051,58.31 58.3066,58.31 l 1931.3834,0 c 32.2,0 58.31,-26.11 58.31,-58.31 l 0,-1269.143 c 0,-32.202 -26.11,-58.307 -58.31,-58.307 z m -83.24,1244.29 -1765.139,0 0,-1102.744 1765.139,0 0,1102.744 z"
+   d="m 1280,1919.66 -512,0 c -10.28812,90.1242 -76.03203,191.1679 -128,192 l 0,64 768,0 0,-64 c -83.1432,-51.5225 -117.6511,-107.1639 -128,-192 z m 709.69,-1535.85322 -1931.3834,0 C 26.1051,383.80678 0,409.91178 0,442.11378 L 0,1733.35 c 0,32.2 26.1051,58.31 58.3066,58.31 l 1931.3834,0 c 32.2,0 58.31,-26.11 58.31,-58.31 l 0,-1291.23622 c 0,-32.202 -26.11,-58.307 -58.31,-58.307 z M 1920,1663.66 l -1792,0 0,-1152 1792,0 z"
    style="fill:#000000;fill-rule:nonzero"
    id="path7"
-   inkscape:connector-curvature="0" />
+   inkscape:connector-curvature="0"
+   sodipodi:nodetypes="cccccccsssssssssccccc" />
         </g>
     </g>
 </svg>
