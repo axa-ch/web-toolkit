@@ -32,26 +32,44 @@
   }
 
   .menu__link {
-    display: block;
+    display: inline-block;
 
     padding: 7px 0;
 
     color: @color-gray--darkest;
     text-decoration: none;
+    
+    &.is-active, &.is-open {
+      font-weight: @font-weight-medium;
+      color: @color-blue;
+    }
 
-    &.is-active {
-      font-weight: bold;
-      color: @color-light-blue;
+    &:hover, :focus {
+      color: @color-red;
     }
   }
 
-  .menu__item--left-category {
-    font-weight: bold;
-  }
-}
+  .menu__level {
+    padding-left: 19px;
+    display: none;
 
-.menu--left-second {
-  font-size: 1em;
+    &.is-open {
+      display: block;
+    }
+  }
+
+  .menu__dropdown-icon {
+    padding-left: 8px;
+    font-size: 0.7rem;
+
+    .icon();
+    .icon--arrow-right();
+
+    &.is-open {
+      .icon();
+      .icon--arrow-bottom();
+    }
+  }
 }
 
 .menu--collapsing,
@@ -240,6 +258,8 @@
   padding-top: 10px;
   margin-left: (@grid-gutter-width / -2);
 
+  font-size: 0.9em;
+
   .respond(large, {
     display: block;
   });
@@ -271,8 +291,6 @@
   .menu__link {
     display: block;
 
-    font-size: 14px;
-    font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-decoration: none;
 
     color: @color-gray--darker;
@@ -325,10 +343,11 @@
 .menu--language {
   margin-left: 7px;
 
-  font-size: 12px; // TODO: fixed font-size
-
   .menu__item {
+    margin-top: 2px;
     margin-left: 7px;
+
+    font-size: 0.8em;
 
     &.is-active,
     &:hover {
@@ -365,17 +384,12 @@
     margin-top: 2px;
     margin-left: 12px;
 
-    font-size: 12px; // TODO: fixed font-size
     font-weight: bold;
-    font-family: "ITCFranklinGothicCondensedDemi", sans-serif;
   }
 }
 
 .menu--language {
-
   .menu__item {
-    font-size: 14px; // TODO: fixed font-size
-    font-family: "Conv_ITCFranklinGothicStd-MdCd", sans-serif;
     text-transform: uppercase;
   }
 }

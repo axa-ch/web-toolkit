@@ -2,14 +2,12 @@
 @import '../mixins/respond';
 
 .hr {
-  display: none;
-
-  .respond(medium, {
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-bottom: 5px solid @color-blue;
-  });
+  display: block;
+  height: 0;
+  width: 100%;
+  margin: 30px 0 60px 0;
+  border: none;
+  border-bottom: 1px dotted @color-blue;
 }
 
 /* Copyright AXA Versicherungen AG 2015 */

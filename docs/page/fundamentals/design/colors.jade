@@ -1,0 +1,69 @@
+---
+title: Colors
+order: 2
+collection: nav__fundamentals__design
+template: page.jade
+---
+
+:markdown
+  Use these colors to guide your designs and to ensure you’re staying consistent with the AXA brand.
+
+.downloads
+  a(href="./AXA.aco").downloads__link Download swatches
+
+
+h2.heading.heading--secondary Primary palette
+
+.color-palette
+  .l-row
+    each colorCode, colorName in colors.primary
+      .l-fourth
+        .color-palette__color
+          .color-palette__color__box(style='background: ' + colorCode)
+          .color-palette__color__content
+            .color-palette__color__code
+              span #{colorCode}
+              != ' '
+              span.color-palette__color__copy(data-clipboard-text=colorCode) 
+            .color-palette__color__less
+              span @color-#{colorName}
+              != ' '
+              span.color-palette__color__copy(data-clipboard-text='@color-' + colorName) 
+
+h2.heading.heading--secondary Secondary palette
+
+.color-palette
+  each colorGroup in colors.secondary
+    .l-row
+      each colorCode, colorName in colorGroup.colors
+        .l-thumbnail
+            .color-palette__color.color-palette__color--secondary
+              .color-palette__color__box.color-palette__color__box--secondary(style='background: ' + colorCode)
+              .color-palette__color__content
+                .color-palette__color__code
+                  span #{colorCode}
+                  != ' '
+                  span.color-palette__color__copy(data-clipboard-text=colorCode) 
+                .color-palette__color__less
+                  span @color-#{colorName}
+                  != ' '
+                  span.color-palette__color__copy(data-clipboard-text='@color-' + colorName) 
+
+script
+  != 'ZeroClipboard.config({ swfPath: \'' + relative('/ZeroClipboard.swf') + '\' })'
+
+script.
+  
+  clip = new ZeroClipboard($('[data-clipboard-text]'));
+  
+  clip.on('ready', function(client) {
+      this.on('aftercopy', function(event) {
+          $("#notification").notification({
+            html: true,
+            content: '<strong>' + event.data["text/plain"] + '</strong> copied to clipboard',
+            modifier: 'success'
+          });
+      });
+  });
+
+// Copyright AXA Versicherungen AG 2015

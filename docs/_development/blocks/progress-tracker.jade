@@ -1,0 +1,24 @@
+---
+title: Progress Tracker
+template: development.jade
+---
+
+:markdown
+  The ``progress-tracker`` block is used to indicate a progress
+  within a process.
+
+  Add as many ``progress-tracker__step`` elements as needed. But be
+  carefull to not exceed the maximum available width on
+  mobile devices!
+
+:sample
+  .progress-tracker
+    ul.progress-tracker__flow
+      li.progress-tracker__step.step.step--start.is-active
+        span.step__bullet 1
+      li.progress-tracker__step.step.is-active.is-current
+        span.step__bullet 2
+      li.progress-tracker__step.step.step--end
+        span.step__bullet.step__bullet--checkmark
+
+// Copyright AXA Versicherungen AG 2015

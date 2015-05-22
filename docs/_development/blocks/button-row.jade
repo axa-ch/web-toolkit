@@ -1,0 +1,23 @@
+---
+title: Button row
+template: development.jade
+---
+
+:markdown
+  The button row is designed to be used within an ``.l-container``.
+  It has negative left/right margins to get the buttons aligned
+  with the ``fieldset``'s border.
+
+  On mobile the ``button-row__button`` element is a block element
+  (100% width).
+
+  There may only be one ``.button-row__button`` and one
+  ``.button-row__button.button-row__button--right``.
+
+:sample
+  .l-container
+    .button-row
+      a.button-row__button.button-row__button--right.button Weiter
+      a.button-row__button.button.button--secondary Zurück
+
+// Copyright AXA Versicherungen AG 2015

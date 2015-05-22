@@ -1,0 +1,43 @@
+---
+title: Segmented control
+order: 10
+collection: nav__components__form
+template: page.jade
+---
+p.paragraph.
+  A segmented control enables the user to make a single selection from just a few options.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#basic').toc__anchor-navigation__link Basic Segmented Control
+    li.toc__anchor-navigation__item
+      a(href='#stacked').toc__anchor-navigation__link Stacked Segmented Control
+    li.toc__anchor-navigation__item
+      a(href='#backup').toc__anchor-navigation__link Stacked Segmented Control
+
+h2.heading.heading--secondary#basic Basic Segmented Control
+
+p.paragraph.
+  This element aligns different options next to each other.
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item Default values can be set if appropriate - if in doubt, do not set defaults.
+  li.checklist__item Do not use more than 5 options in a segmented control. A dropdown can be an alternative.
+
+h2.heading.heading--secondary#stacjed Stacked Segmented Control
+
+p.paragraph.
+  A stacked segmented control is used when text gets to long to be presented next to each other. If you are using the Segmented Control jQuery Plugin, this will be automatically handled for you.
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item Do not set a default value when using a stacked segmented control.
+
+h2.heading.heading--secondary#backup Backup: Radio Buttons
+
+p.paragraph.
+  If presented with problems, the user should always be able to use the browser native radio buttons as a fallback solution.

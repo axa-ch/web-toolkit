@@ -22,3 +22,10 @@ npm-debug.log
 # webstorm
 *.iml
 .idea/
+
+# Visual Studio
+.ntvs_analysis.dat
+*.v12.suo
+*.njsproj
+*.sln
+WebEssentials-Settings.json

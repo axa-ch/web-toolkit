@@ -1,19 +1,15 @@
 {
   "primary": {
     "blue": "#103184",
+    "red": "#ff1821",
+    "blue": "#103184",
     "red": "#ff1821"
   },
   "secondary": [{
     "colors": {
       "light-blue--light": "#5c91c0",
-      "light-blue": "#0062a9"
-    }
-  },{
-    "colors": {
-      "green": "#7a9f35"
-    }
-  },{
-    "colors": {
+      "light-blue": "#0062a9",
+      "green": "#7a9f35",
       "blue-gray--light": "#dedee2",
       "blue-gray": "#79838d"
     }

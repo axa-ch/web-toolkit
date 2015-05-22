@@ -1,0 +1,188 @@
+---
+title: Button
+order: 4
+collection: nav__components
+template: page.jade
+lunr: true
+---
+
+p.paragraph.
+  A button indicates one or multiple actions to the user.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#primary').toc__anchor-navigation__link Primary button
+    li.toc__anchor-navigation__item
+      a(href='#secondary').toc__anchor-navigation__link Secondary button
+    li.toc__anchor-navigation__item
+      a(href='#floating').toc__anchor-navigation__link Floating action button
+      
+.bubble
+  .bubble__image
+  .bubble__content
+    .bubble__title
+      .bubble__title__text PSD File
+    .bubble__text
+      p.paragraph.
+        Hallo Designer. hier kannst du unsere PSD mit allen Buttons 
+        herunterladen und gleich mit dem Layout anfanagen
+      
+.downloads
+  a(href="../AXA.aco").downloads__link BUTTONS.PSD
+      
+.hr
+
+h2.heading.heading--secondary#primary Primary button
+
+p.paragraph.
+  A call to action always has a meaningful text. An additional icon can be added.
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content.example__content--centered
+      iframe.example__iframe
+      .example__html(data-example-centered)
+        .button Sample button
+        !=' ' 
+        .button.icon.icon--cross Icon and badge
+          span.button__badge.badge 159
+        !=' ' 
+        .button.icon-after.icon-after--cross Icon right
+
+.toggle
+  .toggle__button.icon.icon--source(data-info, data-target='#code-1') See code
+  .toggle__content#code-1
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+          .tab-panel__header__tab LESS
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          
+          ul.checklist
+            li.checklist__item.
+              Prevent whitespace at the start and the end
+              of the button. It will add some additional spacing 
+              between the icon and the button.
+            
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="button">Sample button</div>
+                
+                <div class="button icon icon--cross">Icon and badge<span class="button__badge badge">159</span></div>
+                
+                <div class="button icon-after icon-after--cross">Icon right</div>
+
+        .tab-panel__content__tab
+          
+          p.paragraph.
+            Use the CSS classes mentioned in the HTML tab
+            as mixins.
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item
+    There is always only one big primary call to action on any given page.
+
+.hr
+
+h2.heading.heading--secondary#secondary Secondary button
+p.paragraph.
+  The secondary button provides additional actions to the user. In cases where the primary call to action would be to strong, a secondary button might take his place.
+
+.example
+  .example__header
+    .example__device-selection
+      .example__device-selection__device.example__device-selection__device--mobile
+      .example__device-selection__device.example__device-selection__device--tablet
+      .example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content.example__content--centered
+      iframe.example__iframe
+      .example__html(data-example-centered)
+        .button.button--secondary Sample button
+        !=' ' 
+        .button.button--secondary.icon.icon--cross Icon and badge
+          span.button__badge.badge 159
+        !=' ' 
+        .button.button--secondary.icon-after.icon-after--cross Icon right
+
+.toggle
+  .toggle__button.icon.icon--source(data-info, data-target='#code-2') See code
+  .toggle__content#code-2
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+          .tab-panel__header__tab LESS
+      .tab-panel__content
+        .tab-panel__content__tab.is-active          
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="button button--secondary">Sample button</div>
+                <div class="button button--secondary icon icon--cross">Icon and badge<span class="button__badge badge">159</span></div>
+                <div class="button button--secondary icon-after icon-after--cross">Icon right</div></div>
+
+        .tab-panel__content__tab
+          p.paragraph.
+            Use the CSS classes mentioned in the HTML tab
+            as mixins.
+
+h3.heading.heading--tertiary.
+  UX Checklist
+ul.checklist
+  li.checklist__item.
+    If the main goal of you site is information a secondary call to action can be used.
+
+.hr
+
+h2.heading.heading--secondary#floating Floating action button
+p.paragraph.
+  The floating action button consists of an icon only, it can't contain a label. This type of button is used to represent an action that is important and ubiquitous.
+
+.example
+  .example__header
+    .example__device-selection
+      .example__device-selection__device.example__device-selection__device--mobile
+      .example__device-selection__device.example__device-selection__device--tablet
+      .example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content.example__content--centered
+    iframe.example__iframe
+    .example__html(data-example-centered)
+      .button.button--floating.icon.icon--feedback
+.toggle
+  .toggle__button.icon.icon--source(data-info, data-target='#code-3') See code
+  .toggle__content#code-3
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+          .tab-panel__header__tab LESS
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          ul.checklist
+            li.checklist__item Do not add any whitespace within the button since it would miss-position the icon
+          
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="button button--floating icon icon--feedback" ><div>
+
+        .tab-panel__content__tab
+          p.paragraph.
+            Use the CSS classes mentioned in the HTML tab
+            as mixins.
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item Avoid this type of button for destructive actions like delete, nonspecific actions, alerts or errors.
+
+// Copyright AXA Versicherungen AG 2015

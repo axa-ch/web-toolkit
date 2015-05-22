@@ -1,0 +1,55 @@
+---
+title: Datepicker
+order: 3
+collection: nav__components__form
+template: page.jade
+---
+
+p.paragraph.
+  The datepicker component helps the user selecting a date.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#datepicker').toc__anchor-navigation__link Datepicker
+
+h2.heading.heading--secondary#datepicker Datepicker
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    .datepicker#myDatepicker(data-datepicker-watch="#myDatepickerInput")
+      a(data-datepicker="#myDatepicker").datepicker__trigger
+      .datepicker__input
+        input(type='text').control.control--input#myDatepickerInput
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          :markdown
+            TODO: Pure HTML sample, jQuery plugin docs, etc.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div id="myDatepicker" data-datepicker-watch="#myDatepickerInput" class="datepicker">
+                  <a data-datepicker="#myDatepicker" class="datepicker__trigger"></a>
+                  <div class="datepicker__input">
+                    <input type="text" id="myDatepickerInput" class="control control--input"/>
+                  </div>
+                </div>
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item Use the native datepickers on mobile devices
+
+// Copyright AXA Versicherungen AG 2015

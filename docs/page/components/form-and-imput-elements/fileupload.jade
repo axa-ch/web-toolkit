@@ -1,0 +1,47 @@
+---
+title: Fileupload
+order: 6
+collection: nav__components__form
+template: page.jade
+---
+
+p.paragraph A fileupload element lets users upload  one or multiple files to an application or into a form. Its different states are described in this document.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#dropzone').toc__anchor-navigation__link Dropzone
+    li.toc__anchor-navigation__item
+      a(href='#uploading').toc__anchor-navigation__link Uploading
+    li.toc__anchor-navigation__item
+      a(href='#uploaded').toc__anchor-navigation__link Uploaded
+    li.toc__anchor-navigation__item
+      a(href='#error').toc__anchor-navigation__link Error
+    li.toc__anchor-navigation__item
+      a(href='classic').toc__anchor-navigation__link Classic File Upload
+
+h2.heading.heading--secondary#dropzone Dropzone
+The dropzone is the initial state of every fileupload and should be used wherever possible.  If a file upload is not feasible, a classic file upload should be used.
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item Most mobile devices don’t support dragging files to an upload area. Use the native file picker as a fallback. Use the same solution for IE 9.
+  li.checklist__item Start uploading files, as soon as the user drops them on the dropzone.
+  li.checklist__item Make sure that all files are uploaded before the form is submitted.
+
+h2.heading.heading--secondary#uploading Uploading
+p.paragraph As soon as a file is placed on the dropzone, the file upload starts. The progress is continuously shown to the user.
+
+h2.heading.heading--secondary#uploaded Uploaded
+p.paragraph As soon as a file is uploaded the status changes to uploaded. In this state the user is able to see or delete the document.
+
+h2.heading.heading--secondary#error Error
+p.paragraph If an upload error occurs, the user needs to be informed.
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item Tell the user exactly what happened. If the user needs to change something, explain as short as possible but as detailed as necessary what he needs to do.
+
+h2.heading.heading--secondary#classic Classic File Upload
+p.paragraph In case of a problem, the browser native file upload should act as a backup solution.

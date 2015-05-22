@@ -38,36 +38,5 @@
       "gist": "324dc1114e65df211cd5",
       "comment": "asking for access"
     }
-  },
-  "design": [{
-    "name": "Fundamentals",
-    "pattern": "design/fundamentals/*",
-    "children": [{
-      "name": "Styles",
-      "pattern": "design/fundamentals/styles/*"
-    }]
-  },{
-    "name": "Components",
-    "pattern": "design/components/*",
-    "children": [{
-      "name": "Form elements",
-      "pattern": "design/components/form_elements/*"
-    }]
-  },{
-    "name": "UI Patterns",
-    "pattern": "design/ui_patterns/*"
-  }],
-  "development": [{
-    "name": "Fundamentals",
-    "pattern": "development/fundamentals/*"
-  },{
-    "name": "Blocks",
-    "pattern": "development/blocks/*"
-  },{
-    "name": "Less Mixins",
-    "pattern": "development/mixins/*"
-  },{
-    "name": "jQuery Plugins",
-    "pattern": "development/plugins/*"
-  }]
+  }
 }

@@ -1,0 +1,25 @@
+@import '../variables';
+@import '../blocks/icon';
+
+.checklist {
+  list-style-type: none;
+  margin: 25px 0 35px 0;
+  padding: 0;
+}
+
+.checklist__item {
+  .icon();
+  .icon--checkmark();
+  position: relative;
+  margin: 0 0 10px 0;
+  padding: 0 0 0 40px;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: @color-green;
+  }
+}
+
+/* Copyright AXA Versicherungen AG 2015 */

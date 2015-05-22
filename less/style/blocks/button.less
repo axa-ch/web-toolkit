@@ -5,13 +5,27 @@
 .button {
   display: inline-block;
   position: relative;
-
-  // TODO: franklin gothic medium
-  font-weight: normal;
+  margin: 10px 0;
+  font-weight: 600;
   text-align: center;
 
   &:hover {
     cursor: pointer;
+  }
+
+  // TODO: Find a nicer solution to position icons
+  &::before,
+  &::after {
+    position: relative;
+    top: 2px;
+  }
+
+  &::before {
+    margin-right: 10px;
+  }
+
+  &::after {
+    margin-left: 10px;
   }
 
   .make-button-size(
@@ -67,10 +81,12 @@
   position: absolute;
   top: -5px;
   right: -5px;
+  z-index: @z-index-button__badge;
 }
 
 .button--floating {
   width: @button-height;
+  height: @button-height;
   border-radius: 50%;
   padding-left: 0;
   padding-right: 0;
@@ -79,6 +95,15 @@
 
   &.button--small { // TODO
     width: @button-sm-height;
+    height: @button-sm-height;
+  }
+
+  &::before {
+    margin-right: 0;
+  }
+
+  &::after {
+    margin-left: 0;
   }
 }
 

@@ -1,0 +1,150 @@
+---
+title: Checkbox
+order: 2
+collection: nav__components__form
+template: page.jade
+---
+
+p.paragraph.
+  A checkbox is a basic control that enables the user to select or deselect one or multiple options.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#ehanced').toc__anchor-navigation__link Basic Checkbox
+    li.toc__anchor-navigation__item
+      a(href='#group').toc__anchor-navigation__link Checkbox group
+    li.toc__anchor-navigation__item
+      a(href='#non-enhanced').toc__anchor-navigation__link Non enhanced checkbox
+
+h2.heading.heading--secondary#ehanced Basic Checkbox
+p.paragraph.
+  The basic checkbox can be used for accepting terms & conditions or alike.
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    label.checkbox(data-checkbox)
+      input.checkbox__checkbox(type='checkbox')
+      .checkbox__label
+        .checkbox__label__text Sample checkbox
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          :markdown
+            The jQuery plugin bound with `data-checkbox` wil add the
+            `checkbox--js` modifier for styling and `tabindex`
+            attributes to allow keyboard interactions.
+
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <label data-checkbox class="checkbox">
+                  <input type="checkbox" class="checkbox__checkbox" >
+                  <div class="checkbox__label" >
+                    <div class="checkbox__label__text">Sample checkbox</div>
+                  </div>
+                </label>
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item Only set a default value if it is good for the user. In doubt, don't set a default value.
+.hr
+
+h2.heading.heading--secondary#group Checkbox group
+p.paragraph.
+  If a user needs to select multiple options, the checkbox group can be used.
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    .checkbox-group
+      label.checkbox(data-checkbox)
+        input.checkbox__checkbox(type='checkbox')
+        span.checkbox__label
+          .checkbox__label__text Sample checkbox one
+      label.checkbox(data-checkbox)
+        input.checkbox__checkbox(type='checkbox')
+        span.checkbox__label
+          .checkbox__label__text Sample checkbox two
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="checkbox-group">
+                  <label data-checkbox class="checkbox">
+                    <input type="checkbox" class="checkbox__checkbox" >
+                    <span class="checkbox__label">
+                      <div class="checkbox__label__text">Sample checkbox one</div>
+                    </span>
+                  </label>
+                  <label data-checkbox class="checkbox">
+                    <input type="checkbox" class="checkbox__checkbox">
+                      <div class="checkbox__label__text">Sample checkbox two</div>
+                    </span>
+                  </label>
+                </div>
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    :markdown
+      If you have more than 10 checkboxes in one form-field, a [chips](/components/form-and-imput-elements/textfield.html#chips) design may be more useful
+
+.hr
+
+h2.heading.heading--secondary#non-enhanced Non enhanced checkbox
+
+p.paragraph.
+  Use the non-enhanced checkbox as a fallback only.
+
+.example
+  .example__header
+    .example__device-selection
+      .example__break-selection__device
+  .example__content
+    label.checkbox
+      input.checkbox__checkbox(type='checkbox')
+      .checkbox__label
+        .checkbox__label__text Sample checkbox
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <label class="checkbox">
+                  <input type="checkbox" class="checkbox__checkbox">
+                  <div class="checkbox__label">
+                     <div class="checkbox__label__text">Sample checkbox</div>
+                  </div>
+                </label>
+
+// Copyright AXA Versicherungen AG 2015

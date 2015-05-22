@@ -1,0 +1,97 @@
+---
+title: Form group
+order: 7
+collection: nav__components__form
+template: page.jade
+---
+
+p.paragraph.
+  A form group includes multiple elements which
+  aggregate to a complete form field/row.
+
+h2.heading.heading--secondary#default Standard form group
+
+p.paragraph.
+  A normal fieldset contains a label and an input field.
+  Optionally, info-icons and help text can be added.
+
+p.paragraph.
+  Sometimes we can’t help and have to present an error message to our user.
+
+p.paragraph.
+  Some controls may not need a label on the left hand side.
+
+p.paragraph.
+  TODO: How to mark required fields
+
+p.paragraph.
+  TODO: Right align labels?
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    .form
+      .form__group
+        .form__group__label
+          .form__group__label__text Simple form group
+        .form__group__control
+          input(type='text').control.control--input
+      .form__group
+        .form__group__label.form__group__label--invalid
+          .form__group__label__text A form group in error
+        .form__group__control
+          input(type='text').control.control--input.has-error
+          .form__error-message Please provide a value
+      .form__group
+        .form__group__label
+          .form__group__label__info-icon
+            .info-icon(data-info, data-target='#target')
+          .form__group__label__info-icon-text-wrapper Form group with info
+        .form__group__control
+          input(type='text').control.control--input
+          .form__info-text(style='display: none;')#target
+            .info-text
+              p.paragraph Some meaningful explanation may be placed here
+      .form__group
+        .from__group__control.form__group__control--fullwidth
+          label(data-checkbox).checkbox
+            input(type='checkbox').checkbox__checkbox
+            .checkbox__label
+              .checkbox__label__text Full width control
+      .form__footnote * Form footnote
+
+
+.toggle
+  .toggle__button.icon.icon--source See code
+  .toggle__content
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tab HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div data-dropdown="data-dropdown" class="dropdown">
+                  <div class="dropdown__label"></div>
+                  <select class="dropdown__select">
+                    <option>Schweiz</option>
+                    <option>Regenbogenland</option>
+                  </select>
+                </div>
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item On desktop, right align labels.
+  li.checklist__item On mobile, put the labels above the input element.
+  li.checklist__item Every label should be as clear as possible. Only add an info-icon if it really needs more explanation.
+  li.checklist__item Avoid too many info-icons on one site.
+  li.checklist__item Try to avoid error messages in the first place. Flexible input formats and automatic error correction may help.
+  li.checklist__item Provide clear explanations instead of a generic “An error occurred”. If you don’t, your user will make the same mistake again.
+
+// Copyright AXA Versicherungen AG 2015

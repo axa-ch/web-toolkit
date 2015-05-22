@@ -7,23 +7,20 @@
 }
 
 .footer__content {
+  &:extend(.clearfix all);
+
   border-top: 1px solid @color-gray--light;
 
   .respond(medium, {
     border-top: 5px solid @color-blue;
-  });
-}
-
-.footer__content {
-  .make-row();
-  .respond(medium, {
     padding-top: 10px;
     padding-bottom: 10px;
   });
 }
 
 .footer__copyline {
-  .make-row();
+  &:extend(.clearfix all);
+
   background-color: @color-gray--lighter;
 
   .respond(medium, {
