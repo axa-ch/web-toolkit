@@ -25,6 +25,9 @@
 
       @$element = $ '<div class="picker" ></div>'
 
+      if @displayWeek
+        @$element.addClass 'picker--with-weeknumber'
+
       @$header = append '<div class="picker__header" ></div>', @$element
 
       @$prev = append '<a class="picker__prev"></a>', @$header
