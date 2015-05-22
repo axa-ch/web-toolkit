@@ -142,7 +142,8 @@ html
               div!= contents
 
         else
-          h1.heading.heading--page #{title}
+          if headline !== false
+            h1.heading.heading--page #{title}
           div!= contents
 
       footer.footer

@@ -3,6 +3,8 @@ title: Checkbox
 order: 2
 collection: nav__components__form
 template: page.jade
+tags: Checkbox, Select,
+
 ---
 
 p.paragraph.
@@ -12,15 +14,15 @@ p.paragraph.
   .toc__title Table of contents
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
-      a(href='#ehanced').toc__anchor-navigation__link JS enhanced checkbox
+      a(href='#ehanced').toc__anchor-navigation__link Basic Checkbox
     li.toc__anchor-navigation__item
       a(href='#group').toc__anchor-navigation__link Checkbox group
     li.toc__anchor-navigation__item
       a(href='#non-enhanced').toc__anchor-navigation__link Non enhanced checkbox
 
-h2.heading.heading--secondary#ehanced JS enhanced checkbox
+h2.heading.heading--secondary#ehanced Basic Checkbox
 p.paragraph.
-  Use the enhanced checkbox as progressive enhancement when JavaScript is available.
+  The basic checkbox can be used for accepting terms & conditions or alike.
 
 .example
   .example__header
@@ -61,13 +63,14 @@ p.paragraph.
                 </label>
 
 h3.heading.heading--tertiary UX Checklist
-
 ul.checklist
-  li.checklist__item If you have more than 10 checkboxes to answer one question, a [chips](/components/form-and-imput-elements/textfield.html#chips) design may be more useful
+  li.checklist__item Only set a default value if it is good for the user. In doubt, don't set a default value.
+
+.hr
 
 h2.heading.heading--secondary#group Checkbox group
 p.paragraph.
-  TODO
+  If a user needs to select multiple options, the checkbox group can be used.
 .example
   .example__header
     .example__device-selection
@@ -111,6 +114,14 @@ p.paragraph.
                     </span>
                   </label>
                 </div>
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    :markdown
+      If you have more than 10 checkboxes in one form-field, a [chips](/components/form-and-imput-elements/textfield.html#chips) design may be more useful in this case.
+
+.hr
 
 h2.heading.heading--secondary#non-enhanced Non enhanced checkbox
 

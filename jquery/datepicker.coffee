@@ -18,12 +18,15 @@
 
   class Picker extends Emitter
 
-    constructor: (@moment) ->
+    constructor: (@moment, @displayWeek) ->
       super
 
       @date = @moment()
 
       @$element = $ '<div class="picker" ></div>'
+
+      if @displayWeek
+        @$element.addClass 'picker--with-weeknumber'
 
       @$header = append '<div class="picker__header" ></div>', @$element
 
@@ -43,53 +46,73 @@
       @$month = append '<div class="picker__month" ></div>', @$content
 
       # TODO: i18n
-      @weekHeadline = append '<div class="picker__week picker__week--headline"><div class="picker__day picker__day--headline">M</div><div class="picker__day picker__day--headline">D</div><div class="picker__day picker__day--headline">M</div><div class="picker__day picker__day--headline">D</div><div class="picker__day picker__day--headline">F</div><div class="picker__day picker__day--headline">S</div><div class="picker__day picker__day--headline">S</div></div>', @$month
+      weekdays = moment.localeData()._weekdaysMin
+
+      @$weekHeadline = append '<div class="picker__week picker__week--headline"><div class="picker__day picker__day--headline">'+weekdays[1]+'</div><div class="picker__day picker__day--headline">'+weekdays[2]+'</div><div class="picker__day picker__day--headline">'+weekdays[3]+'</div><div class="picker__day picker__day--headline">'+weekdays[4]+'</div><div class="picker__day picker__day--headline">'+weekdays[5]+'</div><div class="picker__day picker__day--headline">'+weekdays[6]+'</div><div class="picker__day picker__day--headline">'+weekdays[0]+'</div></div>', @$month
 
       # @$weeks = append '<div class="picker__weeks" ></div>', @$month
+
+      if @displayWeek
+        @$weekHeadline.prepend '<div class="picker__weeknumber picker__weeknumber--headline" ></div>'
 
       @updateDisplay()
 
     updateDisplay: ->
-      # TODO: i18n
       @$headline__month.text @date.format('MMMM')
       @$headline__year.text @date.format('YYYY')
 
       @$month.empty()
       @$month.append @$weekHeadline
 
-      # first week
-      $week = append '<div class="picker__week" ></div>', @$month
-
       dateClone = @moment @date
       month = dateClone.get 'month'
 
+      # start by the first day of the month
       dateClone.set 'date', 1
 
-      day = dateClone.get 'day'
-      if day == 0
-        day = 7
+      # rewind to the first day of the week
+      if dateClone.get('day') == 0
+        # if the current day is sunday (week start for moment.js) rewind to monday "last week"
+        dateClone.set 'day', -6
+      else
+        dateClone.set 'day', 1
 
-      while (day-=1)
-        append '<div class="picker__day picker__day--empty" ></div>', $week
-
-      while dateClone.get('day') != 1 # while not monday
-        append @createDay(dateClone), $week
-        dateClone.add 1, 'days'
-
-      # other weeks
-      while dateClone.get('month') == month
+      loop
         $week = append '<div class="picker__week" ></div>', @$month
 
-        while true
-          append @createDay(dateClone), $week
+        if @displayWeek
+          $weeknumber = $ '<div class="picker__weeknumber" ></div>'
+          $weeknumber.text dateClone.get 'week'
+          $week.prepend $weeknumber
+
+        loop
+
+          modifier = null
+
+          currentMonth = dateClone.get('month')
+
+          if currentMonth < month
+            modifier = 'picker__day--prev-month'
+          else if currentMonth > month
+            modifier = 'picker__day--next-month'
+
+          append @createDay(dateClone, modifier), $week
+
           dateClone.add 1, 'days'
-          if dateClone.get('month') != month or dateClone.get('day') == 1 # while same month and not monday
+
+          if dateClone.get('day') == 1 # until monday
             break
 
-    createDay: (d) ->
+        if dateClone.get('month') != month # until another month
+          break
+
+    createDay: (d, modifier) ->
       date = @moment(d) # create a clone
 
       $day = $ '<div class="picker__day" ></div>'
+
+      if modifier?
+        $day.addClass(modifier)
 
       if @selectedDate? and date.format('DD.MM.YYYY') == @selectedDate.format('DD.MM.YYYY')
         $day.addClass('is-active')
@@ -134,24 +157,34 @@
 
   class Datepicker
 
-    constructor: (element, @moment, input) ->
+    constructor: (element, @moment, input, displayWeek) ->
       @$element = $ element
 
-      @picker = new Picker(@moment)
+      if navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/(iOS|iPhone|iPad|iPod)/i) || navigator.userAgent.match(/Windows Phone/i)
 
-      if input?
         @$input = $ input
 
-        @$input.on 'change', @onChange
+        @$input.prop 'type', 'date'
 
-        @onChange()
+        @$input.focus()
 
-      @picker.on 'select', ((date) ->
-        @$input.val(date)
-        @$input.trigger 'change'
-      ).bind(this)
+      else
 
-      @$element.append @picker.getDOMNode()
+        @picker = new Picker(@moment, displayWeek)
+
+        if input?
+          @$input = $ input
+
+          @$input.on 'change', @onChange
+
+          @onChange()
+
+        @picker.on 'select', ((date) ->
+          @$input.val(date)
+          @$input.trigger 'change'
+        ).bind(this)
+
+        @$element.append @picker.getDOMNode()
 
     onChange: () =>
       dat = @moment(@$input.val(), 'DD.MM.YYYY')
@@ -181,7 +214,7 @@
         else
           $.error("Moment.js must either be passed as an option or be available globally")
 
-        data = new Datepicker(this, moment, opts.input)
+        data = new Datepicker(this, moment, opts.input, opts.displayWeek)
         $this.data('axa.datepicker', data)
 
       if opts.action?
@@ -199,7 +232,11 @@
 
     $input = $ $target.data('datepicker-watch')
 
-    Plugin.call($target, { input: $input, action: 'toggle' })
+    displayWeek = $target.data('datepicker-display-week')
+
+    displayWeek = displayWeek && displayWeek != 'false'
+
+    Plugin.call($target, { input: $input, action: 'toggle', displayWeek: displayWeek })
 
 )(jQuery)
 

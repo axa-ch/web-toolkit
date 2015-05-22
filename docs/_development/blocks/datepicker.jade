@@ -6,9 +6,12 @@ template: development.jade
 :markdown
   The `datepicker` block displays an input field a calendar icon and a
   calendar to select a date.
-
-h2.heading.heading--secondary Behavior
-p.paragraph.
+  
+  - Add `.picker__day--disabled` to mark a day as disabled
+  - Add `.picker__day--prev-month` or `.picker__day--next-month` to mark a day as part of a previous or next month.
+  
+  # Behavior
+  
   The calendar should not be displayed when the page loads and should appear, when
   the user clicks the calendar icon.
   A click in the textbox should not toggle the calendar appearance.
@@ -19,16 +22,18 @@ p.paragraph.
     .datepicker__input
       input(type='text')#myDatepickerInput.control.control--input
 
-    .picker.is-active
+    .picker.picker--with-weeknumber.is-active
       .picker__header
         a.picker__prev
         a.picker__next
         .picker__headline
           span.picker__headline__month Januar
+          != ' '
           span 2015
       .picker__content
         .picker__month
           .picker__week.picker__week--headline
+            .picker__weeknumber.picker__weeknumber--headline
             .picker__day.picker__day--headline M
             .picker__day.picker__day--headline D
             .picker__day.picker__day--headline M
@@ -37,22 +42,25 @@ p.paragraph.
             .picker__day.picker__day--headline S
             .picker__day.picker__day--headline S
           .picker__week
-            .picker__day.picker__day--empty
-            .picker__day.picker__day--empty
-            .picker__day.picker__day--empty
+            .picker__weeknumber 1
+            .picker__day.picker__day--prev-month 29
+            .picker__day.picker__day--prev-month 30
+            .picker__day.picker__day--prev-month 31
             .picker__day 1
             .picker__day 2
             .picker__day 3
             .picker__day 4
           .picker__week
+            .picker__weeknumber 2
             .picker__day 5
-            .picker__day 6
-            .picker__day 7
+            .picker__day.picker__day--disabled 6
+            .picker__day.picker__day--disabled 7
             .picker__day 8
             .picker__day 9
             .picker__day 10
             .picker__day 11
           .picker__week
+            .picker__weeknumber 3
             .picker__day 12
             .picker__day 13
             .picker__day 14
@@ -61,6 +69,7 @@ p.paragraph.
             .picker__day 17
             .picker__day 18
           .picker__week
+            .picker__weeknumber 4
             .picker__day 19
             .picker__day 20
             .picker__day 21
@@ -69,13 +78,14 @@ p.paragraph.
             .picker__day 24
             .picker__day 25
           .picker__week
+            .picker__weeknumber 5
             .picker__day 26
             .picker__day 27
             .picker__day 28
             .picker__day 29
             .picker__day 30
             .picker__day 31
-            .picker__day.picker__day--empty
+            .picker__day.picker__day--next-month 1
   div(style='height: 280px')
 
 // Copyright AXA Versicherungen AG 2015
