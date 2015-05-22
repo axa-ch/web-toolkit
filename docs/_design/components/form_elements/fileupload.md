@@ -5,7 +5,7 @@ template: design.jade
 ---
 
 The fileupload functionality allows the user to upload images or documents.
-The Web Style Guide provides two controls to upload files. The `single-upload`
+The Web Styleguide provides two controls to upload files. The `single-upload`
 is designed for use cases where only one document should be uploaded and the
 `multi-upload` allows an uncertain amount of documents.
 
