@@ -15,6 +15,7 @@ module.exports = ->
       './node_modules/knockout/build/output/knockout-latest.js'
       './node_modules/URIjs/src/URI.js'
       './node_modules/zeroclipboard/dist/ZeroClipboard.js'
+      './node_modules/lunr/lunr.min.js' # use min here since non-minified version misses a semicolon at the end
       './dist/jquery/axa-wsg.jquery.all.js'
       './docs/js/**/*.coffee'
     ]
