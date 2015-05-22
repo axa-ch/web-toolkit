@@ -41,7 +41,9 @@ html
       #notification.notifications
       .l-container
         .docs-floating-action
-          a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating.icon.icon--feedback
+          a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
+            svg.button__icon.icon-svg
+              use(xlink:href='/images/icons.svg#feedback')
       header.header
         .header__container.l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')

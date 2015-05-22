@@ -4,9 +4,9 @@ module.exports = (cb) ->
   # TODO: parellel (without docs)?
   runSequence(
     'clean',
+    'images',
     'icons',
     'icons-svg',
-    'images',
     'styles',
     'jquery',
     'ng',
