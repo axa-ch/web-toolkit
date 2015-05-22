@@ -4,6 +4,13 @@ slug: changelog
 template: page.jade
 ---
 
+# 0.6.0
+
+- Imporve Datepicker
+  - Add option to display week numbers
+  - Add option to disable certain days
+  - Add styling for days in previous / next month
+
 # 0.5.0 - 20. April 2015
 
 - Design Guidelines
