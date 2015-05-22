@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.5, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Ebene_1"
+   x="0px"
+   y="0px"
+   width="2048"
+   height="2048"
+   viewBox="0 0 2048 2048"
+   enable-background="new 0 0 40 40.25"
+   xml:space="preserve"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="info.svg"><metadata
+   id="metadata11"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs9" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1280"
+   inkscape:window-height="1002"
+   id="namedview7"
+   showgrid="false"
+   inkscape:zoom="0.25912609"
+   inkscape:cx="2138.0201"
+   inkscape:cy="1039.9343"
+   inkscape:window-x="1272"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Ebene_1" />
+  <title>Info</title>
+<circle
+   cx="20.351"
+   cy="20.054001"
+   r="18.027"
+   id="circle3"
+   sodipodi:cx="20.351"
+   sodipodi:cy="20.054001"
+   sodipodi:rx="18.027"
+   sodipodi:ry="18.027"
+   transform="matrix(56.803682,0,0,56.803682,-132.01172,-115.14109)" />
+<path
+   d="M 994.80294,1502.5142 H 791.67297 L 904.82591,824.903 H 1107.9559 L 994.80294,1502.5142 z M 1116.1924,676.41822 H 913.06244 l 32.71892,-192.22366 h 203.12994 l -32.7189,192.22366 z"
+   id="path5"
+   inkscape:connector-curvature="0"
+   style="fill:#ffffff" />
+</svg>

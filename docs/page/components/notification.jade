@@ -76,7 +76,10 @@ script.
   });
 
 .toggle
-  .toggle__button.icon.icon--source(data-info, data-target='#code-1') See code
+  .toggle__button(data-info, data-target='#code-1')
+    svg.icon-svg.toggle__icon
+      use(xlink:href='/images/icons.svg#source')
+    | See code
   .toggle__content#code-1
     .tab-panel
       .tab-panel__header

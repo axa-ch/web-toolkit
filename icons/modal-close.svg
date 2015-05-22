@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.5, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Ebene_1"
+   x="0px"
+   y="0px"
+   width="2048"
+   height="2048"
+   viewBox="0 0 2048.0001 2047.9999"
+   enable-background="new 0 0 22.449 26.53"
+   xml:space="preserve"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="modal-close.svg"><metadata
+   id="metadata9"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs7" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1280"
+   inkscape:window-height="940"
+   id="namedview5"
+   showgrid="false"
+   inkscape:zoom="0.27798718"
+   inkscape:cx="668.33222"
+   inkscape:cy="840.67715"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Ebene_1" />
+   <title>Modal-Close</title>
+<path
+   style="fill-rule:evenodd"
+   d="M 161.71875 0 L 0 161.71875 L 862.34375 1024.1562 L 0 1886.4688 L 161.625 2048 L 1023.9375 1185.5938 L 1886.2812 2048 L 2048 1886.2812 L 1185.6562 1023.9375 L 2047.9062 161.625 L 1886.2812 0 L 1024.0625 862.3125 L 161.71875 0 z "
+   transform="translate(0,-1e-4)"
+   id="path3" />
+</svg>
