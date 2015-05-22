@@ -142,6 +142,10 @@ class Search
           $res.on 'click', =>
             # TODO: base-url
             window.location.href = data.link
+
+          $tags = $ '<div class="docs-search__tags" ></div>'
+          $tags.text data.tags
+          $res.append $tags 
         )()
 
       first = results[0]

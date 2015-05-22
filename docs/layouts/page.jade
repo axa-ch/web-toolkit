@@ -87,8 +87,8 @@ html
                     a.menu__link(
                       href=relative(page.link)
                     )= page.title
-            .autocomplete
-              input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/')).control.control--input
+              .autocomplete.docs-search
+                input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/')).control.control--input
             
 
       .page-content.l-container
