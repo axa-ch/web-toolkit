@@ -3,24 +3,26 @@ title: Dropdown
 order: 4
 collection: nav__components__form
 template: page.jade
+tags: Dropdown, Select
 ---
 
 p.paragraph.
-  A dropdown is always a great choice if it comes
-  to selecting a single value out of a big list of values.
+  A dropdown is always a great choice if it comes to selecting a single value out of a big list of values.
 
 .toc
   .toc__title Table of contents
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
-      a(href='#enhanced').toc__anchor-navigation__link JS enhanced dropdown
+      a(href='#enhanced').toc__anchor-navigation__link Basic Dropdown
     li.toc__anchor-navigation__item
-      a(href='#non-enhanced').toc__anchor-navigation__link Non enhanced dropdown
+      a(href='#non-enhanced').toc__anchor-navigation__link Backup: Non enhanced dropdown
 
-h2.heading.heading--secondary#enhanced JS enhanced dropdown
+.hr
+
+h2.heading.heading--secondary#enhanced Basic Dropdown
 
 p.paragraph.
-  TODO
+  The dropdown is used for a single selection out of a list. 
 
 .example
   .example__header
@@ -57,13 +59,17 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
-  li.checklist__item Generally, if you have less than 5 options, a segmented control might be the better option.
+  li.checklist__item 
+    :markdown
+      Generally, if you have less than 5 options, a [segmented control](/components/form-and-imput-elements/segmented-control.html) might be the better option.
   li.checklist__item On mobile devices, use native dropdown pickers.
+
+.hr
 
 h2.heading.heading--secondary#non-enhanced Non enhanced dropdown
 
 p.paragraph.
-  TODO
+  Use the non-enhanced dropdown as a fallback only.
 
 .example
   .example__header
