@@ -91,6 +91,8 @@ module.exports = (cb) ->
   # Do the jade pages
   metalsmith.use(
     branch [ '**/*.jade' ]
+      .use filepath
+        absolute: true
       .use relative()
       .use collections collections_options
       .use jade

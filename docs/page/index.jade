@@ -7,12 +7,11 @@ headline: false
 mixin thumbnail(item)
   if item
     .thumbnail.l-half
-      span!= item.link
-      - console.log(item)
-      a.thumbnail__img-link(href=relative(item.link))
+      - var link = item.link.replace(new RegExp('jade$'), 'html')
+      a.thumbnail__img-link(href=relative(link))
         img.thumbnail__img(src=relative('/images/home/' + item.title.replace(new RegExp(' ', 'g'), '_') + '.svg'), alt=item.title)
       h2.thumbnail__heading
-        a.thumbnail__link(href=relative(item.link)) #{item.title}
+        a.thumbnail__link(href=relative(link)) #{item.title}
       p.thumbnail__text!= item.description
   
 .l-container.l-container--docs-home
