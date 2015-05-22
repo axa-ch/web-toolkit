@@ -6,6 +6,7 @@ path = require 'path'
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/sampleJadeFilter'
 markedRenderer = require '../lib/markedRenderer'
+searchIndexData = require '../lib/search-index-data'
 
 Metalsmith = require 'metalsmith'
 collections = require 'metalsmith-collections'
@@ -17,6 +18,7 @@ define = require 'metalsmith-define'
 drafts = require 'metalsmith-drafts'
 filepath = require 'metalsmith-filepath'
 relative = require 'metalsmith-relative'
+lunr = require 'metalsmith-lunr'
 
 module.exports = (cb) ->
 
@@ -101,6 +103,15 @@ module.exports = (cb) ->
     branch ['**/*.html' ]
       .use filepath
         absolute: true
+      .use lunr {
+        includeAll: true
+        fields: {
+          title: 10
+          tags: 5
+          contents: 1
+        }
+      }
+      .use searchIndexData()
       .use templates
         engine: 'jade'
         directory: path.join cwd, './docs/layouts'
