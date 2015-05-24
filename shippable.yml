@@ -10,4 +10,4 @@ before_install:
   - npm install -g gulp
 
 script:
-  - if [ "$PULL_REQUEST" = false ] && [ "$BRANCH" = "master" ]; then gulp deploy; fi
+  - if [ "$PULL_REQUEST" = false ] && [ "$BRANCH" = "develop" ]; then gulp deploy; fi
