@@ -1,4 +1,5 @@
 gulp = require 'gulp'
+git = require 'gulp-git'
 
 module.exports = (cb) ->
   git.init {
