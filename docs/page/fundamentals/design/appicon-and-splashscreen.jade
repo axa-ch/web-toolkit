@@ -1,0 +1,88 @@
+---
+title: App icon and splash screen
+order: 3
+collection: nav__fundamentals__design
+template: page.jade
+---
+
+p.paragraph.
+  Add an app icon and a splash screen to your web application if adding the
+  web app to the home screen of a smartphone is a possible use case.
+  
+p.paragraph.
+  TODO: AXA group guidelines and PSDs?!?
+  
+h2.heading.heading--secondary App icon
+  
+p.paragraph.
+  Produce the app icon in various sizes to cover diffrent devices/os. Use
+  the tables below as a guideline on choosing the appropriate sizes.
+
+p.paragraph.
+  windows tiles
+  hintergrundfarbe
+  icons (grösse des tile: 70x70, 150x150, 310x150, 310x310)
+  android
+  36x36
+  48x48
+  72x72 (duplicate durch iOS)
+  96x96
+  144x144 (duplicate durch iOS)
+  192x192
+  
+  
+h3.heading.heading--tertiary iOS App icons
+
+p.paragraph.
+  Add a link tag for every app icon size to the head section. See the example
+  for a 114x144 px app icon below.
+
+.highlight: pre.highlight__listing.hljs: code.js
+  :highlight
+    <link rel="apple-touch-icon" href="icon114.png" sizes="114x114">
+  
+table.table.table--docs
+  caption App icon sizes for iOS devices in pixels
+  thead
+    tr.table__header
+      th.table__header__item Device
+      th.table__header__item iOS 6
+      th.table__header__item iOS 7+
+  tbody.table__content
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content iPhone / iPod touch non retina
+      td.table__row__item
+        .table__row__item__content 57 x 57
+      td.table__row__item
+        .table__row__item__content not available
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content iPhone retina
+      td.table__row__item
+        .table__row__item__content 114 x 114
+      td.table__row__item
+        .table__row__item__content 120 x 120
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content iPhone 6+
+      td.table__row__item
+        .table__row__item__content not available
+      td.table__row__item
+        .table__row__item__content 180x180
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content iPad non retina
+      td.table__row__item
+        .table__row__item__content 72 x 72
+      td.table__row__item
+        .table__row__item__content 76 x 76
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content iPad retina
+      td.table__row__item
+        .table__row__item__content 144 x 144
+      td.table__row__item
+        .table__row__item__content 152 x 152
+
+// Copyright AXA Versicherungen AG 2015
