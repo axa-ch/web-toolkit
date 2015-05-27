@@ -8,7 +8,6 @@ head = ' \
 class Example
 
   constructor: (el) ->
-    console.log 'example start'
     @$el = $ el
 
     @$html = @$el.find '.example__html'
