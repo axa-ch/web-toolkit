@@ -1,5 +1,6 @@
 
 head = ' \
+<link rel="stylesheet" href="http://fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css">\
 <link rel="stylesheet" href="/css/normalize.min.css" />\
 <link rel="stylesheet" href="/css/style.min.css" />\
 '
