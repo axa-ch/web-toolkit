@@ -12,7 +12,9 @@ module.exports = ->
         './node_modules/jquery/dist/jquery.js'
         './node_modules/moment/min/moment-with-locales.js'
         './node_modules/svg4everybody/svg4everybody.js'
+        './node_modules/iframe-resizer/src/iframeResizer.contentWindow.js'
         './dist/jquery/axa-wsg.jquery.all.js'
+        './docs/example-js/**/*.coffee'
       ]
     .pipe gIf('**/*.coffee', coffee())
       .pipe sourcemaps.init { loadMaps: true }

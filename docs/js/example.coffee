@@ -2,13 +2,12 @@
 head = ' \
 <link rel="stylesheet" href="/css/normalize.min.css" />\
 <link rel="stylesheet" href="/css/style.min.css" />\
-<script type="text/javascript" src="/js/docs-examples.all.min.js"></script>\
 '
 
 class Example
 
   constructor: (el) ->
-
+    console.log 'example start'
     @$el = $ el
 
     @$html = @$el.find '.example__html'
@@ -39,10 +38,20 @@ class Example
 
     @$html.remove()
     @$el.append @$shadow
-
+    
+    @exampleScript = @$contents[0].createElement('script')
+    @exampleScript.type = 'text/javascript'
+    @exampleScript.src = '/js/docs-examples.all.min.js'
+    
     @$contents.find("body").html html
-
+    @$contents.find("head")[0].appendChild @exampleScript
+    
     @setWidth null, @$devDesktop
+
+#    blah = @$frame.get 0
+#    console.log blah
+#    iFrameResize { log:true }, blah
+
 
   setWidth: (width, activeBtn) ->
     @$devMobile.removeClass 'is-active'
@@ -51,17 +60,24 @@ class Example
     activeBtn.addClass 'is-active'
 
     w = if width == null then @$el.width() + 'px' else width
-
+    
     @$shadow.css {
       width: w
     }
 
+
+
     h = parseInt(@$frame.css('padding-top'), 10) + parseInt(@$frame.css('padding-bottom'), 10) + @$shadow.find(".example").height() + 'px'
+
+#    @$frame.attr 'width', parseInt w
+
 
     @$frame.animate {
       width: w
       height: h
     }
+
+
 
 $ () ->
 

@@ -35,6 +35,7 @@ module.exports = [
     #######################
     watch [
       './docs/js/**/*.coffee'
+      './docs/example-js/**/*.coffee'
       #'./node_modules/jquery/dist/jquery.js' # Ignore since we do not assume that this changes
       #'./node_modules/moment/min/moment-with-locales.js' # Ignore since we do not assume that this changes
       #'./node_modules/localforage/dist/localforage.js' # Ignore since we do not assume that this changes
@@ -43,7 +44,7 @@ module.exports = [
       #'./node_modules/zeroclipboard/dist/ZeroClipboard.js' # Ignore since we do not assume that this changes
       './dist/jquery/axa-wsg.jquery.all.js'
     ], ->
-      gulp.start 'docs-scripts'
+      gulp.start 'docs-scripts', 'docs-example-scripts'
       return
 
     #######################
