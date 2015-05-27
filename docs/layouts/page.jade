@@ -37,6 +37,14 @@ html
       })();
 
   body.site
+    - function splitCollectionName(collectionName) { return collectionName.split('__'); }
+    - function joinCollectionName(collectionNameParts) { return collectionNameParts.join('__'); }
+    - function getNavCollection(collectionNames) { for(var i in collectionNames) { var collectionName = collectionNames[i]; if(splitCollectionName(collectionName)[0] == 'nav') { return collectionName; } } }
+    - function isCollectionOpen(collection, currentCollection) { var splitCollection = splitCollectionName(collection); var splitCurrentCollection = splitCollectionName(currentCollection); if(splitCollection.length > splitCurrentCollection) return false; for(var i in splitCollection) { if(splitCollection[i] != splitCurrentCollection[i]) return false; } return true; }
+    
+    - var navCollection = navigationSubCollection ? navigationSubCollection : getNavCollection(collection);
+    - var splitNavCollection = navCollection ? splitCollectionName(navCollection) : [''];
+    
     .site__page
       #notification.notifications
       .l-container
@@ -51,19 +59,6 @@ html
             .brand__logo
           .header__meta
             .header__meta__upper
-              // ko if: hasGitHubIntegration
-              .header__meta__action
-                // ko if: !github.isSignedIn()
-                .header__action
-                  img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link.docs-github-loading
-                  a(data-bind="visible: !github.isAuthenticating(), attr: { href: github.getAuthUrl() }").header__action__button Sign in with GitHub
-                // /ko
-                // ko if: github.isSignedIn()
-                .header__action
-                  img(src='https://www.scopevisio.com/sites/all/themes/scopevisio/images/loading.gif', data-bind='visible: github.isAuthenticating()').menu__link
-                  a(href=config.repository.url, data-bind='visible: !github.isAuthenticating() && github.isActiveMember()').menu__link.icon.icon--github.docs-github-icon
-                // /ko
-              // /ko
             .header__meta__lower
               .header__meta__welcome
                 div
@@ -79,32 +74,28 @@ html
         .header__menu
           .l-container
             ul.menu.menu--main
-              each page in nav
-                if page
-                  - var isActive = false
-                  // TODO
-                  li.menu__item(
-                    class={'is-active': isActive}
-                  )
-                    a.menu__link(
-                      href=relative(page.link)
-                    )= page.title
+              if splitNavCollection
+                - currentNavCollection = joinCollectionName(splitNavCollection.slice(0, 2));
+                each page in nav
+                  if page
+                    - var isActive = false
+                    - var pageNavCollection = page.navigationSubCollection ? page.navigationSubCollection : getNavCollection(page.collection)
+                    if pageNavCollection
+                      - var pageNavCollection = joinCollectionName(splitCollectionName(pageNavCollection).slice(0, 2));
+                      - isActive = currentNavCollection == pageNavCollection
+                      li.menu__item(
+                        class={'is-active': isActive}
+                      )
+                        a.menu__link(
+                          href=relative(page.link)
+                        )= page.title
               .autocomplete.docs-search
                 input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/')).control.control--input
-            
 
       .page-content.l-container
 
-        - function splitCollectionName(collectionName) { return collectionName.split('__'); }
-        - function joinCollectionName(collectionNameParts) { return collectionNameParts.join('__'); }
-        - function getLeftMenuTopCollection(currentCollectionName) {  }
-        - function getNavCollection(collectionNames) { for(var i in collectionNames) { var collectionName = collectionNames[i]; if(splitCollectionName(collectionName)[0] == 'nav') { return collectionName; } } }
-        - function isCollectionOpen(collection, currentCollection) { var splitCollection = splitCollectionName(collection); var splitCurrentCollection = splitCollectionName(currentCollection); if(splitCollection.length > splitCurrentCollection) return false; for(var i in splitCollection) { if(splitCollection[i] != splitCurrentCollection[i]) return false; } return true; }
-
-        - var navCollection = navigationSubCollection || getNavCollection(collection);
-
         // don't print top level navigation in menu (collection 'nav')
-        if navCollection && splitCollectionName(navCollection).length > 1
+        if splitNavCollection.length > 1
 
           // start with the second level nav__xxx
           - var currentNavCollection = joinCollectionName(splitCollectionName(navCollection).slice(0, 2));
@@ -145,7 +136,7 @@ html
           if headline !== false
             h1.heading.heading--page #{title}
           div!= contents
-
+          
       footer.footer
         .footer__content
         .footer__copyline
@@ -155,99 +146,6 @@ html
                 a(href=relative('/changelog.html')).menu__link Changelog
               li.menu__item
                 span.menu__link AXA 2015 ©
-
-    .site__mobile-menu
-      .site__mobile-menu__header
-        h1.site__mobile-menu__title Web Styleguide
-
-        // ko if: hasGitHubIntegration && github.isSignedIn()
-        p.site__mobile-menu__user
-          // ko text: github.user().login
-          // /ko
-        // /ko
-      //nav#menu-mobile.menu.menu--sliding
-      //  ul.menu__level
-      //    li.menu__item
-      //      a.menu__link(
-      //        href=relative('/index.html')
-      //        data-link='/index.html'
-      //      ) Overview
-      //
-      //    - var menus = []
-      //    - menus.push({ name: "design", label: "Design Guidelines"});
-      //    - menus.push({ name: "development", label: "Developer Toolkit" });
-      //
-      //    each m in menus
-      //      li.menu__item
-      //        a.menu__link.menu__link--parent(
-      //          href='#'
-      //        )= m.label
-      //
-      //        mixin pageLink(page)
-      //          li.menu__item
-      //            a.menu__link(
-      //              href=relative(page.link)
-      //              data-link=page.link
-      //            )= page.title
-      //
-      //        ul.menu__level
-      //          li.menu__item.menu__item--back
-      //            a.menu__link.menu__link--back(
-      //              href='#'
-      //            )= m.label
-      //
-      //          - // Top level
-      //          each topLevel in config[m.name]
-      //            li.menu__item
-      //              a.menu__link.menu__link--parent(
-      //                href='#'
-      //              )= topLevel.name
-      //
-      //              - // Top level back
-      //
-      //              ul.menu__level
-      //                li.menu__item.menu__item--back
-      //                  a.menu__link.menu__link--back(
-      //                    href='#'
-      //                  )= topLevel.name
-      //
-      //                - // Top level pages
-      //                - var collection = collections[pathName([topLevel.name], m.name)]
-      //                if collection
-      //                  each page in collection
-      //                    mixin pageLink(page)
-      //
-      //                - // Top level children
-      //                if topLevel.children
-      //                  each secondLevel in topLevel.children
-      //
-      //                    - var path = [topLevel.name, secondLevel.name]
-      //                    - var collection = collections[pathName(path, m.name)]
-      //
-      //                    if collection && collection.length > 0
-      //                      - // Second level
-      //                      li.menu__item
-      //                        a.menu__link.menu__link--parent(
-      //                          href='#'
-      //                        )= secondLevel.name
-      //
-      //                        - // Second level back
-      //                        ul.menu__level
-      //                          li.menu__item.menu__item--back
-      //                            a.menu__link.menu__link--back(
-      //                              href='#'
-      //                            )= secondLevel.name
-      //
-      //                          - // Second level pages
-      //                          if collection
-      //                            each page in collection
-      //                              mixin pageLink(page)
-      //
-      //    li.menu__item
-      //      a.menu__link(
-      //        href=relative('/examples')
-      //        data-link='/examples/index.html'
-      //      ) Examples
 
     script(type='text/javascript').
       //// Set the right mobile menu level as current
