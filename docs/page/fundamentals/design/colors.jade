@@ -5,12 +5,44 @@ collection: nav__fundamentals__design
 template: page.jade
 ---
 
-:markdown
+p.paragraph.
   Use these colors to guide your designs and to ensure you’re staying consistent with the AXA brand.
+  
+p.callout
+  | Copy the color code or the less variable name to the clipboard by clicking the 
+  svg.icon-svg.color-palette__key__icon
+    use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#clipboard"))
+  |  icon below.
+  
+.bubble
+  .bubble__image
+    img(src=relative('/images/psd.svg'))
+  .bubble__content
+    .bubble__title
+      .bubble__title__text PSD File
+    .bubble__text
+      p.paragraph.
+        Hallo Designer. hier kannst du unsere PSD mit allen Buttons 
+        herunterladen und gleich mit dem Layout anfanagen
 
+        
 .downloads
   a(href="./AXA.aco").downloads__link Download swatches
-
+  
+mixin color(colorCode, colorName, modifier)
+  .color-palette__color(class=(modifier ? 'color-palette__color--' + modifier : ''))
+    .color-palette__color__box(style='background: ' + colorCode, class=(modifier ? 'color-palette__color__box--' + modifier : ''))
+    .color-palette__color__content
+      .color-palette__color__code
+        span #{colorCode}
+        != ' '
+        svg.icon-svg.color-palette__color__copy(data-clipboard-text=colorCode) 
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#clipboard"))
+      .color-palette__color__less
+        span @color-#{colorName}
+        != ' '
+        svg.icon-svg.color-palette__color__copy(data-clipboard-text='@color-' + colorName) 
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#clipboard"))
 
 h2.heading.heading--secondary Primary palette
 
@@ -18,17 +50,7 @@ h2.heading.heading--secondary Primary palette
   .l-row
     each colorCode, colorName in colors.primary
       .l-fourth
-        .color-palette__color
-          .color-palette__color__box(style='background: ' + colorCode)
-          .color-palette__color__content
-            .color-palette__color__code
-              span #{colorCode}
-              != ' '
-              span.color-palette__color__copy(data-clipboard-text=colorCode) 
-            .color-palette__color__less
-              span @color-#{colorName}
-              != ' '
-              span.color-palette__color__copy(data-clipboard-text='@color-' + colorName) 
+        +color(colorCode, colorName, undefined)
 
 h2.heading.heading--secondary Secondary palette
 
@@ -37,17 +59,7 @@ h2.heading.heading--secondary Secondary palette
     .l-row
       each colorCode, colorName in colorGroup.colors
         .l-thumbnail
-            .color-palette__color.color-palette__color--secondary
-              .color-palette__color__box.color-palette__color__box--secondary(style='background: ' + colorCode)
-              .color-palette__color__content
-                .color-palette__color__code
-                  span #{colorCode}
-                  != ' '
-                  span.color-palette__color__copy(data-clipboard-text=colorCode) 
-                .color-palette__color__less
-                  span @color-#{colorName}
-                  != ' '
-                  span.color-palette__color__copy(data-clipboard-text='@color-' + colorName) 
+          +color(colorCode, colorName, 'secondary')
 
 script
   != 'ZeroClipboard.config({ swfPath: \'' + relative('/ZeroClipboard.swf') + '\' })'

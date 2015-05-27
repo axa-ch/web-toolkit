@@ -2,6 +2,10 @@
 @import 'style/mixins/clearfix';
 @import 'style/grid';
 
+.color-palette__key__icon {
+  fill: @color-light-blue;
+}
+
 .color-palette {
   max-width: 770px;
 }
@@ -40,19 +44,13 @@
 }
 
 .color-palette__color__copy {
-  .icon();
-  .icon--cross(); // TODO
   cursor: pointer;
 
-  &::before {
-    color: @color-light-blue;
-  }
+  fill: @color-light-blue;
 
   &:hover,
   &.zeroclipboard-is-hover {
-    &::before {
-      color: @color-green;
-    }
+    fill: @color-green;
   }
 }
 
