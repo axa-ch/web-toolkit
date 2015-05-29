@@ -13,9 +13,10 @@ html
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
       
+    // iOS app icon
     mixin appicon_ios(size)
       - var s = size + "x" + size
-      link(rel="apple-touch-icon-precomposed" href="images/app-icon/"+s+".png" sizes=s)
+      link(rel="apple-touch-icon-precomposed", href="images/app-icon/ios/"+s+".png", sizes=s)
         
     +appicon_ios("57")
     +appicon_ios("72")
@@ -25,6 +26,11 @@ html
     +appicon_ios("144")
     +appicon_ios("152")
     +appicon_ios("180")
+    
+    // android/chrome app iocn
+    link(rel="manifest", href="manifest.json")
+    link(rel="icon", sizes="192x192", href="images/app-icon/android/192x192.png")
+    meta(name="mobile-web-app-capable", content="yes")
 
     title #{title} | Web Styleguide
     link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
