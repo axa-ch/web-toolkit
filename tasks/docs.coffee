@@ -5,6 +5,7 @@ module.exports = (cb) ->
       'docs-pages',
       'docs-scripts',
       'docs-example-scripts',
+      'docs-inspiration-scripts',
       'docs-styles',
       'docs-assets'
     ],
