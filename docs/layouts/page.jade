@@ -12,6 +12,19 @@ html
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
+      
+    mixin appicon_ios(size)
+      - var s = size + "x" + size
+      link(rel="apple-touch-icon-precomposed" href="images/app-icon/"+s+".png" sizes=s)
+        
+    +appicon_ios("57")
+    +appicon_ios("72")
+    +appicon_ios("76")
+    +appicon_ios("114")
+    +appicon_ios("120")
+    +appicon_ios("144")
+    +appicon_ios("152")
+    +appicon_ios("180")
 
     title #{title} | Web Styleguide
     link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
