@@ -137,13 +137,13 @@ p.paragraph.
       use(xlink:href='/images/icons.svg#source')
     span See code
   .toggle__content#code-2
-    .tab-panel
+    .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
-          .tab-panel__header__tab.is-active HTML
-          .tab-panel__header__tab LESS
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='css') CSS
       .tab-panel__content
-        .tab-panel__content__tab.is-active
+        .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
@@ -152,7 +152,7 @@ p.paragraph.
                 <div class="button button--secondary"><svg class="button__icon button__icon--left icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg>Icon and badge<span class="button__badge badge">159</span></div>
                 
                 <div class="button button--secondary">Icon right<svg class="button__icon button__icon--right icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg></div>
-        .tab-panel__content__tab
+        .tab-panel__content__tab(data-tab-content='css')
           p.paragraph.
             Use the CSS classes mentioned in the HTML tab
             as mixins.
@@ -187,13 +187,13 @@ p.paragraph.
       use(xlink:href='/images/icons.svg#source')
     span See code
   .toggle__content#code-3
-    .tab-panel
+    .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
-          .tab-panel__header__tab.is-active HTML
-          .tab-panel__header__tab LESS
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='css') CSS
       .tab-panel__content
-        .tab-panel__content__tab.is-active
+        .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item Do not add any whitespace within the button since it would miss-position the icon
           
@@ -202,7 +202,7 @@ p.paragraph.
               :highlight
                 <div class="button button--floating icon icon--feedback" ><div>
 
-        .tab-panel__content__tab
+        .tab-panel__content__tab(data-tab-content='css')
           p.paragraph.
             Use the CSS classes mentioned in the HTML tab
             as mixins.
