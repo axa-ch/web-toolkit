@@ -13,18 +13,18 @@ p.paragraph.
 
 .downloads
   .downloads__item
-    a(href='Helveticons-basic-preview.png').downloads__link Helveticons-basic-preview.png
+    a(href=relative('content/Helveticons-basic-preview.png')).downloads__link Helveticons-basic-preview.png
   .downloads__item
-    a(href='Helveticons-additional-preview.png').downloads__link Helveticons-additional-preview.png
+    a(href=relative('Helveticons-additional-preview.png')).downloads__link Helveticons-additional-preview.png
   .downloads__item
-    a(href='Helveticons-extras-preview.png').downloads__link Helveticons-extras-preview.png
+    a(href=relative('Helveticons-extras-preview.png')).downloads__link Helveticons-extras-preview.png
 
 .icons
   ul.icons-list
     each icon in icons
       li.icons-list__item
         svg.icons-list__icon.icon-svg
-          use(xlink:href='/images/icons.svg#' + icon.name)
+          use(xlink:href=relative('/images/icons.svg#' + icon.name))
         span.icons-list__text=icon.name
 
 // Copyright AXA Versicherungen AG 2015

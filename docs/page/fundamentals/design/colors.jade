@@ -28,7 +28,7 @@ p.callout
         
 .downloads
   .downloads__item
-    a(href="./AXA.aco").downloads__link Download swatches
+    a(href=relative('/content/AXA.aco')).downloads__link Download swatches
   
 mixin color(colorCode, colorName, modifier)
   .color-palette__color(class=(modifier ? 'color-palette__color--' + modifier : ''))
