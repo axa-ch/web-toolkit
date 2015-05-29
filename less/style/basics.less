@@ -1,0 +1,19 @@
+@import './variables';
+
+// Apply a natural box layout model to all elements,
+// but allowing components to change
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+// Set basic typography
+body {
+  color: @font-color;
+  font-family: "ITC Franklin Gothic W01", Arial, sans-serif;
+  font-size: @font-size;
+  line-height: @line-height;
+}
