@@ -110,9 +110,6 @@
 }
 
 .modal__close {
-  .icon();
-  .icon--modal-close();
-
   display: block;
   float: right;
 
@@ -140,6 +137,18 @@
     &:hover {
       color: @color-light-blue;
     }
+  });
+}
+
+.modal__close-icon {
+  //width: 1em;
+  //height: 1em;
+  margin-top: 13px;
+
+  .respond(medium; {
+    //width: 1.5em;
+    //height: 1.5em;
+    margin-top: 0;
   });
 }
 
