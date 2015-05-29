@@ -20,6 +20,9 @@
       @setActiveTab selector
     
     setActiveTab: (tabName) ->
+      if @activeTabName == tabName
+        return
+      @activeTabName = tabName
       if @$activeContentPanel?
 #        @$activeContentPanel.toggleClass 'is-active'
         @$activeContentPanel.slideToggle 'fast', () ->

@@ -44,7 +44,7 @@ module.exports = [
       #'./node_modules/zeroclipboard/dist/ZeroClipboard.js' # Ignore since we do not assume that this changes
       './dist/jquery/axa-wsg.jquery.all.js'
     ], ->
-      gulp.start 'docs-scripts', 'docs-example-scripts'
+      gulp.start 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
       return
 
     #######################
