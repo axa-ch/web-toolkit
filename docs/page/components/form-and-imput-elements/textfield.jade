@@ -31,6 +31,23 @@ h2.heading.heading--secondary#single Single-line text field
 
 p.paragraph The most common form of a text field.
 
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+      iframe.example__iframe
+      .example__html
+        .l-container
+          .form(style='overflow: hidden;')
+            .form__group
+              label.form__group__label
+                .form__group__label__text Form label
+              .form__group__control
+                input.control.control--input(type='text')
+
 h2.heading.heading--secondary#autocomplete Auto-complete text field
 
 p.paragraph.
@@ -51,7 +68,7 @@ h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
     :markdown
-      Do not use for lists with 10 or less items. Use a[checkbox group](/components/form-and-imput-elements/checkbox.html#group) in this case.
+      Do not use for lists with 10 or less items. Use a [checkbox group](/components/form-and-imput-elements/checkbox.html#group) in this case.
 
 h2.heading.heading--secondary#multiline Multi-line text field
 
