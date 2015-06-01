@@ -1,0 +1,86 @@
+@import "style/mixins/grid.less";
+
+.changelog__timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 0 80px;
+}
+
+.changelog__timeline::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: @color-gray--mid;
+}
+
+.changelog__timeline__item {
+    position: relative;
+    padding-left: 80px;
+    margin: 0 0 80px 0;
+}
+
+.changelog__timeline__item::before {
+    position: absolute;
+    left: -9px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: @color-light-blue;
+    content: '';
+    display: block;
+}
+
+.changelog__timeline__item--minor::before {
+  width: 14px;
+  height: 14px;
+  left: -6px;
+}
+
+.changelog__timeline__item__version {
+    color: @color-light-blue;
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 0 0 20px 0;
+}
+
+.changelog__timeline__item__version__date {
+    display: inline-block;
+    color: @color-gray;
+    font-weight: normal;
+    font-size: .7em;
+    margin-left: 20px;
+}
+
+.changelog__timeline__item__content {
+  .make-row();
+}
+
+.changelog__timeline__item__content__item {
+  .make-col(6);
+  margin-bottom: 40px;
+}
+
+.changelog__timeline__item__content__item__headline {
+  position: relative;
+  padding: 12px 0 0 50px;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.changelog__timeline__item__content__item__headline__icon {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  fill: @color-gray--mid;
+}
+
+.changelog__timeline__item__content__item__content {
+  padding-left: 50px;
+}
