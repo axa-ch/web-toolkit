@@ -6,8 +6,8 @@ template: page.jade
 ---
 
 p.paragraph.
-  Add an app icon and a splash screen to your web application if adding the
-  web app to the home screen of a smartphone is a possible use case.
+  We recommend to create square app icons since the devices will cut 
+  round corners on their own.
   
 p.paragraph.
   TODO: AXA group guidelines and PSDs?!?
@@ -15,191 +15,209 @@ p.paragraph.
 p.paragraph.
   TODO: Guidelines for windows tiles
   
-h2.heading.heading--secondary App icon
+h2.heading.heading--secondary Splash screen
+
+p.paragraph.
+  TODO
   
+h2.heading.heading--secondary App icon
+
 p.paragraph.
   Produce the app icon in various sizes to cover diffrent devices/os. Use
   the tables below as a guideline on choosing the appropriate sizes.
-
+  
 p.paragraph.
-  android
-  36x36
-  48x48
-  72x72 (duplicate durch iOS)
-  96x96
-  144x144 (duplicate durch iOS)
-  192x192
+  See the screenshots to the right for examples.
 
+h3.heading.heading--tertiary iOS App icon  
+
+.l-row
+  .l-col.l-col--7
+    p.paragraph.
+      Add a link tag for every app icon size to the head section. See the example
+      for a 114x114px app icon below.
+
+    .highlight: pre.highlight__listing.hljs: code.js
+      :highlight
+        <link rel="apple-touch-icon" href="icon114.png" sizes="114x114">
+        <!-- Use the -precomposed rel to prevent icon modification in iOS 2.0-6.x -->
+        <link rel="apple-touch-icon-precomposed" href="icon114.png" sizes="114x114">
+      
+    table.table.table--docs
+      caption App icon sizes for iOS devices in pixels
+      thead
+        tr.table__header
+          th.table__header__item Device
+          th.table__header__item iOS 6
+          th.table__header__item iOS 7+
+      tbody.table__content
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content iPhone / iPod touch non retina
+          td.table__row__item
+            .table__row__item__content 57 x 57
+          td.table__row__item
+            .table__row__item__content not available
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content iPhone retina
+          td.table__row__item
+            .table__row__item__content 114 x 114
+          td.table__row__item
+            .table__row__item__content 120 x 120
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content iPhone 6 plus
+          td.table__row__item
+            .table__row__item__content not available
+          td.table__row__item
+            .table__row__item__content 180x180
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content iPad non retina
+          td.table__row__item
+            .table__row__item__content 72 x 72
+          td.table__row__item
+            .table__row__item__content 76 x 76
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content iPad retina
+          td.table__row__item
+            .table__row__item__content 144 x 144
+          td.table__row__item
+            .table__row__item__content 152 x 152
+  .l-col.l-col--5
+    img(src=relative('/images/design/app-icons-ios.png'))
+    
 h3.heading.heading--tertiary Android app icon
-  
-p.paragraph.
-  Since android has a wide os fragmentation you may experience some issues.
-  Do not hesitate to open a pull request to improve this section!
-  
-table.table.table--docs
-  caption App icon sizes for Android devices with Chrome before version M39 in pixels
-  thead
-    tr.table__header
-      th.table__header__item Size
-  tbody.table__content
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content 192 x 192
 
-table.table.table--docs
-  caption App icon sizes for Android devices with Chrome version M39 in pixels
-  thead
-    tr.table__header
-      th.table__header__item Size
-      th.table__header__item Factor
-  tbody.table__content
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content 36 x 36
-      td.table__row__item
-        .table__row__item__content 0.75
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content 48 x 48
-      td.table__row__item
-        .table__row__item__content 1.00
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content 72 x 72
-      td.table__row__item
-        .table__row__item__content 1.50
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content 96 x 96
-      td.table__row__item
-        .table__row__item__content 1.50
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content 144 x 144
-      td.table__row__item
-        .table__row__item__content 2.00
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content 192 x 192
-      td.table__row__item
-        .table__row__item__content 3.00
-
+.l-row
+  .l-col.l-col--7
+      
+    p.paragraph
+      | This section is based on the 
+      a(href="https://developer.chrome.com/multidevice/android/installtohomescreen").link Chrome for Android guides
+      | .
+      
+    p.paragraph.
+      Since android has a wide os and browser fragmentation you may experience some issues.
+      Do not hesitate to open a pull request to improve this section!
+      
+    table.table.table--docs
+      caption App icon sizes for Android devices with Chrome before version M39 in pixels
+      thead
+        tr.table__header
+          th.table__header__item Size
+      tbody.table__content
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content 192 x 192
+              
+    table.table.table--docs
+      caption App icon sizes for Android devices with Chrome version M39 in pixels
+      thead
+        tr.table__header
+          th.table__header__item Size
+          th.table__header__item Factor
+      tbody.table__content
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content 36 x 36
+          td.table__row__item
+            .table__row__item__content 0.75
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content 48 x 48
+          td.table__row__item
+            .table__row__item__content 1.00
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content 72 x 72
+          td.table__row__item
+            .table__row__item__content 1.50
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content 96 x 96
+          td.table__row__item
+            .table__row__item__content 1.50
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content 144 x 144
+          td.table__row__item
+            .table__row__item__content 2.00
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content 192 x 192
+          td.table__row__item
+            .table__row__item__content 3.00
+  .l-col.l-col--5
+    img(src=relative('/images/design/app-icons-android.png'))
+  
 h3.heading.heading--tertiary Windows tiles
 
-p.paragraph.
-  You can set an application name, a background color and an 
-  (optionally transparent) icon for a windows tile. 
-  See the example below.
-  
-.highlight: pre.highlight__listing.hljs: code.js
-  :highlight
-    <meta name="application-name" content="My fancy application"/>
-    <meta name="msapplication-TileColor" content="#ffffff"/>
-    <meta name="msapplication-square70x70logo" content="tiny.png"/>
-    <meta name="msapplication-square150x150logo" content="square.png"/>
-    <meta name="msapplication-wide310x150logo" content="wide.png"/>
-    <meta name="msapplication-square310x310logo" content="large.png"/>
-  
-table.table.table--docs
-  caption Tile icon sizes for Windows devices in pixels
-  thead
-    tr.table__header
-      th.table__header__item Tile size
-      th.table__header__item Standard dimension
-      th.table__header__item Minimum size
-      th.table__header__item Recommended size
-  tbody.table__content
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content tiny
-      td.table__row__item
-        .table__row__item__content 70 x 70
-      td.table__row__item
-        .table__row__item__content 56 x 56
-      td.table__row__item
-        .table__row__item__content 128 x 128
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content square
-      td.table__row__item
-        .table__row__item__content 150 x 150
-      td.table__row__item
-        .table__row__item__content 120 x 120
-      td.table__row__item
-        .table__row__item__content 270 x 270
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content wide
-      td.table__row__item
-        .table__row__item__content 310 x 150
-      td.table__row__item
-        .table__row__item__content 248 x 120
-      td.table__row__item
-        .table__row__item__content 558 x 270
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content large
-      td.table__row__item
-        .table__row__item__content 310 x 310
-      td.table__row__item
-        .table__row__item__content 248 x 248
-      td.table__row__item
-        .table__row__item__content 558 x 558
+.l-row
+  .l-col.l-col--7
+    p.paragraph.
+      You can set an application name, a background color and an 
+      (optionally transparent) icon for a windows tile. 
+      See the example below.
+      
+    .highlight: pre.highlight__listing.hljs: code.js
+      :highlight
+        <meta name="application-name" content="My fancy application"/>
+        <meta name="msapplication-TileColor" content="#ffffff"/>
+        <meta name="msapplication-square70x70logo" content="tiny.png"/>
+        <meta name="msapplication-square150x150logo" content="square.png"/>
+        <meta name="msapplication-wide310x150logo" content="wide.png"/>
+        <meta name="msapplication-square310x310logo" content="large.png"/>
+      
+    table.table.table--docs
+      caption Tile icon sizes for Windows devices in pixels
+      thead
+        tr.table__header
+          th.table__header__item Tile size
+          th.table__header__item Standard dimension
+          th.table__header__item Minimum size
+          th.table__header__item Recommended size
+      tbody.table__content
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content tiny
+          td.table__row__item
+            .table__row__item__content 70 x 70
+          td.table__row__item
+            .table__row__item__content 56 x 56
+          td.table__row__item
+            .table__row__item__content 128 x 128
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content square
+          td.table__row__item
+            .table__row__item__content 150 x 150
+          td.table__row__item
+            .table__row__item__content 120 x 120
+          td.table__row__item
+            .table__row__item__content 270 x 270
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content wide
+          td.table__row__item
+            .table__row__item__content 310 x 150
+          td.table__row__item
+            .table__row__item__content 248 x 120
+          td.table__row__item
+            .table__row__item__content 558 x 270
+        tr.table__row
+          td.table__row__item
+            .table__row__item__content large
+          td.table__row__item
+            .table__row__item__content 310 x 310
+          td.table__row__item
+            .table__row__item__content 248 x 248
+          td.table__row__item
+            .table__row__item__content 558 x 558
+  .l-col.l-col--5
+    img(src=relative('/images/design/app-icons-windows.png'))
 
-h3.heading.heading--tertiary iOS App icon
-
-p.paragraph.
-  Add a link tag for every app icon size to the head section. See the example
-  for a 114x144 px app icon below.
-
-.highlight: pre.highlight__listing.hljs: code.js
-  :highlight
-    <link rel="apple-touch-icon" href="icon114.png" sizes="114x114">
-    <!-- Use the -precomposed rel to prevent icon modification in iOS 2.0-6.x -->
-    <link rel="apple-touch-icon-precomposed" href="icon114.png" sizes="114x114">
-  
-table.table.table--docs
-  caption App icon sizes for iOS devices in pixels
-  thead
-    tr.table__header
-      th.table__header__item Device
-      th.table__header__item iOS 6
-      th.table__header__item iOS 7+
-  tbody.table__content
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content iPhone / iPod touch non retina
-      td.table__row__item
-        .table__row__item__content 57 x 57
-      td.table__row__item
-        .table__row__item__content not available
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content iPhone retina
-      td.table__row__item
-        .table__row__item__content 114 x 114
-      td.table__row__item
-        .table__row__item__content 120 x 120
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content iPhone 6 plus
-      td.table__row__item
-        .table__row__item__content not available
-      td.table__row__item
-        .table__row__item__content 180x180
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content iPad non retina
-      td.table__row__item
-        .table__row__item__content 72 x 72
-      td.table__row__item
-        .table__row__item__content 76 x 76
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content iPad retina
-      td.table__row__item
-        .table__row__item__content 144 x 144
-      td.table__row__item
-        .table__row__item__content 152 x 152
 
 // Copyright AXA Versicherungen AG 2015

@@ -19,9 +19,6 @@ p.paragraph.
   Sometimes we can’t help and have to present an error message to our user.
 
 p.paragraph.
-  Some controls may not need a label on the left hand side.
-
-p.paragraph.
   TODO: How to mark required fields
 
 p.paragraph.
@@ -37,15 +34,15 @@ p.paragraph.
     .form
       .form__group
         .form__group__label
-          .form__group__label__text Simple form group
+          .form__group__label__text Firstname
         .form__group__control
           input(type='text').control.control--input
       .form__group
         .form__group__label.form__group__label--invalid
-          .form__group__label__text A form group in error
+          .form__group__label__text Lastname
         .form__group__control
           input(type='text').control.control--input.has-error
-          .form__error-message Please provide a value
+          .form__error-message Your name can't begin with a number.
       .form__group
         .form__group__label
           .form__group__label__info-icon
@@ -68,7 +65,7 @@ p.paragraph.
 .toggle
   .toggle__button
     svg.icon-svg.toggle__icon
-      use(xlink:href='/images/icons.svg#source')
+      use(xlink:href=relative('/images/icons.svg#source'))
     span See code
   .toggle__content
     .tab-panel
@@ -96,5 +93,8 @@ ul.checklist
   li.checklist__item Avoid too many info-icons on one site.
   li.checklist__item Try to avoid error messages in the first place. Flexible input formats and automatic error correction may help.
   li.checklist__item Provide clear explanations instead of a generic “An error occurred”. If you don’t, your user will make the same mistake again.
+  li.checklist__item
+    :markdown
+      If you want to learn more about how to build forms, visit the [form pattern page](/patterns/forms.html).
 
 // Copyright AXA Versicherungen AG 2015

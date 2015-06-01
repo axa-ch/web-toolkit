@@ -1,0 +1,37 @@
+@import "style/mixins/grid";
+@import "style/blocks/heading";
+
+.inspiration {
+  margin: 40px 0 0 0;
+}
+
+.inspiration__item {
+  .make-row();
+  margin: 0 0 40px 0;
+}
+
+.inspiration__item__image {
+  display: block;
+  .make-col(3);
+}
+
+.inspiration__item__image__img {
+  max-width: 100%;
+}
+
+.inspiration__item__content {
+  .make-col(9);
+}
+
+.inspiration__item__title {
+  display: block;
+  text-decoration: none;
+  .heading();
+  .heading--secondary();
+}
+
+.inspiration__item__description {
+  display: block;
+  text-decoration: none;
+  color: @font-color;
+}

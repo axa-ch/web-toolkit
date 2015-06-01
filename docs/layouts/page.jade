@@ -27,10 +27,21 @@ html
     +appicon_ios("152")
     +appicon_ios("180")
     
+    meta(name="apple-mobile-web-app-title", content="Web Stylegudie")
+      
+    link(href="images/splash-screen/ios/750x1294.png", media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)", rel="apple-touch-startup-image")
+    
     // android/chrome app iocn
     link(rel="manifest", href="manifest.json")
     link(rel="icon", sizes="192x192", href="images/app-icon/android/192x192.png")
     meta(name="mobile-web-app-capable", content="yes")
+      
+    // windows tiles
+    meta(name="application-name", content="Web Styleguide")
+    meta(name="msapplication-square70x70logo", content="images/app-icon/windows/128x128.png")
+    meta(name="msapplication-square150x150logo", content="images/app-icon/windows/270x270.png")
+    meta(name="msapplication-wide310x150logo", content="images/app-icon/windows/558x270.png")
+    meta(name="msapplication-square310x310logo", content="images/app-icon/windows/558x558.png")
 
     title #{title} | Web Styleguide
     link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
@@ -74,7 +85,7 @@ html
         .docs-floating-action
           a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
             svg.button__icon.icon-svg
-              use(xlink:href='/images/icons.svg#feedback')
+              use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative('/images/icons.svg#feedback'))
       header.header
         .header__container.l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
@@ -113,7 +124,7 @@ html
                           href=relative(page.link)
                         )= page.title
               .autocomplete.docs-search
-                input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/')).control.control--input
+                input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/')).docs-search__control
 
       .page-content.l-container
 
@@ -152,7 +163,8 @@ html
             nav.l-col.l-col--2
               +displayMenu(currentNavCollection, false, false)
             .l-col.l-col--10
-              h1.heading.heading--page #{title}
+              if headline !== false
+                h1.heading.heading--page #{title}
               div!= contents
 
         else

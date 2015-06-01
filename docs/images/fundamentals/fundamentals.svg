@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 260 260" xml:space="preserve" enable-background="new 0 0 260 260">
+<style>
+.s0{
+	fill:#ADDBE1;
+}
+.s1{
+	fill:#F1F1F2;
+}
+.s2{
+	fill:#CBCAC9;
+}
+.s3{
+	fill:#474F5A;
+}
+.s4{
+	fill:#242E38;
+}
+.s5{
+	fill:#EF8261;
+}
+.s6{
+	fill:#F2967A;
+}
+.s7{
+	fill:#FFF;
+}
+.s8{
+	fill:#FFD580;
+}
+.s9{
+	clip-path:url(#SVGID_2_);
+	fill:#ADDBE1;
+}
+.s10{
+	clip-path:url(#SVGID_2_);
+	fill:#EF8261;
+}
+.s11{
+	clip-path:url(#SVGID_2_);
+	fill:#666B74;
+}
+.s12{
+	clip-path:url(#SVGID_2_);
+	fill:#E5E4E4;
+}
+
+.wheel {
+  -webkit-animation: upIt 5s linear normal infinite;
+  animation: upIt 5s linear normal infinite;
+}
+
+
+@-webkit-keyframes upIt {
+0% { -webkit-transform: translateY(0px);}
+50% {-webkit-transform: translateY(20px);}
+70% {-webkit-transform: translateY(20px);}
+90% {-webkit-transform: translateY(0px);}
+}
+
+@keyframes upIt {
+0% { transform: translateY(0px);}
+50% {transform: translateY(20px);}
+70% {transform: translateY(20px);}
+90% {transform: translateY(0px);}
+}
+
+
+</style>  <circle cx="130" cy="130" r="130" fill="#ADDBE1"/>
+  <polygon points="43.7 48.4 18.6 40.8 43.7 33.2 " fill="#F1F1F2"/>
+  <polygon points="18.6 40.8 43.7 48.4 43.7 43.6 " fill="#CBCAC9"/>
+  <rect x="43.7" y="33.2" width="190.3" height="15.3" fill="#474F5A"/>
+  <rect x="43.7" y="43.6" width="190.3" height="4.8" fill="#242E38"/>
+  <polygon points="28.5 43.8 18.6 40.8 28.5 37.8 " fill="#363F49"/>
+  <polygon points="28.5 43.8 18.6 40.8 28.5 41.9 " fill="#242E38"/>
+  <rect x="234" y="33.2" width="8.9" height="15.3" fill="#F1F1F2"/>
+  <rect x="234" y="43.6" width="8.9" height="4.8" fill="#CBCAC9"/>
+  <path d="M252.4 48.4c2 0 3.9-0.7 5.4-2.2 1.5-1.5 2.2-3.4 2.2-5.4l0 0c0-2-0.7-3.9-2.2-5.4 -1.5-1.5-3.4-2.2-5.4-2.2h-9.5v15.3H252.4z" fill="#EF8261"/>
+  <path d="M257.8 35.4c-0.9-0.9-1.9-1.5-3-1.8 0.3 0.8 0.4 1.6 0.4 2.4 0 2-0.7 3.9-2.2 5.4 -1.5 1.5-3.4 2.2-5.4 2.2h-4.7v4.8h9.5c2 0 3.9-0.7 5.4-2.2 1.5-1.5 2.2-3.4 2.2-5.4C260 38.9 259.3 36.9 257.8 35.4z" fill="#EC6D48"/>
+  <polygon points="145.6 139.8 141 139.8 139.6 146.6 147 146.6 " fill="#F2967A"/>
+  <polygon points="129.9 142.7 125.9 145.1 128.1 151.6 134.5 147.9 " fill="#F2967A"/>
+  <polygon points="117.8 153.2 115.5 157.2 120.7 161.8 124.4 155.4 " fill="#F2967A"/>
+  <polygon points="112.5 168.2 112.5 172.9 119.3 174.3 119.3 166.9 " fill="#F2967A"/>
+  <polygon points="115.5 184 117.8 188 124.4 185.8 120.7 179.4 " fill="#F2967A"/>
+  <polygon points="125.9 196.1 129.9 198.4 134.5 193.2 128.1 189.5 " fill="#F2967A"/>
+  <polygon points="141 201.4 145.6 201.4 147 194.6 139.6 194.6 " fill="#F2967A"/>
+  <polygon points="156.7 198.4 160.7 196.1 158.5 189.5 152.1 193.2 " fill="#F2967A"/>
+  <polygon points="168.8 188 171.1 184 165.9 179.4 162.2 185.8 " fill="#F2967A"/>
+  <polygon points="174.1 172.9 174.1 168.2 167.3 166.9 167.3 174.3 " fill="#F2967A"/>
+  <polygon points="171.1 157.2 168.8 153.2 162.2 155.4 165.9 161.8 " fill="#F2967A"/>
+  <polygon points="160.7 145.1 156.7 142.7 152.1 147.9 158.5 151.6 " fill="#F2967A"/>
+
+  <path d="M143.3 146.3c-13.4 0-24.3 10.9-24.3 24.3 0 13.4 10.9 24.3 24.3 24.3 13.4 0 24.3-10.9 24.3-24.3C167.6 157.2 156.7 146.3 143.3 146.3zM143.3 177.3c-3.7 0-6.7-3-6.7-6.7 0-3.7 3-6.7 6.7-6.7 3.7 0 6.7 3 6.7 6.7C150 174.3 147 177.3 143.3 177.3z" fill="#EF8261"/>
+
+  <path d="M143.3 158.9c-6.4 0-11.7 5.2-11.7 11.7 0 6.4 5.2 11.7 11.7 11.7 6.4 0 11.7-5.2 11.7-11.7C154.9 164.1 149.7 158.9 143.3 158.9zM143.3 176.4c-3.2 0-5.8-2.6-5.8-5.8 0-3.2 2.6-5.8 5.8-5.8 3.2 0 5.8 2.6 5.8 5.8C149.1 173.8 146.5 176.4 143.3 176.4z" fill="#242E38"/>
+  <g class="wheel">
+    <path d="M18.6 112.3c0-2.5 2.1-4.6 4.6-4.6h75.6c2.5 0 4.6 2.1 4.6 4.6v113.9c0 2.5-2.1 4.6-4.6 4.6H23.3c-2.5 0-4.6-2.1-4.6-4.6V112.3z" fill="#242E38"/>
+    <path d="M56.4 225.7c-1.1 0-2.1-0.9-2.1-2.1v-0.5c0-1.1 0.9-2.1 2.1-2.1h9.4c1.1 0 2.1 0.9 2.1 2.1v0.5c0 1.1-0.9 2.1-2.1 2.1H56.4z" fill="#474F5A"/>
+    <path d="M61.1 115.8c-1.2 0-2.1-0.9-2.1-2.1 0-1.2 0.9-2.1 2.1-2.1 1.2 0 2.1 1 2.1 2.1C63.2 114.9 62.2 115.8 61.1 115.8z" fill="#474F5A"/>
+    <path d="M61.1 114.6c-0.5 0-0.9-0.4-0.9-0.9 0-0.5 0.4-0.9 0.9-0.9 0.5 0 0.9 0.4 0.9 0.9C62 114.2 61.6 114.6 61.1 114.6z" fill="#D9D9D8"/>
+   <rect x="23.5" y="119.7" width="75.2" height="96.2" fill="#FFF"/>
+    <rect x="26.4" y="136.1" width="15" height="15" fill="#EF8261"/>
+   <rect x="44.5" y="136.1" width="15" height="15" fill="#ADDBE1"/>
+   <rect x="62.5" y="136.1" width="15" height="15" fill="#FFD580"/>
+   <rect x="80.5" y="136.1" width="15" height="15" fill="#474F5A"/>
+   <rect x="26.4" y="154.1" width="15" height="15" fill="#FFD580"/>
+   <rect x="44.5" y="154.1" width="15" height="15" fill="#474F5A"/>
+   <rect x="62.5" y="154.1" width="15" height="15" fill="#ADDBE1"/>
+   <rect x="80.5" y="154.1" width="15" height="15" fill="#EF8261"/>
+   <rect x="44.5" y="172.1" width="15" height="15" fill="#EF8261"/>
+   <rect x="62.5" y="172.1" width="15" height="15" fill="#CBCAC9"/>
+   <rect x="80.5" y="172.1" width="15" height="15" fill="#FFD580"/>
+   <rect x="26.4" y="197.8" width="15" height="15" fill="#EF8261"/>
+   <rect x="44.5" y="197.8" width="15" height="15" fill="#CBCAC9"/>
+   <rect x="23.5" y="119.7" width="75.2" height="13.2" fill="#E5E4E4"/>
+
+  <path d="M29.6 114.8c-0.2 0-0.4-0.1-0.6-0.3 -0.2-0.3-0.2-0.7 0.1-1l29.9-23.4c0.6-0.5 1.3-0.7 2-0.8 0.7-0.1 1.5 0.1 2.1 0.5l28.1 15.9c0.3 0.2 0.5 0.6 0.3 1 -0.2 0.3-0.6 0.5-1 0.3L62.5 91.1c-0.4-0.2-0.8-0.3-1.3-0.3 -0.5 0-0.9 0.2-1.2 0.5L30 114.7C29.9 114.8 29.7 114.8 29.6 114.8z" fill="#474F5A"/>
+  <rect x="23.5" y="110.2" transform="matrix(0.9921 -0.1252 0.1252 0.9921 -14.1995 7.7014)" width="61.4" height="13.2" fill="#EF8261"/>
+  <rect x="50.2" y="88.1" transform="matrix(0.1251 0.9921 -0.9921 0.1251 163.3255 48.4645)" width="8" height="57.6" fill="#FFF"/>
+  <rect x="28.3" y="118.2" transform="matrix(0.9921 -0.1251 0.1251 0.9921 -14.6033 5.5314)" width="16.9" height="1.7" fill="#CBCAC9"/>
+  <rect x="84.6" y="105.5" transform="matrix(0.9921 -0.1252 0.1252 0.9921 -13.3142 12.334)" width="13.9" height="13.2" fill="#EF8261"/>
+
+  <path d="M95.1 114.2l-1.6-1.2c0 0-0.1 0-0.1 0 -0.1 0-0.1 0-0.1 0.1l-0.1 0.1 -0.5-0.4c0.3-0.5 0.4-1.1 0.4-1.7 -0.2-1.4-1.5-2.4-2.9-2.2 -1.4 0.2-2.4 1.5-2.2 2.9 0.2 1.4 1.5 2.4 2.9 2.2 0.6-0.1 1.1-0.4 1.5-0.8l0.5 0.4 -0.1 0.1c0 0 0 0.1 0 0.1 0 0.1 0 0.1 0.1 0.1l1.6 1.2c0.1 0.1 0.3 0.1 0.4 0.1 0.2 0 0.3-0.1 0.4-0.2 0.1-0.1 0.1-0.3 0.1-0.4C95.3 114.4 95.2 114.3 95.1 114.2zM90.8 113.5c-1.2 0.1-2.2-0.7-2.4-1.9 -0.1-1.2 0.7-2.2 1.9-2.4 1.2-0.1 2.2 0.7 2.4 1.9C92.8 112.3 91.9 113.3 90.8 113.5z" fill="#FFF"/>
+
+  <path d="M61.1 93.3c-4.8 0-8.8-3.9-8.8-8.8 0-0.7 0.6-1.2 1.2-1.2 0.7 0 1.2 0.6 1.2 1.2 0 3.4 2.8 6.2 6.2 6.2 3.4 0 6.2-2.8 6.2-6.2 0-3.4-2.8-6.2-6.2-6.2 -0.7 0-1.2-0.6-1.2-1.2v-3.5c0-0.7 0.6-1.2 1.2-1.2 0.7 0 1.2 0.6 1.2 1.2v2.4c4.2 0.6 7.5 4.3 7.5 8.7C69.8 89.4 65.9 93.3 61.1 93.3z" fill="#F9B75B"/>
+  <path d="M61.1 74.8c-1.9 0-3.4-1.5-3.4-3.4 0-1.9 1.5-3.4 3.4-3.4s3.4 1.5 3.4 3.4C64.5 73.2 62.9 74.8 61.1 74.8zM61.1 70.5c-0.5 0-0.9 0.4-0.9 0.9 0 0.5 0.4 0.9 0.9 0.9s0.9-0.4 0.9-0.9C62 70.9 61.6 70.5 61.1 70.5z" fill="#242E38"/>
+ 
+  <path d="M61.1 90.8c-0.4 0-0.8 0.2-1.2 0.5L58 92.8c-0.5-0.2-1-0.4-1.4-0.7l2.2-1.7C59.5 90.7 60.3 90.8 61.1 90.8z" fill="#474F5A"/>
+ </g> 
+
+ <path id="look" fill="#666B74">
+    <animate 
+             attributeName="d" 
+             dur="5000ms"
+             keySpline="linear"
+             repeatCount="indefinite"
+             keyTimes="0;0.5;0.7;0.9;1"
+             values="M61.1 72.1c-0.4 0-0.7-0.3-0.7-0.7V33.2c0-0.4 0.3-0.7 0.7-0.7 0.4 0 0.7 0.3 0.7 0.7v38.2C61.8 71.8 61.5 72.1 61.1 72.1z;
+
+          M61.1 
+          92.1c-0.4 
+          0-0.7-0.3-0.7-0.7V33.2c0-0.4 
+          0.3-0.7
+          0.7-0.7
+          0.4 0
+          0.7
+          0.3
+          0.7
+          0.7v38.2C61.8
+          92.8
+          61.5
+          92.1
+          61.1
+          92.1z;
+
+         M61.1 
+          92.1c-0.4 
+          0-0.7-0.3-0.7-0.7V33.2c0-0.4 
+          0.3-0.7
+          0.7-0.7
+          0.4 0
+          0.7
+          0.3
+          0.7
+          0.7v38.2C61.8
+          92.8
+          61.5
+          92.1
+          61.1
+          92.1z;
+          
+          M61.1 72.1c-0.4 0-0.7-0.3-0.7-0.7V33.2c0-0.4 0.3-0.7 0.7-0.7 0.4 0 0.7 0.3 0.7 0.7v38.2C61.8 71.8 61.5 72.1 61.1 72.1z;
+          
+          M61.1 72.1c-0.4 0-0.7-0.3-0.7-0.7V33.2c0-0.4 0.3-0.7 0.7-0.7 0.4 0 0.7 0.3 0.7 0.7v38.2C61.8 71.8 61.5 72.1 61.1 72.1z;"/>
+
+
+ </path>
+
+  <defs>
+    <circle id="SVGID_1_" cx="130" cy="130" r="130"/>
+  </defs>
+  <clipPath id="SVGID_2_">
+    <use xlink:href="#SVGID_1_" overflow="visible"/>
+  </clipPath>
+  <rect x="150.3" y="89.3" width="109.6" height="141.5" style="clip-path:url(#SVGID_2_);fill:#363F49"/>
+  <rect x="162.2" y="101.3" width="22.4" height="2.2" class="s9"/>
+  <rect x="162.2" y="118.4" width="6.3" height="2.2" class="s9"/>
+  <rect x="188.5" y="101.3" width="8.9" height="2.2" class="s10"/>
+  <rect x="170.1" y="118.4" width="22.8" height="2.2" class="s11"/>
+  <rect x="168.5" y="107.2" width="10" height="2.2" class="s9"/>
+  <rect x="168.5" y="135.9" width="10" height="2.2" class="s9"/>
+  <rect x="162.2" y="170.4" width="16.4" height="2.2" class="s12"/>
+  <rect x="168.5" y="141.7" width="4.1" height="2.2" class="s9"/>
+  <rect x="180.9" y="135.9" width="26.2" height="2.2" class="s9"/>
+  <rect x="179.3" y="153.4" width="25.5" height="2.2" class="s9"/>
+  <rect x="173.9" y="216.6" width="9.1" height="2.2" class="s9"/>
+  <rect x="207.8" y="176.2" width="9.4" height="2.2" class="s12"/>
+  <rect x="181.2" y="204.9" width="17.7" height="2.2" class="s12"/>
+  <rect x="187" y="216.6" width="20.8" height="2.2" class="s12"/>
+  <rect x="224.4" y="187.9" width="7.6" height="2.2" class="s10"/>
+  <rect x="209.3" y="153.4" width="18.9" height="2.2" class="s10"/>
+  <rect x="210.2" y="135.9" width="18.9" height="2.2" class="s11"/>
+  <rect x="232.9" y="135.9" width="11.6" height="2.2" class="s11"/>
+  <rect x="168.5" y="124.2" width="15" height="2.2" class="s11"/>
+  <rect x="168.5" y="130" width="21.3" height="2.2" class="s11"/>
+  <rect x="174.2" y="141.7" width="24.4" height="2.2" class="s11"/>
+  <rect x="168.5" y="182.1" width="24.4" height="2.2" class="s12"/>
+  <rect x="168.5" y="187.9" width="26.8" height="2.2" class="s11"/>
+  <rect x="191.3" y="210.8" width="47.4" height="2.2" class="s10"/>
+  <rect x="214.1" y="216.6" width="10.4" height="2.2" class="s11"/>
+  <rect x="198.1" y="187.9" width="23.2" height="2.2" class="s11"/>
+  <rect x="205.7" y="204.9" width="23.2" height="2.2" class="s11"/>
+  <rect x="174.2" y="147.5" width="7.9" height="2.2" class="s9"/>
+  <rect x="174.2" y="159.2" width="8.6" height="2.2" class="s9"/>
+  <rect x="168.5" y="176.2" width="36.2" height="2.2" class="s9"/>
+  <rect x="162.2" y="204.9" width="16.2" height="2.2" class="s9"/>
+  <rect x="168.5" y="210.8" width="18.5" height="2.2" class="s9"/>
+  <rect x="184.6" y="147.5" width="47.6" height="2.2" class="s12"/>
+  <rect x="173.6" y="193.7" width="15.2" height="2.2" class="s11"/>
+  <rect x="194" y="193.7" width="42.1" height="2.2" class="s12"/>
+  <rect x="203.6" y="141.7" width="16" height="2.2" class="s10"/>
+  <rect x="192" y="130" width="21.3" height="2.2" class="s11"/>
+  <rect x="214.8" y="130" width="17.5" height="2.2" class="s10"/>
+  <rect x="238.7" y="130" width="9.5" height="2.2" class="s12"/>
+  <rect x="188.4" y="124.2" width="23" height="2.2" class="s12"/>
+  <rect x="182.3" y="107.2" width="22.8" height="2.2" class="s12"/>
+  <rect x="150.3" y="75.9" width="109.6" height="13.4" style="clip-path:url(#SVGID_2_);fill:#242E38"/>
+</svg>

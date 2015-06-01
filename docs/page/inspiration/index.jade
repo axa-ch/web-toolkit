@@ -4,4 +4,24 @@ order: 4
 collection: nav
 template: page.jade
 description: Get inspired in our gallery of best-pracitces from all over AXA Switzerland.
+headline: false
 ---
+  
+.hero
+  .hero__image
+    img(src=relative('/images/inspiration/inspiration.svg')).hero__image__img
+  .hero__content
+    .hero__content__headline #{title}
+    p.paragraph.
+      You can find inspirational pages in the list below. Now start exploring, building and being awesome.
+
+.inspiration
+  each page in inspiration
+    - var link = page.link.replace(/jade$/, 'html');
+    .inspiration__item
+      a(href=relative(link)).inspiration__item__image
+        if page.thumbnail
+          img(src=relative(page.thumbnail)).inspiration__item__image__img
+      .inspiration__item__content
+        a(href=relative(link)).inspiration__item__title!= page.title
+        a(href=relative(link)).inspiration__item__description!= page.description

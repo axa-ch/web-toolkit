@@ -54,19 +54,19 @@ p.paragraph.
         !=' ' 
         .button
           svg.button__icon.button__icon--left.icon-svg
-            use(xlink:href='/images/icons.svg#cross')
+            use(xlink:href=relative('/images/icons.svg#cross'))
           | Icon and badge
           span.button__badge.badge 159
         !=' ' 
         .button
           | Icon right
           svg.button__icon.button__icon--right.icon-svg
-            use(xlink:href='/images/icons.svg#cross')
+            use(xlink:href=relative('/images/icons.svg#cross'))
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
     svg.icon-svg.toggle__icon
-      use(xlink:href='/images/icons.svg#source')
+      use(xlink:href=relative('/images/icons.svg#source'))
     span See code
   .toggle__content#code-1
     .tab-panel(data-tab, data-tab-default='html')
@@ -122,19 +122,19 @@ p.paragraph.
         !=' ' 
         .button.button--secondary
           svg.button__icon.button__icon--left.icon-svg
-            use(xlink:href='/images/icons.svg#cross')
+            use(xlink:href=relative('/images/icons.svg#cross'))
           | Icon and badge
           span.button__badge.badge 159
         !=' ' 
         .button.button--secondary
           | Icon right
           svg.button__icon.button__icon--right.icon-svg
-            use(xlink:href='/images/icons.svg#cross')
+            use(xlink:href=relative('/images/icons.svg#cross'))
 
 .toggle
   .toggle__button(data-info, data-target='#code-2')
     svg.icon-svg.toggle__icon
-      use(xlink:href='/images/icons.svg#source')
+      use(xlink:href=relative('/images/icons.svg#source'))
     span See code
   .toggle__content#code-2
     .tab-panel(data-tab, data-tab-default='html')
@@ -180,11 +180,11 @@ p.paragraph.
     .example__html(data-example-centered)
       .button.button--floating
         svg.button__icon.icon-svg
-          use(xlink:href='/images/icons.svg#feedback')
+          use(xlink:href=relative('/images/icons.svg#feedback'))
 .toggle
   .toggle__button(data-info, data-target='#code-3')
     svg.icon-svg.toggle__icon
-      use(xlink:href='/images/icons.svg#source')
+      use(xlink:href=relative('/images/icons.svg#source'))
     span See code
   .toggle__content#code-3
     .tab-panel(data-tab, data-tab-default='html')
