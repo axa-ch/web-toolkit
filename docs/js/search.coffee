@@ -20,6 +20,12 @@ class Search
     # get config options
     @baseUrl = @$input.data 'search-base-url'
 
+    if @baseUrl == ''
+      @baseUrl = './'
+
+    if @baseUrl.indexOf('/', @baseUrl.length - 1) == -1
+      @baseUrl += '/'
+
     # load the search data / index
     @searchData = getSearchData @$input.data 'search-index-data'
 

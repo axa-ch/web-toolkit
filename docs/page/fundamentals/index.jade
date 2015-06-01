@@ -5,8 +5,13 @@ collection: nav
 navigationSubCollection: nav__fundamentals
 template: page.jade
 description: Learn more about our basics in layout, design and code.
+headline: false
 ---
-img(src=relative('/images/fundamentals/fundamentals.svg'),width='300px')
-
-p.paragraph.
-  You can find the fundamental topics in the menu on your left hand side. Now start exploring, building and being awesome.
+  
+.hero
+  .hero__image
+    img(src=relative('/images/fundamentals/fundamentals.svg')).hero__image__img
+  .hero__content
+    .hero__content__headline #{title}
+    p.paragraph.
+      You can find the fundamental topics in the menu on your left hand side. Now start exploring, building and being awesome.

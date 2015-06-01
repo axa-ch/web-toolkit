@@ -85,7 +85,7 @@ html
         .docs-floating-action
           a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
             svg.button__icon.icon-svg
-              use(xlink:href='/images/icons.svg#feedback')
+              use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative('/images/icons.svg#feedback'))
       header.header
         .header__container.l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
@@ -124,7 +124,7 @@ html
                           href=relative(page.link)
                         )= page.title
               .autocomplete.docs-search
-                input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/')).control.control--input
+                input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/')).docs-search__control
 
       .page-content.l-container
 
@@ -163,7 +163,8 @@ html
             nav.l-col.l-col--2
               +displayMenu(currentNavCollection, false, false)
             .l-col.l-col--10
-              h1.heading.heading--page #{title}
+              if headline !== false
+                h1.heading.heading--page #{title}
               div!= contents
 
         else

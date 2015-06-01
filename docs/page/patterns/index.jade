@@ -5,8 +5,13 @@ collection: nav
 navigationSubCollection: nav__patterns
 template: page.jade
 description: Find out more about certain special topics.
+headline: false
 ---
-img(src=relative('/images/pattern/uipattern.svg'),width='300px')
   
-p.paragraph.
-  You can find all UI Patterns in the menu on your left hand side. Now start exploring, building and being awesome.
+.hero
+  .hero__image
+    img(src=relative('/images/pattern/uipattern.svg')).hero__image__img
+  .hero__content
+    .hero__content__headline #{title}
+    p.paragraph.
+      You can find all UI Patterns in the menu on your left hand side. Now start exploring, building and being awesome.
