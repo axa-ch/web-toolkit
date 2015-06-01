@@ -56,7 +56,14 @@ class Example
 
     setTimeout ( =>
       iFrame = @$frame[0]
-      iFrameResize { log:true, resizeFrom: 'iframe', checkOrigin: false }, iFrame), 500
+      iFrameResize {
+        log:true,
+        autoResize: false,
+        resizeFrom: 'child',
+        checkOrigin: false,
+        enablePublicMethods: true,
+        heightCalculationMethod: 'min'
+      }, iFrame), 500
       
 
 
