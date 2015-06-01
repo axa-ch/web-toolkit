@@ -1,0 +1,29 @@
+@import "style/mixins/clearfix";
+@import "style/blocks/heading";
+
+.hero {
+  &:extend(.clearfix all);
+  width: 800px;
+}
+
+.hero__image {
+  float: right;
+  width: 300px;
+}
+
+.hero__image__img {
+  width: 300px;
+}
+
+.hero__content {
+  margin-right: 380px;
+  font-size: 1.2em;
+}
+
+
+.hero__content__headline {
+  .heading();
+  .heading--page();
+  border-bottom: 0;
+  margin-bottom: 20px;
+}

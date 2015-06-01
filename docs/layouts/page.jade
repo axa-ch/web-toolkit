@@ -163,7 +163,8 @@ html
             nav.l-col.l-col--2
               +displayMenu(currentNavCollection, false, false)
             .l-col.l-col--10
-              h1.heading.heading--page #{title}
+              if headline !== false
+                h1.heading.heading--page #{title}
               div!= contents
 
         else
