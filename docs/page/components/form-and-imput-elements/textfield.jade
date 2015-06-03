@@ -49,7 +49,27 @@ p.paragraph The most common form of a text field.
                 .form__group__label__text Form label
               .form__group__control
                 input.control.control--input(type='text')
-
+                
+.toggle
+  .toggle__button(data-info, data-target='#code-single')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-single
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.paragraph.
+            In the example it's embedded into a
+            <a class="link" href="./form-group.html">Form Group</a>,
+            but the control block is independent.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <input type="text" class="control control--input">
 h2.heading.heading--secondary#autocomplete Auto-complete text field
 
 p.paragraph.
