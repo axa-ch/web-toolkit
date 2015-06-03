@@ -63,13 +63,14 @@ p.paragraph The most common form of a text field.
       .tab-panel__content
         .tab-panel__content__tab(data-tab-content='html')
           p.paragraph.
-            In the example it's embedded into a
+            In the example the input field is embedded into a
             <a class="link" href="./form-group.html">Form Group</a>,
             but the control block is independent.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
                 <input type="text" class="control control--input">
+
 h2.heading.heading--secondary#autocomplete Auto-complete text field
 
 p.paragraph.
@@ -91,12 +92,80 @@ p.paragraph.
                 .form__group__label__text Form label
               .form__group__control
                 .autocomplete
-                  input.control.control--input(type='text',id='autocomplete-input')
+                  input.control.control--input(type='text',id='cities-autocomplete')
       .example__script.
-        $('#autocomplete-input').autocomplete({
+        $('#cities-autocomplete').autocomplete({
           source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
-          
 
+          
+.toggle
+  .toggle__button(data-info, data-target='#code-autocomplete')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-autocomplete
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.paragraph.
+            The following markup is used for the
+            autocomplete control. Use Javascript to toggle
+            and filter the suggestions element. You can
+            also use our jQuery plugin to do it for you.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="autocomplete">
+                  <input type="text" class="control control--input">
+                  <div class="autocomplete__suggestions">
+                    <div class="autocomplete__suggestions__item autocomplete__suggestions__item--selected">8000 Zürich</div>
+                    <div class="autocomplete__suggestions__item">8400 Winterthur</div>
+                    <div class="autocomplete__suggestions__item">8472 Seuzach</div>
+                  </div>
+                </div>
+        .tab-panel__content__tab(data-tab-content='js')
+          p.paragraph.
+            Use the jQuery plugin as follows:
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="autocomplete">
+                  <input id="cities-autocomplete" type="text" class="control control--input">
+                </div>
+                
+                <script>
+                  $('#cities-autocomplete').autocomplete({
+                    source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
+                </script>
+            //-h3 Options
+            //-
+            //-table.table
+            //-  thead
+            //-    tr.table__header
+            //-      th.table__header__item Name
+            //-      th.table__header__item Type
+            //-      th.table__header__item Default
+            //-      th.table__header__item Description
+            //-  tbody.table__content
+            //-    tr.table__row
+            //-      td.table__row__item
+            //-        code.table__row__item__content source
+            //-      td.table__row__item
+            //-        code.table__row__item__content array
+            //-      td.table__row__item
+            //-        code.table__row__item__content false
+            //-      td.table__row__item
+            //-        p.table__row__item__content.
+            //-          Source to filter and create the dropdown-list.
+          p.paragraph.
+            If you implement your own solution use the
+            CSS property <code>display: block;</code> to
+            toggle the <code>suggestions</code> element.
+            
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item Analyse search statistics and optimize the algorithm to match your users search behaviour.
@@ -138,7 +207,39 @@ p.paragraph.
                 .form__group__label__text Form label
               .form__group__control
                 textarea.control.control--textarea(type='text',data-autogrow='autogrow')
-
+                
+.toggle
+  .toggle__button(data-info, data-target='#code-multiline')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-multiline
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.paragraph.
+            The autogrow control is supposed to grow, as
+            the user types. Use the <code>autogrow</code>
+            plugin to achieve this.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <textarea type="text" class="control control--textarea"></textarea>
+        .tab-panel__content__tab(data-tab-content='js')
+          p.paragraph.
+            Use the jQuery plugin as follows:
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <textarea type="text" data-autogrow="autogrow" class="control control--textarea"></textarea>
+          p.paragraph.
+            We create a shadow copy of the component to
+            measure it's dimensions and then set the size
+            on the original.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item Start with a small text field and let it grow as soon as the user enters more lines. Add a max height to prevent huge text fields.
