@@ -16,7 +16,7 @@ html
     // iOS app icon
     mixin appicon_ios(size)
       - var s = size + "x" + size
-      link(rel="apple-touch-icon-precomposed", href="images/app-icon/ios/"+s+".png", sizes=s)
+      link(rel="apple-touch-icon-precomposed", sizes=s, href=relative("/images/app-icon/ios/"+s+".png"))
         
     +appicon_ios("57")
     +appicon_ios("72")
@@ -29,7 +29,7 @@ html
     
     meta(name="apple-mobile-web-app-title", content="Web Stylegudie")
       
-    link(href="images/splash-screen/ios/750x1294.png", media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)", rel="apple-touch-startup-image")
+    link(media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)", rel="apple-touch-startup-image", href=relative("/images/splash-screen/ios/750x1294.png"))
     
     // android/chrome app iocn
     link(rel="manifest", href="manifest.json")
@@ -38,10 +38,10 @@ html
       
     // windows tiles
     meta(name="application-name", content="Web Styleguide")
-    meta(name="msapplication-square70x70logo", content="images/app-icon/windows/128x128.png")
-    meta(name="msapplication-square150x150logo", content="images/app-icon/windows/270x270.png")
-    meta(name="msapplication-wide310x150logo", content="images/app-icon/windows/558x270.png")
-    meta(name="msapplication-square310x310logo", content="images/app-icon/windows/558x558.png")
+    meta(name="msapplication-square70x70logo", content=relative("/images/app-icon/windows/128x128.png"))
+    meta(name="msapplication-square150x150logo", content=relative("/images/app-icon/windows/270x270.png"))
+    meta(name="msapplication-wide310x150logo", content=relative("/images/app-icon/windows/558x270.png"))
+    meta(name="msapplication-square310x310logo", content=relative("/images/app-icon/windows/558x558.png"))
 
     title #{title} | Web Styleguide
     link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
