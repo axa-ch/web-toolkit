@@ -3,6 +3,7 @@ title: Social metadata
 order: 7
 collection: nav__fundamentals__code
 template: page.jade
+draft: true
 ---
 
 This page covers social metadata best practices. We recommend using at least

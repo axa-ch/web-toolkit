@@ -3,6 +3,7 @@ title: SEO
 order: 6
 collection: nav__fundamentals__code
 template: page.jade
+draft: true
 ---
 
 This page will give you some simple SEO best practices. Be aware that this
