@@ -3,6 +3,7 @@ title: Form group
 order: 7
 collection: nav__components__form
 template: page.jade
+tags:  formgroup, formfield, info, error
 ---
 
 p.paragraph.
@@ -13,16 +14,10 @@ h2.heading.heading--secondary#default Standard form group
 
 p.paragraph.
   A normal fieldset contains a label and an input field.
-  Optionally, info-icons and help text can be added.
+  Optionally, info-icons can be added if necessary.
 
 p.paragraph.
-  Sometimes we can’t help and have to present an error message to our user.
-
-p.paragraph.
-  TODO: How to mark required fields
-
-p.paragraph.
-  TODO: Right align labels?
+  Info-icons provide on click help to the user and help him better understand a particular field.
 
 .example
   .example__header
@@ -34,15 +29,15 @@ p.paragraph.
     .form
       .form__group
         .form__group__label
-          .form__group__label__text Firstname
+          .form__group__label__text Firstname*
         .form__group__control
           input(type='text').control.control--input
       .form__group
         .form__group__label.form__group__label--invalid
-          .form__group__label__text Lastname
+          .form__group__label__text Lastname*
         .form__group__control
           input(type='text').control.control--input.has-error
-          .form__error-message Your name can't begin with a number.
+          .form__error-message Your name can't contain a number.
       .form__group
         .form__group__label
           .form__group__label__info-icon
@@ -89,6 +84,7 @@ h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item On desktop, right align labels.
   li.checklist__item On mobile, put the labels above the input element.
+  li.checklist__item Mark required fiels with an asterisk*
   li.checklist__item Every label should be as clear as possible. Only add an info-icon if it really needs more explanation.
   li.checklist__item Avoid too many info-icons on one site.
   li.checklist__item Try to avoid error messages in the first place. Flexible input formats and automatic error correction may help.
