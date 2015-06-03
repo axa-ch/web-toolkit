@@ -14,13 +14,13 @@ p.paragraph.
   .toc__title Table of contents
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
-      a(href='#ehanced').toc__anchor-navigation__link Basic Checkbox
+      a(href='#enhanced').toc__anchor-navigation__link Basic Checkbox
     li.toc__anchor-navigation__item
       a(href='#group').toc__anchor-navigation__link Checkbox group
     li.toc__anchor-navigation__item
       a(href='#non-enhanced').toc__anchor-navigation__link Non enhanced checkbox
 
-h2.heading.heading--secondary#ehanced Basic Checkbox
+h2.heading.heading--secondary#enhanced Basic Checkbox
 p.paragraph.
   The basic checkbox can be used for accepting terms & conditions or alike.
 
@@ -31,20 +31,23 @@ p.paragraph.
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    label.checkbox(data-checkbox)
-      input.checkbox__checkbox(type='checkbox')
-      .checkbox__label
-        .checkbox__label__text Sample checkbox
+    iframe.example__iframe
+    .example__html
+      label.checkbox(data-checkbox)
+        input.checkbox__checkbox(type='checkbox')
+        .checkbox__label
+          .checkbox__label__text Sample checkbox
 
 .toggle
-  .toggle__button
+  .toggle__button(data-info, data-target='#code-basic')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content
+  .toggle__content#code-basic
     .tab-panel
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
       .tab-panel__content
         .tab-panel__content__tab.is-active
           :markdown
@@ -78,24 +81,27 @@ p.paragraph.
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    .checkbox-group
-      label.checkbox(data-checkbox)
-        input.checkbox__checkbox(type='checkbox')
-        span.checkbox__label
-          .checkbox__label__text Sample checkbox one
-      label.checkbox(data-checkbox)
-        input.checkbox__checkbox(type='checkbox')
-        span.checkbox__label
-          .checkbox__label__text Sample checkbox two
+    iframe.example__iframe
+    .example__html
+      .checkbox-group
+        label.checkbox(data-checkbox)
+          input.checkbox__checkbox(type='checkbox')
+          span.checkbox__label
+            .checkbox__label__text Sample checkbox one
+        label.checkbox(data-checkbox)
+          input.checkbox__checkbox(type='checkbox')
+          span.checkbox__label
+            .checkbox__label__text Sample checkbox two
 .toggle
-  .toggle__button
+  .toggle__button(data-info, data-target='#code-checkbox-group')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content
+  .toggle__content#code-checkbox-group
     .tab-panel
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
       .tab-panel__content
         .tab-panel__content__tab.is-active
           .tab-panel__content__tab__fullwidth-content
@@ -131,22 +137,27 @@ p.paragraph.
 .example
   .example__header
     .example__device-selection
-      .example__break-selection__device
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    label.checkbox
-      input.checkbox__checkbox(type='checkbox')
-      .checkbox__label
-        .checkbox__label__text Sample checkbox
+    iframe.example__iframe
+    .example__html
+      label.checkbox
+        input.checkbox__checkbox(type='checkbox')
+        .checkbox__label
+          .checkbox__label__text Sample checkbox
 
 .toggle
-  .toggle__button
+  .toggle__button(data-info, data-target='#code-non-enhanced')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content
+  .toggle__content#code-non-enhanced
     .tab-panel
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
       .tab-panel__content
         .tab-panel__content__tab.is-active
           .tab-panel__content__tab__fullwidth-content
