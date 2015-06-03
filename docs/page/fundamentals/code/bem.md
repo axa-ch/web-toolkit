@@ -16,8 +16,7 @@ Therefore the CSS and HTML is aligned to BEM.
 
 This is a quick overview over the BEM methodology and how we adapted it to
 fit our needs. If you want to take a deep dive head over to
-[bem.info](https://bem.info/method/definitions/).
-
+<a class="link" href="https://bem.info/method/definitions/">bem.info</a>.
 
 > We recommend using the same principles for your app, to enhance integration
 > of the Web Design Guide and enhance your web development experience.
