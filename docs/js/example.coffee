@@ -32,16 +32,8 @@ class Example
     else
       html = '<div class="example" >' + html + '</div>'
 
-#    @$shadow = $ "<div style='position: absolute; top: -10000px;' ></div>"
-
-
-#    @$shadow.html html
-
-
     @$html.remove()
-#    @$el.append @$shadow
 
-    
     @exampleScript = @$contents[0].createElement('script')
     @exampleScript.type = 'text/javascript'
     @exampleScript.src = '/js/docs-examples.all.min.js'
@@ -51,21 +43,16 @@ class Example
     
     @setWidth null, @$devDesktop
 
-#    @$frame.load () ->
-#      console.log 'iFrame loaded'
-
     setTimeout ( =>
       iFrame = @$frame[0]
       iFrameResize {
-        log:true,
-        autoResize: false,
-        resizeFrom: 'child',
-        checkOrigin: false,
-        enablePublicMethods: true,
-        heightCalculationMethod: 'min'
-      }, iFrame), 500
+        autoResize: true
+        resizeFrom: 'child'
+        checkOrigin: false
+        sizeHeight: true
+        heightCalculationMethod: 'lowestElementOnly'
+      }, iFrame), 400
       
-
 
   setWidth: (width, activeBtn) ->
     @$devMobile.removeClass 'is-active'
@@ -75,18 +62,6 @@ class Example
 
     w = if width == null then @$el.width() + 'px' else width
     
-#    @$shadow.css {
-#      width: w
-#    }
-
-
-
-
-#    h = parseInt(@$frame.css('padding-top'), 10) + parseInt(@$frame.css('padding-bottom'), 10) + @$shadow.find(".example").height() + 'px'
-
-#    @$frame.attr 'width', parseInt w
-
-
     @$frame.animate {
       width: w
     }
