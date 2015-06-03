@@ -51,7 +51,7 @@ class Example
         checkOrigin: false
         sizeHeight: true
         heightCalculationMethod: 'lowestElementOnly'
-      }, iFrame), 400
+      }, iFrame), 500
       
 
   setWidth: (width, activeBtn) ->
