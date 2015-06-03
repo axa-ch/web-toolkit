@@ -1,4 +1,4 @@
----
+﻿---
 title: Segmented control
 order: 10
 collection: nav__components__form
@@ -23,19 +23,123 @@ h2.heading.heading--secondary#basic Basic Segmented Control
 p.paragraph.
   This element aligns different options next to each other.
 
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    iframe.example__iframe
+    .example__html
+      .l-container
+        .form
+          .form__group
+            label.form__group__label
+              .form__group__label__text Form label
+            .form__group__control
+              .segmented-control(data-segmented-control)
+                label.segmented-control__item
+                  input.segmented-control__item__radio(type='radio', name='bar')
+                  span.segmented-control__item__label Ja
+                label.segmented-control__item
+                  input.segmented-control__item__radio(type='radio', name='bar')
+                  span.segmented-control__item__label Nein
+
+.toggle
+  .toggle__button(data-info, data-target='#code-basic')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-basic
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown
+            The ``segmented-control--js`` modifier will
+            add custom styling to radio buttons to look
+            like a segmented-control.
+            The `segmented-control` plugin does that
+            automatically. It also sets the 
+            `.is-active` state on the active item.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div data-segmented-control="data-segmented-control" class="segmented-control">
+                  <label class="segmented-control__item">
+                    <input type="radio" name="bar" class="segmented-control__item__radio"/><span class="segmented-control__item__label">Ja</span>
+                  </label><label class="segmented-control__item">
+                    <input type="radio" name="bar" class="segmented-control__item__radio"/><span class="segmented-control__item__label">Nein</span>
+                  </label>
+                </div>
+        .tab-panel__content__tab(data-tab-content='js')
+          :markdown
+            If you can't use the jQuery plugin, use the
+            `segmented-control--js` modifier for styling.
+            Set the `.is-active` state on the correct
+            `segmented-control__item` and be sure to
+            **handle keyboard navigation.**
+
+
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item Default values can be set if appropriate - if in doubt, do not set defaults.
   li.checklist__item 
-  :markdown
-    Do not use more than 5 options in a segmented control. A [dropdown](./dropdown.html) can be an alternative.
+    :markdown
+      Do not use more than 5 options in a segmented control. A [dropdown](./dropdown.html) can be an alternative.
 
 .hr
 
-h2.heading.heading--secondary#stacjed Stacked Segmented Control
+h2.heading.heading--secondary#stacked Stacked Segmented Control
 
 p.paragraph.
   A stacked segmented control is used when text gets to long to be presented next to each other. If you are using the Segmented Control jQuery Plugin, this will be automatically handled for you.
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    iframe.example__iframe
+    .example__html
+      div(style='max-width:200px;')
+        .segmented-control(data-segmented-control)
+          label.segmented-control__item
+            input.segmented-control__item__radio(type='radio', name='bar')
+            span.segmented-control__item__label Foo bar 
+          label.segmented-control__item
+            input.segmented-control__item__radio(type='radio', name='bar')
+            span.segmented-control__item__label long text
+          label.segmented-control__item
+            input.segmented-control__item__radio(type='radio', name='bar')
+            span.segmented-control__item__label and some 
+          label.segmented-control__item
+            input.segmented-control__item__radio(type='radio', name='bar')
+            span.segmented-control__item__label more controls 
+
+.toggle
+  .toggle__button(data-info, data-target='#code-stacked')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-stacked
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown
+            Add the `segmented-control--stacked` modifier
+            to create stacked segmented-controls.
+            The jQuery plugin will do that automatically
+            if there's not enough space.
 
 h3.heading.heading--tertiary UX Checklist
 
@@ -48,3 +152,54 @@ h2.heading.heading--secondary#backup Backup: Radio Buttons
 
 p.paragraph.
   If presented with problems, the user should always be able to use the browser native radio buttons as a fallback solution.
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    iframe.example__iframe
+    .example__html
+      .l-container
+        .form
+          .form__group
+            label.form__group__label
+              .form__group__label__text Form label
+            .form__group__control
+              .segmented-control
+                label.segmented-control__item
+                  input.segmented-control__item__radio(type='radio', name='bar')
+                  span.segmented-control__item__label Ja
+                label.segmented-control__item
+                  input.segmented-control__item__radio(type='radio', name='bar')
+                  span.segmented-control__item__label Nein
+
+.toggle
+  .toggle__button(data-info, data-target='#code-fallback')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-fallback
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown
+            Use the same markup to create standard radio
+            buttons. Just omit the jQuery plugin and the
+            `segmented-control--js` modifier.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="segmented-control">
+                  <label class="segmented-control__item">
+                    <input type="radio" name="foo" class="segmented-control__item__radio"/><span class="segmented-control__item__label">Ja</span>
+                  </label>
+                  <label class="segmented-control__item">
+                    <input type="radio" name="foo" class="segmented-control__item__radio"/><span class="segmented-control__item__label">Nein</span>
+                  </label>
+                </div>
