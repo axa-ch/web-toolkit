@@ -72,7 +72,6 @@ p.paragraph.
               .form__group__control
                 .autocomplete
                   input.control.control--input(type='text',id='autocomplete-input')
-        script(type='text/javascript').
       .example__script.
         $('#autocomplete-input').autocomplete({
           source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
@@ -102,6 +101,23 @@ h2.heading.heading--secondary#multiline Multi-line text field
 
 p.paragraph.
   Used whenever more than just a few words should be entered.
+  
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+      iframe.example__iframe
+      .example__html
+        .l-container
+          .form
+            .form__group
+              label.form__group__label
+                .form__group__label__text Form label
+              .form__group__control
+                textarea.control.control--textarea(type='text',data-autogrow='autogrow')
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
