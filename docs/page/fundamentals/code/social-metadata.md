@@ -77,9 +77,7 @@ with the following tags.
 Schema.org markup is used by Google+. Note that Google+ falls back to Open Graph data
 if not Schema.org data is present.
 
-Find below a minimal example markup or see
-[Snippet - Google+ Platform — Google Developers](https://developers.google.com/+/web/snippet/?hl=de)
-for additional information.
+Find below a minimal example markup or see <a class="link" href"https://developers.google.com/+/web/snippet/?hl=de">Snippet - Google+ Platform — Google Developers</a> for additional information.
 
 ```html
 <!-- Update your html tag to include the itemscope and itemtype attributes. -->
