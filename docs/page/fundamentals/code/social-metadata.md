@@ -15,7 +15,7 @@ Open Graph and Twitter card tags. Add Schema.org markup to cover Google+.
 
 Before your cards show on Twitter, you must first have your domain approved.
 Fortunately, it's a super-easy process. After you implement your cards, simply
-enter your sample URL into the [validation tool](https://dev.twitter.com/docs/cards/validation/validator).
+enter your sample URL into the <a class="link" href="https://dev.twitter.com/docs/cards/validation/validator">validation tool</a>.
 After checking your markup, select the "Submit for Approval" button.
 
 ## Facebook, Google+
@@ -26,8 +26,8 @@ No approval required.
 
 Open Graph data is used by facebook and other (minor) social media platforms.
 
-Find below a minimal recommended markup. See [ogp.me](http://ogp.me/) for a complete documentation.
-Also have a look at [facebooks best practices](https://developers.facebook.com/docs/sharing/best-practices),
+Find below a minimal recommended markup. See <a href="http://ogp.me/" class="link">ogp.me</a> for a complete documentation.
+Also have a look at <a href="https://developers.facebook.com/docs/sharing/best-practices" class="link">facebooks best practices</a>,
  especially when it comes to choosing an appropriate image size.
 
 Minimal recommended markup:
@@ -47,7 +47,7 @@ http://ogp.me/ns/article#">
 
 # Twitter card
 
-Find below a minimal markup for a summary card. See [Card Types | Twitter Developers](https://dev.twitter.com/cards/types)
+Find below a minimal markup for a summary card. See <a class="link" href"https://dev.twitter.com/cards/types">Card Types | Twitter Developers</a>
 for a list of available card types and how to use them.
 
 ```html
