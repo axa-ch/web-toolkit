@@ -1,4 +1,4 @@
----
+﻿---
 title: Textfield
 order: 11
 collection: nav__components__form
@@ -43,7 +43,7 @@ p.paragraph The most common form of a text field.
       iframe.example__iframe
       .example__html
         .l-container
-          .form(style='overflow: hidden;')
+          .form
             .form__group
               label.form__group__label
                 .form__group__label__text Form label
@@ -54,6 +54,29 @@ h2.heading.heading--secondary#autocomplete Auto-complete text field
 
 p.paragraph.
   Use the auto-complete feature to provide real-time completions in dropdowns to enhance accuracy and efficiency.  Use auto-complete instead of extreme long dropdown fields (country list).
+
+.example
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+      iframe.example__iframe
+      .example__html
+        .l-container
+          .form
+            .form__group
+              label.form__group__label
+                .form__group__label__text Form label
+              .form__group__control
+                .autocomplete
+                  input.control.control--input(type='text',id='autocomplete-input')
+        script(type='text/javascript').
+      .example__script.
+        $('#autocomplete-input').autocomplete({
+          source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
+          
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
