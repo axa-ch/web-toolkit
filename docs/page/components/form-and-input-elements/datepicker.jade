@@ -9,31 +9,126 @@ tags: Date, Time, Picker
 p.paragraph.
   The datepicker component helps the user selecting a date.
 
-.example
+.example(data-example-relative-base=relative('/'))
   .example__header
     .example__device-selection
       a.example__device-selection__device.example__device-selection__device--mobile
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    .datepicker#myDatepicker(data-datepicker-watch="#myDatepickerInput", data-datepicker-display-week)
-      a(data-datepicker="#myDatepicker").datepicker__trigger
-      .datepicker__input
-        input(type='text').control.control--input#myDatepickerInput
+    iframe.example__iframe
+    .example__html
+      .l-container
+        .form
+          .form__group
+            label.form__group__label
+              .form__group__label__text Form label
+            .form__group__control
+              .datepicker#myDatepicker(data-datepicker-watch="#myDatepickerInput", data-datepicker-display-week)
+                a(data-datepicker="#myDatepicker").datepicker__trigger
+                .datepicker__input
+                  input(type='text').control.control--input#myDatepickerInput
 
 .toggle
-  .toggle__button
+  .toggle__button(data-info, data-target='#code')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content
-    .tab-panel
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
       .tab-panel__content
-        .tab-panel__content__tab.is-active
+        .tab-panel__content__tab(data-tab-content='html')
           :markdown
-            TODO: Pure HTML sample, jQuery plugin docs, etc.
+            This is the pure HTML markup to create a
+            datepicker. Use our jQuery plugin or custom
+            code to generate the markup and implement
+            the required behaviour.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="picker picker--with-weeknumber is-active">
+                  <div class="picker__header">
+                    <a class="picker__prev"></a><a class="picker__next"></a>
+                    <div class="picker__headline"><span class="picker__headline__month">June</span><span> </span><span>2015</span></div>
+                  </div>
+                  <div class="picker__content">
+                    <div class="picker__month">
+                      <div class="picker__week picker__week--headline">
+                        <div class="picker__weeknumber picker__weeknumber--headline"></div>
+                        <div class="picker__day picker__day--headline">Mo</div>
+                        <div class="picker__day picker__day--headline">Tu</div>
+                        <div class="picker__day picker__day--headline">We</div>
+                        <div class="picker__day picker__day--headline">Th</div>
+                        <div class="picker__day picker__day--headline">Fr</div>
+                        <div class="picker__day picker__day--headline">Sa</div>
+                        <div class="picker__day picker__day--headline">Su</div>
+                      </div>
+                      <div class="picker__week">
+                        <div class="picker__weeknumber">23</div>
+                        <div class="picker__day">1</div>
+                        <div class="picker__day">2</div>
+                        <div class="picker__day">3</div>
+                        <div class="picker__day">4</div>
+                        <div class="picker__day picker__day--today">5</div>
+                        <div class="picker__day">6</div>
+                        <div class="picker__day">7</div>
+                      </div>
+                      <div class="picker__week">
+                        <div class="picker__weeknumber">24</div>
+                        <div class="picker__day">8</div>
+                        <div class="picker__day">9</div>
+                        <div class="picker__day">10</div>
+                        <div class="picker__day">11</div>
+                        <div class="picker__day">12</div>
+                        <div class="picker__day">13</div>
+                        <div class="picker__day">14</div>
+                      </div>
+                      <div class="picker__week">
+                        <div class="picker__weeknumber">25</div>
+                        <div class="picker__day">15</div>
+                        <div class="picker__day">16</div>
+                        <div class="picker__day">17</div>
+                        <div class="picker__day">18</div>
+                        <div class="picker__day">19</div>
+                        <div class="picker__day">20</div>
+                        <div class="picker__day">21</div>
+                      </div>
+                      <div class="picker__week">
+                        <div class="picker__weeknumber">26</div>
+                        <div class="picker__day">22</div>
+                        <div class="picker__day">23</div>
+                        <div class="picker__day">24</div>
+                        <div class="picker__day">25</div>
+                        <div class="picker__day">26</div>
+                        <div class="picker__day">27</div>
+                        <div class="picker__day">28</div>
+                      </div>
+                      <div class="picker__week">
+                        <div class="picker__weeknumber">27</div>
+                        <div class="picker__day">29</div>
+                        <div class="picker__day">30</div>
+                        <div class="picker__day picker__day--next-month">1</div>
+                        <div class="picker__day picker__day--next-month">2</div>
+                        <div class="picker__day picker__day--next-month">3</div>
+                        <div class="picker__day picker__day--next-month">4</div>
+                        <div class="picker__day picker__day--next-month">5</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+        .tab-panel__content__tab(data-tab-content='js')
+          :markdown
+            To get localized strings use moment.locale as
+            described in the <a href="http://momentjs.com/docs/" class="link">momentjs docs</a>.
+
+            Use the jQuery plugin as follows. It will
+            create the calendar and implements user
+            interaction.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
