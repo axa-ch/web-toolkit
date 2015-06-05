@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="414px" height="275px" viewBox="433 263 414 275" style="enable-background:new 433 263 414 275;" xml:space="preserve">
+<rect x="433" y="269" style="fill:#F2F2F2;" width="414" height="269"/>
+<text transform="matrix(1 0 0 1 448.9727 302.7668)" style="font-family:'FranklinGothic-Medium'; font-size:14;">Section Title</text>
+<text transform="matrix(1 0 0 1 448.9727 421.5159)" style="font-family:'FranklinGothic-Medium'; font-size:14;">Section Title</text>
+<text transform="matrix(1 0 0 1 448.9722 316.9475)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label one</text>
+<rect x="555" y="309" width="93" height="12"/>
+<text transform="matrix(1 0 0 1 448.9722 335.1624)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label two</text>
+<rect x="555" y="326" width="206" height="12"/>
+<text transform="matrix(1 0 0 1 448.9722 353.3772)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label three</text>
+<rect x="555" y="343" width="63" height="12"/>
+<text transform="matrix(1 0 0 1 448.9722 371.592)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label four</text>
+<rect x="555" y="360" width="156" height="12"/>
+<rect x="555" y="447" width="278" height="12"/>
+<text transform="matrix(1 0 0 1 448.9722 389.8059)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label number five</text>
+<rect x="555" y="378" width="206" height="26"/>
+<rect x="747" y="500" style="fill:#4D4D4D;" width="83" height="23"/>
+<rect x="466" y="429" width="260" height="12"/>
+<rect x="448.5" y="429.5" style="fill:#F2F2F2;stroke:#000000;stroke-miterlimit:10;" width="12" height="12"/>
+<g>
+	<g>
+		<polyline style="fill:none;stroke:#103184;stroke-width:2;stroke-miterlimit:10;" points="546,286 508.667,315 550,315 507,332 
+			550.75,332 512.75,351 549.75,351 505.5,368 551,368 550.875,387.868 454,417.875 454,435.5 551.417,453 735.438,508.073 		"/>
+		<g>
+			<polygon style="fill:#103184;" points="728.057,513.558 733.195,507.365 732.307,499.367 747,511.5 			"/>
+		</g>
+	</g>
+</g>
+<rect x="433" y="263" style="fill:#FF1821;" width="414" height="11"/>
+</svg>
