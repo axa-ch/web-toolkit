@@ -10,9 +10,6 @@
     "style",
     "guide"
   ],
-  "scripts": {
-    "prepublish": "gulp build"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/axa-ch/style-guide.git"
