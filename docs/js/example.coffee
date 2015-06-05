@@ -2,18 +2,11 @@
 # Abandon all hope, you who enter here.
 #--------------------------------------
 
-
-head = ' \
-<link rel="stylesheet" href="http://fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css">\
-<link rel="stylesheet" href="/css/normalize.min.css" />\
-<link rel="stylesheet" href="/css/style.min.css" />\
-'
-
 class Example
 
   constructor: (el) ->
     @$el = $ el
-
+    
     @$html = @$el.find '.example__html'
     @$frame = @$el.find '.example__iframe'
     
@@ -27,18 +20,26 @@ class Example
 
     @$contents = @$frame.contents()
 
-    @$contents.find('head').html head
+
+    @relativeBasePath = @$el.data 'example-relative-base'
+    @head = ' \
+<link rel="stylesheet" href="http://fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css">\
+<link rel="stylesheet" href="' + @relativeBasePath + '/css/normalize.min.css" />\
+<link rel="stylesheet" href="' + @relativeBasePath + '/css/style.min.css" />'
+    @$contents.find('head').html @head
+
 
     html = @$html.html()
     
-    @bodyStyles = @$el.data('example-body-styles')
-    @maxHeight = @$el.data('example-max-height')
+    @maxHeight = @$el.data 'example-max-height' 
     if not @maxHeight?
       @maxHeight = 'infinity'
-    console.log @maxHeight
-    
+
+        
+    @bodyStyles = @$el.data 'example-body-styles'
     if @bodyStyles? and @bodyStyles.length > 0
       @$contents.find('body').attr 'style', @bodyStyles
+
 
     if @$html.data 'example-centered'
       html = '<div style="text-align: center;" class="example" ><div style="display: inline-block; text-align: left;" >' + html + '</div></div>'
@@ -47,9 +48,10 @@ class Example
 
     @$html.remove()
 
+
     @exampleScript = @$contents[0].createElement 'script'
     @exampleScript.type = 'text/javascript'
-    @exampleScript.src = '/js/docs-examples.all.min.js'
+    @exampleScript.src = @relativeBasePath + '/js/docs-examples.all.min.js'
     
     @$contents.find('body').html html
     @$contents.find('head')[0].appendChild @exampleScript
@@ -62,6 +64,7 @@ class Example
       setTimeout ( =>
         @$contents.find('body')[0].appendChild @customScript), 500
       
+
     @$contents.find("body").html html
     
     @setWidth null, @$devDesktop
