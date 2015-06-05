@@ -22,6 +22,55 @@ h2.heading.heading--secondary#progressbar Progressbar
 
 p.paragraph.
    A progressbar is used for activities that might take more than just a few moments to complete. It has the ability to give quantitative feedback to the user (e.g. 20% uploaded  or 10 of 15 pictures deleted).
+   
+.example(data-example-relative-base=relative('/'))
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    iframe.example__iframe
+    .example__html
+      .progressbar
+        .progressbar__description awesome_image.jpg
+        .progressbar__percentage 22%
+        .progressbar__progress
+          .progressbar__progress-background
+            .progressbar__progress-foreground(style='width: 22%')
+    
+.toggle
+  .toggle__button(data-info, data-target='#code')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          ul.checklist
+            li.checklist__item.
+              Modify the content of
+              <code>progressbar__percentage</code> and the
+              width of <code>progressbar__progress-foreground</code>
+              using JavaScript to display progress.
+            
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="progressbar">
+                  <div class="progressbar__description">awesome_image.jpg</div>
+                  <div class="progressbar__percentage">22%</div>
+                  <div class="progressbar__progress">
+                    <div class="progressbar__progress-background">
+                      <div style="width: 22%" class="progressbar__progress-foreground"></div>
+                    </div>
+                  </div>
+                </div>
+          
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
