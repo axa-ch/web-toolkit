@@ -2,41 +2,46 @@
 <!-- Generator: Adobe Illustrator 16.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="600px" height="400px" viewBox="-93 -62.5 600 400" style="enable-background:new -93 -62.5 600 400;" xml:space="preserve"
-	>
-<rect x="-93" y="-52.468" style="fill:#F2F2F2;" width="600" height="389.855"/>
-<text transform="matrix(1 0 0 1 -69.8516 -8.7744)" style="font-family:'FranklinGothic-Medium'; font-size:20.2899;">Section Title</text>
-<text transform="matrix(1 0 0 1 -69.8516 16.2964)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label one</text>
-<rect x="83.812" y="4.779" width="134.782" height="17.391"/>
-<text transform="matrix(1 0 0 1 -69.8516 42.6948)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label two</text>
-<rect x="83.812" y="29.417" width="298.551" height="17.391"/>
-<text transform="matrix(1 0 0 1 -69.8516 69.0933)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label three</text>
-<rect x="83.812" y="54.055" width="91.305" height="17.391"/>
-<text transform="matrix(1 0 0 1 -69.8516 95.4917)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label four</text>
-<rect x="83.812" y="78.692" width="226.087" height="17.391"/>
-<rect x="83.812" y="204.779" width="402.898" height="17.391"/>
-<text transform="matrix(1 0 0 1 -69.8516 121.8887)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label number five</text>
-<rect x="83.812" y="104.779" width="298.551" height="37.681"/>
-<rect x="362.072" y="281.591" style="fill:#4D4D4D;" width="120.29" height="33.333"/>
-<rect x="-45.174" y="178.692" width="376.812" height="17.391"/>
-<rect x="-70.536" y="179.417" style="fill:#F2F2F2;stroke:#000000;stroke-width:1.4493;stroke-miterlimit:10;" width="17.391" height="17.391"/>
+	 width="600px" height="400px" viewBox="0 0 600 400" enable-background="new 0 0 600 400" xml:space="preserve">
+<rect y="9.782" fill="#F2F2F2" width="600" height="389.855"/>
+<text transform="matrix(1 0 0 1 23.1484 53.4758)" font-family="'FranklinGothic-Medium'" font-size="20.2899">Section Title</text>
+<text transform="matrix(1 0 0 1 23.1484 78.5471)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label one</text>
+<rect x="176.812" y="67.03" fill="#919191" width="134.782" height="17.392"/>
+<text transform="matrix(1 0 0 1 23.1484 104.9456)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label two</text>
+<rect x="176.812" y="91.668" fill="#919191" width="298.551" height="17.391"/>
+<text transform="matrix(1 0 0 1 23.1484 131.344)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label three</text>
+<rect x="176.812" y="116.306" fill="#919191" width="91.305" height="17.391"/>
+<text transform="matrix(1 0 0 1 23.1484 157.7424)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label four</text>
+<rect x="176.812" y="140.943" fill="#919191" width="226.086" height="17.392"/>
+<rect x="176.812" y="267.03" fill="#919191" width="402.898" height="17.392"/>
+<text transform="matrix(1 0 0 1 23.1484 184.1399)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label number five</text>
+<rect x="176.812" y="167.03" fill="#919191" width="298.551" height="37.682"/>
+<rect x="455.072" y="343.842" fill="#4D4D4D" width="120.29" height="33.333"/>
+<rect x="47.826" y="240.943" fill="#919191" width="376.813" height="17.392"/>
+<rect x="22.464" y="241.668" fill="#F2F2F2" stroke="#000000" stroke-width="1.4493" stroke-miterlimit="10" width="17.391" height="17.391"/>
 <g>
 	<g>
-		<polyline style="fill:none;stroke:#103184;stroke-width:2.8986;stroke-miterlimit:10;" points="70.768,-28.554 16.662,13.475 
-			76.565,13.475 14.247,38.112 77.652,38.112 22.58,65.648 76.203,65.648 12.072,90.286 78.015,90.286 77.833,119.079 
-			-62.565,162.569 -62.565,188.112 78.619,213.475 345.315,293.29 		"/>
+		<polyline fill="none" stroke="#103184" stroke-miterlimit="10" points="163.768,33.697 109.662,75.726 169.565,75.726 
+			107.247,100.363 170.652,100.363 115.58,127.899 169.203,127.899 105.072,152.537 171.015,152.537 170.833,181.33 30.435,224.82 
+			30.435,250.363 171.619,275.726 438.314,355.541 		"/>
 		<g>
-			<polygon style="fill:#103184;" points="334.618,301.241 342.065,292.265 340.777,280.674 362.072,298.258 			"/>
+			<polygon fill="#103184" points="427.618,363.491 435.064,354.516 433.777,342.925 455.072,360.509 			"/>
 		</g>
 	</g>
 </g>
-<rect x="-93" y="-61.888" style="fill:#FF1821;" width="600" height="15.942"/>
+<rect y="0.363" fill="#FF1821" width="600" height="15.942"/>
 <g>
-	<rect x="-70.536" y="270.102" style="opacity:0.5;fill:#FF1821;" width="332.201" height="46.377"/>
-	<text transform="matrix(1 0 0 1 -4.8691 298.3926)" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:17.3913;">Lates Product Advertisment</text>
+	<rect x="22.464" y="332.353" opacity="0.5" fill="#FF1821" enable-background="new    " width="332.201" height="46.377"/>
+	<text transform="matrix(1 0 0 1 88.1309 360.6438)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">Latest Product Advertisment</text>
 </g>
 <g>
-	<rect x="392.509" y="-22.741" style="opacity:0.5;fill:#FF1821;" width="94.928" height="205.8"/>
-	<text transform="matrix(1 0 0 1 420.0859 22.6543)"><tspan x="0" y="0" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:17.3913;">Great</tspan><tspan x="9.296" y="20.87" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:17.3913;">UX</tspan><tspan x="9.73" y="41.739" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:17.3913;">for</tspan><tspan x="-16.147" y="62.609" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:17.3913;">dummies!</tspan><tspan x="-12.495" y="83.479" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:17.3913;">Read our</tspan><tspan x="-21.896" y="104.348" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:17.3913;">whitepaper</tspan><tspan x="1.887" y="125.218" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:17.3913;">now!</tspan></text>
+	<rect x="485.509" y="39.51" opacity="0.5" fill="#FF1821" enable-background="new    " width="94.929" height="205.8"/>
+	<text transform="matrix(1 0 0 1 513.0859 84.9055)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">Great</text>
+	<text transform="matrix(1 0 0 1 522.3818 105.7747)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">UX</text>
+	<text transform="matrix(1 0 0 1 522.8164 126.6438)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">for</text>
+	<text transform="matrix(1 0 0 1 496.9395 147.5139)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">dummies!</text>
+	<text transform="matrix(1 0 0 1 500.5908 168.384)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">Read our</text>
+	<text transform="matrix(1 0 0 1 491.1895 189.2532)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">whitepaper</text>
+	<text transform="matrix(1 0 0 1 514.9727 210.1233)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">now!</text>
 </g>
 </svg>
