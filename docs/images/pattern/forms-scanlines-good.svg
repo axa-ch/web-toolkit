@@ -2,32 +2,32 @@
 <!-- Generator: Adobe Illustrator 16.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="600px" height="400px" viewBox="0 0 600 400" style="enable-background:new 0 0 600 400;" xml:space="preserve">
-<rect y="10" style="fill:#F2F2F2;" width="600" height="390"/>
-<text transform="matrix(1 0 0 1 47.3369 52.7031)" style="font-family:'FranklinGothic-Medium'; font-size:20.2899;">Section Title</text>
-<text transform="matrix(1 0 0 1 47.3369 229.7344)" style="font-family:'FranklinGothic-Medium'; font-size:20.2899;">Section Title</text>
-<text transform="matrix(1 0 0 1 81.3296 77.876)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label one</text>
-<rect x="171" y="65" width="123" height="18"/>
-<text transform="matrix(1 0 0 1 82.145 103.7207)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label two</text>
-<rect x="171" y="90" width="299" height="17"/>
-<text transform="matrix(1 0 0 1 70.0269 127.1104)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label three</text>
-<rect x="171" y="114" width="91" height="18"/>
-<text transform="matrix(1 0 0 1 79.2236 152.8955)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label four</text>
-<rect x="171" y="139" width="171" height="18"/>
-<rect x="197" y="242" width="378" height="17"/>
-<rect x="171" y="267" width="404" height="17"/>
-<text transform="matrix(1 0 0 1 19.9336 180.8779)" style="font-family:'FranklinGothic-Medium'; font-size:17.3913;">Label number five</text>
-<rect x="171" y="164" width="299" height="37"/>
-<rect x="171" y="339" style="fill:#4D4D4D;" width="116" height="33"/>
-<rect x="171.5" y="242.5" style="fill:#F2F2F2;stroke:#000000;stroke-miterlimit:10;" width="18" height="18"/>
+	 width="600px" height="400px" viewBox="0 0 600 400" enable-background="new 0 0 600 400" xml:space="preserve">
+<rect y="10" fill="#F2F2F2" width="600" height="390"/>
+<text transform="matrix(1 0 0 1 47.3369 52.7024)" font-family="'FranklinGothic-Medium'" font-size="20.2899">Section Title</text>
+<text transform="matrix(1 0 0 1 47.3369 229.7346)" font-family="'FranklinGothic-Medium'" font-size="20.2899">Section Title</text>
+<text transform="matrix(1 0 0 1 81.3296 77.8762)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label one</text>
+<rect x="171" y="65" fill="#919191" width="123" height="18"/>
+<text transform="matrix(1 0 0 1 82.145 103.7209)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label two</text>
+<rect x="171" y="90" fill="#919191" width="299" height="17"/>
+<text transform="matrix(1 0 0 1 70.0269 127.1106)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label three</text>
+<rect x="171" y="114" fill="#919191" width="91" height="18"/>
+<text transform="matrix(1 0 0 1 79.2236 152.8948)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label four</text>
+<rect x="171" y="139" fill="#919191" width="171" height="18"/>
+<rect x="197" y="242" fill="#919191" width="378" height="17"/>
+<rect x="171" y="267" fill="#919191" width="404" height="17"/>
+<text transform="matrix(1 0 0 1 19.9336 180.8772)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label number five</text>
+<rect x="171" y="164" fill="#919191" width="299" height="37"/>
+<rect x="171" y="339" fill="#4D4D4D" width="116" height="33"/>
+<rect x="171.5" y="242.5" fill="#F2F2F2" stroke="#000000" stroke-miterlimit="10" width="18" height="18"/>
 <g>
-	<line style="fill:#010318;" x1="162" y1="33" x2="162" y2="339"/>
+	<line fill="none" x1="162" y1="33" x2="162" y2="339"/>
 	<g>
-		<line style="fill:none;stroke:#103184;stroke-width:3;stroke-miterlimit:10;" x1="162.5" y1="33" x2="162.5" y2="322"/>
+		<line fill="none" stroke="#103184" stroke-width="3" stroke-miterlimit="10" x1="162.5" y1="33" x2="162.5" y2="322"/>
 		<g>
-			<polygon style="fill:#103184;" points="151.585,313.687 162.319,318.246 173.053,313.687 162.319,339.131 			"/>
+			<polygon fill="#103184" points="151.585,313.687 162.319,318.245 173.053,313.687 162.319,339.131 			"/>
 		</g>
 	</g>
 </g>
-<rect style="fill:#7A9F35;" width="600" height="16"/>
+<rect y="0" fill="#7A9F35" width="600" height="16"/>
 </svg>

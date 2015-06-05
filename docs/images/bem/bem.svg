@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="604.11px" height="403.687px" viewBox="10.998 -28.015 604.11 403.687"
+	 enable-background="new 10.998 -28.015 604.11 403.687" xml:space="preserve">
+<path opacity="0.2" fill="#5C91C0" stroke="#5C91C0" stroke-width="1.0051" stroke-miterlimit="10" enable-background="new    " d="
+	M599.5,95.081c0,7.127-4.388,13.405-11.015,13.405H24.498c-6.628,0-12.998-6.278-12.998-13.405V-14.609
+	c0-7.127,6.37-12.904,12.998-12.904h563.987c6.628,0,11.015,5.777,11.015,12.904V95.081L599.5,95.081z"/>
+<path opacity="0.1" enable-background="new    " d="M599.5,362.823c0,7.094-5.424,12.849-12.113,12.849H24.113
+	c-6.689,0-12.113-5.755-12.113-12.849v-230.15c0-7.095,5.424-12.846,12.113-12.846h563.273c6.689,0,12.113,5.751,12.113,12.846
+	L599.5,362.823L599.5,362.823z"/>
+<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 605.1025 -27.5154)" font-family="'FranklinGothic-Medium'" font-size="12">Header Block</text>
+<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 605.1025 119.8274)" font-family="'FranklinGothic-Medium'" font-size="12">Content Block</text>
+<text transform="matrix(1 0 0 1 498.0117 137.571)" fill="#7A9F35" font-family="'FranklinGothic-Medium'" font-size="12">Fullwidth Block 1</text>
+<text transform="matrix(1 0 0 1 498.0107 271.5212)" fill="#103184" font-family="'FranklinGothic-Medium'" font-size="12">Fullwidth Block 2</text>
+<text transform="matrix(1 0 0 1 178 63.9851)" fill="#808080" font-family="'FranklinGothic-Medium'" font-size="12">Navigationbar Block</text>
+<text transform="matrix(1 0 0 1 477.5 79.4851)" fill="#103184" font-family="'FranklinGothic-Medium'" font-size="12">Search Block</text>
+<text transform="matrix(1 0 0 1 117.5 -7.0149)" fill="#103184" font-family="'FranklinGothic-Medium'" font-size="12">Logo Block</text>
+<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 486.5469 55.9807)" fill="#7A9F35" font-family="'FranklinGothic-Medium'" font-size="12">Login Block</text>
+<rect x="21" y="-19.013" fill="#103184" width="92" height="76"/>
+<text transform="matrix(1 0 0 1 54.144 24.0066)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Logo</text>
+<rect x="399" y="82.987" fill="#103184" width="121" height="14"/>
+<text transform="matrix(1 0 0 1 441.3965 93.6121)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Search</text>
+<rect x="524" y="82.987" fill="#103184" width="65" height="14"/>
+<text transform="matrix(1 0 0 1 526.2832 93.4187)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Search Icon</text>
+<rect x="497" y="-12.013" fill="#7A9F35" width="92" height="22"/>
+<text transform="matrix(1 0 0 1 518.3887 1.7371)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">username</text>
+<rect x="497" y="10.987" fill="#7A9F35" width="92" height="22"/>
+<text transform="matrix(1 0 0 1 517.3887 25.3269)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">password</text>
+<rect x="543" y="33.987" fill="#7A9F35" width="46" height="22"/>
+<text transform="matrix(1 0 0 1 553.4609 48.3269)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">login</text>
+<rect x="20" y="68.987" fill="#919191" width="92" height="29"/>
+<text transform="matrix(1 0 0 1 56.7339 88.5066)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Tab</text>
+<rect x="113" y="68.987" fill="#919191" width="92" height="29"/>
+<text transform="matrix(1 0 0 1 149.7339 88.5066)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Tab</text>
+<rect x="206" y="68.987" fill="#919191" width="92" height="29"/>
+<text transform="matrix(1 0 0 1 242.9756 88.5066)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Tab</text>
+<rect x="299" y="68.987" fill="#919191" width="92" height="29"/>
+<text transform="matrix(1 0 0 1 335.9844 88.5066)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Tab</text>
+<rect x="417" y="141.495" fill="#7A9F35" width="172" height="110.985"/>
+<text transform="matrix(1 0 0 1 486.5469 194.571)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Image</text>
+<rect x="20" y="142.495" fill="#7A9F35" width="384" height="5"/>
+<rect x="20" y="152.495" fill="#7A9F35" width="384" height="5"/>
+<rect x="20" y="163.495" fill="#7A9F35" width="384" height="5"/>
+<rect x="20" y="173.488" fill="#7A9F35" width="384" height="4.996"/>
+<rect x="20" y="184.483" fill="#7A9F35" width="384" height="4.999"/>
+<rect x="20" y="194.481" fill="#7A9F35" width="384" height="4.999"/>
+<rect x="20" y="204.48" fill="#7A9F35" width="384" height="5"/>
+<rect x="20" y="215.48" fill="#7A9F35" width="384" height="5"/>
+<rect x="20" y="225.48" fill="#7A9F35" width="384" height="5"/>
+<rect x="20" y="236.48" fill="#7A9F35" width="384" height="5"/>
+<rect x="20" y="246.48" fill="#7A9F35" width="384" height="5"/>
+<rect x="155" y="185.593" fill="#7A9F35" width="113" height="21.388"/>
+<text transform="matrix(1 0 0 1 187.5005 198.823)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Paragraph</text>
+<rect x="20" y="274.491" fill="#103184" width="569" height="92"/>
+<text transform="matrix(1 0 0 1 288.3647 320.0046)" fill="#FFFFFF" font-family="'FranklinGothic-Medium'" font-size="12">Image</text>
+</svg>

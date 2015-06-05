@@ -1,0 +1,25 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="400px" height="120px" viewBox="-11.5 -36.381 400 120" style="enable-background:new -11.5 -36.381 400 120;"
+	 xml:space="preserve">
+<g id="Navigationbar_1_">
+	<g id="Login_2_">
+		<rect x="3.666" y="18.944" style="fill:#919191;" width="92" height="29"/>
+		<text transform="matrix(1 0 0 1 40.4004 38.4666)" style="fill:#FFFFFF; font-family:'FranklinGothic-Medium'; font-size:12;">Tab</text>
+	</g>
+	<g>
+		<rect x="96.666" y="18.944" style="fill:#919191;" width="92" height="29"/>
+		<text transform="matrix(1 0 0 1 133.3999 38.4666)" style="fill:#FFFFFF; font-family:'FranklinGothic-Medium'; font-size:12;">Tab</text>
+	</g>
+	<g>
+		<rect x="189.666" y="18.944" style="fill:#919191;" width="92" height="29"/>
+		<text transform="matrix(1 0 0 1 226.6426 38.4666)" style="fill:#FFFFFF; font-family:'FranklinGothic-Medium'; font-size:12;">Tab</text>
+	</g>
+	<g>
+		<rect x="282.666" y="18.944" style="fill:#919191;" width="92" height="29"/>
+		<text transform="matrix(1 0 0 1 319.6504 38.4666)" style="fill:#FFFFFF; font-family:'FranklinGothic-Medium'; font-size:12;">Tab</text>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 142.6665 0.3323)" style="font-family:'MyriadPro-Regular'; font-size:12;">Navigationbar Block</text>
+<polyline style="fill:none;stroke:#000000;stroke-miterlimit:10;" points="1,22.853 1,6.459 377,6.459 377,23.854 "/>
+</svg>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="400px" height="148.754px" viewBox="-14.5 0 400 148.754" style="enable-background:new -14.5 0 400 148.754;"
+	 xml:space="preserve">
+<g id="Navigationbar_1_">
+	<g id="Login_2_">
+		<rect y="66.38" style="fill:#919191;" width="92" height="29"/>
+		<text transform="matrix(1 0 0 1 36.7339 85.9019)" style="fill:#FFFFFF; font-family:'FranklinGothic-Medium'; font-size:12;">Tab</text>
+	</g>
+	<g>
+		<rect x="93" y="66.38" style="fill:#919191;" width="92" height="29"/>
+		<text transform="matrix(1 0 0 1 129.7339 85.9019)" style="fill:#FFFFFF; font-family:'FranklinGothic-Medium'; font-size:12;">Tab</text>
+	</g>
+	<g>
+		<rect x="186" y="66.38" style="fill:#919191;" width="92" height="29"/>
+		<text transform="matrix(1 0 0 1 222.9756 85.9019)" style="fill:#FFFFFF; font-family:'FranklinGothic-Medium'; font-size:12;">Tab</text>
+	</g>
+	<g>
+		<rect x="279" y="66.38" style="fill:#919191;" width="92" height="29"/>
+		<text transform="matrix(1 0 0 1 315.9844 85.9019)" style="fill:#FFFFFF; font-family:'FranklinGothic-Medium'; font-size:12;">Tab</text>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 24.5693 145.0757)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Element</text>
+<text transform="matrix(1 0 0 1 143.7666 12.5278)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Element</text>
+<text transform="matrix(1 0 0 1 230.8184 145.0757)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Element</text>
+<text transform="matrix(1 0 0 1 324.1279 12.5283)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Element</text>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="164.056" y1="15.215" x2="141.75" y2="58.799"/>
+		<g>
+			<path d="M139,64.172c0.356-3.008,0.361-6.964-0.339-9.775l3.45,3.698l5.017,0.635C144.437,59.806,141.231,62.124,139,64.172z"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="42.972" y1="130.493" x2="51.79" y2="104.607"/>
+		<g>
+			<path d="M53.736,98.894c0.082,3.028,0.647,6.942,1.746,9.624l-3.947-3.161l-5.056,0.095
+				C48.986,103.999,51.824,101.243,53.736,98.894z"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="358.986" y1="17.215" x2="333.152" y2="59.289"/>
+		<g>
+			<path d="M329.995,64.432c0.588-2.971,0.899-6.915,0.419-9.772l3.152,3.955l4.953,1.022
+				C335.754,60.501,332.378,62.563,329.995,64.432z"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="250.264" y1="130.493" x2="237.313" y2="104.304"/>
+		<g>
+			<path d="M234.639,98.894c2.203,2.078,5.377,4.44,8.053,5.554l-5.025,0.566l-3.5,3.648
+				C234.904,105.862,234.954,101.907,234.639,98.894z"/>
+		</g>
+	</g>
+</g>
+</svg>
