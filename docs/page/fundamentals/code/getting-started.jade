@@ -51,6 +51,22 @@ h3.heading.heading--tertiary Use bower
 p.paragraph.
   If you want to use the web design guide install it using a simple bower install.
 
+.callout.callout--danger
+  p.paragraph.
+    The Webserver hosting the style guide doesn't like the default user agent used by bower.
+    Therefore you need to configure a custom user agent string in your .bowerrc.
+
+  .highlight: pre.highlight__listing.hljs: code.json
+    :highlight
+      {
+        "user-agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
+      ...
+      }
+
+  p.paragraph.
+    Have a look at the <a href="http://bower.io/docs/config/#user-agent" class="link" >bower config
+    documentation</a> for further information.
+
 .highlight
   pre.highlight__listing
     code bower install http://design.axa.ch/downloads/#{package.name}-dist-#{package.version}.tar.gz --save
@@ -58,18 +74,17 @@ p.paragraph.
 h2.heading.heading--secondary What's included
 
 p.paragraph.
-  The web design guide is delivered in two diffrent flavours.
+  The web styleguide is delivered in two diffrent flavours.
   The npm package and the dist package (raw download and bower).
   Compare the structures below.
 
-  They both contain the following assets (and some other stuff
-  not descirbed here).
+  They both contain the following assets.
 
 dl
   dt css
   dd.
-    The precompiled css assets for the style.less and normalize.less.
-    We recommend using the Less assets to maintain configurability
+    The precompiled CSS assets for `style.less` and `normalize.less`.
+    We recommend using the LESS assets to maintain configurability
     (see customization section below).
 
   dt docs
@@ -86,226 +101,175 @@ dl
 
   dt jquery
   dd.
-    Compiled (CoffeeScript) and optionally minified jQuery plugins.
-    You can include each plugin individually or include the
-    axa-wsg.jquery.all(.min).js to include them all.
+    Compiled (from CoffeeScript) and optionally minified jQuery plugins.
 
   dt less
   dd.
-    Less files you can include in your project.
-    You can either include single blocks/mixins or use the aggregate
-    style.less which includes all blocks. Additionally you should
-    also include the normalize.less to get rid of browser specific
-    stylings.
-      
-  dt ng
-  dd.
-    Angular directives (JS and HTML) files.
-    TODO
-    
-TODO: Why the heck do we habe two diffrent archives???
-    
-.l-row
-  .l-half
-    h3.heading.heading--tertiary npm package
-    .highlight
-      pre.highlight__listing
-        code.
-          axa-web-design-guide/
-          ├── dist/
-          │   ├── less/
-          │   ├── js/
-          │   ├── images/
-          │   ├── fonts/
-          │   ├── docs/
-          │   └── css/
-          ├── README.md
-          ├── package.json
-          ├── LICENSE.md
-          └── .npmignore
+    The raw LESS files you can use to compile your custom CSS assets.
 
-  .l-half
-    h3.heading.heading--tertiary download & bower package
-    .highlight
-      pre.highlight__listing
-        code.
-          axa-web-design-guide/
-          ├── less/
-          ├── js/
-          ├── images/
-          ├── fonts/
-          ├── docs/
-          │── css/
-          ├── README.md
-          ├── LICENSE.md
-          └── bower.json
+  //dt ng
+  //dd.
+  //  Angular directives (JS and HTML) files.
+
+:markdown
+
+  <div class="l-row" >
+    <div class="l-half" >
+      <h3 class="heading heading--tertiary" >npm package</h3>
+      <pre class="highlight"><code class="highlight__listing hljs ">axa-web-design-guide/
+  ├── dist/
+  │   ├── less/
+  │   ├── js/
+  │   ├── images/
+  │   ├── fonts/
+  │   ├── docs/
+  │   └── css/
+  ├── README.md
+  ├── package.json
+  ├── LICENSE.md
+  └── .npmignore</code></pre>
+    </div>
+    <div class="l-half" >
+      <h3 class="heading heading--tertiary" >direct download & bower package</h3>
+      <pre class="highlight"><code class="highlight__listing hljs ">axa-web-design-guide/
+  ├── less/
+  ├── js/
+  ├── images/
+  ├── fonts/
+  ├── docs/
+  │── css/
+  ├── README.md
+  ├── LICENSE.md
+  └── bower.json</code></pre>
+    </div>
+  </div>
           
-          
-h2.heading.heading--secondary Using the Web Styleguide
+  # Using the Web Styleguide
 
-h3.heading.heading--tertiary Basic template
+  ## Basic template
 
-.highlight: pre.highlight__listing.hljs: code.js
-  :highlight
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <title>AXA Web Styleguide - Basic template</title>
-        
-        <!-- meta tags as explained in the recommendations page -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-        
-        <!-- add polyfills, SEO and Social metadata tags here -->
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>AXA Web Styleguide - Basic template</title>
 
-        <!-- include the procided style.min.css or your own css assets -->
-        <link href="css/style.min.css" rel="stylesheet">
-      </head>
-      <body>
-        <h1>Hello, world!</h1>
+      <!-- meta tags as explained in the recommendations page -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
-        <!-- optional: add jQuery plugins -->
-        <script src="libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="libs/moment.js/2.9.0/moment.js"></script>
-        <script src="js/style.all.min.js"></script>
-      
-      </body>
-    </html>
+      <!-- add polyfills, SEO and Social metadata tags here -->
 
-p.paragraph.
+      <!-- include the procided style.min.css or your own css assets -->
+      <link href="css/style.min.css" rel="stylesheet">
+    </head>
+    <body>
+      <h1>Hello, world!</h1>
+
+      <!-- optional: add jQuery plugins -->
+      <script src="libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="libs/moment.js/2.9.0/moment.js"></script>
+      <script src="js/style.all.min.js"></script>
+
+    </body>
+  </html>
+  ```
+
   Please have a look at the following pages for optimization.
-  
-ul.list.list--unordered
-  li.list__item
-    a(href=relative('/fundamentals/code/browser-support.html')).link Browser support
-  li.list__item
-    a(href=relative('/fundamentals/code/recommendations.html')).link Recommendations
-  //-li.list__item
-    a(href=relative('/fundamentals/code/seo.html')).link Search Engine Optimisation (SEO)
-  //-li.list__item
-    a(href=relative('/fundamentals/code/social-metadata.html')).link Social metadata
-    
-    
-h2.heading.heading--secondary LESS/CSS
 
-p.paragraph.
+  - [Browser support](/fundamentals/code/browser-support.html)
+  - [Recommendations](/fundamentals/code/recommendations.html)
+  <!--- [Search Engine Optimisation (SEO)](/fundamentals/code/seo.html)-->
+  <!--- [Social metadata](/fundamentals/code/social-metadata.html)-->
+
+  # LESS/CSS
+
   You can either use the CSS files provided in the packages or compile the LESS
   assets on your own.
-    
-h3.heading.heading--tertiary Using the CSS files
 
-p.paragraph.
-  Use the CSS files as mentioned in the Basic template above.
-  
-p.paragraph.
+  ## Using the CSS files
+
+  We do not recommend using the precompiled CSS files in a productive
+  environment since you can't configure anything and need to add the
+  whole bloat of CSS even if you just need a tiny bit.
+
+  To use the precompiled CSS files just reference them from your HTML
+  (see the tempalte above).
+
   When using the CSS files make sure that the assets referenced from the
   CSS files (e.g. images at `../images`) are available.
+
+  ## Compiling the LESS files on your own
+
+  Compiling the LESS files is the recommended approach since you gain
+  control over paths and what to include or not.
+
+  - Inculde the blocks you need and omit those you don't need
+  - Customize LESS variables
+  - Use custom post processing
+
+  ### Basic LESS template
+
+  <p class="callout" >
+    The following examples assume that you have added the
+    `less/` folder of the Web Styleguide to the LESS compilers
+    paths.
+  </p>
+
+  #### Including needed elements only
+
+  `normalize` and `basics` are the only `@import`s required. Add other
+  `@import`s as needed.
   
-h3.heading.heading--tertiary Compiling the LESS files on your own
+  ```less
+  // required
+  @import 'normalize';
+  @import 'style/basics';
 
-p.paragraph.
-  When compiling the LESS files on your own you get much more freedom.
-  
-ul.list.list--unordered
-  li.list__item Inculde the blocks you need and omit those you don't need
-  li.list__item Customize LESS variables
-  li.list__item use custom post processing
-   
-h4.heading Basic LESS template
+  // add utils, grid and blocks as needed
+  @import 'style/utils';
+  @import 'style/grid';
 
-p.callout.
-  The following examples assume that you have added the
-  `less/` folder of the Web Styleguide to the LESS compilers
-  paths.
-  
-p.paragraph.
-  This example includes the whole Web Styleguide
-  
-.highlight: pre.highlight__listing.hljs: code.js
-  :highlight
-    @import './style/basics.less';
+  @import 'style/blocks/header';
+  @import 'style/blocks/footer';
+  ```
 
-    @import './style/utils';
-    @import './style/grid';
-    
-    
-  
-p.paragraph.
-  This example includes only the needed elements
-  
-.highlight: pre.highlight__listing.hljs: code.js
-  :highlight
-    @import 'normalize';
-    @import 'style';
-    
-h4.heading Post processing
+  #### Including the entire Web Styleguide
 
-h4.heading Basic less file
+  This approach may be used for prototyping but it is not recommended
+  in a productive setup since it will add a lot of CSS markup you don't need.
 
-h4.heading Basic less file
-    
-hr.hr
-    
+  ```less
+  @import 'normalize';
+  @import 'style';
+  ```
 
-h3 What's next
+  ### LESS variables
 
-p.paragraph.
-  Make sure the static assets (js, images, fonts, css, etc.)
-  you want to use are available from the web and include the
-  assets to be compiled (e.g. less) in your build mechanism.
+  Have a look at the well commented `less/variables.less` file to see what
+  variables you can override.
 
-p.callout.callout--danger.
-  Watch out to not break paths when using the css assets. The
-  images are referenced with a relative path of ../images from
-  the css. When using less assets you can configure the path as
-  described in the Less variables section below.
+  ### Post processing
 
-h3 Compiling the less files on your own
+  Add
+  [autporefixer](https://github.com/postcss/autoprefixer) and
+  [pseudoelements](https://www.npmjs.com/package/postcss-pseudoelements)
+  to your build to make
+  the css output work in older browsers.
 
-h5 Prefixing
+  Have a look at the
+  [postcss plugin list](https://github.com/postcss/postcss#plugins)
+  for further processing.
 
-p.paragraph.
-  You should use the autoprefixer to add vendor specific prefixes.
-  Make sure to configure the autoprefixer correctly to add support
-  for the browsers you target.
+  # jQuery plugins
 
-h5 IE9 support
+  Use the jQuery plugins to give your app some interactivity. Note that
+  these plugins are an early draft and every contribution is highly
+  appreciated.
 
-p.paragraph.
-  To add IE9 support you need to add single-colon CSS 2.1 syntax
-  psuedo elements (:after) in addition to CSS 3 double-colon
-  syntax (::after). We wrote the postcss-pseudoelements postcss
-  plugin which adds those single-color selectors.
-
-h5 Less variables
-
-table.table
-  thead
-    tr.table__header
-      th.table__header__item Name
-      th.table__header__item Default
-      th.table__header__item Description
-  tbody.table__content
-    tr.table__row
-      td.table__row__item.table__row__item--headline: code @icon-font-path
-      td.table__row__item: code '../fonts'
-      td.table__row__item.
-        Relative (to the CSS file) or absolute path
-        where the browser should download the icon font files from.
-    tr.table__row
-      td.table__row__item.table__row__item--headline: code @images-path
-      td.table__row__item: code '../images'
-      td.table__row__item.
-        Relative (to the CSS file) or absolute path
-        where the browser should download the images from.
-
-
-h3#basic-template Basic template
-p.paragraph.
-  The basic template below should provide you with
-  a starting point for your next web app.
-  See the comments in the template itself for any explanations.
+   You can include each plugin individually or the
+   `axa-wsg.jquery.all(.min).js` to get them all.
 
 
 
