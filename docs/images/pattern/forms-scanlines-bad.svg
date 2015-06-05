@@ -3,39 +3,39 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="600px" height="400px" viewBox="0 0 600 400" enable-background="new 0 0 600 400" xml:space="preserve">
-<rect y="9.782" fill="#F2F2F2" width="600" height="389.855"/>
+<rect y="9.782" fill="#F2F2F2" width="600" height="389.854"/>
 <text transform="matrix(1 0 0 1 23.1484 53.4758)" font-family="'FranklinGothic-Medium'" font-size="20.2899">Section Title</text>
 <text transform="matrix(1 0 0 1 23.1484 78.5471)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label one</text>
-<rect x="176.812" y="67.03" fill="#919191" width="134.782" height="17.392"/>
+<rect x="176.812" y="67.03" fill="#919191" width="134.782" height="17.393"/>
 <text transform="matrix(1 0 0 1 23.1484 104.9456)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label two</text>
 <rect x="176.812" y="91.668" fill="#919191" width="298.551" height="17.391"/>
 <text transform="matrix(1 0 0 1 23.1484 131.344)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label three</text>
 <rect x="176.812" y="116.306" fill="#919191" width="91.305" height="17.391"/>
 <text transform="matrix(1 0 0 1 23.1484 157.7424)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label four</text>
-<rect x="176.812" y="140.943" fill="#919191" width="226.086" height="17.392"/>
-<rect x="176.812" y="267.03" fill="#919191" width="402.898" height="17.392"/>
+<rect x="176.812" y="140.943" fill="#919191" width="226.086" height="17.393"/>
+<rect x="176.812" y="267.03" fill="#919191" width="402.898" height="17.393"/>
 <text transform="matrix(1 0 0 1 23.1484 184.1399)" font-family="'FranklinGothic-Medium'" font-size="17.3913">Label number five</text>
-<rect x="176.812" y="167.03" fill="#919191" width="298.551" height="37.682"/>
+<rect x="176.812" y="167.03" fill="#919191" width="298.551" height="37.683"/>
 <rect x="455.072" y="343.842" fill="#4D4D4D" width="120.29" height="33.333"/>
-<rect x="47.826" y="240.943" fill="#919191" width="376.813" height="17.392"/>
+<rect x="47.826" y="240.943" fill="#919191" width="376.813" height="17.393"/>
 <rect x="22.464" y="241.668" fill="#F2F2F2" stroke="#000000" stroke-width="1.4493" stroke-miterlimit="10" width="17.391" height="17.391"/>
 <g>
 	<g>
 		<polyline fill="none" stroke="#103184" stroke-miterlimit="10" points="163.768,33.697 109.662,75.726 169.565,75.726 
 			107.247,100.363 170.652,100.363 115.58,127.899 169.203,127.899 105.072,152.537 171.015,152.537 170.833,181.33 30.435,224.82 
-			30.435,250.363 171.619,275.726 438.314,355.541 		"/>
+			30.435,250.363 171.619,275.726 438.314,355.54 		"/>
 		<g>
-			<polygon fill="#103184" points="427.618,363.491 435.064,354.516 433.777,342.925 455.072,360.509 			"/>
+			<polygon fill="#103184" points="427.618,363.49 435.064,354.516 433.777,342.925 455.072,360.509 			"/>
 		</g>
 	</g>
 </g>
 <rect y="0.363" fill="#FF1821" width="600" height="15.942"/>
 <g>
-	<rect x="22.464" y="332.353" opacity="0.5" fill="#FF1821" enable-background="new    " width="332.201" height="46.377"/>
+	<rect x="22.464" y="332.353" fill="#79838D" enable-background="new    " width="332.201" height="46.377"/>
 	<text transform="matrix(1 0 0 1 88.1309 360.6438)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">Latest Product Advertisment</text>
 </g>
 <g>
-	<rect x="485.509" y="39.51" opacity="0.5" fill="#FF1821" enable-background="new    " width="94.929" height="205.8"/>
+	<rect x="485.509" y="39.51" fill="#79838D" enable-background="new    " width="94.929" height="205.8"/>
 	<text transform="matrix(1 0 0 1 513.0859 84.9055)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">Great</text>
 	<text transform="matrix(1 0 0 1 522.3818 105.7747)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">UX</text>
 	<text transform="matrix(1 0 0 1 522.8164 126.6438)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="17.3913">for</text>

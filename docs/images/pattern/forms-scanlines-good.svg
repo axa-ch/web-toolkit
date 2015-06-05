@@ -23,9 +23,9 @@
 <g>
 	<line fill="none" x1="162" y1="33" x2="162" y2="339"/>
 	<g>
-		<line fill="none" stroke="#103184" stroke-width="3" stroke-miterlimit="10" x1="162.5" y1="33" x2="162.5" y2="322"/>
+		<line fill="none" stroke="#103184" stroke-miterlimit="10" x1="162.5" y1="33" x2="162.5" y2="322"/>
 		<g>
-			<polygon fill="#103184" points="151.585,313.687 162.319,318.245 173.053,313.687 162.319,339.131 			"/>
+			<polygon fill="#103184" points="151.585,313.687 162.319,318.244 173.053,313.687 162.319,339.131 			"/>
 		</g>
 	</g>
 </g>
