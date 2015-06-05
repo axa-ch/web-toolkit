@@ -8,6 +8,36 @@ tags: count, unread
 
 p.paragraph.
   A badge is an element which can be attached to other components as an indicator for new or unread items.
+  
+.example(data-example-relative-base=relative('/'))
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content.example__content--centered
+    iframe.example__iframe
+    .example__html(data-example-centered)
+      .button
+        | Button with a badge
+        span.button__badge.badge 159
+
+.toggle
+  .toggle__button(data-info, data-target='#code')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="button">Button with a badge<span class="button__badge badge">159</span></div>
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
