@@ -24,30 +24,52 @@ h2.heading.heading--secondary#enhanced Basic Dropdown
 p.paragraph.
   The dropdown is used for a single selection out of a list. 
 
-.example
+.example(data-example-relative-base=relative('/'))
   .example__header
     .example__device-selection
       a.example__device-selection__device.example__device-selection__device--mobile
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    .dropdown(data-dropdown)
-      .dropdown__label
-      select.dropdown__select
-        option Schweiz
-        option Regenbogenland
+    iframe.example__iframe
+    .example__html
+      .dropdown(data-dropdown)
+        .dropdown__label
+        select.dropdown__select
+          option Schweiz
+          option Regenbogenland
 
 .toggle
-  .toggle__button
+  .toggle__button(data-info, data-target='#code-basic')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content
-    .tab-panel
+  .toggle__content#code-basic
+    .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
       .tab-panel__content
-        .tab-panel__content__tab.is-active
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div data-dropdown="data-dropdown" class="dropdown">
+                  <div class="dropdown__label"></div>
+                  <select class="dropdown__select">
+                    <option>Schweiz</option>
+                    <option>Regenbogenland</option>
+                  </select>
+                </div>
+        .tab-panel__content__tab(data-tab-content='js')
+          p.paragraph.
+            Our jQuery plugin adds the
+            <code>dropdown--js</code> modifier and handles
+            keyboard events.
+
+          p.paragraph.
+            Activate the functionality with the data-* API
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
@@ -74,28 +96,31 @@ h2.heading.heading--secondary#non-enhanced Non enhanced dropdown
 p.paragraph.
   Use the non-enhanced dropdown as a fallback only.
 
-.example
+.example(data-example-relative-base=relative('/'))
   .example__header
     .example__device-selection
       a.example__device-selection__device.example__device-selection__device--mobile
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    .dropdown
-      .dropdown__label
-      select.dropdown__select
-        option Schweiz
-        option Regenbogenland
+    iframe.example__iframe
+    .example__html
+      .dropdown
+        .dropdown__label
+        select.dropdown__select
+          option Schweiz
+          option Regenbogenland
 
 .toggle
-  .toggle__button
+  .toggle__button(data-info, data-target='#code-non-enhanced')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content
+  .toggle__content#code-non-enhanced
     .tab-panel
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
       .tab-panel__content
         .tab-panel__content__tab.is-active
           .tab-panel__content__tab__fullwidth-content
