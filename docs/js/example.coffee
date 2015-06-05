@@ -16,7 +16,7 @@ class Example
 
     @$html = @$el.find '.example__html'
     @$frame = @$el.find '.example__iframe'
-
+    
     @$devMobile = @$el.find '.example__device-selection__device--mobile'
     @$devTablet = @$el.find '.example__device-selection__device--tablet'
     @$devDesktop = @$el.find '.example__device-selection__device--desktop'
@@ -30,6 +30,15 @@ class Example
     @$contents.find('head').html head
 
     html = @$html.html()
+    
+    @bodyStyles = @$el.data('example-body-styles')
+    @maxHeight = @$el.data('example-max-height')
+    if not @maxHeight?
+      @maxHeight = 'infinity'
+    console.log @maxHeight
+    
+    if @bodyStyles? and @bodyStyles.length > 0
+      @$contents.find('body').attr 'style', @bodyStyles
 
     if @$html.data 'example-centered'
       html = '<div style="text-align: center;" class="example" ><div style="display: inline-block; text-align: left;" >' + html + '</div></div>'
@@ -45,11 +54,11 @@ class Example
     @$contents.find('body').html html
     @$contents.find('head')[0].appendChild @exampleScript
 
-    @customScriptCode = @$el.find '.example__script'
-    if @customScriptCode? and @customScriptCode.length > 0
+    @$customScriptCode = @$el.find '.example__script'
+    if @$customScriptCode? and @$customScriptCode.length > 0
       @customScript = @$contents[0].createElement 'script'
       @customScript.type = 'text/javascript'
-      @customScript.innerHTML = @customScriptCode.text()
+      @customScript.innerHTML = @$customScriptCode.text()
       setTimeout ( =>
         @$contents.find('body')[0].appendChild @customScript), 500
       
@@ -64,6 +73,7 @@ class Example
         resizeFrom: 'child'
         checkOrigin: false
         sizeHeight: true
+        maxHeight: @maxHeight
         heightCalculationMethod: 'lowestElementOnly'
       }, iFrame), 500
       
