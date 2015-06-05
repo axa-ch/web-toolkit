@@ -1,4 +1,4 @@
----
+﻿---
 title: Footer
 order: 5
 collection: nav__components
@@ -8,3 +8,121 @@ aside.callout
   h2.callout__heading Feedback appreciated!
   p.paragraph
     | This element was provided by the group and may or may not be the best choice for your site or application. Reach out to us if you have any questions. For now this element is only mandatory for customer facing frontends.
+
+.example
+  .example__header
+    .example__device-selection
+      .example__device-selection__device.example__device-selection__device--mobile
+      .example__device-selection__device.example__device-selection__device--tablet
+      .example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content.example__content--centered
+    iframe.example__iframe
+    .example__html
+      .footer
+        .footer__content
+          .footer__item.footer__item--keep-in-touch
+            .footer__item__headline Keep in touch
+            ul.menu.menu--keep-in-touch
+              li.menu__item
+                a.menu__link.icon.icon--facebook
+              li.menu__item
+                a.menu__link.icon.icon--twitter
+              li.menu__item
+                a.menu__link.icon.icon--xing
+              li.menu__item
+                a.menu__link.icon.icon--google-plus
+
+          .footer__item.footer__item--links
+            .footer__item__headline AXA & You
+            .footer__item__menu
+              ul.menu.menu--footer
+                li.menu__item.is-active
+                  a.menu__link Contact Us
+                li.menu__item
+                  a.menu__link Help & Advice
+                li.menu__item
+                  a.menu__link Latest News
+              ul.menu.menu--footer
+                li.menu__item.is-active
+                  a.menu__link Lorem ipsum
+                li.menu__item
+                  a.menu__link Lorem ipsum
+                li.menu__item
+                  a.menu__link Lorem ipsum
+
+          .footer__item.footer__item--international
+            .footer__item__headline AXA worldwide
+            a.footer__international
+              img(src=relative('/images/axa-world.svg')).footer__international__image
+              span.footer__international__text AXA Worldwide
+
+        .footer__copyline
+          .l-container
+            ul.menu.menu--copyline
+              li.menu__item
+                a.menu__link Sitemap
+              li.menu__item
+                a.menu__link Privacy
+              li.menu__item
+                a.menu__link Disclaimer
+              li.menu__item
+                span.menu__link AXA 2015 ©
+
+
+.toggle
+  .toggle__button(data-info, data-target='#code')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="footer">
+                  <div class="footer__content">
+                    <div class="footer__item footer__item--keep-in-touch">
+                      <div class="footer__item__headline">Keep in touch</div>
+                      <ul class="menu menu--keep-in-touch">
+                        <li class="menu__item"><a class="menu__link icon icon--facebook"></a></li>
+                        <li class="menu__item"><a class="menu__link icon icon--twitter"></a></li>
+                        <li class="menu__item"><a class="menu__link icon icon--xing"></a></li>
+                        <li class="menu__item"><a class="menu__link icon icon--google-plus"></a></li>
+                      </ul>
+                    </div>
+                    <div class="footer__item footer__item--links">
+                      <div class="footer__item__headline">AXA &amp; You</div>
+                      <div class="footer__item__menu">
+                        <ul class="menu menu--footer">
+                          <li class="menu__item is-active"><a class="menu__link">Contact Us</a></li>
+                          <li class="menu__item"><a class="menu__link">Help &amp; Advice</a></li>
+                          <li class="menu__item"><a class="menu__link">Latest News</a></li>
+                        </ul>
+                        <ul class="menu menu--footer">
+                          <li class="menu__item is-active"><a class="menu__link">Lorem ipsum</a></li>
+                          <li class="menu__item"><a class="menu__link">Lorem ipsum</a></li>
+                          <li class="menu__item"><a class="menu__link">Lorem ipsum</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="footer__item footer__item--international">
+                      <div class="footer__item__headline">AXA worldwide</div>
+                      <a class="footer__international"><img src="../images/axa-world.svg" class="footer__international__image"><span class="footer__international__text">AXA Worldwide</span></a>
+                    </div>
+                  </div>
+                  <div class="footer__copyline">
+                    <div class="l-container">
+                      <ul class="menu menu--copyline">
+                        <li class="menu__item"><a class="menu__link">Sitemap</a></li>
+                        <li class="menu__item"><a class="menu__link">Privacy</a></li>
+                        <li class="menu__item"><a class="menu__link">Disclaimer</a></li>
+                        <li class="menu__item"><span class="menu__link">AXA 2015 ©</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
