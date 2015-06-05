@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="414px" height="275px" viewBox="0 0 414 275" style="enable-background:new 0 0 414 275;" xml:space="preserve">
+<rect y="6.5" style="fill:#F2F2F2;" width="414" height="269"/>
+<text transform="matrix(1 0 0 1 15.9727 36.6484)" style="font-family:'FranklinGothic-Medium'; font-size:14;">Section Title</text>
+<text transform="matrix(1 0 0 1 15.9722 53.9473)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label one</text>
+<rect x="122" y="46" width="93" height="12"/>
+<text transform="matrix(1 0 0 1 15.9722 72.1621)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label two</text>
+<rect x="122" y="63" width="206" height="12"/>
+<text transform="matrix(1 0 0 1 15.9722 90.377)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label three</text>
+<rect x="122" y="80" width="63" height="12"/>
+<text transform="matrix(1 0 0 1 15.9722 108.5918)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label four</text>
+<rect x="122" y="97" width="156" height="12"/>
+<rect x="122" y="184" width="278" height="12"/>
+<text transform="matrix(1 0 0 1 15.9722 126.8057)" style="font-family:'FranklinGothic-Medium'; font-size:12;">Label number five</text>
+<rect x="122" y="115" width="206" height="26"/>
+<rect x="314" y="237" style="fill:#4D4D4D;" width="83" height="23"/>
+<rect x="33" y="166" width="260" height="12"/>
+<rect x="15.5" y="166.5" style="fill:#F2F2F2;stroke:#000000;stroke-miterlimit:10;" width="12" height="12"/>
+<g>
+	<g>
+		<polyline style="fill:none;stroke:#103184;stroke-width:2;stroke-miterlimit:10;" points="113,23 75.667,52 117,52 74,69 
+			117.75,69 79.75,88 116.75,88 72.5,105 118,105 117.875,124.867 21,154.875 21,172.5 118.417,190 302.438,245.072 		"/>
+		<g>
+			<polygon style="fill:#103184;" points="295.057,250.559 300.195,244.365 299.307,236.367 314,248.5 			"/>
+		</g>
+	</g>
+</g>
+<rect style="fill:#FF1821;" width="414" height="11"/>
+<g>
+	<rect x="15.5" y="229.072" style="opacity:0.5;fill:#FF1821;" width="229.219" height="32"/>
+	<text transform="matrix(1 0 0 1 60.8105 248.5938)" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:12;">Lates Product Advertisment</text>
+</g>
+<g>
+	<rect x="334.5" y="27.011" style="opacity:0.5;fill:#FF1821;" width="65.5" height="142.002"/>
+	<text transform="matrix(1 0 0 1 355.3135 58.3345)"><tspan x="0" y="0" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:12;">Great</tspan><tspan x="6.413" y="14.4" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:12;">UX</tspan><tspan x="6.714" y="28.8" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:12;">for</tspan><tspan x="-11.142" y="43.2" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:12;">dummies!</tspan><tspan x="-8.622" y="57.6" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:12;">Read our</tspan><tspan x="-15.108" y="72" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:12;">whitepaper</tspan><tspan x="1.302" y="86.4" style="fill:#FFFFFF; font-family:'MyriadPro-Regular'; font-size:12;">now!</tspan></text>
+</g>
+</svg>
