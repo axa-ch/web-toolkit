@@ -19,64 +19,104 @@ p.paragraph.
 p.paragraph.
   Info-icons provide on click help to the user and help him better understand a particular field.
 
-.example
+.example(data-example-relative-base=relative('/'))
   .example__header
     .example__device-selection
       a.example__device-selection__device.example__device-selection__device--mobile
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    .form
-      .form__group
-        .form__group__label
-          .form__group__label__text Firstname*
-        .form__group__control
-          input(type='text').control.control--input
-      .form__group
-        .form__group__label.form__group__label--invalid
-          .form__group__label__text Lastname*
-        .form__group__control
-          input(type='text').control.control--input.has-error
-          .form__error-message Your name can't contain a number.
-      .form__group
-        .form__group__label
-          .form__group__label__info-icon
-            .info-icon(data-info, data-target='#target')
-          .form__group__label__info-icon-text-wrapper Form group with info
-        .form__group__control
-          input(type='text').control.control--input
-          .form__info-text(style='display: none;')#target
-            .info-text
-              p.paragraph Some meaningful explanation may be placed here
-      .form__group
-        .from__group__control.form__group__control--fullwidth
-          label(data-checkbox).checkbox
-            input(type='checkbox').checkbox__checkbox
-            .checkbox__label
-              .checkbox__label__text Full width control
-      .form__footnote * Form footnote
+    iframe.example__iframe
+    .example__html
+      .form
+        .form__group
+          .form__group__label
+            .form__group__label__text Firstname*
+          .form__group__control
+            input(type='text').control.control--input
+        .form__group
+          .form__group__label.form__group__label--invalid
+            .form__group__label__text Lastname*
+          .form__group__control
+            input(type='text').control.control--input.has-error
+            .form__error-message Your name can't contain a number.
+        .form__group
+          .form__group__label
+            .form__group__label__info-icon
+              .info-icon(data-info, data-target='#target')
+            .form__group__label__info-icon-text-wrapper Form group with info
+          .form__group__control
+            input(type='text').control.control--input
+            .form__info-text(style='display: none;')#target
+              .info-text
+                p.paragraph Some meaningful explanation may be placed here
+        .form__group
+          .from__group__control.form__group__control--fullwidth
+            label(data-checkbox).checkbox
+              input(type='checkbox').checkbox__checkbox
+              .checkbox__label
+                .checkbox__label__text Full width control
+        .form__footnote * Form footnote
 
 
 .toggle
-  .toggle__button
+  .toggle__button(data-info, data-target='#code')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content
+  .toggle__content#code
     .tab-panel
       .tab-panel__header
-        .tab-panel__header__tab HTML
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
       .tab-panel__content
         .tab-panel__content__tab.is-active
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
-                <div data-dropdown="data-dropdown" class="dropdown">
-                  <div class="dropdown__label"></div>
-                  <select class="dropdown__select">
-                    <option>Schweiz</option>
-                    <option>Regenbogenland</option>
-                  </select>
+                <div class="form">
+                  <div class="form__group">
+                    <div class="form__group__label">
+                      <div class="form__group__label__text">Firstname*</div>
+                    </div>
+                    <div class="form__group__control"><input type="text" class="control control--input"></div>
+                  </div>
+                  <div class="form__group">
+                    <div class="form__group__label form__group__label--invalid">
+                      <div class="form__group__label__text">Lastname*</div>
+                    </div>
+                    <div class="form__group__control">
+                      <input type="text" class="control control--input has-error">
+                      <div class="form__error-message">Your name can't contain a number.</div>
+                    </div>
+                  </div>
+                  <div class="form__group">
+                    <div class="form__group__label">
+                      <div class="form__group__label__info-icon">
+                        <div data-info="data-info" data-target="#target" class="info-icon"></div>
+                      </div>
+                      <div class="form__group__label__info-icon-text-wrapper">Form group with info</div>
+                    </div>
+                    <div class="form__group__control">
+                      <input type="text" class="control control--input">
+                      <div style="display: none;" id="target" class="form__info-text">
+                        <div class="info-text">
+                          <p class="paragraph">Some meaningful explanation may be placed here</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__group">
+                    <div class="from__group__control form__group__control--fullwidth">
+                      <label data-checkbox="data-checkbox" class="checkbox checkbox--js">
+                        <input type="checkbox" class="checkbox__checkbox" tabindex="-1">
+                        <div class="checkbox__label" tabindex="0">
+                          <div class="checkbox__label__text">Full width control</div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form__footnote">* Form footnote</div>
                 </div>
 
 h3.heading.heading--tertiary UX Checklist
