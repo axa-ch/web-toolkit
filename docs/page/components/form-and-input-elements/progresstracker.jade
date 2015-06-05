@@ -10,9 +10,52 @@ p.paragraph.
   
   
 h3.heading.heading--tertiary UX Checklist
-  ul.checklist
-    li.checklist__item Set easy to understand names for every step.
-    li.checklist__item Have as few steps as necessary.
-    li.checklist__item
-      :markdown
-        If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
+ul.checklist
+  li.checklist__item.
+    Set easy to understand names for
+    every step.
+  li.checklist__item.
+    Have as few steps as necessary.
+  li.checklist__item
+    :markdown
+      If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
+        
+.example(data-example-relative-base=relative('/'))
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content.example__content--centered
+    iframe.example__iframe
+    .example__html(data-example-centered)
+      .progress-tracker
+        ul.progress-tracker__flow
+          li.progress-tracker__step.step.step--start.is-active
+            span.step__bullet 1
+          li.progress-tracker__step.step.is-active.is-current
+            span.step__bullet 2
+          li.progress-tracker__step.step.step--end
+            span.step__bullet.step__bullet--checkmark
+.toggle
+  .toggle__button(data-info, data-target='#code')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')            
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="progress-tracker">
+                  <ul class="progress-tracker__flow">
+                    <li class="progress-tracker__step step step--start is-active"><span class="step__bullet">1</span></li>
+                    <li class="progress-tracker__step step is-active"><span class="step__bullet">2</span></li>
+                    <li class="progress-tracker__step step step--end"><span class="step__bullet step__bullet--checkmark"></span></li>
+                  </ul>
+                </div>
