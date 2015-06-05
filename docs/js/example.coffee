@@ -78,7 +78,7 @@ class Example
         sizeHeight: true
         maxHeight: @maxHeight
         heightCalculationMethod: 'lowestElementOnly'
-      }, iFrame), 500
+      }, iFrame), 600
       
 
   setWidth: (width, activeBtn) ->
