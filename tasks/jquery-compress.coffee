@@ -3,7 +3,6 @@ sourcemaps = require 'gulp-sourcemaps'
 uglify = require 'gulp-uglify'
 rename = require 'gulp-rename'
 
-
 errorify = require '../lib/errorify'
 
 module.exports = ->
