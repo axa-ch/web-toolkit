@@ -76,15 +76,15 @@
 .header__meta__lower {
   &:extend(.clearfix all);
 
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .header__meta__welcome {
   &:extend(.clearfix all);
 
   float: right;
-
-  padding: 5px 0 0 0;
+  padding: 0;
+  font-size: 17px;
 
   ul {
     margin: 0;
@@ -154,11 +154,11 @@
 
 .header__action {
   margin-left: 8px;
-  margin-bottom: -4px;
+  margin-top: -4px;
 
   .respond(large, {
     float: left;
-    });
+  });
 
   &:first-of-type {
     margin-left: 20px;
@@ -173,7 +173,7 @@
 
 .header__action__button {
   background: red;
-  padding: 5px 10px;
+  padding: 4px 10px;
 
   font-weight: @font-weight-medium;
   font-size: 15px;
