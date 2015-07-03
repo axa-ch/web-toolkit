@@ -65,7 +65,9 @@ ul.checklist
           .l-container
             ul.menu.menu--main
               li.menu__item
-                a.menu__link.menu__link--home
+                a.menu__link
+                  svg.menu__link__home
+                    use(xlink:href=relative('/images/icons.svg#home'))
               li.menu__item
                 a.menu__link Menu Item 1
               li.menu__item.is-active

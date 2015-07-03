@@ -278,10 +278,6 @@
       .menu__link {
         color: @color-blue;
       }
-
-      .menu__link--home::before {
-        color: @color-blue;
-      }
     }
 
     .respond(large, {
@@ -297,14 +293,11 @@
     color: @color-gray--darker;
   }
 
-  .menu__link--home {
-    .icon();
-    .icon--home();
-
-    &::before {
-      font-size: 16px;
-      color: @color-blue;
-    }
+  .menu__link__home {
+    width: 16px;
+    height: 44px;
+    fill: currentColor;
+    display: inline-block;
   }
 }
 
