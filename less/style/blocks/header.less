@@ -32,25 +32,12 @@
 }
 
 .header__mobile-trigger {
-  .icon;
-  .icon--burger;
-
-  &::before {
-    font-size: 32px;
-  }
-
+  height: 20px;
+  width: 25px;
+  margin-top: 6px;
   float: right;
-
-  font-size: 1.3em;
-  text-align: center;
-
-  color: @color-blue;
-
+  fill: @color-blue;
   cursor: pointer;
-
-  &:hover {
-    color: lighten(@color-blue, 10%);
-  }
 
   .respond(large, {
     display: none;
