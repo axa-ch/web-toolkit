@@ -54,28 +54,21 @@
 .step--end {
 }
 
-.step__bullet--checkmark {
-  .icon();
-  .icon--process-checkmark();
+.step__bullet__checkmark {
+  width: 19px;
+  height: 16px;
+  position: relative;
+  margin-left: 4px;
+  fill: @color-gray--dark;
 
-  &::before {
-    position: relative;
-    margin-top: -2px;
-    margin-left: 3px;
+  .respond(medium, {
+    width: 38px;
+    height: 32px;
+    margin-left: 8px;
+  });
 
-    font-size: 19px;
-
-    color: @color-gray--dark;
-
-    .respond(medium, {
-      margin-top: -6px;
-      margin-left: 7px;
-      font-size: 38px;
-    });
-  }
-
-  &.is-active::before {
-    color: @color-green;
+  &.is-active {
+    fill: @color-green;
   }
 }
 
