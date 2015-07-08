@@ -1,155 +1,89 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.5, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="260px" height="260px" viewBox="0 0 260 260" style="enable-background:new 0 0 260 260;" xml:space="preserve">
+    <style>
+.draw {
+    fill:transparent;
+    stroke: #FFF;
+    stroke-width: 1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
 
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   id="Layer_1"
-   x="0px"
-   y="0px"
-   width="260"
-   height="260"
-   viewBox="0 0 260 260"
-   enable-background="new 0 0 1000 1000"
-   xml:space="preserve"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="Components.svg"><metadata
-   id="metadata55"><rdf:RDF><cc:Work
-       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
-   id="defs53" /><sodipodi:namedview
-   pagecolor="#ffffff"
-   bordercolor="#666666"
-   borderopacity="1"
-   objecttolerance="10"
-   gridtolerance="10"
-   guidetolerance="10"
-   inkscape:pageopacity="0"
-   inkscape:pageshadow="2"
-   inkscape:window-width="1280"
-   inkscape:window-height="962"
-   id="namedview51"
-   showgrid="false"
-   inkscape:zoom="0.236"
-   inkscape:cx="500"
-   inkscape:cy="500"
-   inkscape:window-x="-8"
-   inkscape:window-y="-8"
-   inkscape:window-maximized="1"
-   inkscape:current-layer="Layer_1" />
-<circle
-   cx="756.82202"
-   cy="228.437"
-   r="130"
-   id="circle3"
-   sodipodi:cx="756.82202"
-   sodipodi:cy="228.437"
-   sodipodi:rx="130"
-   sodipodi:ry="130"
-   transform="translate(-626.82202,-98.437)"
-   style="fill:#3c5e7a" />
-<g
-   id="g5"
-   transform="translate(-626.82202,-98.437)">
-	<g
-   id="g7">
-		<polygon
-   points="765.385,317.568 726.877,295.336 726.877,250.873 765.385,273.105 "
-   id="polygon9"
-   style="fill:#ffffff" />
-		<polygon
-   points="765.385,228.641 726.877,250.873 765.385,273.105 803.891,250.873 "
-   id="polygon11"
-   style="fill:#f2f2f2" />
-		<polygon
-   points="765.385,317.568 803.888,295.336 803.888,250.873 765.385,273.105 "
-   id="polygon13"
-   style="fill:#d9d8d7" />
-	</g>
-	<g
-   id="g15">
-		<polygon
-   points="803.888,250.872 765.385,228.641 765.385,184.178 803.888,206.41 "
-   id="polygon17"
-   style="fill:#ffd680" />
-		<polygon
-   points="803.888,161.946 765.385,184.178 803.888,206.41 842.397,184.178 "
-   id="polygon19"
-   style="fill:#f68360" />
-		<polygon
-   points="803.888,250.872 842.395,228.641 842.395,184.178 803.888,206.41 "
-   id="polygon21"
-   style="fill:#abe0e5" />
-	</g>
-	<g
-   id="g23">
-		<path
-   d="m 726.877,251.391 c -0.088,0 -0.178,-0.021 -0.259,-0.068 l -38.506,-22.232 c -0.161,-0.092 -0.26,-0.264 -0.26,-0.449 v -44.463 c 0,-0.185 0.099,-0.356 0.26,-0.449 0.16,-0.092 0.358,-0.092 0.519,0 l 38.505,22.231 c 0.16,0.092 0.262,0.264 0.262,0.449 v 44.462 c 0,0.187 -0.102,0.357 -0.262,0.451 -0.079,0.046 -0.169,0.068 -0.259,0.068 z m -37.987,-23.049 37.469,21.633 V 206.708 L 688.89,185.077 v 43.265 z"
-   id="path25"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-		<path
-   d="m 726.88,206.928 c -0.089,0 -0.18,-0.023 -0.259,-0.07 l -38.509,-22.23 c -0.161,-0.093 -0.26,-0.263 -0.26,-0.45 0,-0.185 0.099,-0.356 0.26,-0.449 l 38.509,-22.232 c 0.159,-0.093 0.358,-0.093 0.519,0 l 38.505,22.232 c 0.161,0.092 0.259,0.264 0.259,0.449 0,0.187 -0.098,0.356 -0.259,0.45 l -38.505,22.23 c -0.081,0.047 -0.171,0.07 -0.26,0.07 z m -37.471,-22.75 37.471,21.633 37.469,-21.633 -37.469,-21.633 -37.471,21.633 z"
-   id="path27"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-		<g
-   id="g29">
-			<path
-   d="m 765.385,229.16 c -0.09,0 -0.178,-0.022 -0.26,-0.07 l -2.696,-1.556 c -0.246,-0.143 -0.331,-0.461 -0.188,-0.708 0.141,-0.25 0.459,-0.333 0.707,-0.19 l 2.694,1.556 c 0.249,0.144 0.335,0.46 0.19,0.71 -0.093,0.164 -0.27,0.258 -0.447,0.258 z"
-   id="path31"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-			<path
-   d="m 757.958,224.872 c -0.088,0 -0.178,-0.022 -0.26,-0.07 l -4.73,-2.731 c -0.248,-0.143 -0.334,-0.461 -0.189,-0.708 0.143,-0.249 0.461,-0.332 0.709,-0.19 l 4.729,2.732 c 0.249,0.144 0.334,0.459 0.189,0.708 -0.094,0.166 -0.271,0.259 -0.448,0.259 z m -9.462,-5.463 c -0.089,0 -0.177,-0.022 -0.26,-0.07 l -4.731,-2.731 c -0.248,-0.143 -0.332,-0.46 -0.189,-0.708 0.143,-0.25 0.461,-0.333 0.709,-0.19 l 4.73,2.731 c 0.248,0.145 0.334,0.46 0.188,0.71 -0.093,0.165 -0.269,0.258 -0.447,0.258 z m -9.462,-5.462 c -0.088,0 -0.177,-0.022 -0.258,-0.069 l -4.732,-2.731 c -0.25,-0.144 -0.332,-0.461 -0.189,-0.709 0.141,-0.247 0.461,-0.332 0.708,-0.19 l 4.731,2.731 c 0.248,0.144 0.332,0.462 0.188,0.71 -0.093,0.164 -0.269,0.258 -0.448,0.258 z"
-   id="path33"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-			<path
-   d="m 729.573,208.483 c -0.09,0 -0.178,-0.022 -0.26,-0.068 l -2.437,-1.407 -2.435,1.407 c -0.249,0.141 -0.567,0.059 -0.709,-0.191 -0.145,-0.248 -0.059,-0.565 0.189,-0.709 l 2.695,-1.556 c 0.159,-0.092 0.358,-0.092 0.518,0 l 2.695,1.556 c 0.25,0.144 0.334,0.461 0.19,0.709 -0.093,0.167 -0.268,0.259 -0.446,0.259 z"
-   id="path35"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-			<path
-   d="m 695.797,224.872 c -0.179,0 -0.354,-0.093 -0.448,-0.259 -0.145,-0.249 -0.06,-0.565 0.188,-0.708 l 4.731,-2.732 c 0.248,-0.143 0.567,-0.06 0.709,0.19 0.145,0.248 0.059,0.566 -0.19,0.708 l -4.729,2.731 c -0.084,0.048 -0.173,0.07 -0.261,0.07 z m 9.461,-5.463 c -0.179,0 -0.353,-0.093 -0.448,-0.259 -0.143,-0.249 -0.059,-0.565 0.19,-0.71 l 4.73,-2.731 c 0.246,-0.142 0.565,-0.059 0.708,0.19 0.143,0.248 0.059,0.565 -0.19,0.709 l -4.73,2.731 c -0.082,0.048 -0.17,0.07 -0.26,0.07 z m 9.463,-5.462 c -0.179,0 -0.354,-0.094 -0.45,-0.259 -0.143,-0.248 -0.059,-0.566 0.19,-0.71 l 4.731,-2.731 c 0.245,-0.144 0.564,-0.059 0.708,0.19 0.144,0.248 0.059,0.566 -0.189,0.709 l -4.731,2.731 c -0.083,0.047 -0.17,0.07 -0.259,0.07 z"
-   id="path37"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-			<path
-   d="m 688.372,229.16 c -0.18,0 -0.354,-0.094 -0.449,-0.259 -0.145,-0.25 -0.059,-0.566 0.189,-0.71 l 2.695,-1.556 c 0.247,-0.145 0.565,-0.059 0.707,0.19 0.145,0.247 0.06,0.565 -0.188,0.708 l -2.695,1.556 c -0.082,0.049 -0.172,0.071 -0.259,0.071 z"
-   id="path39"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-		</g>
-		<path
-   d="m 726.877,251.391 c -0.088,0 -0.178,-0.021 -0.259,-0.068 -0.161,-0.093 -0.26,-0.264 -0.26,-0.451 V 206.41 c 0,-0.186 0.099,-0.357 0.26,-0.449 l 38.507,-22.231 c 0.16,-0.092 0.357,-0.092 0.518,0 0.161,0.092 0.26,0.264 0.26,0.449 v 44.463 c 0,0.185 -0.099,0.357 -0.26,0.449 l -38.507,22.232 c -0.079,0.046 -0.169,0.068 -0.259,0.068 z m 0.52,-44.683 v 43.267 l 37.469,-21.633 v -43.265 l -37.469,21.631 z"
-   id="path41"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-		<g
-   id="g43">
-			<path
-   d="m 726.88,165.577 c -0.287,0 -0.519,-0.232 -0.519,-0.518 v -3.113 c 0,-0.287 0.231,-0.519 0.519,-0.519 0.285,0 0.519,0.232 0.519,0.519 v 3.113 c -10e-4,0.286 -0.234,0.518 -0.519,0.518 z"
-   id="path45"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-			<path
-   d="m 726.877,198.353 0,0 c -0.286,0 -0.519,-0.231 -0.519,-0.519 v -5.462 c 0,-0.288 0.233,-0.519 0.521,-0.519 l 0,0 c 0.285,0 0.518,0.232 0.518,0.519 v 5.462 c 0,0.287 -0.232,0.519 -0.52,0.519 z m 0.003,-10.925 c -0.288,0 -0.521,-0.233 -0.521,-0.519 v -5.463 c 0,-0.287 0.233,-0.519 0.521,-0.519 0.285,0 0.518,0.232 0.518,0.519 v 5.463 c -10e-4,0.285 -0.233,0.519 -0.518,0.519 z m 0,-10.927 c -0.287,0 -0.519,-0.231 -0.519,-0.518 v -5.463 c 0,-0.286 0.231,-0.519 0.519,-0.519 0.285,0 0.519,0.233 0.519,0.519 v 5.463 c -10e-4,0.287 -0.234,0.518 -0.519,0.518 z"
-   id="path47"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-			<path
-   d="m 726.877,206.928 c -0.286,0 -0.519,-0.232 -0.519,-0.519 v -3.113 c 0,-0.287 0.232,-0.519 0.519,-0.519 0.288,0 0.521,0.232 0.521,0.519 v 3.113 c -10e-4,0.287 -0.233,0.519 -0.521,0.519 z"
-   id="path49"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff" />
-		</g>
-	</g>
+.dotted {
+        fill:transparent;
+        stroke: #FFF;
+        opacity:0.5;
+        stroke-width: 1;
+        stroke-dasharray: 100px;
+        stroke-dashoffset: 100px;
+        stroke-linecap:round;
+        stroke-linejoin:round;
+        animation: draw 2s infinite linear;
+        -webkit-animation: draw 2s infinite linear;
+}
+
+@keyframes draw {
+10% {stroke-dashoffset: 100px;}
+50% {stroke-dashoffset: 0;}
+70% {stroke-dashoffset: 0;}
+90% {stroke-dashoffset: 100px;}
+}
+
+@-webkit-keyframes draw {
+10% {stroke-dashoffset: 100px;}
+50% {stroke-dashoffset: 0;}
+70% {stroke-dashoffset: 0;}
+90% {stroke-dashoffset: 100px;}
+}
+
+.dotted-delay {
+    fill:transparent;
+    stroke: #FFF;
+    opacity:0.4;
+    stroke-width: 1;
+    stroke-dasharray: 100px;
+    stroke-dashoffset: 100px;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    animation: draw 2s infinite linear;
+     -webkit-animation: draw 2s infinite linear;
+    }
+
+    </style>
+<circle style="fill:#2E415F;" cx="130" cy="130" r="130"/>
+<g>
+    <g>
+        <polygon style="fill:#FFFFFF;" points="138.563,219.131 100.055,196.9 100.055,152.437 138.563,174.668 		"/>
+        <polygon style="fill:#EFEEEA;" points="138.563,130.205 100.055,152.437 138.563,174.668 177.068,152.437 		"/>
+        <polygon style="fill:#D1CFC5;" points="138.563,219.131 177.064,196.9 177.064,152.437 138.563,174.668 		"/>
+    </g>
+    <g>
+        <polygon style="fill:#FED162;" points="177.064,152.435 138.563,130.205 138.563,85.741 177.064,107.973 		"/>
+        <polygon style="fill:#FC6846;" points="177.064,63.509 138.563,85.741 177.064,107.973 215.574,85.741 		"/>
+        <polygon style="fill:#A3DBCE;" points="177.064,152.435 215.572,130.205 215.572,85.741 177.064,107.973 		"/>
+    </g>
+    <g>
+        <polygon class="draw" points="100.334,151.884 62.555,130.071 62.555,86.442
+            100.334,108.257 		"/>
+        <polygon class="draw" points="
+            100.334,64.627 62.555,86.442 100.334,108.257 138.121,86.442 		"/>
+        <polygon class="draw" points="100.334,151.884 138.119,130.071 138.119,86.442
+            100.334,108.257 		"/>
+        <polyline class="dotted" points="
+            100.702,65.104
+            100.702,110.181
+            62.555,130.143 "
+            />
+            <polyline class="dotted-delay" points="
+                138.555,130.143
+                100.702,110.181
+                "
+                />
+    </g>
 </g>
+
 </svg>
