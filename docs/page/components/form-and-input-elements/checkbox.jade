@@ -3,8 +3,7 @@ title: Checkbox
 order: 2
 collection: nav__components__form
 template: page.jade
-tags: Checkbox, Select,
-
+tags: Checkbox, Select
 ---
 
 p.paragraph.
@@ -36,6 +35,8 @@ p.paragraph.
       label.checkbox(data-checkbox)
         input.checkbox__checkbox(type='checkbox')
         .checkbox__label
+          svg.checkbox__label__icon
+            use(xlink:href='/images/icons.svg#checkmark')
           .checkbox__label__text Sample checkbox
 
 .toggle
@@ -86,11 +87,15 @@ p.paragraph.
       .checkbox-group
         label.checkbox(data-checkbox)
           input.checkbox__checkbox(type='checkbox')
-          span.checkbox__label
+          .checkbox__label
+            svg.checkbox__label__icon
+              use(xlink:href='/images/icons.svg#checkmark')
             .checkbox__label__text Sample checkbox one
         label.checkbox(data-checkbox)
           input.checkbox__checkbox(type='checkbox')
-          span.checkbox__label
+          .checkbox__label
+            svg.checkbox__label__icon
+              use(xlink:href='/images/icons.svg#checkmark')
             .checkbox__label__text Sample checkbox two
 .toggle
   .toggle__button(data-info, data-target='#code-checkbox-group')
@@ -146,6 +151,8 @@ p.paragraph.
       label.checkbox
         input.checkbox__checkbox(type='checkbox')
         .checkbox__label
+          svg.checkbox__label__icon
+            use(xlink:href='/images/icons.svg#checkmark')
           .checkbox__label__text Sample checkbox
 
 .toggle

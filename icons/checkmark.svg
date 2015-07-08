@@ -1,52 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.5, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   id="Ebene_1"
-   x="0px"
-   y="0px"
-   width="1878.6801"
-   height="2048"
-   viewBox="0 0 0 2048"
-   enable-background="new 0 0 38.775 38.096"
-   xml:space="preserve"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="checkmark.svg"><metadata
-   id="metadata9"><rdf:RDF><cc:Work
-       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
-   id="defs7" /><sodipodi:namedview
-   pagecolor="#ffffff"
-   bordercolor="#666666"
-   borderopacity="1"
-   objecttolerance="10"
-   gridtolerance="10"
-   guidetolerance="10"
-   inkscape:pageopacity="0"
-   inkscape:pageshadow="2"
-   inkscape:window-width="1280"
-   inkscape:window-height="962"
-   id="namedview5"
-   showgrid="true"
-   inkscape:zoom="0.19358988"
-   inkscape:cx="420.40767"
-   inkscape:cy="611.23345"
-   inkscape:window-x="-8"
-   inkscape:window-y="-8"
-   inkscape:window-maximized="1"
-   inkscape:current-layer="Ebene_1" />
-  <title
-   id="title6">Checkmark</title>
-<path
-   d="m 1854.0447,296.91532 0.3357,-0.68335 0,0 c 15.0386,-28.56402 24.3035,-61.02314 24.3035,-95.94232 0,-110.56601 -85.5994,-200.28985 -191.2727,-200.28985 -61.1614,0 -114.8709,30.54574 -149.8491,77.21854 l -0.1343,-0.0684 -0.6042,1.02503 c -9.7349,13.05199 -18.2612,26.99232 -24.6393,42.29937 L 716.61377,1485.1924 350.31561,1016.7561 l 0,0.069 c -34.3069,-53.7795 -92.71583,-89.1771 -159.04693,-89.1771 -105.606006,0 -191.27250064,89.7239 -191.27250064,200.2899 0,56.103 22.22219464,106.7392 57.73756464,143.0934 l 486.338566,685.3316 h 0.13424 c 34.03828,55.0097 92.98445,91.6373 160.25548,91.6373 79.75854,0 148.03644,-51.3196 176.63673,-123.8913 L 1840.9531,318.71457 c 4.901,-7.03851 9.0634,-14.35035 13.0916,-22.00387 z"
-   id="path3"
-   inkscape:connector-curvature="0" />
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1878px"
+	 height="2048px" viewBox="0 0 1878 2048" enable-background="new 0 0 1878 2048" xml:space="preserve">
+<g id="Ebene_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="checkmark.svg" inkscape:version="0.48.5 r10040">
+	
+		<sodipodi:namedview  inkscape:cy="611.23345" inkscape:cx="420.40767" inkscape:zoom="0.19358988" showgrid="true" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" pagecolor="#ffffff" bordercolor="#666666" id="namedview5" inkscape:current-layer="Ebene_1" inkscape:window-maximized="1" inkscape:window-y="-8" inkscape:window-x="-8" inkscape:window-height="1018" inkscape:window-width="1920" inkscape:pageshadow="2" inkscape:pageopacity="0">
+		</sodipodi:namedview>
+	<title  id="title6">Checkmark</title>
+	<path id="path3" inkscape:connector-curvature="0" d="M1853.369,296.916l0.336-0.683l0,0
+		c15.033-28.564,24.295-61.023,24.295-95.942C1878,89.724,1792.432,0,1686.797,0c-61.139,0-114.829,30.546-149.794,77.219
+		l-0.135-0.068l-0.604,1.025c-9.731,13.052-18.255,26.992-24.631,42.299L716.355,1485.192l-366.164-468.437v0.069
+		c-34.294-53.779-92.682-89.177-158.988-89.177C85.635,927.648,0,1017.372,0,1127.938c0,56.103,22.214,106.739,57.716,143.093
+		l486.161,685.332h0.134c34.025,55.01,92.95,91.637,160.196,91.637c79.729,0,147.982-51.319,176.572-123.891l959.503-1605.395
+		c4.899-7.039,9.061-14.35,13.087-22.004V296.916z"/>
+</g>
+<g id="Ebene_2">
+</g>
 </svg>

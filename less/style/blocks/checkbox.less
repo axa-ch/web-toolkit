@@ -23,82 +23,73 @@
   margin: 4px 0 0 0;
 
   vertical-align: middle;
-
-  .checkbox--js & {
-    &:extend(.invisible-input all);
-  }
 }
 
 .checkbox__label {
   margin-left: 18px;
 }
 
-.checkbox.checkbox--js.is-active .checkbox__label {
-  .icon();
-  .icon--checkmark();
+.checkbox__label__icon {
+  display: none;
 }
 
-.checkbox.checkbox--js .checkbox__label__text {
-  padding-top: 5px;
-  margin-left: 38px;
+.checkbox--js {
 
-  line-height: 1.5; // TODO: use more global definition
+  .checkbox__checkbox {
+    &:extend(.invisible-input all);
+  }
 
-  .respond(medium, {
-    padding-top: 2px;
-    margin-left: 33px;
-  });
-}
+  .checkbox__label {
+    margin-left: 0;
+  }
 
-.checkbox.checkbox--js .checkbox__label {
-  margin-left: 0;
-
-  .respond(medium, {
-    font-size: 15px;
-  });
-
-  &:before {
-    content: '';
-
-    display: inline-block;
-    float: left;
-
+  .checkbox__label__icon {
+    display: block;
+    position: absolute;
+    padding: 3px;
     width: 30px;
     height: 30px;
-    padding: 0;
     border: 1px solid @color-gray;
-    margin-right: 10px;
-
-    vertical-align: middle;
-    line-height: 28px !important;
-    font-size: 20px !important;
-    text-align: center;
-
+    fill-opacity: 0;
+    fill: @color-light-blue;
     background: white;
-    color: @color-light-blue;
 
     .respond(medium, {
       width: 25px;
       height: 25px;
-      font-size: 16px !important;
-      line-height: 23px !important;
     });
-
-    .checkbox-group.has-error &,
-    .checkbox.has-error & {
-      border-color: #ff0000;
-    }
-
   }
 
-  &:focus {
+  &.is-active {
+    .checkbox__label__icon {
+      fill-opacity: 1;
+    }
+  }
+
+  .checkbox__label__text {
+    padding-top: 5px;
+    margin-left: 40px;
+
+    line-height: 1.5; // TODO: use more global definition
+
+    .respond(medium, {
+      padding-top: 2px;
+      margin-left: 35px;
+    });
+  }
+
+  .checkbox__label:focus {
     outline: none;
 
-    &:before {
-      border-color: @color-light-blue !important; // !important needed for checkboxes in error state
-      outline: none;
+    .checkbox__label__icon {
+      border-color: @color-blue;
     }
   }
+}
+
+.checkbox-group.has-error .checkbox--js .checkbox__label__icon,
+.checkbox--js {
+  border-color: #ff0000;
 }
 
 /* Copyright AXA Versicherungen AG 2015 */
