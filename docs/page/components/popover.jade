@@ -5,6 +5,7 @@ collection: nav__components
 template: page.jade
 draft: true
 ---
+
 p.paragraph.
   If an action only requires one step (e.g. sending a feedback) then it can be packed into a popover.
 
@@ -18,21 +19,23 @@ p.paragraph.
       iframe.example__iframe
       .example__html(data-example-centered)
         div(style="min-height: 400px")
-          a.button(id='toggleButton',data-popover='#popover') Show Popover
-          .popover(id='popover')
-            .popover__tail
-            .popover__box
-              .popover__box__header
-                a.popover__close
-                  svg.modal__close-icon.icon-svg
-                    use(xmlns:xlink='http://www.w3.org/1999/xlink',xlink:href=relative('/images/icons.svg#modal-close'))
-                .popover__box__header__headline Demo
-              .popover__box__content__wrapper
-                .popover__box__content
-                  textarea.control.control--textarea
-                  p.paragraph
-                    a.button.button--small 'clicky click'
+          include ./demos/popover.jade
 
+.toggle
+  .toggle__button(data-info, data-target='#code')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./demos/popover.jade
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist

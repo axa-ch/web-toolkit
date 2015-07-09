@@ -51,18 +51,7 @@ p.paragraph.
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html(data-example-centered)
-      .button Sample button
-      !=' ' 
-      .button
-        svg.button__icon.button__icon--left.icon-svg
-          use(xlink:href=relative('/images/icons.svg#cross'))
-        | Icon and badge
-        span.button__badge.badge 159
-      !=' ' 
-      .button
-        | Icon right
-        svg.button__icon.button__icon--right.icon-svg
-          use(xlink:href=relative('/images/icons.svg#cross'))
+      include ./demos/button.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
@@ -85,12 +74,7 @@ p.paragraph.
             
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="button">Sample button</div>
-
-                <div class="button"><svg class="button__icon button__icon--left icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg>Icon and badge<span class="button__badge badge">159</span></div>
-
-                <div class="button">Icon right<svg class="button__icon button__icon--right icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg></div>
+              include:highlightcode ./demos/button.jade
 
         .tab-panel__content__tab(data-tab-content='css')
           

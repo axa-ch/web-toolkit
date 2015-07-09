@@ -32,12 +32,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      .progressbar
-        .progressbar__description awesome_image.jpg
-        .progressbar__percentage 22%
-        .progressbar__progress
-          .progressbar__progress-background
-            .progressbar__progress-foreground(style='width: 22%')
+      include ./demos/activityIndicators.jade
     
 .toggle
   .toggle__button(data-info, data-target='#code')
@@ -60,16 +55,7 @@ p.paragraph.
             
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="progressbar">
-                  <div class="progressbar__description">awesome_image.jpg</div>
-                  <div class="progressbar__percentage">22%</div>
-                  <div class="progressbar__progress">
-                    <div class="progressbar__progress-background">
-                      <div style="width: 22%" class="progressbar__progress-foreground"></div>
-                    </div>
-                  </div>
-                </div>
+              include:highlightcode ./demos/activityIndicators.jade
           
 
 h3.heading.heading--tertiary UX Checklist

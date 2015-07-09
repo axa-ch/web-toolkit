@@ -25,54 +25,8 @@ ul.checklist
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html
-      header.header
-        .header__container.l-container
-          .header__mobile-trigger
-          .header__brand.brand
-            .brand__logo
-            .brand__tagline.brand__tagline--de
-          .header__meta
-            .header__meta__upper
-              .header__meta__action
-                .header__action
-                  a.menu__link.header__action__button Logout
-              .header__meta__language
-                ul.menu.menu--language
-                  li.menu__item
-                    a.menu__link DE
-                  li.menu__item
-                    a.menu__link FR
-                  li.menu__item
-                    a.menu__link IT
-                  li.menu__item
-                    a.menu__link EN
-              .header__meta__menu
-                ul.menu.menu--meta
-                  li.menu__item.is-active
-                    a.menu__link Individuals
-                  li.menu__item
-                    a.menu__link Small Business Insurance
-                  li.menu__item
-                    a.menu__link Business
-            .header__meta__lower
-              .header__meta__welcome
-                div
-                  .header__meta__welcome__main Welcome to AXA
-                  .header__meta__welcome__secondary
-                    a(href='tel:0800809809') 0800 809 809
-        .header__menu
-          .l-container
-            ul.menu.menu--main
-              li.menu__item
-                a.menu__link.menu__link--home
-              li.menu__item
-                a.menu__link Menu Item 1
-              li.menu__item.is-active
-                a.menu__link Menu Item 2
-              li.menu__item
-                a.menu__link Menu Item 3
-              li.menu__item
-                a.menu__link Menu Item 4
+      include ./demos/header.jade
+      
 .toggle
   .toggle__button(data-info, data-target='#code')
     svg.icon-svg.toggle__icon
@@ -93,54 +47,4 @@ ul.checklist
           
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <header class="header">
-                  <div class="header__container l-container">
-                    <div class="header__mobile-trigger"></div>
-                    <div class="header__brand brand">
-                      <div class="brand__logo"></div>
-                      <div class="brand__tagline brand__tagline--de"></div>
-                    </div>
-                    <div class="header__meta">
-                      <div class="header__meta__upper">
-                        <div class="header__meta__action">
-                          <div class="header__action"><a class="menu__link header__action__button">Logout</a></div>
-                        </div>
-                        <div class="header__meta__language">
-                          <ul class="menu menu--language">
-                            <li class="menu__item"><a class="menu__link">DE</a></li>
-                            <li class="menu__item"><a class="menu__link">FR</a></li>
-                            <li class="menu__item"><a class="menu__link">IT</a></li>
-                            <li class="menu__item"><a class="menu__link">EN</a></li>
-                          </ul>
-                        </div>
-                        <div class="header__meta__menu">
-                          <ul class="menu menu--meta">
-                            <li class="menu__item is-active"><a class="menu__link">Individuals</a></li>
-                            <li class="menu__item"><a class="menu__link">Small Business Insurance</a></li>
-                            <li class="menu__item"><a class="menu__link">Business</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="header__meta__lower">
-                        <div class="header__meta__welcome">
-                          <div>
-                            <div class="header__meta__welcome__main">Welcome to AXA</div>
-                            <div class="header__meta__welcome__secondary"><a href="tel:0800809809">0800 809 809</a></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="header__menu">
-                    <div class="l-container">
-                      <ul class="menu menu--main">
-                        <li class="menu__item"><a class="menu__link menu__link--home"></a></li>
-                        <li class="menu__item"><a class="menu__link">Menu Item 1</a></li>
-                        <li class="menu__item is-active"><a class="menu__link">Menu Item 2</a></li>
-                        <li class="menu__item"><a class="menu__link">Menu Item 3</a></li>
-                        <li class="menu__item"><a class="menu__link">Menu Item 4</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </header>
+              include:highlightcode ./demos/header.jade

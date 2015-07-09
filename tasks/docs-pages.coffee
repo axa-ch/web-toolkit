@@ -4,7 +4,8 @@
 path = require 'path'
 
 readJSONFile = require '../lib/readJSONFile'
-sampleJadeFilter = require '../lib/sampleJadeFilter'
+sampleJadeFilter = require '../lib/jade-filter-sample'
+highlightCodeJadeFilter = require '../lib/jade-filter-highlightcode'
 markedRenderer = require '../lib/markedRenderer'
 searchIndexData = require '../lib/search-index-data'
 
@@ -31,6 +32,7 @@ module.exports = (cb) ->
 
   # Jade filters
   jade.registerFilter 'sample', sampleJadeFilter
+  jade.registerFilter 'highlightcode', highlightCodeJadeFilter
 
   # initialize Metalsmith
   metalsmith = new Metalsmith cwd

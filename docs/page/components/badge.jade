@@ -18,9 +18,7 @@ p.paragraph.
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html(data-example-centered)
-      .button
-        | Button with a badge
-        span.button__badge.badge 159
+      include ./demos/badge.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code')
@@ -36,8 +34,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="button">Button with a badge<span class="button__badge badge">159</span></div>
+              include:highlightcode ./demos/badge.jade
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist

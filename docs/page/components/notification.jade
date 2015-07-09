@@ -32,41 +32,9 @@ p.paragraph.
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
+      iframe.example__iframe
       .example__html
-        .form
-          .form__group
-            .form__group__label
-              .form__group__text Modifier
-            .form__group__control
-              div(data-segmented-control).segmented-control#notification__modifier
-                label.segmented-control__item
-                  input(type="radio", name="notification__modifier", value="", checked).segmented-control__item__radio
-                  span.segmented-control__item__label Default
-                label.segmented-control__item
-                  input(type="radio", name="notification__modifier", value="success").segmented-control__item__radio
-                  span.segmented-control__item__label Success
-                label.segmented-control__item
-                  input(type="radio", name="notification__modifier", value="error").segmented-control__item__radio
-                  span.segmented-control__item__label Error
-          .form__group
-            .form__group__label
-              .form__group__text Content
-            .form__group__control
-              textarea.control.control--textarea#notification_content.
-                Notification text
-          .form__group
-            .form__group__label
-              .form__group__text
-            .form__group__control
-              label(data-checkbox="data-checkbox").checkbox
-                input(type="checkbox").checkbox__checkbox#notification_html
-                div.checkbox__label
-                  div.checkbox__label__text HTML
-          .form__group
-            .form__group__label
-              .form__group__text
-            .form__group__control
-              .button#showNotification Show notification
+        include ./demos/notification.jade
 
 script.
   $("#showNotification").on('click', function() {
@@ -95,8 +63,7 @@ script.
             Test bla bla <br /> test
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                TODO
+              include:highlightcode ./demos/notification.jade
 
 h3.heading.heading--tertiary UX Checklist
 
