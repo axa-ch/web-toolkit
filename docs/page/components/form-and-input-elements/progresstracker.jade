@@ -36,7 +36,9 @@ ul.checklist
           li.progress-tracker__step.step.is-active.is-current
             span.step__bullet 2
           li.progress-tracker__step.step.step--end
-            span.step__bullet.step__bullet--checkmark
+            span.step__bullet
+              svg.step__bullet__checkmark
+                use(xlink:href=relative('/images/icons.svg#process-checkmark'))
 .toggle
   .toggle__button(data-info, data-target='#code')
     svg.icon-svg.toggle__icon
@@ -56,6 +58,6 @@ ul.checklist
                   <ul class="progress-tracker__flow">
                     <li class="progress-tracker__step step step--start is-active"><span class="step__bullet">1</span></li>
                     <li class="progress-tracker__step step is-active"><span class="step__bullet">2</span></li>
-                    <li class="progress-tracker__step step step--end"><span class="step__bullet step__bullet--checkmark"></span></li>
+                    <li class="progress-tracker__step step step--end"><span class="step__bullet"></span></li>
                   </ul>
                 </div>

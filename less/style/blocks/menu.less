@@ -278,10 +278,6 @@
       .menu__link {
         color: @color-blue;
       }
-
-      .menu__link--home::before {
-        color: @color-blue;
-      }
     }
 
     .respond(large, {
@@ -297,14 +293,11 @@
     color: @color-gray--darker;
   }
 
-  .menu__link--home {
-    .icon();
-    .icon--home();
-
-    &::before {
-      font-size: 16px;
-      color: @color-blue;
-    }
+  .menu__link__home {
+    width: 16px;
+    height: 44px;
+    fill: currentColor;
+    display: inline-block;
   }
 }
 
@@ -345,7 +338,6 @@
   margin-left: 7px;
 
   .menu__item {
-    margin-top: 2px;
     margin-left: 7px;
 
     font-size: 0.8em;
@@ -382,7 +374,6 @@
 
   .menu__item {
     padding-left: 8px;
-    margin-top: 2px;
     margin-left: 12px;
 
     font-weight: bold;

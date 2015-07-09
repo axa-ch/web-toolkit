@@ -1,6 +1,8 @@
 @import '../variables';
 @import './icon';
 
+@import 'style/blocks/control';
+
 // TODO: Instead of viewport we should consider usage of a --js which will be
 // added when js is available and it is a non-touch device
 
@@ -22,32 +24,36 @@
 
 .datepicker {
   &:extend(.clearfix all);
-  max-width: 200px;
+  .control--short();
 }
 
 .datepicker__input {
-  margin-right: 44px;
+  margin-right: 40px;
 }
 
 .datepicker__trigger {
   cursor: pointer;
-  .icon();
-  .icon--calendar();
 
   display: block;
   float: right;
 
-  width: 44px;
+  width: 40px;
   height: 40px;
-  padding: 0 14px;
+  padding: 0 10px;
 
-  background: white;
+  background: @color-blue-gray--light;
 
   line-height: 40px;
   text-align: center;
   font-size: 22px;
+}
 
-  color: @color-light-blue;
+.datepicker__trigger__icon {
+  width: 20px;
+  height: 40px;
+  fill: @color-light-blue;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .picker {
