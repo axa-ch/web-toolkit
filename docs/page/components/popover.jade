@@ -19,7 +19,7 @@ p.paragraph.
       iframe.example__iframe
       .example__html(data-example-centered)
         div(style="min-height: 400px")
-          include ./demos/popover.jade
+          include:ignorefrontmatter ./snippets/popover.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code')
@@ -35,7 +35,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./demos/popover.jade
+              include:highlightcode ./snippets/popover.jade
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist

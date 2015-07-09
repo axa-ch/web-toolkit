@@ -4,6 +4,7 @@ order: 6
 collection: nav__components
 template: page.jade
 ---
+
 aside.callout
   h2.callout__heading Feedback appreciated!
   p.paragraph
@@ -25,7 +26,7 @@ ul.checklist
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html
-      include ./demos/header.jade
+      include:ignorefrontmatter ./snippets/header.jade
       
 .toggle
   .toggle__button(data-info, data-target='#code')
@@ -47,4 +48,4 @@ ul.checklist
           
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./demos/header.jade
+              include:highlightcode ./snippets/header.jade

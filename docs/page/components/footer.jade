@@ -4,6 +4,7 @@ order: 5
 collection: nav__components
 template: page.jade
 ---
+
 aside.callout
   h2.callout__heading Feedback appreciated!
   p.paragraph
@@ -18,7 +19,7 @@ aside.callout
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html
-      include ./demos/footer.jade
+      include:ignorefrontmatter ./snippets/footer.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code')
@@ -34,4 +35,4 @@ aside.callout
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./demos/footer.jade
+              include:highlightcode ./snippets/footer.jade

@@ -51,7 +51,7 @@ p.paragraph.
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html(data-example-centered)
-      include ./demos/button.jade
+      include:ignorefrontmatter ./snippets/button.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
@@ -74,7 +74,7 @@ p.paragraph.
             
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./demos/button.jade
+              include:highlightcode ./snippets/button.jade
 
         .tab-panel__content__tab(data-tab-content='css')
           

@@ -34,16 +34,15 @@ p.paragraph.
   .example__content
       iframe.example__iframe
       .example__html
-        include ./demos/notification.jade
-
-script.
-  $("#showNotification").on('click', function() {
-    $("#notification").notification({
-      content: $("#notification_content").val(),
-      modifier: $('[name="notification__modifier"]:checked').val(),
-      html: $("#notification_html").is(":checked")
-    });
-  });
+        include:ignorefrontmatter ./snippets/notification.jade
+      .example__script.
+        $("#showNotification").on('click', function() {
+          $("#notification").notification({
+            content: $("#notification_content").val(),
+            modifier: $('[name="notification__modifier"]:checked').val(),
+            html: $("#notification_html").is(":checked")
+          });
+        });
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
@@ -63,7 +62,7 @@ script.
             Test bla bla <br /> test
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./demos/notification.jade
+              include:highlightcode ./snippets/notification.jade
 
 h3.heading.heading--tertiary UX Checklist
 
