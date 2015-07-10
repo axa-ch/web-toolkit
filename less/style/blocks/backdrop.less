@@ -3,20 +3,18 @@
 }
 
 .backdrop__shadow {
-  .respond(medium, {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: @z-index-backdrop;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @z-index-backdrop;
 
-    padding: 0 0;
-    overflow: auto;
+  padding: 0 0;
+  overflow: auto;
 
-    opacity: .75;
-    background: black;
-  });
+  opacity: .75;
+  background: black;
 }
 
 .backdrop__shadow--light {
@@ -25,21 +23,19 @@
 }
 
 .backdrop__content {
-  .respond(medium, {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: @z-index-backdrop-content;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @z-index-backdrop-content;
 
-    padding: 0 0;
-    overflow: auto;
-  });
+  padding: 0 0;
+  overflow: auto;
 }
 
 .backdrop__content--centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
