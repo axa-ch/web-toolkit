@@ -4,10 +4,9 @@
   class IE9Spinner
 
     constructor: (element, options) ->
-      console.log element
       @$element = $ element
 
-      @$element.addClass  'fallback-active'
+      @$element.addClass 'is-fallback-active'
 
   # Plugin definition
   Plugin = (option) ->
@@ -38,13 +37,12 @@
       'MozAnimation'
       'msAnimation'
       'OAnimation'
-      ]
+    ]
     for property in properties
       if elm.style[property]?
         #if the animation property is supported, exit
         return
 
-    
     #animation property not supported, activate fallback on all spinners
     $('[data-spinner]').each () ->
       $spinner = $(this)
