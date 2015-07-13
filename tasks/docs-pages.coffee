@@ -3,11 +3,15 @@
 #
 path = require 'path'
 marked = require 'marked'
+colors = require 'colors'
+gutil = require 'gulp-util'
+moment = require 'moment'
 
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/sampleJadeFilter'
 markedRenderer = require '../lib/marked-renderer'
 searchIndexData = require '../lib/search-index-data'
+loadChangelog = require '../lib/load-changelog'
 
 Metalsmith = require 'metalsmith'
 collections = require 'metalsmith-collections'
@@ -22,7 +26,6 @@ relative = require 'metalsmith-relative'
 lunr = require 'metalsmith-lunr'
 
 module.exports = (cb) ->
-
   cwd = path.join __dirname, '../'
   config = readJSONFile path.join cwd, './docs/config.json'
 
@@ -55,6 +58,7 @@ module.exports = (cb) ->
     package: readJSONFile path.join cwd, 'package.json'
     config: config
     marked: marked
+    moment: moment
   }
 
   # do the static pages
@@ -126,7 +130,28 @@ module.exports = (cb) ->
   metalsmith.clean false
   metalsmith.destination './dist/docs/'
 
-  return metalsmith.build (err) ->
-    if err then cb(err) else cb()
+  # Function to run the magic
+  build = ->
+    metalsmith.build (err) ->
+      if not err then cb() else cb(err)
+
+  username = process.env.GITHUB_USERNAME
+  password = process.env.GITHUB_PASSWORD
+
+  if username and password
+    gutil.log "Will load GitHub changelog with user " + username.cyan
+
+    # Amazingly load our GitHub changelog to include it into our build!
+    loadChangelog username, password, (err, changelog) ->
+      if not err
+        config.changelog = changelog
+        gutil.log "Successfully loaded " + "#{changelog.length}".cyan + " changelog items!"
+      else
+        gutil.log "Failed loading changelog items!".red
+
+      do build
+  else
+    # Just build it w/o changelog
+    do build
 
 # Copyright AXA Versicherungen AG 2015
