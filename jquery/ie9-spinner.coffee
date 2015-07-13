@@ -7,11 +7,7 @@
       console.log element
       @$element = $ element
 
-      $animation = @$element.find '.spinner__animation'
-      $fallback = @$element.find '.spinner__ie9-fallback'
-      
-      $animation.addClass  'fallback-active'
-      $fallback.addClass  'fallback-active'
+      @$element.addClass  'fallback-active'
 
   # Plugin definition
   Plugin = (option) ->
