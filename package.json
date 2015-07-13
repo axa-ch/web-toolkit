@@ -51,6 +51,7 @@
     "gulp-uglify": "~1.0.1",
     "gulp-util": "^3.0.1",
     "gulp-watch": "^1.0.2",
+    "gulp-watch-sequence": "0.0.4",
     "gulp-webserver": "^0.9.1",
     "highlight.js": "^8.2.0",
     "iframe-resizer": "git+https://github.com/elessar-ch/iframe-resizer.git",
@@ -77,7 +78,7 @@
     "npm": "^2.1.18",
     "postcss-pseudoelements": "^1.0.0",
     "run-sequence": "^0.3.6",
-    "zeroclipboard": "^2.2.0",
-    "svg4everybody": "git+https://github.com/jonathantneal/svg4everybody.git"
+    "svg4everybody": "git+https://github.com/jonathantneal/svg4everybody.git",
+    "zeroclipboard": "^2.2.0"
   }
 }
