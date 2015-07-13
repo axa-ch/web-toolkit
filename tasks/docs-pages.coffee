@@ -2,6 +2,7 @@
 # The Metalsmith workflow that builds our docs.
 #
 path = require 'path'
+marked = require 'marked'
 
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/sampleJadeFilter'
@@ -32,6 +33,13 @@ module.exports = (cb) ->
   # Jade filters
   jade.registerFilter 'sample', sampleJadeFilter
 
+  # Configure marked
+  marked.setOptions
+    renderer: markedRenderer
+    langPrefix: ''
+    highlight: (code, lang) ->
+      return require('highlight.js').highlight(lang, code).value;
+
   # initialize Metalsmith
   metalsmith = new Metalsmith cwd
   metalsmith.source './docs/page'
@@ -46,6 +54,7 @@ module.exports = (cb) ->
     version: readJSONFile path.join cwd, 'tmp/version.json'
     package: readJSONFile path.join cwd, 'package.json'
     config: config
+    marked: marked
   }
 
   # do the static pages
@@ -72,6 +81,7 @@ module.exports = (cb) ->
     branch('**/*.md', '!_*/**/*.md')
       .use relative()
       .use collections collections_options
+      # TODO: Try to use our already-configured marked instance here
       .use markdown {
         renderer: markedRenderer
         langPrefix: ''
@@ -80,13 +90,6 @@ module.exports = (cb) ->
         useMetadata: true
       }
   )
-
-  # Configure marked to use custom highlight
-  require('marked').setOptions
-    renderer: markedRenderer
-    langPrefix: ''
-    highlight: (code, lang) ->
-      return require('highlight.js').highlight(lang, code).value;
 
   # Do the jade pages
   metalsmith.use(
