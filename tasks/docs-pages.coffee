@@ -5,7 +5,7 @@ path = require 'path'
 
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/sampleJadeFilter'
-markedRenderer = require '../lib/markedRenderer'
+markedRenderer = require '../lib/marked-renderer'
 searchIndexData = require '../lib/search-index-data'
 
 Metalsmith = require 'metalsmith'
