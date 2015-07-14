@@ -18,18 +18,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      .l-container
-        .form
-          .form__group
-            label.form__group__label
-              .form__group__label__text Form label
-            .form__group__control
-              .datepicker#myDatepicker(data-datepicker-watch="#myDatepickerInput", data-datepicker-display-week)
-                .datepicker__trigger
-                  svg(data-datepicker="#myDatepicker").datepicker__trigger__icon
-                    use(xlink:href=relative('/images/icons.svg#calendar'))
-                .datepicker__input
-                  input(type='text').control.control--input#myDatepickerInput
+      include:ignorefrontmatter ./snippets/datepicker.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code')
@@ -51,77 +40,7 @@ p.paragraph.
             the required behaviour.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="picker picker--with-weeknumber is-active">
-                  <div class="picker__header">
-                    <a class="picker__prev"></a><a class="picker__next"></a>
-                    <div class="picker__headline"><span class="picker__headline__month">June</span><span> </span><span>2015</span></div>
-                  </div>
-                  <div class="picker__content">
-                    <div class="picker__month">
-                      <div class="picker__week picker__week--headline">
-                        <div class="picker__weeknumber picker__weeknumber--headline"></div>
-                        <div class="picker__day picker__day--headline">Mo</div>
-                        <div class="picker__day picker__day--headline">Tu</div>
-                        <div class="picker__day picker__day--headline">We</div>
-                        <div class="picker__day picker__day--headline">Th</div>
-                        <div class="picker__day picker__day--headline">Fr</div>
-                        <div class="picker__day picker__day--headline">Sa</div>
-                        <div class="picker__day picker__day--headline">Su</div>
-                      </div>
-                      <div class="picker__week">
-                        <div class="picker__weeknumber">23</div>
-                        <div class="picker__day">1</div>
-                        <div class="picker__day">2</div>
-                        <div class="picker__day">3</div>
-                        <div class="picker__day">4</div>
-                        <div class="picker__day picker__day--today">5</div>
-                        <div class="picker__day">6</div>
-                        <div class="picker__day">7</div>
-                      </div>
-                      <div class="picker__week">
-                        <div class="picker__weeknumber">24</div>
-                        <div class="picker__day">8</div>
-                        <div class="picker__day">9</div>
-                        <div class="picker__day">10</div>
-                        <div class="picker__day">11</div>
-                        <div class="picker__day">12</div>
-                        <div class="picker__day">13</div>
-                        <div class="picker__day">14</div>
-                      </div>
-                      <div class="picker__week">
-                        <div class="picker__weeknumber">25</div>
-                        <div class="picker__day">15</div>
-                        <div class="picker__day">16</div>
-                        <div class="picker__day">17</div>
-                        <div class="picker__day">18</div>
-                        <div class="picker__day">19</div>
-                        <div class="picker__day">20</div>
-                        <div class="picker__day">21</div>
-                      </div>
-                      <div class="picker__week">
-                        <div class="picker__weeknumber">26</div>
-                        <div class="picker__day">22</div>
-                        <div class="picker__day">23</div>
-                        <div class="picker__day">24</div>
-                        <div class="picker__day">25</div>
-                        <div class="picker__day">26</div>
-                        <div class="picker__day">27</div>
-                        <div class="picker__day">28</div>
-                      </div>
-                      <div class="picker__week">
-                        <div class="picker__weeknumber">27</div>
-                        <div class="picker__day">29</div>
-                        <div class="picker__day">30</div>
-                        <div class="picker__day picker__day--next-month">1</div>
-                        <div class="picker__day picker__day--next-month">2</div>
-                        <div class="picker__day picker__day--next-month">3</div>
-                        <div class="picker__day picker__day--next-month">4</div>
-                        <div class="picker__day picker__day--next-month">5</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              include:highlightcode ./snippets/datepicker-pure.jade
 
         .tab-panel__content__tab(data-tab-content='js')
           :markdown
@@ -133,13 +52,7 @@ p.paragraph.
             interaction.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div id="myDatepicker" data-datepicker-watch="#myDatepickerInput" class="datepicker">
-                  <a data-datepicker="#myDatepicker" class="datepicker__trigger"></a>
-                  <div class="datepicker__input">
-                    <input type="text" id="myDatepickerInput" class="control control--input"/>
-                  </div>
-                </div>
+              include:highlightcode ./snippets/datepicker.jade
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
