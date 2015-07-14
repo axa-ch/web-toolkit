@@ -7,8 +7,8 @@ tags: Progress, Steps
 ---
 p.paragraph.
   The progresstracker informs the user about the amount of steps to complete a form or wizard as well as his current location in the process.
-  
-  
+
+
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item.
@@ -19,7 +19,7 @@ ul.checklist
   li.checklist__item
     :markdown
       If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
-        
+
 .example(data-example-relative-base=relative('/'))
   .example__header
     .example__device-selection
@@ -29,16 +29,8 @@ ul.checklist
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html(data-example-centered)
-      .progress-tracker
-        ul.progress-tracker__flow
-          li.progress-tracker__step.step.step--start.is-active
-            span.step__bullet 1
-          li.progress-tracker__step.step.is-active.is-current
-            span.step__bullet 2
-          li.progress-tracker__step.step.step--end
-            span.step__bullet
-              svg.step__bullet__checkmark
-                use(xlink:href=relative('/images/icons.svg#process-checkmark'))
+      include:ignorefrontmatter ./snippets/progress-tracker.jade
+
 .toggle
   .toggle__button(data-info, data-target='#code')
     svg.icon-svg.toggle__icon
@@ -50,14 +42,7 @@ ul.checklist
         .tab-panel__header__tabs
           .tab-panel__header__tab(data-tab-toggle='html') HTML
       .tab-panel__content
-        .tab-panel__content__tab(data-tab-content='html')            
+        .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="progress-tracker">
-                  <ul class="progress-tracker__flow">
-                    <li class="progress-tracker__step step step--start is-active"><span class="step__bullet">1</span></li>
-                    <li class="progress-tracker__step step is-active"><span class="step__bullet">2</span></li>
-                    <li class="progress-tracker__step step step--end"><span class="step__bullet"></span></li>
-                  </ul>
-                </div>
+              include:highlightcode ./snippets/progress-tracker.jade
