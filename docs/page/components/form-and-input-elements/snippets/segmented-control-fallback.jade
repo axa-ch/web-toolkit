@@ -1,0 +1,18 @@
+---
+title: Segmented Control Fallback
+template: demo.jade
+---
+
+.l-container
+  .form
+    .form__group
+      label.form__group__label
+        .form__group__label__text Form label
+      .form__group__control
+        .segmented-control
+          label.segmented-control__item
+            input.segmented-control__item__radio(type='radio', name='bar')
+            span.segmented-control__item__label Ja
+          label.segmented-control__item
+            input.segmented-control__item__radio(type='radio', name='bar')
+            span.segmented-control__item__label Nein

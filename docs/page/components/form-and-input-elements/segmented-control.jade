@@ -32,19 +32,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      .l-container
-        .form
-          .form__group
-            label.form__group__label
-              .form__group__label__text Form label
-            .form__group__control
-              .segmented-control(data-segmented-control)
-                label.segmented-control__item
-                  input.segmented-control__item__radio(type='radio', name='bar')
-                  span.segmented-control__item__label Ja
-                label.segmented-control__item
-                  input.segmented-control__item__radio(type='radio', name='bar')
-                  span.segmented-control__item__label Nein
+      include:ignorefrontmatter ./snippets/segmented-control-basic.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
@@ -64,18 +52,11 @@ p.paragraph.
             add custom styling to radio buttons to look
             like a segmented-control.
             The `segmented-control` plugin does that
-            automatically. It also sets the 
+            automatically. It also sets the
             `.is-active` state on the active item.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div data-segmented-control="data-segmented-control" class="segmented-control">
-                  <label class="segmented-control__item">
-                    <input type="radio" name="bar" class="segmented-control__item__radio"/><span class="segmented-control__item__label">Ja</span>
-                  </label><label class="segmented-control__item">
-                    <input type="radio" name="bar" class="segmented-control__item__radio"/><span class="segmented-control__item__label">Nein</span>
-                  </label>
-                </div>
+              include:highlightcode ./snippets/segmented-control-basic.jade
         .tab-panel__content__tab(data-tab-content='js')
           :markdown
             If you can't use the jQuery plugin, use the
@@ -88,7 +69,7 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item Default values can be set if appropriate - if in doubt, do not set defaults.
-  li.checklist__item 
+  li.checklist__item
     :markdown
       Do not use more than 5 options in a segmented control. A <a href="./dropdown.html" class="link">dropdown</a> can be an alternative.
 
@@ -108,20 +89,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      div(style='max-width:200px;')
-        .segmented-control(data-segmented-control)
-          label.segmented-control__item
-            input.segmented-control__item__radio(type='radio', name='bar')
-            span.segmented-control__item__label Foo bar 
-          label.segmented-control__item
-            input.segmented-control__item__radio(type='radio', name='bar')
-            span.segmented-control__item__label long text
-          label.segmented-control__item
-            input.segmented-control__item__radio(type='radio', name='bar')
-            span.segmented-control__item__label and some 
-          label.segmented-control__item
-            input.segmented-control__item__radio(type='radio', name='bar')
-            span.segmented-control__item__label more controls 
+      include:ignorefrontmatter ./snippets/segmented-control-stacked.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-stacked')
@@ -140,6 +108,9 @@ p.paragraph.
             to create stacked segmented-controls.
             The jQuery plugin will do that automatically
             if there's not enough space.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/segmented-control-stacked.jade
 
 h3.heading.heading--tertiary UX Checklist
 
@@ -162,19 +133,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      .l-container
-        .form
-          .form__group
-            label.form__group__label
-              .form__group__label__text Form label
-            .form__group__control
-              .segmented-control
-                label.segmented-control__item
-                  input.segmented-control__item__radio(type='radio', name='bar')
-                  span.segmented-control__item__label Ja
-                label.segmented-control__item
-                  input.segmented-control__item__radio(type='radio', name='bar')
-                  span.segmented-control__item__label Nein
+      include:ignorefrontmatter ./snippets/segmented-control-fallback.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-fallback')
@@ -194,12 +153,4 @@ p.paragraph.
             `segmented-control--js` modifier.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="segmented-control">
-                  <label class="segmented-control__item">
-                    <input type="radio" name="foo" class="segmented-control__item__radio"/><span class="segmented-control__item__label">Ja</span>
-                  </label>
-                  <label class="segmented-control__item">
-                    <input type="radio" name="foo" class="segmented-control__item__radio"/><span class="segmented-control__item__label">Nein</span>
-                  </label>
-                </div>
+              include:highlightcode ./snippets/segmented-control-fallback.jade

@@ -1,0 +1,36 @@
+---
+title: Form Group
+template: demo.jade
+---
+
+.form
+  .form__group
+    .form__group__label
+      .form__group__label__text Firstname*
+    .form__group__control
+      input(type='text').control.control--input
+  .form__group
+    .form__group__label.form__group__label--invalid
+      .form__group__label__text Lastname*
+    .form__group__control
+      input(type='text').control.control--input.has-error
+      .form__error-message Your name can't contain a number.
+  .form__group
+    .form__group__label
+      .form__group__label__info-icon
+        .info-icon(data-info, data-target='#target')
+      .form__group__label__info-icon-text-wrapper Form group with info
+    .form__group__control
+      input(type='text').control.control--input
+      .form__info-text(style='display: none;')#target
+        .info-text
+          p.paragraph Some meaningful explanation may be placed here
+  .form__group
+    .from__group__control.form__group__control--fullwidth
+      label.checkbox(data-checkbox)
+        input.checkbox__checkbox(type='checkbox')
+        .checkbox__label
+          svg.checkbox__label__icon
+            use(xlink:href='/images/icons.svg#checkmark')
+          .checkbox__label__text Full width control
+  .form__footnote * Form footnote

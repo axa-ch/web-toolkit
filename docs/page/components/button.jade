@@ -18,7 +18,7 @@ p.paragraph.
       a(href='#secondary').toc__anchor-navigation__link Secondary button
     li.toc__anchor-navigation__item
       a(href='#floating').toc__anchor-navigation__link Floating action button
-      
+
 //
 //-.bubble
   .bubble__image
@@ -28,13 +28,13 @@ p.paragraph.
       .bubble__title__text PSD File
     .bubble__text
       p.paragraph.
-        Hallo Designer. hier kannst du unsere PSD mit allen Buttons 
+        Hallo Designer. hier kannst du unsere PSD mit allen Buttons
         herunterladen und gleich mit dem Layout anfanagen
-      
+
 //-.downloads
   .downloads__item
     a(href="../AXA.aco").downloads__link BUTTONS.PSD
-      
+
 .hr
 
 h2.heading.heading--secondary#primary Primary button
@@ -51,18 +51,7 @@ p.paragraph.
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html(data-example-centered)
-      .button Sample button
-      !=' ' 
-      .button
-        svg.button__icon.button__icon--left.icon-svg
-          use(xlink:href=relative('/images/icons.svg#cross'))
-        | Icon and badge
-        span.button__badge.badge 159
-      !=' ' 
-      .button
-        | Icon right
-        svg.button__icon.button__icon--right.icon-svg
-          use(xlink:href=relative('/images/icons.svg#cross'))
+      include:ignorefrontmatter ./snippets/button-primary.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
@@ -80,20 +69,15 @@ p.paragraph.
           ul.checklist
             li.checklist__item.
               Prevent whitespace at the start and the end
-              of the button. It will add some additional spacing 
+              of the button. It will add some additional spacing
               between the icon and the button.
-            
+
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="button">Sample button</div>
-
-                <div class="button"><svg class="button__icon button__icon--left icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg>Icon and badge<span class="button__badge badge">159</span></div>
-
-                <div class="button">Icon right<svg class="button__icon button__icon--right icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg></div>
+              include:highlightcode ./snippets/button-primary.jade
 
         .tab-panel__content__tab(data-tab-content='css')
-          
+
           p.paragraph.
             Use the CSS classes mentioned in the HTML tab
             as mixins.
@@ -122,18 +106,7 @@ p.paragraph.
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html(data-example-centered)
-      .button.button--secondary Sample button
-      !=' ' 
-      .button.button--secondary
-        svg.button__icon.button__icon--left.icon-svg
-          use(xlink:href=relative('/images/icons.svg#cross'))
-        | Icon and badge
-        span.button__badge.badge 159
-      !=' ' 
-      .button.button--secondary
-        | Icon right
-        svg.button__icon.button__icon--right.icon-svg
-          use(xlink:href=relative('/images/icons.svg#cross'))
+      include:ignorefrontmatter ./snippets/button-secondary.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-2')
@@ -150,12 +123,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="button button--secondary">Sample button</div>
-                
-                <div class="button button--secondary"><svg class="button__icon button__icon--left icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg>Icon and badge<span class="button__badge badge">159</span></div>
-                
-                <div class="button button--secondary">Icon right<svg class="button__icon button__icon--right icon-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#cross"></use></svg></div>
+              include:highlightcode ./snippets/button-secondary.jade
         .tab-panel__content__tab(data-tab-content='css')
           p.paragraph.
             Use the CSS classes mentioned in the HTML tab
@@ -185,9 +153,7 @@ p.paragraph.
   .example__content.example__content--centered
     iframe.example__iframe
     .example__html(data-example-centered)
-      .button.button--floating
-        svg.button__icon.icon-svg
-          use(xlink:href=relative('/images/icons.svg#feedback'))
+      include:ignorefrontmatter ./snippets/button-floating.jade
 .toggle
   .toggle__button(data-info, data-target='#code-3')
     svg.icon-svg.toggle__icon
@@ -203,11 +169,10 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item Do not add any whitespace within the button since it would miss-position the icon
-          
+
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="button button--floating icon icon--feedback" ><div>
+              include:highlightcode ./snippets/button-floating.jade
 
         .tab-panel__content__tab(data-tab-content='css')
           p.paragraph.

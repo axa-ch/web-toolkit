@@ -4,7 +4,9 @@
 path = require 'path'
 
 readJSONFile = require '../lib/readJSONFile'
-sampleJadeFilter = require '../lib/sampleJadeFilter'
+sampleJadeFilter = require '../lib/jade-filter-sample'
+highlightCodeJadeFilter = require '../lib/jade-filter-highlightcode'
+ignoreFmJadeFilter = require '../lib/jade-filter-ignorefrontmatter'
 markedRenderer = require '../lib/markedRenderer'
 searchIndexData = require '../lib/search-index-data'
 
@@ -19,6 +21,7 @@ drafts = require 'metalsmith-drafts'
 filepath = require 'metalsmith-filepath'
 relative = require 'metalsmith-relative'
 lunr = require 'metalsmith-lunr'
+copy = require 'metalsmith-copy'
 
 module.exports = (cb) ->
 
@@ -31,6 +34,8 @@ module.exports = (cb) ->
 
   # Jade filters
   jade.registerFilter 'sample', sampleJadeFilter
+  jade.registerFilter 'highlightcode', highlightCodeJadeFilter
+  jade.registerFilter 'ignorefrontmatter', ignoreFmJadeFilter
 
   # initialize Metalsmith
   metalsmith = new Metalsmith cwd
@@ -98,11 +103,20 @@ module.exports = (cb) ->
       .use jade
         useMetadata: true
         locals: metalsmith.metadata()
+        pretty: true
+  )
+
+  # Duplicate snippets to be used as demo pages (will be wrapped with templates below)
+  metalsmith.use(
+    branch ['**/*.html' ]
+      .use copy
+        pattern: '**/snippets/*.html'
+        directory: 'components/demos'
   )
 
   # Wrap the pages with their template
   metalsmith.use(
-    branch ['**/*.html' ]
+    branch ['**/*.html', '!**/snippets/*.html' ]
       .use filepath
         absolute: true
       .use lunr {

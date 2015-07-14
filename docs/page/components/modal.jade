@@ -5,6 +5,7 @@ collection: nav__components
 template: page.jade
 tags: terms, conditions, agb, avb
 ---
+
 p.paragraph. A modal window can be used to present very specific information (such as terms & conditions) to the user.
 
 .example(data-example-max-height='400', data-example-relative-base=relative('/'))
@@ -17,49 +18,7 @@ p.paragraph. A modal window can be used to present very specific information (su
       iframe.example__iframe
       .example__html(data-example-centered)
         div
-          .button(data-modal='#myModal') Show modal
-          .modal#myModal
-            .modal__backdrop
-            .modal__wrapper
-              .modal__dialog
-                .modal__header
-                  a(data-modal='#myModal').modal__close
-                    svg.modal__close-icon.icon-svg
-                      use(xmlns:xlink='http://www.w3.org/1999/xlink',xlink:href=relative('/images/icons.svg#modal-close'))
-                  .modal__heading
-                    .heading.heading--modal Bacon Ipsum
-                .modal__content-wrapper
-                  .modal__content
-                    :markdown
-                      Bacon ipsum dolor amet ham hock
-                      tongue ham eu short ribs, voluptate
-                      hamburger ut sed excepteur brisket
-                      turducken labore pork. Cupim ham
-                      hock pork, ground round ullamco pork
-                      belly consectetur beef ribeye
-                      nostrud. Tongue andouille brisket
-                      boudin porchetta cow capicola t-bone
-                      culpa kevin meatball. Bacon tail
-                      shankle tenderloin eu occaecat.
-
-                      # Prosciutto ex Bacon
-                      Ipsum pancetta consectetur excepteur
-                      dolore frankfurter pastrami sausage.
-                      Et jerky eiusmod, adipisicing flank
-                      ipsum exercitation laborum t-bone
-                      filet mignon corned beef bacon
-                      bresaola elit labore. Ground round
-                      frankfurter alcatra flank et
-                      excepteur nulla ex shoulder sint.
-                      Frankfurter tenderloin jowl, occaecat
-                      ribeye sausage prosciutto ex bacon
-                      landjaeger pork tail. Pork belly
-                      proident meatball culpa.
-                .modal__footer
-                  .modal__footer__wrapper
-                    .modal__buttons
-                      a.modal__buttons__button.button.button--small.button--secondary Drucken
-                      a(data-modal='#myModal').modal__buttons__button.button.button--small.button--secondary Schliessen
+          include:ignorefrontmatter ./snippets/modal.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-modal')
@@ -85,44 +44,7 @@ p.paragraph. A modal window can be used to present very specific information (su
             
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div data-modal="#myModal" class="button">Show modal</div>
-
-                <div id="myModal" class="modal">
-                  <div class="modal__backdrop"></div>
-                  <div class="modal__wrapper">
-                    <div class="modal__dialog">
-                      <div class="modal__header">
-                        <a data-modal="#myModal" class="modal__close">
-                          <svg class="modal__close-icon icon-svg">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../images/icons.svg#modal-close"></use>
-                          </svg>
-                        </a>
-                        <div class="modal__heading">
-                          <div class="heading heading--modal">Bacon Ipsum</div>
-                        </div>
-                      </div>
-                      <div class="modal__content-wrapper">
-                        <div class="modal__content">
-                          <p class="paragraph">
-                            Bacon ipsum dolor amet ham hock tongue ham eu short ribs, voluptate hamburger ut sed excepteur brisket turducken labore pork. Cupim ham hock pork, ground round ullamco pork belly consectetur beef ribeye nostrud. Tongue andouille brisket boudin porchetta cow capicola t-bone culpa kevin meatball. Bacon tail shankle tenderloin eu occaecat.
-                          </p>
-                          <h2 class="heading heading--secondary">Prosciutto ex Bacon</h2>
-                          <p class="paragraph">
-                            Ipsum pancetta consectetur excepteur dolore frankfurter pastrami sausage. Et jerky eiusmod, adipisicing flank ipsum exercitation laborum t-bone filet mignon corned beef bacon bresaola elit labore. Ground round frankfurter alcatra flank et excepteur nulla ex shoulder sint. Frankfurter tenderloin jowl, occaecat ribeye sausage prosciutto ex bacon landjaeger pork tail. Pork belly proident meatball culpa.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="modal__footer">
-                        <div class="modal__footer__wrapper">
-                          <div class="modal__buttons">
-                            <a class="modal__buttons__button button button--small button--secondary">Drucken</a><a data-modal="#myModal" class="modal__buttons__button button button--small button--secondary">Schliessen</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              include:highlightcode ./snippets/modal.jade
 
         .tab-panel__content__tab(data-tab-content='js')
           p.paragraph.
@@ -149,6 +71,7 @@ p.paragraph. A modal window can be used to present very specific information (su
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
                 $('#myModal').modal('toggle')
+                
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item On mobile it is presented in full screen.
