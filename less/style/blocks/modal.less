@@ -19,31 +19,6 @@
   overflow: hidden;
 }
 
-.modal__backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  opacity: .75;
-  background: black;
-}
-
-.modal__wrapper {
-  .respond(medium, {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: @z-index-modal-wrapper;
-
-    padding: 0 0;
-    overflow: auto;
-  })
-}
-
 .modal__content {
   position: fixed;
   top: 40px;
@@ -65,7 +40,7 @@
     left: auto;
 
     padding: 0 @grid-gutter-width/2;
-  })
+  });
 }
 
 .modal__dialog {
