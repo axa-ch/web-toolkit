@@ -53,9 +53,34 @@
 .example__content {
   padding: 80px 0;
   background: #dfdfdf;
+  text-align: center;
+}
+
+.example__border {
+  position: relative;
+  display: inline-block;
+  padding: 3px;
+}
+
+.example__bracket {
+  position: absolute;
+  height: 16px;
+  width: 24px;
+  background-color: @color-light-blue--light;
+}
+
+.example__bracket--topleft {
+  top: 0;
+  left: 0;
+}
+
+.example__bracket--bottomright {
+  bottom: 0;
+  right: 0;
 }
 
 .example__iframe {
+  position: relative;
   display: block;
   margin: 0 auto;
   width: 100%;
