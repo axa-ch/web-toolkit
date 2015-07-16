@@ -134,6 +134,13 @@ renderer.code = (code, lang) ->
     "</pre>\n"
   ].join ""
 
+renderer.codespan = (code) ->
+  [
+    "<code class=\"code\">"
+      "#{code}"
+    "</code>\n"
+  ].join ""
+
 module.exports = renderer
 
 # Copyright AXA Versicherungen AG 2015
