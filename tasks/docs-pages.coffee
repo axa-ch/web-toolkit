@@ -10,6 +10,7 @@ moment = require 'moment'
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/sampleJadeFilter'
 markedRenderer = require '../lib/marked-renderer'
+markedChangelogRenderer = require '../lib/marked-renderer-changelog'
 searchIndexData = require '../lib/search-index-data'
 loadChangelog = require '../lib/load-changelog'
 
@@ -51,15 +52,15 @@ module.exports = (cb) ->
   metalsmith.use drafts()
 
   # add metadata
-  metalsmith.use define {
+  metalsmith.use define
     icons: readJSONFile path.join cwd, 'tmp/icons.json'
     colors: readJSONFile path.join cwd, 'less/colors.json'
     version: readJSONFile path.join cwd, 'tmp/version.json'
     package: readJSONFile path.join cwd, 'package.json'
     config: config
-    marked: marked
     moment: moment
-  }
+    marked: marked
+    changelogRenderer: markedChangelogRenderer
 
   # do the static pages
   # TODO: Remove when collection plugin supports undeclared collections
@@ -82,22 +83,21 @@ module.exports = (cb) ->
 
   # Do the markdown pages
   metalsmith.use(
-    branch('**/*.md', '!_*/**/*.md')
+    branch ['**/*.md', '!_*/**/*.md']
       .use relative()
       .use collections collections_options
       # TODO: Try to use our already-configured marked instance here
-      .use markdown {
+      .use markdown
         renderer: markedRenderer
         langPrefix: ''
         highlight: (code, lang) ->
           return require('highlight.js').highlight(lang, code).value
         useMetadata: true
-      }
   )
 
   # Do the jade pages
   metalsmith.use(
-    branch [ '**/*.jade' ]
+    branch ['**/*.jade']
       .use filepath
         absolute: true
       .use relative()
@@ -109,7 +109,7 @@ module.exports = (cb) ->
 
   # Wrap the pages with their template
   metalsmith.use(
-    branch ['**/*.html' ]
+    branch ['**/*.html']
       .use filepath
         absolute: true
       .use lunr {

@@ -20,7 +20,7 @@
 .changelog__timeline__item {
     position: relative;
     padding-left: 45px;
-    margin: 0 0 80px 0;
+    margin: 0 0 50px 0;
 }
 
 .changelog__timeline__item::before {
@@ -44,7 +44,7 @@
     color: @color-light-blue;
     font-weight: 600;
     font-size: 1.4em;
-    margin: 0 0 20px 0;
+    margin: 0 0 45px 0;
 }
 
 .changelog__timeline__item__version__date {
@@ -57,25 +57,41 @@
 
 .changelog__timeline__item__content {
   margin-bottom: 40px;
+  margin-left: 50px;
 }
 
-.changelog__timeline__item__content__item__headline {
+.changelog__timeline__item__content__headline {
   position: relative;
-  padding: 12px 0 0 50px;
-  font-size: 1.2em;
+  padding-left: 30px;
+  color: @color-light-blue;
   font-weight: 600;
-  margin: 0 0 20px 0;
+  font-size: 1.4em;
+  margin: 45px 0 15px -30px;
 }
 
-.changelog__timeline__item__content__item__headline__icon {
+.changelog__timeline__item__content__headline::before {
   position: absolute;
+  top: 6px;
   left: 0;
-  top: 10px;
-  width: 30px;
-  height: 30px;
-  fill: @color-gray--mid;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: @color-light-blue;
+  content: '';
+  display: block;
 }
 
-.changelog__timeline__item__content__item__content {
-  padding-left: 50px;
+.changelog__timeline__item__content__text {
+}
+
+.changelog__timeline__item__content__list {
+  padding-left: 45px;
+}
+
+.changelog__timeline__item__content__list__item > .changelog__timeline__item__content__list {
+  margin: 0;
+}
+
+.changelog__timeline__item__content__list__item {
+  margin-bottom: 0px;
 }

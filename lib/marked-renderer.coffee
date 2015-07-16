@@ -3,7 +3,7 @@
 marked = require 'marked'
 renderer = new marked.Renderer
 
-slugify = (text) ->
+renderer._slugify = (text) ->
   lower = do text.toLowerCase
   lower.replace /[^\w]+/g, '-'
 
@@ -11,7 +11,7 @@ renderer._relative = (link) ->
   if @options.relative then @options.relative link else link
 
 renderer.heading = (text, level) ->
-  slug = slugify text
+  slug = @_slugify text
   l = 1 + parseInt level
   classes = []
   classes.push "heading", "heading--secondary" if l == 2
@@ -143,4 +143,4 @@ renderer.codespan = (code) ->
 
 module.exports = renderer
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

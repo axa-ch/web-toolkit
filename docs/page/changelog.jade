@@ -15,8 +15,7 @@ if config.changelog
               .changelog__timeline__item__version__date= date.format('ll')
             else
               .changelog__timeline__item__version__date pending          
-          .changelog__timeline__item__content
-            .changelog__timeline__item__content__item!= marked(item.body)
+          .changelog__timeline__item__content!= marked(item.body, { renderer: changelogRenderer })
 else
   aside.callout
     h2.callout__heading No changelog here!
