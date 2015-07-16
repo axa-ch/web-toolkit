@@ -9,7 +9,6 @@ class Example
 
     @$html = @$el.find '.example__html'
     @$frame = @$el.find '.example__iframe'
-    @$border = @$el.find '.example__border'
 
     @$devMobile = @$el.find '.example__device-selection__device--mobile'
     @$devTablet = @$el.find '.example__device-selection__device--tablet'
@@ -21,6 +20,9 @@ class Example
 
     @$contents = @$frame.contents()
 
+    border = @$el.find '.example__border'
+    @borderPadding = parseInt(border.css('padding-left')) +
+      parseInt(border.css('padding-right'))
 
     @relativeBasePath = @$el.data 'example-relative-base'
     @head = ' \
@@ -88,8 +90,8 @@ class Example
     @$devDesktop.removeClass 'is-active'
     activeBtn.addClass 'is-active'
 
-    w = if width == null then @$el.width() + 'px' else width
-    @$border.animate {
+    w = if width == null then @$el.width() - @borderPadding + 'px' else width
+    @$frame.animate {
       width: w
     }
 
