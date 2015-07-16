@@ -16,11 +16,14 @@ p.paragraph.
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    iframe.example__iframe
-    .example__html(data-example-centered)
-      .button
-        | Button with a badge
-        span.button__badge.badge 159
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html(data-example-centered)
+        .button
+          | Button with a badge
+          span.button__badge.badge 159
 
 .toggle
   .toggle__button(data-info, data-target='#code')

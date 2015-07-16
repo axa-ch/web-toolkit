@@ -23,59 +23,62 @@ ul.checklist
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    iframe.example__iframe
-    .example__html
-      header.header
-        .header__container.l-container
-          svg.header__mobile-trigger
-            use(xlink:href=relative('/images/icons.svg#burger'))
-          .header__brand.brand
-            .brand__logo
-            .brand__tagline.brand__tagline--de
-          .header__meta
-            .header__meta__upper
-              .header__meta__action
-                .header__action
-                  a.menu__link.header__action__button Logout
-              .header__meta__language
-                ul.menu.menu--language
-                  li.menu__item
-                    a.menu__link DE
-                  li.menu__item
-                    a.menu__link FR
-                  li.menu__item
-                    a.menu__link IT
-                  li.menu__item
-                    a.menu__link EN
-              .header__meta__menu
-                ul.menu.menu--meta
-                  li.menu__item.is-active
-                    a.menu__link Individuals
-                  li.menu__item
-                    a.menu__link Small Business Insurance
-                  li.menu__item
-                    a.menu__link Business
-            .header__meta__lower
-              .header__meta__welcome
-                div
-                  .header__meta__welcome__main Welcome to AXA
-                  .header__meta__welcome__secondary
-                    a(href='tel:0800809809') 0800 809 809
-        .header__menu
-          .l-container
-            ul.menu.menu--main
-              li.menu__item
-                a.menu__link
-                  svg.menu__link__home
-                    use(xlink:href=relative('/images/icons.svg#home'))
-              li.menu__item
-                a.menu__link Menu Item 1
-              li.menu__item.is-active
-                a.menu__link Menu Item 2
-              li.menu__item
-                a.menu__link Menu Item 3
-              li.menu__item
-                a.menu__link Menu Item 4
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        header.header
+          .header__container.l-container
+            svg.header__mobile-trigger
+              use(xlink:href=relative('/images/icons.svg#burger'))
+            .header__brand.brand
+              .brand__logo
+              .brand__tagline.brand__tagline--de
+            .header__meta
+              .header__meta__upper
+                .header__meta__action
+                  .header__action
+                    a.menu__link.header__action__button Logout
+                .header__meta__language
+                  ul.menu.menu--language
+                    li.menu__item
+                      a.menu__link DE
+                    li.menu__item
+                      a.menu__link FR
+                    li.menu__item
+                      a.menu__link IT
+                    li.menu__item
+                      a.menu__link EN
+                .header__meta__menu
+                  ul.menu.menu--meta
+                    li.menu__item.is-active
+                      a.menu__link Individuals
+                    li.menu__item
+                      a.menu__link Small Business Insurance
+                    li.menu__item
+                      a.menu__link Business
+              .header__meta__lower
+                .header__meta__welcome
+                  div
+                    .header__meta__welcome__main Welcome to AXA
+                    .header__meta__welcome__secondary
+                      a(href='tel:0800809809') 0800 809 809
+          .header__menu
+            .l-container
+              ul.menu.menu--main
+                li.menu__item
+                  a.menu__link
+                    svg.menu__link__home
+                      use(xlink:href=relative('/images/icons.svg#home'))
+                li.menu__item
+                  a.menu__link Menu Item 1
+                li.menu__item.is-active
+                  a.menu__link Menu Item 2
+                li.menu__item
+                  a.menu__link Menu Item 3
+                li.menu__item
+                  a.menu__link Menu Item 4
 .toggle
   .toggle__button(data-info, data-target='#code')
     svg.icon-svg.toggle__icon

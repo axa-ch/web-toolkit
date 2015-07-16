@@ -22,7 +22,7 @@ h2.heading.heading--secondary#progressbar Progressbar
 
 p.paragraph.
    A progressbar is used for activities that might take more than just a few moments to complete. It has the ability to give quantitative feedback to the user (e.g. 20% uploaded  or 10 of 15 pictures deleted).
-   
+
 .example(data-example-relative-base=relative('/'))
   .example__header
     .example__device-selection
@@ -30,15 +30,18 @@ p.paragraph.
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-    iframe.example__iframe
-    .example__html
-      .progressbar
-        .progressbar__description awesome_image.jpg
-        .progressbar__percentage 22%
-        .progressbar__progress
-          .progressbar__progress-background
-            .progressbar__progress-foreground(style='width: 22%')
-    
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        .progressbar
+          .progressbar__description awesome_image.jpg
+          .progressbar__percentage 22%
+          .progressbar__progress
+            .progressbar__progress-background
+              .progressbar__progress-foreground(style='width: 22%')
+
 .toggle
   .toggle__button(data-info, data-target='#code')
     svg.icon-svg.toggle__icon
@@ -57,7 +60,7 @@ p.paragraph.
               <code>progressbar__percentage</code> and the
               width of <code>progressbar__progress-foreground</code>
               using JavaScript to display progress.
-            
+
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
@@ -70,7 +73,7 @@ p.paragraph.
                     </div>
                   </div>
                 </div>
-          
+
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
