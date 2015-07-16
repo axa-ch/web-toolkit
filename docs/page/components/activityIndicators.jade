@@ -35,19 +35,14 @@ p.paragraph.
       .example__bracket.example__bracket--bottomright
       iframe.example__iframe
       .example__html
-        .progressbar
-          .progressbar__description awesome_image.jpg
-          .progressbar__percentage 22%
-          .progressbar__progress
-            .progressbar__progress-background
-              .progressbar__progress-foreground(style='width: 22%')
+        include:ignorefrontmatter ./snippets/progressbar.jade
 
 .toggle
-  .toggle__button(data-info, data-target='#code')
+  .toggle__button(data-info, data-target='#progressbar-code')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content#code
+  .toggle__content#progressbar-code
     .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
@@ -63,30 +58,86 @@ p.paragraph.
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="progressbar">
-                  <div class="progressbar__description">awesome_image.jpg</div>
-                  <div class="progressbar__percentage">22%</div>
-                  <div class="progressbar__progress">
-                    <div class="progressbar__progress-background">
-                      <div style="width: 22%" class="progressbar__progress-foreground"></div>
-                    </div>
-                  </div>
-                </div>
-
+              include:highlightcode ./snippets/progressbar.jade
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item Do not use progressbars for technical activities (e.g. loading css, requesting file from source)
 
-//-
-//- .hr
+.hr
 
-//- h2.heading.heading--secondary#spinner Loading Spinner
+h2.heading.heading--secondary#spinner Loading Spinner
 
-//- p.paragraph.
-   Very important element in single page applications for short loading sequences.
+p.paragraph.
+  Very important element in single page applications for short loading sequences.
 
-//- h3.heading.heading--tertiary UX Checklist
-//- ul.checklist
+.example(data-example-relative-base=relative('/'))
+  .example__header
+    .example__device-selection
+      a.example__device-selection__device.example__device-selection__device--mobile
+      a.example__device-selection__device.example__device-selection__device--tablet
+      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  .example__content
+    iframe.example__iframe
+    .example__html
+      .spinner.is-active(data-spinner)
+        .backdrop
+          .backdrop__shadow.backdrop__shadow--light
+          .backdrop__content.backdrop__content--centered
+            .spinner__block
+              .spinner__animation
+                img(alt='spinner', src=relative('/images/ie9_spinner.gif')).spinner__ie9-fallback
+              .spinner__caption searching for cat videos...
+
+.toggle
+  .toggle__button(data-info, data-target='#spinner-code')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#spinner-code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          ul.checklist
+            li.checklist__item.
+              The spinner is hidden by default. Use the
+              is-active modifier to toggle it.
+            li.checklist__item.
+              The spinner uses CSS animations which are
+              not supported by &lt;=IE9. Add the
+              <code>is-fallback-active</code> state to the
+              spinner to toggle a fallback using a gif.
+              Use the plugin described in the JavaScript
+              section to handle it.
+
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/loading-spinner.jade
+
+        .tab-panel__content__tab(data-tab-content='js')
+          ul.checklist
+            li.checklist__item.
+              Use your own JavaScript to add and remove
+              the <code>is-active</code> state.
+            li.checklist__item.
+              Use the <code>IE9Spinner</code> jQuery plugin
+              to handle the fallback for browsers that
+              don't support CSS animations.
+            li.checklist__item.
+              To activate the plugin use the
+              <code>data-spinner</code> attribute on the
+              spinner block or activate it via JavaScript
+              as displayed below.
+
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                $('.spinner').ie9Spinner();
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
   li.checklist__item Always display a loading spinner if the page might be loading longer than 0.3 seconds.

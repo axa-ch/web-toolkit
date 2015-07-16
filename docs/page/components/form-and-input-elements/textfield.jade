@@ -6,7 +6,7 @@ template: page.jade
 tags: autocomplete, chips, textarea, multi
 ---
 p.paragraph.
-Basic input element. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
+  Basic input element. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
 
 .toc
   .toc__title Table of contents
@@ -40,16 +40,10 @@ p.paragraph The most common form of a text field.
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-      iframe.example__iframe
-      .example__html
-        .l-container
-          .form
-            .form__group
-              label.form__group__label
-                .form__group__label__text Form label
-              .form__group__control
-                input.control.control--input(type='text')
-                
+    iframe.example__iframe
+    .example__html
+      include:ignorefrontmatter ./snippets/textfield.jade
+
 .toggle
   .toggle__button(data-info, data-target='#code-single')
     svg.icon-svg.toggle__icon
@@ -68,8 +62,7 @@ p.paragraph The most common form of a text field.
             but the control block is independent.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <input type="text" class="control control--input">
+              include:highlightcode ./snippets/textfield.jade
 
 h2.heading.heading--secondary#autocomplete Auto-complete text field
 
@@ -83,21 +76,14 @@ p.paragraph.
       a.example__device-selection__device.example__device-selection__device--tablet
       a.example__device-selection__device.example__device-selection__device--desktop.is-active
   .example__content
-      iframe.example__iframe
-      .example__html
-        .l-container
-          .form
-            .form__group
-              label.form__group__label
-                .form__group__label__text Form label
-              .form__group__control
-                .autocomplete
-                  input.control.control--input(type='text',id='cities-autocomplete')
-      .example__script.
-        $('#cities-autocomplete').autocomplete({
-          source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
+    iframe.example__iframe
+    .example__html
+      include:ignorefrontmatter ./snippets/textfield-autocomplete.jade
+    .example__script.
+      $('#cities-autocomplete').autocomplete({
+        source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
 
-          
+
 .toggle
   .toggle__button(data-info, data-target='#code-autocomplete')
     svg.icon-svg.toggle__icon
@@ -118,15 +104,7 @@ p.paragraph.
             also use our jQuery plugin to do it for you.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="autocomplete">
-                  <input type="text" class="control control--input">
-                  <div class="autocomplete__suggestions">
-                    <div class="autocomplete__suggestions__item autocomplete__suggestions__item--selected">8000 Zürich</div>
-                    <div class="autocomplete__suggestions__item">8400 Winterthur</div>
-                    <div class="autocomplete__suggestions__item">8472 Seuzach</div>
-                  </div>
-                </div>
+              include:highlightcode ./snippets/textfield-autocomplete-markuponly.jade
         .tab-panel__content__tab(data-tab-content='js')
           p.paragraph.
             Use the jQuery plugin as follows:
@@ -136,36 +114,16 @@ p.paragraph.
                 <div class="autocomplete">
                   <input id="cities-autocomplete" type="text" class="control control--input">
                 </div>
-                
+
                 <script>
                   $('#cities-autocomplete').autocomplete({
                     source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
                 </script>
-            //-h3 Options
-            //-
-            //-table.table
-            //-  thead
-            //-    tr.table__header
-            //-      th.table__header__item Name
-            //-      th.table__header__item Type
-            //-      th.table__header__item Default
-            //-      th.table__header__item Description
-            //-  tbody.table__content
-            //-    tr.table__row
-            //-      td.table__row__item
-            //-        code.table__row__item__content source
-            //-      td.table__row__item
-            //-        code.table__row__item__content array
-            //-      td.table__row__item
-            //-        code.table__row__item__content false
-            //-      td.table__row__item
-            //-        p.table__row__item__content.
-            //-          Source to filter and create the dropdown-list.
           p.paragraph.
             If you implement your own solution use the
             CSS property <code>display: block;</code> to
             toggle the <code>suggestions</code> element.
-            
+
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item Analyse search statistics and optimize the algorithm to match your users search behaviour.
@@ -173,7 +131,7 @@ ul.checklist
   li.checklist__item depending on the amount of possible results, start suggesting  options after entering the first or the third character.
 
 .hr
-  
+
 //
 //- h2.heading.heading--secondary#chips Chips
 
@@ -190,7 +148,7 @@ h2.heading.heading--secondary#multiline Multi-line text field
 
 p.paragraph.
   Used whenever more than just a few words should be entered.
-  
+
 .example(data-example-relative-base=relative('/'))
   .example__header
     .example__device-selection
@@ -200,14 +158,8 @@ p.paragraph.
   .example__content
       iframe.example__iframe
       .example__html
-        .l-container
-          .form
-            .form__group
-              label.form__group__label
-                .form__group__label__text Form label
-              .form__group__control
-                textarea.control.control--textarea(type='text',data-autogrow='autogrow')
-                
+        include:ignorefrontmatter ./snippets/textfield-multiline.jade
+
 .toggle
   .toggle__button(data-info, data-target='#code-multiline')
     svg.icon-svg.toggle__icon
@@ -227,8 +179,7 @@ p.paragraph.
             plugin to achieve this.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <textarea type="text" class="control control--textarea"></textarea>
+              include:highlightcode ./snippets/textfield-multiline.jade
         .tab-panel__content__tab(data-tab-content='js')
           p.paragraph.
             Use the jQuery plugin as follows:
