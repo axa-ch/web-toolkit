@@ -18,7 +18,7 @@
 
   class Picker extends Emitter
 
-    constructor: (@moment, @displayWeek) ->
+    constructor: (@moment, @displayWeek, @icons) ->
       super
 
       @date = @moment()
@@ -30,10 +30,12 @@
 
       @$header = append '<div class="picker__header" ></div>', @$element
 
-      @$prev = append '<a class="picker__prev"></a>', @$header
+      @$prev = append '<div class="picker__prev"></div>', @$header
+      @$prev.append @createIcon('prev')
       @$prev.on 'click', @onPrevClick.bind(this)
 
-      @$next = append '<a class="picker__next"></a>', @$header
+      @$next = append '<div class="picker__next"></div>', @$header
+      @$next.append @createIcon('next')
       @$next.on 'click', @onNextClick.bind(this)
 
       @$headline = append '<div class="picker__headline" ></div>', @$header
@@ -106,6 +108,19 @@
         if dateClone.get('month') != month # until another month
           break
 
+    createIcon: (iconName) ->
+      icon = @icons[iconName]
+
+      if !icon?
+        $.error "Please define the " + iconName + " icon"
+
+      $icon = $ '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="'+icon+'" /></svg>'
+
+      # can't use addClass here since $icon is svg
+      $icon.attr 'class', 'picker__icon picker__icon--' + iconName
+
+      return $icon
+
     createDay: (d, modifier) ->
       date = @moment(d) # create a clone
 
@@ -157,7 +172,7 @@
 
   class Datepicker
 
-    constructor: (element, @moment, input, displayWeek) ->
+    constructor: (element, @moment, input, displayWeek, icons) ->
       @$element = $ element
 
       if navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/(iOS|iPhone|iPad|iPod)/i) || navigator.userAgent.match(/Windows Phone/i)
@@ -170,7 +185,7 @@
 
       else
 
-        @picker = new Picker(@moment, displayWeek)
+        @picker = new Picker(@moment, displayWeek, icons)
 
         if input?
           @$input = $ input
@@ -200,8 +215,6 @@
   Plugin = (options) ->
     opts = $.extend( {}, $.fn.datepicker.defaults, options )
 
-    params = arguments
-
     return this.each () ->
       $this = $(this)
       data = $this.data('axa.datepicker')
@@ -214,7 +227,7 @@
         else
           $.error("Moment.js must either be passed as an option or be available globally")
 
-        data = new Datepicker(this, moment, opts.input, opts.displayWeek)
+        data = new Datepicker(this, moment, opts.input, opts.displayWeek, opts.icons)
         $this.data('axa.datepicker', data)
 
       if opts.action?
@@ -234,9 +247,13 @@
 
     displayWeek = $target.data('datepicker-display-week')
 
+    icons =
+      prev: $target.data('datepicker-icon-prev')
+      next: $target.data('datepicker-icon-next')
+
     displayWeek = displayWeek && displayWeek != 'false'
 
-    Plugin.call($target, { input: $input, action: 'toggle', displayWeek: displayWeek })
+    Plugin.call($target, { input: $input, action: 'toggle', displayWeek: displayWeek, icons: icons })
 
 )(jQuery)
 

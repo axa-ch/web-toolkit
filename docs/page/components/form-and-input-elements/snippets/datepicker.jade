@@ -9,7 +9,12 @@ template: demo.jade
       label.form__group__label
         .form__group__label__text Form label
       .form__group__control
-        .datepicker#myDatepicker(data-datepicker-watch="#myDatepickerInput", data-datepicker-display-week)
+        .datepicker#myDatepicker(
+          data-datepicker-watch="#myDatepickerInput",
+          data-datepicker-display-week,
+          data-datepicker-icon-prev=relative('/images/icons.svg#arrow-left'),
+          data-datepicker-icon-next=relative('/images/icons.svg#arrow-right')
+        )
           .datepicker__trigger
             svg(data-datepicker="#myDatepicker").datepicker__trigger__icon
               use(xlink:href=relative('/images/icons.svg#calendar'))
