@@ -42,7 +42,7 @@ module.exports = (cb) ->
     renderer: markedRenderer
     langPrefix: ''
     highlight: (code, lang) ->
-      return require('highlight.js').highlight(lang, code).value;
+      return require('highlight.js').highlight(lang, code).value
 
   # initialize Metalsmith
   metalsmith = new Metalsmith cwd
@@ -86,13 +86,9 @@ module.exports = (cb) ->
     branch ['**/*.md', '!_*/**/*.md']
       .use relative()
       .use collections collections_options
-      # TODO: Try to use our already-configured marked instance here
       .use markdown
-        renderer: markedRenderer
-        langPrefix: ''
-        highlight: (code, lang) ->
-          return require('highlight.js').highlight(lang, code).value
         useMetadata: true
+        marked: marked
   )
 
   # Do the jade pages
