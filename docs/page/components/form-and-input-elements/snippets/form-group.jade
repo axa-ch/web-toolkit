@@ -19,6 +19,9 @@ template: demo.jade
     .form__group__label
       .form__group__label__info-icon
         .info-icon(data-info, data-target='#target')
+          svg.info-icon__svg
+            use(xlink:href=relative('/images/icons.svg#info')).info-icon__use
+            use(xlink:href=relative('/images/icons.svg#close')).info-icon__use.info-icon__use--close
       .form__group__label__info-icon-text-wrapper Form group with info
     .form__group__control
       input(type='text').control.control--input
