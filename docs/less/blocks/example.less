@@ -16,7 +16,7 @@
 }
 
 .example__device-selection__device {
-  .icon();
+  color: @color-black;
 
   float: left;
   width: 50px;
@@ -34,20 +34,14 @@
   &.is-active,
   &:hover {
     background: @color-light-blue;
-    color: white;
+    color: @color-white;
   }
 }
 
-.example__device-selection__device--mobile {
-  .icon--mobile();
-}
-
-.example__device-selection__device--tablet {
-  .icon--mobile();
-}
-
-.example__device-selection__device--desktop {
-  .icon--desktop();
+.example__device-selection__icon {
+  height: 1.5em;
+  width: 1.5em;
+  margin-top: 7px;
 }
 
 .example__content {

@@ -10,9 +10,9 @@ class Example
     @$html = @$el.find '.example__html'
     @$frame = @$el.find '.example__iframe'
 
-    @$devMobile = @$el.find '.example__device-selection__device--mobile'
-    @$devTablet = @$el.find '.example__device-selection__device--tablet'
-    @$devDesktop = @$el.find '.example__device-selection__device--desktop'
+    @$devMobile = @$el.find '.example__device-selection__mobile'
+    @$devTablet = @$el.find '.example__device-selection__tablet'
+    @$devDesktop = @$el.find '.example__device-selection__desktop'
 
     @$devMobile.on 'click', @setWidth.bind @, '320px', @$devMobile
     @$devTablet.on 'click', @setWidth.bind @, '768px', @$devTablet

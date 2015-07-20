@@ -28,9 +28,15 @@ p.paragraph.
 .example(data-example-relative-base=relative('/'))
   .example__header
     .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+      a.example__device-selection__device.example__device-selection__mobile
+        svg.icon-svg.example__device-selection__icon
+          use(xlink:href=relative('/images/icons.svg#mobile'))
+      a.example__device-selection__device.example__device-selection__tablet
+        svg.icon-svg.example__device-selection__icon
+          use(xlink:href=relative('/images/icons.svg#tablet'))
+      a.example__device-selection__device.example__device-selection__desktop.is-active
+        svg.icon-svg.example__device-selection__icon
+          use(xlink:href=relative('/images/icons.svg#desktop'))
   .example__content
     .example__border
       .example__bracket.example__bracket--topleft

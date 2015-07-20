@@ -11,9 +11,15 @@ p.paragraph. A modal window can be used to present very specific information (su
 .example(data-example-max-height='400', data-example-relative-base=relative('/'))
   .example__header
     .example__device-selection
-      .example__device-selection__device.example__device-selection__device--mobile
-      .example__device-selection__device.example__device-selection__device--tablet
-      .example__device-selection__device.example__device-selection__device--desktop.is-active
+      a.example__device-selection__device.example__device-selection__mobile
+        svg.icon-svg.example__device-selection__icon
+          use(xlink:href=relative('/images/icons.svg#mobile'))
+      a.example__device-selection__device.example__device-selection__tablet
+        svg.icon-svg.example__device-selection__icon
+          use(xlink:href=relative('/images/icons.svg#tablet'))
+      a.example__device-selection__device.example__device-selection__desktop.is-active
+        svg.icon-svg.example__device-selection__icon
+          use(xlink:href=relative('/images/icons.svg#desktop'))
   .example__content
     .example__border
       .example__bracket.example__bracket--topleft
@@ -74,7 +80,7 @@ p.paragraph. A modal window can be used to present very specific information (su
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
                 $('#myModal').modal('toggle')
-                
+
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item On mobile it is presented in full screen.
