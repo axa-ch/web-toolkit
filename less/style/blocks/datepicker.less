@@ -99,31 +99,36 @@
   display: block;
 
   width: 30px;
+  height: 30px;
 
-  line-height: 31px;
   text-align: center;
-
-  color: white;
 
   cursor: pointer;
 
   &:hover {
-    color: @color-gray--light;
+    .picker__icon--next,
+    .picker__icon--prev {
+      fill: @color-gray--light;
+    }
   }
 }
 
-.picker__prev {
-  .icon();
-  .icon--arrow-left();
+.picker__icon--next,
+.picker__icon--prev {
+  display: inline-block;
+  width: 11px;
+  height: 17px;
+  fill: white;
+}
 
+.picker__prev {
   float: left;
+  padding-top: 6px;
 }
 
 .picker__next {
-  .icon();
-  .icon--arrow-right();
-
   float: right;
+  padding-top: 6px;
 }
 
 .picker__content {
