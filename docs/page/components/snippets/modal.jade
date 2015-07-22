@@ -1,0 +1,49 @@
+---
+title: Modal
+template: demo.jade
+---
+
+.button(data-modal='#myModal') Show modal
+.modal#myModal
+  .backdrop
+    .backdrop__shadow
+    .backdrop__content
+      .modal__dialog
+        .modal__header
+          a(data-modal='#myModal').modal__close
+            svg.modal__close-icon.icon-svg
+              use(xmlns:xlink='http://www.w3.org/1999/xlink',xlink:href=relative('/images/icons.svg#modal-close'))
+          .modal__heading
+            .heading.heading--modal Bacon Ipsum
+        .modal__content-wrapper
+          .modal__content
+            :markdown
+              Bacon ipsum dolor amet ham hock
+              tongue ham eu short ribs, voluptate
+              hamburger ut sed excepteur brisket
+              turducken labore pork. Cupim ham
+              hock pork, ground round ullamco pork
+              belly consectetur beef ribeye
+              nostrud. Tongue andouille brisket
+              boudin porchetta cow capicola t-bone
+              culpa kevin meatball. Bacon tail
+              shankle tenderloin eu occaecat.
+
+              # Prosciutto ex Bacon
+              Ipsum pancetta consectetur excepteur
+              dolore frankfurter pastrami sausage.
+              Et jerky eiusmod, adipisicing flank
+              ipsum exercitation laborum t-bone
+              filet mignon corned beef bacon
+              bresaola elit labore. Ground round
+              frankfurter alcatra flank et
+              excepteur nulla ex shoulder sint.
+              Frankfurter tenderloin jowl, occaecat
+              ribeye sausage prosciutto ex bacon
+              landjaeger pork tail. Pork belly
+              proident meatball culpa.
+        .modal__footer
+          .modal__footer__wrapper
+            .modal__buttons
+              a.modal__buttons__button.button.button--small.button--secondary Drucken
+              a(data-modal='#myModal').modal__buttons__button.button.button--small.button--secondary Schliessen

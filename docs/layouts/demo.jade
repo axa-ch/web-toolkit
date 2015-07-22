@@ -1,0 +1,29 @@
+---
+cache: true
+filename: demo.jade
+---
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width")
+    meta(name="description", content=config.description)
+    meta(name="keywords", content=config.keywords)
+    meta(name="author", content=config.author)
+        
+    title #{title} | Demo | Web Styleguide
+    link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
+    link(rel="stylesheet", href=relative("/css/style.min.css"))
+
+    script(src=relative('/js/inspirations.all.min.js'))
+      
+    // Set the locale for momentjs used in the datepicker
+    script.
+      moment.locale('en_GB')
+    
+  body.site
+    div!= contents
+
+// Copyright AXA Versicherungen AG 2015

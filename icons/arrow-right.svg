@@ -12,11 +12,11 @@
    height="2048"
    viewBox="0 0 1280 2048"
    version="1.1"
-   id="svg3000"
+   id="svg3034"
    inkscape:version="0.48.5 r10040"
    sodipodi:docname="arrow-right.svg">
   <metadata
-     id="metadata3013">
+     id="metadata3047">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -35,53 +35,41 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1280"
-     inkscape:window-height="962"
-     id="namedview3011"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     id="namedview3045"
      showgrid="true"
-     showguides="true"
-     inkscape:guide-bbox="true"
-     inkscape:zoom="0.25"
-     inkscape:cx="1801.9002"
-     inkscape:cy="1146.2262"
+     inkscape:zoom="0.1475"
+     inkscape:cx="1654.1382"
+     inkscape:cy="639.52688"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3000">
+     inkscape:current-layer="Page-1">
     <inkscape:grid
        type="xygrid"
-       id="grid3015"
+       id="grid3049"
        empspacing="5"
        visible="true"
        enabled="true"
        snapvisiblegridlinesonly="true"
        spacingx="128px"
        spacingy="128px" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="-1792,-256"
-       id="guide3017" />
   </sodipodi:namedview>
   <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
   <title
-     id="title3002">Arrow-Right</title>
+     id="title3036">Arrow-Left</title>
   <desc
-     id="desc3004">Created with Sketch.</desc>
+     id="desc3038">Created with Sketch.</desc>
   <defs
-     id="defs3006" />
+     id="defs3040" />
   <g
      id="Page-1"
      sketch:type="MSPage"
-     transform="matrix(34.604031,0,0,34.709937,-1054.3691,-747.18831)">
-    <g
-       id="arrow-right"
-       sketch:type="MSArtboardGroup">
-      <path
-         d="M 67.459455,51.028278 37.867528,80.529916 30.469546,73.154506 52.663492,51.028278 30.469546,28.902049 37.867528,21.52664 67.459456,51.028278 z"
-         id="right"
-         sketch:type="MSShapeGroup"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccccccc" />
-    </g>
+     transform="matrix(34.594595,0,0,34.711864,-723.02704,-729.57488)">
+    <path
+       d="M 28.300001,80.018019 57.9,50.518024 28.300001,21.018028 20.9,28.393026 43.1,50.518024 20.9,72.643021 l 7.400001,7.374998 z"
+       id="left"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

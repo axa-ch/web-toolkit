@@ -1,5 +1,6 @@
 gulp = require 'gulp'
 watch = require 'gulp-watch'
+sequence = require 'gulp-watch-sequence'
 
 module.exports = [
   [
@@ -42,7 +43,7 @@ module.exports = [
       #'./node_modules/knockout/build/output/knockout-latest.js' # Ignore since we do not assume that this changes
       #'./node_modules/URIjs/src/URI.js' # Ignore since we do not assume that this changes
       #'./node_modules/zeroclipboard/dist/ZeroClipboard.js' # Ignore since we do not assume that this changes
-      './dist/jquery/axa-wsg.jquery.all.js'
+      #'./dist/jquery/axa-wsg.jquery.all.js' # Ignore. Only changed by the jquery task. The watch to trigger the jquery task triggers the docs-scripts too
     ], ->
       gulp.start 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
       return
@@ -89,10 +90,10 @@ module.exports = [
     #######################
     # jquery
     #######################
+    queue = sequence 300
     watch [
       './jquery/**/*'
-    ], ->
-      gulp.start 'jquery'
+    ], queue.getHandler 'jquery', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
 
     #######################
     # ng

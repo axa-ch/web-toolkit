@@ -22,7 +22,7 @@ p.paragraph.
 h2.heading.heading--secondary#enhanced Basic Dropdown
 
 p.paragraph.
-  The dropdown is used for a single selection out of a list. 
+  The dropdown is used for a single selection out of a list.
 
 .example(data-example-relative-base=relative('/'))
   .example__header
@@ -33,11 +33,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      .dropdown(data-dropdown)
-        .dropdown__label
-        select.dropdown__select
-          option Schweiz
-          option Regenbogenland
+      include:ignorefrontmatter ./snippets/dropdown-basic.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
@@ -72,19 +68,12 @@ p.paragraph.
             Activate the functionality with the data-* API
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div data-dropdown="data-dropdown" class="dropdown">
-                  <div class="dropdown__label"></div>
-                  <select class="dropdown__select">
-                    <option>Schweiz</option>
-                    <option>Regenbogenland</option>
-                  </select>
-                </div>
+              include:highlightcode ./snippets/dropdown-basic.jade
 
 h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
-  li.checklist__item 
+  li.checklist__item
     :markdown
       Generally, if you have less than 5 options, a <a class="link" href="./segmented-control.html">segmented control</a> might be the better option.
   li.checklist__item On mobile devices, use native dropdown pickers.
@@ -105,11 +94,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      .dropdown
-        .dropdown__label
-        select.dropdown__select
-          option Schweiz
-          option Regenbogenland
+      include:ignorefrontmatter ./snippets/dropdown-non-enhanced.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-non-enhanced')
@@ -125,14 +110,6 @@ p.paragraph.
         .tab-panel__content__tab.is-active
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="dropdown">
-                  <div class="dropdown__label"></div>
-                  <select class="dropdown__select">
-                    <option>Schweiz</option>
-                    <option>Regenbogenland</option>
-                  </select>
-                </div>
+              include:highlightcode ./snippets/dropdown-non-enhanced.jade
 
 // Copyright AXA Versicherungen AG 2015
-  

@@ -32,12 +32,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      label.checkbox(data-checkbox)
-        input.checkbox__checkbox(type='checkbox')
-        .checkbox__label
-          svg.checkbox__label__icon
-            use(xlink:href='/images/icons.svg#checkmark')
-          .checkbox__label__text Sample checkbox
+      include:ignorefrontmatter ./snippets/checkbox-basic.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
@@ -58,13 +53,7 @@ p.paragraph.
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <label data-checkbox class="checkbox">
-                  <input type="checkbox" class="checkbox__checkbox" >
-                  <div class="checkbox__label" >
-                    <div class="checkbox__label__text">Sample checkbox</div>
-                  </div>
-                </label>
+              include:highlightcode ./snippets/checkbox-basic.jade
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
@@ -84,19 +73,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      .checkbox-group
-        label.checkbox(data-checkbox)
-          input.checkbox__checkbox(type='checkbox')
-          .checkbox__label
-            svg.checkbox__label__icon
-              use(xlink:href='/images/icons.svg#checkmark')
-            .checkbox__label__text Sample checkbox one
-        label.checkbox(data-checkbox)
-          input.checkbox__checkbox(type='checkbox')
-          .checkbox__label
-            svg.checkbox__label__icon
-              use(xlink:href='/images/icons.svg#checkmark')
-            .checkbox__label__text Sample checkbox two
+      include:ignorefrontmatter ./snippets/checkbox-group.jade
 .toggle
   .toggle__button(data-info, data-target='#code-checkbox-group')
     svg.icon-svg.toggle__icon
@@ -111,20 +88,7 @@ p.paragraph.
         .tab-panel__content__tab.is-active
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div class="checkbox-group">
-                  <label data-checkbox class="checkbox">
-                    <input type="checkbox" class="checkbox__checkbox" >
-                    <span class="checkbox__label">
-                      <div class="checkbox__label__text">Sample checkbox one</div>
-                    </span>
-                  </label>
-                  <label data-checkbox class="checkbox">
-                    <input type="checkbox" class="checkbox__checkbox">
-                      <div class="checkbox__label__text">Sample checkbox two</div>
-                    </span>
-                  </label>
-                </div>
+              include:highlightcode ./snippets/checkbox-group.jade
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
@@ -148,12 +112,7 @@ p.paragraph.
   .example__content
     iframe.example__iframe
     .example__html
-      label.checkbox
-        input.checkbox__checkbox(type='checkbox')
-        .checkbox__label
-          svg.checkbox__label__icon
-            use(xlink:href='/images/icons.svg#checkmark')
-          .checkbox__label__text Sample checkbox
+      include:ignorefrontmatter ./snippets/checkbox-non-enhanced.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-non-enhanced')
@@ -169,12 +128,6 @@ p.paragraph.
         .tab-panel__content__tab.is-active
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <label class="checkbox">
-                  <input type="checkbox" class="checkbox__checkbox">
-                  <div class="checkbox__label">
-                     <div class="checkbox__label__text">Sample checkbox</div>
-                  </div>
-                </label>
+              include:highlightcode ./snippets/checkbox-non-enhanced.jade
 
 // Copyright AXA Versicherungen AG 2015
