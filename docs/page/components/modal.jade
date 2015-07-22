@@ -9,12 +9,11 @@ tags: terms, conditions, agb, avb
 p.paragraph. A modal window can be used to present very specific information (such as terms & conditions) to the user.
 
 .example(data-example-max-height='400', data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      .example__device-selection__device.example__device-selection__device--mobile
-      .example__device-selection__device.example__device-selection__device--tablet
-      .example__device-selection__device.example__device-selection__device--desktop.is-active
-  .example__content.example__content--centered
+  include ./includes/example-header.jade
+  .example__content
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
       iframe.example__iframe
       .example__html(data-example-centered)
         div
@@ -41,7 +40,7 @@ p.paragraph. A modal window can be used to present very specific information (su
               visible you have to add the .is-modal-open
               state to the body element of your page to
               hide the main scrollbar.
-            
+
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/modal.jade
@@ -71,7 +70,7 @@ p.paragraph. A modal window can be used to present very specific information (su
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
                 $('#myModal').modal('toggle')
-                
+
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item On mobile it is presented in full screen.

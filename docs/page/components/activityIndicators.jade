@@ -22,18 +22,17 @@ h2.heading.heading--secondary#progressbar Progressbar
 
 p.paragraph.
    A progressbar is used for activities that might take more than just a few moments to complete. It has the ability to give quantitative feedback to the user (e.g. 20% uploaded  or 10 of 15 pictures deleted).
-   
+
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  include ./includes/example-header.jade
   .example__content
-    iframe.example__iframe
-    .example__html
-      include:ignorefrontmatter ./snippets/progressbar.jade
-    
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        include:ignorefrontmatter ./snippets/progressbar.jade
+
 .toggle
   .toggle__button(data-info, data-target='#progressbar-code')
     svg.icon-svg.toggle__icon
@@ -52,7 +51,7 @@ p.paragraph.
               <code>progressbar__percentage</code> and the
               width of <code>progressbar__progress-foreground</code>
               using JavaScript to display progress.
-            
+
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/progressbar.jade
@@ -67,25 +66,24 @@ h2.heading.heading--secondary#spinner Loading Spinner
 
 p.paragraph.
   Very important element in single page applications for short loading sequences.
-         
+
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  include ./includes/example-header.jade
   .example__content
-    iframe.example__iframe
-    .example__html
-      .spinner.is-active(data-spinner)
-        .backdrop
-          .backdrop__shadow.backdrop__shadow--light
-          .backdrop__content.backdrop__content--centered
-            .spinner__block
-              .spinner__animation
-                img(alt='spinner', src=relative('/images/ie9_spinner.gif')).spinner__ie9-fallback
-              .spinner__caption searching for cat videos...
-    
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        .spinner.is-active(data-spinner)
+          .backdrop
+            .backdrop__shadow.backdrop__shadow--light
+            .backdrop__content.backdrop__content--centered
+              .spinner__block
+                .spinner__animation
+                  img(alt='spinner', src=relative('/images/ie9_spinner.gif')).spinner__ie9-fallback
+                .spinner__caption searching for cat videos...
+
 .toggle
   .toggle__button(data-info, data-target='#spinner-code')
     svg.icon-svg.toggle__icon
@@ -106,11 +104,11 @@ p.paragraph.
             li.checklist__item.
               The spinner uses CSS animations which are
               not supported by &lt;=IE9. Add the
-              <code>is-fallback-active</code> state to the 
+              <code>is-fallback-active</code> state to the
               spinner to toggle a fallback using a gif.
               Use the plugin described in the JavaScript
               section to handle it.
-            
+
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/loading-spinner.jade
@@ -129,7 +127,7 @@ p.paragraph.
               <code>data-spinner</code> attribute on the
               spinner block or activate it via JavaScript
               as displayed below.
-              
+
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight

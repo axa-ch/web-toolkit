@@ -24,15 +24,14 @@ p.paragraph.
   The basic checkbox can be used for accepting terms & conditions or alike.
 
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  include ../includes/example-header.jade
   .example__content
-    iframe.example__iframe
-    .example__html
-      include:ignorefrontmatter ./snippets/checkbox-basic.jade
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        include:ignorefrontmatter ./snippets/checkbox-basic.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
@@ -65,15 +64,14 @@ h2.heading.heading--secondary#group Checkbox group
 p.paragraph.
   If a user needs to select multiple options, the checkbox group can be used.
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  include ../includes/example-header.jade
   .example__content
-    iframe.example__iframe
-    .example__html
-      include:ignorefrontmatter ./snippets/checkbox-group.jade
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        include:ignorefrontmatter ./snippets/checkbox-group.jade
 .toggle
   .toggle__button(data-info, data-target='#code-checkbox-group')
     svg.icon-svg.toggle__icon
@@ -104,15 +102,14 @@ p.paragraph.
   Use the non-enhanced checkbox as a fallback only.
 
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  include ../includes/example-header.jade
   .example__content
-    iframe.example__iframe
-    .example__html
-      include:ignorefrontmatter ./snippets/checkbox-non-enhanced.jade
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        include:ignorefrontmatter ./snippets/checkbox-non-enhanced.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-non-enhanced')

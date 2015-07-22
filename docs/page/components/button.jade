@@ -43,15 +43,14 @@ p.paragraph.
   A buttons triggers an action to the page or an object. An additional icon can be added.
 
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
-  .example__content.example__content--centered
-    iframe.example__iframe
-    .example__html(data-example-centered)
-      include:ignorefrontmatter ./snippets/button-primary.jade
+  include ./includes/example-header.jade
+  .example__content
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html(data-example-centered)
+        include:ignorefrontmatter ./snippets/button-primary.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
@@ -98,15 +97,14 @@ p.paragraph.
   place.
 
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      .example__device-selection__device.example__device-selection__device--mobile
-      .example__device-selection__device.example__device-selection__device--tablet
-      .example__device-selection__device.example__device-selection__device--desktop.is-active
-  .example__content.example__content--centered
-    iframe.example__iframe
-    .example__html(data-example-centered)
-      include:ignorefrontmatter ./snippets/button-secondary.jade
+  include ./includes/example-header.jade
+  .example__content
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html(data-example-centered)
+        include:ignorefrontmatter ./snippets/button-secondary.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-2')
@@ -145,15 +143,15 @@ p.paragraph.
   to represent an action that is important and ubiquitous.
 
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      .example__device-selection__device.example__device-selection__device--mobile
-      .example__device-selection__device.example__device-selection__device--tablet
-      .example__device-selection__device.example__device-selection__device--desktop.is-active
-  .example__content.example__content--centered
-    iframe.example__iframe
-    .example__html(data-example-centered)
-      include:ignorefrontmatter ./snippets/button-floating.jade
+  include ./includes/example-header.jade
+  .example__content
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html(data-example-centered)
+        include:ignorefrontmatter ./snippets/button-floating.jade
+
 .toggle
   .toggle__button(data-info, data-target='#code-3')
     svg.icon-svg.toggle__icon

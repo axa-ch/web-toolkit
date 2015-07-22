@@ -34,15 +34,14 @@ h2.heading.heading--secondary#single Single-line text field
 p.paragraph The most common form of a text field.
 
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  include ../includes/example-header.jade
   .example__content
-    iframe.example__iframe
-    .example__html
-      include:ignorefrontmatter ./snippets/textfield.jade
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        include:ignorefrontmatter ./snippets/textfield.jade
 
 .toggle
   .toggle__button(data-info, data-target='#code-single')
@@ -70,18 +69,17 @@ p.paragraph.
   Use the auto-complete feature to provide real-time completions in dropdowns to enhance accuracy and efficiency.  Use auto-complete instead of extreme long dropdown fields (country list).
 
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  include ../includes/example-header.jade
   .example__content
-    iframe.example__iframe
-    .example__html
-      include:ignorefrontmatter ./snippets/textfield-autocomplete.jade
-    .example__script.
-      $('#cities-autocomplete').autocomplete({
-        source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        include:ignorefrontmatter ./snippets/textfield-autocomplete.jade
+      .example__script.
+        $('#cities-autocomplete').autocomplete({
+          source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
 
 
 .toggle
@@ -150,12 +148,11 @@ p.paragraph.
   Used whenever more than just a few words should be entered.
 
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__device--mobile
-      a.example__device-selection__device.example__device-selection__device--tablet
-      a.example__device-selection__device.example__device-selection__device--desktop.is-active
+  include ../includes/example-header.jade
   .example__content
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
       iframe.example__iframe
       .example__html
         include:ignorefrontmatter ./snippets/textfield-multiline.jade

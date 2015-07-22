@@ -6,13 +6,13 @@ class Example
 
   constructor: (el) ->
     @$el = $ el
-    
+
     @$html = @$el.find '.example__html'
     @$frame = @$el.find '.example__iframe'
-    
-    @$devMobile = @$el.find '.example__device-selection__device--mobile'
-    @$devTablet = @$el.find '.example__device-selection__device--tablet'
-    @$devDesktop = @$el.find '.example__device-selection__device--desktop'
+
+    @$devMobile = @$el.find '.example__device-selection__mobile'
+    @$devTablet = @$el.find '.example__device-selection__tablet'
+    @$devDesktop = @$el.find '.example__device-selection__desktop'
 
     @$devMobile.on 'click', @setWidth.bind @, '320px', @$devMobile
     @$devTablet.on 'click', @setWidth.bind @, '768px', @$devTablet
@@ -20,6 +20,9 @@ class Example
 
     @$contents = @$frame.contents()
 
+    border = @$el.find '.example__border'
+    @borderPadding = parseInt(border.css('padding-left')) +
+      parseInt(border.css('padding-right'))
 
     @relativeBasePath = @$el.data 'example-relative-base'
     @head = ' \
@@ -30,12 +33,12 @@ class Example
 
 
     html = @$html.html()
-    
-    @maxHeight = @$el.data 'example-max-height' 
+
+    @maxHeight = @$el.data 'example-max-height'
     if not @maxHeight?
       @maxHeight = 'infinity'
 
-        
+
     @bodyStyles = @$el.data 'example-body-styles'
     if @bodyStyles? and @bodyStyles.length > 0
       @$contents.find('body').attr 'style', @bodyStyles
@@ -52,7 +55,7 @@ class Example
     @exampleScript = @$contents[0].createElement 'script'
     @exampleScript.type = 'text/javascript'
     @exampleScript.src = @relativeBasePath + '/js/docs-examples.all.min.js'
-    
+
     @$contents.find('body').html html
     @$contents.find('head')[0].appendChild @exampleScript
 
@@ -63,10 +66,10 @@ class Example
       @customScript.innerHTML = @$customScriptCode.text()
       setTimeout ( =>
         @$contents.find('body')[0].appendChild @customScript), 500
-      
+
 
     @$contents.find("body").html html
-    
+
     @setWidth null, @$devDesktop
 
     setTimeout ( =>
@@ -79,7 +82,7 @@ class Example
         maxHeight: @maxHeight
         heightCalculationMethod: 'lowestElementOnly'
       }, iFrame), 600
-      
+
 
   setWidth: (width, activeBtn) ->
     @$devMobile.removeClass 'is-active'
@@ -87,8 +90,7 @@ class Example
     @$devDesktop.removeClass 'is-active'
     activeBtn.addClass 'is-active'
 
-    w = if width == null then @$el.width() + 'px' else width
-    
+    w = if width == null then @$el.width() - @borderPadding + 'px' else width
     @$frame.animate {
       width: w
     }
