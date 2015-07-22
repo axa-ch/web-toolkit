@@ -2,13 +2,19 @@
 # The Metalsmith workflow that builds our docs.
 #
 path = require 'path'
+marked = require 'marked'
+colors = require 'colors'
+gutil = require 'gulp-util'
+moment = require 'moment'
 
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/jade-filter-sample'
 highlightCodeJadeFilter = require '../lib/jade-filter-highlightcode'
 ignoreFmJadeFilter = require '../lib/jade-filter-ignorefrontmatter'
-markedRenderer = require '../lib/markedRenderer'
+markedRenderer = require '../lib/marked-renderer'
+markedChangelogRenderer = require '../lib/marked-renderer-changelog'
 searchIndexData = require '../lib/search-index-data'
+loadChangelog = require '../lib/load-changelog'
 
 Metalsmith = require 'metalsmith'
 collections = require 'metalsmith-collections'
@@ -24,7 +30,6 @@ lunr = require 'metalsmith-lunr'
 copy = require 'metalsmith-copy'
 
 module.exports = (cb) ->
-
   cwd = path.join __dirname, '../'
   config = readJSONFile path.join cwd, './docs/config.json'
 
@@ -37,6 +42,13 @@ module.exports = (cb) ->
   jade.registerFilter 'highlightcode', highlightCodeJadeFilter
   jade.registerFilter 'ignorefrontmatter', ignoreFmJadeFilter
 
+  # Configure marked
+  marked.setOptions
+    renderer: markedRenderer
+    langPrefix: ''
+    highlight: (code, lang) ->
+      return require('highlight.js').highlight(lang, code).value
+
   # initialize Metalsmith
   metalsmith = new Metalsmith cwd
   metalsmith.source './docs/page'
@@ -45,13 +57,15 @@ module.exports = (cb) ->
   metalsmith.use drafts()
 
   # add metadata
-  metalsmith.use define {
+  metalsmith.use define
     icons: readJSONFile path.join cwd, 'tmp/icons.json'
     colors: readJSONFile path.join cwd, 'less/colors.json'
     version: readJSONFile path.join cwd, 'tmp/version.json'
     package: readJSONFile path.join cwd, 'package.json'
     config: config
-  }
+    moment: moment
+    marked: marked
+    changelogRenderer: markedChangelogRenderer
 
   # do the static pages
   # TODO: Remove when collection plugin supports undeclared collections
@@ -74,28 +88,17 @@ module.exports = (cb) ->
 
   # Do the markdown pages
   metalsmith.use(
-    branch('**/*.md', '!_*/**/*.md')
+    branch ['**/*.md', '!_*/**/*.md']
       .use relative()
       .use collections collections_options
-      .use markdown {
-        renderer: markedRenderer
-        langPrefix: ''
-        highlight: (code, lang) ->
-          return require('highlight.js').highlight(lang, code).value
+      .use markdown
         useMetadata: true
-      }
+        marked: marked
   )
-
-  # Configure marked to use custom highlight
-  require('marked').setOptions
-    renderer: markedRenderer
-    langPrefix: ''
-    highlight: (code, lang) ->
-      return require('highlight.js').highlight(lang, code).value;
 
   # Do the jade pages
   metalsmith.use(
-    branch [ '**/*.jade' ]
+    branch ['**/*.jade']
       .use filepath
         absolute: true
       .use relative()
@@ -108,7 +111,7 @@ module.exports = (cb) ->
 
   # Duplicate snippets to be used as demo pages (will be wrapped with templates below)
   metalsmith.use(
-    branch ['**/*.html' ]
+    branch ['**/*.html']
       .use copy
         pattern: '**/snippets/*.html'
         directory: 'components/demos'
@@ -137,7 +140,28 @@ module.exports = (cb) ->
   metalsmith.clean false
   metalsmith.destination './dist/docs/'
 
-  return metalsmith.build (err) ->
-    if err then cb(err) else cb()
+  # Function to run the magic
+  build = ->
+    metalsmith.build (err) ->
+      if not err then cb() else cb(err)
+
+  username = process.env.GITHUB_USERNAME
+  password = process.env.GITHUB_PASSWORD
+
+  if username and password
+    gutil.log "Will load GitHub changelog with user " + username.cyan
+
+    # Amazingly load our GitHub changelog to include it into our build!
+    loadChangelog username, password, (err, changelog) ->
+      if not err
+        config.changelog = changelog
+        gutil.log "Successfully loaded " + "#{changelog.length}".cyan + " changelog items!"
+      else
+        gutil.log "Failed loading changelog items!".red
+
+      do build
+  else
+    # Just build it w/o changelog
+    do build
 
 # Copyright AXA Versicherungen AG 2015
