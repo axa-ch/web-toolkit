@@ -11,17 +11,7 @@ aside.callout
     | This element was provided by the group and may or may not be the best choice for your site or application. Reach out to us if you have any questions. For now this element is only mandatory for customer facing frontends.
 
 .example(data-example-relative-base=relative('/'))
-  .example__header
-    .example__device-selection
-      a.example__device-selection__device.example__device-selection__mobile
-        svg.icon-svg.example__device-selection__icon
-          use(xlink:href=relative('/images/icons.svg#mobile'))
-      a.example__device-selection__device.example__device-selection__tablet
-        svg.icon-svg.example__device-selection__icon
-          use(xlink:href=relative('/images/icons.svg#tablet'))
-      a.example__device-selection__device.example__device-selection__desktop.is-active
-        svg.icon-svg.example__device-selection__icon
-          use(xlink:href=relative('/images/icons.svg#desktop'))
+  include ./includes/example-header.jade
   .example__content
     .example__border
       .example__bracket.example__bracket--topleft
