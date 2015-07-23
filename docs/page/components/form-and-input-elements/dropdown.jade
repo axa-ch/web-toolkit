@@ -15,6 +15,8 @@ p.paragraph.
     li.toc__anchor-navigation__item
       a(href='#enhanced').toc__anchor-navigation__link Basic Dropdown
     li.toc__anchor-navigation__item
+      a(href='#condensed').toc__anchor-navigation__link Condensed Dropdown
+    li.toc__anchor-navigation__item
       a(href='#non-enhanced').toc__anchor-navigation__link Backup: Non enhanced dropdown
 
 .hr
@@ -76,6 +78,54 @@ ul.checklist
     :markdown
       Generally, if you have less than 5 options, a <a class="link" href="./segmented-control.html">segmented control</a> might be the better option.
   li.checklist__item On mobile devices, use native dropdown pickers.
+
+.hr
+
+h2.heading.heading--secondary#condensed Condensed Dropdown
+
+.example(data-example-relative-base=relative('/'))
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        include:ignorefrontmatter ./snippets/dropdown-condensed.jade
+
+.toggle
+  .toggle__button(data-info, data-target='#code-basic')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-basic
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div data-dropdown="data-dropdown" class="dropdown">
+                  <div class="dropdown__label"></div>
+                  <select class="dropdown__select">
+                    <option>Schweiz</option>
+                    <option>Regenbogenland</option>
+                  </select>
+                </div>
+        .tab-panel__content__tab(data-tab-content='js')
+          p.paragraph.
+            Our jQuery plugin adds the
+            <code>dropdown--js</code> modifier and handles
+            keyboard events.
+          p.paragraph.
+            Activate the functionality with the data-* API
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/dropdown-condensed.jade
 
 .hr
 
