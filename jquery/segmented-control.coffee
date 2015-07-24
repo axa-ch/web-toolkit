@@ -6,13 +6,14 @@
 
     constructor: (element, options) ->
       @$element = $ element
+      disabled = @$element.is('[disabled=disabled]')
 
       # TODO: Do not depend on css classes
       @$radios = @$element.find '.segmented-control__item__radio'
 
       @$radios.each (index, element) ->
         $radio = $ element
-
+        $radio.prop('disabled', 'disabled') if disabled
         $radio.data 'item.element', $radio.closest '.segmented-control__item'
 
       @options = $.extend {}, SegmentedControl.DEFAULTS, options
