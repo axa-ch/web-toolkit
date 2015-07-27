@@ -8,14 +8,19 @@
   display: block;
 
   width: 100%;
-  padding-right: 4px;
-  padding-bottom: 4px;
+  padding-right: 2px;
+  padding-bottom: 2px;
 
   background: @color-gray--lighter;
   color: @color-black;
   border-radius: 0;
   border: @focus-border-width solid @color-gray--lighter;
   -webkit-appearance: none;
+
+  .respond(medium, {
+      padding-right: 4px;
+      padding-bottom: 4px;
+    });
 
   &.has-error {
     border-color: @color-red;
@@ -30,13 +35,18 @@
 .chips__chip {
   display: inline-block;
 
-  height: 30px;
+  height: 34px;
   padding: 0 10px;
   margin: 4px 0px 0px 5px;
 
-  line-height: 30px;
+  line-height: 34px;
 
   background: @color-gray--dark;
+
+  .respond(medium, {
+      height: 30px;
+      line-height: 30px;
+    });
 }
 
 .chips__chip__text {
@@ -48,10 +58,19 @@
 .chips__close-button {
   display: inline-block;
 
-  width: 1.2em;
-  height: 1.2em;
-  padding-top: 5px;
-  margin-left: 6px;
+  width: 1.3em;
+  height: 1.3em;
+  padding-top: 4px;
+  margin-left: 8px;
+  margin-right: 2px;
+
+  .respond(medium, {
+      width: 1.2em;
+      height: 1.2em;
+      padding-top: 5px;
+      margin-left: 6px;
+      margin-right: 0;
+    });
 
   color: @color-gray--lighter;
 
@@ -74,6 +93,14 @@
 .chips__close-icon {
   position: relative;
   display: block;
+
+  height: 1.3em;
+  width: 1.3em;
+
+  .respond(medium, {
+      height: 1em;
+      width: 1em;
+    });
 }
 
 .chips__input {
