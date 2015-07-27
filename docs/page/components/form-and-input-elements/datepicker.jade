@@ -19,7 +19,7 @@ p.paragraph.
 
 .hr
 
-h2.heading.heading--secondary#regular Basic Dropdown
+h2.heading.heading--secondary#regular Regular Datepicker
 
 .example(data-example-relative-base=relative('/'))
   include ../includes/example-header.jade
@@ -32,11 +32,11 @@ h2.heading.heading--secondary#regular Basic Dropdown
         include:ignorefrontmatter ./snippets/datepicker.jade
 
 .toggle
-  .toggle__button(data-info, data-target='#code')
+  .toggle__button(data-info, data-target='#code-basic')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content#code
+  .toggle__content#code-basic
     .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
@@ -83,35 +83,23 @@ h2.heading.heading--secondary#condensed Condensed Datepicker
       .example__html
         include:ignorefrontmatter ./snippets/datepicker-condensed.jade
 .toggle
-  .toggle__button(data-info, data-target='#code')
+  .toggle__button(data-info, data-target='#code-condensed')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content#code
+  .toggle__content#code-condensed
     .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
-          .tab-panel__header__tab(data-tab-toggle='html') HTML
-          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+          .tab-panel__header__tab(data-tab-toggle='html') HTML/JS
       .tab-panel__content
         .tab-panel__content__tab(data-tab-content='html')
           :markdown
-            This is the pure HTML markup to create a
-            datepicker. Use our jQuery plugin or custom
-            code to generate the markup and implement
-            the required behaviour.
+            To create a condensed datepicker, just add the
+            `condensed` modifier to the datepicker block
+            and the control element.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/datepicker-markuponly.jade
-        .tab-panel__content__tab(data-tab-content='js')
-          :markdown
-            To get localized strings use moment.locale as
-            described in the <a href="http://momentjs.com/docs/" class="link">momentjs docs</a>.
-            Use the jQuery plugin as follows. It will
-            create the calendar and implements user
-            interaction.
-          .tab-panel__content__tab__fullwidth-content
-            .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/datepicker.jade
+              include:highlightcode ./snippets/datepicker-condensed.jade
 
 // Copyright AXA Versicherungen AG 2015
