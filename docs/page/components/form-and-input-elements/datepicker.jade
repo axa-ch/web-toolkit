@@ -9,6 +9,18 @@ tags: Date, Time, Picker
 p.paragraph.
   The datepicker component helps the user selecting a date.
 
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#basic').toc__anchor-navigation__link Regular Datepicker
+    li.toc__anchor-navigation__item
+      a(href='#condensed').toc__anchor-navigation__link Condensed Datepicker
+
+.hr
+
+h2.heading.heading--secondary#regular Regular Datepicker
+
 .example(data-example-relative-base=relative('/'))
   include ../includes/example-header.jade
   .example__content
@@ -20,11 +32,11 @@ p.paragraph.
         include:ignorefrontmatter ./snippets/datepicker.jade
 
 .toggle
-  .toggle__button(data-info, data-target='#code')
+  .toggle__button(data-info, data-target='#code-basic')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content#code
+  .toggle__content#code-basic
     .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
@@ -56,5 +68,38 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item Use the native datepickers on mobile devices
+
+.hr
+
+h2.heading.heading--secondary#condensed Condensed Datepicker
+
+.example(data-example-relative-base=relative('/'))
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        include:ignorefrontmatter ./snippets/datepicker-condensed.jade
+.toggle
+  .toggle__button(data-info, data-target='#code-condensed')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-condensed
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML/JS
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown
+            To create a condensed datepicker, just add the
+            `condensed` modifier to the datepicker block
+            and the control element.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/datepicker-condensed.jade
 
 // Copyright AXA Versicherungen AG 2015

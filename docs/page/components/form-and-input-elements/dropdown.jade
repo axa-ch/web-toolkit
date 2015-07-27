@@ -13,13 +13,15 @@ p.paragraph.
   .toc__title Table of contents
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
-      a(href='#enhanced').toc__anchor-navigation__link Basic Dropdown
+      a(href='#enhanced').toc__anchor-navigation__link Regular Dropdown
+    li.toc__anchor-navigation__item
+      a(href='#condensed').toc__anchor-navigation__link Condensed Dropdown
     li.toc__anchor-navigation__item
       a(href='#non-enhanced').toc__anchor-navigation__link Backup: Non enhanced dropdown
 
 .hr
 
-h2.heading.heading--secondary#enhanced Basic Dropdown
+h2.heading.heading--secondary#enhanced Regular Dropdown
 
 p.paragraph.
   The dropdown is used for a single selection out of a list.
@@ -32,14 +34,14 @@ p.paragraph.
       .example__bracket.example__bracket--bottomright
       iframe.example__iframe
       .example__html
-        include:ignorefrontmatter ./snippets/dropdown-basic.jade
+        include:ignorefrontmatter ./snippets/dropdown-regular.jade
 
 .toggle
-  .toggle__button(data-info, data-target='#code-basic')
+  .toggle__button(data-info, data-target='#code-regular')
     svg.icon-svg.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
-  .toggle__content#code-basic
+  .toggle__content#code-regular
     .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
@@ -67,7 +69,7 @@ p.paragraph.
             Activate the functionality with the data-* API
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/dropdown-basic.jade
+              include:highlightcode ./snippets/dropdown-regular.jade
 
 h3.heading.heading--tertiary UX Checklist
 
@@ -77,6 +79,38 @@ ul.checklist
       Generally, if you have less than 5 options, a <a class="link" href="./segmented-control.html">segmented control</a> might be the better option.
   li.checklist__item On mobile devices, use native dropdown pickers.
 
+.hr
+
+h2.heading.heading--secondary#condensed Condensed Dropdown
+
+.example(data-example-relative-base=relative('/'))
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      .example__bracket.example__bracket--topleft
+      .example__bracket.example__bracket--bottomright
+      iframe.example__iframe
+      .example__html
+        include:ignorefrontmatter ./snippets/dropdown-condensed.jade
+
+.toggle
+  .toggle__button(data-info, data-target='#code-condensed')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-condensed
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown
+            To create a condensed dropdown element add the
+            `condensed` modifier to a regular dropdown.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/dropdown-condensed.jade
 .hr
 
 h2.heading.heading--secondary#non-enhanced Non enhanced dropdown

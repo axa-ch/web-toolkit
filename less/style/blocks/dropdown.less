@@ -81,4 +81,26 @@
   background: @color-gray--lighter;
 }
 
+.dropdown--condensed {
+  height: @control-height-condensed;
+
+  .dropdown__label {
+    .control--condensed();
+
+    &::after {
+      height: @control-height-condensed;
+      line-height: @control-height-condensed;
+    }
+  }
+
+  .dropdown__select {
+    height: @control-height-condensed;
+  }
+  
+  &.dropdown--js .dropdown__select {
+    margin-top: -@control-height-condensed;
+  }
+
+}
+
 /* Copyright AXA Versicherungen AG 2015 */
