@@ -7,14 +7,20 @@ template: demo.jade
   .chips__chip
     .chips__chip__text Foo
     .chips__close-button
-      .chips__close-icon.icon.icon--close
+      .chips__close-button-background
+      svg.chips__close-icon.icon-svg
+        use(xlink:href=relative('/images/icons.svg#close'))
   .chips__chip
     .chips__chip__text Bar
     .chips__close-button
-      .chips__close-icon.icon.icon--close
+      .chips__close-button-background
+      svg.chips__close-icon.icon-svg
+        use(xlink:href=relative('/images/icons.svg#close'))
   .chips__chip
-    .chips__chip__text asdfsda
+    .chips__chip__text Test
     .chips__close-button
-      .chips__close-icon.icon.icon--close
+      .chips__close-button-background
+      svg.chips__close-icon.icon-svg
+        use(xlink:href=relative('/images/icons.svg#close'))
 
   input.chips__input
