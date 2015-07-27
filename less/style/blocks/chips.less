@@ -48,9 +48,16 @@
 .chips__close-button {
   display: inline-block;
 
-  width: 14px;
-  height: 14px;
+  width: 1.2em;
+  height: 1.2em;
+  padding-top: 5px;
   margin-left: 6px;
+
+  color: @color-gray--lighter;
+
+  &:hover {
+    color: @color-gray--darker;
+  }
 }
 
 .chips__close-button-background {
@@ -67,12 +74,6 @@
 .chips__close-icon {
   position: relative;
   display: block;
-
-  color: @color-gray;
-
-  &:hover {
-    color: @color-gray--darker;
-  }
 }
 
 .chips__input {
