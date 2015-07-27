@@ -1,6 +1,10 @@
 @import '../variables';
 
 .chips {
+  position: relative;
+}
+
+.chips__field {
   display: block;
 
   width: 100%;
@@ -8,13 +12,13 @@
   padding-bottom: 4px;
 
   background: @color-gray--lighter;
-  color: black;
+  color: @color-black;
   border-radius: 0;
   border: @focus-border-width solid @color-gray--lighter;
   -webkit-appearance: none;
 
   &.has-error {
-    border-color: #ff0000;
+    border-color: @color-red;
   }
 
   &.is-active {

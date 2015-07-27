@@ -1,0 +1,35 @@
+---
+title: Chips
+template: demo.jade
+---
+
+.l-container
+  .form
+    .form__group
+      label.form__group__label
+        .form__group__label__text Form label
+      .form__group__control
+        .chips
+          .chips__field
+            .chips__chip
+              .chips__chip__text Foo
+              .chips__close-button
+                .chips__close-button-background
+                svg.chips__close-icon.icon-svg
+                  use(xlink:href=relative('/images/icons.svg#close'))
+            .chips__chip
+              .chips__chip__text Bar
+              .chips__close-button
+                .chips__close-button-background
+                svg.chips__close-icon.icon-svg
+                  use(xlink:href=relative('/images/icons.svg#close'))
+            .chips__chip
+              .chips__chip__text Test
+              .chips__close-button
+                .chips__close-button-background
+                svg.chips__close-icon.icon-svg
+                  use(xlink:href=relative('/images/icons.svg#close'))
+            input.chips__input
+          .chips__autocomplete.autocomplete__suggestions
+            .autocomplete__suggestions__item 8400 Winterthur
+            .autocomplete__suggestions__item 8472 Seuzach
