@@ -13,18 +13,18 @@ template: demo.jade
           .chips__field
             .chips__chip
               .chips__chip__text Foo
-              .chips__close-button
-                svg.chips__close-icon.icon-svg
+              a.chips__chip__close-button(href='#')
+                svg.chips__chip__close-button__icon.icon-svg
                   use(xlink:href=relative('/images/icons.svg#cross'))
             .chips__chip
               .chips__chip__text Bar
-              .chips__close-button
-                svg.chips__close-icon.icon-svg
+              a.chips__chip__close-button(href='#')
+                svg.chips__chip__close-button__icon.icon-svg
                   use(xlink:href=relative('/images/icons.svg#cross'))
             .chips__chip
               .chips__chip__text Test
-              .chips__close-button
-                svg.chips__close-icon.icon-svg
+              a.chips__chip__close-button(href='#')
+                svg.chips__chip__close-button__icon.icon-svg
                   use(xlink:href=relative('/images/icons.svg#cross'))
             input.chips__input
           .chips__autocomplete.autocomplete__suggestions
