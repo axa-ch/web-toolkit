@@ -56,6 +56,7 @@
     "gulp-watch": "^1.0.2",
     "gulp-watch-sequence": "0.0.4",
     "gulp-webserver": "^0.9.1",
+    "gulp-zip": "^3.0.2",
     "highlight.js": "^8.2.0",
     "iframe-resizer": "git+https://github.com/elessar-ch/iframe-resizer.git",
     "jade": "^1.8.1",
