@@ -1,0 +1,115 @@
+@import '../variables';
+
+.chips {
+  position: relative;
+}
+
+.chips__field {
+  display: block;
+
+  width: 100%;
+  padding-right: 2px;
+  padding-bottom: 2px;
+
+  background: @color-gray--lighter;
+  color: @color-black;
+  border-radius: 0;
+  border: @focus-border-width solid @color-gray--lighter;
+  -webkit-appearance: none;
+
+  .respond(medium, {
+      padding-right: 4px;
+      padding-bottom: 4px;
+    });
+
+  &.has-error {
+    border-color: @color-red;
+  }
+
+  &.is-active {
+    border-color: @color-light-blue;
+    outline: none;
+  }
+}
+
+.chips__chip {
+  position: relative;
+  display: inline-block;
+
+  height: 34px;
+  line-height: 34px;
+  padding-right: 2.2em;
+
+  margin-top: 4px;
+  margin-left: 5px;
+
+  background: @color-gray--dark;
+
+  .respond(medium, {
+      height: 30px;
+      line-height: 30px;
+      padding-right: 1.8em;
+    });
+}
+
+.chips__chip__text {
+  display: inline-block;
+  padding-left: 15px;
+
+  color: @color-white;
+
+  .respond(medium, {
+    padding-left: 10px;
+  });
+}
+
+.chips__chip__close-button {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  display: block;
+  width: 2.2em;
+
+  text-align: center;
+  color: @color-gray--lighter;
+
+  .respond(medium, {
+    width: 1.8em;
+  });
+
+  &:hover {
+    color: @color-gray--darker;
+  }
+}
+
+.chips__chip__close-button__icon {
+  display: inline-block;
+
+  height: 1.1em;
+  width: 1.1em;
+
+  // To make the icon vertically centered
+  margin-top: 8px;
+
+  .respond(medium, {
+    height: 0.9em;
+    width: 0.9em;
+    margin-top: 8px;
+  });
+}
+
+.chips__input {
+  border: none;
+  margin-left: 10px;
+
+  background: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* Copyright AXA Versicherungen AG 2015 */
