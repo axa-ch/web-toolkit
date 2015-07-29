@@ -21,13 +21,16 @@ html
 
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/style.min.css"))
-    
+
     script(src=relative('/js/inspirations.all.min.js'))
   body.site
     .site__page
       .example-header
         .example-header__sticky
-          a(href=relative("/examples")).example-header__back Back to overview
+          a(href=relative("/examples")).example-header__back
+            svg.example-header__back__icon.icon-svg
+              use(xlink:href=relative('/images/icons.svg#arrow-left'))
+            | Back to overview
           .example-header__headline Example
         .example-header__text
           p.example-header__paragaph.
