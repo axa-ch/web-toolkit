@@ -38,7 +38,7 @@
 
     color: @color-gray--darkest;
     text-decoration: none;
-    
+
     &.is-active, &.is-open {
       font-weight: @font-weight-medium;
       color: @color-blue;
@@ -98,47 +98,33 @@
       color: white;
     }
 
-    &.icon::before {
-      padding-right: 8px;
-    }
-
     &.is-active {
       background-color: @color-tbd-24;
       color: white;
     }
   }
 
-  .menu__link--parent {
-    .icon;
-    .icon--arrow-right;
+  .menu__link__parent-icon {
+    display: block;
+    float: right;
 
-    &::before {
-      display: block;
-      float: right;
-
-      padding: 0;
-
-      font-size: 1.4em;
-    }
+    height: 1.4em;
+    width: 1.4em;
+    padding: 0;
   }
 
   .menu__link--back {
-    .icon;
-    .icon--arrow-left;
-
     background-color: @color-tbd-24;
+  }
 
-    &::before {
-      display: block;
-      float: left;
+  .menu__link__back-icon {
 
-      padding-right: 8px;
+    display: block;
+    float: left;
 
-      font-size: 1.4em;
-    }
-    &:hover {
-      color: white;
-    }
+    height: 1.4em;
+    width: 1.4em;
+    padding-right: 8px;
   }
 }
 
