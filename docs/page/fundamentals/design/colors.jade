@@ -7,9 +7,9 @@ template: page.jade
 
 p.paragraph.
   Use these colors to guide your designs and to ensure you’re staying consistent with the AXA brand.
-  
+
 p.callout
-  | Copy the color code or the less variable name to the clipboard by clicking the 
+  | Copy the color code or the less variable name to the clipboard by clicking the
   svg.icon-svg.color-palette__key__icon
     use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#clipboard"))
   |  icon below.
@@ -22,13 +22,19 @@ p.callout
       .bubble__title__text Adobe Color file (.aco)
     .bubble__text
       p.paragraph.
-        Download the Adobe Color file and import the color swatches 
+        Download the Adobe Color file and import the color swatches
         seen below into Adobe Photoshop or your tool of choice.
 
 .downloads
+  svg.downloads__icon.icon-svg
+    use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#download"))
   .downloads__item
     a(href=relative('/content/AXA.aco')).downloads__link Download swatches
-  
+  .downloads__item
+    a(href=relative('/content/Helveticons-basic-preview.png')).downloads__link Helveticons-basic-preview.png
+  .downloads__item
+    a(href=relative('/content/Helveticons-extras-preview.png')).downloads__link Helveticons-extras-preview.png
+
 mixin color(colorCode, colorName, modifier)
   .color-palette__color(class=(modifier ? 'color-palette__color--' + modifier : ''))
     .color-palette__color__box(style='background: ' + colorCode, class=(modifier ? 'color-palette__color__box--' + modifier : ''))
@@ -36,12 +42,12 @@ mixin color(colorCode, colorName, modifier)
       .color-palette__color__code
         span #{colorCode}
         != ' '
-        svg.icon-svg.color-palette__color__copy(data-clipboard-text=colorCode) 
+        svg.icon-svg.color-palette__color__copy(data-clipboard-text=colorCode)
           use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#clipboard"))
       .color-palette__color__less
         span @color-#{colorName}
         != ' '
-        svg.icon-svg.color-palette__color__copy(data-clipboard-text='@color-' + colorName) 
+        svg.icon-svg.color-palette__color__copy(data-clipboard-text='@color-' + colorName)
           use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#clipboard"))
 
 h2.heading.heading--secondary Primary palette
@@ -65,9 +71,9 @@ script
   != 'ZeroClipboard.config({ swfPath: \'' + relative('/ZeroClipboard.swf') + '\' })'
 
 script.
-  
+
   clip = new ZeroClipboard($('[data-clipboard-text]'));
-  
+
   clip.on('ready', function(client) {
       this.on('aftercopy', function(event) {
           $("#notification").notification({
