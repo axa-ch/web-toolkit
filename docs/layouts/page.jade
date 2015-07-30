@@ -152,9 +152,13 @@ html
                     class={'is-active': isActive, 'is-open': isOpen }
                   ) #{page.title}
                     if nestedNavCollection
-                      i.menu__dropdown-icon(
+                      .menu__dropdown__icon(
                         class={ 'is-open': isOpen }
                       )
+                        svg.icon-svg.menu__dropdown__icon__is-closed
+                          use(xlink:href=relative("/images/icons.svg#arrow-right"))
+                        svg.icon-svg.menu__dropdown__icon__is-open
+                          use(xlink:href=relative("/images/icons.svg#arrow-bottom"))
 
                   if nestedNavCollection
                     +displayMenu(nestedNavCollection, true, isOpen)
