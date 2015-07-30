@@ -14,10 +14,7 @@ p.paragraph. A modal window can be used to present very specific information (su
     .example__border
       .example__bracket.example__bracket--topleft
       .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html(data-example-centered)
-        div
-          include:ignorefrontmatter ./snippets/modal.jade
+      iframe.example__iframe(src=relative('/components/demos/modal.html'))
 
 .toggle
   .toggle__button(data-info, data-target='#code-modal')

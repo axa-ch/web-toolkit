@@ -32,9 +32,7 @@ p.paragraph.
     .example__border
       .example__bracket.example__bracket--topleft
       .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/dropdown-regular.jade
+      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/dropdown-regular.html'))
 
 .toggle
   .toggle__button(data-info, data-target='#code-regular')
@@ -89,9 +87,7 @@ h2.heading.heading--secondary#condensed Condensed Dropdown
     .example__border
       .example__bracket.example__bracket--topleft
       .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/dropdown-condensed.jade
+      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/dropdown-condensed.html'))
 
 .toggle
   .toggle__button(data-info, data-target='#code-condensed')
@@ -124,9 +120,7 @@ p.paragraph.
     .example__border
       .example__bracket.example__bracket--topleft
       .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/dropdown-non-enhanced.jade
+      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/dropdown-non-enhanced.html'))
 
 .toggle
   .toggle__button(data-info, data-target='#code-non-enhanced')

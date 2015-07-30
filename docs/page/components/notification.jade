@@ -31,17 +31,9 @@ p.paragraph.
     .example__border
       .example__bracket.example__bracket--topleft
       .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
+      iframe.example__iframe(src=relative('/components/demos/notification.html'))
       .example__html
         include:ignorefrontmatter ./snippets/notification.jade
-      .example__script.
-        $("#showNotification").on('click', function() {
-          $("#notification").notification({
-            content: $("#notification_content").val(),
-            modifier: $('[name="notification__modifier"]:checked').val(),
-            html: $("#notification_html").is(":checked")
-          });
-        });
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
