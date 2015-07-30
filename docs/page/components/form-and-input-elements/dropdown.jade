@@ -30,7 +30,10 @@ p.paragraph.
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/dropdown-regular.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/dropdown-regular.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-regular')
@@ -83,7 +86,10 @@ h2.heading.heading--secondary#condensed Condensed Dropdown
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/dropdown-condensed.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/dropdown-condensed.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-condensed')
@@ -114,7 +120,10 @@ p.paragraph.
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/dropdown-non-enhanced.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/dropdown-non-enhanced.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-non-enhanced')

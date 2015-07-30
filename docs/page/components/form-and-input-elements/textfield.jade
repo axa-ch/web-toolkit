@@ -37,7 +37,10 @@ p.paragraph The most common form of a text field.
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/textfield.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-single')
@@ -68,7 +71,10 @@ p.paragraph.
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/textfield-autocomplete.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield-autocomplete.html')
+        data-iframe-resizer
+      )
 
 
 .toggle
@@ -140,7 +146,10 @@ p.paragraph.
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/textfield-multiline.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield-multiline.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-multiline')

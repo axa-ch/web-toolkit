@@ -46,7 +46,10 @@ p.paragraph.
   include ./includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/demos/button-primary.html'))
+      iframe.example__iframe(
+        src=relative('/components/demos/button-primary.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
@@ -96,7 +99,10 @@ p.paragraph.
   include ./includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/demos/button-secondary.html'))
+      iframe.example__iframe(
+        src=relative('/components/demos/button-secondary.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-2')
@@ -138,7 +144,10 @@ p.paragraph.
   include ./includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/demos/button-floating.html'))
+      iframe.example__iframe(
+        src=relative('/components/demos/button-floating.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-3')

@@ -27,7 +27,10 @@ p.paragraph.
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/segmented-control-basic.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/segmented-control-basic.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
@@ -79,7 +82,10 @@ p.paragraph.
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/segmented-control-stacked.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/segmented-control-stacked.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-stacked')
@@ -118,7 +124,10 @@ p.paragraph.
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/segmented-control-fallback.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/segmented-control-fallback.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-fallback')

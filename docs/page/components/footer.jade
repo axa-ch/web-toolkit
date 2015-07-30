@@ -14,7 +14,10 @@ aside.callout
   include ./includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/demos/footer.html'))
+      iframe.example__iframe(
+        src=relative('/components/demos/footer.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code')

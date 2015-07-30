@@ -1,8 +1,3 @@
-#--------------------------------------
-# > Abandon all hope, you who enter here.
-# Not anymore! :)
-#--------------------------------------
-
 class Example
 
   constructor: (el) ->
@@ -22,21 +17,7 @@ class Example
     @borderPadding = parseInt(border.css('padding-left')) +
       parseInt(border.css('padding-right'))
 
-    @maxHeight = @$el.data 'example-max-height'
-    if not @maxHeight?
-      @maxHeight = 'infinity'
-
     @setWidth null, @$devDesktop
-
-    iFrame = @$frame[0]
-    iFrameResize {
-      autoResize: true
-      resizeFrom: 'child'
-      checkOrigin: false
-      sizeHeight: true
-      maxHeight: @maxHeight
-      heightCalculationMethod: 'lowestElement'
-    }, iFrame
 
   setWidth: (width, activeBtn) ->
     @$devMobile.removeClass 'is-active'

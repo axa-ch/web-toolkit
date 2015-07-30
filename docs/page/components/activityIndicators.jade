@@ -27,7 +27,10 @@ p.paragraph.
   include ./includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/demos/progressbar.html'))
+      iframe.example__iframe(
+        src=relative('/components/demos/progressbar.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#progressbar-code')
@@ -67,7 +70,10 @@ p.paragraph.
   include ./includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/demos/loading-spinner.html'))
+      iframe.example__iframe(
+        src=relative('/components/demos/loading-spinner.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#spinner-code')

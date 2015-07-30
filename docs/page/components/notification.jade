@@ -29,9 +29,10 @@ p.paragraph.
   include ./includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/demos/notification.html'))
-      .example__html
-        include:ignorefrontmatter ./snippets/notification.jade
+      iframe.example__iframe(
+        src=relative('/components/demos/notification.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')

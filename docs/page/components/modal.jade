@@ -12,7 +12,10 @@ p.paragraph. A modal window can be used to present very specific information (su
   include ./includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/demos/modal.html'))
+      iframe.example__iframe(
+        src=relative('/components/demos/modal.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-modal')

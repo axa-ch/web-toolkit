@@ -23,7 +23,10 @@ p.paragraph.
   include ../includes/example-header.jade
   .example__content
     .example__border
-      iframe.example__iframe(src=relative('/components/form-and-input-elements/demos/form-group.html'))
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/form-group.html')
+        data-iframe-resizer
+      )
 
 
 .toggle
