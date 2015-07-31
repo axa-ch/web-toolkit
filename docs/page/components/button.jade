@@ -68,10 +68,13 @@ p.paragraph.
       .tab-panel__content
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
-            li.checklist__item.
-              Prevent whitespace at the start and the end
-              of the button. It will add some additional spacing
-              between the icon and the button.
+            li.checklist__item
+              svg.icon-svg.checklist__item__icon
+                use(xlink:href=relative('/images/icons.svg#checkmark'))
+              .checklist__item__content.
+                Prevent whitespace at the start and the end
+                of the button. It will add some additional spacing
+                between the icon and the button.
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
@@ -86,8 +89,11 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
-  li.checklist__item.
-    Icon only buttons are usually hard to understand. Do not use withouth proper testing.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Icon only buttons are usually hard to understand. Do not use withouth proper testing.
 
 .hr
 
@@ -132,9 +138,12 @@ p.paragraph.
 h3.heading.heading--tertiary.
   UX Checklist
 ul.checklist
-  li.checklist__item.
-    If the main goal of you site is information a
-    secondary call to action can be used.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      If the main goal of you site is information a
+      secondary call to action can be used.
 
 .hr
 
@@ -168,7 +177,11 @@ p.paragraph.
       .tab-panel__content
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
-            li.checklist__item Do not add any whitespace within the button since it would miss-position the icon
+            li.checklist__item
+              svg.icon-svg.checklist__item__icon
+                use(xlink:href=relative('/images/icons.svg#checkmark'))
+              .checklist__item__content.
+                Do not add any whitespace within the button since it would miss-position the icon
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
@@ -180,8 +193,11 @@ p.paragraph.
             as mixins.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item.
-    Avoid this type of button for destructive actions
-    like delete, nonspecific actions, alerts or errors.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Avoid this type of button for destructive actions
+      like delete, nonspecific actions, alerts or errors.
 
 // Copyright AXA Versicherungen AG 2015

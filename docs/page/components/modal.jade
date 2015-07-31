@@ -32,14 +32,13 @@ p.paragraph. A modal window can be used to present very specific information (su
           .tab-panel__header__tab(data-tab-toggle='js') JavaScript
       .tab-panel__content
         .tab-panel__content__tab(data-tab-content='html')
-          ul.checklist
-            li.checklist__item.
-              The modal block represents a modal dialog.
-              It is hidden by default. Add the .is-active
-              state to make it visible. When the modal is
-              visible you have to add the .is-modal-open
-              state to the body element of your page to
-              hide the main scrollbar.
+          p.
+            The modal block represents a modal dialog.
+            It is hidden by default. Add the .is-active
+            state to make it visible. When the modal is
+            visible you have to add the .is-modal-open
+            state to the body element of your page to
+            hide the main scrollbar.
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
@@ -73,6 +72,18 @@ p.paragraph. A modal window can be used to present very specific information (su
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item On mobile it is presented in full screen.
-  li.checklist__item The action buttons always stay visible.
-  li.checklist__item Do not use them for accepting things like terms & conditions – only to display them.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      On mobile it is presented in full screen.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      The action buttons always stay visible.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Do not use them for accepting things like terms & conditions – only to display them.

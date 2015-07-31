@@ -11,14 +11,23 @@ p.paragraph.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item.
-    Set easy to understand names for
-    every step.
-  li.checklist__item.
-    Have as few steps as necessary.
   li.checklist__item
-    :markdown
-      If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Set easy to understand names for
+      every step.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Have as few steps as necessary.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content
+      :markdown
+        If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
 
 .example(data-example-relative-base=relative('/'))
   include ../includes/example-header.jade
