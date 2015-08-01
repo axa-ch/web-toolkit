@@ -3,7 +3,9 @@ title: Notification
 template: demo.jade
 ---
 
-#notification
+#notification(data-notification-info=relative('/images/icons.svg#info')
+  data-notification-success=relative('/images/icons.svg#checkmark')
+  data-notification-error=relative('/images/icons.svg#cross'))
 .form
   .form__group
     .form__group__label
@@ -11,7 +13,7 @@ template: demo.jade
     .form__group__control
       div(data-segmented-control).segmented-control#notification__modifier
         label.segmented-control__item
-          input(type="radio", name="notification__modifier", value="", checked).segmented-control__item__radio
+          input(type="radio", name="notification__modifier", value="info", checked).segmented-control__item__radio
           span.segmented-control__item__label Default
         label.segmented-control__item
           input(type="radio", name="notification__modifier", value="success").segmented-control__item__radio
