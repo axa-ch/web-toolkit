@@ -33,15 +33,14 @@ h2.heading.heading--secondary#single Single-line text field
 
 p.paragraph The most common form of a text field.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/textfield.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-single')
@@ -70,18 +69,14 @@ h2.heading.heading--secondary#autocomplete Auto-complete text field
 p.paragraph.
   Use the auto-complete feature to provide real-time completions in dropdowns to enhance accuracy and efficiency.  Use auto-complete instead of extreme long dropdown fields (country list).
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/textfield-autocomplete.jade
-      .example__script.
-        $('#cities-autocomplete').autocomplete({
-          source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield-autocomplete.html')
+        data-iframe-resizer
+      )
 
 
 .toggle
@@ -137,15 +132,14 @@ h2.heading.heading--secondary#chips Chips
 p.paragraph.
   A chips element is used to allow multiple selections out of a long list.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/textfield-chips.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield-chips.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-chips')
@@ -181,15 +175,14 @@ h2.heading.heading--secondary#multiline Multi-line text field
 p.paragraph.
   Used whenever more than just a few words should be entered.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/textfield-multiline.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield-multiline.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-multiline')

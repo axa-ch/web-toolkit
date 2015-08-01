@@ -114,7 +114,8 @@ module.exports = (cb) ->
     branch ['**/*.html']
       .use copy
         pattern: '**/snippets/*.html'
-        directory: 'components/demos'
+        transform: (file) ->
+          return file.replace /snippets/i, 'demos'
   )
 
   # Wrap the pages with their template

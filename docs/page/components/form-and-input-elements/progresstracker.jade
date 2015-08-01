@@ -20,15 +20,14 @@ ul.checklist
     :markdown
       If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html(data-example-centered)
-        include:ignorefrontmatter ./snippets/progress-tracker.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/progress-tracker.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code')
