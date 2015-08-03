@@ -84,6 +84,7 @@
     "npm": "^2.1.18",
     "octonode": "^0.7.1",
     "postcss-pseudoelements": "^1.0.0",
+    "prompt": "^0.2.14",
     "run-sequence": "^0.3.6",
     "svg4everybody": "git+https://github.com/jonathantneal/svg4everybody.git",
     "zeroclipboard": "^2.2.0"
