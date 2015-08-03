@@ -4,9 +4,11 @@ gulp = require 'gulp'
 gutil = require 'gulp-util'
 prompt = require 'prompt'
 publish = require '../lib/publish-to-nexus'
+readJSONFile = require '../lib/readJSONFile'
 
 module.exports = (cb) ->
-  version = '0.6.1'
+  packageJson = readJSONFile './package.json'
+  version = packageJson.version
 
   nexus =
     username: process.env.NEXUS_USERNAME
