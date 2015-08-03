@@ -14,15 +14,26 @@ module.exports = (options, callback) ->
   form.append 'p', 'jar'
   form.append 'file', options.file
 
+  proxy = if options.proxy then url.parse options.proxy else null
   endpoint = url.parse options.url
+  headers = do form.getHeaders
+  headers.Host = endpoint.hostname if proxy
 
-  form.submit {
-    hostname: endpoint.hostname
-    pathname: endpoint.pathname
-    port: endpoint.port
+  request = http.request {
+    method: 'post'
+    host: endpoint.hostname if not proxy
+    host: proxy.hostname if proxy
+    path: endpoint.pathname if not proxy
+    path: options.url if proxy
+    port: endpoint.port if not proxy
+    port: proxy.port if proxy
     auth: [options.username, options.password].join(':')
-    headers: do form.getHeaders
-  }, (err, res) ->
-    callback err, res
+    headers: headers
+  }
+
+  form.pipe request
+
+  request.on 'response', (res) ->
+    callback null, res
 
 #! Copyright AXA Versicherungen AG 2015
