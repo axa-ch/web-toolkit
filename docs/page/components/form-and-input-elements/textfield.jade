@@ -15,7 +15,7 @@ p.paragraph.
       a(href='#single').toc__anchor-navigation__link Single-line text field
     li.toc__anchor-navigation__item
       a(href='#autocomplete').toc__anchor-navigation__link Auto-complete text-field
-    //-li.toc__anchor-navigation__item
+    li.toc__anchor-navigation__item
       a(href='#chips').toc__anchor-navigation__link Chips
     li.toc__anchor-navigation__item
       a(href='#multiline').toc__anchor-navigation__link Multi-line text field
@@ -33,15 +33,14 @@ h2.heading.heading--secondary#single Single-line text field
 
 p.paragraph The most common form of a text field.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/textfield.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-single')
@@ -63,23 +62,21 @@ p.paragraph The most common form of a text field.
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/textfield.jade
 
+.hr
+
 h2.heading.heading--secondary#autocomplete Auto-complete text field
 
 p.paragraph.
   Use the auto-complete feature to provide real-time completions in dropdowns to enhance accuracy and efficiency.  Use auto-complete instead of extreme long dropdown fields (country list).
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/textfield-autocomplete.jade
-      .example__script.
-        $('#cities-autocomplete').autocomplete({
-          source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield-autocomplete.html')
+        data-iframe-resizer
+      )
 
 
 .toggle
@@ -130,32 +127,62 @@ ul.checklist
 
 .hr
 
-//
-//- h2.heading.heading--secondary#chips Chips
+h2.heading.heading--secondary#chips Chips
 
-//- p.paragraph.
+p.paragraph.
   A chips element is used to allow multiple selections out of a long list.
 
-//- h3.heading.heading--tertiary UX Checklist
-//- ul.checklist
+.example
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield-chips.html')
+        data-iframe-resizer
+      )
+
+.toggle
+  .toggle__button(data-info, data-target='#code-chips')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-chips
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.paragraph.
+            The following markup is used for the
+            chips control. Use Javascript to toggle
+            and filter the autocomplete-list.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/textfield-chips.jade
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
   li.checklist__item
     :markdown
       Do not use for lists with 10 or less items. Use a <a href="./checkbox.html#group" class="link">checkbox group</a> in this case.
-//- .hr
+
+.hr
+
 h2.heading.heading--secondary#multiline Multi-line text field
 
 p.paragraph.
   Used whenever more than just a few words should be entered.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/textfield-multiline.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/textfield-multiline.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-multiline')

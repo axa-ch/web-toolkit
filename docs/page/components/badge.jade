@@ -9,15 +9,14 @@ tags: count, unread
 p.paragraph.
   A badge is an element which can be attached to other components as an indicator for new or unread items.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ./includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html(data-example-centered)
-        include:ignorefrontmatter ./snippets/badge.jade
+      iframe.example__iframe(
+        src=relative('/components/demos/badge.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code')

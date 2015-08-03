@@ -42,15 +42,14 @@ h2.heading.heading--secondary#primary Primary button
 p.paragraph.
   A buttons triggers an action to the page or an object. An additional icon can be added.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ./includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html(data-example-centered)
-        include:ignorefrontmatter ./snippets/button-primary.jade
+      iframe.example__iframe(
+        src=relative('/components/demos/button-primary.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
@@ -96,15 +95,14 @@ p.paragraph.
   would be to strong, a secondary button might take his
   place.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ./includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html(data-example-centered)
-        include:ignorefrontmatter ./snippets/button-secondary.jade
+      iframe.example__iframe(
+        src=relative('/components/demos/button-secondary.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-2')
@@ -142,15 +140,14 @@ p.paragraph.
   it can't contain a label. This type of button is used
   to represent an action that is important and ubiquitous.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ./includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html(data-example-centered)
-        include:ignorefrontmatter ./snippets/button-floating.jade
+      iframe.example__iframe(
+        src=relative('/components/demos/button-floating.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-3')
