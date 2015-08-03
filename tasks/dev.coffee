@@ -2,6 +2,8 @@ gulp = require 'gulp'
 watch = require 'gulp-watch'
 sequence = require 'gulp-watch-sequence'
 
+errorify = require '../lib/errorify'
+
 module.exports = [
   [
     'build'
@@ -30,6 +32,8 @@ module.exports = [
       './docs/config.json'
     ], (files, cb) ->
       gulp.start 'docs-pages', cb
+    .on 'error', (err) -> errorify err.message, 'docs-pages'
+
 
     #######################
     # docs-scripts
@@ -47,6 +51,7 @@ module.exports = [
     ], ->
       gulp.start 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
       return
+    .on 'error', (err) -> errorify err.message, 'docs-scripts'
 
     #######################
     # docs-styles
@@ -58,6 +63,7 @@ module.exports = [
         './dist/css/style.css'
     ], ->
       gulp.start 'docs-styles'
+    .on 'error', (err) -> errorify err.message, 'docs-styles'
 
     #######################
     # docs-assets
@@ -70,6 +76,7 @@ module.exports = [
         './dist/css/{style,normalize}.min.css{,.map}'
     ], ->
       gulp.start 'docs-assets'
+    .on 'error', (err) -> errorify err.message, 'docs-assets'
 
     #######################
     # icons
@@ -78,6 +85,7 @@ module.exports = [
       'icons/**/*.svg'
     ], ->
       gulp.start 'icons-svg', 'icons'
+    .on 'error', (err) -> errorify err.message, 'icons-svg'
 
     #######################
     # images
@@ -86,6 +94,7 @@ module.exports = [
       './images/**/*'
     ], ->
       gulp.start 'images'
+    .on 'error', (err) -> errorify err.message, 'images'
 
     #######################
     # jquery
@@ -94,6 +103,7 @@ module.exports = [
     watch [
       './jquery/**/*'
     ], queue.getHandler 'jquery', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
+    .on 'error', (err) -> errorify err.message, 'jquery'
 
     #######################
     # ng
@@ -102,6 +112,7 @@ module.exports = [
       './ng/**/*'
     ], ->
       gulp.start 'ng'
+    .on 'error', (err) -> errorify err.message, 'ng'
 
     #######################
     # styles
@@ -112,6 +123,7 @@ module.exports = [
       './less/colors.json'
     ], ->
       gulp.start 'styles'
+    .on 'error', (err) -> errorify err.message, 'styles'
 
 ]
 
