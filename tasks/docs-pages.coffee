@@ -32,6 +32,10 @@ copy = require 'metalsmith-copy'
 module.exports = (cb) ->
   cwd = path.join __dirname, '../'
   config = readJSONFile path.join cwd, './docs/config.json'
+  metalsmithSource = './docs/page'
+
+  # basedir for include paths
+  jadeBaseDir = path.join cwd, metalsmithSource
 
   # GitHub integration
   if !process.env.GITHUB_INTEGRATION
@@ -51,7 +55,7 @@ module.exports = (cb) ->
 
   # initialize Metalsmith
   metalsmith = new Metalsmith cwd
-  metalsmith.source './docs/page'
+  metalsmith.source metalsmithSource
 
   # filter all pages with draft set to true in front-matter
   metalsmith.use drafts()
@@ -66,6 +70,8 @@ module.exports = (cb) ->
     moment: moment
     marked: marked
     changelogRenderer: markedChangelogRenderer
+    # basedir for layout files
+    basedir: jadeBaseDir
 
   # do the static pages
   # TODO: Remove when collection plugin supports undeclared collections
@@ -107,6 +113,7 @@ module.exports = (cb) ->
         useMetadata: true
         locals: metalsmith.metadata()
         pretty: true
+        basedir: jadeBaseDir
   )
 
   # Duplicate snippets to be used as demo pages (will be wrapped with templates below)

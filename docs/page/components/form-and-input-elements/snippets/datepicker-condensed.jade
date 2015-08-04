@@ -3,6 +3,8 @@ title: Condensed-Datepicker
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .l-container
   .form
     .form__group
@@ -16,7 +18,6 @@ template: demo.jade
           data-datepicker-icon-next=relative('/images/icons.svg#arrow-right')
         )
           .datepicker__trigger(data-datepicker="#myCondensedDatepicker")
-            svg.datepicker__trigger__icon
-              use(xlink:href=relative('/images/icons.svg#calendar'))
+            +svg('calendar', 'datepicker__trigger__icon')
           .datepicker__input
             input(type='text').control.control--input.control--condensed#myCondensedDatepickerInput

@@ -3,6 +3,8 @@ title: Progress Tracker
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .progress-tracker
   ul.progress-tracker__flow
     li.progress-tracker__step.step.step--start.is-active
@@ -11,5 +13,4 @@ template: demo.jade
       span.step__bullet 2
     li.progress-tracker__step.step.step--end
       span.step__bullet
-        svg.step__bullet__checkmark
-          use(xlink:href=relative('/images/icons.svg#process-checkmark'))
+        +svg('process-checkmark', 'step__bullet__checkmark')

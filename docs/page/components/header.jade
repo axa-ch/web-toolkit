@@ -5,6 +5,8 @@ collection: nav__components
 template: page.jade
 ---
 
+include ./includes/mixins.jade
+
 aside.callout
   h2.callout__heading Feedback appreciated!
   p.paragraph
@@ -16,8 +18,7 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       The logo always links to the home page.
 
@@ -32,8 +33,7 @@ ul.checklist
 
 .toggle
   .toggle__button(data-info, data-target='#code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code
     .tab-panel(data-tab, data-tab-default='html')
@@ -44,8 +44,7 @@ ul.checklist
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item
-              svg.icon-svg.checklist__item__icon
-                use(xlink:href=relative('/images/icons.svg#checkmark'))
+              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
               .checklist__item__content.
                 The <code>header__mobile-trigger</code>
                 element is designed to trigger a mobile

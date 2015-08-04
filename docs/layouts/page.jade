@@ -3,6 +3,8 @@ cache: true
 filename: page.jade
 ---
 
+include /components/includes/mixins.jade
+
 doctype html
 html
   head
@@ -87,8 +89,7 @@ html
       .l-container
         .docs-floating-action
           a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
-            svg.button__icon.icon-svg
-              use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative('/images/icons.svg#feedback'))
+            +svg('feedback', ['button__icon', 'icon-svg'])
       header.header
         .header__container.l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
@@ -158,10 +159,8 @@ html
                       .menu__dropdown__icon(
                         class={ 'is-open': isOpen }
                       )
-                        svg.icon-svg.menu__dropdown__icon__is-closed
-                          use(xlink:href=relative("/images/icons.svg#arrow-right"))
-                        svg.icon-svg.menu__dropdown__icon__is-open
-                          use(xlink:href=relative("/images/icons.svg#arrow-bottom"))
+                        +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon-svg'])
+                        +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon-svg'])
 
                   if nestedNavCollection
                     +displayMenu(nestedNavCollection, true, isOpen)
