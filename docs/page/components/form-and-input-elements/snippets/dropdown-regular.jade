@@ -5,6 +5,9 @@ template: demo.jade
 
 .dropdown(data-dropdown)
   .dropdown__label
+    svg.dropdown__label__icon
+      use(xlink:href=relative('/images/icons.svg#arrow-bottom'))
+    .dropdown__label__text
   select.dropdown__select
     option Schweiz
     option Regenbogenland

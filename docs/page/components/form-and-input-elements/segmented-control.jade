@@ -68,10 +68,17 @@ p.paragraph.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Default values can be set if appropriate - if in doubt, do not set defaults.
   li.checklist__item
-    :markdown
-      Do not use more than 5 options in a segmented control. A <a href="./dropdown.html" class="link">dropdown</a> can be an alternative.
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Default values can be set if appropriate - if in doubt, do not set defaults.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content
+      :markdown
+        Do not use more than 5 options in a segmented control. A <a href="./dropdown.html" class="link">dropdown</a> can be an alternative.
 
 .hr
 
@@ -112,7 +119,11 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
-  li.checklist__item Do not set a default value when using a stacked segmented control.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Do not set a default value when using a stacked segmented control.
 
 .hr
 

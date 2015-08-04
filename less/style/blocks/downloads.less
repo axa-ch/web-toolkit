@@ -2,26 +2,22 @@
 @import '../blocks/icon';
 
 .downloads {
-
-  .icon();
-  .icon--download();
-
   display: block;
   margin: 30px 0;
   padding: -5px 0 0 0;
 
   text-transform: uppercase;
+}
 
-  &:before {
-    position: relative;
-    top: -5px;
-    float: left;
-    font-size: 32px;
-    vertical-align: middle;
-    padding-right: 10px;
-    color: @color-light-blue;
-  }
+.downloads__icon {
+  float: left;
+  position: relative;
+  top: -5px;
 
+  height: 32px;
+  width: 32px;
+
+  color: @color-light-blue;
 }
 
 .downloads__item {

@@ -23,6 +23,8 @@ p.paragraph.
         herunterladen und gleich mit dem Layout anfanagen
 
 //-.downloads
+  svg.downloads__icon.icon-svg
+    use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#download"))
   a(href="../AXA.aco").downloads__link NOTIFICATION.PSD
 
 .hr
@@ -58,8 +60,20 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
-  li.checklist__item Use notifications to indicate the state of background actions like copying to the clipboard.
-  li.checklist__item This component guarantees the attention of the user. Don't overuse it.
-  li.checklist__item It is not to be used as an confirmation page.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Use notifications to indicate the state of background actions like copying to the clipboard.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      This component guarantees the attention of the user. Don't overuse it.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      It is not to be used as a confirmation page.
 
 // Copyright AXA Versicherungen AG 2015

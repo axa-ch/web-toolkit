@@ -9,13 +9,21 @@ template: demo.jade
       .footer__item__headline Keep in touch
       ul.menu.menu--keep-in-touch
         li.menu__item
-          a.menu__link.icon.icon--facebook
+          a.menu__link
+            svg.footer__social-media-icon.icon-svg.icon--facebook
+              use(xlink:href=relative('/images/icons.svg#facebook'))
         li.menu__item
-          a.menu__link.icon.icon--twitter
+          a.menu__link
+            svg.footer__social-media-icon.icon-svg.icon--twitter
+              use(xlink:href=relative('/images/icons.svg#twitter'))
         li.menu__item
-          a.menu__link.icon.icon--xing
+          a.menu__link
+            svg.footer__social-media-icon.icon-svg.icon--xing
+              use(xlink:href=relative('/images/icons.svg#xing'))
         li.menu__item
-          a.menu__link.icon.icon--google-plus
+          a.menu__link
+            svg.footer__social-media-icon.icon-svg.icon--google-plus
+              use(xlink:href=relative('/images/icons.svg#google-plus'))
 
     .footer__item.footer__item--links
       .footer__item__headline AXA & You

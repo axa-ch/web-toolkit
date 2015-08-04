@@ -75,9 +75,16 @@ h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
   li.checklist__item
-    :markdown
-      Generally, if you have less than 5 options, a <a class="link" href="./segmented-control.html">segmented control</a> might be the better option.
-  li.checklist__item On mobile devices, use native dropdown pickers.
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content
+      :markdown
+        Generally, if you have less than 5 options, a <a class="link" href="./segmented-control.html">segmented control</a> might be the better option.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      On mobile devices, use native dropdown pickers.
 
 .hr
 

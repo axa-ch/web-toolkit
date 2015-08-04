@@ -26,9 +26,21 @@ p.paragraph.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Only use Placeholder text if absolutely necessary . Placeholder text must not be used to replace a proper label .
-  li.checklist__item Make sure that on mobile a user can make use of the optimized keyboard layouts for different text types (phone,email,etc.).
-  li.checklist__item If a field has a maximum  length in which the user probably will run into, add a signifier that shows how many characters are left.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Only use Placeholder text if absolutely necessary . Placeholder text must not be used to replace a proper label .
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Make sure that on mobile a user can make use of the optimized keyboard layouts for different text types (phone,email,etc.).
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      If a field has a maximum  length in which the user probably will run into, add a signifier that shows how many characters are left.
 
 .hr
 
@@ -122,9 +134,21 @@ p.paragraph.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Analyse search statistics and optimize the algorithm to match your users search behaviour.
-  li.checklist__item E.g. if a name is searched: John Doe and Doe John should both be valid entries.
-  li.checklist__item depending on the amount of possible results, start suggesting  options after entering the first or the third character.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Analyse search statistics and optimize the algorithm to match your users search behaviour.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      E.g. if a name is searched: John Doe and Doe John should both be valid entries.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      depending on the amount of possible results, start suggesting  options after entering the first or the third character.
 
 .hr
 
@@ -165,8 +189,11 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    :markdown
-      Do not use for lists with 10 or less items. Use a <a href="./checkbox.html#group" class="link">checkbox group</a> in this case.
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content
+      :markdown
+        Do not use for lists with 10 or less items. Use a <a href="./checkbox.html#group" class="link">checkbox group</a> in this case.
 
 .hr
 
@@ -216,5 +243,13 @@ p.paragraph.
             on the original.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Start with a small text field and let it grow as soon as the user enters more lines. Add a max height to prevent huge text fields.
-  li.checklist__item Do not use multi-line text fields in combination with Chips or Autocomplete.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Start with a small text field and let it grow as soon as the user enters more lines. Add a max height to prevent huge text fields.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Do not use multi-line text fields in combination with Chips or Autocomplete.

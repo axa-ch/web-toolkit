@@ -8,7 +8,7 @@
       @$element = $ element
 
       # TODO: Do not depend on css classes
-      @$label = @$element.find '.dropdown__label'
+      @$label = @$element.find '.dropdown__label__text'
       @$select = @$element.find '.dropdown__select'
 
       @options = $.extend {}, Dropdown.DEFAULTS, options

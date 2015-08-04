@@ -56,7 +56,11 @@ p.paragraph.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Only set a default value if it is good for the user. In doubt, don't set a default value.
+  li.checklist__item
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content.
+      Only set a default value if it is good for the user. In doubt, don't set a default value.
 
 .hr
 
@@ -89,8 +93,11 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    :markdown
-      If you have more than 10 checkboxes in one form-field, a chips design may be more appropriate.
+    svg.icon-svg.checklist__item__icon
+      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    .checklist__item__content
+      :markdown
+        If you have more than 10 checkboxes in one form-field, a chips design may be more appropriate.
 
 .hr
 

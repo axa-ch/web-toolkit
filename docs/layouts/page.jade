@@ -83,7 +83,9 @@ html
     - var splitNavCollection = navCollection ? splitCollectionName(navCollection) : [''];
     
     .site__page
-      #notification.notifications
+      #notification.notifications(data-notification-info=relative('/images/icons.svg#info')
+        data-notification-success=relative('/images/icons.svg#checkmark')
+        data-notification-error=relative('/images/icons.svg#cross'))
       .l-container
         .docs-floating-action
           a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
@@ -154,9 +156,13 @@ html
                     class={'is-active': isActive, 'is-open': isOpen }
                   ) #{page.title}
                     if nestedNavCollection
-                      i.menu__dropdown-icon(
+                      .menu__dropdown__icon(
                         class={ 'is-open': isOpen }
                       )
+                        svg.icon-svg.menu__dropdown__icon__is-closed
+                          use(xlink:href=relative("/images/icons.svg#arrow-right"))
+                        svg.icon-svg.menu__dropdown__icon__is-open
+                          use(xlink:href=relative("/images/icons.svg#arrow-bottom"))
 
                   if nestedNavCollection
                     +displayMenu(nestedNavCollection, true, isOpen)

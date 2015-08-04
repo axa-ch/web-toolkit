@@ -21,13 +21,16 @@ html
 
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/style.min.css"))
-    
+
     script(src=relative('/js/inspirations.all.min.js'))
   body.site
     .site__page
       .example-header
         .example-header__sticky
-          a(href=relative("/examples")).example-header__back Back to overview
+          a(href=relative("/examples")).example-header__back
+            svg.example-header__back__icon.icon-svg
+              use(xlink:href=relative('/images/icons.svg#arrow-left'))
+            | Back to overview
           .example-header__headline Example
         .example-header__text
           p.example-header__paragaph.
@@ -53,7 +56,9 @@ html
 
       header.header
         .l-container.header__container
-          .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
+          a.header__mobile-trigger(data-toggle='site-menu', data-target='.site')
+            svg.header__mobile-burger.icon-svg
+              use(xlink:href=relative('/images/icons.svg#burger'))
           .header__brand.brand
             .brand__logo
           .header__meta
@@ -131,10 +136,16 @@ html
           li.menu__item
             a(href='../').menu__link Overview
           li.menu__item.is-active
-            a.menu__link.menu__link--parent.is-active Cool Stuff
+            a.menu__link.menu__link--parent.is-active
+              | Cool Stuff
+              svg.menu__link__parent-icon.icon-svg
+                use(xlink:href=relative('/images/icons.svg#arrow-right'))
             ul.menu__level.is-current#active-level
               li.menu__item.menu__item--back
-                a.menu__link.menu__link--back Cool Stuff
+                a.menu__link.menu__link--back
+                  svg.menu__link__back-icon.icon-svg
+                    use(xlink:href=relative('/images/icons.svg#arrow-left'))
+                  | Cool Stuff
               li.menu__item
                 a.menu__link.is-active Item 1
               li.menu__item
@@ -142,10 +153,16 @@ html
               li.menu__item
                 a.menu__link Item 3
           li.menu__item
-            a.menu__link.menu__link--parent More Cool Stuff
+            a.menu__link.menu__link--parent
+              | More Cool Stuff
+              svg.menu__link__parent-icon.icon-svg
+                use(xlink:href=relative('/images/icons.svg#arrow-right'))
             ul.menu__level
               li.menu__item.menu__item--back
-                a.menu__link.menu__link--back More Cool Stuff
+                a.menu__link.menu__link--back
+                  svg.menu__link__back-icon.icon-svg
+                    use(xlink:href=relative('/images/icons.svg#arrow-left'))
+                  | More Cool Stuff
               li.menu__item
                 a.menu__link Item 4
               li.menu__item
