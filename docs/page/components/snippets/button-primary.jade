@@ -3,15 +3,15 @@ title: Primary Button
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .button Sample button
 !=' '
 .button
-  svg.button__icon.button__icon--left.icon-svg
-    use(xlink:href=relative('/images/icons.svg#cross'))
+  +svg('cross', ['button__icon', 'button__icon--left', 'icon-svg'])
   | Icon and badge
   span.button__badge.badge 159
 !=' '
 .button
   | Icon right
-  svg.button__icon.button__icon--right.icon-svg
-    use(xlink:href=relative('/images/icons.svg#cross'))
+  +svg('cross', ['button__icon', 'button__icon--right', 'icon-svg'])

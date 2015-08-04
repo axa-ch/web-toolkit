@@ -6,6 +6,8 @@ template: page.jade
 tags: Dropdown, Select
 ---
 
+include ../includes/mixins.jade
+
 p.paragraph.
   A dropdown is always a great choice if it comes to selecting a single value out of a big list of values.
 
@@ -37,8 +39,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-regular')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-regular
     .tab-panel(data-tab, data-tab-default='html')
@@ -74,9 +75,14 @@ h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
   li.checklist__item
-    :markdown
-      Generally, if you have less than 5 options, a <a class="link" href="./segmented-control.html">segmented control</a> might be the better option.
-  li.checklist__item On mobile devices, use native dropdown pickers.
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content
+      :markdown
+        Generally, if you have less than 5 options, a <a class="link" href="./segmented-control.html">segmented control</a> might be the better option.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      On mobile devices, use native dropdown pickers.
 
 .hr
 
@@ -93,8 +99,7 @@ h2.heading.heading--secondary#condensed Condensed Dropdown
 
 .toggle
   .toggle__button(data-info, data-target='#code-condensed')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-condensed
     .tab-panel(data-tab, data-tab-default='html')
@@ -127,8 +132,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-non-enhanced')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-non-enhanced
     .tab-panel

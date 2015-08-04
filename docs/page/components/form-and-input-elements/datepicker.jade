@@ -6,6 +6,8 @@ template: page.jade
 tags: Date, Time, Picker
 ---
 
+include ../includes/mixins.jade
+
 p.paragraph.
   The datepicker component helps the user selecting a date.
 
@@ -32,8 +34,7 @@ h2.heading.heading--secondary#regular Regular Datepicker
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-basic
     .tab-panel(data-tab, data-tab-default='html')
@@ -66,7 +67,10 @@ h2.heading.heading--secondary#regular Regular Datepicker
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Use the native datepickers on mobile devices
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Use the native datepickers on mobile devices
 
 .hr
 
@@ -82,8 +86,7 @@ h2.heading.heading--secondary#condensed Condensed Datepicker
       )
 .toggle
   .toggle__button(data-info, data-target='#code-condensed')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-condensed
     .tab-panel(data-tab, data-tab-default='html')

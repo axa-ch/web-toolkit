@@ -3,6 +3,8 @@ cache: true
 filename: page.jade
 ---
 
+include /components/includes/mixins.jade
+
 doctype html
 html
   head
@@ -81,12 +83,13 @@ html
     - var splitNavCollection = navCollection ? splitCollectionName(navCollection) : [''];
     
     .site__page
-      #notification.notifications
+      #notification.notifications(data-notification-info=relative('/images/icons.svg#info')
+        data-notification-success=relative('/images/icons.svg#checkmark')
+        data-notification-error=relative('/images/icons.svg#cross'))
       .l-container
         .docs-floating-action
           a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
-            svg.button__icon.icon-svg
-              use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative('/images/icons.svg#feedback'))
+            +svg('feedback', ['button__icon', 'icon-svg'])
       header.header
         .header__container.l-container
           .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
@@ -153,9 +156,11 @@ html
                     class={'is-active': isActive, 'is-open': isOpen }
                   ) #{page.title}
                     if nestedNavCollection
-                      i.menu__dropdown-icon(
+                      .menu__dropdown__icon(
                         class={ 'is-open': isOpen }
                       )
+                        +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon-svg'])
+                        +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon-svg'])
 
                   if nestedNavCollection
                     +displayMenu(nestedNavCollection, true, isOpen)

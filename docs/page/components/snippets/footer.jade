@@ -3,19 +3,25 @@ title: Footer
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .footer
   .footer__content
     .footer__item.footer__item--keep-in-touch
       .footer__item__headline Keep in touch
       ul.menu.menu--keep-in-touch
         li.menu__item
-          a.menu__link.icon.icon--facebook
+          a.menu__link
+            +svg('facebook', ['footer__social-media-icon', 'icon-svg', 'icon--facebook'])
         li.menu__item
-          a.menu__link.icon.icon--twitter
+          a.menu__link
+            +svg('twitter', ['footer__social-media-icon', 'icon-svg', 'icon--twitter'])
         li.menu__item
-          a.menu__link.icon.icon--xing
+          a.menu__link
+            +svg('xing', ['footer__social-media-icon', 'icon-svg', 'icon--xing'])
         li.menu__item
-          a.menu__link.icon.icon--google-plus
+          a.menu__link
+            +svg('google-plus', ['footer__social-media-icon', 'icon-svg', 'icon--google-plus'])
 
     .footer__item.footer__item--links
       .footer__item__headline AXA & You

@@ -3,10 +3,11 @@ title: Header
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 header.header
   .header__container.l-container
-    svg.header__mobile-trigger
-      use(xlink:href=relative('/images/icons.svg#burger'))
+    +svg('burger', 'header__mobile-trigger')
     .header__brand.brand
       .brand__logo
       .brand__tagline.brand__tagline--de
@@ -44,8 +45,7 @@ header.header
       ul.menu.menu--main
         li.menu__item
           a.menu__link
-            svg.menu__link__home
-              use(xlink:href=relative('/images/icons.svg#home'))
+            +svg('home', 'menu__link__home')
         li.menu__item
           a.menu__link Menu Item 1
         li.menu__item.is-active
