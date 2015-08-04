@@ -138,4 +138,5 @@ _.forEach(colors.tbd, function (colorCode, colorName) {
 @z-index-backdrop-content: 9981;
 @z-index-modal-wrapper: 9998;
 @z-index-modal: 9999;
+
 // Copyright AXA Versicherungen AG 2015

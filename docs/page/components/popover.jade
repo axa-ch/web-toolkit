@@ -9,16 +9,14 @@ draft: true
 p.paragraph.
   If an action only requires one step (e.g. sending a feedback) then it can be packed into a popover.
 
-.example(data-example-max-height='400', data-example-relative-base=relative('/'))
+.example
   include ./includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html(data-example-centered)
-        div(style="min-height: 400px")
-          include:ignorefrontmatter ./snippets/popover.jade
+      iframe.example__iframe(
+        src=relative('/components/demos/popover.html')
+        data-iframe-resizer, data-max-height='400'
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code')

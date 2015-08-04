@@ -21,15 +21,14 @@ ul.checklist
     .checklist__item__content.
       The logo always links to the home page.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ./includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/header.jade
+      iframe.example__iframe(
+        src=relative('/components/demos/header.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code')

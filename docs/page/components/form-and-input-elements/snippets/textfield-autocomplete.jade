@@ -10,4 +10,8 @@ template: demo.jade
         .form__group__label__text Form label
       .form__group__control
         .autocomplete
-          input.control.control--input(type='text',id='cities-autocomplete')
+          input#cities-autocomplete.control.control--input(type='text')
+
+script.
+  $('#cities-autocomplete').autocomplete({
+    source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});

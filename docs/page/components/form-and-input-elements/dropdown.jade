@@ -26,15 +26,14 @@ h2.heading.heading--secondary#enhanced Regular Dropdown
 p.paragraph.
   The dropdown is used for a single selection out of a list.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/dropdown-regular.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/dropdown-regular.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-regular')
@@ -90,15 +89,14 @@ ul.checklist
 
 h2.heading.heading--secondary#condensed Condensed Dropdown
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/dropdown-condensed.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/dropdown-condensed.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-condensed')
@@ -125,15 +123,14 @@ h2.heading.heading--secondary#non-enhanced Non enhanced dropdown
 p.paragraph.
   Use the non-enhanced dropdown as a fallback only.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/dropdown-non-enhanced.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/dropdown-non-enhanced.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code-non-enhanced')

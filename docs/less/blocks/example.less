@@ -2,6 +2,9 @@
 @import 'style/mixins/respond';
 @import 'style/blocks/icon';
 
+@z-index-example-iframe: 50;
+@z-index-example-border-brackets: 49;
+
 .example {
   margin: 0 0 25px 0;
 }
@@ -58,21 +61,27 @@
   padding: 3px;
 }
 
-.example__bracket {
-  position: absolute;
-  height: 16px;
-  width: 24px;
-  background-color: @color-light-blue--light;
-}
+.example__border {
+  &::before, &::after {
+    display: block;
+    content: '';
 
-.example__bracket--topleft {
-  top: 0;
-  left: 0;
-}
+    position: absolute;
+    height: 16px;
+    width: 24px;
+    background-color: @color-light-blue--light;
+    z-index: @z-index-example-border-brackets;
+  }
 
-.example__bracket--bottomright {
-  bottom: 0;
-  right: 0;
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
 }
 
 .example__iframe {
@@ -82,6 +91,7 @@
   width: 100%;
   border: none;
   background: #fcfcfc; // Not in the palette to not collide with any example
+  z-index: @z-index-example-iframe;
 }
 
 .example__separator {

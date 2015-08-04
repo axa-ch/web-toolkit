@@ -23,15 +23,14 @@ h2.heading.heading--secondary#progressbar Progressbar
 p.paragraph.
    A progressbar is used for activities that might take more than just a few moments to complete. It has the ability to give quantitative feedback to the user (e.g. 20% uploaded  or 10 of 15 pictures deleted).
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ./includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/progressbar.jade
+      iframe.example__iframe(
+        src=relative('/components/demos/progressbar.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#progressbar-code')
@@ -74,22 +73,14 @@ h2.heading.heading--secondary#spinner Loading Spinner
 p.paragraph.
   Very important element in single page applications for short loading sequences.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ./includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        .spinner.is-active(data-spinner)
-          .backdrop
-            .backdrop__shadow.backdrop__shadow--light
-            .backdrop__content.backdrop__content--centered
-              .spinner__block
-                .spinner__animation
-                  img(alt='spinner', src=relative('/images/ie9_spinner.gif')).spinner__ie9-fallback
-                .spinner__caption searching for cat videos...
+      iframe.example__iframe(
+        src=relative('/components/demos/loading-spinner.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#spinner-code')

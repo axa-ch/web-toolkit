@@ -40,3 +40,12 @@ template: demo.jade
       .form__group__text
     .form__group__control
       .button#showNotification Show notification
+
+script.
+  $("#showNotification").on('click', function() {
+    $("#notification").notification({
+      content: $("#notification_content").val(),
+      modifier: $('[name="notification__modifier"]:checked').val(),
+      html: $("#notification_html").is(":checked")
+    });
+  });
