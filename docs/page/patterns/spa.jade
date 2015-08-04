@@ -5,6 +5,8 @@ collection: nav__patterns
 template: page.jade
 ---
 
+include ../components/includes/mixins.jade
+
 p.paragraph.
   A single-page application (SPA), is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application.
 
@@ -70,22 +72,18 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
     li.checklist__item
-      svg.icon-svg.checklist__item__icon
-        use(xlink:href=relative('/images/icons.svg#checkmark'))
+      +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
       .checklist__item__content.
         For an animation to effectively convey a cause-and-effect relationship between UI elements, the effect must begin within 0.1 seconds of the initial user action. This 0.1-second response time maintains the feeling of direct manipulation and supports the perception that the user action caused the new element to appear.
     li.checklist__item
-      svg.icon-svg.checklist__item__icon
-        use(xlink:href=relative('/images/icons.svg#checkmark'))
+      +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
       .checklist__item__content.
         Follow web conventions so that password managers can store the username and password for the user.
     li.checklist__item
-      svg.icon-svg.checklist__item__icon
-        use(xlink:href=relative('/images/icons.svg#checkmark'))
+      +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
       .checklist__item__content.
         Slower transitions are less likely to cause an attention shift and are thus less distracting. They are appropriate for animations indirectly triggered by the user or not user initiated in any way. In these situations, the new element should appear with little or no change in position to minimize distraction.
     li.checklist__item
-      svg.icon-svg.checklist__item__icon
-        use(xlink:href=relative('/images/icons.svg#checkmark'))
+      +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
       .checklist__item__content.
         Fast animations are more likely to attract attention when they happen outside the user’s focus of attention. They are suitable for important elements that users must attend to and act upon.

@@ -75,8 +75,7 @@ html
       .example-header
         .example-header__sticky
           a(href=relative("/examples")).example-header__back
-            svg.example-header__back__icon.icon-svg
-              use(xlink:href=relative('/images/icons.svg#arrow-left'))
+            +svg('arrow-left', ['example-header__back__icon', 'icon-svg'])
             | Back to overview
           .example-header__headline Example
         .example-header__text

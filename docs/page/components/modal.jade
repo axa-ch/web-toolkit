@@ -72,17 +72,14 @@ p.paragraph. A modal window can be used to present very specific information (su
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       On mobile it is presented in full screen.
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       The action buttons always stay visible.
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       Do not use them for accepting things like terms & conditions – only to display them.

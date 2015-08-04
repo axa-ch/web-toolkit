@@ -3,6 +3,8 @@ title: Footer
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .footer
   .footer__content
     .footer__item.footer__item--keep-in-touch
@@ -10,20 +12,16 @@ template: demo.jade
       ul.menu.menu--keep-in-touch
         li.menu__item
           a.menu__link
-            svg.footer__social-media-icon.icon-svg.icon--facebook
-              use(xlink:href=relative('/images/icons.svg#facebook'))
+            +svg('facebook', ['footer__social-media-icon', 'icon-svg', 'icon--facebook'])
         li.menu__item
           a.menu__link
-            svg.footer__social-media-icon.icon-svg.icon--twitter
-              use(xlink:href=relative('/images/icons.svg#twitter'))
+            +svg('twitter', ['footer__social-media-icon', 'icon-svg', 'icon--twitter'])
         li.menu__item
           a.menu__link
-            svg.footer__social-media-icon.icon-svg.icon--xing
-              use(xlink:href=relative('/images/icons.svg#xing'))
+            +svg('xing', ['footer__social-media-icon', 'icon-svg', 'icon--xing'])
         li.menu__item
           a.menu__link
-            svg.footer__social-media-icon.icon-svg.icon--google-plus
-              use(xlink:href=relative('/images/icons.svg#google-plus'))
+            +svg('google-plus', ['footer__social-media-icon', 'icon-svg', 'icon--google-plus'])
 
     .footer__item.footer__item--links
       .footer__item__headline AXA & You

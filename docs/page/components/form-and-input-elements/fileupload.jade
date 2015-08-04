@@ -6,6 +6,8 @@ template: page.jade
 tags: File, Upload, Data, Files, Attachement
 ---
 
+include ../includes/mixins.jade
+
 p.paragraph A fileupload element lets users upload  one or multiple files to an application or into a form. Its different states are described in this document.
 
 .toc
@@ -29,18 +31,15 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       Most mobile devices don’t support dragging files to an upload area. Use the native file picker as a fallback. Use the same solution for IE 9.
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       Start uploading files, as soon as the user drops them on the dropzone.
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       Make sure that all files are uploaded before the form is submitted.
 
@@ -62,8 +61,7 @@ p.paragraph If an upload error occurs, the user needs to be informed.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       Tell the user exactly what happened. If the user needs to change something, explain as short as possible but as detailed as necessary what he needs to do.
 

@@ -38,18 +38,15 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       If a badge is placed, the underlying element must be clickable.
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       A badge always only contains a number. No icons allowed.
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       It is always placed in the upper right corner of an element.
 

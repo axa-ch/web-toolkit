@@ -3,10 +3,11 @@ title: Non-Enhanced-Dropdown
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .dropdown
   .dropdown__label
-    svg.dropdown__label__icon
-      use(xlink:href=relative('/images/icons.svg#arrow-bottom'))
+    +svg('arrow-bottom', 'dropdown__label__icon')
     .dropdown__label__text
   select.dropdown__select
     option Schweiz

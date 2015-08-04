@@ -34,8 +34,7 @@ p.paragraph.
         herunterladen und gleich mit dem Layout anfanagen
 
 //-.downloads
-  svg.downloads__icon.icon-svg
-    use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#download"))
+  +svg('download', ['downloads__icon', 'icon-svg'])
   .downloads__item
     a(href="../AXA.aco").downloads__link BUTTONS.PSD
 
@@ -69,8 +68,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item
-              svg.icon-svg.checklist__item__icon
-                use(xlink:href=relative('/images/icons.svg#checkmark'))
+              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
               .checklist__item__content.
                 Prevent whitespace at the start and the end
                 of the button. It will add some additional spacing
@@ -90,8 +88,7 @@ h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       Icon only buttons are usually hard to understand. Do not use withouth proper testing.
 
@@ -137,8 +134,7 @@ h3.heading.heading--tertiary.
   UX Checklist
 ul.checklist
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       If the main goal of you site is information a
       secondary call to action can be used.
@@ -174,8 +170,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item
-              svg.icon-svg.checklist__item__icon
-                use(xlink:href=relative('/images/icons.svg#checkmark'))
+              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
               .checklist__item__content.
                 Do not add any whitespace within the button since it would miss-position the icon
 
@@ -190,8 +185,7 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    svg.icon-svg.checklist__item__icon
-      use(xlink:href=relative('/images/icons.svg#checkmark'))
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
       Avoid this type of button for destructive actions
       like delete, nonspecific actions, alerts or errors.
