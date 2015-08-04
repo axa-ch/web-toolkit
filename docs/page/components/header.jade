@@ -5,6 +5,8 @@ collection: nav__components
 template: page.jade
 ---
 
+include ./includes/mixins.jade
+
 aside.callout
   h2.callout__heading Feedback appreciated!
   p.paragraph
@@ -28,8 +30,7 @@ ul.checklist
 
 .toggle
   .toggle__button(data-info, data-target='#code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code
     .tab-panel(data-tab, data-tab-default='html')

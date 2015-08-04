@@ -5,6 +5,9 @@ collection: nav__components__form
 template: page.jade
 tags: autocomplete, chips, textarea, multi
 ---
+
+include ../includes/mixins.jade
+
 p.paragraph.
   Basic input element. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
 
@@ -44,8 +47,7 @@ p.paragraph The most common form of a text field.
 
 .toggle
   .toggle__button(data-info, data-target='#code-single')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-single
     .tab-panel(data-tab, data-tab-default='html')
@@ -81,8 +83,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-autocomplete')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-autocomplete
     .tab-panel(data-tab, data-tab-default='html')
@@ -143,8 +144,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-chips')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-chips
     .tab-panel(data-tab, data-tab-default='html')
@@ -186,8 +186,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-multiline')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-multiline
     .tab-panel(data-tab, data-tab-default='html')

@@ -6,6 +6,8 @@ template: page.jade
 draft: true
 ---
 
+include ./includes/mixins.jade
+
 p.paragraph.
   If an action only requires one step (e.g. sending a feedback) then it can be packed into a popover.
 
@@ -20,8 +22,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code
     .tab-panel(data-tab, data-tab-default='html')

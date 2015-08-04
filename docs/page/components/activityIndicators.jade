@@ -6,6 +6,8 @@ template: page.jade
 tags: progress,activity,loading,waiting
 ---
 
+include ./includes/mixins.jade
+
 p.paragraph.
   Performance always matters.  In cases where waiting times can’t be erased, activity indicators help guide users and manage their expectations.
 
@@ -34,8 +36,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#progressbar-code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#progressbar-code
     .tab-panel(data-tab, data-tab-default='html')
@@ -77,8 +78,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#spinner-code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#spinner-code
     .tab-panel(data-tab, data-tab-default='html')

@@ -6,6 +6,8 @@ template: page.jade
 lunr: true
 ---
 
+include ./includes/mixins.jade
+
 p.paragraph.
   A button indicates one or multiple actions to the user.
 
@@ -53,8 +55,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-1
     .tab-panel(data-tab, data-tab-default='html')
@@ -106,8 +107,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-2')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-2
     .tab-panel(data-tab, data-tab-default='html')
@@ -151,8 +151,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-3')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-3
     .tab-panel(data-tab, data-tab-default='html')

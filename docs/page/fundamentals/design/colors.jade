@@ -5,13 +5,14 @@ collection: nav__fundamentals__design
 template: page.jade
 ---
 
+include ../../components/includes/mixins.jade
+
 p.paragraph.
   Use these colors to guide your designs and to ensure you’re staying consistent with the AXA brand.
   
 p.callout
   | Copy the color code or the less variable name to the clipboard by clicking the 
-  svg.icon-svg.color-palette__key__icon
-    use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#clipboard"))
+  +svg('clipboard', ['color-palette__key__icon', 'icon-svg'])
   |  icon below.
 
 .bubble
@@ -36,13 +37,19 @@ mixin color(colorCode, colorName, modifier)
       .color-palette__color__code
         span #{colorCode}
         != ' '
-        svg.icon-svg.color-palette__color__copy(data-clipboard-text=colorCode) 
-          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#clipboard"))
+        +svg('clipboard', ['color-palette__color__copy', 'icon-svg'], {
+          attrs: {
+            'data-clipboard-text': colorCode
+          }
+        })
       .color-palette__color__less
         span @color-#{colorName}
         != ' '
-        svg.icon-svg.color-palette__color__copy(data-clipboard-text='@color-' + colorName) 
-          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href=relative("/images/icons.svg#clipboard"))
+        +svg('clipboard', ['color-palette__color__copy', 'icon-svg'], {
+          attrs: {
+            'data-clipboard-text': '@color-' + colorName
+          }
+        })
 
 h2.heading.heading--secondary Primary palette
 

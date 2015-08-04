@@ -5,6 +5,9 @@ collection: nav__components__form
 template: page.jade
 tags: Single select, selection
 ---
+
+include ../includes/mixins.jade
+
 p.paragraph.
   A segmented control enables the user to make a single selection from just a few options.
 
@@ -34,8 +37,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-basic
     .tab-panel(data-tab, data-tab-default='html')
@@ -89,8 +91,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-stacked')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-stacked
     .tab-panel(data-tab, data-tab-default='html')
@@ -131,8 +132,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-fallback')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-fallback
     .tab-panel(data-tab, data-tab-default='html')

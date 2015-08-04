@@ -6,6 +6,8 @@ template: page.jade
 tags: terms, conditions, agb, avb
 ---
 
+include ./includes/mixins.jade
+
 p.paragraph. A modal window can be used to present very specific information (such as terms & conditions) to the user.
 
 .example
@@ -19,8 +21,7 @@ p.paragraph. A modal window can be used to present very specific information (su
 
 .toggle
   .toggle__button(data-info, data-target='#code-modal')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code-modal
     .tab-panel(data-tab, data-tab-default='html')

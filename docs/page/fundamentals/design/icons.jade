@@ -4,6 +4,8 @@ order: 3
 collection: nav__fundamentals__design
 template: page.jade
 ---
+
+include ../../components/includes/mixins
   
 h1.heading.heading--primary Available icons
 
@@ -25,8 +27,7 @@ p.paragraph.
   ul.icons-list
     each icon in icons
       li.icons-list__item
-        svg.icons-list__icon.icon-svg
-          use(xlink:href=relative('/images/icons.svg#' + icon.name))
+        +svg(icon.name, ['icons-list__icon', 'icon-svg'])
         span.icons-list__text=icon.name
 
 h1.heading.heading--primary Creating custom icons

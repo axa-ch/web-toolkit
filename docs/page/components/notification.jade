@@ -6,6 +6,8 @@ template: page.jade
 tags: notifications, information, alert
 ---
 
+include ./includes/mixins.jade
+
 p.paragraph.
   Notifications are presented to users to indicate that an background action came to an end. The used animations are a key element for this component since it should get the users attention.
 
@@ -36,8 +38,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     | See code
   .toggle__content#code-1
     .tab-panel

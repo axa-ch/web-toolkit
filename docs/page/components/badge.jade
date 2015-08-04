@@ -6,6 +6,8 @@ template: page.jade
 tags: count, unread
 ---
 
+include ./includes/mixins.jade
+
 p.paragraph.
   A badge is an element which can be attached to other components as an indicator for new or unread items.
 
@@ -20,8 +22,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code
     .tab-panel(data-tab, data-tab-default='html')

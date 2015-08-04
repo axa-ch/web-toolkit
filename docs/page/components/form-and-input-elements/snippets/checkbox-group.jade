@@ -3,16 +3,16 @@ title: Checkbox-Group
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .checkbox-group
   label.checkbox(data-checkbox)
     input.checkbox__checkbox(type='checkbox')
     .checkbox__label
-      svg.checkbox__label__icon
-        use(xlink:href='/images/icons.svg#checkmark')
+      +svg('checkmark', 'checkbox__label__icon')
       .checkbox__label__text Sample checkbox one
   label.checkbox(data-checkbox)
     input.checkbox__checkbox(type='checkbox')
     .checkbox__label
-      svg.checkbox__label__icon
-        use(xlink:href='/images/icons.svg#checkmark')
+      +svg('checkmark', 'checkbox__label__icon')
       .checkbox__label__text Sample checkbox two
