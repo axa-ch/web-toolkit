@@ -172,4 +172,4 @@ module.exports = (cb) ->
     # Just build it w/o changelog
     do build
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

@@ -6,4 +6,4 @@ module.exports = (cb) ->
     cwd: './out'
   } , cb).end()
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

@@ -114,4 +114,4 @@ the Web Styleguide.
 | [AngularJS](https://angularjs.org/) | A very powerful framework for single page web apps |
 | [jQuery](https://jquery.com/) | You can use jQuery to create much of your UI behaviour |
 
-<!-- Copyright AXA Versicherungen AG 2015 -->
+<!--- Copyright AXA Versicherungen AG 2015 -->

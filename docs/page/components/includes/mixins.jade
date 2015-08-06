@@ -4,3 +4,5 @@ mixin svg(id, classes, config)
   - path = relative(config.path || '/images/icons.svg') + '#' + id
   svg(class=classes)&attributes(config.attrs)
     use(xlink:href=path)
+
+//- Copyright AXA Versicherungen AG 2015

@@ -15,3 +15,5 @@ module.exports = ->
       './docs/[c]ontent/**/*'
     ]
     .pipe gulp.dest './dist/docs/'
+
+#! Copyright AXA Versicherungen AG 2015

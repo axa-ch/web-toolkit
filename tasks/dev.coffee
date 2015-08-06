@@ -74,4 +74,4 @@ module.exports = [['build'], (cb) ->
   .on 'error', (err) -> errorify err.message, 'styles'
 ]
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

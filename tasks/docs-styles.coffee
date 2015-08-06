@@ -15,3 +15,5 @@ module.exports = ->
     ],
     './dist/docs/css'
   )
+
+#! Copyright AXA Versicherungen AG 2015

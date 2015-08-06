@@ -11,4 +11,4 @@ module.exports = ->
     .pipe rename { extname: '' }
     .pipe gulp.dest './dist/less'
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

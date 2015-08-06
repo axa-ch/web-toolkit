@@ -8,4 +8,4 @@ module.exports = [
     del [ 'axa-web-style-guide-*.tgz' ]
 ]
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

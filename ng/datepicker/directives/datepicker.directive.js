@@ -22,3 +22,5 @@
   }
 
 })();
+
+/* Copyright AXA Versicherungen AG 2015 */

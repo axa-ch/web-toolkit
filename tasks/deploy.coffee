@@ -13,4 +13,4 @@ module.exports = (cb) ->
     cb
   )
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

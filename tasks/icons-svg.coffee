@@ -10,4 +10,4 @@ module.exports = ->
     .pipe gulp.dest './dist/images/'
     .pipe gulp.dest './dist/docs/images/'
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

@@ -1,4 +1,3 @@
-
 module.exports = ->
   (files, metalsmith, done) ->
 
@@ -22,4 +21,6 @@ module.exports = ->
 
     files['searchIndex.json'].contents = new Buffer JSON.stringify newContents
 
-    done();
+    done()
+
+#! Copyright AXA Versicherungen AG 2015

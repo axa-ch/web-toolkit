@@ -9,3 +9,5 @@ module.exports = (glob, tasks, tasksIfNotWatch) ->
       runSequence.apply null, tasks
   else
     runSequence.apply null, [].concat(tasks).concat(tasksIfNotWatch)
+
+#! Copyright AXA Versicherungen AG 2015

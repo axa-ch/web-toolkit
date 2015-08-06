@@ -22,4 +22,4 @@ module.exports = (cb) ->
   # do NOT return the gulp stream since it is async
   return
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

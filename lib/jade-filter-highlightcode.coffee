@@ -19,4 +19,4 @@ module.exports = (jadeLang, jadeRuntime, jadeFilters) ->
 
     return code
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

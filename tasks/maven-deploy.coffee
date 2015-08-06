@@ -60,4 +60,5 @@ module.exports = [['maven-package']
             gutil.log "Upload failed with status #{res.statusCode.toString().red}"
         do cb
 ]
+
 #! Copyright AXA Versicherungen AG 2015

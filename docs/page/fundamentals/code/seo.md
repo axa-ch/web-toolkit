@@ -193,3 +193,5 @@ for further information.
 Enhance search results and help machines to understand your content.
 
 See [Microdata, JSON-LD & Schema: Rich Snippets Guide](http://builtvisible.com/micro-data-schema-org-guide-generating-rich-snippets/)
+
+<!--- Copyright AXA Versicherungen AG 2015 -->

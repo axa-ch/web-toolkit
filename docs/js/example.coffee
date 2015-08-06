@@ -33,3 +33,5 @@ class Example
 $ ->
   $(".example").each (i, el) ->
     new Example(el)
+
+#! Copyright AXA Versicherungen AG 2015

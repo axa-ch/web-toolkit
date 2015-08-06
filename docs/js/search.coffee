@@ -173,3 +173,5 @@ getSearchData = (searchDataUrl) ->
 $ ->
   $("[data-search]").each (i, el) ->
     new Search(el)
+
+#! Copyright AXA Versicherungen AG 2015
