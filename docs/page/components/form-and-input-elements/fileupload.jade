@@ -14,19 +14,69 @@ p.paragraph A fileupload element lets users upload  one or multiple files to an 
   .toc__title Table of contents
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
+      a(href='#example').toc__anchor-navigation__link Example
+    li.toc__anchor-navigation__item
       a(href='#dropzone').toc__anchor-navigation__link Dropzone
     li.toc__anchor-navigation__item
-      a(href='#uploading').toc__anchor-navigation__link Uploading
-    li.toc__anchor-navigation__item
-      a(href='#uploaded').toc__anchor-navigation__link Uploaded
-    li.toc__anchor-navigation__item
-      a(href='#error').toc__anchor-navigation__link Error
+      a(href='#file-list').toc__anchor-navigation__link File List
+//-    li.toc__anchor-navigation__item
+//-      a(href='#uploading').toc__anchor-navigation__link Uploading
+//-    li.toc__anchor-navigation__item
+//-      a(href='#uploaded').toc__anchor-navigation__link Uploaded
+//-    li.toc__anchor-navigation__item
+//-      a(href='#error').toc__anchor-navigation__link Error
     li.toc__anchor-navigation__item
       a(href='#classic').toc__anchor-navigation__link Classic File Upload
+
+h2.heading.heading--secondary#example Example
+p.paragraph.
+  Try dragging a file into the dropzone below to see how
+  the fileupload should work.
+
+.example
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/fileupload-js.html')
+        data-iframe-resizer
+      )
 
 h2.heading.heading--secondary#dropzone Dropzone
 p.paragraph.
   The dropzone is the initial state of every fileupload and should be used wherever possible.  If a file upload is not feasible, a classic file upload should be used.
+
+.example
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/fileupload-dropzone.html')
+        data-iframe-resizer
+      )
+
+.toggle
+  .toggle__button(data-info, data-target='#code-dropzone')
+    +svg('source', ['icon-svg', 'toggle__icon'])
+    span See code
+  .toggle__content#code-dropzone
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/fileupload-dropzone.jade
+        .tab-panel__content__tab(data-tab-content='js')
+          :markdown
+            Use the `data-dropzone` plugin to handle the
+            dragover state of the dropzone.
+            If you implement the behavior yourself, just add
+            the `dragover` modifier to the `dropzone__container`
+            block.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
@@ -45,27 +95,118 @@ ul.checklist
 
 .hr
 
-h2.heading.heading--secondary#uploading Uploading
-p.paragraph As soon as a file is placed on the dropzone, the file upload starts. The progress is continuously shown to the user.
+h2.heading.heading--secondary#file-list File List
+p.paragraph.
+  The file list contains all files that are currently being uploaded, have
+  been uploaded or we're interrupted while uploading.
 
-.hr
+.example
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/fileupload-list.html')
+        data-iframe-resizer
+      )
 
-h2.heading.heading--secondary#uploaded Uploaded
-p.paragraph As soon as a file is uploaded the status changes to uploaded. In this state the user is able to see or delete the document.
+.toggle
+  .toggle__button(data-info, data-target='#code-list')
+    +svg('source', ['icon-svg', 'toggle__icon'])
+    span See code
+  .toggle__content#code-list
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/fileupload-list.jade
 
-.hr
-
-h2.heading.heading--secondary#error Error
-p.paragraph If an upload error occurs, the user needs to be informed.
+//-h3.heading.heading--tertiary#uploading Uploading
+//-p.paragraph As soon as a file is placed on the dropzone, the file upload starts. The progress is continuously shown to the user.
+//-
+//-.hr
+//-
+//-h3.heading.heading--tertiary#uploaded Uploaded
+//-p.paragraph As soon as a file is uploaded the status changes to uploaded. In this state the user is able to see or delete the document.
+//-
+//-.hr
+//-
+//-h3.heading.heading--tertiary#error Error
+//-p.paragraph If an upload error occurs, the user needs to be informed.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
     +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
-      Tell the user exactly what happened. If the user needs to change something, explain as short as possible but as detailed as necessary what he needs to do.
+      In case of an error tell the user exactly what happened.
+      If the user needs to change something, explain as short
+      as possible but as detailed as necessary what he needs to do.
 
 .hr
 
-h2.heading.heading--secondary#classic Classic File Upload
-p.paragraph In case of a problem, the browser native file upload should act as a backup solution.
+h2.heading.heading--secondary#classic Native File Upload
+p.paragraph.
+  The native file upload should be used for browsers that do not support
+  drag and drop operations for files.
+
+p.paragraph.
+  This is the case for most mobile devices and ancient browser like IE 9.
+
+.example
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/fileupload-fallback.html')
+        data-iframe-resizer
+      )
+
+.toggle
+  .toggle__button(data-info, data-target='#code-fallback')
+    +svg('source', ['icon-svg', 'toggle__icon'])
+    span See code
+  .toggle__content#code-fallback
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/fileupload-fallback.jade
+
+h2.heading.heading--secondary#single Single File Upload
+p.paragraph.
+  In some use cases only one file should be uploaded.
+  The uploading and the uploaded file states should replace
+  the dropzone in this case.
+  In case of an error, display the message below the dropzone.
+
+.example
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/fileupload-single.html')
+        data-iframe-resizer
+      )
+
+.toggle
+  .toggle__button(data-info, data-target='#code-single')
+    +svg('source', ['icon-svg', 'toggle__icon'])
+    span See code
+  .toggle__content#code-single
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/fileupload-single.jade
