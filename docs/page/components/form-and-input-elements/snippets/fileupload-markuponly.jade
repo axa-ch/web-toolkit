@@ -51,7 +51,8 @@ include /components/includes/mixins.jade
                 .file-error__progressbar.progressbar
                   .progressbar__description superblock.jpg
                   .progressbar__error
-                    a.progressbar__error-icon.icon.icon--modal-close
+                    a.progressbar__error-icon
+                      +svg('modal-close', ['icon-svg'])
                   .progressbar__progress
                     .progressbar__progress-error
                 .file-error__message
