@@ -65,5 +65,5 @@ include /components/includes/mixins.jade
           .dropzone-fallback
             input.dropzone-fallback__input(type='file')
             a.dropzone-fallback__button.button.button--primary
-              i.dropzone-fallback__button__icon.icon.icon--upload
+              +svg('upload', ['icon-svg', 'dropzone-fallback__button__icon'])
               span.dropzone-fallback__button__text Click to upload files
