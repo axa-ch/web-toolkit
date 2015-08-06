@@ -15,7 +15,7 @@ include /components/includes/mixins.jade
             .dropzone__container(data-dropzone='dropzone')
               input.dropzone__input(type='file')
               .dropzone__icon-container
-                i.dropzone__icon.icon.icon--upload
+                +svg('upload', ['icon-svg', 'dropzone__icon'])
               .dropzone__text-container
                 .dropzone__text
                   span Drag file here or
@@ -58,7 +58,7 @@ include /components/includes/mixins.jade
             .dropzone__container
               input.dropzone__input(type='file')
               .dropzone__icon-container
-                i.dropzone__icon.icon.icon--upload
+                +svg('upload', ['icon-svg', 'dropzone__icon'])
               .dropzone__text-container
                 .dropzone__text
                   span Drag file here or
