@@ -28,14 +28,7 @@ p.paragraph.
 
 .hr
 
-.example
-  include ./includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/demos/notification.html')
-        data-iframe-resizer
-      )
++example('/components/demos/notification.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')

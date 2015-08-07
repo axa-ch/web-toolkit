@@ -3,35 +3,35 @@ class Example
   constructor: (el) ->
     @$el = $ el
 
-    @$frame = @$el.find '.example__iframe'
+    @$frame = @$el.find '[data-example-iframe]'
 
-    @$devMobile = @$el.find '.example__device-selection__mobile'
-    @$devTablet = @$el.find '.example__device-selection__tablet'
-    @$devDesktop = @$el.find '.example__device-selection__desktop'
+    @triggers = {}
+    @triggers.$mobile = @$el.find '[data-example-mobile]'
+    @triggers.$tablet = @$el.find '[data-example-tablet]'
+    @triggers.$desktop = @$el.find '[data-example-desktop]'
 
-    @$devMobile.on 'click', @setWidth.bind @, '320px', @$devMobile
-    @$devTablet.on 'click', @setWidth.bind @, '768px', @$devTablet
-    @$devDesktop.on 'click', @setWidth.bind @, null, @$devDesktop
+    @triggers.$mobile.on 'click', @setWidth.bind @, '320px', @triggers.$mobile
+    @triggers.$tablet.on 'click', @setWidth.bind @, '768px', @triggers.$tablet
+    @triggers.$desktop.on 'click', @setWidth.bind @, null, @triggers.$desktop
 
-    border = @$el.find '.example__border'
-    @borderPadding = parseInt(border.css('padding-left')) +
-      parseInt(border.css('padding-right'))
+    border = @$el.find '[data-example-border]'
+    @padding =
+      (parseInt border.css 'padding-left') +
+      (parseInt border.css 'padding-right')
 
-    @setWidth null, @$devDesktop
+    @setWidth null, @triggers.$desktop
 
-  setWidth: (width, activeBtn) ->
-    @$devMobile.removeClass 'is-active'
-    @$devTablet.removeClass 'is-active'
-    @$devDesktop.removeClass 'is-active'
-    activeBtn.addClass 'is-active'
+  setWidth: (width, $trigger) ->
+    $.each @triggers, (i, $t) ->
+      $t.toggleClass 'is-active', $t.is $trigger
 
-    w = if width == null then @$el.width() - @borderPadding + 'px' else width
-    @$frame.animate {
+    w = if width == null then @$el.width() - @padding + 'px' else width
+    @$frame.animate
       width: w
-    }
 
 $ ->
-  $(".example").each (i, el) ->
-    new Example(el)
+  $ '[data-example]'
+    .each (i, el) ->
+      new Example el
 
 #! Copyright AXA Versicherungen AG 2015

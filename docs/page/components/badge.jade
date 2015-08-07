@@ -11,14 +11,7 @@ include ./includes/mixins.jade
 p.paragraph.
   A badge is an element which can be attached to other components as an indicator for new or unread items.
 
-.example
-  include ./includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/demos/badge.html')
-        data-iframe-resizer
-      )
++example('/components/demos/badge.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code')
