@@ -21,11 +21,10 @@ mixin example(path, options)
         a.example__device-selection__device.example__device-selection__desktop.is-active(data-example-desktop)
           +svg('desktop', ['icon-svg', 'example__device-selection__icon'])
     .example__content
-      .example__border(data-example-border)
-        iframe.example__iframe(
-          src=relative(path)
-          data-iframe-resizer
-          data-example-iframe
-        )&attributes(attrs.iframe)
+      iframe.example__iframe(
+        src=relative(path)
+        data-iframe-resizer
+        data-example-iframe
+      )&attributes(attrs.iframe)
 
 //- Copyright AXA Versicherungen AG 2015
