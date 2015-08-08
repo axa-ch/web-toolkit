@@ -28,21 +28,6 @@
 
 @docs-width: 1260px;
 
-// Undo responsiveness of the style guide
-html,
-body {
-  min-width: @docs-width;
-  overflow: auto;
-}
-
-.respond(medium, @rules) {
-  @rules();
-}
-
-.respond(large, @rules) {
-  @rules();
-}
-
 // increase max-width
 .l-container {
   max-width: @docs-width;
