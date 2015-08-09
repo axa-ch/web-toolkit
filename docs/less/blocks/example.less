@@ -49,15 +49,14 @@
 }
 
 .example__device-selection__device--mobile {
-  .respond(small, {
-    display: block;
-  });
+  display: block;
 }
 
 .example__device-selection__device--tablet {
-  .respond(small, {
+  // TODO: This is a totally temporary solution! We need a 320px+ breakpoint.
+  @media (min-width: 321px) {
     display: block;
-  });
+  }
 }
 
 .example__device-selection__device--desktop {
