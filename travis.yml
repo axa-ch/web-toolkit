@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - 0.10.25
+  - 0.12.7
 
 env:
   - REPO_URL=git@github.com:axa-ch/style-guide.git GITHUB_INTEGRATION=true
