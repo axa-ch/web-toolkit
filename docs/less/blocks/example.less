@@ -46,23 +46,10 @@
     background: @color-blue;
     color: @color-white;
   }
-}
 
-.example__device-selection__device--mobile {
-  display: block;
-}
-
-.example__device-selection__device--tablet {
-  // TODO: This is a totally temporary solution! We need a 320px+ breakpoint.
-  @media (min-width: 321px) {
+  &.is-available {
     display: block;
   }
-}
-
-.example__device-selection__device--desktop {
-  .respond(large, {
-    display: block;
-  });
 }
 
 .example__device-selection__icon {

@@ -16,8 +16,8 @@
       @$desktop = @$el.find '[data-example-desktop]'
 
       # we need both an initial resize and click
-      initialResize = Bacon.once window.innerWidth
-      initialClick = Bacon.once window.innerWidth
+      initialResize = Bacon.once @$el.width()
+      initialClick = Bacon.once @$el.width()
         .map @mapWidthToViewport
 
       # viewport that we explicitly switched to
@@ -30,14 +30,14 @@
 
       # viewport that we sized our browser into
       @resizedTo = resizes
-        .map => @$frame.width()
+        .map => @$el.width()
         .merge initialResize
         .throttle 25
         .map @mapWidthToViewport
         .skipDuplicates()
         .toProperty()
 
-      # on each resizing change
+      # set viewport on resizing changes
       @clickedTo
         .sampledBy @resizedTo, (resizedTo, clickedTo) =>
           resizedToOrder = @viewportToOrder resizedTo
@@ -48,7 +48,11 @@
           @setMode viewport
           @setViewport viewport
 
-      # on each clicking change
+      # set availability on resizing changes
+      @resizedTo
+        .onValue (viewport) => @setModeAvailability viewport
+
+      # set viewport on clicking changes
       @resizedTo
         .sampledBy @clickedTo, (clickedTo, resizedTo) =>
           resizedToOrder = @viewportToOrder resizedTo
@@ -81,6 +85,13 @@
       @$mobile.toggleClass 'is-active', viewport == 'mobile'
       @$tablet.toggleClass 'is-active', viewport == 'tablet'
       @$desktop.toggleClass 'is-active', viewport == 'desktop'
+
+    setModeAvailability: (maxViewport) ->
+      maxViewportOrder = @viewportToOrder maxViewport
+
+      @$mobile.toggleClass 'is-available', maxViewportOrder > 0
+      @$tablet.toggleClass 'is-available', maxViewportOrder >= 1
+      @$desktop.toggleClass 'is-available', maxViewportOrder >= 2
 
   $ ->
     $ '[data-example]'
