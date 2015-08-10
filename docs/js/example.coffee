@@ -3,7 +3,6 @@
   # only one window size stream for all Example instances
   resizes = $ window
     .asEventStream 'resize'
-    .map => window.innerWidth
 
   class Example
     constructor: (el, options) ->
@@ -31,6 +30,7 @@
 
       # viewport that we sized our browser into
       @resizedTo = resizes
+        .map => @$frame.width()
         .merge initialResize
         .throttle 25
         .map @mapWidthToViewport
