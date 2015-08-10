@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-324 745.3 260 260" style="enable-background:new -324 745.3 260 260;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#5B91C0;}
+	.st1{fill:#B2DEF8;stroke:#939393;stroke-width:0.6898;stroke-miterlimit:10;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#243878;}
+	.st4{fill:#E62D2F;}
+	.st5{fill:#F3977A;}
+	.st6{fill:#F08261;}
+	.st7{fill:#FAB85C;}
+	.st8{fill:#FFD680;}
+
+	.wheel {
+  -webkit-animation: upIt 20s linear normal infinite;
+  animation: upIt 20s linear normal infinite;
+}
+
+
+@-webkit-keyframes upIt {
+5% { -webkit-transform: translateX(0px);}
+99% {-webkit-transform: translateX(60px);}
+100% {-webkit-transform: translateX(0px);}
+}
+
+@keyframes upIt {
+5% { transform: translateX(0px);}
+99% {transform: translateX(60px);}
+100% {transform: translateX(0px);}
+}
+
+
+.switch {
+  -webkit-animation: switcher 5s linear normal infinite;
+  animation: switcher 5s linear normal infinite;
+}
+
+
+@-webkit-keyframes switcher {
+0% { -webkit-transform: translateX(0px); opacity:1.0;}
+50% {-webkit-transform: translateX(20px); opacity:0;}
+70% {-webkit-transform: translateX(20px); opacity:0;}
+90% {-webkit-transform: translateX(0px); opacity:1.0;}
+}
+
+@keyframes switcher {
+0% {transform: translateX(0px); opacity:1.0;}
+50% {transform: translateX(20px); opacity:0;}
+70% {transform: translateX(20px); opacity:0;}
+90% {transform: translateX(0px); opacity:1.0;}
+}
+
+
+</style>
+<circle class="st0" cx="-194" cy="875.3" r="130"/>
+<g>
+	<rect x="-271.9" y="814.6" class="st1" width="146.9" height="107.3"/>
+	<rect x="-271.4" y="883.6" class="st2" width="145.8" height="37.8"/>
+	<rect x="-205.9" y="896.9" class="st3" width="15.7" height="15.7"/>
+	<g class="switch">
+		<polygon class="st4" points="-234.7,814.9 -219.6,814.9 -264.2,883.6 -271.6,883.6 -271.6,871.5 		"/>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<polygon class="st5" points="-139.1,852.3 -146.8,852.3 -149,863.5 -136.9,863.5 			"/>
+			<polygon class="st5" points="-164.9,857.2 -171.6,861 -167.9,871.8 -157.4,865.7 			"/>
+			<polygon class="st5" points="-184.9,874.3 -188.7,880.9 -180.1,888.5 -174.1,877.9 			"/>
+			<polygon class="st5" points="-193.6,899.1 -193.5,906.8 -182.4,909 -182.4,896.8 			"/>
+			<polygon class="st5" points="-188.7,924.9 -184.9,931.5 -174.1,927.9 -180.1,917.4 			"/>
+			<polygon class="st5" points="-171.6,944.8 -164.9,948.7 -157.4,940.1 -167.9,934 			"/>
+			<polygon class="st5" points="-146.8,953.5 -139.1,953.5 -136.9,942.3 -149,942.3 			"/>
+			<polygon class="st5" points="-121,948.7 -114.3,944.8 -118,934 -128.5,940.1 			"/>
+			<polygon class="st5" points="-101.1,931.5 -97.2,924.9 -105.8,917.4 -111.9,927.9 			"/>
+			<polygon class="st5" points="-92.4,906.8 -92.4,899.1 -103.5,896.8 -103.5,909 			"/>
+			<polygon class="st5" points="-97.2,880.9 -101.1,874.3 -111.9,877.9 -105.8,888.5 			"/>
+			<polygon class="st5" points="-114.3,861 -121,857.2 -128.5,865.7 -118,871.8 			"/>
+		</g>
+	</g>
+	<path class="st6" d="M-143,863c-22,0-39.9,17.9-39.9,39.9c0,22,17.9,39.9,39.9,39.9c22,0,39.9-17.8,39.9-39.9
+		C-103.1,880.9-120.9,863-143,863z M-143,914c-6.1,0-11-5-11-11c0-6.1,5-11,11-11c6.1,0,11,5,11,11C-131.9,909-136.9,914-143,914z"
+		/>
+</g>
+<g>
+	<rect x="-273.5" y="934.8" class="st7" width="22" height="22"/>
+	<rect x="-251.5" y="934.8" class="st8" width="102.8" height="22"/>
+	<rect x="-148.7" y="934.8" class="st7" width="22" height="22"/>
+	<rect x="-242.3" y="944.7" class="st2" width="84.5" height="2.2"/>
+	<polygon class="st2" points="-266.3,941.4 -258.7,945.8 -266.3,950.2 	"/>
+	<g>
+		<g>
+			<rect x="-141.4" y="943.3" class="st2" width="3.5" height="5"/>
+			<polygon class="st2" points="-133.9,951.3 -137.9,948.3 -137.9,943.3 -133.9,940.3 			"/>
+		</g>
+	</g>
+	<g class="wheel">
+		<path class="st7" d="M-216.4,945.8c0,2.4-2,4.4-4.4,4.4c-2.4,0-4.4-2-4.4-4.4c0-2.4,2-4.4,4.4-4.4
+			C-218.4,941.4-216.4,943.4-216.4,945.8z"/>
+	</g>
+</g>
+<g>
+	<path class="st2" d="M-198.4,870.2c-8.2,0-14.8-6.7-14.8-14.8c0-8.2,6.7-14.8,14.8-14.8s14.8,6.7,14.8,14.8
+		C-183.6,863.5-190.3,870.2-198.4,870.2z M-198.4,841.4c-7.7,0-13.9,6.2-13.9,13.9c0,7.7,6.2,13.9,13.9,13.9s13.9-6.2,13.9-13.9
+		C-184.6,847.7-190.8,841.4-198.4,841.4z"/>
+	<polygon class="st2" points="-201.2,850.5 -192.9,855.3 -201.2,860.1 	"/>
+</g>
+</svg>
