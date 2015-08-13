@@ -8,7 +8,7 @@ tags: File, Upload, Data, Files, Attachement
 
 include ../includes/mixins.jade
 
-p.paragraph A fileupload element lets users upload  one or multiple files to an application or into a form. Its different states are described in this document.
+p.paragraph A fileupload element lets users upload  one or multiple files to an application or into a form. Its different states are described in this document after a working example.
 
 .toc
   .toc__title Table of contents
@@ -19,8 +19,10 @@ p.paragraph A fileupload element lets users upload  one or multiple files to an 
       a(href='#dropzone').toc__anchor-navigation__link Dropzone
     li.toc__anchor-navigation__item
       a(href='#file-list').toc__anchor-navigation__link File List
-//-    li.toc__anchor-navigation__item
-//-      a(href='#uploading').toc__anchor-navigation__link Uploading
+    li.toc__anchor-navigation__item
+     a(href='#classic').toc__anchor-navigation__link Native File Upload
+     li.toc__anchor-navigation__item
+      a(href='#single').toc__anchor-navigation__link Single File Upload
 //-    li.toc__anchor-navigation__item
 //-      a(href='#uploaded').toc__anchor-navigation__link Uploaded
 //-    li.toc__anchor-navigation__item
@@ -30,8 +32,7 @@ p.paragraph A fileupload element lets users upload  one or multiple files to an 
 
 h2.heading.heading--secondary#example Example
 p.paragraph.
-  Try dragging a file into the dropzone below to see how
-  the fileupload should work.
+  This is a working example of the fileupload component. Please drag a file into the dropzone.
 
 .example
   include ../includes/example-header.jade
@@ -41,6 +42,7 @@ p.paragraph.
         src=relative('/components/form-and-input-elements/demos/fileupload-js.html')
         data-iframe-resizer
       )
+.hr
 
 h2.heading.heading--secondary#dropzone Dropzone
 p.paragraph.
@@ -180,9 +182,11 @@ p.paragraph.
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/fileupload-fallback.jade
 
+.hr
+  
 h2.heading.heading--secondary#single Single File Upload
 p.paragraph.
-  In some use cases only one file should be uploaded.
+  Sometimes only one file should be uploaded.
   The uploading and the uploaded file states should replace
   the dropzone in this case.
   In case of an error, display the message below the dropzone.
