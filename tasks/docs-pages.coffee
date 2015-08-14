@@ -28,6 +28,7 @@ filepath = require 'metalsmith-filepath'
 relative = require 'metalsmith-relative'
 lunr = require 'metalsmith-lunr'
 copy = require 'metalsmith-copy'
+ignore = require 'metalsmith-ignore'
 
 module.exports = (cb) ->
   cwd = path.join __dirname, '../'
@@ -126,6 +127,8 @@ module.exports = (cb) ->
   )
 
   # Wrap the pages with their template
+  metalsmith.use ignore '**/includes/**'
+
   metalsmith.use(
     branch ['**/*.html', '!**/snippets/*.html' ]
       .use filepath
