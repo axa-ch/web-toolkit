@@ -11,4 +11,6 @@ before_install:
 
 script:
   - gulp build
+  - git config --global user.email robo@coder
+  - git config --global user.name "Robo Coder"
   - if [ "$TRAVIS_PULL_REQUEST" = false ] && [ "$TRAVIS_BRANCH" = "develop" ]; then gulp deploy; fi
