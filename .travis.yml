@@ -11,4 +11,4 @@ before_install:
 
 script:
   - gulp build
-  - if [ "$PULL_REQUEST" = false ] && [ "$BRANCH" = "develop" ]; then gulp deploy; fi
+  - if [ "$TRAVIS_PULL_REQUEST" = false ] && [ "$TRAVIS_BRANCH" = "develop" ]; then gulp deploy; fi
