@@ -1,0 +1,46 @@
+---
+title: Fileupload List
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.l-container
+  .form
+    .form__group
+      .form__group__label.
+        Dateien
+      .form__group__control
+        .multi-upload
+          .file-list
+            .file-list__file
+              .progressbar
+                .progressbar__description awesome_image.jpg
+                .progressbar__percentage 22%
+                .progressbar__progress
+                  .progressbar__progress-background
+                    .progressbar__progress-foreground(style='width: 22%')
+            .file-list__file
+              .file-uploaded
+                .file-uploaded__actions
+                  a.file-uploaded__actions__action ansehen
+                  a.file-uploaded__actions__action löschen
+                .file-uploaded__title axaswitch.png
+            .file-list__file
+              .file-uploaded
+                .file-uploaded__actions
+                  a.file-uploaded__actions__action ansehen
+                  a.file-uploaded__actions__action löschen
+                .file-uploaded__title doge.jpg
+            .file-list__file
+              .file-error
+                .file-error__progressbar.progressbar
+                  .progressbar__description superblock.jpg
+                  .progressbar__error
+                    a.progressbar__error-icon
+                      +svg('modal-close', ['icon-svg'])
+                  .progressbar__progress
+                    .progressbar__progress-error
+                .file-error__message
+                  | Die Datei konnte nicht hochgeladen werden.
+                  | Bitte löschen Sie sie aus der Liste und laden sie erneut hoch.

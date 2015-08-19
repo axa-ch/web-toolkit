@@ -1,0 +1,67 @@
+---
+title: Fileupload Single
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+.l-container
+  .form
+    .form__group
+      .form__group__label.
+        Datei
+      .form__group__control
+        .single-upload
+          .dropzone
+            .dropzone__container(data-dropzone='dropzone')
+              input.dropzone__input(type='file')
+              .dropzone__icon-container
+                +svg('upload', ['icon-svg', 'dropzone__icon'])
+              .dropzone__text-container
+                .dropzone__text
+                  span Drag file here or
+                  | &nbsp;
+                  a.dropzone__text__upload-link click to choose
+    .form__group
+      .form__group__label.
+        Datei (Uploading)
+      .form__group__control
+        .single-upload
+          .single-upload__status
+            .single-upload__status__icon-container
+              +svg('upload', ['icon-svg', 'single-upload__status__icon'])
+            .single-upload__progressbar-container
+              .single-upload__progressbar.progressbar
+                .progressbar__description awesome_image.jpg
+                .progressbar__percentage 22%
+                .progressbar__progress
+                  .progressbar__progress-background
+                    .progressbar__progress-foreground(style='width: 22%')
+    .form__group
+      .form__group__label.
+        Datei (Uploaded)
+      .form__group__control
+        .single-upload
+          .single-upload__status
+            .single-upload__status__icon-container
+              +svg('upload', ['icon-svg', 'single-upload__status__icon'])
+            .single-upload__status__uploaded
+              .single-upload__status__uploaded__actions.file-uploaded__actions
+                a.file-uploaded__actions__action ansehen
+                a.file-uploaded__actions__action löschen
+              .single-upload__status__uploaded__title axaswitch.gif
+    .form__group
+      .form__group__label.
+        Datei (Error)
+      .form__group__control
+        .single-upload
+          .dropzone
+            .dropzone__container
+              input.dropzone__input(type='file')
+              .dropzone__icon-container
+                +svg('upload', ['icon-svg', 'dropzone__icon'])
+              .dropzone__text-container
+                .dropzone__text
+                  span Drag file here or
+                  | &nbsp;
+                  a.dropzone__text__upload-link click to choose
+        .form__error-message Das Bild ist zu gross.
