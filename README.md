@@ -1,4 +1,4 @@
-[![Build Status](https://api.shippable.com/projects/544e872d44927f89db3df031/badge?branchName=master)](https://app.shippable.com/projects/544e872d44927f89db3df031/builds/latest)
+[![Build Status](https://travis-ci.org/axa-ch/style-guide.svg?branch=develop)](https://travis-ci.org/axa-ch/style-guide)
 
 # AXA Switzerland Web Styleguide
 
