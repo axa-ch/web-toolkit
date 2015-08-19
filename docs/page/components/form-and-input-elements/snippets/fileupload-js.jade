@@ -22,7 +22,17 @@ include /components/includes/mixins.jade
                   | &nbsp;
                   a.dropzone__text__upload-link click to choose
           .multi-upload__remarks
-            | Nur Bilder (.jpg, .png, .gif) oder Dokumente (.pdf, .docx).
+            | Nur Bilder (
+            code.code .jpg
+            | ,&nbsp;
+            code.code .png
+            | ,&nbsp;
+            code.code .gif
+            | ) oder Dokumente (
+            code.code .pdf
+            | ,&nbsp; 
+            code.code .docx
+            | ).
             br
             | Maximal 2 MB pro Datei
           .file-list
@@ -94,9 +104,15 @@ script.
         var fileUploadedActions = $('<div></div>').addClass('file-uploaded__actions');
         var viewAction = $('<a></a>').addClass('file-uploaded__actions__action');
         viewAction.text('ansehen');
+        viewAction.on('click', function () {
+          alert('Your file is simply too awesome to be shown here!')
+        })
         fileUploadedActions.append(viewAction);
         var deleteAction = $('<a></a>').addClass('file-uploaded__actions__action');
         deleteAction.text('löschen');
+        deleteAction.on('click', function () {
+          fileUploaded.parent().remove()
+        })
         fileUploadedActions.append(deleteAction);
         var fileUploadedTitle = $('<div></div>').addClass('file-uploaded__title');
         fileUploadedTitle.text(name);
