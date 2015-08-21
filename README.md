@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/axa-ch/style-guide.svg?branch=develop)](https://travis-ci.org/axa-ch/style-guide)
+[![Issues in progress](https://badge.waffle.io/axa-ch/style-guide.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/axa-ch/style-guide)
 
 # AXA Switzerland Web Styleguide
 
