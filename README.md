@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/axa-ch/style-guide.svg?branch=develop)](https://travis-ci.org/axa-ch/style-guide)
-[![Issues in progress](https://badge.waffle.io/axa-ch/style-guide.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/axa-ch/style-guide)
+[![Thinking](https://badge.waffle.io/axa-ch/style-guide.svg?label=thinking&title=Thinking)](http://waffle.io/axa-ch/style-guide)
+[![Adding Sparkles](https://badge.waffle.io/axa-ch/style-guide.svg?label=adding%20sparkles&title=Adding%20Sparkles)](http://waffle.io/axa-ch/style-guide)
+[![Hacking](https://badge.waffle.io/axa-ch/style-guide.svg?label=hacking&title=Hacking)](http://waffle.io/axa-ch/style-guide)
 
 # AXA Switzerland Web Styleguide
 
