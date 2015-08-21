@@ -1,6 +1,3 @@
-#
-# The Metalsmith workflow that builds our docs.
-#
 path = require 'path'
 marked = require 'marked'
 colors = require 'colors'
@@ -28,6 +25,7 @@ filepath = require 'metalsmith-filepath'
 relative = require 'metalsmith-relative'
 lunr = require 'metalsmith-lunr'
 copy = require 'metalsmith-copy'
+ignore = require 'metalsmith-ignore'
 
 module.exports = (cb) ->
   cwd = path.join __dirname, '../'
@@ -87,7 +85,7 @@ module.exports = (cb) ->
     'nav__components__form',
     'nav__patterns',
     'nav__inspiration'
-  ].forEach (name) ->
+  ].forEach (name) =>
     collections_options[name] =
       sortBy: 'order'
       reverse: false
@@ -121,24 +119,35 @@ module.exports = (cb) ->
     branch ['**/*.html']
       .use copy
         pattern: '**/snippets/*.html'
-        transform: (file) ->
-          return file.replace /snippets/i, 'demos'
+        transform: (file) => file.replace /snippets/i, 'demos'
+  )
+
+  metalsmith.use ignore '**/includes/**'
+
+  # Add some pages to the search index
+  metalsmith.use(
+    branch [
+        '**/*.html'
+        '!**/snippets/*.html'
+        '!**/demos/*.html'
+      ]
+      .use filepath
+        absolute: true
+      .use lunr
+        includeAll: true
+        fields:
+          title: 10
+          tags: 5
+          contents: 1
+      .use searchIndexData()
   )
 
   # Wrap the pages with their template
   metalsmith.use(
-    branch ['**/*.html', '!**/snippets/*.html' ]
-      .use filepath
-        absolute: true
-      .use lunr {
-        includeAll: true
-        fields: {
-          title: 10
-          tags: 5
-          contents: 1
-        }
-      }
-      .use searchIndexData()
+    branch [
+        '**/*.html'
+        '!**/snippets/*.html'
+      ]
       .use templates
         engine: 'jade'
         directory: path.join cwd, './docs/layouts'
