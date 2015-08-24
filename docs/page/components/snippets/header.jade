@@ -6,53 +6,56 @@ template: demo.jade
 include /components/includes/mixins.jade
 
 header.header
-  .header__container.l-container
+  .header__container
     +svg('burger', 'header__mobile-trigger')
+    .header__meta
+      //- .header__meta__upper
+      .header__meta__menu
+        ul.menu.menu--meta
+          li.menu__item.is-active
+            a.menu__link Individuals
+          li.menu__item
+            a.menu__link Small Business Insurance
+          li.menu__item
+            a.menu__link About Us
+      .header__meta__search.search
+        //-.autocomplete.docs-search
+        //-input.docs-search__control(type='text')
+        input.search.search--header(type='text')
+        .search__suggestions
+      .header__meta__language
+        ul.menu.menu--language
+          li.menu__item
+            a.menu__link DE
+          li.menu__item
+            a.menu__link FR
+          li.menu__item
+            a.menu__link IT
+          li.menu__item
+            a.menu__link EN
+      a.header__meta__action Logout
+      //- .header__meta__lower
+      //-   .header__meta__welcome
+      //-     div
+      //-       .header__meta__welcome__main welcome to axa
+      //-       .header__meta__welcome__secondary
+      //-         a(href='tel:0800809809') 0800 809 809
     .header__brand.brand
       .brand__logo
       .brand__tagline.brand__tagline--de
-    .header__meta
-      .header__meta__upper
-        .header__meta__action
-          .header__action
-            a.menu__link.header__action__button Logout
-        .header__meta__language
-          ul.menu.menu--language
-            li.menu__item
-              a.menu__link DE
-            li.menu__item
-              a.menu__link FR
-            li.menu__item
-              a.menu__link IT
-            li.menu__item
-              a.menu__link EN
-        .header__meta__menu
-          ul.menu.menu--meta
-            li.menu__item.is-active
-              a.menu__link Individuals
-            li.menu__item
-              a.menu__link Small Business Insurance
-            li.menu__item
-              a.menu__link Business
-      .header__meta__lower
-        .header__meta__welcome
-          div
-            .header__meta__welcome__main Welcome to AXA
-            .header__meta__welcome__secondary
-              a(href='tel:0800809809') 0800 809 809
-  .header__menu
-    .l-container
-      ul.menu.menu--main
-        li.menu__item
-          a.menu__link
-            +svg('home', 'menu__link__home')
-        li.menu__item
-          a.menu__link Menu Item 1
-        li.menu__item.is-active
-          a.menu__link Menu Item 2
-        li.menu__item
-          a.menu__link Menu Item 3
-        li.menu__item
-          a.menu__link Menu Item 4
+    .header__menu
+      .l-container
+        ul.menu.menu--main
+          li.menu__item
+            a.menu__link
+              +svg('home', 'menu__link__home')
+          li.menu__item
+            a.menu__link Menu Item 1
+          li.menu__item.is-active
+            a.menu__link Menu Item 2
+          li.menu__item
+            a.menu__link Menu Item 3
+          li.menu__item
+            a.menu__link Menu Item 4
 
 //- Copyright AXA Versicherungen AG 2015
