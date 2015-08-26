@@ -109,6 +109,24 @@
 
 .header__meta__action {
   order: 5;
+
+  padding: 0 35px;
+
+  font-size: 0.9em;
+  font-weight: @font-weight-medium;
+  color: @color-white;
+
+  background: @color-red;
+
+  &::before {
+    //This is used so the text of .header__meta__action is vertically aligned in the middle
+    //without having to totally fuck up the markup.
+    //todo: make a mixin?
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle
+  }
   // float: right;
 
   // float: right;
