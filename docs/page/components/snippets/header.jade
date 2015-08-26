@@ -10,7 +10,7 @@ header.header
     +svg('burger', 'header__mobile-trigger')
     .header__meta
       //- .header__meta__upper
-      .header__meta__menu
+      .header__meta__item.header__meta__menu
         ul.menu.menu--meta
           li.menu__item.is-active
             a.menu__link Individuals
@@ -18,12 +18,12 @@ header.header
             a.menu__link Small Business Insurance
           li.menu__item
             a.menu__link About Us
-      .header__meta__search.search
+      .header__meta__item.header__meta__search.search.search--header
         //-.autocomplete.docs-search
         //-input.docs-search__control(type='text')
-        input.search.search--header(type='text')
-        .search__suggestions
-      .header__meta__language
+        input.search__input.search--header(type='text')
+        .search__suggestions.search--header
+      .header__meta__item.header__meta__language
         ul.menu.menu--language
           li.menu__item
             a.menu__link DE
