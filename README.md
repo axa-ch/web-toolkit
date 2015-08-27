@@ -36,6 +36,9 @@ in the file system.
 $ gulp dev
 ```
 
+### But but but.... Enterprise Proxy?
+If you're working on a heavily guarded machine as used by many enterprises, follow our [Guide](https://github.com/axa-ch/style-guide/wiki/Sitting-behind-a-corporate-proxy%3F).
+
 ## What do we build it with?
 
 In order to make changes as easy as possible and simplify our build process,
