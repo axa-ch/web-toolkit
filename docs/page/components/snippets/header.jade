@@ -24,15 +24,29 @@ header.header
         input.search__input.search--header(type='text')
         .search__suggestions.search--header
       .header__meta__item.header__meta__language
-        ul.menu.menu--language
-          li.menu__item
-            a.menu__link DE
-          li.menu__item
-            a.menu__link FR
-          li.menu__item
-            a.menu__link IT
-          li.menu__item
-            a.menu__link EN
+        a.header__meta__language-button(data-popover="#languageMenu")
+          | En
+          svg.header__meta__languagge-button-icon.icon-svg
+            use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#arrow-bottom")
+        .popover(id="languageMenu")
+          .popover__tail.popover__tail--top
+          .popover__box
+            .popover__box__header
+              a.popover__close
+                svg.modal__close-icon.icon-svg
+                  use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#modal-close")
+              .popover__box__header__headline Language
+            .popover__box__content__wrapper
+              .popover__box__content
+                ul.menu.menu--language
+                  li.menu__item
+                    a.menu__link Deutsch
+                  li.menu__item
+                    a.menu__link Français
+                  li.menu__item
+                    a.menu__link Italiano
+                  li.menu__item
+                    a.menu__link English
       a.header__meta__item.header__meta__action myAXA Login
       //- .header__meta__lower
       //-   .header__meta__welcome

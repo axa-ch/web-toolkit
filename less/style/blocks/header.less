@@ -170,6 +170,32 @@
   // &:extend(.clearfix all);
 }
 
+.header__meta__language-button {
+  display: inline-block;
+
+  height: 100%;
+  padding: 0 23px;
+
+  font-size: 0.9em;
+  font-weight: @font-weight-medium;
+  color: @color-gray--darker;
+  cursor: pointer;
+
+  &::before {
+    //This is used so the text of .header__meta__action is vertically aligned in the middle
+    //without having to totally fuck up the markup.
+    //todo: make a mixin?
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle
+  }
+}
+
+.header__meta__languagge-button-icon {
+  width: 0.5em;
+  height: 0.5em;
+}
 // .header__meta__lower {
 //   &:extend(.clearfix all);
 //
