@@ -17,10 +17,8 @@ module.exports = () ->
     do done
 
 resolve = (pattern, files) ->
-  result = []
-
-  _.forEach files, (file, name) =>
-    return if !minimatch name, pattern
-    result.push file
-
-  result
+  _.chain files
+    .filter (file, name) =>
+      minimatch name, pattern
+    .sortBy 'order'
+    .value()
