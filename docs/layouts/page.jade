@@ -5,6 +5,28 @@ filename: page.jade
 
 include /components/includes/mixins.jade
 
+mixin displaySideMenu(pages, isNested, isOpen)
+  ul(class={
+    'left__menu': !isNested,
+    'menu': !isNested,
+    'menu--left': !isNested,
+    'menu__level': isNested,
+    'is-open': isNested && isOpen
+  })
+    each page in pages
+      li.menu__item
+        a.menu__link(
+          href=relative(page.link),
+          class={ 'is-active': isActive(page), 'is-open': isActive(page) }
+        ) #{page.title}
+          if page.children
+            .menu__dropdown__icon(class={ 'is-open': isActive(page) })
+              +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon-svg'])
+              +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon-svg'])
+
+        if page.children
+          +displaySideMenu(page.children, true, isActive(page))
+
 doctype html
 html
   head
@@ -74,14 +96,6 @@ html
       })();
 
   body.site
-    - function splitCollectionName(collectionName) { return collectionName.split('__'); }
-    - function joinCollectionName(collectionNameParts) { return collectionNameParts.join('__'); }
-    - function getNavCollection(collectionNames) { for(var i in collectionNames) { var collectionName = collectionNames[i]; if(splitCollectionName(collectionName)[0] == 'nav') { return collectionName; } } }
-    - function isCollectionOpen(collection, currentCollection) { var splitCollection = splitCollectionName(collection); var splitCurrentCollection = splitCollectionName(currentCollection); if(splitCollection.length > splitCurrentCollection) return false; for(var i in splitCollection) { if(splitCollection[i] != splitCurrentCollection[i]) return false; } return true; }
-    
-    - var navCollection = navigationSubCollection ? navigationSubCollection : getNavCollection(collection);
-    - var splitNavCollection = navCollection ? splitCollectionName(navCollection) : [''];
-    
     .site__page
       #notification.notifications(data-notification-info=relative('/images/icons.svg#info')
         data-notification-success=relative('/images/icons.svg#checkmark')
@@ -101,7 +115,7 @@ html
               .header__meta__welcome
                 div
                   .header__meta__welcome__main
-                    span Web Styleguide
+                    span Web Style Guide
 
                   // ko if: hasGitHubIntegration && github.isSignedIn()
                   .header__meta__welcome__secondary
@@ -112,63 +126,18 @@ html
         .header__menu
           .l-container
             ul.menu.menu--main
-              if splitNavCollection
-                - currentNavCollection = joinCollectionName(splitNavCollection.slice(0, 2));
-                each page in nav
-                  if page
-                    - var isActive = false
-                    - var pageNavCollection = page.navigationSubCollection ? page.navigationSubCollection : getNavCollection(page.collection)
-                    if pageNavCollection
-                      - var pageNavCollection = joinCollectionName(splitCollectionName(pageNavCollection).slice(0, 2));
-                      - isActive = currentNavCollection == pageNavCollection
-                      li.menu__item(
-                        class={'is-active': isActive}
-                      )
-                        a.menu__link(
-                          href=relative(page.link)
-                        )= page.title
+              each page in navigation
+                li.menu__item(class={ 'is-active': isActive(page) })
+                  a.menu__link(href=relative(page.link))= page.title
               .autocomplete.docs-search
-                input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/')).docs-search__control
+                input.docs-search__control(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
 
       .page-content.l-container
-
-        // don't print top level navigation in menu (collection 'nav')
-        if splitNavCollection.length > 1
-
-          // start with the second level nav__xxx
-          - var currentNavCollection = joinCollectionName(splitCollectionName(navCollection).slice(0, 2));
-
-          mixin displayMenu(collectionName, isNestedLevel, isNestedLevelOpen)
-            ul(class= { 'left__menu': !isNestedLevel,
-              'menu': !isNestedLevel,
-              'menu--left': !isNestedLevel,
-              'menu__level': isNestedLevel,
-              'is-open': isNestedLevelOpen })
-              each page in collections[collectionName]
-
-                - var nestedNavCollection = page.navigationSubCollection
-                - var isActive = page.link == link;
-                - var isOpen = nestedNavCollection && isCollectionOpen(nestedNavCollection, navCollection);
-
-                li.menu__item
-                  a.menu__link(
-                    href=relative(page.link),
-                    class={'is-active': isActive, 'is-open': isOpen }
-                  ) #{page.title}
-                    if nestedNavCollection
-                      .menu__dropdown__icon(
-                        class={ 'is-open': isOpen }
-                      )
-                        +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon-svg'])
-                        +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon-svg'])
-
-                  if nestedNavCollection
-                    +displayMenu(nestedNavCollection, true, isOpen)
-
+        if section
           .l-row
-            nav.l-col.l-col--2
-              +displayMenu(currentNavCollection, false, false)
-            .l-col.l-col--10
+            nav.l-col.l-col--medium-2
+              +displaySideMenu(section.children, false, true)
+            .l-col.l-col--medium-10
               if headline !== false
                 h1.heading.heading--page #{title}
               div!= contents
@@ -186,7 +155,7 @@ html
               li.menu__item
                 a(href=relative('/changelog.html')).menu__link Changelog
               li.menu__item
-                span.menu__link AXA 2015 ©
+                span.menu__link AXA Versicherungen AG 2015 ©
 
     script(type='text/javascript').
       //// Set the right mobile menu level as current

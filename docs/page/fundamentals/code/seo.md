@@ -1,7 +1,6 @@
 ---
 title: SEO
 order: 6
-collection: nav__fundamentals__code
 template: page.jade
 draft: true
 ---

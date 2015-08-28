@@ -23,9 +23,9 @@ module.exports = () ->
 
         decorate page.children, h if page.children
 
-    decorate metadata.nav
+    decorate metadata.navigation
 
-    _.forEach metadata.nav, (page) =>
+    _.forEach metadata.navigation, (page) =>
       page.isTopNavigationItem = true
 
     do done
