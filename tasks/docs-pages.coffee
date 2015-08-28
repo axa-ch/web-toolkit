@@ -13,6 +13,7 @@ markedRenderer = require '../lib/marked-renderer'
 markedChangelogRenderer = require '../lib/marked-renderer-changelog'
 searchIndexData = require '../lib/search-index-data'
 loadChangelog = require '../lib/load-changelog'
+navigation = require '../lib/metalsmith-navigation'
 relate = require '../lib/metalsmith-relate'
 
 Metalsmith = require 'metalsmith'
@@ -140,6 +141,7 @@ module.exports = (cb) ->
       .use filepath
         absolute: true
       .use relate()
+      .use navigation()
       .use lunr
         includeAll: true
         fields:
