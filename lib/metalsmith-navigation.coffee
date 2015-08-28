@@ -25,7 +25,4 @@ module.exports = () ->
 
     decorate metadata.navigation
 
-    _.forEach metadata.navigation, (page) =>
-      page.isTopNavigationItem = true
-
     do done
