@@ -3,6 +3,7 @@ marked = require 'marked'
 colors = require 'colors'
 gutil = require 'gulp-util'
 moment = require 'moment'
+_ = require 'lodash'
 
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/jade-filter-sample'
@@ -106,6 +107,10 @@ module.exports = (cb) ->
     branch ['**/*.jade']
       .use filepath
         absolute: true
+      .use (files, metalsmith, done) ->
+        _.forEach files, (file) =>
+          file.link = "#{file.link.slice(0, -5)}.html"
+        do done
       .use relative()
       .use collections collections_options
       .use jade
