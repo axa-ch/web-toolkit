@@ -82,13 +82,13 @@ and this Developer Toolkit is based on it.
 > Have a look at our <code>icons.less.lodash</code> file for
 > a real world example.
 
-# What JavaScript libraries does the Web Styleguide need?
+# What JavaScript libraries does the Web Style Guide need?
 To stay independent from any client or server side UI logic, we always develop
 the HTML markup and LESS/CSS styles first, for any component. You can use
 the static markup and styles to create your application and write
 all the behavior using your preferred frameworks and libraries.
 
-> JavaScript is required to implement certain behaviours the Web Styleguide
+> JavaScript is required to implement certain behaviours the Web Style Guide
 > defines.
 
 # What about the jQuery plugins?
@@ -101,7 +101,7 @@ interacting with other code. Most of the time the problem lies with multiple
 components tracking and manipulating the DOM.
 In this case it's often better to let go of our plugins, and implement the
 behavior the way, your library intends to. Of course you may reuse code from
-the Web Styleguide.
+the Web Style Guide.
 
 # Recommended libraries (Draft)
 | Library | Remarks |

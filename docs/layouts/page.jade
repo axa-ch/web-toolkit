@@ -51,7 +51,7 @@ html
     +appicon_ios("152")
     +appicon_ios("180")
     
-    meta(name="apple-mobile-web-app-title", content="Web Styleguide")
+    meta(name="apple-mobile-web-app-title", content=config.name)
       
     link(media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)", rel="apple-touch-startup-image", href=relative("/images/splash-screen/ios/750x1294.png"))
     
@@ -61,13 +61,13 @@ html
     meta(name="mobile-web-app-capable", content="yes")
       
     // windows tiles
-    meta(name="application-name", content="Web Styleguide")
+    meta(name="application-name", content=config.name)
     meta(name="msapplication-square70x70logo", content=relative("/images/app-icon/windows/128x128.png"))
     meta(name="msapplication-square150x150logo", content=relative("/images/app-icon/windows/270x270.png"))
     meta(name="msapplication-wide310x150logo", content=relative("/images/app-icon/windows/558x270.png"))
     meta(name="msapplication-square310x310logo", content=relative("/images/app-icon/windows/558x558.png"))
 
-    title #{title} | Web Styleguide
+    title #{title} | #{config.name}
     link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/docs.min.css"))
@@ -115,7 +115,7 @@ html
               .header__meta__welcome
                 div
                   .header__meta__welcome__main
-                    span Web Style Guide
+                    span= config.name
 
                   // ko if: hasGitHubIntegration && github.isSignedIn()
                   .header__meta__welcome__secondary
@@ -155,7 +155,7 @@ html
               li.menu__item
                 a(href=relative('/changelog.html')).menu__link Changelog
               li.menu__item
-                span.menu__link AXA Versicherungen AG 2015 ©
+                span.menu__link= config.copyright
 
     script(type='text/javascript').
       //// Set the right mobile menu level as current
