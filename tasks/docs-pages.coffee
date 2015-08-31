@@ -38,10 +38,6 @@ module.exports = (cb) ->
   # basedir for include paths
   jadeBaseDir = path.join cwd, metalsmithSource
 
-  # GitHub integration
-  if !process.env.GITHUB_INTEGRATION
-    config.github = null
-
   # Jade filters
   jade.registerFilter 'sample', sampleJadeFilter
   jade.registerFilter 'highlightcode', highlightCodeJadeFilter

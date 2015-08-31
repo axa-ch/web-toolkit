@@ -20,24 +20,5 @@
   },
   "urls": {
     "releases": "https://github.com/axa-ch/style-guide/releases"
-  },
-  "github": {
-    "urls": {
-      "api": "https://api.github.com",
-      "authorize": "https://github.com/login/oauth/authorize",
-      "token": "https://axa-ch-style-guide.herokuapp.com/authenticate"
-    },
-    "oauth": {
-      "id": "15c93ed0240a9d39c22d",
-      "scopes": [
-        "read:org",
-        "gist"
-      ]
-    },
-    "team": 1084294,
-    "access": {
-      "gist": "324dc1114e65df211cd5",
-      "comment": "asking for access"
-    }
   }
 }

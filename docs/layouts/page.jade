@@ -117,12 +117,6 @@ html
                   .header__meta__welcome__main
                     span= config.name
 
-                  // ko if: hasGitHubIntegration && github.isSignedIn()
-                  .header__meta__welcome__secondary
-                    // ko text: github.user().login
-                    // /ko
-                  // /ko
-
         .header__menu
           .l-container
             ul.menu.menu--main
@@ -167,10 +161,5 @@ html
       //
       //// Highlight the right mobile menu link as active
       //$menu.find("[data-link='!{link}']").addClass('is-active')
-
-      // Setup the fancy GitHub integration
-      var viewModel = new MainViewModel(!{JSON.stringify(config)});
-      ko.applyBindings(viewModel);
-      viewModel.init();
 
 //- Copyright AXA Versicherungen AG 2015
