@@ -4,24 +4,13 @@
 @import '../blocks/icon';
 
 .header {
-  // @padding-top-bottom: 9.5px;
-  // @padding-top-large: 20px;
-  // @padding-left-right: 10px;
-  // @padding-left-right-large: 20px;
-  // @mobile-trigger-size: 41px;
-
   &:extend(.clearfix all);
-
-  // padding: @padding-top-bottom 0;
-  // border-bottom: 1px solid @color-blue-gray--light;
 
   .respond(medium, {
     border-bottom: 5px solid @color-blue;
-    // margin-bottom: 30px;
     });
 
   .respond(large, {
-    // padding: @padding-top-large 0 0 0;
   });
 }
 
@@ -45,12 +34,9 @@
 
 .header__brand {
   order: 1;
-  // float: left;
 }
 
 .header__meta {
-  // &:extend(.clearfix all);
-
   background: @color-gray--lighter;
 }
 
@@ -58,16 +44,7 @@
   .make-container(1260px, 0);
 
   display: flex;
-  // &:extend(.clearfix all);
-  //
-  // float: right;
-  // display: none;
-  //
-  // height: 16px;
-  //
-  // .respond(large, {
-  //   display: block;
-  // });
+
   &::after {
     content: "";
     display: block;
@@ -80,16 +57,8 @@
   height: 56px;
 }
 
-//
-// .header__meta__upper {
-//   &:extend(.clearfix all);
-// }
-
 .header__meta__menu {
   order: 1;
-  // float: left;
-
-  // float: right;
 }
 
 .header__meta__search {
@@ -97,16 +66,12 @@
   display: flex;
 
   width: 315px;
-  // float: right;
 
   color: @color-blue-gray;
 }
 
 .header__meta__language {
   order: 4;
-  // float: right;
-
-  // float: right;
 }
 
 .header__meta__action {
@@ -130,9 +95,6 @@
     height: 100%;
     vertical-align: middle
   }
-  // float: right;
-
-  // float: right;
 }
 
 .lt-ie10 {
@@ -158,16 +120,12 @@
 }
 
 .header__main {
-  // position: relative;
   box-shadow: 0 0px 0px 0px @color-white, 0 -3px 3px -3px @color-gray, 0px 0 0px 0px @color-white, 0px 0 0px 0px @color-white;
-
-  // &:extend(.clearfix all);
 }
 
 .header__main__content {
   .make-container(1260px, 0);
 
-  // position: relative;
   display: flex;
   align-items: flex-end;
 
@@ -177,7 +135,6 @@
     order: 2;
     flex-grow: 1;
   }
-  // &:extend(.clearfix all);
 }
 
 .header__meta__language-button {
@@ -206,107 +163,14 @@
   width: 0.5em;
   height: 0.5em;
 }
-// .header__meta__lower {
-//   &:extend(.clearfix all);
-//
-//   margin-top: 12px;
-// }
-
-// .header__meta__welcome {
-//   &:extend(.clearfix all);
-//
-//   float: right;
-//   padding: 0;
-//   font-size: 17px;
-//
-//   ul {
-//     margin: 0;
-//     padding: 0;
-//
-//     list-style-type: none;
-//   }
-// }
-
-// .header__meta__welcome__main {
-//   float: left;
-//
-//   height: 16px; // Hack to get the border-right exactly 16px height
-//   padding: 0;
-//   margin: 0;
-//
-//   line-height: 16px;
-//   font-weight: bold;
-//
-//   color: @color-blue;
-//
-//   a {
-//     color: @color-blue;
-//     text-decoration: none;
-//   }
-// }
-//
-// .header__meta__welcome__secondary {
-//   float: left;
-//
-//   height: 16px; // Hack to get the border-right exactly 16px height
-//   padding: 0;
-//   margin: 0;
-//
-//   line-height: 16px;
-//
-//   color: @color-blue;
-//
-//   a {
-//     color: @color-blue;
-//     text-decoration: none;
-//   }
-//   padding-left: 10px;
-//   border-left: 1px solid @color-gray--darker;
-//   margin-left: 10px;
-// }
 
 .header__menu {
   display: none;
 
   .respond(large, {
-    // position: absolute;
-    // right: 0;
-    // bottom: 0;
     display: block;
     order: 3;
-
-    // float: right;
-    // border-top: 1px solid @color-gray--lighter;
   });
 }
-
-// .header__action {
-  // margin-left: 8px;
-  // margin-top: -4px;
-
-  // .respond(large, {
-  //   float: left;
-  // });
-  //
-  // &:first-of-type {
-  //   margin-left: 20px;
-  // }
-// }
-
-// .header__action__button {
-//   background: red;
-//   padding: 4px 10px;
-//
-//   font-weight: @font-weight-medium;
-//   font-size: 15px;
-//
-//   color: white;
-//   text-decoration: none;
-//
-//   &:hover {
-//     color: white;
-//     cursor: pointer;
-//   }
-// }
 
 // Copyright AXA Versicherungen AG 2015
