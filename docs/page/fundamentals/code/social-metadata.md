@@ -1,7 +1,6 @@
 ---
 title: Social metadata
 order: 7
-collection: nav__fundamentals__code
 template: page.jade
 draft: true
 ---
@@ -108,3 +107,5 @@ for Tips and best practices.
 - [Twitter Validation Tool](https://dev.twitter.com/docs/cards/validation/validator)
 - [Facebook Debugger](https://developers.facebook.com/tools/debug)
 - [Google Structured Data Testing Tool](http://www.google.com/webmasters/tools/richsnippets)
+
+<!--- Copyright AXA Versicherungen AG 2015 -->

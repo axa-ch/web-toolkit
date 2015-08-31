@@ -1,30 +1,41 @@
 ---
 title: Datepicker
 order: 3
-collection: nav__components__form
 template: page.jade
 tags: Date, Time, Picker
 ---
 
+include ../includes/mixins.jade
+
 p.paragraph.
   The datepicker component helps the user selecting a date.
 
-.example(data-example-relative-base=relative('/'))
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#basic').toc__anchor-navigation__link Regular Datepicker
+    li.toc__anchor-navigation__item
+      a(href='#condensed').toc__anchor-navigation__link Condensed Datepicker
+
+.hr
+
+h2.heading.heading--secondary#regular Regular Datepicker
+
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/datepicker.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/datepicker.html')
+        data-iframe-resizer
+      )
 
 .toggle
-  .toggle__button(data-info, data-target='#code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+  .toggle__button(data-info, data-target='#code-basic')
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
-  .toggle__content#code
+  .toggle__content#code-basic
     .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
@@ -55,6 +66,40 @@ p.paragraph.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Use the native datepickers on mobile devices
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Use the native datepickers on mobile devices
 
-// Copyright AXA Versicherungen AG 2015
+.hr
+
+h2.heading.heading--secondary#condensed Condensed Datepicker
+
+.example
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/datepicker-condensed.html')
+        data-iframe-resizer
+      )
+.toggle
+  .toggle__button(data-info, data-target='#code-condensed')
+    +svg('source', ['icon-svg', 'toggle__icon'])
+    span See code
+  .toggle__content#code-condensed
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML/JS
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown
+            To create a condensed datepicker, just add the
+            `condensed` modifier to the datepicker block
+            and the control element.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/datepicker-condensed.jade
+
+//- Copyright AXA Versicherungen AG 2015

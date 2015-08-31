@@ -21,3 +21,5 @@ module.exports = ->
       .pipe concat 'inspirations.all.min.js'
     .pipe sourcemaps.write('.', sourceRoot: './' )
       .pipe gulp.dest './dist/docs/js'
+
+#! Copyright AXA Versicherungen AG 2015

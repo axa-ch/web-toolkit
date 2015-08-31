@@ -11,4 +11,4 @@ module.exports = (cb) ->
   # return nothin and don't call cb since this task runs "forever"
   return
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

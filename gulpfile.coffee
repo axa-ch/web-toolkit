@@ -12,4 +12,4 @@ require('gulp-load-tasks')({ extensions: [ '.coffee' ] })
 
 gulp.task 'default', [ 'build' ]
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

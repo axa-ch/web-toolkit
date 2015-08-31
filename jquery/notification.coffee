@@ -3,24 +3,49 @@
   class NotificationPane
 
     constructor: (element, options) ->
-      @$element = $(element)
+      @$element = $ element
+      console.log @$element
+      @path = {
+        info: @$element.data 'notification-info'
+        success: @$element.data 'notification-success'
+        error: @$element.data 'notification-error'
+      }
+      #@path.info = @$element.data 'notification-info'
+      #@path.success = @$element.data 'notification-success'
+      #@path.error = @$element.data 'notification-error'
 
     displayNotification: (notification) ->
 
       if !notification?
         return
 
+
       $notification = $ '<div class="notifications__item" ></div>'
+      $icon = null
+
+      if notification.modifier
+        console.log notification.modifier
+        console.log @path
+        console.log @path[notification.modifier]
+        $notification.addClass 'notifications__item--'+notification.modifier
+        $icon = '<svg class="icon-svg notifications__item__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + @path[notification.modifier] + '"></use></svg>'
+        console.log $icon
+
+      $iconContainer = $ '<div class="notifications__item__icon-container">'
+
+      $iconContainer.append $icon
+      $notification.append $iconContainer
+
       $notification.on 'click', ->
         @hideNotification $notification
 
+      $content = $ '<div class="notifications__item__content"></div>'
       if notification.html == true
-        $notification.html notification.content
+        $content.html notification.content
       else
-        $notification.text notification.content
+        $content.text notification.content
 
-      if notification.modifier
-        $notification.addClass 'notifications__item--'+notification.modifier
+      $notification.append $content
 
       timeout = 2000
 

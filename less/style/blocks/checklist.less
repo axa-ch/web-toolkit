@@ -8,18 +8,21 @@
 }
 
 .checklist__item {
-  .icon();
-  .icon--checkmark();
-  position: relative;
   margin: 0 0 10px 0;
-  padding: 0 0 0 40px;
-
-  &::before {
-    position: absolute;
-    left: 0;
-    top: 2px;
-    color: @color-green;
-  }
 }
 
-/* Copyright AXA Versicherungen AG 2015 */
+.checklist__item__icon {
+  display: inline-block;
+  float: left;
+
+  width: 40px;
+  margin-top: 2px;
+
+  color: @color-green;
+}
+
+.checklist__item__content {
+  margin-left: 40px;
+}
+
+// Copyright AXA Versicherungen AG 2015

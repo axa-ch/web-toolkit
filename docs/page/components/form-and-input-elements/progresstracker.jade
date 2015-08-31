@@ -1,39 +1,45 @@
 ---
 title: Progresstracker
 order: 8
-collection: nav__components__form
 template: page.jade
 tags: Progress, Steps
 ---
+
+include ../includes/mixins.jade
+
 p.paragraph.
   The progresstracker informs the user about the amount of steps to complete a form or wizard as well as his current location in the process.
 
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item.
-    Set easy to understand names for
-    every step.
-  li.checklist__item.
-    Have as few steps as necessary.
   li.checklist__item
-    :markdown
-      If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Set easy to understand names for
+      every step.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Have as few steps as necessary.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content
+      :markdown
+        If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html(data-example-centered)
-        include:ignorefrontmatter ./snippets/progress-tracker.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/progress-tracker.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code
     .tab-panel(data-tab, data-tab-default='html')
@@ -45,3 +51,5 @@ ul.checklist
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/progress-tracker.jade
+
+//- Copyright AXA Versicherungen AG 2015

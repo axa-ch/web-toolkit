@@ -1,10 +1,11 @@
 ---
 title: Form group
 order: 7
-collection: nav__components__form
 template: page.jade
 tags:  formgroup, formfield, info, error
 ---
+
+include ../includes/mixins.jade
 
 p.paragraph.
   A form group includes multiple elements which
@@ -19,21 +20,19 @@ p.paragraph.
 p.paragraph.
   Info-icons provide on click help to the user and help him better understand a particular field.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ../includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html
-        include:ignorefrontmatter ./snippets/form-group.jade
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/form-group.html')
+        data-iframe-resizer
+      )
 
 
 .toggle
   .toggle__button(data-info, data-target='#code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code
     .tab-panel
@@ -49,15 +48,38 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
-  li.checklist__item On desktop, right align labels.
-  li.checklist__item On mobile, put the labels above the input element.
-  li.checklist__item Mark required fiels with an asterisk*
-  li.checklist__item Every label should be as clear as possible. Only add an info-icon if it really needs more explanation.
-  li.checklist__item Avoid too many info-icons on one site.
-  li.checklist__item Try to avoid error messages in the first place. Flexible input formats and automatic error correction may help.
-  li.checklist__item Provide clear explanations instead of a generic “An error occurred”. If you don’t, your user will make the same mistake again.
   li.checklist__item
-    :markdown
-      If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      On desktop, right align labels.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      On mobile, put the labels above the input element.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Mark required fiels with an asterisk*
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Every label should be as clear as possible. Only add an info-icon if it really needs more explanation.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Avoid too many info-icons on one site.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Try to avoid error messages in the first place. Flexible input formats and automatic error correction may help.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Provide clear explanations instead of a generic “An error occurred”. If you don’t, your user will make the same mistake again.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content
+      :markdown
+        If you want to learn more about how to build forms, visit the <a class="link" href="../../patterns/forms.html">form pattern page</a>.
 
-// Copyright AXA Versicherungen AG 2015
+//- Copyright AXA Versicherungen AG 2015

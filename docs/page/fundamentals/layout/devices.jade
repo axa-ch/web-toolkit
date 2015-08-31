@@ -1,13 +1,14 @@
 ---
 title: Devices
 order: 2
-collection: nav__fundamentals__layout
 template: page.jade
 tags: iphone, smartphone, tablet, media query, desktop, mobile
 ---
 
 p.paragraph.
-  New devices with different viewports, screen sizes, input modes and other specific attributes are released on a daily basis. As of May 2015, we suggest to design for the following device classes:
+  New devices with different viewports, screen sizes,
+  input modes and other specific attributes are released on a daily basis.
+  As of May 2015, we suggest to design for the following device classes:
 
 .l-row(style='text-align: center; background: #eee; padding: 20px; margin: 20px 0;')
   div(style='padding: 10px 0; font-size: 1.2em; font-weight: 600;').
@@ -45,21 +46,31 @@ p.paragraph.
     p.paragraph.
       1280px +
 
-h2.heading.heading--secondary#theUnknown The Unknown
-p.paragraph This device class is a mixture of different types of users.
-ul.list.list--unordered
-  li.list__item either on a tablet or a desktop / laptop computer
-  li.list__item screen sizes ranging from 7inch (iPad Mini Size) up to 13inches (normal laptop)
-  li.list__item 25% of our current desktop users belong into this device class, decreasing share
-  li.list__item 8% of mobile & tablet users belong into this device class. increasing share
+:markdown
+  # The Unknown
+  
+  This device class is a mixture of different types of users.
+  
+  * either on a tablet or a desktop / laptop computer
+  * screen sizes ranging from 7inch (iPad Mini Size) up to 13inches (normal laptop)
+  * 25% of our current desktop users belong into this device class, decreasing share
+  * 8% of mobile & tablet users belong into this device class. increasing share
 
-h3.heading.heading--tertiary Recommendations
-p.paragraph As of May 2015 the following ideas are recommended
-ul.list.list--unordered
-  li.list__item Use analytics to figure out which audience you serve and how to implement this device class in your project – know your customer.
-  li.list__item If in doubt, lower the desktop breakpoint to 1025 min-width
+  ## Recommendations
+  
+  As of May 2015 the following ideas are recommended
+  
+  * Use analytics to figure out which audience you serve and how to
+    implement this device class in your project – know your customer.
+  * If in doubt, lower the desktop breakpoint to 1025 min-width
 
-p.paragraph This style guide does not have special designs for this device class. Use whatever is more appropriate in your context.
+  The Web Style Guide does not have special designs for this device class.
+  Use whatever is more appropriate in your context.
 
-h3.heading.heading--tertiary Prepare for the future
-p.paragraph As of CSS4, new media query options (e.g. pointer) will be available. Prepare that this device class might get split into two separate categories with overlapping viewport sizes.
+  ## Prepare for the future
+  
+  As of CSS4, new media query options (e.g. pointer) will be available.
+  Prepare that this device class might get split into two separate
+  categories with overlapping viewport sizes.
+
+//- Copyright AXA Versicherungen AG 2015

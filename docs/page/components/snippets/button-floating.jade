@@ -3,6 +3,9 @@ title: Floating Action Button
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .button.button--floating
-  svg.button__icon.icon-svg
-    use(xlink:href=relative('/images/icons.svg#feedback'))
+  +svg('feedback', ['button__icon', 'icon-svg'])
+
+//- Copyright AXA Versicherungen AG 2015

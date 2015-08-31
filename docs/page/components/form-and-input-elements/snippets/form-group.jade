@@ -3,6 +3,8 @@ title: Form Group
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .form
   .form__group
     .form__group__label
@@ -19,9 +21,8 @@ template: demo.jade
     .form__group__label
       .form__group__label__info-icon
         .info-icon(data-info, data-target='#target')
-          svg.info-icon__svg
-            use(xlink:href=relative('/images/icons.svg#info')).info-icon__use
-            use(xlink:href=relative('/images/icons.svg#close')).info-icon__use.info-icon__use--close
+          +svg('info', 'info-icon__svg')
+          +svg('close', ['info-icon__svg', 'info-icon__svg--close'])
       .form__group__label__info-icon-text-wrapper Form group with info
     .form__group__control
       input(type='text').control.control--input
@@ -33,7 +34,8 @@ template: demo.jade
       label.checkbox(data-checkbox)
         input.checkbox__checkbox(type='checkbox')
         .checkbox__label
-          svg.checkbox__label__icon
-            use(xlink:href='/images/icons.svg#checkmark')
+          +svg('checkmark', 'checkbox__label__icon')
           .checkbox__label__text Full width control
   .form__footnote * Form footnote
+
+//- Copyright AXA Versicherungen AG 2015

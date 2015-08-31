@@ -1,28 +1,27 @@
 ---
 title: Badge
 order: 3
-collection: nav__components
 template: page.jade
 tags: count, unread
 ---
 
+include ./includes/mixins.jade
+
 p.paragraph.
   A badge is an element which can be attached to other components as an indicator for new or unread items.
 
-.example(data-example-relative-base=relative('/'))
+.example
   include ./includes/example-header.jade
   .example__content
     .example__border
-      .example__bracket.example__bracket--topleft
-      .example__bracket.example__bracket--bottomright
-      iframe.example__iframe
-      .example__html(data-example-centered)
-        include:ignorefrontmatter ./snippets/badge.jade
+      iframe.example__iframe(
+        src=relative('/components/demos/badge.html')
+        data-iframe-resizer
+      )
 
 .toggle
   .toggle__button(data-info, data-target='#code')
-    svg.icon-svg.toggle__icon
-      use(xlink:href=relative('/images/icons.svg#source'))
+    +svg('source', ['icon-svg', 'toggle__icon'])
     span See code
   .toggle__content#code
     .tab-panel(data-tab, data-tab-default='html')
@@ -37,8 +36,17 @@ p.paragraph.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item If a badge is placed, the underlying element must be clickable.
-  li.checklist__item A badge always only contains a number. No icons allowed.
-  li.checklist__item It is always placed in the upper right corner of an element.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      If a badge is placed, the underlying element must be clickable.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      A badge always only contains a number. No icons allowed.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      It is always placed in the upper right corner of an element.
 
-// Copyright AXA Versicherungen AG 2015
+//- Copyright AXA Versicherungen AG 2015

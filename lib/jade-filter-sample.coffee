@@ -13,7 +13,7 @@ module.exports = (jadeLang, jadeRuntime, jadeFilters) ->
     '.highlight'
     '  pre.highlight__listing.hljs: code(class=lang)!= htmlSource'
   ].join('\n')
-  
+
   (text, options) ->
     sampleIndex++
 
@@ -28,4 +28,4 @@ module.exports = (jadeLang, jadeRuntime, jadeFilters) ->
       htmlSource: htmlSource
       lang: options.lang
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

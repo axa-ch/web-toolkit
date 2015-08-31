@@ -3,17 +3,20 @@ title: Popover
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 a.button(id='toggleButton',data-popover='#popover') Show Popover
 .popover(id='popover')
   .popover__tail
   .popover__box
     .popover__box__header
       a.popover__close
-        svg.modal__close-icon.icon-svg
-          use(xmlns:xlink='http://www.w3.org/1999/xlink',xlink:href=relative('/images/icons.svg#modal-close'))
+        +svg('modal-close', ['modal__close-icon', 'icon-svg'])
       .popover__box__header__headline Demo
     .popover__box__content__wrapper
       .popover__box__content
         textarea.control.control--textarea
         p.paragraph
           a.button.button--small 'clicky click'
+
+//- Copyright AXA Versicherungen AG 2015

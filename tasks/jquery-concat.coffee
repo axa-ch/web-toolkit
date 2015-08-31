@@ -12,4 +12,4 @@ module.exports = ->
     .pipe sourcemaps.write('.', sourceRoot: './')
     .pipe gulp.dest './dist/jquery'
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

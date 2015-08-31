@@ -1,11 +1,14 @@
 ---
 title: Login
 order: 3
-collection: nav__patterns
 template: page.jade
 ---
 
-p.paragraph. Login forms are different from regular forms and follow specific guidelines.
+include ../components/includes/mixins.jade
+
+p.paragraph.
+  Login forms are different from regular forms
+  and follow specific guidelines.
 
 .toc
   .toc__title Table of contents
@@ -16,14 +19,32 @@ p.paragraph. Login forms are different from regular forms and follow specific gu
       a(href='#submit').toc__anchor-navigation__link Submit Buttons
 
 h2.heading.heading--secondary#simpleLogin Simple Login Form
-p.paragraph A login form consists of a username  / email and a password field, as well as a sign in button.
+
+p.paragraph
+  A login form consists of a username / email
+  and a password field, as well as a sign in button.
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
-  li.checklist__item Always give the user the possibility to retrieve his password if forgotten.
-  li.checklist__item Follow web conventions so that password managers can store the username and password for the user.
-  li.checklist__item Avoid ads or other distractions on login pages.
-  li.checklist__item Don’t forget to give the user an easy way to register to your service.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Always give the user the possibility to
+      retrieve his password if forgotten.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Follow web conventions so that password managers can store
+      the username and password for the user.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Avoid ads or other distractions on login pages.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Don’t forget to give the user an easy way
+      to register to your service.
 
 .hr
 
@@ -69,4 +90,4 @@ table.table.table--docs
       td.table__row__item
         .table__row__item__content Accedi
 
-// Copyright AXA Versicherungen AG 2015
+//- Copyright AXA Versicherungen AG 2015

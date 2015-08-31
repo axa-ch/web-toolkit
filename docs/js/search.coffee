@@ -84,11 +84,9 @@ class Search
     @updateDisplay()
 
   initIndex: (data, textStatus, jqXHR) ->
-
     @searchData = data
-
     @lunrIdx = lunr.Index.load @searchData.lunr
-
+    @lunrIdx.pipeline.remove lunr.stopWordFilter
     @initialized = true
 
     # in case the target node is already focus'ed
@@ -173,3 +171,5 @@ getSearchData = (searchDataUrl) ->
 $ ->
   $("[data-search]").each (i, el) ->
     new Search(el)
+
+#! Copyright AXA Versicherungen AG 2015

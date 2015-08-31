@@ -1,22 +1,16 @@
-[![Build Status](https://api.shippable.com/projects/544e872d44927f89db3df031/badge?branchName=master)](https://app.shippable.com/projects/544e872d44927f89db3df031/builds/latest)
+[![Build Status](https://travis-ci.org/axa-ch/style-guide.svg?branch=develop)](https://travis-ci.org/axa-ch/style-guide)
+[![Thinking](https://badge.waffle.io/axa-ch/style-guide.svg?label=thinking&title=Thinking)](http://waffle.io/axa-ch/style-guide)
+[![Adding Sparkles](https://badge.waffle.io/axa-ch/style-guide.svg?label=adding%20sparkles&title=Adding%20Sparkles)](http://waffle.io/axa-ch/style-guide)
+[![Hacking](https://badge.waffle.io/axa-ch/style-guide.svg?label=hacking&title=Hacking)](http://waffle.io/axa-ch/style-guide)
 
-# AXA Switzerland Web Styleguide
+# AXA Switzerland Web Style Guide
 
-> The mobile-ready style guide for internal and external
-> web apps!
+> Guides you through our design principles and helps you build web apps faster!
 
-## Introduction
+## Intro
 
-This project explains how to design our internal and external
-corporate web apps. It provides you with the necessary CSS, JavaScript
-and additional assets to simplify the implementation of our digital
-corporate appearance.
-
-## How does it work?
-
-The assets are written in Less, CoffeeScript, Jade, Markdown and SVG.
-A build system based on Node and Gulp transforms these assets into
-CSS, JavaScript, HTML and an icon font.
+This project guides you on how to design and build web apps @ AXA Switzerland.
+Here you get all the CSS, icons, JS and additional assets to simplify the development of our web apps.
 
 ## Run it!
 
@@ -41,6 +35,23 @@ in the file system.
 # Start development mode (afterwards check http://localhost:3000)
 $ gulp dev
 ```
+
+### But but but.... Enterprise Proxy?
+If you're working on a heavily guarded machine as used by many enterprises, follow our [Guide](https://github.com/axa-ch/style-guide/wiki/Sitting-behind-a-corporate-proxy%3F).
+
+## What do we build it with?
+
+In order to make changes as easy as possible and simplify our build process,
+we make use of many different technologies. It's great to have an understanding
+for what these do, when you decide to dive deeper into the code.
+
+* [LessCSS](http://lesscss.org) for mixins, variables and other fancy styling helpers
+* [CoffeeScript](http://coffeescript.org) for readable and extended scripts
+* [SVG](http://www.w3.org/TR/SVG2/) for colorful and sometimes animated icons
+* [Gulp](http://gulpjs.com) on which our whole build process is based
+* [Metalsmith](http://metalsmith.io) for our static site documentation
+* [Jade](http://jade-lang.com) which simplifies how we write markup
+* [Markdown](http://daringfireball.net/projects/markdown/) for text-heavy documentation pages
 
 ## Feedback
 
@@ -87,4 +98,4 @@ Check the collaborators list for the people behind it.
 
 Copyright 2015 AXA Versicherungen AG. All rights reserved.
 
-<!-- Copyright AXA Versicherungen AG 2015 -->
+<!--- Copyright AXA Versicherungen AG 2015 -->

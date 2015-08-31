@@ -31,3 +31,5 @@ module.exports = (glob, paths, dest) ->
     .pipe rename { extname: '.min.css' }
     .pipe sourcemaps.write('.', sourceRoot: './')
     .pipe gulp.dest dest
+
+#! Copyright AXA Versicherungen AG 2015

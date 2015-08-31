@@ -32,4 +32,4 @@ scheme, which are described in the following table.
   </tr>
 </table>
 
-<!-- Copyright AXA Versicherungen AG 2015 -->
+<!--- Copyright AXA Versicherungen AG 2015 -->

@@ -4,25 +4,15 @@ template: page.jade
 headline: false
 ---
 
-mixin thumbnail(item)
-  if item
-    .thumbnail.l-half
-      - var link = item.link.replace(new RegExp('jade$'), 'html')
-      a.thumbnail__img-link(href=relative(link))
-        img.thumbnail__img(src=relative('/images/home/' + item.title.replace(new RegExp(' ', 'g'), '_') + '.svg'), alt=item.title)
-      h2.thumbnail__heading
-        a.thumbnail__link(href=relative(link)) #{item.title}
-      p.thumbnail__text!= item.description
-  
 .l-container.l-container--docs-home
-  h1.heading.heading--docs-home Welcome to the AXA Web Styleguide  
-  - var items = collections['nav']
-  if items
-    - var i = 0
-    while i < items.length
-      .l-row
-        +thumbnail(items[i])
-        +thumbnail(items[i+1])   
-      - i+=2 
+  h1.heading.heading--docs-home Welcome to the AXA Web Style Guide
+  .l-row
+    each item in navigation
+      .thumbnail.l-half
+        a.thumbnail__img-link(href=relative(item.link))
+          img.thumbnail__img(src=relative(item.thumbnail), alt=item.title)
+        h2.thumbnail__heading
+          a.thumbnail__link(href=relative(item.link))= item.title
+        p.thumbnail__text!= item.description
 
-// Copyright AXA Versicherungen AG 2015
+//- Copyright AXA Versicherungen AG 2015

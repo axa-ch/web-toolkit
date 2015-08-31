@@ -6,4 +6,4 @@ module.exports = ->
     .pipe generateBowerJson()
     .pipe gulp.dest './dist'
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  - 0.12
+
+env:
+  - REPO_URL=git@github.com:axa-ch/style-guide.git GITHUB_INTEGRATION=true
+
+before_install:
+  - npm install -g gulp
+
+script:
+  - gulp build
+  - git config --global user.email robo@coder
+  - git config --global user.name "Robo Coder"
+  - if [ "$TRAVIS_PULL_REQUEST" = false ] && [ "$TRAVIS_BRANCH" = "develop" ]; then gulp deploy; fi

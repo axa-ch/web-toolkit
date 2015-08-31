@@ -1,12 +1,11 @@
 ---
 title: Browser support
 order: 3
-collection: nav__fundamentals__code
 template: page.jade
 tags: safari, ios, chrome, android, internet explorer, firefox,
 ---
 
-p.paragraph.
+:markdown
   Customers, partners and employees are using an
   extensive amount of different browsers.
   Therefore, websites and applications should cater
@@ -14,9 +13,8 @@ p.paragraph.
   technologies in or for different browsers.
   The W3C standards are also our standards.
 
-h2.heading.heading--secondary What browsers to support?
+  # What browsers to support?
 
-p.paragraph.
   Based on data from the 13th of may 2015, we are
   supporting the following browsers and mobile
   operating systems:
@@ -97,19 +95,17 @@ table.table.table--docs
 
 .hr
 
-h2.heading.heading--secondary Internet Explorer 8 & 9
+:markdown
+  # Internet Explorer 8 & 9
 
-p.paragraph.
   You'll need to add some of the polyfills listed
   below to add support for IE 9.
 
-p.paragraph.
   With the current release Internet Explorer 8 is
   NOT supported. Please consider adding a "Your
   browser is not supported page" or add support
   for IE 8 on your own. The polyfills listed below
   will do the major parts of the job.
-
 
 table.table.table--docs
   thead
@@ -220,3 +216,5 @@ script.
     androidChart.draw(androidData, { title: 'Android Version Share' });
     iosChart.draw(iosData, { title: 'iOS Version Share' });
   }
+
+//- Copyright AXA Versicherungen AG 2015

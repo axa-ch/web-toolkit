@@ -3,6 +3,8 @@ title: Multi-line text field
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .l-container
   .form
     .form__group
@@ -10,3 +12,5 @@ template: demo.jade
         .form__group__label__text Form label
       .form__group__control
         textarea.control.control--textarea(type='text',data-autogrow='autogrow')
+
+//- Copyright AXA Versicherungen AG 2015

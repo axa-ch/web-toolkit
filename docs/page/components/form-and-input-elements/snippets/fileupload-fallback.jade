@@ -1,0 +1,19 @@
+---
+title: Fileupload Fallback
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.l-container
+  .form
+    .form__group
+      .form__group__label.
+        Fallback for dropzone on IE 9
+      .form__group__control
+        .multi-upload
+          .dropzone-fallback
+            input.dropzone-fallback__input(type='file')
+            a.dropzone-fallback__button.button.button--primary
+              +svg('upload', ['icon-svg', 'dropzone-fallback__button__icon'])
+              span.dropzone-fallback__button__text Click to upload files

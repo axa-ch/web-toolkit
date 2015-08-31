@@ -1,9 +1,11 @@
 ---
 title: Inspiration
 order: 4
-collection: nav
+collection: navigation
+children: inspiration/*
 template: page.jade
 description: Get inspired in our gallery of best-pracitces from all over AXA Switzerland.
+thumbnail: /images/home/Inspiration.svg
 headline: false
 draft: true
 ---
@@ -26,3 +28,5 @@ draft: true
       .inspiration__item__content
         a(href=relative(link)).inspiration__item__title!= page.title
         a(href=relative(link)).inspiration__item__description!= page.description
+
+//- Copyright AXA Versicherungen AG 2015

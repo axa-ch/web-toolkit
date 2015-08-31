@@ -29,4 +29,4 @@ module.exports = (cb) ->
 
         end()
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

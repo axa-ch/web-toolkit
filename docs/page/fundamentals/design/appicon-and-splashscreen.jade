@@ -1,47 +1,33 @@
 ---
 title: App icon and splash screen
 order: 3
-collection: nav__fundamentals__design
 template: page.jade
 ---
 
-p.paragraph.
+:markdown
   We recommend to create square app icons since the devices will cut 
   round corners on their own.
-//  
-//-p.paragraph.
-  TODO: AXA group guidelines and PSDs?!?
-  
-//-p.paragraph.
-  TODO: Guidelines for windows tiles
-  
-//-h2.heading.heading--secondary Splash screen
 
-//-p.paragraph.
-  TODO
-  
-h2.heading.heading--secondary App icon
+  # App icon
 
-p.paragraph.
   Produce the app icon in various sizes to cover diffrent devices/os. Use
   the tables below as a guideline on choosing the appropriate sizes.
   
-p.paragraph.
   See the screenshots to the right for examples.
 
-h3.heading.heading--tertiary iOS App icon  
+  ## iOS App icon  
 
 .l-row
   .l-col.l-col--7
-    p.paragraph.
+    :markdown
       Add a link tag for every app icon size to the head section. See the example
       for a 114x114px app icon below.
 
-    .highlight: pre.highlight__listing.hljs: code.js
-      :highlight
-        <link rel="apple-touch-icon" href="icon114.png" sizes="114x114">
-        <!-- Use the -precomposed rel to prevent icon modification in iOS 2.0-6.x -->
-        <link rel="apple-touch-icon-precomposed" href="icon114.png" sizes="114x114">
+      ```js
+      <link rel="apple-touch-icon" href="icon114.png" sizes="114x114">
+      <!-- Use the -precomposed rel to prevent icon modification in iOS 2.0-6.x -->
+      <link rel="apple-touch-icon-precomposed" href="icon114.png" sizes="114x114">
+      ```
       
     table.table.table--docs
       caption App icon sizes for iOS devices in pixels
@@ -93,13 +79,10 @@ h3.heading.heading--tertiary Android app icon
 
 .l-row
   .l-col.l-col--7
-      
-    p.paragraph
-      | This section is based on the 
-      a(href="https://developer.chrome.com/multidevice/android/installtohomescreen").link Chrome for Android guides
-      | .
-      
-    p.paragraph.
+    :markdown
+      This section is based on the 
+      [Chrome for Android guides](https://developer.chrome.com/multidevice/android/installtohomescreen).
+
       Since android has a wide os and browser fragmentation you may experience some issues.
       Do not hesitate to open a pull request to improve this section!
       
@@ -157,19 +140,19 @@ h3.heading.heading--tertiary Windows tiles
 
 .l-row
   .l-col.l-col--7
-    p.paragraph.
+    :markdown
       You can set an application name, a background color and an 
       (optionally transparent) icon for a windows tile. 
       See the example below.
       
-    .highlight: pre.highlight__listing.hljs: code.js
-      :highlight
-        <meta name="application-name" content="My fancy application"/>
-        <meta name="msapplication-TileColor" content="#ffffff"/>
-        <meta name="msapplication-square70x70logo" content="tiny.png"/>
-        <meta name="msapplication-square150x150logo" content="square.png"/>
-        <meta name="msapplication-wide310x150logo" content="wide.png"/>
-        <meta name="msapplication-square310x310logo" content="large.png"/>
+      ```js
+      <meta name="application-name" content="My fancy application"/>
+      <meta name="msapplication-TileColor" content="#ffffff"/>
+      <meta name="msapplication-square70x70logo" content="tiny.png"/>
+      <meta name="msapplication-square150x150logo" content="square.png"/>
+      <meta name="msapplication-wide310x150logo" content="wide.png"/>
+      <meta name="msapplication-square310x310logo" content="large.png"/>
+      ```
       
     table.table.table--docs
       caption Tile icon sizes for Windows devices in pixels
@@ -219,5 +202,4 @@ h3.heading.heading--tertiary Windows tiles
   .l-col.l-col--5
     img(src=relative('/images/design/app-icons-windows.png'))
 
-
-// Copyright AXA Versicherungen AG 2015
+//- Copyright AXA Versicherungen AG 2015

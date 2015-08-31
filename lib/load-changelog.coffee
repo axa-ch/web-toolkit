@@ -15,3 +15,5 @@ module.exports = exports = (username, password, cb) ->
       return cb(null, data)
 
   undefined
+
+#! Copyright AXA Versicherungen AG 2015

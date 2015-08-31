@@ -3,8 +3,14 @@ title: Basic-Dropdown
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .dropdown(data-dropdown)
   .dropdown__label
+    +svg('arrow-bottom', 'dropdown__label__icon')
+    .dropdown__label__text
   select.dropdown__select
     option Schweiz
     option Regenbogenland
+
+//- Copyright AXA Versicherungen AG 2015

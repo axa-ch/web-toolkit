@@ -12,12 +12,12 @@ html
     meta(name="description", content=config.description)
     meta(name="keywords", content=config.keywords)
     meta(name="author", content=config.author)
-      
+
     // iOS app icon
     mixin appicon_ios(size)
       - var s = size + "x" + size
       link(rel="apple-touch-icon-precomposed", href="images/app-icon/ios/"+s+".png", sizes=s)
-        
+
     +appicon_ios("57")
     +appicon_ios("72")
     +appicon_ios("76")
@@ -26,34 +26,34 @@ html
     +appicon_ios("144")
     +appicon_ios("152")
     +appicon_ios("180")
-    
-    meta(name="apple-mobile-web-app-title", content="Web Stylegudie")
-      
+
+    meta(name="apple-mobile-web-app-title", content=config.name)
+
     link(href="images/splash-screen/ios/750x1294.png", media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)", rel="apple-touch-startup-image")
-    
+
     // android/chrome app iocn
     link(rel="manifest", href="manifest.json")
     link(rel="icon", sizes="192x192", href="images/app-icon/android/192x192.png")
     meta(name="mobile-web-app-capable", content="yes")
-      
+
     // windows tiles
-    meta(name="application-name", content="Web Styleguide")
+    meta(name="application-name", content=config.name)
     meta(name="msapplication-square70x70logo", content="images/app-icon/windows/128x128.png")
     meta(name="msapplication-square150x150logo", content="images/app-icon/windows/270x270.png")
     meta(name="msapplication-wide310x150logo", content="images/app-icon/windows/558x270.png")
     meta(name="msapplication-square310x310logo", content="images/app-icon/windows/558x558.png")
 
-    title #{title} | Web Styleguide
+    title #{title} | #{config.name}
     link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
     link(rel="stylesheet", href=relative("/css/style.min.css"))
 
     script(src=relative('/js/docs-examples.all.min.js'))
     script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
-      
+
     // Set the locale for momentjs used in the datepicker
     script.
       moment.locale('en_GB')
-          
+
     script.
       // Include the UserVoice JavaScript SDK (only needed once on a page)
       UserVoice=window.UserVoice||[];
@@ -71,68 +71,70 @@ html
       })();
 
   body.site
-  .site__page
-    .example-header
-      .example-header__sticky
-        a(href=relative("/examples")).example-header__back Back to overview
-        .example-header__headline Example
-      .example-header__text
-        p.example-header__paragaph.
-          Dies ist eine Beispielseite mit Demo-Inhalten.
-          <br /> Bitte besuchen Sie
-          <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
-          für Ihre Versicherungsanliegen.
-        p.example-header__paragaph.
-          This is an example page with demo content.
-          <br /> Please visit
-          <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
-          for your insurance concerns.
-        p.example-header__paragaph.
-          Ceci est un exemple de page avec du contenu de démonstration.
-          <br /> S'il vous plaît visitez
-          <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
-          pour vos préoccupations d'assurance.
-        p.example-header__paragaph.
-          Questa è una pagina di esempio con contenuti demo.
-          <br /> Si prega di visitare
-          <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
-          per le vostre preoccupazioni di assicurazione.
+    .site__page
+      .example-header
+        .example-header__sticky
+          a(href=relative("/examples")).example-header__back
+            +svg('arrow-left', ['example-header__back__icon', 'icon-svg'])
+            | Back to overview
+          .example-header__headline Example
+        .example-header__text
+          p.example-header__paragaph.
+            Dies ist eine Beispielseite mit Demo-Inhalten.
+            <br /> Bitte besuchen Sie
+            <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
+            für Ihre Versicherungsanliegen.
+          p.example-header__paragaph.
+            This is an example page with demo content.
+            <br /> Please visit
+            <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
+            for your insurance concerns.
+          p.example-header__paragaph.
+            Ceci est un exemple de page avec du contenu de démonstration.
+            <br /> S'il vous plaît visitez
+            <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
+            pour vos préoccupations d'assurance.
+          p.example-header__paragaph.
+            Questa è una pagina di esempio con contenuti demo.
+            <br /> Si prega di visitare
+            <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
+            per le vostre preoccupazioni di assicurazione.
 
-    header.header
-      .header__container.l-container
-        .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
-        a.header__brand.brand(href=relative("/"))
-          .brand__logo
+      header.header
+        .header__container.l-container
+          .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
+          a.header__brand.brand(href=relative("/"))
+            .brand__logo
 
-        .header__meta
-          .header__meta__upper
-            .header__meta__language
-              ul.menu.menu--language
-                li.menu__item.is-active
-                  a.menu__link DE
-                li.menu__item
-                  a.menu__link EN
+          .header__meta
+            .header__meta__upper
+              .header__meta__language
+                ul.menu.menu--language
+                  li.menu__item.is-active
+                    a.menu__link DE
+                  li.menu__item
+                    a.menu__link EN
 
-            .header__meta__menu
-              ul.menu.menu--meta
-                li.menu__item
-                  a(href='../').menu__link Back to overview
+              .header__meta__menu
+                ul.menu.menu--meta
+                  li.menu__item
+                    a(href='../').menu__link Back to overview
 
-          .header__meta__lower
-            .header__meta__welcome
-              ul
-                li.header__meta__welcome__item Example
+            .header__meta__lower
+              .header__meta__welcome
+                ul
+                  li.header__meta__welcome__item Example
 
-    div!= contents
+      div!= contents
 
-    footer.footer
-      .footer__content
-      .footer__copyline
-        .l-container
-          ul.menu.menu--copyline
-            li.menu__item
-              span.menu__link AXA 2015 ©
+      footer.footer
+        .footer__content
+        .footer__copyline
+          .l-container
+            ul.menu.menu--copyline
+              li.menu__item
+                span.menu__link= config.copyright
 
-  .site__mobile-menu
+    .site__mobile-menu
 
-// Copyright AXA Versicherungen AG 2015
+//- Copyright AXA Versicherungen AG 2015

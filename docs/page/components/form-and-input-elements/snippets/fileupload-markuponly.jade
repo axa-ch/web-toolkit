@@ -1,0 +1,70 @@
+---
+title: Fileupload Markup Only
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.l-container
+  .form
+    .form__group
+      .form__group__label.
+        Datei
+      .form__group__control
+        .multi-upload
+          .dropzone
+            .dropzone__container(data-dropzone='dropzone')
+              input.dropzone__input(type='file')
+              .dropzone__icon-container
+                +svg('upload', ['icon-svg', 'dropzone__icon'])
+              .dropzone__text-container
+                .dropzone__text
+                  span Drag file here or
+                  | &nbsp;
+                  a.dropzone__text__upload-link click to choose
+          .multi-upload__remarks
+            | Nur Bilder (.jpg, .png, .gif) oder Dokumente (.pdf, .docx).
+            br
+            | Maximal 2 MB pro Datei
+          .file-list
+            .file-list__file
+              .progressbar
+                .progressbar__description awesome_image.jpg
+                .progressbar__percentage 22%
+                .progressbar__progress
+                  .progressbar__progress-background
+                    .progressbar__progress-foreground(style='width: 22%')
+            .file-list__file
+              .file-uploaded
+                .file-uploaded__actions
+                  a.file-uploaded__actions__action ansehen
+                  a.file-uploaded__actions__action löschen
+                .file-uploaded__title axaswitch.png
+            .file-list__file
+              .file-uploaded
+                .file-uploaded__actions
+                  a.file-uploaded__actions__action ansehen
+                  a.file-uploaded__actions__action löschen
+                .file-uploaded__title doge.jpg
+            .file-list__file
+              .file-error
+                .file-error__progressbar.progressbar
+                  .progressbar__description superblock.jpg
+                  .progressbar__error
+                    a.progressbar__error-icon
+                      +svg('modal-close', ['icon-svg'])
+                  .progressbar__progress
+                    .progressbar__progress-error
+                .file-error__message
+                  | Die Datei konnte nicht hochgeladen werden.
+                  | Bitte löschen Sie sie aus der Liste und laden sie erneut hoch.
+    .form__group
+      .form__group__label.
+        Fallback for dropzone on IE 9
+      .form__group__control
+        .multi-upload
+          .dropzone-fallback
+            input.dropzone-fallback__input(type='file')
+            a.dropzone-fallback__button.button.button--primary
+              +svg('upload', ['icon-svg', 'dropzone-fallback__button__icon'])
+              span.dropzone-fallback__button__text Click to upload files

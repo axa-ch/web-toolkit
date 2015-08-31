@@ -20,4 +20,4 @@ module.exports = ->
     .pipe sourcemaps.write('.', sourceRoot: './')
     .pipe gulp.dest './dist/ng'
 
-# Copyright AXA Versicherungen AG 2015
+#! Copyright AXA Versicherungen AG 2015

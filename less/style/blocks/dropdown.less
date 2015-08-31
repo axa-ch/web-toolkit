@@ -14,41 +14,50 @@
   display: none;
 }
 
-.dropdown--js .dropdown__label {
-  .control();
-  .icon-after();
-  .icon-after--dropdown();
+.dropdown--js {
 
-  padding-right: 15px + @dropdown-arrow-width;
-  border: @focus-border-width solid @color-gray--lighter;
-  overflow: hidden;
+  .dropdown__label {
+    .control();
 
-
-  &:after {
-    position: absolute;
-    right: -@focus-border-width;
-    top: -@focus-border-width;
-
-    width: @dropdown-arrow-width;
-    height: 40px;
-    border: @focus-border-width solid @color-blue-gray--light;
-    border-left-width: 0;
-    z-index: @z-index-dropdown;
-
-    line-height: 40px;
-    text-align: center;
-
-    background: @color-blue-gray--light;
-    color: @color-light-blue;
+    padding-right: 0; // to get the icon to the right
+    border: @focus-border-width solid @color-gray--lighter;
+    overflow: hidden;
   }
-}
 
-.dropdown--js.dropdown:focus .dropdown__label {
-  border-color: @color-light-blue;
-}
+  .dropdown__label__icon {
+    @width-without-margin:  - 2px;
+    float: right;
+    width: @dropdown-arrow-width;
+    height: 100%;
+    padding: 0 (@dropdown-arrow-width - 18px) / 2; // padd the icon the get it 18x18px
+    background: @color-blue-gray--light;
+    fill: @color-light-blue;
+  }
 
-.dropdown--js.dropdown:focus .dropdown__label:after {
-  border-color: @color-light-blue;
+  .dropdown__label__text {
+    margin-right: @dropdown-arrow-width + 15px; // add the 15px padding of the control
+  }
+
+  &.dropdown:focus .dropdown__label {
+    border-color: @color-light-blue;
+  }
+
+  &.dropdown:focus .dropdown__label:after {
+    border-color: @color-light-blue;
+  }
+
+  .dropdown__select {
+    display: block;
+
+    width: 100%;
+    height: 40px;
+    border: none;
+    margin: -40px 0 0 0;
+
+    opacity: 0;
+    filter: alpha(opacity=0);
+    background: @color-gray--lighter;
+  }
 }
 
 .dropdown__select {
@@ -68,17 +77,26 @@
   }
 }
 
-.dropdown--js .dropdown__select {
-  display: block;
+.dropdown--condensed {
+  height: @control-height-condensed;
 
-  width: 100%;
-  height: 40px;
-  border: none;
-  margin: -40px 0 0 0;
+  .dropdown__label {
+    .control--condensed();
 
-  opacity: 0;
-  filter: alpha(opacity=0);
-  background: @color-gray--lighter;
+    &::after {
+      height: @control-height-condensed;
+      line-height: @control-height-condensed;
+    }
+  }
+
+  .dropdown__select {
+    height: @control-height-condensed;
+  }
+
+  &.dropdown--js .dropdown__select {
+    margin-top: -@control-height-condensed;
+  }
+
 }
 
-/* Copyright AXA Versicherungen AG 2015 */
+// Copyright AXA Versicherungen AG 2015

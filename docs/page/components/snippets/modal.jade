@@ -3,6 +3,8 @@ title: Modal
 template: demo.jade
 ---
 
+include /components/includes/mixins.jade
+
 .button(data-modal='#myModal') Show modal
 .modal#myModal
   .backdrop
@@ -11,8 +13,7 @@ template: demo.jade
       .modal__dialog
         .modal__header
           a(data-modal='#myModal').modal__close
-            svg.modal__close-icon.icon-svg
-              use(xmlns:xlink='http://www.w3.org/1999/xlink',xlink:href=relative('/images/icons.svg#modal-close'))
+            +svg('modal-close', ['modal__close-icon', 'icon-svg'])
           .modal__heading
             .heading.heading--modal Bacon Ipsum
         .modal__content-wrapper
@@ -47,3 +48,5 @@ template: demo.jade
             .modal__buttons
               a.modal__buttons__button.button.button--small.button--secondary Drucken
               a(data-modal='#myModal').modal__buttons__button.button.button--small.button--secondary Schliessen
+
+//- Copyright AXA Versicherungen AG 2015
