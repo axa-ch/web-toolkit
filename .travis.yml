@@ -6,6 +6,7 @@ env:
 before_install:
 - openssl aes-256-cbc -K $encrypted_450e4adece3f_key -iv $encrypted_450e4adece3f_iv
   -in .ssh/id_rsa.enc -out .ssh/id_rsa -d
+- chmod 700 .ssh/id_rsa
 - eval "$(ssh-agent -s)"
 - npm install -g gulp
 script:
