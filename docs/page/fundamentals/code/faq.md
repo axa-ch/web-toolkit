@@ -1,7 +1,6 @@
 ---
 title: FAQ
 order: 5
-collection: nav__fundamentals__code
 template: page.jade
 ---
 

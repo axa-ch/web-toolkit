@@ -3,6 +3,7 @@ marked = require 'marked'
 colors = require 'colors'
 gutil = require 'gulp-util'
 moment = require 'moment'
+_ = require 'lodash'
 
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/jade-filter-sample'
@@ -12,6 +13,8 @@ markedRenderer = require '../lib/marked-renderer'
 markedChangelogRenderer = require '../lib/marked-renderer-changelog'
 searchIndexData = require '../lib/search-index-data'
 loadChangelog = require '../lib/load-changelog'
+navigation = require '../lib/metalsmith-navigation'
+relate = require '../lib/metalsmith-relate'
 
 Metalsmith = require 'metalsmith'
 collections = require 'metalsmith-collections'
@@ -71,30 +74,10 @@ module.exports = (cb) ->
     # basedir for layout files
     basedir: jadeBaseDir
 
-  # do the static pages
-  # TODO: Remove when collection plugin supports undeclared collections
-  collections_options = {}
-
-  [
-    'nav',
-    'nav__fundamentals',
-    'nav__fundamentals__layout',
-    'nav__fundamentals__design',
-    'nav__fundamentals__code',
-    'nav__components',
-    'nav__components__form',
-    'nav__patterns',
-    'nav__inspiration'
-  ].forEach (name) =>
-    collections_options[name] =
-      sortBy: 'order'
-      reverse: false
-
   # Do the markdown pages
   metalsmith.use(
     branch ['**/*.md', '!_*/**/*.md']
       .use relative()
-      .use collections collections_options
       .use markdown
         useMetadata: true
         marked: marked
@@ -105,8 +88,15 @@ module.exports = (cb) ->
     branch ['**/*.jade']
       .use filepath
         absolute: true
+      .use (files, metalsmith, done) ->
+        _.forEach files, (file) =>
+          file.link = "#{file.link.slice(0, -5)}.html"
+        do done
       .use relative()
-      .use collections collections_options
+      .use collections
+        navigation:
+          sortBy: 'order'
+          refer: false
       .use jade
         useMetadata: true
         locals: metalsmith.metadata()
@@ -133,6 +123,8 @@ module.exports = (cb) ->
       ]
       .use filepath
         absolute: true
+      .use relate()
+      .use navigation()
       .use lunr
         includeAll: true
         fields:
