@@ -8,11 +8,12 @@ renderer.heading = (text, level) ->
   l = 1 + parseInt level
   classes = []
   classes.push "heading", "heading--secondary" if l == 2
+  classes.push "heading", "heading--tertiary" if l == 3
   classes.push "changelog__timeline__item__content__headline" if l == 2
   joinedClasses = classes.join ' '
 
   [
-    "<h#{l} class=\"#{joinedClasses}\">\n"
+    "<h#{l} id=\"#{slug}\" class=\"#{joinedClasses}\">\n"
       "#{text}\n"
     "</h#{l}>\n"
   ].join ""

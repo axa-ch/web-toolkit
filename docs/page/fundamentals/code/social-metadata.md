@@ -1,7 +1,6 @@
 ---
 title: Social metadata
 order: 7
-collection: nav__fundamentals__code
 template: page.jade
 draft: true
 ---
