@@ -6,7 +6,6 @@ template: demo.jade
 include /components/includes/mixins.jade
 
 header.header
-  +svg('burger', 'header__mobile-trigger')
   .header__meta
     .header__meta__content
       .header__meta__item.header__meta__menu
@@ -65,5 +64,6 @@ header.header
             a.menu__link Menu Item 3
           li.menu__item
             a.menu__link Menu Item 4
+      +svg('burger', 'header__main__mobile-trigger')
 
 //- Copyright AXA Versicherungen AG 2015
