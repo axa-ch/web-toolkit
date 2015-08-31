@@ -1,11 +1,9 @@
-#
-# The Metalsmith workflow that builds our docs.
-#
 path = require 'path'
 marked = require 'marked'
 colors = require 'colors'
 gutil = require 'gulp-util'
 moment = require 'moment'
+_ = require 'lodash'
 
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/jade-filter-sample'
@@ -15,6 +13,8 @@ markedRenderer = require '../lib/marked-renderer'
 markedChangelogRenderer = require '../lib/marked-renderer-changelog'
 searchIndexData = require '../lib/search-index-data'
 loadChangelog = require '../lib/load-changelog'
+navigation = require '../lib/metalsmith-navigation'
+relate = require '../lib/metalsmith-relate'
 
 Metalsmith = require 'metalsmith'
 collections = require 'metalsmith-collections'
@@ -28,6 +28,7 @@ filepath = require 'metalsmith-filepath'
 relative = require 'metalsmith-relative'
 lunr = require 'metalsmith-lunr'
 copy = require 'metalsmith-copy'
+ignore = require 'metalsmith-ignore'
 
 module.exports = (cb) ->
   cwd = path.join __dirname, '../'
@@ -36,10 +37,6 @@ module.exports = (cb) ->
 
   # basedir for include paths
   jadeBaseDir = path.join cwd, metalsmithSource
-
-  # GitHub integration
-  if !process.env.GITHUB_INTEGRATION
-    config.github = null
 
   # Jade filters
   jade.registerFilter 'sample', sampleJadeFilter
@@ -73,30 +70,10 @@ module.exports = (cb) ->
     # basedir for layout files
     basedir: jadeBaseDir
 
-  # do the static pages
-  # TODO: Remove when collection plugin supports undeclared collections
-  collections_options = {}
-
-  [
-    'nav',
-    'nav__fundamentals',
-    'nav__fundamentals__layout',
-    'nav__fundamentals__design',
-    'nav__fundamentals__code',
-    'nav__components',
-    'nav__components__form',
-    'nav__patterns',
-    'nav__inspiration'
-  ].forEach (name) ->
-    collections_options[name] =
-      sortBy: 'order'
-      reverse: false
-
   # Do the markdown pages
   metalsmith.use(
     branch ['**/*.md', '!_*/**/*.md']
       .use relative()
-      .use collections collections_options
       .use markdown
         useMetadata: true
         marked: marked
@@ -107,8 +84,15 @@ module.exports = (cb) ->
     branch ['**/*.jade']
       .use filepath
         absolute: true
+      .use (files, metalsmith, done) ->
+        _.forEach files, (file) =>
+          file.link = "#{file.link.slice(0, -5)}.html"
+        do done
       .use relative()
-      .use collections collections_options
+      .use collections
+        navigation:
+          sortBy: 'order'
+          refer: false
       .use jade
         useMetadata: true
         locals: metalsmith.metadata()
@@ -121,24 +105,37 @@ module.exports = (cb) ->
     branch ['**/*.html']
       .use copy
         pattern: '**/snippets/*.html'
-        transform: (file) ->
-          return file.replace /snippets/i, 'demos'
+        transform: (file) => file.replace /snippets/i, 'demos'
+  )
+
+  metalsmith.use ignore '**/includes/**'
+
+  # Add some pages to the search index
+  metalsmith.use(
+    branch [
+        '**/*.html'
+        '!**/snippets/*.html'
+        '!**/demos/*.html'
+      ]
+      .use filepath
+        absolute: true
+      .use relate()
+      .use navigation()
+      .use lunr
+        includeAll: true
+        fields:
+          title: 10
+          tags: 5
+          contents: 1
+      .use searchIndexData()
   )
 
   # Wrap the pages with their template
   metalsmith.use(
-    branch ['**/*.html', '!**/snippets/*.html' ]
-      .use filepath
-        absolute: true
-      .use lunr {
-        includeAll: true
-        fields: {
-          title: 10
-          tags: 5
-          contents: 1
-        }
-      }
-      .use searchIndexData()
+    branch [
+        '**/*.html'
+        '!**/snippets/*.html'
+      ]
       .use templates
         engine: 'jade'
         directory: path.join cwd, './docs/layouts'

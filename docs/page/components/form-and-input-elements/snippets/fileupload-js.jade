@@ -1,0 +1,127 @@
+---
+title: Fileupload Demo
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+.l-container
+  .form
+    .form__group
+      .form__group__label.
+        Dateien
+      .form__group__control
+        .multi-upload(id='example')
+          .dropzone
+            .dropzone__container(data-dropzone='dropzone')
+              input.dropzone__input(type='file')
+              .dropzone__icon-container
+                +svg('upload', ['icon-svg', 'dropzone__icon'])
+              .dropzone__text-container
+                .dropzone__text
+                  span Drag file here or
+                  | &nbsp;
+                  a.dropzone__text__upload-link click to choose
+          .multi-upload__remarks
+            | Nur Bilder (
+            code.code .jpg
+            | ,&nbsp;
+            code.code .png
+            | ,&nbsp;
+            code.code .gif
+            | ) oder Dokumente (
+            code.code .pdf
+            | ,&nbsp; 
+            code.code .docx
+            | ).
+            br
+            | Maximal 2 MB pro Datei
+          .file-list
+script.
+  (function () {
+    var $example = $('#example');
+    var $dropzone = $example.find('.dropzone__container');
+    var $fileList = $example.find('.file-list');
+    var init = function() {
+      $dropzone.on('drop', function(event) {
+        event.preventDefault();
+        for (var i = 0;i<event.originalEvent.dataTransfer.files.length;i++)
+        {
+          upload(event.originalEvent.dataTransfer.files[i].name);
+        }
+      });
+      $dropzone.find('.dropzone__text__upload-link').on ('click', function() {
+          $example.find('.dropzone__input')[0].click();
+        });
+      $dropzone.find('.dropzone__input').on('change', fileSelected);
+    }
+    var fileSelected = function(event) {
+      var name = this.value.replace(/\\/g, '/').replace(/.*\//, '')
+      upload(name);
+    };
+    var upload = function (name) {
+      var fileStatus = $('<div></div>').addClass('file-list__file');
+      var fakeUpload = function () {
+        var progressBar = $('<div></div>').addClass('progressbar');
+        var progressBarDescription = $('<div></div>').addClass('progressbar__description');
+        progressBarDescription.text(name);
+        progressBar.append(progressBarDescription);
+        var progressBarPercentage = $('<div></div>').addClass('progressbar__percentage');
+        progressBarPercentage.text('0%');
+        progressBar.append(progressBarPercentage);
+        var progressBarProgress = $('<div></div>').addClass('progressbar__progress');
+        var progressBarProgressBackground = $('<div></div>').addClass('progressbar__progress-background');
+        var progressBarProgressForeground = $('<div></div>').addClass('progressbar__progress-foreground');
+        progressBarProgressBackground.append(progressBarProgressForeground);
+        progressBarProgress.append(progressBarProgressBackground);
+        progressBar.append(progressBarProgress);
+        fileStatus.append(progressBar);
+        $fileList.append(fileStatus);
+        var progressUpdater = function (foreground, percentageElement) {
+          var fakeProgressSteps = 5;
+          for (i = 0; i <= fakeProgressSteps ; i++) {
+            (function (j) {
+              setTimeout(function () {
+                var width = 100 / fakeProgressSteps * j;
+                foreground.css('width', width + '%');
+                if (j !== fakeProgressSteps) {
+                  percentageElement.text(width.toPrecision(2) + '%');
+                }
+                else {
+                  percentageElement.text('100%');
+                  foreground.css('width', '100%');
+                  setTimeout(function () {
+                    finish();
+                  }, 1000);
+                }
+              }, j*1000);
+            })(i);
+          }
+        };
+        progressUpdater(progressBarProgressForeground, progressBarPercentage);
+      }
+      var finish = function() {
+        var fileUploaded = $('<div></div>').addClass('file-uploaded');
+        var fileUploadedActions = $('<div></div>').addClass('file-uploaded__actions');
+        var viewAction = $('<a></a>').addClass('file-uploaded__actions__action');
+        viewAction.text('ansehen');
+        viewAction.on('click', function () {
+          alert('Your file is simply too awesome to be shown here!')
+        })
+        fileUploadedActions.append(viewAction);
+        var deleteAction = $('<a></a>').addClass('file-uploaded__actions__action');
+        deleteAction.text('löschen');
+        deleteAction.on('click', function () {
+          fileUploaded.parent().remove()
+        })
+        fileUploadedActions.append(deleteAction);
+        var fileUploadedTitle = $('<div></div>').addClass('file-uploaded__title');
+        fileUploadedTitle.text(name);
+        fileUploaded.append(fileUploadedActions);
+        fileUploaded.append(fileUploadedTitle);
+        fileStatus.empty();
+        fileStatus.append(fileUploaded);
+      }
+      fakeUpload();
+    }
+    init();
+  })();

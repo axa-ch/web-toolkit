@@ -1,5 +1,6 @@
 gulp = require 'gulp'
 git = require 'gulp-git'
+config = require '../package'
 
 module.exports = (cb) ->
   git.addRemote(

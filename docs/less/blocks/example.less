@@ -97,10 +97,12 @@
 .example__iframe {
   position: relative;
   display: block;
-  margin: 0 auto;
+
   width: 100%;
   border: none;
-  background: #fcfcfc; // Not in the palette to not collide with any example
+  margin: 0 auto;
+
+  background: @color-white;
   z-index: @z-index-example-iframe;
 
   transition: max-width @transition-duration ease;

@@ -1,5 +1,6 @@
 {
-  "description": "AXA Switzerland Web Design Guide",
+  "name": "Web Style Guide",
+  "description": "AXA Switzerland Web Style Guide",
   "keywords": [
     "axa",
     "switzerland",
@@ -9,7 +10,7 @@
     "guide"
   ],
   "author": "AXA Versicherungen AG",
-  "copyright": "Copyright AXA Versicherungen AG 2015",
+  "copyright": "© AXA Versicherungen AG 2015",
   "repository": {
     "name": "axa-ch/style-guide",
     "url": "https://github.com/axa-ch/style-guide"
@@ -19,24 +20,5 @@
   },
   "urls": {
     "releases": "https://github.com/axa-ch/style-guide/releases"
-  },
-  "github": {
-    "urls": {
-      "api": "https://api.github.com",
-      "authorize": "https://github.com/login/oauth/authorize",
-      "token": "https://axa-ch-style-guide.herokuapp.com/authenticate"
-    },
-    "oauth": {
-      "id": "15c93ed0240a9d39c22d",
-      "scopes": [
-        "read:org",
-        "gist"
-      ]
-    },
-    "team": 1084294,
-    "access": {
-      "gist": "324dc1114e65df211cd5",
-      "comment": "asking for access"
-    }
   }
 }
