@@ -19,14 +19,14 @@ header.header
           li.menu__item
             a.menu__link About Us
       .header__meta__item.header__meta__search.search.search--header
-        //-.autocomplete.docs-search
-        //-input.docs-search__control(type='text')
         input.search__input.search--header(type='text')
+        svg.search__icon.search--header.icon-svg
+          use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
         .search__suggestions.search--header
       .header__meta__item.header__meta__language
         a.header__meta__language-button(data-popover="#languageMenu")
           | En
-          svg.header__meta__languagge-button-icon.icon-svg
+          svg.header__meta__language-button-icon.icon-svg
             use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#arrow-bottom")
         .popover(id="languageMenu")
           .popover__tail.popover__tail--top
