@@ -4,144 +4,151 @@
 @import '../blocks/icon';
 
 .header {
-  @padding-top-bottom: 9.5px;
-  @padding-top-large: 20px;
-  @padding-left-right: 10px;
-  @padding-left-right-large: 20px;
-  @mobile-trigger-size: 41px;
-
   &:extend(.clearfix all);
-
-  padding: @padding-top-bottom 0;
-  border-bottom: 1px solid @color-blue-gray--light;
 
   .respond(medium, {
     border-bottom: 5px solid @color-blue;
-    margin-bottom: 30px;
     });
 
   .respond(large, {
-    padding: @padding-top-large 0 0 0;
   });
-}
-
-.header__container {
-  .respond(medium, {
-    padding-bottom: 20px;
-  });
-}
-
-.header__mobile-burger {
-  height: 100%;
-  width: 100%;
-}
-
-.header__mobile-trigger {
-  height: 20px;
-  width: 25px;
-  margin-top: 6px;
-  float: right;
-  fill: @color-blue;
-  cursor: pointer;
-
-  .respond(large, {
-    display: none;
-  })
 }
 
 .header__brand {
-  float: left;
+  order: 1;
 }
 
 .header__meta {
-  &:extend(.clearfix all);
-
-  float: right;
   display: none;
-
-  height: 16px;
+  background: @color-gray--lighter;
 
   .respond(large, {
     display: block;
   });
 }
 
-.header__meta__upper {
-  &:extend(.clearfix all);
+.header__meta__content {
+  .make-container(1260px, 0);
+
+  display: flex;
+
+  &::after {
+    content: "";
+    display: block;
+    order: 2;
+    flex-grow: 1;
+  }
 }
 
-.header__meta__language {
-  float: right;
+.header__meta__item {
+  height: 56px;
 }
 
 .header__meta__menu {
-  float: right;
+  order: 1;
 }
 
-.header__meta__lower {
-  &:extend(.clearfix all);
+.header__meta__search {
+  order: 3;
+  display: flex;
 
-  margin-top: 12px;
+  width: 315px;
+
+  color: @color-blue-gray;
 }
 
-.header__meta__welcome {
-  &:extend(.clearfix all);
+.header__meta__language {
+  order: 4;
+}
 
-  float: right;
-  padding: 0;
-  font-size: 17px;
+.header__meta__action {
+  order: 5;
 
-  ul {
-    margin: 0;
-    padding: 0;
+  padding: 0 35px;
 
-    list-style-type: none;
+  font-size: 0.9em;
+  font-weight: @font-weight-medium;
+  color: @color-white;
+  text-decoration: none;
+
+  background: @color-red;
+
+  &::before {
+    //This is used so the text of .header__meta__action is vertically aligned in the middle
+    //without having to totally fuck up the markup.
+    //todo: make a mixin?
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle
   }
 }
 
-.header__meta__welcome__main {
-  float: left;
+.lt-ie10 {
+  .header__meta {
+    &:extend(.clearfix all);
+  }
 
-  height: 16px; // Hack to get the border-right exactly 16px height
-  padding: 0;
-  margin: 0;
+  .header__meta__menu {
+    float: left;
+  }
 
-  line-height: 16px;
-  font-weight: bold;
+  .header__meta__search {
+    float: right;
+  }
 
-  color: @color-blue;
+  .header__meta__language {
+    float: right;
+  }
 
-  a {
-    color: @color-blue;
-    text-decoration: none;
+  .header__meta__action {
+    float: right;
   }
 }
 
-.header__meta__welcome__secondary {
-  float: left;
+.header__meta__language-button {
+  display: inline-block;
 
-  height: 16px; // Hack to get the border-right exactly 16px height
-  padding: 0;
-  margin: 0;
+  height: 100%;
+  padding: 0 23px;
 
-  line-height: 16px;
+  font-size: 0.9em;
+  font-weight: @font-weight-medium;
+  color: @color-gray--darker;
+  cursor: pointer;
 
-  color: @color-blue;
-
-  a {
-    color: @color-blue;
-    text-decoration: none;
+  &::before {
+    //This is used so the text of .header__meta__action is vertically aligned in the middle
+    //without having to totally fuck up the markup.
+    //todo: make a mixin?
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle
   }
-  padding-left: 10px;
-  border-left: 1px solid @color-gray--darker;
-  margin-left: 10px;
 }
 
+.header__meta__language-button-icon {
+  width: 0.5em;
+  height: 0.5em;
+}
 
-.header__meta__social {
-  float: right;
+.header__main {
+  box-shadow: 0 0px 0px 0px @color-white, 0 -3px 3px -3px @color-gray, 0px 0 0px 0px @color-white, 0px 0 0px 0px @color-white;
+}
 
-  min-height: 21px; // TODO
+.header__main__content {
+  .make-container(1260px, 0);
+
+  display: flex;
+  align-items: flex-end;
+
+  &::after {
+    content: "";
+    display: block;
+    order: 2;
+    flex-grow: 1;
+  }
 }
 
 .header__menu {
@@ -149,47 +156,29 @@
 
   .respond(large, {
     display: block;
-    border-top: 1px solid @color-gray--lighter;
+    order: 3;
   });
 }
 
-.header__meta__action {
-  float: right;
-}
+.header__main__mobile-trigger {
+  order: 4;
+  align-self: stretch;
 
-.header__action {
-  margin-left: 8px;
-  margin-top: -4px;
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0 25px;
+  fill: @color-blue;
+  cursor: pointer;
 
   .respond(large, {
-    float: left;
+    display: none;
   });
-
-  &:first-of-type {
-    margin-left: 20px;
-  }
-
-  .icon {
-    &::before {
-      font-size: 28px;
-    }
-  }
 }
 
-.header__action__button {
-  background: red;
-  padding: 4px 10px;
-
-  font-weight: @font-weight-medium;
-  font-size: 15px;
-
-  color: white;
-  text-decoration: none;
-
-  &:hover {
-    color: white;
-    cursor: pointer;
-  }
+.header__main__mobile-icon {
+  width: 25px;
+  height: 20px;
 }
 
 // Copyright AXA Versicherungen AG 2015

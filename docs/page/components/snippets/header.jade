@@ -6,53 +6,65 @@ template: demo.jade
 include /components/includes/mixins.jade
 
 header.header
-  .header__container.l-container
-    +svg('burger', 'header__mobile-trigger')
-    .header__brand.brand
-      .brand__logo
-      .brand__tagline.brand__tagline--de
-    .header__meta
-      .header__meta__upper
-        .header__meta__action
-          .header__action
-            a.menu__link.header__action__button Logout
-        .header__meta__language
-          ul.menu.menu--language
-            li.menu__item
-              a.menu__link DE
-            li.menu__item
-              a.menu__link FR
-            li.menu__item
-              a.menu__link IT
-            li.menu__item
-              a.menu__link EN
-        .header__meta__menu
-          ul.menu.menu--meta
-            li.menu__item.is-active
-              a.menu__link Individuals
-            li.menu__item
-              a.menu__link Small Business Insurance
-            li.menu__item
-              a.menu__link Business
-      .header__meta__lower
-        .header__meta__welcome
-          div
-            .header__meta__welcome__main Welcome to AXA
-            .header__meta__welcome__secondary
-              a(href='tel:0800809809') 0800 809 809
-  .header__menu
-    .l-container
-      ul.menu.menu--main
-        li.menu__item
-          a.menu__link
-            +svg('home', 'menu__link__home')
-        li.menu__item
-          a.menu__link Menu Item 1
-        li.menu__item.is-active
-          a.menu__link Menu Item 2
-        li.menu__item
-          a.menu__link Menu Item 3
-        li.menu__item
-          a.menu__link Menu Item 4
+  .header__meta
+    .header__meta__content
+      .header__meta__item.header__meta__menu
+        ul.menu.menu--meta
+          li.menu__item.is-active
+            a.menu__link Individuals
+          li.menu__item
+            a.menu__link Small Business Insurance
+          li.menu__item
+            a.menu__link About Us
+      .header__meta__item.header__meta__search.search.search--header
+        input.search__input.search--header(type='text')
+        svg.search__icon.search--header.icon-svg
+          use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
+        .search__suggestions.search--header
+      .header__meta__item.header__meta__language
+        a.header__meta__language-button(data-popover="#languageMenu")
+          | En
+          svg.header__meta__language-button-icon.icon-svg
+            use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#arrow-bottom")
+        .popover(id="languageMenu")
+          .popover__tail.popover__tail--top
+          .popover__box
+            .popover__box__header
+              a.popover__close
+                svg.modal__close-icon.icon-svg
+                  use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#modal-close")
+              .popover__box__header__headline Language
+            .popover__box__content__wrapper
+              .popover__box__content
+                ul.menu.menu--language
+                  li.menu__item
+                    a.menu__link Deutsch
+                  li.menu__item
+                    a.menu__link Français
+                  li.menu__item
+                    a.menu__link Italiano
+                  li.menu__item
+                    a.menu__link English
+      a.header__meta__item.header__meta__action myAXA Login
+  .header__main
+    .header__main__content
+      .header__brand.brand
+        .brand__logo
+        .brand__tagline.brand__tagline--de
+      .header__menu
+        ul.menu.menu--main
+          li.menu__item
+            a.menu__link
+              +svg('home', 'menu__link__home')
+          li.menu__item
+            a.menu__link Menu Item 1
+          li.menu__item.is-active
+            a.menu__link Menu Item 2
+          li.menu__item
+            a.menu__link Menu Item 3
+          li.menu__item
+            a.menu__link Menu Item 4
+      a.header__main__mobile-trigger(href="#")
+        +svg('burger', 'header__main__mobile-icon')
 
 //- Copyright AXA Versicherungen AG 2015
