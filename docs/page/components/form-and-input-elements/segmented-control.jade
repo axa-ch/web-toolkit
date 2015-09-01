@@ -18,6 +18,8 @@ p.paragraph.
     li.toc__anchor-navigation__item
       a(href='#stacked').toc__anchor-navigation__link Stacked Segmented Control
     li.toc__anchor-navigation__item
+      a(href='#disabled').toc__anchor-navigation__link Disabled Segmented Control
+    li.toc__anchor-navigation__item
       a(href='#backup').toc__anchor-navigation__link Backup: Radio Buttons
 
 h2.heading.heading--secondary#basic Basic Segmented Control
@@ -107,6 +109,40 @@ ul.checklist
     .checklist__item__content.
       Do not set a default value when using a stacked segmented control.
 
+.hr
+
+h2.heading.heading--secondary#disabled Disabled Segmented Control
+
+p.paragraph.
+  A disabled segmented control can be used to show a value that can't be modified.
+
+.example
+  include ../includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/form-and-input-elements/demos/segmented-control-disabled.html')
+        data-iframe-resizer
+      )
+
+.toggle
+  .toggle__button(data-info, data-target='#code-disabled')
+    svg.icon-svg.toggle__icon
+      use(xlink:href=relative('/images/icons.svg#source'))
+    span See code
+  .toggle__content#code-disabled
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown
+            Add the `disabled="disabled"` property
+            to the segmented-control to make it disabled.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/segmented-control-disabled.jade
 .hr
 
 h2.heading.heading--secondary#backup Backup: Radio Buttons

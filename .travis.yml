@@ -1,16 +1,18 @@
 language: node_js
-
 node_js:
-  - 0.12
-
+- 0.12
 env:
-  - REPO_URL=git@github.com:axa-ch/style-guide.git GITHUB_INTEGRATION=true
-
+- REPO_URL=git@github.com:axa-ch/style-guide.git
 before_install:
-  - npm install -g gulp
-
+- openssl aes-256-cbc -K $encrypted_450e4adece3f_key -iv $encrypted_450e4adece3f_iv
+  -in .ssh/id_rsa.enc -out .ssh/id_rsa -d
+- chmod 700 .ssh/id_rsa
+- eval "$(ssh-agent -s)"
+- npm install -g gulp
 script:
-  - gulp build
-  - git config --global user.email robo@coder
-  - git config --global user.name "Robo Coder"
-  - if [ "$TRAVIS_PULL_REQUEST" = false ] && [ "$TRAVIS_BRANCH" = "develop" ]; then gulp deploy; fi
+- gulp build
+- git config --global user.email robo@coder
+- git config --global user.name "Robo Coder"
+- ssh-add .ssh/id_rsa
+- if [ "$TRAVIS_PULL_REQUEST" = false ] && [ "$TRAVIS_BRANCH" = "develop" ]; then
+  gulp deploy; fi

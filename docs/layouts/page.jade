@@ -105,26 +105,26 @@ html
           a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
             +svg('feedback', ['button__icon', 'icon-svg'])
       header.header
-        .header__container.l-container
-          .header__mobile-trigger(data-toggle='site-menu', data-target='.site')
-          a.header__brand.brand(href=relative("/index.html"))
-            .brand__logo
-          .header__meta
-            .header__meta__upper
-            .header__meta__lower
-              .header__meta__welcome
-                div
-                  .header__meta__welcome__main
-                    span= config.name
-
-        .header__menu
-          .l-container
-            ul.menu.menu--main
-              each page in navigation
-                li.menu__item(class={ 'is-active': isActive(page) })
-                  a.menu__link(href=relative(page.link))= page.title
-              .autocomplete.docs-search
-                input.docs-search__control(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
+        .header__meta
+          .header__meta__content
+            .header__meta__item.header__meta__search.autocomplete.search.search--header
+              input.autocomplete__input.search__input.search--header(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
+              svg.search__icon.search--header.icon-svg
+                use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
+            a.header__meta__item.header__meta__action(href="https://github.com/axa-ch/style-guide")
+              +svg('github', ['button__icon', 'icon-svg', 'button__icon--left'])
+              | View on GitHub
+        .header__main
+          .header__main__content
+            a.header__brand.brand(href=relative("/index.html"))
+              span.brand__logo
+            .header__menu
+              ul.menu.menu--main
+                each page in navigation
+                  li.menu__item(class={ 'is-active': isActive(page) })
+                    a.menu__link(href=relative(page.link))= page.title
+            a.header__main__mobile-trigger(href="#")
+              +svg('burger', ['header__main__mobile-icon'], { 'data-toggle': 'site-menu', 'data-target': '.site' })
 
       .page-content.l-container
         if section

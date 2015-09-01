@@ -43,14 +43,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              :highlight
-                <div data-dropdown="data-dropdown" class="dropdown">
-                  <div class="dropdown__label"></div>
-                  <select class="dropdown__select">
-                    <option>Schweiz</option>
-                    <option>Regenbogenland</option>
-                  </select>
-                </div>
+              include:highlightcode ./snippets/dropdown-regular.jade
         .tab-panel__content__tab(data-tab-content='js')
           p.paragraph.
             Our jQuery plugin adds the
@@ -58,10 +51,8 @@ p.paragraph.
             keyboard events.
 
           p.paragraph.
-            Activate the functionality with the data-* API
-          .tab-panel__content__tab__fullwidth-content
-            .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/dropdown-regular.jade
+            Activate the functionality with the data-* API as used
+            in the HTML examples.
 
 h3.heading.heading--tertiary UX Checklist
 
