@@ -105,8 +105,6 @@ html
           a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
             +svg('feedback', ['button__icon', 'icon-svg'])
       header.header
-        +svg('burger', 'header__main__mobile-trigger')
-        //-.header__mobile-trigger(data-toggle='site-menu', data-target='.site')
         .header__meta
           .header__meta__content
             .header__meta__item.header__meta__search.autocomplete.search.search--header
@@ -121,11 +119,12 @@ html
             a.header__brand.brand(href=relative("/index.html"))
               span.brand__logo
             .header__menu
-              .l-container
-                ul.menu.menu--main
-                  each page in navigation
-                    li.menu__item(class={ 'is-active': isActive(page) })
-                      a.menu__link(href=relative(page.link))= page.title
+              ul.menu.menu--main
+                each page in navigation
+                  li.menu__item(class={ 'is-active': isActive(page) })
+                    a.menu__link(href=relative(page.link))= page.title
+            a.header__main__mobile-trigger(href="#")
+              +svg('burger', ['header__main__mobile-icon'], { 'data-toggle': 'site-menu', 'data-target': '.site' })
 
       .page-content.l-container
         if section
