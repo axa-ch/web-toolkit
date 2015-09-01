@@ -16,68 +16,34 @@ aside.callout
     a(data-uv-trigger, data-uv-mode="contact").link use the feedback form
     | .
 
-//- h2.heading.heading--secondary What is the developer toolkit?
-//- p.paragraph
-//-   | The Developer Toolkit is a library of HTML, CSS, JavaScript and other
-//-   | resources you can include in your products.
-//-   | It provides you components to help you create awesome features.
-//-   | The components are aligned to the&nbsp;
-//-   a(href=relative('/design')).link Design Guidelines
-//-   | . Please read the Design Guidelines carefully before you design a new
-//-   | User Interface.
+:markdown
+  # Get the Web Style Guide
 
-h2.heading.heading--secondary Getting the web design guide
+  ## Use npm
 
-h3.heading.heading--tertiary Good old direct download
+  Our recommended way to integrate the Web Style Guide into a project is to
+  use npm.
 
-p.paragraph
-  | You can&nbsp;
-  a(href=relative('/downloads/' + package.name + '-dist-'+package.version+'.tar.gz'), title="Latest Release Package").link download the latest release package here.
+  ```bash
+  npm install @axa-ch/style-guide
+  ```
 
-h3.heading.heading--tertiary Use npm (recommended)
+  ## Direct download
+  
+  If you don't need the Web Style Guide
+  as a versioned project dependency check out
+  our [GitHub releases page](https://github.com/axa-ch/style-guide/releases).
 
-p.paragraph.
-  Since we use npm for the web design guide we recommend
-  the use of npm in your project as well. You'll get the
-  web design guide with a simple npm install as follows.
+  ## Use bower
 
-.highlight
-  pre.highlight__listing
-    code npm install --save-dev http://design.axa.ch/downloads/#{package.name}-#{package.version}.tgz
+  We haven't published to bower, yet. But you can get the dependency using
+  the URL to the repository.
 
-h3.heading.heading--tertiary Use bower
+  ```bash
+  bower install https://github.com/axa-ch/style-guide.git
+  ```
 
-p.paragraph.
-  If you want to use the web design guide install it using a simple bower install.
-
-.callout.callout--danger
-  p.paragraph.
-    The webserver hosting the Web Style Guide doesn't like the default user agent used by bower.
-    Therefore you need to configure a custom user agent string in your .bowerrc.
-
-  .highlight: pre.highlight__listing.hljs: code.json
-    :highlight
-      {
-        "user-agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-      ...
-      }
-
-  p.paragraph.
-    Have a look at the <a href="http://bower.io/docs/config/#user-agent" class="link" >bower config
-    documentation</a> for further information.
-
-.highlight
-  pre.highlight__listing
-    code bower install http://design.axa.ch/downloads/#{package.name}-dist-#{package.version}.tar.gz --save
-
-h2.heading.heading--secondary What's included
-
-p.paragraph.
-  The Web Style Guide is delivered in two diffrent flavours.
-  The npm package and the dist package (raw download and bower).
-  Compare the structures below.
-
-  They both contain the following assets.
+  # What's included
 
 dl
   dt css
@@ -106,12 +72,7 @@ dl
   dd.
     The raw LESS files you can use to compile your custom CSS assets.
 
-  //dt ng
-  //dd.
-  //  Angular directives (JS and HTML) files.
-
 :markdown
-
   <div class="l-row" >
     <div class="l-half" >
       <h3 class="heading heading--tertiary" >npm package</h3>
