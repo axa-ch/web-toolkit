@@ -12,7 +12,44 @@
 This project guides you on how to design and build web apps @ AXA Switzerland.
 Here you get all the CSS, icons, JS and additional assets to simplify the development of our web apps.
 
-## Run it!
+## Use it!
+
+Want to use the Web Style Guide in your web app? There are different ways of integration,
+but the preferred one is to add it as an npm dependency:
+
+```sh
+$ npm install @axa-ch/style-guide
+```
+
+After that, include the styles from the `dist` folder into your less file:
+
+```less
+// app.less
+@import 'less/normalize';
+@import 'less/style';
+```
+
+Or just consume the precompiled css files, also from the `dist` folder:
+
+```html
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+```
+
+If you don't want to reimplement the interactivity of our components,
+just use our jQuery plugins:
+
+```html
+<script src="jquery/axa-wsg.jquery.all.js"></script>
+```
+
+You'll additionally need to copy the `images` folder into your project.
+
+If you don't want to use npm to include the style guide, you might download the
+latests release package from our GitHub releases page. We're also working
+on a bower distribution.
+
+## Build it!
 
 You'll need Node with npm installed on your system, whether
 it's Windows, Linux or Mac OS X. With Git installed you'll be able to deploy
