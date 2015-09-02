@@ -27,6 +27,26 @@ mixin displaySideMenu(pages, isNested, isOpen)
         if page.children
           +displaySideMenu(page.children, true, isActive(page))
 
+mixin displayMobileMenu(page)
+  li.menu__item
+    a.menu__link(
+      class={
+        'menu__link--parent': page.children,
+        'is-active': isActive(page)
+      }
+      href=(!page.children ? relative(page.link) : '#')
+    )= page.title
+
+    if page.children
+      ul.menu__level
+        li.menu__item.menu__item--back
+          a.menu__link.menu__link--back(
+            href='#'
+          )= page.title
+        
+        each child in page.children
+          +displayMobileMenu(child)
+
 doctype html
 html
   head
@@ -123,8 +143,8 @@ html
                 each page in navigation
                   li.menu__item(class={ 'is-active': isActive(page) })
                     a.menu__link(href=relative(page.link))= page.title
-            a.header__main__mobile-trigger(href="#")
-              +svg('burger', ['header__main__mobile-icon'], { 'data-toggle': 'site-menu', 'data-target': '.site' })
+            a.header__main__mobile-trigger(href="#", data-toggle='site-menu', data-target='.site')
+              +svg('burger', ['header__main__mobile-icon'])
 
       .page-content.l-container
         if section
@@ -151,15 +171,16 @@ html
               li.menu__item
                 span.menu__link= config.copyright
 
-    script(type='text/javascript').
-      //// Set the right mobile menu level as current
-      //var $menu = $("#menu-mobile");
-      //var $level = $menu.find("[data-link='!{link}']").closest('.menu__level');
-      //
-      //$menu.slidingMenu();
-      //$menu.slidingMenu('level', $level);
-      //
-      //// Highlight the right mobile menu link as active
-      //$menu.find("[data-link='!{link}']").addClass('is-active')
+    .site__mobile-menu
+      .site__mobile-menu__header
+        h1.site__mobile-menu__title Web Style Guide
+      nav.menu.menu--sliding(data-menu='sliding')
+        ul.menu__level
+          li.menu__item
+            a.menu__link(
+              href=relative('/index.html')
+            ) Web Style Guide
+          each section in navigation
+            +displayMobileMenu(section)
 
 //- Copyright AXA Versicherungen AG 2015
