@@ -112,7 +112,7 @@ We stick to the following naming conventions for branches:
 
 ### Commit messages
 
-- Begin you commit message with a verb in the imperative. (E.g. ```introduce foo bar```, ```fix baz```, ...)
+- Begin you commit message with a verb in the imperative. (e.g. `Introduce foo bar`, `Fix baz`, ...)
 - Try to have small, atomic commits.
 - First line of a commit message should sum up your changes and should not be longer than 50 characters.
 - Second line should be empty
