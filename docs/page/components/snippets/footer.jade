@@ -5,58 +5,73 @@ template: demo.jade
 
 include /components/includes/mixins.jade
 
-.footer
-  .footer__content
-    .footer__item.footer__item--keep-in-touch
-      .footer__item__headline Keep in touch
-      ul.menu.menu--keep-in-touch
-        li.menu__item
-          a.menu__link
-            +svg('facebook', ['footer__social-media-icon', 'icon-svg', 'icon--facebook'])
-        li.menu__item
-          a.menu__link
-            +svg('twitter', ['footer__social-media-icon', 'icon-svg', 'icon--twitter'])
-        li.menu__item
-          a.menu__link
-            +svg('xing', ['footer__social-media-icon', 'icon-svg', 'icon--xing'])
-        li.menu__item
-          a.menu__link
-            +svg('google-plus', ['footer__social-media-icon', 'icon-svg', 'icon--google-plus'])
+footer.footer
+  .footer__main
+    .footer__main__content
+      section.footer-social
+        h3.footer-social__headline Keep in touch
+        ul.footer-social__items
+          li.footer-social__item
+            a(href="#").footer-social__link
+              +svg('facebook', ['footer-social__icon', 'icon-svg'])
+          li.footer-social__item
+            a(href="#").footer-social__link
+              +svg('twitter', ['footer-social__icon', 'icon-svg'])
+          li.footer-social__item
+            a(href="#").footer-social__link
+              +svg('xing', ['footer-social__icon', 'icon-svg'])
+          li.footer-social__item
+            a(href="#").footer-social__link
+              +svg('google-plus', ['footer-social__icon', 'icon-svg'])
 
-    .footer__item.footer__item--links
-      .footer__item__headline AXA & You
-      .footer__item__menu
-        ul.menu.menu--footer
-          li.menu__item.is-active
-            a.menu__link Contact Us
-          li.menu__item
-            a.menu__link Help & Advice
-          li.menu__item
-            a.menu__link Latest News
-        ul.menu.menu--footer
-          li.menu__item.is-active
-            a.menu__link Lorem ipsum
-          li.menu__item
-            a.menu__link Lorem ipsum
-          li.menu__item
-            a.menu__link Lorem ipsum
+      section.footer-links
+        h3.footer-links__headline AXA & You
+        ul.footer-links__menu
+          li.footer-links__item
+            a.footer-links__link(href="#")
+              span.footer-links__text Contact Us
+              +svg('arrow-right', ['footer-links__icon', 'icon-svg'])
+          li.footer-links__item
+            a.footer-links__link(href="#")
+              span.footer-links__text Media
+              +svg('arrow-right', ['footer-links__icon', 'icon-svg'])
+          li.footer-links__item
+            a.footer-links__link(href="#")
+              span.footer-links__text Claim
+              +svg('arrow-right', ['footer-links__icon', 'icon-svg'])
+          li.footer-links__item
+            a.footer-links__link(href="#")
+              span.footer-links__text News
+              +svg('arrow-right', ['footer-links__icon', 'icon-svg'])
+          li.footer-links__item
+            a.footer-links__link(href="#")
+              span.footer-links__text Careers
+              +svg('arrow-right', ['footer-links__icon', 'icon-svg'])
+          li.footer-links__item
+            a.footer-links__link(href="#")
+              span.footer-links__text My AXA
+              +svg('arrow-right', ['footer-links__icon', 'icon-svg'])
 
-    .footer__item.footer__item--international
-      .footer__item__headline AXA worldwide
-      a.footer__international
-        img(src=relative('/images/axa-world.svg')).footer__international__image
-        span.footer__international__text AXA Worldwide
+      section.footer-worldwide
+        .footer-worldwide__headline AXA worldwide
+        ul.footer-worldwide__entities
+          li.footer-worldwide__entity(href="#")
+            a.footer-worldwide__link(href="#")
+              span.footer-worldwide__text AXA worldwide
+              +svg('arrow-right', ['footer-worldwide__icon', 'icon-svg'])
+              img.footer-worldwide__image(src=relative('/images/axa-world.svg'))
 
-  .footer__copyline
-    .l-container
-      ul.menu.menu--copyline
-        li.menu__item
-          a.menu__link Sitemap
-        li.menu__item
-          a.menu__link Privacy
-        li.menu__item
-          a.menu__link Disclaimer
-        li.menu__item
-          span.menu__link AXA 2015 ©
+  .footer__copyline.footer-copyline
+    .footer-copyline__content
+      span.footer-copyline__notice Copyright AXA 2015 ©
+      ul.footer-copyline__entries
+        li.footer-copyline__item
+          a.footer-copyline__link(href="#") Disclaimer
+        li.footer-copyline__item
+          a.footer-copyline__link(href="#") Impressum
+        li.footer-copyline__item
+          a.footer-copyline__link(href="#") Sitemap
+        li.footer-copyline__item
+          a.footer-copyline__link(href="#") Privacy
 
 //- Copyright AXA Versicherungen AG 2015
