@@ -3,7 +3,6 @@ title: Test page
 description: Dev tests
 thumbnail: /images/inspiration/pages/test.png
 order: 2
-draft: true
 ---
 doctype html
 html
@@ -18,6 +17,7 @@ html
 
     title= title
 
+    link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/style.min.css"))
 
@@ -26,7 +26,7 @@ html
     include /components/includes/mixins.jade
     
     .site__page
-      .example-header
+      //.example-header
         .example-header__sticky
           a(href=relative("/examples")).example-header__back
             +svg('arrow-left', ['example-header__back__icon', 'icon-svg'])
@@ -59,12 +59,12 @@ html
           .header__meta__content
             .header__meta__item.header__meta__menu
               ul.menu.menu--meta
+                li.menu__item
+                  a.menu__link Privatkunden
                 li.menu__item.is-active
-                  a.menu__link Individuals
+                  a.menu__link Unternehmenskunden
                 li.menu__item
-                  a.menu__link Small Business Insurance
-                li.menu__item
-                  a.menu__link About Us
+                  a.menu__link Über AXA
             .header__meta__item.header__meta__search.search.search--header
               input.search__input.search--header(type='text')
               svg.search__icon.search--header.icon-svg
@@ -73,7 +73,7 @@ html
             .header__meta__item.header__meta__language
               a.header__meta__language-button(data-popover="#languageMenu")
                 | En
-                svg.header__meta__language-button-icon.icon-svg
+                svg.icon-svg.icon--language-dropdown
                   use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#arrow-bottom")
               .popover(id="languageMenu")
                 .popover__tail.popover__tail--top
@@ -103,20 +103,19 @@ html
             .header__menu
               ul.menu.menu--main
                 li.menu__item
-                  a.menu__link
-                    +svg('home', 'menu__link__home')
-                li.menu__item
-                  a.menu__link Menu Item 1
+                  a.menu__link Versicherungen & Mehr
                 li.menu__item.is-active
-                  a.menu__link Menu Item 2
+                  a.menu__link Schaden
                 li.menu__item
-                  a.menu__link Menu Item 3
+                  a.menu__link Kontakt & Hilfe
                 li.menu__item
-                  a.menu__link Menu Item 4
+                  a.menu__link Prävention
+                li.menu__item
+                  a.menu__link Kundenportale
             a.header__main__mobile-trigger(href="#")
               +svg('burger', 'header__main__mobile-icon')
 
-      .l-container
+      .l-container(style="max-width: 1260px;")
         .l-row
           .l-full
             h1 Welcome

@@ -10,10 +10,10 @@
   padding: 15px 60px 15px 15px;
   border: 0;
 
-  font-size: 1.6em;
+  font-size: 1.2em;
 
   background-color: @color-gray--mid;
-  color: @color-blue-gray;
+  color: @color-gray--darker;
 }
 
 .search__icon {
@@ -21,9 +21,10 @@
 }
 
 .search__icon.search--header {
-  min-width: 50px;
+  flex-shrink: 0;
+
   height: 100%;
-  width: 50px;
+  width: 45px;
   padding: 10px;
 
   background-color: @color-gray--mid;
