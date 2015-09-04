@@ -1,0 +1,47 @@
+@import '../mixins/grid';
+
+.footer-copyline {
+  background-color: #F0F0F0;
+}
+
+.footer-copyline__content {
+  .make-container(1260px, 0);
+
+  display: flex;
+  padding: 0 30px;
+  justify-content: flex-end;
+}
+
+.footer-copyline__notice {
+  display: inline-block;
+  height: 60px;
+
+  line-height: 60px;
+  order: 2;
+  font-size: 1em;
+  color: #767676;
+}
+
+.footer-copyline__entries {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+  order: 1;
+}
+
+.footer-copyline__item {
+}
+
+.footer-copyline__link {
+  display: inline-block;
+  height: 60px;
+
+  line-height: 60px;
+  text-decoration: none;
+  font-size: 1em;
+  color: #767676;
+}
+
+// Copyright AXA Versicherungen AG 2015
