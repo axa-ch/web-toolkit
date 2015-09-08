@@ -1,0 +1,79 @@
+@import "../variables.less";
+
+.make-font-heading-primary {
+  font-size: 1.5625em;
+  font-weight: bold;
+  line-height: 1.4;
+
+  .respond(medium, {
+    font-size: 3em;
+  });
+}
+
+.make-font-heading-secondary {
+  font-size: 1.3125em;
+  line-height: 1.4;
+  font-weight: bold;
+
+  .respond(medium, {
+    font-size: 2em;
+  });
+}
+
+.make-font-heading-tertiary {
+  font-size: 1.1875em;
+  font-weight: bold;
+  line-height: 1.4;
+
+  .respond(medium, {
+    font-size: 1.4em;
+  });
+}
+
+.make-font-x-large {
+  font-size: 1em;
+  font-weight: @font-weight-medium;
+
+  .respond(medium, {
+    font-size: 1.1875em;
+  });
+}
+
+.make-font-large {
+  font-size: 1em;
+
+  .respond(medium, {
+    font-size: 1.0625em;
+  });
+}
+
+.make-font-large-semibold {
+  font-size: 1em;
+  font-weight: @font-weight-medium;
+
+  .respond(medium, {
+    font-size: 1.0625em;
+  });
+}
+
+.make-font-medium {
+  font-size: 0.875em;
+
+  .respond(medium, {
+    font-size: 1em;
+  });
+}
+
+.make-font-medium-semibold {
+  font-size: 0.875em;
+  font-weight: @font-weight-medium;
+
+  .respond(medium, {
+    font-size: 1em;
+  });
+}
+
+.make-font-small-semibold {
+  font-weight: @font-weight-medium;
+  font-size: 0.875em;
+}

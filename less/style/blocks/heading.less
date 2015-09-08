@@ -6,53 +6,35 @@
 }
 
 .heading--page {
+  .make-font-heading-primary();
   .make-gutter-as-padding();
-
-  .heading--primary();
 
   margin: 0 0 40px 0;
 
+  color: @color-blue;
 }
 
 .heading--primary {
+  .make-font-heading-primary();
   display: block;
 
   padding: 0;
 
-  //font-size: 21px;
-  //line-height: 1.15;
-  font-size: 3.125em;
-  line-height: 1.6;
-
-  font-weight: @font-weight-medium;
-
-  //color: @color-blue;
-
-  .respond(medium, {
-    font-size: 3em;
-  });
+  color: @color-blue;
 }
 
 .heading--secondary {
-  font-size: 2.625em;
-  line-height: 1.6;
-  font-weight: @font-weight-medium;
-  //color: @color-blue;
+  .make-font-heading-secondary();
 
-  .respond(medium, {
-    font-size: 2em;
-  });
+  color: @color-blue;
 }
 
 .heading--tertiary {
-  //margin: 50px 0 20px 0;
+  .make-heading-tertiary();
 
-  font-size: 2.375em;
-  font-weight: @font-weight-medium;
+  margin: 50px 0 20px 0;
 
-  .respond(medium, {
-    font-size: 1.5em;
-  });
+  color: @color-blue;
 }
 
 .heading--modal {

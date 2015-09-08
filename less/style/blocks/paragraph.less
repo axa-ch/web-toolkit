@@ -1,57 +1,11 @@
 @import '../variables';
 
 .paragraph {
+  .make-font-medium();
+
   max-width: 700px;
-  margin: .7em 0;
-
-  font-size: 2em;
-
-  .respond(medium, {
-    font-size: 1.1875em;
-  });
+  //margin: .7em 0;
+  margin: 0;
 }
 
-.paragraph--large {
-  //font-size: @font-size-large;
-  font-size: 2em;
-
-  .respond(medium, {
-    font-size: 1.1875em;
-  });
-}
-
-.paragraph--large-demi {
-  font-size: 2em;
-  font-weight: @font-weight-medium;
-
-  .respond(medium, {
-    font-size: 1.1875em;
-  });
-}
-
-.paragraph--medium {
-  font-size: 1.75em;
-
-  .respond(medium, {
-    font-size: 1em;
-  });
-}
-
-.paragraph--medium-demi {
-  font-size: 1.75em;
-  font-weight: @font-weight-medium;
-
-  .respond(medium, {
-    font-size: 1em;
-  });
-}
-
-.paragraph--small{
-  text-decoration: line-through;
-
-  .respond(medium, {
-    text-decoration: inherit;
-    font-size: 14/16em;
-  });
-}
 // Copyright AXA Versicherungen AG 2015
