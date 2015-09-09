@@ -8,7 +8,7 @@ include /components/includes/mixins.jade
 footer.footer
   .footer__main
     .footer__main__content
-      section.footer-social
+      section.footer__social.footer-social
         h3.footer-social__headline Keep in touch
         ul.footer-social__items
           li.footer-social__item
@@ -24,7 +24,7 @@ footer.footer
             a(href="#").footer-social__link
               +svg('google-plus', ['footer-social__icon', 'icon-svg'])
 
-      section.footer-links
+      section.footer__links.footer-links
         h3.footer-links__headline AXA & You
         ul.footer-links__menu
           li.footer-links__item
@@ -52,7 +52,7 @@ footer.footer
               span.footer-links__text My AXA
               +svg('arrow-right', ['footer-links__icon', 'icon-svg'])
 
-      section.footer-worldwide
+      section.footer__worldwide.footer-worldwide
         .footer-worldwide__headline AXA worldwide
         ul.footer-worldwide__entities
           li.footer-worldwide__entity(href="#")
