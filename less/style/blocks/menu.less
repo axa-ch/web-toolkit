@@ -255,59 +255,6 @@
   }
 }
 
-.menu--main {
-  display: none;
-
-  margin-right: (@grid-gutter-width / -2);
-
-  font-size: 1.1em;
-  font-weight: @font-weight-medium;
-
-  .respond(large, {
-    display: flex;
-    align-items: flex-end;
-  });
-
-  .menu__item {
-    margin: 0;
-
-    line-height: 44px;
-
-    &.is-active,
-    &:hover {
-
-      .menu__link {
-        padding-bottom: 0;
-        border-bottom: 5px solid @color-blue;
-        color: @color-blue;
-      }
-    }
-
-    .respond(large, {
-      float: left;
-    });
-  }
-
-  .menu__link {
-    display: block;
-
-    height: 100%;
-    padding: 0 20px 5px 20px;
-
-    text-decoration: none;
-    text-align: center;
-
-    color: @color-gray--darker;
-  }
-
-  .menu__link__home {
-    width: 16px;
-    height: 44px;
-    fill: currentColor;
-    display: inline-block;
-  }
-}
-
 .menu--side {
   display: none;
 
