@@ -149,9 +149,9 @@ html
       .page-content.l-container
         if section
           .l-row
-            nav.l-col.l-col--medium-2
+            nav.l-col--docs-side
               +displaySideMenu(section.children, false, true)
-            .l-col.l-col--medium-10
+            .l-col--docs-main
               if headline !== false
                 h1.heading.heading--page #{title}
               div!= contents
