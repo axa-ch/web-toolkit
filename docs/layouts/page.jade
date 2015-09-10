@@ -35,14 +35,19 @@ mixin displayMobileMenu(page)
         'is-active': isActive(page)
       }
       href=(!page.children ? relative(page.link) : '#')
-    )= page.title
+    )
+      span= page.title
+      if page.children
+        +svg('arrow-right', ['menu__link__parent-icon', 'icon-svg'])
 
     if page.children
       ul.menu__level
         li.menu__item.menu__item--back
           a.menu__link.menu__link--back(
             href='#'
-          )= page.title
+          )
+            span= page.title
+            +svg('arrow-left', ['menu__link__back-icon', 'icon-svg'])
         
         each child in page.children
           +displayMobileMenu(child)
