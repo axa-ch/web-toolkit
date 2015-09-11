@@ -6,6 +6,7 @@
 
 @respond-medium-min-width: 768px;
 @respond-large-min-width: 980px;
+@respond-large-max-width: 1400px;
 
 // #############################
 // # Icon font
