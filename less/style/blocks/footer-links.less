@@ -1,3 +1,5 @@
+@import '../variables';
+@import '../mixins/respond';
 @import '../mixins/unstyle-list';
 
 .footer-links {
@@ -8,6 +10,10 @@
   margin: 0;
   font-size: 1.5em;
   font-weight: normal;
+
+  .respond(medium, {
+    padding: 35px 0;
+  });
 }
 
 .footer-links__menu {
@@ -15,10 +21,19 @@
 
   margin: 0 -30px;
 
+  .respond(medium, {
+    column-count: 2;
+
+    margin: 0;
+  });
 }
 
 .footer-links__item {
   margin-bottom: -1px;
+
+  .respond(medium, {
+    margin: 0;
+  });
 }
 
 .footer-links__link {
@@ -33,6 +48,15 @@
   border-top: 1px solid #DCDCDC;
   border-bottom: 1px solid #DCDCDC;
   color: #979797;
+
+  .respond(medium, {
+    padding: 8px 0;
+    height: auto;
+
+    font-size: 1em;
+    color: gray;
+    border: none;
+  });
 }
 
 .footer-links__link:hover {
@@ -44,9 +68,13 @@
 }
 
 .footer-links__icon {
-  height: 100%;
-  align-self: flex-end;
+  height: 36px;
+  width: 36px;
   margin-left: 20px;
+
+  .respond(medium, {
+    display: none;
+  });
 }
 
 // Copyright AXA Versicherungen AG 2015

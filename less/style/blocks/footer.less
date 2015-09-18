@@ -6,15 +6,25 @@
 }
 
 .footer__main {
+  border-top: 5px solid @color-blue;
 }
 
 .footer__main__content {
+  max-width: 1260px;
+
   padding: 0 30px;
-  padding-top: 40px;
 
   .respond(medium, {
-    .make-container(1260px, 0);
     display: flex;
+
+    margin: 0 auto;
+  });
+}
+
+.footer__social, .footer__links, .footer__worldwide {
+  .respond(medium, {
+    padding-top: 10px;
+    padding-bottom: 60px;
   });
 }
 
@@ -22,6 +32,7 @@
   .respond(medium, {
     order: 2;
     flex-grow: 1;
+    width: percentage(4/12);
   });
 }
 
@@ -29,6 +40,7 @@
   .respond(medium, {
     order: 1;
     flex-grow: 1;
+    width: percentage(5/12);
   });
 }
 
@@ -36,6 +48,7 @@
   .respond(medium, {
     order: 3;
     flex-grow: 1;
+    width: percentage(3/12);
   });
 }
 
