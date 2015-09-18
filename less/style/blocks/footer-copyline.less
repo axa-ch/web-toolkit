@@ -1,4 +1,5 @@
 @import '../mixins/grid';
+@import '../mixins/unstyle-list';
 
 .footer-copyline {
   background-color: #F0F0F0;
@@ -23,11 +24,10 @@
 }
 
 .footer-copyline__entries {
-  display: flex;
-  margin: 0;
-  padding: 0;
+  .unstyle-list;
 
-  list-style-type: none;
+  display: flex;
+
   order: 1;
 }
 

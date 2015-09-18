@@ -1,3 +1,5 @@
+@import '../mixins/unstyle-list';
+
 .footer-worldwide {
 }
 
@@ -11,10 +13,10 @@
 }
 
 .footer-worldwide__entities {
-  padding: 0;
+  .unstyle-list;
+
   margin: 0 -30px;
 
-  list-style-type: none;
 }
 
 .footer-worldwide__entity {

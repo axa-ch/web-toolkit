@@ -1,3 +1,5 @@
+@import '../mixins/unstyle-list';
+
 .footer-links {
 }
 
@@ -9,10 +11,10 @@
 }
 
 .footer-links__menu {
-  padding: 0;
+  .unstyle-list;
+
   margin: 0 -30px;
 
-  list-style-type: none;
 }
 
 .footer-links__item {

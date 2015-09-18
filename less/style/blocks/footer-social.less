@@ -1,3 +1,5 @@
+@import '../mixins/unstyle-list';
+
 .footer-social {
 }
 
@@ -9,12 +11,12 @@
 }
 
 .footer-social__items {
+  .unstyle-list;
+
   display: flex;
-  padding: 0;
   margin: -15px -25px;
 
   flex-wrap: wrap;
-  list-style-type: none;
 }
 
 .footer-social__item {
