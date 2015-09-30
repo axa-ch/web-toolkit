@@ -19,13 +19,13 @@
 .site__page {
   position: relative;
   right: 0;
+  overflow: hidden;
 
   transition: right 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045);
 
   &.is-pushed {
     right: @mobile-nav-width;
 
-    overflow: hidden;
 
     .respond(large, {
       right: 0;
