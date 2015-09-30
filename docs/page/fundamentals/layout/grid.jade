@@ -3,15 +3,6 @@ title: Grid
 order: 1
 template: page.jade
 ---
-
-style(type='text/css').
-  .box {
-    color: #0f2e86;
-    background-color: #bcd9f4;
-    margin: 10px 0;
-    padding: 10px;
-  }
-
 input(type='text', value='100%')#widthIn
 
 script.
@@ -31,12 +22,116 @@ script.
     .l-row
       - for (var i = 0; i < 12/j; i++) {
         div.l-col(class='l-col--' + (j))
-          .box #{j}
+          .grid-box #{j}
       - }
+
+.hr
       
 #container2
   .l-row
-    .test-push-col blah
-    .test-pull-col blubb
+    .grid-offset-col
+      .grid-box offset: 3, columns: 3
+    .grid-offset-col
+      .grid-box offset: 3, columns: 3
+
+.hr
+
+#container3
+  .l-row.make-row--justify-start
+    .l-col.l-col--2
+      .grid-box justify-start
+    .l-col.l-col--2
+      .grid-box box
+    .l-col.l-col--2
+      .grid-box box
+  .l-row.make-row--justify-center
+    .l-col.l-col--2
+      .grid-box justify-center
+    .l-col.l-col--2
+      .grid-box box
+    .l-col.l-col--2
+      .grid-box box
+  .l-row.make-row--justify-end
+    .l-col.l-col--2
+      .grid-box justify-end
+    .l-col.l-col--2
+      .grid-box box
+    .l-col.l-col--2
+      .grid-box box
+  .l-row.make-row--justify-around
+    .l-col.l-col--2
+      .grid-box justify-around
+    .l-col.l-col--2
+      .grid-box box
+    .l-col.l-col--2
+      .grid-box box
+  .l-row.make-row--justify-between
+    .l-col.l-col--2
+      .grid-box justify-between
+    .l-col.l-col--2
+      .grid-box box
+    .l-col.l-col--2
+      .grid-box box
+      
+.hr
   
+#container4
+  .l-row.make-row--align-start
+    .l-col.l-col--4
+      .grid-box
+        p larger
+        p box
+    .l-col.l-col--4
+      .grid-box align-start
+    .l-col.l-col--4
+      .grid-box box
+  .l-row.make-row--align-center
+    .l-col.l-col--4
+      .grid-box
+        p larger
+        p box
+    .l-col.l-col--4
+      .grid-box align-center
+    .l-col.l-col--4
+      .grid-box box
+  .l-row.make-row--align-end
+    .l-col.l-col--4
+      .grid-box
+        p larger
+        p box
+    .l-col.l-col--4
+      .grid-box align-end
+    .l-col.l-col--4
+      .grid-box box
+  .l-row.make-row--align-stretch
+    .l-col.l-col--4
+      .grid-box
+        p larger
+        p box
+    .l-col.l-col--4
+      .grid-box align-stretch
+    .l-col.l-col--4
+      .grid-box box
+
+.hr  
+#container5
+  .l-row
+    .l-col.l-col--3
+      .grid-box 1
+    .l-col.l-col--3
+      .grid-box 2
+    .l-col.l-col--3
+      .grid-box 3
+    .l-col.l-col--3
+      .grid-box 4
+      
+  .l-row.make-row--reverse
+    .l-col.l-col--3
+      .grid-box 1
+    .l-col.l-col--3
+      .grid-box 2
+    .l-col.l-col--3
+      .grid-box 3
+    .l-col.l-col--3
+      .grid-box 4
 //- Copyright AXA Versicherungen AG 2015
