@@ -31,6 +31,7 @@
 
 .make-row(@gutter: @grid-gutter-width) {
   display: flex;
+  flex-wrap: wrap;
 
   margin-left: (@gutter / -2);
   margin-right: (@gutter / -2);
@@ -80,6 +81,8 @@
   min-height: 1px;
   padding-left: (@gutter / 2);
   padding-right: (@gutter / 2);
+
+  flex-shrink: 0;
 
   .respond(@device, {
     width: percentage((@columns / @grid-columns));
