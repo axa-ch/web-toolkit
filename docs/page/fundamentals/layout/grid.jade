@@ -21,7 +21,7 @@ script.
   each j in [1, 2, 3, 4, 6, 12]
     .l-row
       - for (var i = 0; i < 12/j; i++) {
-        div.l-col(class='l-col--' + (j))
+        div.l-col(class='grid-col--' + (j))
           .grid-box #{j}
       - }
 
@@ -38,100 +38,118 @@ script.
 
 #container3
   .l-row.make-row--justify-start
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box justify-start
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
   .l-row.make-row--justify-center
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box justify-center
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
   .l-row.make-row--justify-end
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box justify-end
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
   .l-row.make-row--justify-around
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box justify-around
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
   .l-row.make-row--justify-between
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box justify-between
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
-    .l-col.l-col--2
+    .grid-col.grid-col--2
       .grid-box box
       
 .hr
   
 #container4
   .l-row.make-row--align-start
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box
         p larger
         p box
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box align-start
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box box
   .l-row.make-row--align-center
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box
         p larger
         p box
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box align-center
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box box
   .l-row.make-row--align-end
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box
         p larger
         p box
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box align-end
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box box
   .l-row.make-row--align-stretch
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box
         p larger
         p box
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box align-stretch
-    .l-col.l-col--4
+    .grid-col.grid-col--4
       .grid-box box
 
 .hr  
 #container5
   .l-row
-    .l-col.l-col--3
+    .grid-col.grid-col--2
+      .grid-box
+        p larger
+        p box
+    .grid-col.grid-col--2
+      .grid-box default (align-start)
+    .grid-col.grid-col--2.make-col--align-start
+      .grid-box .make-col--align-start
+    .grid-col.grid-col--2.make-col--align-center
+      .grid-box .make-col--align-center
+    .grid-col.grid-col--2.make-col--align-end
+      .grid-box .make-col--align-end
+    .grid-col.grid-col--2.make-col--align-stretch
+      .grid-box .make-col--align-stretch
+
+.hr  
+#container6
+  .l-row
+    .grid-col.grid-col--3
       .grid-box 1
-    .l-col.l-col--3
+    .grid-col.grid-col--3
       .grid-box 2
-    .l-col.l-col--3
+    .grid-col.grid-col--3
       .grid-box 3
-    .l-col.l-col--3
+    .grid-col.grid-col--3
       .grid-box 4
       
   .l-row.make-row--reverse
-    .l-col.l-col--3
+    .grid-col.grid-col--3
       .grid-box 1
-    .l-col.l-col--3
+    .grid-col.grid-col--3
       .grid-box 2
-    .l-col.l-col--3
+    .grid-col.grid-col--3
       .grid-box 3
-    .l-col.l-col--3
+    .grid-col.grid-col--3
       .grid-box 4
 //- Copyright AXA Versicherungen AG 2015
