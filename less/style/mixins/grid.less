@@ -37,46 +37,6 @@
   margin-right: (@gutter / -2);
 }
 
-.make-row--justify-start {
-  justify-content: flex-end;
-}
-
-.make-row--justify-center {
-  justify-content: center;
-}
-
-.make-row--justify-end {
-  justify-content: flex-end;
-}
-
-.make-row--justify-around {
-  justify-content: space-around;
-}
-
-.make-row--justify-between {
-  justify-content: space-between;
-}
-
-.make-row--align-start {
-  align-items: flex-start;
-}
-
-.make-row--align-center {
-  align-items: center;
-}
-
-.make-row--align-end {
-  align-items: flex-end;
-}
-
-.make-row--align-stretch {
-  align-items: stretch;
-}
-
-.make-row--reverse {
-  flex-direction: row-reverse;
-}
-
 .make-col(@columns; @device: small; @gutter: @grid-gutter-width) {
   min-height: 1px;
   padding-left: (@gutter / 2);
@@ -93,22 +53,6 @@
   .respond(@device, {
     margin-left: percentage((@columns / @grid-columns));
   });
-}
-
-.make-col--align-start {
-  align-self: flex-start;
-}
-
-.make-col--align-center {
-  align-self: center;
-}
-
-.make-col--align-end {
-  align-self: flex-end;
-}
-
-.make-col--align-stretch {
-  align-self: stretch;
 }
 
 // Grid and grid columns
