@@ -45,7 +45,7 @@
 // #############################
 
 @grid-columns: 12;
-@grid-gutter-width: 20px;
+@grid-gutter-width: 24px;
 
 // #############################
 // # Focus
