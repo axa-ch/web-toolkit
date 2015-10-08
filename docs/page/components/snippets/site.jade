@@ -1,0 +1,19 @@
+---
+title: Site
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.site
+  .site__page
+    p.paragraph.
+      Make sure you switch to one of the smaller viewports to see
+      the mobile menu in action.
+    a.button.button--primary(href="#", data-toggle="site-menu", data-target=".site") Toggle
+  .site__mobile-menu
+    .site__mobile-menu__header
+      h1.site__mobile-menu__title
+        a.button.button--secondary(href="#", data-toggle="site-menu", data-target=".site") Toggle
+
+//- Copyright AXA Versicherungen AG 2015

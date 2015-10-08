@@ -1,0 +1,94 @@
+---
+title: Site
+order: 1
+template: page.jade
+---
+
+include ./includes/mixins.jade
+
+:markdown
+  Whenever there's a hierarchy of components, there needs to be an upmost
+  element. The Site component is exactly that element.
+  
+  This component splits the web app into a *content* and *mobile menu* part.
+  The *content* is fully visible by default. Whenever the menu
+  gets toggled it almost completely pushes the *content* away
+  from the visible area in favour of the *mobile menu*.
+
+aside.callout
+  h2.callout__heading Most functionality on mobile only!
+  :markdown
+    Since we use easier ways of navigation on larger viewports, the
+    *mobile menu* isn't available on any other than small viewports.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#overview').toc__anchor-navigation__link Overview
+
+:markdown
+  # Overview
+  
+  
+
++example('/components/demos/site.html', { minHeight: '400' })
+
+.toggle
+  .toggle__button(data-info, data-target='#progressbar-code')
+    +svg('source', ['icon-svg', 'toggle__icon'])
+    span See code
+  .toggle__content#progressbar-code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          ul.checklist
+            li.checklist__item
+              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              .checklist__item__content.
+                If possible, add the <code class="code">site</code>
+                block to the <code class="code">body</code> element.
+            li.checklist__item
+              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              .checklist__item__content.
+                To automatically add toggling behavior to any of your
+                buttons or links simply assign them the
+                <code class="code">data-toggle="site-menu"</code> and 
+                <code class="code">data-target=".site"</code>
+                attributes.
+
+          .tab-panel__content__tab__fullwidth-content
+            :markdown
+              ```html
+              <body class="site">
+                <section class="site__page">
+                  <a href="#" data-toggle="site-menu" data-target=".site">Toggle</a>
+                </section>
+                <section class="site__mobile-menu">
+                  <a href="#" data-toggle="site-menu" data-target=".site">Toggle</a>
+                </section>
+              </body>
+              ```
+        .tab-panel__content__tab(data-tab-content='js')
+          :markdown
+            ```js
+            $('.site').site('toggleMenu', shouldOpen)
+            $('.site').site('showMenu')
+            $('.site').site('hideMenu')
+            ```
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    .checklist__item__content.
+      Do not use progressbars for technical activities
+      (e.g. loading css, requesting file from source)
+
+.hr
+
+//- Copyright AXA Versicherungen AG 2015
