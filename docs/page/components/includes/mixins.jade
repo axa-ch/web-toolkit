@@ -10,6 +10,7 @@ mixin example(path, options)
   - attrs = {}
   - attrs.iframe = {}
   - if (options.maxHeight) attrs.iframe['data-max-height'] = options.maxHeight
+  - if (options.minHeight) attrs.iframe['data-min-height'] = options.minHeight
 
   .example(data-example)
     .example__header
