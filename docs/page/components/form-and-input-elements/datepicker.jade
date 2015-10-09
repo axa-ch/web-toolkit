@@ -22,14 +22,7 @@ p.paragraph.
 
 h2.heading.heading--secondary#regular Regular Datepicker
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/datepicker.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/datepicker.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
@@ -75,14 +68,8 @@ ul.checklist
 
 h2.heading.heading--secondary#condensed Condensed Datepicker
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/datepicker-condensed.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/datepicker-condensed.html')
+
 .toggle
   .toggle__button(data-info, data-target='#code-condensed')
     +svg('source', ['icon-svg', 'toggle__icon'])

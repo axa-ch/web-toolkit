@@ -1,0 +1,195 @@
+// TODO: Destroy hierarchies with more BEM
+
+@import '../variables';
+@import '../mixins/clearfix';
+@import '../mixins/respond';
+@import '../blocks/icon';
+
+.mobile-menu {
+  &:extend(.clearfix all);
+
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+.mobile-menu--sliding {
+  position: relative;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  transition: height @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
+}
+
+.mobile-menu__item {
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu__link {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.mobile-menu__link {
+  display: block;
+
+  box-sizing: border-box;
+  height: 56px;
+  padding: 17px 15px 16px 15px;
+  border-bottom: 1px solid @color-tbd-13;
+
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  background-color: @color-blue;
+  color: @color-white;
+
+  &:hover {
+    color: white;
+  }
+
+  &.is-active {
+    background-color: @color-tbd-24;
+    color: white;
+  }
+}
+
+.mobile-menu__text {
+  pointer-events: none;
+}
+
+.mobile-menu__link__parent-icon {
+  display: block;
+  float: right;
+
+  height: 1.4em;
+  width: 1.4em;
+  padding: 0;
+}
+
+.mobile-menu__link--back {
+  background-color: @color-tbd-24;
+}
+
+.mobile-menu__link__back-icon {
+
+  display: block;
+  float: left;
+
+  height: 1.4em;
+  width: 1.4em;
+  padding-right: 8px;
+}
+
+  // Level 1
+.mobile-menu--collapsing .mobile-menu__level .mobile-menu__link {
+  background: @color-tbd-9;
+}
+
+.mobile-menu--collapsing .mobile-menu__level .mobile-menu__link.is-active {
+  background: @color-tbd-10;
+}
+
+  // Level 2
+.mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__link {
+  padding-left: 35px;
+  background-color: @color-tbd-9;
+}
+
+.mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__link.is-active {
+  background-color: @color-tbd-11;
+}
+
+  // Level 3
+.mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__level .mobile-menu__link {
+  height: 41px;
+  padding-top: 10px;
+  padding-bottom: 9px;
+  border-top: none;
+  border-bottom: 1px solid @color-tbd-13;
+
+  background-color: @color-tbd-12;
+  color: @color-tbd-9;
+}
+
+.mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__level .mobile-menu__link.is-active {
+  background-color: @color-tbd-12;
+}
+
+.mobile-menu--collapsing .mobile-menu__level {
+  padding: 0;
+  margin: 0;
+  visibility: hidden;
+
+  width: 100%;
+  max-height: 0px;
+
+  overflow: hidden;
+
+  list-style-type: none;
+
+  // Watch out: prevent delayed closing with a bezier
+  transition: max-height @transition-duration cubic-bezier(0, 1.05, 0, 1), visibility @transition-duration;
+}
+
+.mobile-menu--collapsing .mobile-menu__level.is-open {
+  visibility: visible;
+
+  // Watch out: work around, since no transition to `height: auto` is possible
+  max-height: 3999px;
+}
+
+.mobile-menu--collapsing .mobile-menu__item {
+  float: none;
+}
+
+.mobile-menu--collapsing .mobile-menu__item--back {
+  display: none;
+}
+
+.mobile-menu--collapsing .mobile-menu__link--parent.is-active {
+  .icon--arrow-bottom;
+}
+
+.mobile-menu--sliding .mobile-menu__level {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 100%;
+  visibility: hidden;
+
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+
+  transition: left @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
+
+  &.is-previous {
+  }
+
+  &.is-current {
+    visibility: visible;
+  }
+}
+
+.mobile-menu--sliding .mobile-menu__item {
+  float: none;
+
+  &:first-of-type {
+    .mobile-menu__link {
+      border-top: 1px solid @color-tbd-13;
+    }
+  }
+}
+
+// Copyright AXA Versicherungen AG 2015

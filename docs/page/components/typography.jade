@@ -21,15 +21,6 @@ include ./includes/mixins.jade
 
 h2.heading.heading--secondary#general General
 
-.example
-  include ./includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/demos/typography.html')
-        data-iframe-resizer
-      )
-
-
++example('/components/demos/typography.html')
 
 //- Copyright AXA Versicherungen AG 2015

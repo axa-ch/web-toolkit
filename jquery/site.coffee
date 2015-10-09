@@ -57,7 +57,7 @@
     href = $this.attr('href')
     $target = $($this.attr('data-target') or (href && href.replace(/.*(?=#[^\s]+$)/, '')))
 
-    e.preventDefault if $this.is 'a'
+    do e.preventDefault if $this.is 'a'
 
     Plugin.call($target, 'toggleMenu')
 

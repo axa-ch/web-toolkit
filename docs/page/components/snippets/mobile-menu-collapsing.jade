@@ -1,0 +1,73 @@
+---
+title: Collapsing Mobile Menu
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+nav.mobile-menu.mobile-menu--collapsing(data-menu='collapsing')
+  ul.mobile-menu__level.is-open(data-level)
+    li.mobile-menu__item
+      a.mobile-menu__link(href='#', data-link) Home
+
+    li.mobile-menu__item
+      a.mobile-menu__link.mobile-menu__link--parent(href='#', data-link)
+        span.mobile-menu__text Individuals
+        +svg('arrow-right', ['menu__link__parent-icon', 'icon-svg'])
+      
+      ul.mobile-menu__level(data-level)
+        li.mobile-menu__item.mobile-menu__item--back
+          a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
+            span.mobile-menu__text Individuals
+            +svg('arrow-left', ['menu__link__back-icon', 'icon-svg'])
+            
+        li.mobile-menu__item
+          a.mobile-menu__link(href='#', data-link)
+            span.mobile-menu__text Contents Insurance
+        li.mobile-menu__item
+          a.mobile-menu__link(href='#', data-link)
+            span.mobile-menu__text Liability Insurance
+        li.mobile-menu__item
+          a.mobile-menu__link.mobile-menu__link--parent(href='#', data-link)
+            span.mobile-menu__text Services
+            +svg('arrow-right', ['menu__link__parent-icon', 'icon-svg'])
+          
+          ul.mobile-menu__level(data-level)
+            li.mobile-menu__item.mobile-menu__item--back
+              a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
+                span.mobile-menu__text Services
+                +svg('arrow-left', ['menu__link__back-icon', 'icon-svg'])
+                
+            li.mobile-menu__item
+              a.mobile-menu__link(href='#', data-link)
+                span.mobile-menu__text Claims
+            li.mobile-menu__item
+              a.mobile-menu__link(href='#', data-link)
+                span.mobile-menu__text Contracts
+            li.mobile-menu__item
+              a.mobile-menu__link(href='#', data-link)
+                span.mobile-menu__text Calculators
+
+    li.mobile-menu__item
+      a.mobile-menu__link.mobile-menu__link--parent(href='#', data-link)
+        span.mobile-menu__text Business
+        +svg('arrow-right', ['menu__link__parent-icon', 'icon-svg'])
+
+      ul.mobile-menu__level(data-level)
+        li.mobile-menu__item.mobile-menu__item--back
+          a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
+            span.mobile-menu__text Business
+            +svg('arrow-left', ['menu__link__back-icon', 'icon-svg'])
+    
+        li.mobile-menu__item
+          a.mobile-menu__link(href='#', data-link)
+            span.mobile-menu__text Expatriates
+        li.mobile-menu__item
+          a.mobile-menu__link(href='#', data-link)
+            span.mobile-menu__text Online client service
+    
+    li.mobile-menu__item
+      a.mobile-menu__link(href='#', data-link)
+        span.mobile-menu__text About Us
+
+//- Copyright AXA Versicherungen AG 2015

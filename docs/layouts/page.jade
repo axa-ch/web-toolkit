@@ -27,6 +27,33 @@ mixin displaySideMenu(pages, isNested, isOpen)
         if page.children
           +displaySideMenu(page.children, true, isActive(page))
 
+mixin displayMobileMenu(page)
+  li.mobile-menu__item
+    a.mobile-menu__link(
+      class={
+        'mobile-menu__link--parent': page.children,
+        'is-active': isActive(page)
+      },
+      data-link
+      href=(!page.children ? relative(page.link) : '#')
+    )
+      span= page.title
+      if page.children
+        +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon-svg'])
+
+    if page.children
+      ul.mobile-menu__level(data-level)
+        li.mobile-menu__item.mobile-menu__item--back
+          a.mobile-menu__link.mobile-menu__link--back(
+            href='#',
+            data-back
+          )
+            span= page.title
+            +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+        
+        each child in page.children
+          +displayMobileMenu(child)
+
 doctype html
 html
   head
@@ -123,15 +150,15 @@ html
                 each page in navigation
                   li.menu__item(class={ 'is-active': isActive(page) })
                     a.menu__link(href=relative(page.link))= page.title
-            a.header__main__mobile-trigger(href="#")
-              +svg('burger', ['header__main__mobile-icon'], { 'data-toggle': 'site-menu', 'data-target': '.site' })
+            a.header__main__mobile-trigger(href="#", data-toggle='site-menu', data-target='.site')
+              +svg('burger', ['header__main__mobile-icon'])
 
       .page-content
         if section
           .l-row
-            nav.l-col.l-col--medium-2
+            nav.l-col--docs-side
               +displaySideMenu(section.children, false, true)
-            .l-col.l-col--medium-10
+            .l-col--docs-main
               if headline !== false
                 h1.heading.heading--page #{title}
               div!= contents
@@ -151,15 +178,29 @@ html
               li.menu__item
                 span.menu__link= config.copyright
 
+    .site__mobile-menu
+      .site__mobile-menu__header
+        h1.site__mobile-menu__title Web Style Guide
+      nav.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+        ul.mobile-menu__level(data-level)
+          li.mobile-menu__item
+            a.mobile-menu__link(
+              href=relative('/index.html'),
+              data-link
+            ) Web Style Guide
+          each section in navigation
+            +displayMobileMenu(section)
+
     script(type='text/javascript').
-      //// Set the right mobile menu level as current
-      //var $menu = $("#menu-mobile");
-      //var $level = $menu.find("[data-link='!{link}']").closest('.menu__level');
-      //
-      //$menu.slidingMenu();
-      //$menu.slidingMenu('level', $level);
-      //
-      //// Highlight the right mobile menu link as active
-      //$menu.find("[data-link='!{link}']").addClass('is-active')
+      var mobile = $('[data-menu="sliding"]')
+      
+      var level = mobile
+        .find('[data-link]')
+        .filter('[href="#{relative(link)}"]')
+        .closest('[data-level]')
+      
+      if (level.length > 0) {
+        mobile.slidingMenu('level', level)
+      }
 
 //- Copyright AXA Versicherungen AG 2015

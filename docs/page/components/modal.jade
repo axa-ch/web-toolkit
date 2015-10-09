@@ -9,14 +9,7 @@ include ./includes/mixins.jade
 
 p.paragraph. A modal window can be used to present very specific information (such as terms & conditions) to the user.
 
-.example
-  include ./includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/demos/modal.html')
-        data-iframe-resizer, data-max-height='400'
-      )
++example('/components/demos/modal.html', { maxHeight: '400' })
 
 .toggle
   .toggle__button(data-info, data-target='#code-modal')

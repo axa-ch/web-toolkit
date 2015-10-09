@@ -9,23 +9,25 @@
       @options = $.extend {}, SlidingMenu.DEFAULTS, options
 
       @init()
-      @level(@$element.children('.menu__level'))
+      @level(@$element.children('[data-level]'))
 
       $(window).on('resize', @onWindowResize)
 
     init: () ->
-      @$element.on 'click', '.menu__link--back', @, (event) ->
+      @$element.on 'click', '[data-back]', @, (event) ->
         link = $(event.target)
-        currentLevel = link.closest('.menu__level')
-        upperLevel = currentLevel.parent().closest('.menu__level')
+        currentLevel = link.closest('[data-level]')
+        upperLevel = currentLevel.parent().closest('[data-level]')
 
+        event.preventDefault()
         event.data.level(upperLevel)
 
-      @$element.on 'click', '.menu__link', @, (event) ->
+      @$element.on 'click', '[data-link]', @, (event) ->
         link = $(event.target)
-        subLevel = link.siblings('.menu__level')
+        subLevel = link.siblings('[data-level]')
 
         if subLevel.length > 0
+          event.preventDefault()
           event.data.level(subLevel)
 
     onWindowResize: (e) =>
@@ -38,7 +40,7 @@
       else
         @$element.find('.is-current').removeClass('is-current')
         @$element.find('.is-active').removeClass('is-active')
-        @$element.find('.menu__level').css('left', '')
+        @$element.find('[data-level]').css('left', '')
 
         level = @$element.find toSet
 
@@ -47,13 +49,13 @@
 
         @$element.css('height', level.height())
 
-        parentLevels = level.parentsUntil @$element, '.menu__level'
-        parentLinks = level.parentsUntil @$element, '.menu__link'
+        parentLevels = level.parentsUntil @$element, '[data-level]'
+        parentLinks = level.parentsUntil @$element, '[data-link]'
 
-        @$element.children('.menu__level').css('left', (parentLevels.length * -100) + '%')
+        @$element.children('[data-level]').css('left', (parentLevels.length * -100) + '%')
 
         level.addClass('is-current')
-        level.siblings('.menu__link').addClass('is-active')
+        level.siblings('[data-link]').addClass('is-active')
         parentLinks.addClass('is-active')
 
   # Plugin definition

@@ -26,27 +26,29 @@
 @import './blocks/typeface';
 
 @import 'style/mixins/respond';
+@import 'style/mixins/grid';
 
 @docs-width: 1260px;
-
-// Undo responsiveness of the style guide
-html,
-body {
-  min-width: @docs-width;
-  overflow: auto;
-}
-
-.respond(medium, @rules) {
-  @rules();
-}
-
-.respond(large, @rules) {
-  @rules();
-}
 
 // increase max-width
 .l-container {
   max-width: @docs-width;
+}
+
+.l-col--docs-side {
+  .make-col(12);
+  .make-col(2, large);
+
+  display: none;
+
+  .respond(large, {
+    display: block;
+  });
+}
+
+.l-col--docs-main {
+  .make-col(12);
+  .make-col(10, large);
 }
 
 // floating feedback button

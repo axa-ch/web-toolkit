@@ -1,29 +1,39 @@
-@import "style/mixins/clearfix";
-@import "style/blocks/heading";
+@import 'style/blocks/heading';
+@import 'style/mixins/clearfix';
+@import 'style/mixins/respond';
 
 .hero {
   &:extend(.clearfix all);
-  width: 800px;
+
+  max-width: 800px;
 }
 
 .hero__image {
   float: right;
-  width: 300px;
+  width: 200px;
+
+  .respond(medium, {
+    width: 300px;
+  });
 }
 
 .hero__image__img {
-  width: 300px;
+  width: 100%;
 }
 
 .hero__content {
-  margin-right: 380px;
+  margin-right: 250px;
   font-size: 1.2em;
+
+  .respond(medium, {
+    margin-right: 380px;
+  });
 }
 
-
 .hero__content__headline {
-  .heading();
-  .heading--page();
+  .heading;
+  .heading--page;
+
   border-bottom: 0;
   margin-bottom: 20px;
 }
