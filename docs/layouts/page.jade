@@ -199,6 +199,8 @@ html
         .filter('[href="#{relative(link)}"]')
         .closest('[data-level]')
       
-      mobile.slidingMenu('level', level)
+      if (level.length > 0) {
+        mobile.slidingMenu('level', level)
+      }
 
 //- Copyright AXA Versicherungen AG 2015

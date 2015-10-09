@@ -1,5 +1,5 @@
 ---
-title: Site
+title: Site Component
 order: 1
 template: page.jade
 ---
@@ -20,17 +20,6 @@ aside.callout
   :markdown
     Since we use easier ways of navigation on larger viewports, the
     *mobile menu* isn't available on any other than small viewports.
-
-.toc
-  .toc__title Table of contents
-  ul.toc__anchor-navigation
-    li.toc__anchor-navigation__item
-      a(href='#overview').toc__anchor-navigation__link Overview
-
-:markdown
-  # Overview
-  
-  
 
 +example('/components/demos/site.html', { minHeight: '400' })
 
@@ -75,20 +64,18 @@ aside.callout
               ```
         .tab-panel__content__tab(data-tab-content='js')
           :markdown
+            The `site` jQuery plugin allows you to open or close
+            the mobile menu part programmatically.
+            
             ```js
+            // Toggle the mobile menu part using a toggle boolean
             $('.site').site('toggleMenu', shouldOpen)
+            
+            // Show the mobile menu part
             $('.site').site('showMenu')
+            
+            // Hide it
             $('.site').site('hideMenu')
             ```
-
-h3.heading.heading--tertiary UX Checklist
-ul.checklist
-  li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
-    .checklist__item__content.
-      Do not use progressbars for technical activities
-      (e.g. loading css, requesting file from source)
-
-.hr
 
 //- Copyright AXA Versicherungen AG 2015
