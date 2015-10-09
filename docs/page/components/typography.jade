@@ -3,7 +3,33 @@ title: Typography
 order: 11
 template: page.jade
 tags: h1,h2,h3,paragraph,font,font-style,font-color
-draft: true
 ---
+
+include ./includes/mixins.jade
+
+//- .toc
+//-   .toc__title Table of contents
+//-   ul.toc__anchor-navigation
+//-     li.toc__anchor-navigation__item
+//-       a(href='#general').toc__anchor-navigation__link General Typography
+//-     li.toc__anchor-navigation__item
+//-       a(href='#primary').toc__anchor-navigation__link Primary Heading
+//-     li.toc__anchor-navigation__item
+//-       a(href='#secondary').toc__anchor-navigation__link Secondary Heading
+//-     li.toc__anchor-navigation__item
+//-       a(href='#tertiary').toc__anchor-navigation__link Tertiary Heading
+
+h2.heading.heading--secondary#general General
+
+.example
+  include ./includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/demos/typography.html')
+        data-iframe-resizer
+      )
+
+
 
 //- Copyright AXA Versicherungen AG 2015

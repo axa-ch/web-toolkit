@@ -4,6 +4,7 @@ webserver = require 'gulp-webserver'
 module.exports = (cb) ->
   gulp.src [ './dist/docs' ]
     .pipe webserver
+      host: '0.0.0.0'
       port: process.env.PORT or 3000
       livereload: true
       open: false

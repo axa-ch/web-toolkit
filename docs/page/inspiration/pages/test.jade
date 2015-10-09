@@ -3,7 +3,6 @@ title: Test page
 description: Dev tests
 thumbnail: /images/inspiration/pages/test.png
 order: 2
-draft: true
 ---
 doctype html
 html
@@ -18,13 +17,16 @@ html
 
     title= title
 
+    link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/style.min.css"))
 
     script(src=relative('/js/inspirations.all.min.js'))
   body.site
+    include /components/includes/mixins.jade
+    
     .site__page
-      .example-header
+      //.example-header
         .example-header__sticky
           a(href=relative("/examples")).example-header__back
             +svg('arrow-left', ['example-header__back__icon', 'icon-svg'])
@@ -51,45 +53,69 @@ html
             <br /> Si prega di visitare
             <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
             per le vostre preoccupazioni di assicurazione.
-
+            
       header.header
-        .l-container.header__container
-          a.header__mobile-trigger(data-toggle='site-menu', data-target='.site')
-            +svg('burger', ['header__mobile-burger', 'icon-svg'])
-          .header__brand.brand
-            .brand__logo
-          .header__meta
-            .header__meta__upper
-              .header__meta__language
-                ul.menu.menu--language
-                  li.menu__item
-                    a.menu__link DE
-                  li.menu__item
-                    a.menu__link FR
-                  li.menu__item
-                    a.menu__link IT
-                  li.menu__item
-                    a.menu__link EN
-              .header__meta__menu
-                ul.menu.menu--meta
-                  li.menu__item
-                    a(href='../').menu__link Back to overview
-            .header__meta__lower
-              .header__meta__welcome
-                ul
-                  li.header__meta__welcome__main Welcome to AXA
-                  li.header__meta__welcome__secondary Max Mustermann
-        .header__menu
-          .l-container
-            ul.menu.menu--main
-              li.menu__item
-                a.menu__link.menu__link--home
-              li.menu__item.is-active
-                a.menu__link Cool Stuff
-              li.menu__item
-                a.menu__link More Cool Stuff
+        .header__meta
+          .header__meta__content
+            .header__meta__item.header__meta__menu
+              ul.menu.menu--meta
+                li.menu__item
+                  a.menu__link Privatkunden
+                li.menu__item.is-active
+                  a.menu__link Unternehmenskunden
+                li.menu__item
+                  a.menu__link Über AXA
+            .header__meta__item.header__meta__search.search.search--header
+              input.search__input.search--header(type='text')
+              svg.search__icon.search--header.icon-svg
+                use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
+              .search__suggestions.search--header
+            .header__meta__item.header__meta__language
+              a.header__meta__language-button(data-popover="#languageMenu")
+                | En
+                svg.icon-svg.icon--language-dropdown
+                  use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#arrow-bottom")
+              .popover(id="languageMenu")
+                .popover__tail.popover__tail--top
+                .popover__box
+                  .popover__box__header
+                    a.popover__close
+                      svg.modal__close-icon.icon-svg
+                        use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#modal-close")
+                    .popover__box__header__headline Language
+                  .popover__box__content__wrapper
+                    .popover__box__content
+                      ul.menu.menu--language
+                        li.menu__item
+                          a.menu__link Deutsch
+                        li.menu__item
+                          a.menu__link Français
+                        li.menu__item
+                          a.menu__link Italiano
+                        li.menu__item
+                          a.menu__link English
+            a.header__meta__item.header__meta__action myAXA Login
+        .header__main
+          .header__main__content
+            .header__brand.brand
+              .brand__logo
+              .brand__tagline.brand__tagline--de
+            .header__menu
+              ul.menu.menu--main
+                li.menu__item
+                  a.menu__link Versicherungen & Mehr
+                li.menu__item.is-active
+                  a.menu__link Schaden
+                li.menu__item
+                  a.menu__link Kontakt & Hilfe
+                li.menu__item
+                  a.menu__link Prävention
+                li.menu__item
+                  a.menu__link Kundenportale
+            a.header__main__mobile-trigger(href="#")
+              +svg('burger', 'header__main__mobile-icon')
 
-      .l-container
+      .l-container(style="max-width: 1260px;")
         .l-row
           .l-full
             h1 Welcome

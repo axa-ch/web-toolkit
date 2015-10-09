@@ -12,9 +12,49 @@
 This project guides you on how to design and build web apps @ AXA Switzerland.
 Here you get all the CSS, icons, JS and additional assets to simplify the development of our web apps.
 
-## Run it!
+## Use it!
 
-You'll need Node with npm installed on your system, whether
+Want to use the Web Style Guide in your web app? There are different ways of integration,
+but the preferred one is to add it as an npm dependency:
+
+```sh
+$ npm install @axa-ch/style-guide
+```
+
+After that, include the styles from the `dist` folder into your less file:
+
+```less
+// app.less
+@import 'less/normalize';
+@import 'less/style';
+```
+
+Or just consume the precompiled css files, also from the `dist` folder:
+
+```html
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+```
+
+If you don't want to reimplement the interactivity of our components,
+just use our jQuery plugins:
+
+```html
+<script src="jquery/axa-wsg.jquery.all.js"></script>
+```
+
+You'll additionally need to copy the `images` folder into your project.
+
+If you don't want to use npm to include the style guide, you might download the
+latests release package from our GitHub releases page. We're also working
+on a bower distribution.
+
+## Build it yourself!
+
+Do you want to add an exciting new feature or fix a bug? For that you'll need
+to build the Web Style Guide yourself, so you can make sure things work.
+In order to do that, it's required that you have
+node with npm installed on your system, whether
 it's Windows, Linux or Mac OS X. With Git installed you'll be able to deploy
 a new version of the docs.
 
@@ -28,7 +68,7 @@ $ npm install
 
 With the dependencies in place, you're now able to run one of the many
 build tasks we provide for you. Using the `dev` task you can build the
-assets, run the docs server and let it refresh your browser on each change
+assets, run the showcase and let it refresh your browser on each change
 in the file system.
 
 ```sh
@@ -37,7 +77,8 @@ $ gulp dev
 ```
 
 ### But but but.... Enterprise Proxy?
-If you're working on a heavily guarded machine as used by many enterprises, follow our [Guide](https://github.com/axa-ch/style-guide/wiki/Sitting-behind-a-corporate-proxy%3F).
+
+If you're working on a heavily guarded machine as used by many enterprises, follow our [Enterprise Proxy Guide](https://github.com/axa-ch/style-guide/wiki/Sitting-behind-a-corporate-proxy%3F).
 
 ## What do we build it with?
 
@@ -75,7 +116,7 @@ We stick to the following naming conventions for branches:
 
 ### Commit messages
 
-- Begin you commit message with a verb in the imperative. (E.g. ```introduce foo bar```, ```fix baz```, ...)
+- Begin you commit message with a verb in the imperative. (e.g. `Introduce foo bar`, `Fix baz`, ...)
 - Try to have small, atomic commits.
 - First line of a commit message should sum up your changes and should not be longer than 50 characters.
 - Second line should be empty

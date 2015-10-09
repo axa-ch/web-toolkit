@@ -6,39 +6,35 @@
 }
 
 .heading--page {
+  .make-font-heading-primary();
   .make-gutter-as-padding();
 
-  .heading--primary();
+  margin: 0 0 40px 0;
 
-  font-weight: @font-weight-medium;
+  color: @color-blue;
 }
 
 .heading--primary {
+  .make-font-heading-primary();
   display: block;
 
   padding: 0;
-  margin: 0 0 40px 0;
-
-  font-size: 21px;
-  line-height: 1.15;
 
   color: @color-blue;
-
-  .respond(medium, {
-    font-size: 39px;
-    line-height: 1.4103;
-  })
 }
 
 .heading--secondary {
-  font-size: 25px;
-  line-height: 1.4;
-  font-weight: normal;
+  .make-font-heading-secondary();
+
   color: @color-blue;
 }
 
 .heading--tertiary {
+  .make-font-heading-tertiary();
+
   margin: 50px 0 20px 0;
+
+  color: @color-blue;
 }
 
 .heading--modal {

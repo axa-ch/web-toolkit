@@ -98,20 +98,21 @@
   font-weight: @font-weight-medium;
 
   .respond(large, {
-    display: block;
+    display: flex;
+    align-items: flex-end;
   });
 
   .menu__item {
-    height: 56px;
-    margin: 0 (@grid-gutter-width / 2);
+    margin: 0;
 
     line-height: 44px;
 
     &.is-active,
     &:hover {
-      border-bottom: 5px solid @color-blue;
 
       .menu__link {
+        padding-bottom: 0;
+        border-bottom: 5px solid @color-blue;
         color: @color-blue;
       }
     }
@@ -124,7 +125,11 @@
   .menu__link {
     display: block;
 
+    height: 100%;
+    padding: 0 20px 5px 20px;
+
     text-decoration: none;
+    text-align: center;
 
     color: @color-gray--darker;
   }
@@ -179,12 +184,14 @@
     font-size: 0.9em;
     font-weight: bold;
 
+    &.is-active {
+      background: @color-white;
+      box-shadow: -4px 0px 3px -3px @color-gray--mid, 3px 0px 3px -3px @color-gray--mid, 0 0px 0px 0 @color-white,0 0px 0px 0 @color-white;
+    }
+
     &.is-active,
     &:hover {
-      background: @color-white;
-      box-shadow: -4px 0px 3px -3px @color-gray, 3px 0px 3px -3px @color-gray, 0 0px 0px 0 @color-white,0 0px 0px 0 @color-white;
-
-      a {
+      .menu__link {
         color: @color-blue;
       }
     }

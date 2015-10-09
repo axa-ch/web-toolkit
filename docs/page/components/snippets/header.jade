@@ -18,21 +18,18 @@ header.header
             a.menu__link About Us
       .header__meta__item.header__meta__search.search.search--header
         input.search__input.search--header(type='text')
-        svg.search__icon.search--header.icon-svg
-          use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
+        +svg('search', ['search__icon', 'search--header', 'icon-svg'])
         .search__suggestions.search--header
       .header__meta__item.header__meta__language
         a.header__meta__language-button(data-popover="#languageMenu")
           | En
-          svg.header__meta__language-button-icon.icon-svg
-            use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#arrow-bottom")
+          +svg('arrow-bottom', ['icon--language-dropdown', 'icon-svg'])
         .popover(id="languageMenu")
           .popover__tail.popover__tail--top
           .popover__box
             .popover__box__header
               a.popover__close
-                svg.modal__close-icon.icon-svg
-                  use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#modal-close")
+                +svg('modal-close', ['modal__close-icon', 'icon-svg'])
               .popover__box__header__headline Language
             .popover__box__content__wrapper
               .popover__box__content
@@ -53,9 +50,6 @@ header.header
         .brand__tagline.brand__tagline--de
       .header__menu
         ul.menu.menu--main
-          li.menu__item
-            a.menu__link
-              +svg('home', 'menu__link__home')
           li.menu__item
             a.menu__link Menu Item 1
           li.menu__item.is-active
