@@ -17,6 +17,7 @@
         subLevel = link.siblings('[data-level]')
 
         if subLevel.length > 0
+          event.preventDefault()
           event.data.toggle(subLevel)
 
     toggle: (toSet) ->
