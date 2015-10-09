@@ -28,26 +28,28 @@ mixin displaySideMenu(pages, isNested, isOpen)
           +displaySideMenu(page.children, true, isActive(page))
 
 mixin displayMobileMenu(page)
-  li.menu__item
-    a.menu__link(
+  li.mobile-menu__item
+    a.mobile-menu__link(
       class={
-        'menu__link--parent': page.children,
+        'mobile-menu__link--parent': page.children,
         'is-active': isActive(page)
-      }
+      },
+      data-link
       href=(!page.children ? relative(page.link) : '#')
     )
       span= page.title
       if page.children
-        +svg('arrow-right', ['menu__link__parent-icon', 'icon-svg'])
+        +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon-svg'])
 
     if page.children
-      ul.menu__level
-        li.menu__item.menu__item--back
-          a.menu__link.menu__link--back(
-            href='#'
+      ul.mobile-menu__level(data-level)
+        li.mobile-menu__item.mobile-menu__item--back
+          a.mobile-menu__link.mobile-menu__link--back(
+            href='#',
+            data-back
           )
             span= page.title
-            +svg('arrow-left', ['menu__link__back-icon', 'icon-svg'])
+            +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
         
         each child in page.children
           +displayMobileMenu(child)
@@ -179,11 +181,12 @@ html
     .site__mobile-menu
       .site__mobile-menu__header
         h1.site__mobile-menu__title Web Style Guide
-      nav.menu.menu--sliding(data-menu='sliding')
-        ul.menu__level
-          li.menu__item
-            a.menu__link(
-              href=relative('/index.html')
+      nav.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+        ul.mobile-menu__level(data-level)
+          li.mobile-menu__item
+            a.mobile-menu__link(
+              href=relative('/index.html'),
+              data-link
             ) Web Style Guide
           each section in navigation
             +displayMobileMenu(section)

@@ -26,9 +26,8 @@
         link = $(event.target)
         subLevel = link.siblings('[data-level]')
 
-        event.preventDefault()
-
         if subLevel.length > 0
+          event.preventDefault()
           event.data.level(subLevel)
 
     onWindowResize: (e) =>
