@@ -24,6 +24,9 @@ renderer.heading = (text, level) ->
     "</h#{l}>\n"
   ].join ""
 
+renderer.hr = () ->
+  "<hr class=\"hr\" />"
+
 renderer.image = (href, title, text) ->
   [
     "<img"

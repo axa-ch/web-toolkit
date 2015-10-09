@@ -5,4 +5,27 @@ mixin svg(id, classes, config)
   svg(class=classes)&attributes(config.attrs)
     use(xlink:href=path)
 
+mixin example(path, options)
+  - options = options || {}
+  - attrs = {}
+  - attrs.iframe = {}
+  - if (options.maxHeight) attrs.iframe['data-max-height'] = options.maxHeight
+  - if (options.minHeight) attrs.iframe['data-min-height'] = options.minHeight
+
+  .example(data-example)
+    .example__header
+      .example__device-selection
+        a.example__device-selection__device.example__device-selection__device--mobile(data-example-mobile)
+          +svg('mobile', ['icon-svg', 'example__device-selection__icon'])
+        a.example__device-selection__device.example__device-selection__device--tablet(data-example-tablet)
+          +svg('tablet', ['icon-svg', 'example__device-selection__icon'])
+        a.example__device-selection__device.example__device-selection__device--desktop(data-example-desktop)
+          +svg('desktop', ['icon-svg', 'example__device-selection__icon'])
+    .example__content
+      iframe.example__iframe(
+        src=relative(path)
+        data-iframe-resizer
+        data-example-iframe
+      )&attributes(attrs.iframe)
+
 //- Copyright AXA Versicherungen AG 2015
