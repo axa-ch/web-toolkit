@@ -64,8 +64,8 @@
           @setViewport viewport
 
     mapWidthToViewport: (width) ->
-      return 'mobile' if width <= 320
-      return 'tablet' if width <= 768
+      return 'mobile' if width < 768
+      return 'tablet' if width < 980
       return 'desktop'
 
     mapViewportToWidth: (viewport) ->
