@@ -191,4 +191,14 @@ html
           each section in navigation
             +displayMobileMenu(section)
 
+    script(type='text/javascript').
+      var mobile = $('[data-menu="sliding"]')
+      
+      var level = mobile
+        .find('[data-link]')
+        .filter('[href="#{relative(link)}"]')
+        .closest('[data-level]')
+      
+      mobile.slidingMenu('level', level)
+
 //- Copyright AXA Versicherungen AG 2015
