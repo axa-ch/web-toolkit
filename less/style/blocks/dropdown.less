@@ -29,7 +29,8 @@
     float: right;
     width: @dropdown-arrow-width;
     height: 100%;
-    padding: 0 (@dropdown-arrow-width - 18px) / 2; // padd the icon the get it 18x18px
+    // the padding-top/-bottom fixes a bug on iOS 8 mis-aligning the icon
+    padding: 1px (@dropdown-arrow-width - 18px) / 2; // padd the icon the get it 18x18px
     background: @color-blue-gray--light;
     fill: @color-light-blue;
   }
