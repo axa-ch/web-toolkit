@@ -170,11 +170,12 @@ html
             +displayMobileMenu(section)
 
     script.
+      var href = '#{relative(link)}'
       var mobile = $('[data-menu="sliding"]')
       
       var level = mobile
         .find('[data-link]')
-        .filter('[href="#{relative(link)}"]')
+        .filter('[href=\'' + href + '\']')
         .closest('[data-level]')
       
       if (level.length > 0) {
