@@ -10,6 +10,7 @@
         checkOrigin: false
         sizeHeight: true
         maxHeight: options.maxHeight || 'infinity'
+        minHeight: options.minHeight || 0
         heightCalculationMethod: 'lowestElement'
       }, @$el[0]
 

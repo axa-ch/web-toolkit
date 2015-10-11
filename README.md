@@ -49,9 +49,12 @@ If you don't want to use npm to include the style guide, you might download the
 latests release package from our GitHub releases page. We're also working
 on a bower distribution.
 
-## Build it!
+## Build it yourself!
 
-You'll need Node with npm installed on your system, whether
+Do you want to add an exciting new feature or fix a bug? For that you'll need
+to build the Web Style Guide yourself, so you can make sure things work.
+In order to do that, it's required that you have
+node with npm installed on your system, whether
 it's Windows, Linux or Mac OS X. With Git installed you'll be able to deploy
 a new version of the docs.
 
@@ -65,7 +68,7 @@ $ npm install
 
 With the dependencies in place, you're now able to run one of the many
 build tasks we provide for you. Using the `dev` task you can build the
-assets, run the docs server and let it refresh your browser on each change
+assets, run the showcase and let it refresh your browser on each change
 in the file system.
 
 ```sh
@@ -74,7 +77,8 @@ $ gulp dev
 ```
 
 ### But but but.... Enterprise Proxy?
-If you're working on a heavily guarded machine as used by many enterprises, follow our [Guide](https://github.com/axa-ch/style-guide/wiki/Sitting-behind-a-corporate-proxy%3F).
+
+If you're working on a heavily guarded machine as used by many enterprises, follow our [Enterprise Proxy Guide](https://github.com/axa-ch/style-guide/wiki/Sitting-behind-a-corporate-proxy%3F).
 
 ## What do we build it with?
 

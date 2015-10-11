@@ -24,14 +24,7 @@ h2.heading.heading--secondary#progressbar Progressbar
 p.paragraph.
    A progressbar is used for activities that might take more than just a few moments to complete. It has the ability to give quantitative feedback to the user (e.g. 20% uploaded  or 10 of 15 pictures deleted).
 
-.example
-  include ./includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/demos/progressbar.html')
-        data-iframe-resizer
-      )
++example('/components/demos/progressbar.html')
 
 .toggle
   .toggle__button(data-info, data-target='#progressbar-code')
@@ -71,14 +64,7 @@ h2.heading.heading--secondary#spinner Loading Spinner
 p.paragraph.
   Very important element in single page applications for short loading sequences.
 
-.example
-  include ./includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/demos/loading-spinner.html')
-        data-iframe-resizer
-      )
++example('/components/demos/loading-spinner.html')
 
 .toggle
   .toggle__button(data-info, data-target='#spinner-code')
