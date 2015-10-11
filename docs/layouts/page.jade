@@ -102,35 +102,13 @@ html
     script(src=relative('/js/docs.all.min.js'))
     script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
     
-    script.
-      // Set the locale for momentjs used in the datepicker
-      moment.locale('en_GB')
-          
-    script.
-      // Include the UserVoice JavaScript SDK (only needed once on a page)
-      UserVoice=window.UserVoice||[];
-      UserVoice.push(['set', {
-        accent_color: '#103184',
-        screenshot_enabled: false
-      }]);
-      (function(){
-        var uv=document.createElement('script');
-        uv.type='text/javascript';
-        uv.async=true;
-        uv.src='//widget.uservoice.com/O8ex403PfbC0GjKz3DuQ.js';
-        var s=document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(uv,s)
-      })();
+    script moment.locale('en_GB')
 
   body.site
     .site__page
       #notification.notifications(data-notification-info=relative('/images/icons.svg#info')
         data-notification-success=relative('/images/icons.svg#checkmark')
         data-notification-error=relative('/images/icons.svg#cross'))
-      .l-container
-        .docs-floating-action
-          a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
-            +svg('feedback', ['button__icon', 'icon-svg'])
       header.header
         .header__meta
           .header__meta__content
@@ -191,16 +169,20 @@ html
           each section in navigation
             +displayMobileMenu(section)
 
-    script(type='text/javascript').
+    script.
+      var href = '#{relative(link)}'
       var mobile = $('[data-menu="sliding"]')
       
       var level = mobile
         .find('[data-link]')
-        .filter('[href="#{relative(link)}"]')
+        .filter('[href=\'' + href + '\']')
         .closest('[data-level]')
       
       if (level.length > 0) {
         mobile.slidingMenu('level', level)
       }
+    
+    script window.intercomSettings = { app_id: 'i82zr1ej' }
+    script (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/i82zr1ej';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
 
 //- Copyright AXA Versicherungen AG 2015
