@@ -9,6 +9,7 @@ module.exports = (cb) ->
     'icons-copy'
     'icons-svg'
     'styles'
+    'modernizr'
     'jquery'
     'ng'
     'create-versions-file'

@@ -20,6 +20,12 @@ module.exports = [['build'], (cb) ->
 
   watch [
     './modernizr.json'
+  ], ->
+    gulp.start 'modernizr', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
+    return
+  .on 'error', (err) -> errorify err.message, 'modernizr'
+
+  watch [
     './docs/js/**/*.coffee'
     './docs/example-js/**/*.coffee'
   ], ->
