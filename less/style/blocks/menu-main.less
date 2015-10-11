@@ -5,7 +5,9 @@
 .menu-main {
   &:extend(.clearfix all);
 
-  display: none;
+  display: flex;
+  align-items: flex-end;
+
   padding: 0;
   margin: 0;
   margin-right: (@grid-gutter-width / -2);
@@ -14,11 +16,6 @@
 
   font-size: 1.1em;
   font-weight: @font-weight-medium;
-
-  .respond(large, {
-    display: flex;
-    align-items: flex-end;
-  });
 }
 
 .menu-main__item {
