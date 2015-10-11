@@ -13,6 +13,8 @@ module.exports = ->
       './dist/[c]ss/{style,normalize}.min.css{,.map}'
       # use an [c] to set the gulp base path to ./images/
       './docs/[c]ontent/**/*'
+
+      './modernizr.json'
     ]
     .pipe gulp.dest './dist/docs/'
 

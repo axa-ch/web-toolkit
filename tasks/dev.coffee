@@ -19,6 +19,7 @@ module.exports = [['build'], (cb) ->
   .on 'error', (err) -> errorify err.message, 'docs-pages'
 
   watch [
+    './modernizr.json'
     './docs/js/**/*.coffee'
     './docs/example-js/**/*.coffee'
   ], ->
@@ -34,6 +35,7 @@ module.exports = [['build'], (cb) ->
   .on 'error', (err) -> errorify err.message, 'docs-styles'
 
   watch [
+    './modernizr.json'
     './docs/images/**/*'
     './dist/images/**/*'
     './dist/fonts/**/*'
