@@ -1,4 +1,5 @@
 gulp = require 'gulp'
+merge = require 'merge-stream'
 sourcemaps = require 'gulp-sourcemaps'
 coffee = require 'gulp-coffee'
 concat = require 'gulp-concat'
@@ -10,9 +11,7 @@ errorify = require '../lib/errorify'
 readJson = require '../lib/readJSONFile'
 
 module.exports = ->
-  settings = readJson 'modernizr.json'
-
-  return gulp.src [
+  libs = gulp.src [
       './node_modules/jquery/dist/jquery.js'
       './node_modules/baconjs/dist/Bacon.js'
       './node_modules/moment/min/moment-with-locales.js'
@@ -28,7 +27,13 @@ module.exports = ->
       .on 'error', errorify
       .pipe concat 'docs.all.min.js'
     .pipe sourcemaps.write('.', sourceRoot: './' )
+    .pipe gulp.dest './dist/docs/js'
+
+  settings = readJson 'modernizr.json'
+  mdrnzr = gulp.src 'nothing'
     .pipe modernizr('modernizr.js', settings)
     .pipe gulp.dest './dist/docs/js'
+
+  return merge(libs, mdrnzr)
 
 #! Copyright AXA Versicherungen AG 2015
