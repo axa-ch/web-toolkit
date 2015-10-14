@@ -49,6 +49,21 @@ If you don't want to use npm to include the style guide, you might download the
 latests release package from our GitHub releases page. We're also working
 on a bower distribution.
 
+## Versioning
+
+As a project that is depended on from several apps, we take versioning seriously!
+
+We do versioning using the
+[Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html) specification.
+A typical version number has the format of `MAJOR.MINOR.PATCH`.
+
+* `MAJOR` changes when we make incompatible API changes
+* `MINOR` changes when we add functionality in a backwards-compatible manner
+* `PATCH` changes when we make backwards-compatible bug fixes
+
+But keep in mind that as long as we run in `0.y.z`,
+anything can break at any time. This is called *Initial Development*.
+
 ## Build it yourself!
 
 Do you want to add an exciting new feature or fix a bug? For that you'll need
