@@ -49,6 +49,10 @@
   color: @color-gray--darker;
 }
 
+.menu-main__link:hover .menu-main__panel {
+  display: block;
+}
+
 .menu-main__link__home {
   width: 16px;
   height: 44px;
@@ -65,16 +69,19 @@
   right: 0;
 }
 
-.menu-main__content.is-open {
-  display: block;
-}
-
 .menu-main__panel {
-  display: block;
-  max-width: 1400px;
-  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  display: none;
   padding: 35px 30px;
+  margin-top: 5px;
 
   background-color: white;
   box-shadow: 0px 0px 5px black;
+}
+
+.menu-main__panel.is-open {
+  //display: block;
 }
