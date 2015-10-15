@@ -6,58 +6,57 @@ template: demo.jade
 include /components/includes/mixins.jade
 
 header.header
-  .header__meta
   .header__main
     .header__main__content
       nav.header__menu
 
-        ul.menu.menu-main
-          li.menu-main__item
-            a.menu-main__link(href="#") Versicherungen & Mehr
-          li.menu-main__item.is-active
-            a.menu-main__link.is-active(href="#") Schaden
-            .menu-main__content.is-open
-              .menu-main__panel
-                .l-row
-                  .l-third
-                    h2 Wohnen & Eigentum
-                    ul.menu
-                      li.menu__item
-                        a.menu__link(href="#") Haushaltversicherung
-                      li.menu__item
-                        a.menu__link(href="#") Hausratversicherung
-                      li.menu__item
-                        a.menu__link(href="#") Privathaftpflichtversicherung
-                      li.menu__item
-                        a.menu__link(href="#") Rechtsschutzversicherung
-                  .l-third
-                    h2 Fahrzeug & Reise
-                    ul.menu
-                      li.menu__item
-                        a.menu__link(href="#") Autoversicherung
-                      li.menu__item
-                        a.menu__link(href="#") Autoversicherung für Elektroautos
-                      li.menu__item
-                        a.menu__link(href="#") Motorradversicherung
-                      li.menu__item
-                        a.menu__link(href="#") Rechtschutzversicherung
-                  .l-third
-                    h2 Vorsorge & Sparen
-                    ul.menu
-                      li.menu__item
-                        a.menu__link(href="#") Lebenversicherung
-                      li.menu__item
-                        a.menu__link(href="#") Finanzprodukte
-                      li.menu__item
-                        a.menu__link(href="#") Fondsinformationen
-                      li.menu__item
-                        a.menu__link(href="#") Aktuelle Zinssätze
+        ul.menu-main(data-menu="main")
+          li.menu-main__item(data-item)
+            a.menu-main__link(href="#", data-link) Insurance
+            section.menu-main__panel(data-panel)
+          li.menu-main__item.is-active(data-item)
+            a.menu-main__link.is-active(href="#", data-link) Claims
+            section.menu-main__panel.is-open(data-panel)
+              .l-row
+                .l-third
+                  h2 Services
+                  ul.menu
+                    li.menu__item
+                      a.menu__link(href="#") Haushaltversicherung
+                    li.menu__item
+                      a.menu__link(href="#") Hausratversicherung
+                    li.menu__item
+                      a.menu__link(href="#") Privathaftpflichtversicherung
+                    li.menu__item
+                      a.menu__link(href="#") Rechtsschutzversicherung
+                .l-third
+                  h2 Documents
+                  ul.menu
+                    li.menu__item
+                      a.menu__link(href="#") Autoversicherung
+                    li.menu__item
+                      a.menu__link(href="#") Autoversicherung für Elektroautos
+                    li.menu__item
+                      a.menu__link(href="#") Motorradversicherung
+                    li.menu__item
+                      a.menu__link(href="#") Rechtschutzversicherung
+                .l-third
+                  h2 Benefits
+                  ul.menu
+                    li.menu__item
+                      a.menu__link(href="#") Lebenversicherung
+                    li.menu__item
+                      a.menu__link(href="#") Finanzprodukte
+                    li.menu__item
+                      a.menu__link(href="#") Fondsinformationen
+                    li.menu__item
+                      a.menu__link(href="#") Aktuelle Zinssätze
 
-          li.menu-main__item
-            a.menu-main__link(href="#") Kontakt & Hilfe
-          li.menu-main__item
-            a.menu-main__link(href="#") Prävention
-          li.menu-main__item
-            a.menu-main__link(href="#") Kundenportale
+          li.menu-main__item(data-item)
+            a.menu-main__link(href="#", data-link) Prevention
+            section.menu-main__panel(data-panel)
+          li.menu-main__item(data-item)
+            a.menu-main__link(href="#", data-link) About Us
+            section.menu-main__panel(data-panel)
 
 //- Copyright AXA Versicherungen AG 2015
