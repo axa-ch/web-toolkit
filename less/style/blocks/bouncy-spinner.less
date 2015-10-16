@@ -1,0 +1,93 @@
+@import '../variables';
+
+﻿.bouncy-spinner {
+  display: none;
+}
+
+.bouncy-spinner.is-active {
+  display: block;
+}
+
+.bouncy-spinner__content {
+}
+
+.bouncy-spinner__indicator {
+  position: relative;
+
+  display: block;
+  width: 50px;
+  height: 70px;
+  margin: 10px auto;
+}
+
+.bouncy-spinner__logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 50px;
+  height: 50px;
+
+  animation: bouncy 2s linear infinite;
+  border-radius: 3px;
+}
+
+.bouncy-spinner__shadow {
+  position: absolute;
+  top: 59px;
+  left: 0;
+
+  width: 50px;
+  height: 5px;
+
+  background: @color-black;
+  opacity: 0.1;
+  border-radius: 50%;
+  animation: shadow .5s linear infinite;
+}
+
+.bouncy-spinner__ie9-fallback {
+  display: none;
+}
+
+.bouncy-spinner__ie9-fallback.is-enabled {
+  display: inline-block;
+}
+
+.bouncy-spinner__logo.is-disabled,
+.bouncy-spinner__shadow.is-disabled {
+  display: none;
+  animation: none;
+}
+
+.bouncy-spinner__caption {
+  color: @color-gray--dark;
+  text-align: center;
+}
+
+@keyframes bouncy {
+  1%  { border-bottom-right-radius: 3px; }
+  6%  { transform: translateY(9px)  rotate(22.5deg); }
+  13% { transform: translateY(18px) rotate(45deg) scale(1, .9); border-bottom-right-radius: 40px; }
+  18% { transform: translateY(9px)  rotate(67.5deg); }
+  25% { transform: translateY(9px)  rotate(90deg); border-bottom-right-radius: 3px; border-top-right-radius: 3px; }
+  31% { transform: translateY(9px)  rotate(112.5deg); }
+  38% { transform: translateY(18px) rotate(135deg) scale(1, .9); border-top-right-radius: 40px; }
+  44% { transform: translateY(9px)  rotate(157.5deg); }
+  50% { transform: translateY(9px)  rotate(180deg); border-top-right-radius: 3px; border-top-left-radius: 3px; }
+  56% { transform: translateY(9px)  rotate(202.5deg); }
+  63% { transform: translateY(18px) rotate(225deg) scale(1, .9); border-top-left-radius: 40px; }
+  68% { transform: translateY(9px)  rotate(247.5deg); }
+  75% { transform: translateY(9px)  rotate(270deg); border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+  81% { transform: translateY(9px)  rotate(292.5deg); }
+  88% { transform: translateY(18px) rotate(315deg) scale(1, .9); border-bottom-left-radius: 40px; }
+  94% { transform: translateY(9px)  rotate(337.5deg); }
+  100% { transform: translateY(9px) rotate(360deg); border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; }
+}
+
+@keyframes shadow {
+  0%, 100% { transform: scale(1, 1); }
+  25%, 75% { transform: scale(1.2, 1); }
+}
+
+// Copyright AXA Versicherungen AG 2015
