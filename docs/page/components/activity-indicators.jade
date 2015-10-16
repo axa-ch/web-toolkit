@@ -7,19 +7,22 @@ tags: progress,activity,loading,waiting
 
 include ./includes/mixins.jade
 
-p.paragraph.
-  Performance always matters.  In cases where waiting times can’t be erased, activity indicators help guide users and manage their expectations.
+:markdown
+  Performance always matters.
+  In cases where waiting times can’t be erased,
+  activity indicators help guide users and manage their expectations.
 
-//-
-//-.toc
+.toc
   .toc__title Table of contents
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
-      a(href='#progressbar').toc__anchor-navigation__link Progressbar
+      a.toc__anchor-navigation__link(href='#progress-bar') Progress Bar
     li.toc__anchor-navigation__item
-      a(href='#spinner').toc__anchor-navigation__link Loading Spinner
+      a.toc__anchor-navigation__link(href='#loading-spinner') Loading Spinner
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#bouncing-loading-spinner') Bouncing Loading Spinner
 
-h2.heading.heading--secondary#progressbar Progress Bar
+h2.heading.heading--secondary#progress-bar Progress Bar
 
 p.paragraph.
    A progress bar is used for activities that might
@@ -60,12 +63,13 @@ ul.checklist
     .checklist__item__content.
       Do not use progressbars for technical activities (e.g. loading css, requesting file from source)
 
-.hr
+:markdown
+  ---
+  
+  # Loading Spinner
 
-h2.heading.heading--secondary#spinner Loading Spinner
-
-p.paragraph.
-  Very important element in single page applications for short loading sequences.
+  Very important element in single page applications
+  for short loading sequences.
 
 +example('/components/demos/loading-spinner.html')
 
@@ -132,7 +136,8 @@ ul.checklist
   li.checklist__item
     +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
     .checklist__item__content.
-      Always display a loading spinner if the page might be loading longer than 0.3 seconds.
+      Always display a loading spinner if the page might
+      be loading longer than 0.3 seconds.
 
 :markdown
   ---

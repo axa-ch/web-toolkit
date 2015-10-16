@@ -44,7 +44,7 @@
         return
 
     #animation property not supported, activate fallback on all spinners
-    $('[data-spinner]').each () ->
+    $('[data-spinner="data-spinner"]').each () ->
       $spinner = $(this)
       Plugin.call($spinner)
 
