@@ -1,4 +1,4 @@
-(function ($, Bacon, Modernizr) {
+(function ($, Bacon) {
   class MainMenu {
     constructor(element) {
       this.$element = $(element)
@@ -9,10 +9,10 @@
     }
 
     init() {
-      this.$items
+      let currentlyOpen = this.$items
         .asEventStream('mouseenter')
         .merge(this.$items.asEventStream('mouseleave'))
-        .throttle(300)
+        .throttle(100)
         .map((e) => {
           return {
             type: e.type,
@@ -25,12 +25,12 @@
           if (event.type == 'mouseleave')
             return null
         })
-        .onValue((open) => {
-          console.log('open')
-          this.open(open)
         })
 
-      // !Modernizr.touchevents
+
+      currentlyOpen.onValue((open) => {
+        this.open(open)
+      })
     }
 
     open($itemOrNull) {
@@ -47,13 +47,6 @@
 
         $e.find('[data-panel]').toggleClass('is-open', toggleClass)
       })
-    }
-
-    opened($linkOrPanel) {
-      let $panel = retrievePanel.call(this, $linkOrPanel)
-      if (!$panel) throw new Error('please provide either a link or panel')
-
-      return $panel.hasClass('is-open')
     }
   }
 
@@ -82,6 +75,6 @@
     })
   })
 
-})(jQuery, Bacon, Modernizr)
+})(jQuery, Bacon)
 
 // Copyright AXA Versicherungen AG 2015
