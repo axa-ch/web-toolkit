@@ -15,7 +15,7 @@ include /components/includes/mixins.jade
             .dropzone__container(data-dropzone='dropzone')
               input.dropzone__input(type='file')
               .dropzone__icon-container
-                +svg('upload', ['icon-svg', 'dropzone__icon'])
+                +svg('upload', ['icon', 'dropzone__icon'])
               .dropzone__text-container
                 .dropzone__text
                   span Drag file here or
@@ -28,7 +28,7 @@ include /components/includes/mixins.jade
         .single-upload
           .single-upload__status
             .single-upload__status__icon-container
-              +svg('upload', ['icon-svg', 'single-upload__status__icon'])
+              +svg('upload', ['icon', 'single-upload__status__icon'])
             .single-upload__progressbar-container
               .single-upload__progressbar.progressbar
                 .progressbar__description awesome_image.jpg
@@ -43,7 +43,7 @@ include /components/includes/mixins.jade
         .single-upload
           .single-upload__status
             .single-upload__status__icon-container
-              +svg('upload', ['icon-svg', 'single-upload__status__icon'])
+              +svg('upload', ['icon', 'single-upload__status__icon'])
             .single-upload__status__uploaded
               .single-upload__status__uploaded__actions.file-uploaded__actions
                 a.file-uploaded__actions__action ansehen
@@ -58,7 +58,7 @@ include /components/includes/mixins.jade
             .dropzone__container
               input.dropzone__input(type='file')
               .dropzone__icon-container
-                +svg('upload', ['icon-svg', 'dropzone__icon'])
+                +svg('upload', ['icon', 'dropzone__icon'])
               .dropzone__text-container
                 .dropzone__text
                   span Drag file here or

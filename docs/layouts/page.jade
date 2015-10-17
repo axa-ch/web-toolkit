@@ -21,8 +21,8 @@ mixin displaySideMenu(pages, isNested, isOpen)
         ) #{page.title}
           if page.children
             .menu__dropdown__icon(class={ 'is-open': isActive(page) })
-              +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon-svg'])
-              +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon-svg'])
+              +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon'])
+              +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon'])
 
         if page.children
           +displaySideMenu(page.children, true, isActive(page))
@@ -39,7 +39,7 @@ mixin displayMobileMenu(page)
     )
       span= page.title
       if page.children
-        +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon-svg'])
+        +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon'])
 
     if page.children
       ul.mobile-menu__level(data-level)
@@ -49,7 +49,7 @@ mixin displayMobileMenu(page)
             data-back
           )
             span= page.title
-            +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+            +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon'])
         
         each child in page.children
           +displayMobileMenu(child)
@@ -114,10 +114,10 @@ html
           .header__meta__content
             .header__meta__item.header__meta__search.autocomplete.search.search--header
               input.autocomplete__input.search__input.search--header(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
-              svg.search__icon.search--header.icon-svg
+              svg.search__icon.search--header.icon
                 use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
             a.header__meta__item.header__meta__action(href="https://github.com/axa-ch/style-guide")
-              +svg('github', ['button__icon', 'icon-svg', 'button__icon--left'])
+              +svg('github', ['button__icon', 'icon', 'button__icon--left'])
               | View on GitHub
         .header__main
           .header__main__content

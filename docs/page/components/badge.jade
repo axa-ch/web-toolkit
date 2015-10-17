@@ -14,7 +14,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code
     .tab-panel(data-tab, data-tab-default='html')
@@ -30,15 +30,15 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       If a badge is placed, the underlying element must be clickable.
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       A badge always only contains a number. No icons allowed.
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       It is always placed in the upper right corner of an element.
 

@@ -28,7 +28,7 @@
         console.log @path
         console.log @path[notification.modifier]
         $notification.addClass 'notifications__item--'+notification.modifier
-        $icon = '<svg class="icon-svg notifications__item__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + @path[notification.modifier] + '"></use></svg>'
+        $icon = '<svg class="icon notifications__item__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + @path[notification.modifier] + '"></use></svg>'
         console.log $icon
 
       $iconContainer = $ '<div class="notifications__item__icon-container">'

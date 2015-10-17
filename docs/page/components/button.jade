@@ -33,7 +33,7 @@ p.paragraph.
         herunterladen und gleich mit dem Layout anfanagen
 
 //-.downloads
-  +svg('download', ['downloads__icon', 'icon-svg'])
+  +svg('download', ['downloads__icon', 'icon'])
   .downloads__item
     a(href="../AXA.aco").downloads__link BUTTONS.PSD
 
@@ -48,7 +48,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-1
     .tab-panel(data-tab, data-tab-default='html')
@@ -60,7 +60,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 Prevent whitespace at the start and the end
                 of the button. It will add some additional spacing
@@ -80,7 +80,7 @@ h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Icon only buttons are usually hard to understand. Do not use withouth proper testing.
 
@@ -97,7 +97,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-2')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-2
     .tab-panel(data-tab, data-tab-default='html')
@@ -119,7 +119,7 @@ h3.heading.heading--tertiary.
   UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       If the main goal of you site is information a
       secondary call to action can be used.
@@ -136,7 +136,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-3')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-3
     .tab-panel(data-tab, data-tab-default='html')
@@ -148,7 +148,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 Do not add any whitespace within the button since it would miss-position the icon
 
@@ -163,7 +163,7 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Avoid this type of button for destructive actions
       like delete, nonspecific actions, alerts or errors.

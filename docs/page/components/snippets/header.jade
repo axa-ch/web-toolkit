@@ -18,18 +18,18 @@ header.header
             a.menu__link About Us
       .header__meta__item.header__meta__search.search.search--header
         input.search__input.search--header(type='text')
-        +svg('search', ['search__icon', 'search--header', 'icon-svg'])
+        +svg('search', ['search__icon', 'search--header', 'icon'])
         .search__suggestions.search--header
       .header__meta__item.header__meta__language
         a.header__meta__language-button(data-popover="#languageMenu")
           | En
-          +svg('arrow-bottom', ['icon--language-dropdown', 'icon-svg'])
+          +svg('arrow-bottom', ['icon--language-dropdown', 'icon'])
         .popover(id="languageMenu")
           .popover__tail.popover__tail--top
           .popover__box
             .popover__box__header
               a.popover__close
-                +svg('modal-close', ['modal__close-icon', 'icon-svg'])
+                +svg('modal-close', ['modal__close-icon', 'icon'])
               .popover__box__header__headline Language
             .popover__box__content__wrapper
               .popover__box__content

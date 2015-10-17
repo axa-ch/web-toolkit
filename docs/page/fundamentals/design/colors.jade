@@ -13,7 +13,7 @@ p.paragraph.
 p.callout
   | Copy the color code or the less variable name to the
   | clipboard by clicking the 
-  +svg('clipboard', ['color-palette__key__icon', 'icon-svg'])
+  +svg('clipboard', ['color-palette__key__icon', 'icon'])
   |  icon below.
 
 .bubble
@@ -28,7 +28,7 @@ p.callout
         seen below into Adobe Photoshop or your tool of choice.
 
 .downloads
-  +svg('download', ['downloads__icon', 'icon-svg'])
+  +svg('download', ['downloads__icon', 'icon'])
   .downloads__item
     a(href=relative('/content/AXA.aco')).downloads__link Download swatches
   .downloads__item
@@ -43,7 +43,7 @@ mixin color(colorCode, colorName, modifier)
       .color-palette__color__code
         span #{colorCode}
         != ' '
-        +svg('clipboard', ['color-palette__color__copy', 'icon-svg'], {
+        +svg('clipboard', ['color-palette__color__copy', 'icon'], {
           attrs: {
             'data-clipboard-text': colorCode
           }
@@ -51,7 +51,7 @@ mixin color(colorCode, colorName, modifier)
       .color-palette__color__less
         span @color-#{colorName}
         != ' '
-        +svg('clipboard', ['color-palette__color__copy', 'icon-svg'], {
+        +svg('clipboard', ['color-palette__color__copy', 'icon'], {
           attrs: {
             'data-clipboard-text': '@color-' + colorName
           }

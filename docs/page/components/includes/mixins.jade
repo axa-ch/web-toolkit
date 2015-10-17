@@ -16,11 +16,11 @@ mixin example(path, options)
     .example__header
       .example__device-selection
         a.example__device-selection__device.example__device-selection__device--mobile(data-example-mobile)
-          +svg('mobile', ['icon-svg', 'example__device-selection__icon'])
+          +svg('mobile', ['icon', 'example__device-selection__icon'])
         a.example__device-selection__device.example__device-selection__device--tablet(data-example-tablet)
-          +svg('tablet', ['icon-svg', 'example__device-selection__icon'])
+          +svg('tablet', ['icon', 'example__device-selection__icon'])
         a.example__device-selection__device.example__device-selection__device--desktop(data-example-desktop)
-          +svg('desktop', ['icon-svg', 'example__device-selection__icon'])
+          +svg('desktop', ['icon', 'example__device-selection__icon'])
     .example__content
       iframe.example__iframe(
         src=relative(path)

@@ -5,9 +5,8 @@ module.exports = (cb) ->
   runSequence(
     'clean'
     'images'
-    'icons'
     'icons-copy'
-    'icons-svg'
+    'icons'
     'styles'
     'jquery'
     'ng'

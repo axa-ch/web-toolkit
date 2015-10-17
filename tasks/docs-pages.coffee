@@ -4,6 +4,7 @@ colors = require 'colors'
 gutil = require 'gulp-util'
 moment = require 'moment'
 _ = require 'lodash'
+fs = require 'fs'
 
 readJSONFile = require '../lib/readJSONFile'
 sampleJadeFilter = require '../lib/jade-filter-sample'
@@ -59,7 +60,7 @@ module.exports = (cb) ->
 
   # add metadata
   metalsmith.use define
-    icons: readJSONFile path.join cwd, 'tmp/icons.json'
+    icons: fs.readdirSync(path.join cwd, 'icons').map (file) -> { name: file.replace /\.svg$/, '' }
     colors: readJSONFile path.join cwd, 'less/colors.json'
     version: readJSONFile path.join cwd, 'tmp/version.json'
     package: readJSONFile path.join cwd, 'package.json'

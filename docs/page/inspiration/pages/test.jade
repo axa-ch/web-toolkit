@@ -29,7 +29,7 @@ html
       //.example-header
         .example-header__sticky
           a(href=relative("/examples")).example-header__back
-            +svg('arrow-left', ['example-header__back__icon', 'icon-svg'])
+            +svg('arrow-left', ['example-header__back__icon', 'icon'])
             | Back to overview
           .example-header__headline Example
         .example-header__text
@@ -67,20 +67,20 @@ html
                   a.menu__link Über AXA
             .header__meta__item.header__meta__search.search.search--header
               input.search__input.search--header(type='text')
-              svg.search__icon.search--header.icon-svg
+              svg.search__icon.search--header.icon
                 use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
               .search__suggestions.search--header
             .header__meta__item.header__meta__language
               a.header__meta__language-button(data-popover="#languageMenu")
                 | En
-                svg.icon-svg.icon--language-dropdown
+                svg.icon.icon--language-dropdown
                   use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#arrow-bottom")
               .popover(id="languageMenu")
                 .popover__tail.popover__tail--top
                 .popover__box
                   .popover__box__header
                     a.popover__close
-                      svg.modal__close-icon.icon-svg
+                      svg.modal__close-icon.icon
                         use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#modal-close")
                     .popover__box__header__headline Language
                   .popover__box__content__wrapper
@@ -161,11 +161,11 @@ html
           li.menu__item.is-active
             a.menu__link.menu__link--parent.is-active
               | Cool Stuff
-              +svg('arrow-right', ['menu__link__parent-icon', 'icon-svg'])
+              +svg('arrow-right', ['menu__link__parent-icon', 'icon'])
             ul.menu__level.is-current#active-level
               li.menu__item.menu__item--back
                 a.menu__link.menu__link--back
-                  +svg('arrow-left', ['menu__link__back-icon', 'icon-svg'])
+                  +svg('arrow-left', ['menu__link__back-icon', 'icon'])
                   | Cool Stuff
               li.menu__item
                 a.menu__link.is-active Item 1
@@ -176,11 +176,11 @@ html
           li.menu__item
             a.menu__link.menu__link--parent
               | More Cool Stuff
-              +svg('arrow-right', ['menu__link__parent-icon', 'icon-svg'])
+              +svg('arrow-right', ['menu__link__parent-icon', 'icon'])
             ul.menu__level
               li.menu__item.menu__item--back
                 a.menu__link.menu__link--back
-                  +svg('arrow-left', ['menu__link__back-icon', 'icon-svg'])
+                  +svg('arrow-left', ['menu__link__back-icon', 'icon'])
                   | More Cool Stuff
               li.menu__item
                 a.menu__link Item 4
