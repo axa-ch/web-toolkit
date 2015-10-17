@@ -9,24 +9,43 @@
     }
 
     init() {
-      this.$links
+      this.$items
         .asEventStream('mouseenter')
-        .doAction(() => console.log('Hello World!', arguments))
-        //.doAction(($e) => this.open($e))
+        .merge(this.$items.asEventStream('mouseleave'))
+        .throttle(300)
+        .map((e) => {
+          return {
+            type: e.type,
+            $e: $(e.currentTarget)
+          }
+        })
+        .scan(null, (open, event) => {
+          if (event.type == 'mouseenter' || event.type == 'mouseover')
+            return event.$e
+          if (event.type == 'mouseleave')
+            return null
+        })
+        .onValue((open) => {
+          console.log('open')
+          this.open(open)
+        })
 
       // !Modernizr.touchevents
     }
 
-    open($linkOrPanel) {
-      console.log(this, arguments)
-      let $panel = retrievePanel.call(this, $linkOrPanel)
-      if (!$panel) throw new Error('please provide either a link or panel')
+    open($itemOrNull) {
+      let $item = $()
 
-      this.$panels.each((i, e) => {
+      if ($itemOrNull) {
+        $item = this.$items.filter($itemOrNull)
+        if (!$item) throw new Error('please provide either a link, a panel or null')
+      }
+
+      this.$items.each((i, e) => {
         let $e = $(e)
-        let toggleClass = $e.is($panel)
+        let toggleClass = $e.is($item)
 
-        $e.toggleClass('is-open', toggleClass)
+        $e.find('[data-panel]').toggleClass('is-open', toggleClass)
       })
     }
 
@@ -35,16 +54,6 @@
       if (!$panel) throw new Error('please provide either a link or panel')
 
       return $panel.hasClass('is-open')
-    }
-  }
-
-  function retrievePanel($linkOrPanel) {
-    if ($linkOrPanel.data('link')) {
-      return $linkOrPanel.siblings('[data-panel]')
-    } else if ($linkOrPanel.data('panel')) {
-      return $linkOrPanel
-    } else {
-      return null
     }
   }
 
