@@ -25,8 +25,6 @@
           if (event.type == 'mouseleave')
             return null
         })
-        })
-
 
       currentlyOpen.onValue((open) => {
         this.open(open)
