@@ -89,172 +89,6 @@
   }
 }
 
-.menu--collapsing,
-.menu--sliding {
-
-  .menu__link {
-    display: block;
-
-    box-sizing: border-box;
-    height: 56px;
-    padding: 17px 15px 16px 15px;
-    border-bottom: 1px solid @color-tbd-13;
-
-    text-decoration: none;
-    font-size: 17px;
-    line-height: 22px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
-    background-color: @color-blue;
-    color: @color-white;
-
-
-    &:hover {
-      color: white;
-    }
-
-    &.is-active {
-      background-color: @color-tbd-24;
-      color: white;
-    }
-  }
-
-  .menu__link__parent-icon {
-    display: block;
-    float: right;
-
-    height: 1.4em;
-    width: 1.4em;
-    padding: 0;
-  }
-
-  .menu__link--back {
-    background-color: @color-tbd-24;
-  }
-
-  .menu__link__back-icon {
-
-    display: block;
-    float: left;
-
-    height: 1.4em;
-    width: 1.4em;
-    padding-right: 8px;
-  }
-}
-
-.menu--collapsing {
-  // Level 1
-  .menu__level .menu__link {
-    background: @color-tbd-9;
-  }
-
-  .menu__level .menu__link.is-active {
-    background: @color-tbd-10;
-  }
-
-  // Level 2
-  .menu__level .menu__level .menu__link {
-    padding-left: 35px;
-    background-color: @color-tbd-9;
-  }
-
-  .menu__level .menu__level .menu__link.is-active {
-    background-color: @color-tbd-11;
-  }
-
-  // Level 3
-  .menu__level .menu__level .menu__level .menu__link {
-    height: 41px;
-    padding-top: 10px;
-    padding-bottom: 9px;
-    border-top: none;
-    border-bottom: 1px solid @color-tbd-13;
-
-    background-color: @color-tbd-12;
-    color: @color-tbd-9;
-  }
-
-  .menu__level .menu__level .menu__level .menu__link.is-active {
-    background-color: @color-tbd-12;
-  }
-
-  .menu__level {
-    padding: 0;
-    margin: 0;
-    visibility: hidden;
-
-    width: 100%;
-    max-height: 0px;
-
-    overflow: hidden;
-
-    list-style-type: none;
-
-    // Watch out: prevent delayed closing with a bezier
-    transition: max-height @transition-duration cubic-bezier(0, 1.05, 0, 1), visibility @transition-duration;
-  }
-
-  .menu__level.is-open {
-    visibility: visible;
-
-    // Watch out: work around, since no transition to `height: auto` is possible
-    max-height: 3999px;
-  }
-
-  .menu__item {
-    float: none;
-  }
-
-  .menu__link--parent.is-active {
-    .icon--arrow-bottom;
-  }
-}
-
-.menu--sliding {
-  position: relative;
-
-  overflow-x: hidden;
-  overflow-y: hidden;
-
-  transition: height @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
-
-  .menu__level {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 100%;
-    visibility: hidden;
-
-    width: 100%;
-    padding: 0;
-    margin: 0;
-
-    list-style-type: none;
-
-    transition: left @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
-
-    &.is-previous {
-    }
-
-    &.is-current {
-      visibility: visible;
-    }
-  }
-
-  .menu__item {
-    float: none;
-
-    &:first-of-type {
-      .menu__link {
-        border-top: 1px solid @color-tbd-13;
-      }
-    }
-  }
-}
-
 .menu--main {
   display: none;
 
@@ -264,20 +98,21 @@
   font-weight: @font-weight-medium;
 
   .respond(large, {
-    display: block;
+    display: flex;
+    align-items: flex-end;
   });
 
   .menu__item {
-    height: 56px;
-    margin: 0 (@grid-gutter-width / 2);
+    margin: 0;
 
     line-height: 44px;
 
     &.is-active,
     &:hover {
-      border-bottom: 5px solid @color-blue;
 
       .menu__link {
+        padding-bottom: 0;
+        border-bottom: 5px solid @color-blue;
         color: @color-blue;
       }
     }
@@ -290,7 +125,11 @@
   .menu__link {
     display: block;
 
+    height: 100%;
+    padding: 0 20px 5px 20px;
+
     text-decoration: none;
+    text-align: center;
 
     color: @color-gray--darker;
   }
@@ -345,12 +184,14 @@
     font-size: 0.9em;
     font-weight: bold;
 
+    &.is-active {
+      background: @color-white;
+      box-shadow: -4px 0px 3px -3px @color-gray--mid, 3px 0px 3px -3px @color-gray--mid, 0 0px 0px 0 @color-white,0 0px 0px 0 @color-white;
+    }
+
     &.is-active,
     &:hover {
-      background: @color-white;
-      box-shadow: -4px 0px 3px -3px @color-gray, 3px 0px 3px -3px @color-gray, 0 0px 0px 0 @color-white,0 0px 0px 0 @color-white;
-
-      a {
+      .menu__link {
         color: @color-blue;
       }
     }

@@ -20,6 +20,8 @@
   fill: currentColor;
   height: 1em;
   width: 1em;
+
+  pointer-events: none;
 }
 
 .icon {
@@ -97,6 +99,11 @@
 
 .icon--xing {
   .make-color(#00605e);
+}
+
+.icon--language-dropdown {
+  width: 0.5em;
+  height: 0.5em;
 }
 
 // Copyright AXA Versicherungen AG 2015

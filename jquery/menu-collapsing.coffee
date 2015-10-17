@@ -12,11 +12,12 @@
       @init()
 
     init: () ->
-      @$element.on 'click', '.menu__link', @, (event) ->
+      @$element.on 'click', '[data-link]', @, (event) ->
         link = $(event.target)
-        subLevel = link.siblings('.menu__level')
+        subLevel = link.siblings('[data-level]')
 
         if subLevel.length > 0
+          event.preventDefault()
           event.data.toggle(subLevel)
 
     toggle: (toSet) ->
@@ -24,18 +25,18 @@
 
       throw new Error 'Provided level not in menu!' if not level
 
-      parentLinks = level.parentsUntil(@$element, '.menu__link')
-      parentLevels = level.parentsUntil(@$element, '.menu__level')
+      parentLinks = level.parentsUntil(@$element, '[data-link]')
+      parentLevels = level.parentsUntil(@$element, '[data-level]')
 
       shouldOpen = not level.hasClass('is-open')
 
       if shouldOpen and @options.exclusive
-        @$element.find('.menu__level').not(parentLevels)
+        @$element.find('[data-level]').not(parentLevels)
           .removeClass('is-open')
-          .siblings('.menu__link').removeClass('is-active')
+          .siblings('[data-link]').removeClass('is-active')
 
       level.toggleClass('is-open', shouldOpen)
-        .siblings('.menu__link').toggleClass('is-active', shouldOpen)
+        .siblings('[data-link]').toggleClass('is-active', shouldOpen)
 
   # Plugin definition
   Plugin = (option) ->

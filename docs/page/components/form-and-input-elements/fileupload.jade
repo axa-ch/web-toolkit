@@ -27,28 +27,15 @@ h2.heading.heading--secondary#example Example
 p.paragraph.
   This is a working example of the fileupload component. Please drag a file into the dropzone.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-js.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-js.html')
+
 .hr
 
 h2.heading.heading--secondary#dropzone Dropzone
 p.paragraph.
   The dropzone is the initial state of every fileupload and should be used wherever possible.  If a file upload is not feasible, a classic file upload should be used.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-dropzone.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-dropzone.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-dropzone')
@@ -95,14 +82,7 @@ p.paragraph.
   The file list contains all files that are currently being uploaded, have
   been uploaded or we're interrupted while uploading.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-list.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-list.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-list')
@@ -138,14 +118,7 @@ p.paragraph.
 p.paragraph.
   This is the case for most mobile devices and ancient browser like IE 9.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-fallback.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-fallback.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-fallback')
@@ -171,14 +144,7 @@ p.paragraph.
   the dropzone in this case.
   In case of an error, display the message below the dropzone.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-single.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-single.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-single')
