@@ -48,15 +48,11 @@ aside.callout
       .tab-panel__header
         .tab-panel__header__tabs
           .tab-panel__header__tab(data-tab-toggle='html') HTML
-          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
       .tab-panel__content
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/main-menu-basic.jade
-        .tab-panel__content__tab(data-tab-content='js')
-          :markdown
-            Nothing to see here!
 
 :markdown
   ---
@@ -89,6 +85,18 @@ aside.callout
               include:highlightcode ./snippets/main-menu-multi.jade
         .tab-panel__content__tab(data-tab-content='js')
           :markdown
-            Nothing to see here!
+            If you omit the `data-menu="main"` attribute, the
+            menu won't get any functionality.
+            
+            In order to add
+            the missing functionality programmatically, simply initialize the
+            `$().mainMenu()` plugin.
+            
+            ```js
+            var menu = $("[data-menu='main']")
+            
+            // initialize the plugin
+            menu.mainMenu()
+            ```
 
 //- Copyright AXA Versicherungen AG 2015
