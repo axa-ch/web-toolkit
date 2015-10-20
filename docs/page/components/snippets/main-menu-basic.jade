@@ -1,0 +1,23 @@
+---
+title: Basic Main Menu
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+header.header
+  .header__main
+    .header__main__content
+      nav.header__menu
+        // This is where it starts...
+        ul.menu-main
+          li.menu-main__item
+            a.menu-main__link(href="#", data-link) Insurance
+          li.menu-main__item.is-active
+            a.menu-main__link.is-active(href="#", data-link) Claims
+          li.menu-main__item
+            a.menu-main__link(href="#", data-link) Prevention
+          li.menu-main__item
+            a.menu-main__link(href="#", data-link) About Us
+
+//- Copyright AXA Versicherungen AG 2015

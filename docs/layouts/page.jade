@@ -124,10 +124,10 @@ html
             a.header__brand.brand(href=relative("/index.html"))
               span.brand__logo
             .header__menu
-              ul.menu.menu--main
+              ul.menu-main
                 each page in navigation
-                  li.menu__item(class={ 'is-active': isActive(page) })
-                    a.menu__link(href=relative(page.link))= page.title
+                  li.menu-main__item(class={ 'is-active': isActive(page) })
+                    a.menu-main__link(class={ 'is-active': isActive(page) }, href=relative(page.link))= page.title
             a.header__main__mobile-trigger(href="#", data-toggle='site-menu', data-target='.site')
               +svg('burger', ['header__main__mobile-icon'])
 
