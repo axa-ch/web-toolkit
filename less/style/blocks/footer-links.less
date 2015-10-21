@@ -13,7 +13,7 @@
   padding-bottom: 24px;
   margin: 0;
 
-  .respond(medium, {
+  .respond(large, {
     padding: 35px 0;
   });
 }
@@ -23,19 +23,22 @@
 
   margin: 0 -30px;
 
-  .respond(medium, {
+  .respond(large, {
     column-count: 2;
     break-inside: avoid;
 
     margin: 0;
+    margin-top: -8px;
   });
 }
 
 .footer-links__item {
   margin-bottom: -1px;
 
-  .respond(medium, {
+  .respond(large, {
+    display: inline-block;
     margin: 0;
+    width: 100%;
   });
 }
 
@@ -53,9 +56,9 @@
   border-bottom: 1px solid @color-gray--light;
   color: @color-gray--darker;
 
-  .respond(medium, {
-    padding: 8px 0;
-    height: auto;
+  .respond(large, {
+    height: 32px;
+    padding: 0;
 
     border: none;
   });
@@ -74,7 +77,7 @@
   width: 24px;
   margin-left: 20px;
 
-  .respond(medium, {
+  .respond(large, {
     display: none;
   });
 }
