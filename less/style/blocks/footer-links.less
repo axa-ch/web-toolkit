@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../mixins/font';
 @import '../mixins/respond';
 @import '../mixins/unstyle-list';
 
@@ -6,10 +7,11 @@
 }
 
 .footer-links__headline {
-  padding: 50px 0;
+  .make-font-heading-tertiary;
+
+  padding: 48px 0;
+  padding-bottom: 24px;
   margin: 0;
-  font-size: 1.5em;
-  font-weight: normal;
 
   .respond(medium, {
     padding: 35px 0;
@@ -23,6 +25,7 @@
 
   .respond(medium, {
     column-count: 2;
+    break-inside: avoid;
 
     margin: 0;
   });
@@ -37,30 +40,29 @@
 }
 
 .footer-links__link {
+  .make-font-large;
+
   display: flex;
   align-items: center;
 
   padding: 0 30px;
-  height: 95px;
+  height: 56px;
 
   text-decoration: none;
-  font-size: 1.5em;
-  border-top: 1px solid #DCDCDC;
-  border-bottom: 1px solid #DCDCDC;
-  color: #979797;
+  border-top: 1px solid @color-gray--light;
+  border-bottom: 1px solid @color-gray--light;
+  color: @color-gray--darker;
 
   .respond(medium, {
     padding: 8px 0;
     height: auto;
 
-    font-size: 1em;
-    color: gray;
     border: none;
   });
 }
 
 .footer-links__link:hover {
-  color: #1f378c;
+  color: @color-blue;
 }
 
 .footer-links__text {
@@ -68,8 +70,8 @@
 }
 
 .footer-links__icon {
-  height: 36px;
-  width: 36px;
+  height: 24px;
+  width: 24px;
   margin-left: 20px;
 
   .respond(medium, {
