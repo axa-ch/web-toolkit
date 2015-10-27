@@ -6,21 +6,18 @@
   background-color: @color-gray--lighter;
 }
 
-.footer-copyline__content {
+.footer-copyline__container {
+  .make-container();
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  max-width: 1260px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 @grid-gutter-width;
 
   .respond(large, {
     flex-direction: row;
     flex-wrap: wrap;
 
-    padding: 0;
     justify-content: flex-end;
   });
 }

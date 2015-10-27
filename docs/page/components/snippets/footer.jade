@@ -7,65 +7,66 @@ include /components/includes/mixins.jade
 
 footer.footer
   .footer__main
-    .footer__main__content
-      section.footer__social.footer-social
-        h3.footer-social__headline Keep in touch
-        ul.footer-social__items
-          li.footer-social__item
-            a.footer-social__link(href="#")
-              +svg('facebook', ['footer-social__icon'])
-          li.footer-social__item
-            a.footer-social__link(href="#")
-              +svg('twitter', ['footer-social__icon'])
-          li.footer-social__item
-            a.footer-social__link(href="#")
-              +svg('xing', ['footer-social__icon'])
-          li.footer-social__item
-            a.footer-social__link(href="#")
-              +svg('youtube', ['footer-social__icon'])
-          li.footer-social__item
-            a.footer-social__link(href="#")
-              +svg('linked-in', ['footer-social__icon'])
+    .footer__main__container
+      .footer__main__row
+        section.footer__social.footer-social
+          h3.footer-social__headline Keep in touch
+          ul.footer-social__items
+            li.footer-social__item
+              a.footer-social__link(href="#")
+                +svg('facebook', ['footer-social__icon'])
+            li.footer-social__item
+              a.footer-social__link(href="#")
+                +svg('twitter', ['footer-social__icon'])
+            li.footer-social__item
+              a.footer-social__link(href="#")
+                +svg('xing', ['footer-social__icon'])
+            li.footer-social__item
+              a.footer-social__link(href="#")
+                +svg('youtube', ['footer-social__icon'])
+            li.footer-social__item
+              a.footer-social__link(href="#")
+                +svg('linked-in', ['footer-social__icon'])
 
-      section.footer__links.footer-links
-        h3.footer-links__headline AXA & You
-        ul.footer-links__menu
-          li.footer-links__item
-            a.footer-links__link(href="#")
-              span.footer-links__text Contact Us
-              +svg('arrow-right', ['footer-links__icon'])
-          li.footer-links__item
-            a.footer-links__link(href="#")
-              span.footer-links__text Media
-              +svg('arrow-right', ['footer-links__icon'])
-          li.footer-links__item
-            a.footer-links__link(href="#")
-              span.footer-links__text Claim
-              +svg('arrow-right', ['footer-links__icon'])
-          li.footer-links__item
-            a.footer-links__link(href="#")
-              span.footer-links__text News
-              +svg('arrow-right', ['footer-links__icon'])
-          li.footer-links__item
-            a.footer-links__link(href="#")
-              span.footer-links__text Careers
-              +svg('arrow-right', ['footer-links__icon'])
-          li.footer-links__item
-            a.footer-links__link(href="#")
-              span.footer-links__text My AXA
-              +svg('arrow-right', ['footer-links__icon'])
+        section.footer__links.footer-links
+          h3.footer-links__headline AXA & You
+          ul.footer-links__menu
+            li.footer-links__item
+              a.footer-links__link(href="#")
+                span.footer-links__text Contact Us
+                +svg('arrow-right', ['footer-links__icon'])
+            li.footer-links__item
+              a.footer-links__link(href="#")
+                span.footer-links__text Media
+                +svg('arrow-right', ['footer-links__icon'])
+            li.footer-links__item
+              a.footer-links__link(href="#")
+                span.footer-links__text Claim
+                +svg('arrow-right', ['footer-links__icon'])
+            li.footer-links__item
+              a.footer-links__link(href="#")
+                span.footer-links__text News
+                +svg('arrow-right', ['footer-links__icon'])
+            li.footer-links__item
+              a.footer-links__link(href="#")
+                span.footer-links__text Careers
+                +svg('arrow-right', ['footer-links__icon'])
+            li.footer-links__item
+              a.footer-links__link(href="#")
+                span.footer-links__text My AXA
+                +svg('arrow-right', ['footer-links__icon'])
 
-      section.footer__worldwide.footer-worldwide
-        .footer-worldwide__headline AXA worldwide
-        ul.footer-worldwide__entities
-          li.footer-worldwide__entity(href="#")
-            a.footer-worldwide__link(href="#")
-              span.footer-worldwide__text AXA worldwide
-              +svg('arrow-right', ['footer-worldwide__icon'])
-              img.footer-worldwide__image(src=relative('/images/axa-world.svg'))
+        section.footer__worldwide.footer-worldwide
+          .footer-worldwide__headline AXA worldwide
+          ul.footer-worldwide__entities
+            li.footer-worldwide__entity(href="#")
+              a.footer-worldwide__link(href="#")
+                span.footer-worldwide__text AXA worldwide
+                +svg('arrow-right', ['footer-worldwide__icon'])
+                img.footer-worldwide__image(src=relative('/images/axa-world.svg'))
 
   .footer__copyline.footer-copyline
-    .footer-copyline__content
+    .footer-copyline__container
       span.footer-copyline__notice Copyright AXA Versicherungen AG 2015 ©
       ul.footer-copyline__entries
         li.footer-copyline__item

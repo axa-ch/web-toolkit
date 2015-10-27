@@ -9,19 +9,17 @@
   border-top: 5px solid @color-blue;
 }
 
-.footer__main__content {
-  max-width: 1260px;
+.footer__main__container {
+  .make-container();
+}
 
-  padding: 0 @grid-gutter-width;
-
-  .respond(large, {
-    display: flex;
-
-    margin: 0 auto;
-  });
+.footer__main__row {
+  .make-row();
 }
 
 .footer__social, .footer__links, .footer__worldwide {
+  .make-col(12);
+
   .respond(large, {
     padding-top: 10px;
     padding-bottom: 40px;
