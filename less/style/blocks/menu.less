@@ -207,8 +207,11 @@
 }
 
 .menu--footer {
-  .make-col(12);
-  .make-col(6, medium);
+  .column;
+  .column--12;
+  .respond(medium, {
+    .column--6;
+  });
   padding-left: 0px;
   padding-right: 0px;
 

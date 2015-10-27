@@ -133,10 +133,10 @@ html
 
       .page-content
         if section
-          .l-row
-            nav.l-col--docs-side
+          .row
+            nav.column.column--docs-side
               +displaySideMenu(section.children, false, true)
-            .l-col--docs-main
+            .column.column--docs-main
               if headline !== false
                 h1.heading.heading--page #{title}
               div!= contents
@@ -149,7 +149,7 @@ html
       footer.footer
         .footer__content
         .footer__copyline
-          .l-container
+          .container
             ul.menu.menu--copyline
               li.menu__item
                 a(href=relative('/changelog.html')).menu__link Changelog

@@ -1,4 +1,3 @@
-@import "style/mixins/grid";
 @import "style/blocks/heading";
 
 .inspiration {
@@ -6,13 +5,14 @@
 }
 
 .inspiration__item {
-  .make-row();
+  .row;
   margin: 0 0 40px 0;
 }
 
 .inspiration__item__image {
   display: block;
-  .make-col(3);
+  .column;
+  .column--3;
 }
 
 .inspiration__item__image__img {
@@ -20,7 +20,8 @@
 }
 
 .inspiration__item__content {
-  .make-col(9);
+  .column;
+  .column--9;
 }
 
 .inspiration__item__title {

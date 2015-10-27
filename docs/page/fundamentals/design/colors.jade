@@ -60,18 +60,18 @@ mixin color(colorCode, colorName, modifier)
 h2.heading.heading--secondary Primary palette
 
 .color-palette
-  .l-row
+  .row
     each colorCode, colorName in colors.primary
-      .l-fourth
+      .column.column--3
         +color(colorCode, colorName, undefined)
 
 h2.heading.heading--secondary Secondary palette
 
 .color-palette
   each colorGroup in colors.secondary
-    .l-row
+    .row
       each colorCode, colorName in colorGroup.colors
-        .l-thumbnail
+        .column.column--1
           +color(colorCode, colorName, 'secondary')
 
 script

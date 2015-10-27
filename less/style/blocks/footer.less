@@ -1,6 +1,5 @@
 @import '../variables';
 @import '../mixins/respond';
-@import '../mixins/grid';
 
 .footer {
   margin-top: 20px;
@@ -30,10 +29,12 @@
 
 .footer__item {
   margin: 18px 0 0 0;
-
-  .make-col(12);
-  .make-col(4, medium);
-
+  
+  .column;
+  .column--12;
+  .respond(medium, {
+    .column--4;
+  });
 }
 
 .footer__item__menu {
@@ -60,8 +61,6 @@
 }
 
 .footer__item--keep-in-touch {
-  //.make-col-push(4, medium);
-
   .respond(medium, {
     background-color: white;
   });
@@ -73,7 +72,6 @@
 }
 
 .footer__item--links {
-  //.make-col-pull(4, medium);
   .footer__item__headline {
     margin-bottom: 12px;
 
