@@ -1,4 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 2048">
-    <title>Arrow-Left</title>
-    <path d="M256 2048l1024-1024L256 0 0 256l768 768L0 1792l256 256z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M5.39 1.478L6.86-.025l10.3 10.522.004-.004 1.467 1.497-.003.005.004.004-1.472 1.503-.004-.005L6.9 23.975 5.434 22.48 15.688 12"/>
 </svg>

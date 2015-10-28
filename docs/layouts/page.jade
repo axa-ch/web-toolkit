@@ -147,14 +147,17 @@ html
           div!= contents
           
       footer.footer
-        .footer__content
-        .footer__copyline
-          .l-container
-            ul.menu.menu--copyline
-              li.menu__item
-                a(href=relative('/changelog.html')).menu__link Changelog
-              li.menu__item
-                span.menu__link= config.copyright
+        .footer__copyline.footer-copyline
+          .footer-copyline__container
+            span.footer-copyline__notice.
+              #{config.copyright} #[+svg('doge', ['icon-svg'])]
+            ul.footer-copyline__entries
+              li.footer-copyline__item
+                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide") GitHub
+              li.footer-copyline__item
+                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/issues") Issues & Feature Requests
+              li.footer-copyline__item
+                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/releases") Changelog
 
     .site__mobile-menu
       .site__mobile-menu__header
