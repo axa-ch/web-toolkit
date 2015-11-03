@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../mixins/font';
 @import '../mixins/respond';
 
 @mobile-nav-width: 80%;
@@ -6,14 +7,14 @@
 .site {
   overflow-x: hidden;
   background-color: @color-white;
+}
 
-  &.is-mobile-nav-open {
-    overflow-y: hidden;
+.site.is-mobile-nav-open {
+  overflow-y: hidden;
 
-    .respond(large, {
-      overflow-y: inherit;
-    });
-  }
+  .respond(large, {
+    overflow-y: inherit;
+  });
 }
 
 .site__page {
@@ -21,35 +22,38 @@
   right: 0;
   overflow: hidden;
 
-  transition: right 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045);
+  transition: right @transition-duration @transition-fn-fancy;
+}
 
-  &.is-pushed {
-    right: @mobile-nav-width;
+.site__page.is-pushed {
+  right: @mobile-nav-width;
 
+  .respond(large, {
+    right: 0;
+  });
+}
 
-    .respond(large, {
-      right: 0;
-    });
-  }
+.site__page__mask {
+  display: block;
+  width: 100%;
+  height: 100%;
 
-  &.is-masked {
-    &::before {
-      content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
 
-      display: block;
-      width: 100%;
-      height: 100%;
+  background-color: @color-black;
+  opacity: 0;
+  z-index: @z-index-site-page-masked;
+  cursor: pointer;
+  pointer-events: none;
 
-      position: absolute;
-      top: 0;
-      left: 0;
+  transition: all @transition-duration @transition-fn-fancy;
+}
 
-      background-color: #000;
-      opacity: 0.5;
-      z-index: @z-index-site-page-masked;
-      cursor: pointer;
-    }
-  }
+.site__page__mask.is-visible {
+  opacity: 0.5;
+  pointer-events: all;
 }
 
 .site__mobile-menu {
@@ -63,9 +67,9 @@
   z-index: @z-index-site-mobile-nav;
   overflow-y: scroll;
 
-  background-color: @color-blue;
+  background-color: @color-white;
 
-  transition: right 0.5s cubic-bezier(0.6, 0.0, 0.735, 0.045);
+  transition: right @transition-duration @transition-fn-fancy;
 
   .respond(large, {
     display: none;
@@ -77,17 +81,20 @@
 }
 
 .site__mobile-menu__header {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  display: flex;
+  height: 88px;
+
+  align-items: center;
+  justify-content: center;
 }
 
 .site__mobile-menu__title {
-  margin: 0;
+  .make-font-x-large;
 
-  font-size: 24px;
-  text-align: center;
+  display: flex;
 
-  color: white;
+  align-items: center;
+  justify-content: center;
 }
 
 .site__mobile-menu__user {

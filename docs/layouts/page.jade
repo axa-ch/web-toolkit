@@ -104,8 +104,9 @@ html
     
     script moment.locale('en_GB')
 
-  body.site
-    .site__page
+  body.site(data-site)
+    .site__page(data-page)
+      .site__page__mask(data-mask)
       #notification.notifications(data-notification-info=relative('/images/icons.svg#info')
         data-notification-success=relative('/images/icons.svg#checkmark')
         data-notification-error=relative('/images/icons.svg#cross'))
@@ -128,8 +129,12 @@ html
                 each page in navigation
                   li.menu-main__item(class={ 'is-active': isActive(page) })
                     a.menu-main__link(class={ 'is-active': isActive(page) }, href=relative(page.link))= page.title
-            a.header__main__mobile-trigger(href="#", data-toggle='site-menu', data-target='.site')
-              +svg('burger', ['header__main__mobile-icon'])
+            a.header__main__mobile-trigger(data-burger, href="#")
+              svg.header__main__mobile-icon(data-burger, width="24", height="24", viewBox="0 0 24 24")
+                g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
+                  path(d="M0,5 L24,5", class="top")
+                  path(d="M0,12 L24,12", class="middle")
+                  path(d="M0,19 L24,19", class="bottom")
 
       .page-content
         if section
@@ -159,7 +164,7 @@ html
               li.footer-copyline__item
                 a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/releases") Changelog
 
-    .site__mobile-menu
+    .site__mobile-menu(data-mobile)
       .site__mobile-menu__header
         h1.site__mobile-menu__title Web Style Guide
       nav.mobile-menu.mobile-menu--sliding(data-menu='sliding')
