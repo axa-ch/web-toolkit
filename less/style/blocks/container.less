@@ -1,22 +1,13 @@
 @import '../variables';
+@import '../mixins/make-container';
 @import '../mixins/respond';
 
 .container {
+  .make-container();
+
   max-width: @respond-large-max-width;
-  padding-left: (@grid-gutter-width / 2);
-  padding-right: (@grid-gutter-width / 2);
-  margin-right: auto;
-  margin-left: auto;
-  
-  .respond(medium, {
-    padding-left: @grid-gutter-width;
-    padding-right: @grid-gutter-width;
-  });
 }
 
 .container--fluid {
   max-width: auto;
 }
-
-
-

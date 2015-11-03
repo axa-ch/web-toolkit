@@ -1,105 +1,33 @@
-@import '../variables';
+@import '../mixins/make-column';
+@import '../mixins/make-column-span';
+@import '../mixins/make-column-offset';
 
 .column {
-  min-height: 1px;
-  padding-left: (@grid-gutter-width / 2);
-  padding-right: (@grid-gutter-width / 2);
-  flex-shrink: 0;
+  .make-column();
 }
 
-.column--1 {
-  width: percentage(1/12);
-}
+.column--1 { .make-column-span(1) }
+.column--2 { .make-column-span(2); }
+.column--3 { .make-column-span(3); }
+.column--4 { .make-column-span(4); }
+.column--5 { .make-column-span(5); }
+.column--6 { .make-column-span(6); }
+.column--7 { .make-column-span(7); }
+.column--8 { .make-column-span(8); }
+.column--9 { .make-column-span(9); }
+.column--10 { .make-column-span(10); }
+.column--11 { .make-column-span(11); }
+.column--12 { .make-column-span(12); }
 
-.column--2 {
-  width: percentage(2/12);
-}
-
-.column--3 {
-  width: percentage(3/12);
-}
-
-.column--4 {
-  width: percentage(4/12);
-}
-
-.column--5 {
-  width: percentage(5/12);
-}
-
-.column--6 {
-  width: percentage(6/12);
-}
-
-.column--7 {
-  width: percentage(7/12);
-}
-
-.column--8 {
-  width: percentage(8/12);
-}
-
-.column--9 {
-  width: percentage(9/12);
-}
-
-.column--10 {
-  width: percentage(10/12);
-}
-
-.column--11 {
-  width: percentage(11/12);
-}
-
-.column--12 {
-  width: percentage(12/12);
-}
-
-.column--offset-1 {
-  margin-left: percentage(1/12);
-}
-
-.column--offset-2 {
-  margin-left: percentage(2/12);
-}
-
-.column--offset-3 {
-  margin-left: percentage(3/12);
-}
-
-.column--offset-4 {
-  margin-left: percentage(4/12);
-}
-
-.column--offset-5 {
-  margin-left: percentage(5/12);
-}
-
-.column--offset-6 {
-  margin-left: percentage(6/12);
-}
-
-.column--offset-7 {
-  margin-left: percentage(7/12);
-}
-
-.column--offset-8 {
-  margin-left: percentage(8/12);
-}
-
-.column--offset-9 {
-  margin-left: percentage(9/12);
-}
-
-.column--offset-10 {
-  margin-left: percentage(10/12);
-}
-
-.column--offset-11 {
-  margin-left: percentage(11/12);
-}
-
-.column--offset-12 {
-  margin-left: percentage(12/12);
-}
-
+.column--offset-1 { .make-column-offset(1); }
+.column--offset-2 { .make-column-offset(2); }
+.column--offset-3 { .make-column-offset(3); }
+.column--offset-4 { .make-column-offset(4); }
+.column--offset-5 { .make-column-offset(5); }
+.column--offset-6 { .make-column-offset(6); }
+.column--offset-7 { .make-column-offset(7); }
+.column--offset-8 { .make-column-offset(8); }
+.column--offset-9 { .make-column-offset(9); }
+.column--offset-10 { .make-column-offset(10); }
+.column--offset-11 { .make-column-offset(11); }
+.column--offset-12 { .make-column-offset(12); }
