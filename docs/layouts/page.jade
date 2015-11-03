@@ -37,7 +37,7 @@ mixin displayMobileMenu(page)
       data-link
       href=(!page.children ? relative(page.link) : '#')
     )
-      span= page.title
+      span.mobile-menu__text= page.title
       if page.children
         +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon-svg'])
 
@@ -48,7 +48,7 @@ mixin displayMobileMenu(page)
             href='#',
             data-back
           )
-            span= page.title
+            span.mobile-menu__text= page.title
             +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
         
         each child in page.children
