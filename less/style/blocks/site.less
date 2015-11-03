@@ -83,4 +83,16 @@
   });
 }
 
+.site__burger {
+  transition: color @transition-duration @transition-fn-fancy;
+}
+
+.site__burger.is-open {
+  color: @color-white;
+
+  &:hover {
+    color: darken(@color-white, 10%);
+  }
+}
+
 // Copyright AXA Versicherungen AG 2015
