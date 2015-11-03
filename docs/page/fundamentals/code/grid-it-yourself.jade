@@ -1,0 +1,61 @@
+---
+title: Grid It Yourself
+order: 5
+template: page.jade
+---
+
+:markdown
+  **Are you building your own component?** Then chances are that
+  you want it to integrate in the same way as the existing components do.
+  
+  In order to get all the components aligned in the same way, we provide
+  a set of grid mixins for you to use.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#overview') Overview
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#example-usage') Example Usage
+
+:markdown
+  # Overview
+  
+  Let's say you're going to build 
+  
+  ![grid component](https://cloud.githubusercontent.com/assets/198988/10910856/1b915462-8242-11e5-922f-0b43c7a2ebdd.png)
+
+  # Example Usage
+  
+  ```less
+  .container {
+    .make-container();
+    
+    max-width: 60em;
+  }
+  
+  .row {
+    .make-row();
+  }
+  
+  .content-main {
+    .make-column();
+    .make-column-span(12);
+
+    .respond(medium ,{
+      .make-column-span(6);
+    });
+  }
+  
+  .content-secondary {
+    .make-column();
+    .make-column-span(12);
+
+    .respond(medium, {
+      .make-column-span(4);
+    });
+  }
+  ```
+
+//- Copyright AXA Versicherungen AG 2015
