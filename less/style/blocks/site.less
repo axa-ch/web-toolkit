@@ -70,14 +70,14 @@
   background-color: @color-white;
 
   transition: right @transition-duration @transition-fn-fancy;
+}
+
+.site__mobile-menu.is-visible {
+  right: 0;
 
   .respond(large, {
-    display: none;
+    right: -@mobile-nav-width;
   });
-
-  &.is-visible {
-    right: 0;
-  }
 }
 
 .site__mobile-menu__header {
