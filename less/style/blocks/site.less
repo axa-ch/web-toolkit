@@ -54,6 +54,11 @@
 .site__page__mask.is-visible {
   opacity: 0.5;
   pointer-events: all;
+
+  .respond(large, {
+    opacity: 0;
+    pointer-events: none;
+  });
 }
 
 .site__mobile-menu {

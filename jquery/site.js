@@ -28,7 +28,7 @@
       this.$page.toggleClass('is-pushed', show)
       this.$mask.toggleClass('is-visible', show)
       this.$mobile.toggleClass('is-visible', show)
-      this.$burger.toggleClass('is-open', show)
+      this.$burger.each((i, element) => { element.classList.toggle('is-open', show) })
     }
 
     showMenu() {
