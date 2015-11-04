@@ -165,17 +165,20 @@ html
                 a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/releases") Changelog
 
     .site__mobile.mobile(data-mobile)
-      .mobile__header
-        h1.mobile__title Web Style Guide
-      nav.mobile-menu.mobile-menu--sliding(data-menu='sliding')
-        ul.mobile-menu__level(data-level)
-          li.mobile-menu__item
-            a.mobile-menu__link(
-              href=relative('/index.html'),
-              data-link
-            ) Web Style Guide
-          each section in navigation
-            +displayMobileMenu(section)
+      .l-row
+        .l-col.mobile__header
+          h1.mobile__title Web Style Guide
+
+      .l-row
+        nav.l-col.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+          ul.mobile-menu__level(data-level)
+            li.mobile-menu__item
+              a.mobile-menu__link(
+                href=relative('/index.html'),
+                data-link
+              ) Web Style Guide
+            each section in navigation
+              +displayMobileMenu(section)
 
     script.
       var href = '#{relative(link)}'

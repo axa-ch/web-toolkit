@@ -1,0 +1,35 @@
+---
+title: Mobile Drawer
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.mobile(data-mobile)
+  .l-row
+    a.l-col.l-col--6.mobile__button.mobile__button--action(href="#") myAXA
+    a.l-col.l-col--6.mobile__button(href="#") DE
+
+  .l-row
+    .l-col.mobile__dropdown.dropdown(data-dropdown)
+      .dropdown__label
+        +svg('arrow-bottom', 'dropdown__label__icon')
+        .dropdown__label__text
+      select.dropdown__select
+        option Private Individuals
+        option Corporate Clients
+
+  .l-row
+    nav.l-col.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+      ul.mobile-menu__level(data-level)
+        li.mobile-menu__item
+          a.mobile-menu__link(href='#', data-link)
+            span.mobile-menu__text Car Insurance
+        li.mobile-menu__item
+          a.mobile-menu__link(href='#', data-link)
+            span.mobile-menu__text Personal Liability
+        li.mobile-menu__item
+          a.mobile-menu__link(href='#', data-link)
+            span.mobile-menu__text Household Contents
+
+//- Copyright AXA Versicherungen AG 2015
