@@ -11,10 +11,12 @@
 
     init() {
       this.$mask.on('click', (event) => {
+        event.preventDefault()
         this.hideMenu()
       })
 
       this.$burger.on('click', (event) => {
+        event.preventDefault()
         this.toggleMenu()
       })
     }
