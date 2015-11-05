@@ -1,7 +1,5 @@
 require('../..')
-require('./community')
 require('./example')
-require('./github')
 require('./example')
 require('./iframe-resizer')
 require('./left-navigation')
