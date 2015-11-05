@@ -5,28 +5,50 @@ template: page.jade
 ---
 
 :markdown
-  **Are you building your own component?** Then chances are that
-  you want it to integrate in the same way as the existing components do.
-  
-  In order to get all the components aligned in the same way, we provide
-  a set of grid mixins for you to use.
+  The out-of-the-box grid classes
+  `container`, `row` and `column` are meant to be used directly
+  from your markup, which is described on the
+  [Grid](/components/grid.html "Grid Component") component page.
+
+  If however you're writing a new component that should be aligned to a grid or
+  if you even want to build a custom grid, we provide a set of mixins.
+
+  This is the page where you get to know these mixins and get
+  an example on how to apply them to your own component.
 
 .toc
   .toc__title Table of contents
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
-      a.toc__anchor-navigation__link(href='#overview') Overview
+      a.toc__anchor-navigation__link(href='#introduction') Introduction
     li.toc__anchor-navigation__item
-      a.toc__anchor-navigation__link(href='#example-usage') Example Usage
+      a.toc__anchor-navigation__link(href='#an-example-component') An Example Component
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#the-mixins') The Mixins
 
 :markdown
-  # Overview
+  # Introduction
   
-  Let's say you're going to build 
+  Grids allow you to align components on a page. A section is horizontally
+  split into 12 equal parts, called columns. Components can then span over all
+  or only some of these columns. These columns can be created using the
+  `make-column()` and `make-column-span()` mixins. Additionally
+  it's possible to offset
   
-  ![grid component](https://cloud.githubusercontent.com/assets/198988/10910856/1b915462-8242-11e5-922f-0b43c7a2ebdd.png)
+  
+  
+  A set of columns that in total consumes all of these 12 parts
+  is then combined into a row.
+  
+  Finally, 
+  
+  
+  
+  Let's say you're going to build
+  
+  ![grid component](https://cloud.githubusercontent.com/assets/198988/10910856/1b915462-8242-11e5-922f-0b43c7a2ebdd.png "A component using the grid")
 
-  # Example Usage
+  # An Example Component
   
   ```less
   .container {
@@ -58,4 +80,59 @@ template: page.jade
   }
   ```
 
+:markdown
+  # The Mixins
+  
+  ## `.make-container(@gutter: @grid-gutter-width)`
+  
+  ```css
+  .make-container(@gutter: @grid-gutter-width) {
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: (@gutter / 2);
+    padding-right: (@gutter / 2);
+  }
+  ```
+  
+  ## `.make-row(@gutter: @grid-gutter-width)`
+  
+  ```css
+  .make-row(@gutter: @grid-gutter-width) {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-left:  (@gutter / -2);
+    margin-right: (@gutter / -2);
+  }
+  ```
+  
+  ## `.make-column(@gutter: @grid-gutter-width)`
+  
+  ```css
+  .make-column(@gutter: @grid-gutter-width) {
+    position: relative;
+    min-height: 1px;
+
+    padding-left:  (@gutter / 2);
+    padding-right: (@gutter / 2);
+  }
+  ```
+  
+  ## `.make-column-span(@size, @columns: 12)`
+  
+  ```css
+  .make-column-span(@size, @columns: 12) {
+    flex: 0 0 percentage(@size / @columns);
+  }
+  ```
+  
+  ## `.make-column-offset(@size, @columns: 12)`
+  
+  ```css
+  .make-column-offset(@size, @columns: 12) {
+    margin-left: percentage(@size / @columns);
+  }
+  ```
+  
 //- Copyright AXA Versicherungen AG 2015
