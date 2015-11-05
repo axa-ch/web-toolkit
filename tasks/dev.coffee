@@ -19,6 +19,13 @@ module.exports = [['build'], (cb) ->
   .on 'error', (err) -> errorify err.message, 'docs-pages'
 
   watch [
+    './modernizr.json'
+  ], ->
+    gulp.start 'modernizr', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
+    return
+  .on 'error', (err) -> errorify err.message, 'modernizr'
+
+  watch [
     './docs/js/**/*.coffee'
     './docs/example-js/**/*.coffee'
   ], ->
@@ -34,6 +41,7 @@ module.exports = [['build'], (cb) ->
   .on 'error', (err) -> errorify err.message, 'docs-styles'
 
   watch [
+    './modernizr.json'
     './docs/images/**/*'
     './dist/images/**/*'
     './dist/fonts/**/*'
@@ -56,8 +64,8 @@ module.exports = [['build'], (cb) ->
 
   watch [
     './jquery/**/*'
-  ], (sequence 300).getHandler 'jquery', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
-  .on 'error', (err) -> errorify err.message, 'jquery'
+  ], (sequence 300).getHandler 'scripts', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
+  .on 'error', (err) -> errorify err.message, 'scripts'
 
   watch [
     './ng/**/*'

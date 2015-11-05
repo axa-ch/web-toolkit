@@ -1,50 +1,48 @@
-(($) ->
+$ = require 'jquery'
 
-  # Public class definition
-  class Dropzone
+# Public class definition
+class Dropzone
 
-    constructor: (element, options) ->
-      @element = element
-      @$element = $ element
-      @options = $.extend {}, options
+  constructor: (element, options) ->
+    @element = element
+    @$element = $ element
+    @options = $.extend {}, options
 
-      @init()
+    @init()
 
-    init: () ->
-      @$element.bind 'dragover', @, (event) ->
-        event.preventDefault()
-        event.data.$element.addClass 'dropzone__container--dragover'
+  init: () ->
+    @$element.bind 'dragover', @, (event) ->
+      event.preventDefault()
+      event.data.$element.addClass 'dropzone__container--dragover'
 
-      @$element.bind 'dragleave', @, (event) ->
-        event.preventDefault()
-        event.data.$element.removeClass 'dropzone__container--dragover'
+    @$element.bind 'dragleave', @, (event) ->
+      event.preventDefault()
+      event.data.$element.removeClass 'dropzone__container--dragover'
 
-      @$element.on 'drop', @, (event) ->
-        event.preventDefault()
-        event.data.$element.removeClass 'dropzone__container--dragover'
+    @$element.on 'drop', @, (event) ->
+      event.preventDefault()
+      event.data.$element.removeClass 'dropzone__container--dragover'
 
-  # Plugin definition
-  Plugin = (option) ->
-    params = arguments
+# Plugin definition
+Plugin = (option) ->
+  params = arguments
 
-    return this.each () ->
-      $this = $ this
-      data = $this.data('axa.dropzone')
+  return this.each () ->
+    $this = $ this
+    data = $this.data('axa.dropzone')
 
-      if not data
-        data = new Dropzone this
-        $this.data 'axa.dropzone', data
+    if not data
+      data = new Dropzone this
+      $this.data 'axa.dropzone', data
 
-  # Plugin registration
-  $.fn.dropzone = Plugin
-  $.fn.dropzone.Constructor = Dropzone
+# Plugin registration
+$.fn.dropzone = Plugin
+$.fn.dropzone.Constructor = Dropzone
 
-  # DATA-API
-  $(window).on 'load', () ->
-    $('[data-dropzone="dropzone"]').each () ->
-      $dropzone = $(this)
-      Plugin.call($dropzone)
-
-)(jQuery)
+# DATA-API
+$(window).on 'load', () ->
+  $('[data-dropzone="dropzone"]').each () ->
+    $dropzone = $(this)
+    Plugin.call($dropzone)
 
 #! Copyright AXA Versicherungen AG 2015

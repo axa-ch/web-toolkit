@@ -1,46 +1,44 @@
-(($) ->
+$ = require 'jquery'
 
-  class Modal
+class Modal
 
-    constructor: (element, options) ->
-      @$element = $(element)
+  constructor: (element, options) ->
+    @$element = $(element)
 
-    toggle: () ->
+  toggle: () ->
 
-      if @$element.hasClass 'is-active'
-        @$element.removeClass 'is-active'
-        $('body').removeClass 'is-modal-open'
-      else
-        @$element.addClass 'is-active'
-        $('body').addClass 'is-modal-open'
+    if @$element.hasClass 'is-active'
+      @$element.removeClass 'is-active'
+      $('body').removeClass 'is-modal-open'
+    else
+      @$element.addClass 'is-active'
+      $('body').addClass 'is-modal-open'
 
-  # Plugin definition
-  Plugin = (option) ->
-    params = arguments
+# Plugin definition
+Plugin = (option) ->
+  params = arguments
 
-    return this.each () ->
-      $this = $(this)
-      data = $this.data('axa.modal')
+  return this.each () ->
+    $this = $(this)
+    data = $this.data('axa.modal')
 
-      if not data
-        data = new Modal(this)
-        $this.data('axa.modal', data)
+    if not data
+      data = new Modal(this)
+      $this.data('axa.modal', data)
 
-      if typeof option == 'string'
-        data[option]()
+    if typeof option == 'string'
+      data[option]()
 
-  # Plugin registration
-  $.fn.modal = Plugin
-  $.fn.modal.Constructor = Modal
+# Plugin registration
+$.fn.modal = Plugin
+$.fn.modal.Constructor = Modal
 
-  # DATA-API
-  $(document).on 'click.axa.modal.data-api', '[data-modal]', (e) ->
-    e.preventDefault()
+# DATA-API
+$(document).on 'click.axa.modal.data-api', '[data-modal]', (e) ->
+  e.preventDefault()
 
-    $target = $ $(e.currentTarget).data('modal')
+  $target = $ $(e.currentTarget).data('modal')
 
-    Plugin.call($target, 'toggle')
-
-)(jQuery)
+  Plugin.call($target, 'toggle')
 
 #! Copyright AXA Versicherungen AG 2015

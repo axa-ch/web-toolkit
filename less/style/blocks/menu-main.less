@@ -1,0 +1,83 @@
+@import '../variables';
+@import '../mixins/clearfix';
+@import '../mixins/respond';
+
+.menu-main {
+  &:extend(.clearfix all);
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 0;
+  margin: 0;
+  margin-right: (@grid-gutter-width / -2);
+
+  list-style-type: none;
+
+  font-size: 1.1em;
+  font-weight: @font-weight-medium;
+}
+
+.menu-main__item {
+  margin: 0;
+  padding: 0;
+
+  line-height: 44px;
+
+  .respond(large, {
+    float: left;
+  });
+}
+
+.menu-main__link.is-active,
+.menu-main__link:hover {
+  padding-bottom: 0;
+  border-bottom: 5px solid @color-blue;
+  color: @color-blue;
+  cursor: pointer;
+}
+
+.menu-main__link {
+  display: block;
+
+  height: 100%;
+  padding: 0 20px 5px 20px;
+
+  text-decoration: none;
+  text-align: center;
+
+  color: @color-gray--darker;
+}
+
+.menu-main__link__home {
+  width: 16px;
+  height: 44px;
+  fill: currentColor;
+  display: inline-block;
+}
+
+.menu-main__content {
+  display: none;
+
+  position: absolute;
+  top: 155px;
+  left: 0;
+  right: 0;
+}
+
+.menu-main__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  display: none;
+  padding: 35px 30px;
+  margin-top: 5px;
+
+  background-color: white;
+  box-shadow: 0px 0px 5px black;
+}
+
+.menu-main__panel.is-open {
+  display: block;
+}
