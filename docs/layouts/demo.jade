@@ -20,10 +20,14 @@ html
     link(rel="stylesheet", href=relative("/css/style.min.css"))
 
     script(src=relative('/js/docs-examples.all.min.js'))
-    script.
-      moment.locale('en_GB')
     
   body
     .example!= contents
+    
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
+    script(src=relative('/js/style-guide-docs.js'))
 
 //- Copyright AXA Versicherungen AG 2015
