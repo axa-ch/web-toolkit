@@ -1,0 +1,64 @@
+@import 'style/variables';
+@import 'style/mixins/respond';
+@import 'style/mixins/grid';
+
+.community {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: @z-index-modal;
+
+  transition: all @transition-duration-fast @transition-fn-fancy;
+}
+
+.community.is-open {
+  opacity: 0.99;
+  pointer-events: all;
+  background-color: @color-gray--darkest;
+}
+
+.community__container {
+  .make-container();
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  opacity: 0;
+  transform: scale(1.25);
+  transition: all @transition-duration-fast @transition-fn-fancy;
+}
+
+.community__container.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.community__header {
+  height: 56px;
+}
+
+.community__close {
+  color: @color-light-blue--light;
+  text-decoration: none;
+
+  display: flex;
+  height: 56px;
+
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: lighten(@color-light-blue--light, 10%);
+  }
+}
+
+.community__body {
+  flex-grow: 1;
+}

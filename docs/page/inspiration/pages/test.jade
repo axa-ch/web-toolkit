@@ -22,7 +22,6 @@ html
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/style.min.css"))
 
-    script(src=relative('/js/inspirations.all.min.js'))
   body.site
     include /components/includes/mixins.jade
     
@@ -307,6 +306,12 @@ html
           a.language-link IT
         li.language-item
           a.language-link EN
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
+    script(src=relative('/js/style-guide-docs.js'))
 
     script(type='text/javascript').
       var $menu = $('#menu-mobile');
