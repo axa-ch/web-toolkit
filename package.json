@@ -34,6 +34,7 @@
     "baconjs": "^0.7.73",
     "browserify": "^12.0.1",
     "browserify-shim": "^3.8.11",
+    "cheet.js": "^0.3.3",
     "coffee-script": "^1.9.2",
     "coffeeify": "^1.1.0",
     "colors": "^1.1.2",

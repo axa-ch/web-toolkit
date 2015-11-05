@@ -19,7 +19,7 @@ include ./includes/mixins.jade
       a.toc__anchor-navigation__link(href='#progress-bar') Progress Bar
     li.toc__anchor-navigation__item
       a.toc__anchor-navigation__link(href='#loading-spinner') Loading Spinner
-    li.toc__anchor-navigation__item
+    li.toc__anchor-navigation__item.easter-egg(data-cheat)
       a.toc__anchor-navigation__link(href='#bouncing-loading-spinner') Bouncing Loading Spinner
 
 h2.heading.heading--secondary#progress-bar Progress Bar
@@ -139,12 +139,17 @@ ul.checklist
       Always display a loading spinner if the page might
       be loading longer than 0.3 seconds.
 
-:markdown
-  ---
-  
-  # Bouncing Loading Spinner
+.easter-egg(data-cheat)
+  :markdown
+    ---
+    
+    # Bouncing Loading Spinner
+    
+    To add some crazyness to your app, use the amazing easter egg bouncing
+    loading spinner. Just make sure it's not visible by default
+    but rather requires a challenge to unlock it! We don't
+    want our brand people freak out, right? 😄
 
-+example('/components/demos/bouncing-spinner.html')
-
+  +example('/components/demos/bouncing-spinner.html')
 
 //- Copyright AXA Versicherungen AG 2015
