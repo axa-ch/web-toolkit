@@ -1,15 +1,16 @@
 @import 'style/variables';
 
 .easter-egg {
-  height: 0;
+  max-height: 0;
   visibility: hidden;
   opacity: 0;
+  overflow: hidden;
 
   transition: all @transition-duration @transition-fn-fancy;
 }
 
 .easter-egg.is-unlocked {
-  height: auto;
+  max-height: inherit;
   visibility: visible;
   opacity: 1;
 }

@@ -12,7 +12,12 @@ class Cheat {
 
     if (!elements[sequence]) {
       elements[sequence] = $()
-      cheet(sequence, () => { elements[sequence].addClass('is-unlocked') })
+      cheet(sequence, () => {
+        elements[sequence].each(function () {
+          $(this).addClass('is-unlocked')
+          $(this).css('max-height', `${$(this).height()}px`)
+        })
+      })
     }
 
     elements[sequence] = elements[sequence].add(this.$element)
