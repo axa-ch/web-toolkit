@@ -1,5 +1,5 @@
 require('../..')
-require('./example')
+require('./cheat')
 require('./example')
 require('./iframe-resizer')
 require('./left-navigation')
