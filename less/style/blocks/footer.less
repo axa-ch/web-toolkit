@@ -1,6 +1,9 @@
 @import '../variables';
+@import '../mixins/make-container';
+@import '../mixins/make-row';
+@import '../mixins/make-column';
+@import '../mixins/make-column-span';
 @import '../mixins/respond';
-@import '../mixins/grid';
 
 .footer {
 }
@@ -11,6 +14,8 @@
 
 .footer__main__container {
   .make-container();
+
+  max-width: @grid-breakpoint-lg;
 }
 
 .footer__main__row {
@@ -18,7 +23,8 @@
 }
 
 .footer__social, .footer__links, .footer__worldwide {
-  .make-col(12);
+  .make-column();
+  .make-column-span(12);
 
   .respond(large, {
     padding-top: 8px;
@@ -27,25 +33,25 @@
 }
 
 .footer__social {
-  .make-col(4, large);
-
   .respond(large, {
+    .make-column-span(4);
+
     order: 2;
   });
 }
 
 .footer__links {
-  .make-col(5, large);
-
   .respond(large, {
+    .make-column-span(5);
+
     order: 1;
   });
 }
 
 .footer__worldwide {
-  .make-col(3, large);
-
   .respond(large, {
+    .make-column-span(3);
+
     order: 3;
   });
 }

@@ -32,7 +32,8 @@
 }
 
 .header__meta__content {
-  .make-container(@respond-large-max-width, 0);
+  max-width: @respond-large-max-width;
+  margin: 0 auto;
 
   display: flex;
 
@@ -140,8 +141,8 @@
 }
 
 .header__main__content {
-  .make-container(@respond-large-max-width, 0);
-
+  max-width: @respond-large-max-width;
+  margin: 0 auto;
   display: flex;
   align-items: flex-end;
   height: 100%;

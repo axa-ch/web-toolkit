@@ -108,8 +108,8 @@ html
                 li.menu-main__item(data-item)
                   a.menu-main__link(href="#", data-link) Schaden
                   .menu-main__panel(data-panel)
-                    .l-row
-                      .l-third
+                    .row
+                      .column.column--4
                         h2 Wohnen & Eigentum
                         ul.menu
                           li.menu__item
@@ -120,7 +120,7 @@ html
                             a.menu__link(href="#") Privathaftpflichtversicherung
                           li.menu__item
                             a.menu__link(href="#") Rechtsschutzversicherung
-                      .l-third
+                      .column.column--4
                         h2 Fahrzeug & Reise
                         ul.menu
                           li.menu__item
@@ -131,7 +131,7 @@ html
                             a.menu__link(href="#") Motorradversicherung
                           li.menu__item
                             a.menu__link(href="#") Rechtschutzversicherung
-                      .l-third
+                      .column.column--4
                         h2 Vorsorge & Sparen
                         ul.menu
                           li.menu__item
@@ -155,13 +155,13 @@ html
             a.header__main__mobile-trigger(href="#")
               +svg('burger', 'header__main__mobile-icon')
 
-      .page-content.l-container(style="max-width: 1260px;")
-        .l-row
-          .l-full
+      .page-content.container(style="max-width: 1260px;")
+        .row
+          .column.column--12
             h1 Welcome
 
-        .l-row
-          .l-primary
+        .row
+          .column.column--9
             p.paragraph.
               Bacon ipsum dolor sit amet chicken sirloin ball tip, capicola short ribs
               bresaola boudin ribeye ground round shankle shoulder frankfurter pork loin
@@ -174,7 +174,7 @@ html
               Biltong tri-tip venison porchetta rump leberkas short loin drumstick
               ham hock.
 
-          .l-secondary
+          .column.column--3
             p.paragraph.
               Turkey biltong beef ribs tail pork loin tongue pork belly pork chop
               pastrami short ribs capicola. Ground round biltong beef ribs,

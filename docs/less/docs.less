@@ -11,11 +11,11 @@
 @import './blocks/easter-egg';
 @import './blocks/error';
 @import './blocks/example';
-@import './blocks/grid';
 @import './blocks/head';
 @import './blocks/hero';
 @import './blocks/highlight';
 @import './blocks/icons-list';
+@import './blocks/image';
 @import './blocks/inspiration';
 @import './blocks/menu';
 @import './blocks/nav';
@@ -27,18 +27,20 @@
 @import './blocks/typeface';
 
 @import 'style/mixins/respond';
-@import 'style/mixins/grid';
 
 @docs-width: 1260px;
 
 // increase max-width
-.l-container {
+.container {
   max-width: @docs-width;
 }
 
-.l-col--docs-side {
-  .make-col(12);
-  .make-col(2, large);
+.column--docs-side {
+  .column;
+  .column--12;
+  .respond(large, {
+    .column--2;
+  });
 
   display: none;
 
@@ -47,9 +49,12 @@
   });
 }
 
-.l-col--docs-main {
-  .make-col(12);
-  .make-col(10, large);
+.column--docs-main {
+  .column;
+  .column--12;
+  .respond(large, {
+    .column--10;
+  });
 }
 
 // floating feedback button
@@ -105,8 +110,9 @@ dl {
   margin-bottom: 100px;
 }
 
-.l-container--docs-home {
+.container--docs-home {
   max-width: 900px;
 }
+
 
 // Copyright AXA Versicherungen AG 2015
