@@ -1,12 +1,16 @@
 // Attention: This file is generated automatically!
 
 // #############################
-// # Respond
+// # Grid
 // #############################
 
 @respond-medium-min-width: 768px;
 @respond-large-min-width: 980px;
 @respond-large-max-width: 1400px;
+
+@grid-breakpoint-sm: 0;
+@grid-breakpoint-md: 48rem;
+@grid-breakpoint-lg: 90rem;
 
 // #############################
 // # Icon font
