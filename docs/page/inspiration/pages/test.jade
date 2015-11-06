@@ -22,7 +22,6 @@ html
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/style.min.css"))
 
-    script(src=relative('/js/inspirations.all.min.js'))
   body.site
     include /components/includes/mixins.jade
     
@@ -184,12 +183,79 @@ html
               steak tongue meatloaf. T-bone cow andouille landjaeger.
 
       footer.footer
-        .footer__content
-        .footer__copyline
-          .container
-            ul.menu.menu--copyline
-              li.menu__item
-                span.menu__link AXA 2014 ©
+        .footer__main
+          .footer__main__container
+            .footer__main__row
+              section.footer__social.footer-social
+                h3.footer-social__headline In Kontakt bleiben
+                ul.footer-social__items
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('facebook', ['footer-social__icon'])
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('twitter', ['footer-social__icon'])
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('xing', ['footer-social__icon'])
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('youtube', ['footer-social__icon'])
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('linked-in', ['footer-social__icon'])
+
+              section.footer__links.footer-links
+                h3.footer-links__headline AXA & Sie
+                ul.footer-links__menu
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Unternehmenskunden
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Stellenangebote
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Schaden melden
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text myAXA
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Broker
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Medien
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Blog
+                      +svg('arrow-right', ['footer-links__icon'])
+
+              section.footer__worldwide.footer-worldwide
+                .footer-worldwide__headline AXA weltweit
+                ul.footer-worldwide__entities
+                  li.footer-worldwide__entity(href="#")
+                    a.footer-worldwide__link(href="#")
+                      span.footer-worldwide__text AXA weltweit
+                      +svg('arrow-right', ['footer-worldwide__icon'])
+                      img.footer-worldwide__image(src=relative('/images/axa-world.svg'))
+
+        .footer__copyline.footer-copyline
+          .footer-copyline__container
+            span.footer-copyline__notice © 2015 AXA Versicherungen AG
+            ul.footer-copyline__entries
+              li.footer-copyline__item
+                a.footer-copyline__link(href="#") Impressum
+              li.footer-copyline__item
+                a.footer-copyline__link(href="#") Nutzungshinweise
+              li.footer-copyline__item
+                a.footer-copyline__link(href="#") Datenschutz
 
     .site__mobile-menu.example-mobile-nav
       .site__mobile-menu__header
@@ -240,6 +306,12 @@ html
           a.language-link IT
         li.language-item
           a.language-link EN
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
+    script(src=relative('/js/style-guide-docs.js'))
 
     script(type='text/javascript').
       var $menu = $('#menu-mobile');

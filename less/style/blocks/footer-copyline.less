@@ -1,0 +1,93 @@
+@import '../mixins/font';
+@import '../mixins/make-container';
+@import '../mixins/unstyle-list';
+
+.footer-copyline {
+  background-color: @color-gray--lighter;
+}
+
+.footer-copyline__container {
+  .make-container();
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  .respond(large, {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: flex-end;
+  });
+}
+
+.footer-copyline__notice {
+  .make-font-large;
+
+  display: flex;
+  height: 40px;
+  padding: 0 10px;
+  margin: 0 -10px;
+
+  align-items: center;
+
+  order: 2;
+  color: @color-gray--darker;
+
+  .respond(large, {
+    height: 56px;
+
+    padding: 0 18px;
+    margin: 0 -18px;
+
+    // Keeps the distance from the entries
+    margin-left: 18px;
+  });
+}
+
+.footer-copyline__entries {
+  .unstyle-list;
+
+  display: flex;
+  margin: 0 -10px;
+  padding: 0 0;
+
+  order: 1;
+  flex-wrap: wrap;
+
+  .respond(large, {
+    margin: 0 -18px;
+  });
+}
+
+.footer-copyline__item {
+}
+
+.footer-copyline__link {
+  .make-font-large;
+
+  display: flex;
+  height: 40px;
+  padding: 0 10px;
+
+  align-items: center;
+
+  text-decoration: none;
+  color: @color-gray--darker;
+
+  .respond(large, {
+    height: 56px;
+    padding: 0 18px;
+  });
+}
+
+.footer-copyline__link:hover {
+  color: @color-blue;
+}
+
+// Copyright AXA Versicherungen AG 2015
