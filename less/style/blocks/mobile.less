@@ -1,7 +1,10 @@
 @import '../variables';
 @import '../blocks/button';
+@import '../mixins/font';
 @import '../mixins/respond';
 @import '../mixins/grid';
+@import '../mixins/make-link';
+@import '../mixins/unstyle-list';
 
 .mobile {
   .make-container();
@@ -9,38 +12,13 @@
   background-color: @color-white;
 }
 
-.mobile__row {
-  .make-row();
+.mobile__separator {
+  height: 4rem;
 }
 
-.mobile__dropdown {
-  padding: 0;
-}
-
-.mobile__button {
-  .button;
-
-  margin: 0;
-
-  color: @color-gray--darker;
-  background-color: @color-gray--lighter;
-
-  transition: all @transition-duration-fast @transition-fn-fancy;
-
-  &:hover {
-    color: @color-blue;
-    background-color: @color-gray--lighter;
-  }
-}
-
-.mobile__button--action {
-  color: @color-white;
-  background-color: @color-red;
-
-  &:hover {
-    color: @color-white;
-    background-color: lighten(@color-red, 10%);
-  }
+.mobile__section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .mobile__header {
@@ -60,74 +38,4 @@
   justify-content: center;
 }
 
-.mobile__user {
-  font-size: 15px;
-  text-align: center;
-
-  color: @color-tbd-25;
-}
-
-.mobile__logout {
-  margin: 50px 0px 80px 0px;
-}
-
-.mobile__logout__link {
-  display: block;
-
-  padding: 17px 15px 16px 15px;
-
-  font-size: 17px;
-
-  background: @color-blue-gray;
-  color: @color-white;
-
-  &:hover {
-    cursor: pointer;
-    color: @color-white;
-  }
-}
-
-.mobile__languages {
-  display: table;
-  table-layout: fixed;
-
-  width: 100%;
-  padding: 0;
-  margin-top: 30px;
-
-  border-collapse: collapse;
-
-  .language-item {
-    display: table-cell;
-
-    border: 1px solid @color-tbd-13;
-
-    &:first-of-type {
-      border-left: none;
-    }
-
-    &:last-of-type {
-      border-right: none;
-    }
-
-    &.is-active {
-      background-color: @color-tbd-24;
-    }
-  }
-
-  .language-link {
-    display: block;
-
-    padding: 10px 15px 10px 15px;
-
-    font-size: 17px;
-    line-height: 22px;
-    text-align: center;
-
-    color: @color-white;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
+// Copyright AXA Versicherungen AG 2015

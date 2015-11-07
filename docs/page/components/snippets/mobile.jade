@@ -7,17 +7,14 @@ include /components/includes/mixins.jade
 
 .mobile(data-mobile)
   .l-row
-    a.l-col.l-col--6.mobile__button.mobile__button--action(href="#") myAXA
-    a.l-col.l-col--6.mobile__button(href="#") DE
-
-  .l-row
-    .l-col.mobile__dropdown.dropdown(data-dropdown)
-      .dropdown__label
-        +svg('arrow-bottom', 'dropdown__label__icon')
-        .dropdown__label__text
-      select.dropdown__select
-        option Private Individuals
-        option Corporate Clients
+    .l-col.mobile__section
+      .dropdown.dropdown--link(data-dropdown)
+        .dropdown__label.dropdown__label--link
+          +svg('arrow-bottom', ['dropdown__label__icon', 'dropdown__label__icon--link'])
+          .dropdown__label__text.dropdown__label__text--link
+        select.dropdown__select.dropdown__select--link
+          option Private Individuals
+          option Corporate Clients
 
   .l-row
     nav.l-col.mobile-menu.mobile-menu--sliding(data-menu='sliding')
@@ -31,5 +28,29 @@ include /components/includes/mixins.jade
         li.mobile-menu__item
           a.mobile-menu__link(href='#', data-link)
             span.mobile-menu__text Household Contents
+
+  .l-row
+    .l-col.mobile__separator
+
+  .l-row
+    .l-col.list-group
+      a.list-group__item.list-group__item--link(href="#")
+        img.list-group__avatar(src="https://avatars3.githubusercontent.com/u/198988?v=3&s=460")
+        span.list-group__text David Knezić
+      a.list-group__item.list-group__item--link(href="#")
+        +svg('feedback', ['list-group__icon'])
+        span.list-group__text Feedback
+
+  .l-row
+    ul.l-col.mobile__section
+      .mobile-languages
+        li.mobile-languages__items
+          a.mobile-languages__link(href="#") DE
+        li.mobile-languages__items
+          a.mobile-languages__link(href="#") FR
+        li.mobile-languages__items
+          a.mobile-languages__link(href="#") IT
+        li.mobile-languages__items
+          a.mobile-languages__link(href="#") EN
 
 //- Copyright AXA Versicherungen AG 2015
