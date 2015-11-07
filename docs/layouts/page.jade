@@ -99,11 +99,6 @@ html
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/docs.min.css"))
 
-    script(src=relative('/js/docs.all.min.js'))
-    script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
-    
-    script moment.locale('en_GB')
-
   body.site(data-site)
     .site__page(data-page)
       .site__page__mask(data-mask)
@@ -138,10 +133,10 @@ html
 
       .page-content
         if section
-          .l-row
-            nav.l-col--docs-side
+          .row
+            nav.column.column--docs-side
               +displaySideMenu(section.children, false, true)
-            .l-col--docs-main
+            .column.column--docs-main
               if headline !== false
                 h1.heading.heading--page #{title}
               div!= contents
@@ -180,6 +175,12 @@ html
             each section in navigation
               +displayMobileMenu(section)
 
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
+    script(src=relative('/js/style-guide-docs.js'))
+
     script.
       var href = '#{relative(link)}'
       var mobile = $('[data-menu="sliding"]')
@@ -192,8 +193,9 @@ html
       if (level.length > 0) {
         mobile.slidingMenu('level', level)
       }
-    
+
     script window.intercomSettings = { app_id: 'i82zr1ej' }
+    script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
     script (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/i82zr1ej';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
 
 //- Copyright AXA Versicherungen AG 2015

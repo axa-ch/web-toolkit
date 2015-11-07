@@ -6,8 +6,8 @@ template: demo.jade
 include /components/includes/mixins.jade
 
 .mobile(data-mobile)
-  .l-row
-    .l-col.mobile__section
+  .row
+    .column.mobile__section
       .dropdown.dropdown--link(data-dropdown)
         .dropdown__label.dropdown__label--link
           +svg('arrow-bottom', ['dropdown__label__icon', 'dropdown__label__icon--link'])
@@ -16,8 +16,8 @@ include /components/includes/mixins.jade
           option Private Individuals
           option Corporate Clients
 
-  .l-row
-    nav.l-col.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+  .row
+    nav.column.mobile-menu.mobile-menu--sliding(data-menu='sliding')
       ul.mobile-menu__level(data-level)
         li.mobile-menu__item
           a.mobile-menu__link(href='#', data-link)
@@ -29,11 +29,11 @@ include /components/includes/mixins.jade
           a.mobile-menu__link(href='#', data-link)
             span.mobile-menu__text Household Contents
 
-  .l-row
-    .l-col.mobile__separator
+  .row
+    .column.mobile__separator
 
-  .l-row
-    .l-col.list-group
+  .row
+    .column.list-group
       a.list-group__item.list-group__item--link(href="#")
         img.list-group__avatar(src="https://avatars3.githubusercontent.com/u/198988?v=3&s=460")
         span.list-group__text David Knezić
@@ -41,8 +41,8 @@ include /components/includes/mixins.jade
         +svg('feedback', ['list-group__icon'])
         span.list-group__text Feedback
 
-  .l-row
-    ul.l-col.mobile__section
+  .row
+    ul.column.mobile__section
       .mobile-languages
         li.mobile-languages__items
           a.mobile-languages__link(href="#") DE

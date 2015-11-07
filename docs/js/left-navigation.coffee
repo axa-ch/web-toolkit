@@ -1,20 +1,17 @@
-(($) ->
+$ = require 'jquery'
 
-  $(->
-    $('.left__menu .menu__level').each (i, el) ->
-      $el = $ el
+$(->
+  $('.left__menu .menu__level').each (i, el) ->
+    $el = $ el
 
-      $headline = $el.siblings '.menu__link'
+    $headline = $el.siblings '.menu__link'
 
-      $headline.on 'click', (e) ->
-        e.preventDefault()
+    $headline.on 'click', (e) ->
+      e.preventDefault()
 
-        $headline.children('.menu__dropdown__icon').toggleClass 'is-open'
-        $el.slideToggle 'fast', () ->
-          $el.toggleClass 'is-open'
-  )
-
-
-)(jQuery)
+      $headline.children('.menu__dropdown__icon').toggleClass 'is-open'
+      $el.slideToggle 'fast', () ->
+        $el.toggleClass 'is-open'
+)
 
 #! Copyright AXA Versicherungen AG 2015

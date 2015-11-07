@@ -10,6 +10,7 @@
     "style",
     "guide"
   ],
+  "main": "jquery/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/axa-ch/style-guide.git"
@@ -19,11 +20,23 @@
   "bugs": {
     "url": "https://github.com/axa-ch/style-guide/issues"
   },
+  "browserify-shim": {
+    "jquery": "global:jQuery",
+    "baconjs": "global:Bacon",
+    "iframe-resizer": "global:iFrameResize",
+    "moment": "global:moment"
+  },
   "homepage": "http://design.axa.ch",
   "devDependencies": {
     "autoprefixer-core": "~3.1.1",
+    "babel-core": "^6.0.20",
+    "babelify": "^6.1.2",
     "baconjs": "^0.7.73",
+    "browserify": "^12.0.1",
+    "browserify-shim": "^3.8.11",
+    "cheet.js": "^0.3.3",
     "coffee-script": "^1.9.2",
+    "coffeeify": "^1.1.0",
     "colors": "^1.1.2",
     "csswring": "~1.3.0",
     "del": "^0.1.3",
@@ -55,7 +68,7 @@
     "gulp-tar": "^1.3.1",
     "gulp-template": "^1.1.0",
     "gulp-uglify": "~1.0.1",
-    "gulp-util": "^3.0.1",
+    "gulp-util": "^3.0.7",
     "gulp-watch": "^1.0.2",
     "gulp-watch-sequence": "0.0.4",
     "gulp-webserver": "git+https://github.com/davidknezic/gulp-webserver#connect-livereload-update",
@@ -84,12 +97,15 @@
     "metalsmith-templates": "git+https://github.com/axa-ch/metalsmith-templates",
     "minimatch": "^2.0.10",
     "moment": "^2.9.0",
+    "node-notifier": "^4.3.1",
     "npm": "^2.1.18",
     "octonode": "^0.7.1",
     "postcss-pseudoelements": "^1.0.0",
     "prompt": "^0.2.14",
     "run-sequence": "^0.3.6",
     "svg4everybody": "git+https://github.com/jonathantneal/svg4everybody",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "zeroclipboard": "^2.2.0"
   }
 }

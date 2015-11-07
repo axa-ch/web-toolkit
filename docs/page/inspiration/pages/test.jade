@@ -22,7 +22,6 @@ html
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/style.min.css"))
 
-    script(src=relative('/js/inspirations.all.min.js'))
   body.site(data-site)
     include /components/includes/mixins.jade
     
@@ -82,8 +81,8 @@ html
                 li.menu-main__item(data-item)
                   a.menu-main__link(href="#", data-link) Schaden
                   .menu-main__panel(data-panel)
-                    .l-row
-                      .l-third
+                    .row
+                      .column.column--4
                         h2 Wohnen & Eigentum
                         ul.menu
                           li.menu__item
@@ -94,7 +93,7 @@ html
                             a.menu__link(href="#") Privathaftpflichtversicherung
                           li.menu__item
                             a.menu__link(href="#") Rechtsschutzversicherung
-                      .l-third
+                      .column.column--4
                         h2 Fahrzeug & Reise
                         ul.menu
                           li.menu__item
@@ -105,7 +104,7 @@ html
                             a.menu__link(href="#") Motorradversicherung
                           li.menu__item
                             a.menu__link(href="#") Rechtschutzversicherung
-                      .l-third
+                      .column.column--4
                         h2 Vorsorge & Sparen
                         ul.menu
                           li.menu__item
@@ -133,13 +132,13 @@ html
                   path(d="M0,12 L24,12", class="middle")
                   path(d="M0,19 L24,19", class="bottom")
 
-      .page-content.l-container(style="max-width: 1260px;")
-        .l-row
-          .l-full
+      .page-content.container(style="max-width: 1260px;")
+        .row
+          .column.column--12
             h1 Welcome
 
-        .l-row
-          .l-primary
+        .row
+          .column.column--9
             p.paragraph.
               Bacon ipsum dolor sit amet chicken sirloin ball tip, capicola short ribs
               bresaola boudin ribeye ground round shankle shoulder frankfurter pork loin
@@ -152,7 +151,7 @@ html
               Biltong tri-tip venison porchetta rump leberkas short loin drumstick
               ham hock.
 
-          .l-secondary
+          .column.column--3
             p.paragraph.
               Turkey biltong beef ribs tail pork loin tongue pork belly pork chop
               pastrami short ribs capicola. Ground round biltong beef ribs,
@@ -268,6 +267,12 @@ html
             li.mobile-menu__item
               a.mobile-menu__link(href='#', data-link)
                 span.mobile-menu__text Kundenportale
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
+    script(src=relative('/js/style-guide-docs.js'))
 
     script(type='text/javascript').
       var $menu = $('#menu-mobile');

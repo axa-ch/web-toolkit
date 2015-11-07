@@ -1,0 +1,225 @@
+---
+title: Grid It Yourself
+order: 5
+template: page.jade
+---
+
+:markdown
+  The out-of-the-box grid classes
+  `container`, `row` and `column` are meant to be used directly
+  from your markup, which is described on the
+  [Grid](/components/grid.html "Grid Component") component page.
+
+  If however you're **writing a new component** that should be aligned to a grid or
+  if you even want to **build a custom grid**, we provide a set of mixins.
+
+  This is the page where you get to know these mixins and get
+  an example on how to apply them to your own component.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#introduction') Introduction
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#an-example-component') An Example Component
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#managing-dynamic-columns') Managing Dynamic Columns
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#advantage-to-out-of-the-box-classes') Advantage to out-of-the-box Classes
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#the-mixins') The Mixins
+
+:markdown
+  # Introduction
+  
+  Grids allow you to align components on a page. A section is horizontally
+  split into 12 equal parts, called **columns**. Components can then span over all
+  or only some of these columns. These columns can be created using the
+  `make-column()` and `make-column-span()` mixins. Additionally
+  it's possible to offset, leaving a gap in front of your column
+  with `make-column-offset`.
+  
+  A set of columns is then combined into a **row**.
+  A row is simply created
+  using the `make-row` mixin.
+  
+  Finally, everything gets wrapped into a **container**, which
+  makes sure things are aligned in the center of the page and
+  don't exceed a specified width. A container is created with
+  the `make-container` mixin.
+  
+  # An Example Component
+  
+  Let's say you're going to build a brand new component, a whole
+  new page section.
+  
+  ![grid component](https://cloud.githubusercontent.com/assets/198988/10910856/1b915462-8242-11e5-922f-0b43c7a2ebdd.png "A component using the grid")
+  
+  In order for it to align consitently with the other components, we'll first
+  have to integrate a container.
+  
+  ```less
+  .component {
+   background-color: sandybrown;
+  }
+  
+  .component__container {
+    .make-container();
+  }
+  ```
+  
+  Keep in mind that you need two levels, because in this specific case
+  you want the outer element with a background color to go full width.
+  The innter one, that is the container, has a maximum width and
+  is centered horizontally.
+  
+  Next come the two columns. Just make sure that you never just use the
+  columns without putting them into a row. This is what the new styles
+  look like:
+  
+  ```less
+  .component__row {
+    .make-row();
+  }
+  
+  .component__first-column {
+    .make-column();
+    .make-column-span(12);
+  }
+  
+  // same for .component__second-column
+  ```
+  
+  Because we always do mobile first, we set the columns to span one whole
+  row. In order for the component to look as in the image, we need to
+  set other span values for everything above the mobile viewport.
+  
+  ```less
+  .component__first-column {
+    .make-column();
+    .make-column-span(12);
+    
+    .respond(medium, {
+      .make-column-span(4);
+    });
+  }
+  
+  // similar for .component__second-column
+  ```
+  
+  With all the styles written, the
+  component should be correctly aligned and can be used like this.
+  
+  ```html
+  <section class="component">
+    <div class="component__container">
+      <div class="component__row">
+        <div class="component__first-column">
+          Bacon Ipsum Dolor
+        </div>
+        <div class="component__second-column">
+          Bacon ipsum dolor amet boudin jowl bresaola...
+        </div>
+      </div>
+    </div>
+  </section>
+  ```
+
+  # Managing Dynamic Columns
+  
+  The example before had two static columns. Some components
+  need to have a dynamic number of items that all should fit
+  in one row.
+  
+  If you have this requirement, this is the moment where you should
+  stop trying to accomplish this with a grid. Just use a technique
+  that allows you to have a variable amount of items equally
+  spread without having to change the markup, like
+  [Flex Box](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+  # Advantage to out-of-the-box Classes
+  
+  Some might ask why it's necessary to mix in the grid functionality
+  instead of using the provided classes in the markup, something like
+  the following.
+  
+  ```html
+  <section class="component">
+    <div class="container">
+      <div class="row">
+        <div class="column column--4">
+          Bacon Ipsum Dolor
+        </div>
+        <div class="column column--8">
+          Bacon ipsum dolor amet boudin jowl bresaola...
+        </div>
+      </div>
+    </div>
+  </section>
+  ```
+  
+  This is a totally valid question and the answer is, it depends.
+  If you've designed a component that has a static structure and shouldn't
+  look different than you intended it, the best thing you can do
+  is to abstract the grid away. You do exactly this by using mixins.
+  
+  In some cases however you'd like to provide flexibility to the one
+  that writes the markup. Then just skip the mixing in and let the
+  developer use the out-of-the-box grid classes.
+
+  # The Mixins
+  
+  ## `.make-container(@gutter: @grid-gutter-width)`
+  
+  ```css
+  .make-container(@gutter: @grid-gutter-width) {
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: (@gutter / 2);
+    padding-right: (@gutter / 2);
+  }
+  ```
+  
+  ## `.make-row(@gutter: @grid-gutter-width)`
+  
+  ```css
+  .make-row(@gutter: @grid-gutter-width) {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-left:  (@gutter / -2);
+    margin-right: (@gutter / -2);
+  }
+  ```
+  
+  ## `.make-column(@gutter: @grid-gutter-width)`
+  
+  ```css
+  .make-column(@gutter: @grid-gutter-width) {
+    position: relative;
+    min-height: 1px;
+
+    padding-left:  (@gutter / 2);
+    padding-right: (@gutter / 2);
+  }
+  ```
+  
+  ## `.make-column-span(@size, @columns: 12)`
+  
+  ```css
+  .make-column-span(@size, @columns: 12) {
+    flex: 0 0 percentage(@size / @columns);
+  }
+  ```
+  
+  ## `.make-column-offset(@size, @columns: 12)`
+  
+  ```css
+  .make-column-offset(@size, @columns: 12) {
+    margin-left: percentage(@size / @columns);
+  }
+  ```
+  
+//- Copyright AXA Versicherungen AG 2015
