@@ -6,10 +6,10 @@ template: demo.jade
 include /components/includes/mixins.jade
 
 .dropdown(data-dropdown)
-  .dropdown__label
+  .dropdown__label(data-label)
     +svg('arrow-bottom', 'dropdown__label__icon')
-    .dropdown__label__text
-  select.dropdown__select
+    .dropdown__label__text(data-text)
+  select.dropdown__select(data-select)
     option Schweiz
     option Regenbogenland
 
