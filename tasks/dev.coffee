@@ -63,7 +63,7 @@ module.exports = [['build'], (cb) ->
 
   watch [
     './jquery/**/*'
-  ], (sequence 300).getHandler 'scripts', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
+  ], (sequence 300).getHandler 'scripts', 'docs-scripts'
   .on 'error', (err) -> errorify err.message, 'scripts'
 
   watch [
