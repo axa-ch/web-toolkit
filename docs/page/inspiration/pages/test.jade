@@ -247,20 +247,60 @@ html
               option Über AXA
 
       .row
-        nav.column.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+        nav#menu-mobile.column.mobile-menu.mobile-menu--sliding(data-menu='sliding')
           ul.mobile-menu__level(data-level)
             li.mobile-menu__item
-              a.mobile-menu__link(href='#', data-link)
+              a.mobile-menu__link(href='#', data-link) Übersicht
+
+            li.mobile-menu__item
+              a.mobile-menu__link.mobile-menu__link--parent(href='#', data-link)
                 span.mobile-menu__text Versicherungen & Mehr
+                +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon-svg'])
+              
+              ul#active-level.mobile-menu__level(data-level)
+                li.mobile-menu__item.mobile-menu__item--back
+                  a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
+                    +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+                    span.mobile-menu__text zurück
+                
+                li.mobile-menu__item.mobile-menu__item--section
+                  .mobile-menu__link.mobile-menu__link--section
+                    span.mobile-menu__text Versicherungen & Mehr
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Wohnen & Eigentum
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Fahrzeug & Reise
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Vorsorge & Sparen
+
             li.mobile-menu__item
-              a.mobile-menu__link(href='#', data-link)
-                span.mobile-menu__text Schaden
-            li.mobile-menu__item
-              a.mobile-menu__link(href='#', data-link)
+              a.mobile-menu__link.mobile-menu__link--parent(href='#', data-link)
                 span.mobile-menu__text Kontakt & Hilfe
+                +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon-svg'])
+
+              ul.mobile-menu__level(data-level)
+                li.mobile-menu__item.mobile-menu__item--back
+                  a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
+                    +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+                    span.mobile-menu__text zurück
+            
+                li.mobile-menu__item.mobile-menu__item--section
+                  .mobile-menu__link.mobile-menu__link--section
+                    span.mobile-menu__text Kontakt & Hilfe
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Schaden melden
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Berater suchen
+            
             li.mobile-menu__item
               a.mobile-menu__link(href='#', data-link)
                 span.mobile-menu__text Prävention
+
             li.mobile-menu__item
               a.mobile-menu__link(href='#', data-link)
                 span.mobile-menu__text Kundenportale
