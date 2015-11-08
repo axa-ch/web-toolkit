@@ -126,13 +126,13 @@ html
                   a.menu-main__link(href="#", data-link) Kundenportale
                   .menu-main__panel(data-panel) Kundenportale
             a.header__main__mobile-trigger.site__burger(data-burger, href="#")
-              svg.header__main__mobile-icon.icon-svg.icon--burger(data-burger, width="24", height="24", viewBox="0 0 24 24")
+              svg.header__main__mobile-icon.icon-svg.burger-icon(data-burger)
                 g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
-                  path(d="M0,5 L24,5", class="top")
-                  path(d="M0,12 L24,12", class="middle")
-                  path(d="M0,19 L24,19", class="bottom")
+                  path(d="M0,5 L24,5", class="burger-icon__top")
+                  path(d="M0,12 L24,12", class="burger-icon__middle")
+                  path(d="M0,19 L24,19", class="burger-icon__bottom")
 
-      .page-content.container(style="max-width: 1260px;")
+      .page-content
         .row
           .column.column--12
             h1 Welcome

@@ -1,6 +1,7 @@
 // Attention: This file is generated automatically!
 
 @import '../variables';
+@import './icons/burger';
 
 @path: @icon-font-path;
 @name: @icon-font-name;
@@ -104,21 +105,6 @@
 .icon--language-dropdown {
   width: 0.5em;
   height: 0.5em;
-}
-
-.icon--burger {
-  .top, .middle, .bottom {
-    transition: all @transition-duration ease;
-    transform-origin: 50% 50%;
-  }
-
-  .middle { opacity: 1; }
-}
-
-.icon--burger.is-open {
-  .top { transform: translateY(7px) rotate(-45deg); }
-  .middle { opacity: 0; }
-  .bottom { transform: translateY(-7px) rotate(45deg); }
 }
 
 // Copyright AXA Versicherungen AG 2015
