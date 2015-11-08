@@ -48,8 +48,12 @@ mixin displayMobileMenu(page)
             href='#',
             data-back
           )
-            span.mobile-menu__text= page.title
+            span.mobile-menu__text back
             +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+        
+        li.mobile-menu__item.mobile-menu__item--section
+          .mobile-menu__link.mobile-menu__link--section
+            span.mobile-menu__text= page.title
         
         each child in page.children
           +displayMobileMenu(child)
@@ -171,7 +175,7 @@ html
               a.mobile-menu__link(
                 href=relative('/index.html'),
                 data-link
-              ) Web Style Guide
+              ) Home
             each section in navigation
               +displayMobileMenu(section)
 

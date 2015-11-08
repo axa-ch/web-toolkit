@@ -19,8 +19,11 @@ nav.mobile-menu.mobile-menu--sliding(data-menu='sliding')
         li.mobile-menu__item.mobile-menu__item--back
           a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
             +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+            span.mobile-menu__text back
+        
+        li.mobile-menu__item.mobile-menu__item--section
+          .mobile-menu__link.mobile-menu__link--section
             span.mobile-menu__text Individuals
-            
         li.mobile-menu__item
           a.mobile-menu__link(href='#', data-link)
             span.mobile-menu__text Contents Insurance
@@ -36,8 +39,14 @@ nav.mobile-menu.mobile-menu--sliding(data-menu='sliding')
             li.mobile-menu__item.mobile-menu__item--back
               a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
                 +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+                span.mobile-menu__text back
+
+            li.mobile-menu__item.mobile-menu__item--section
+              .mobile-menu__link.mobile-menu__link--section
                 span.mobile-menu__text Services
-                
+            li.mobile-menu__item
+              a.mobile-menu__link(href='#', data-link)
+                span.mobile-menu__text Overview
             li.mobile-menu__item
               a.mobile-menu__link(href='#', data-link)
                 span.mobile-menu__text Claims
@@ -57,8 +66,11 @@ nav.mobile-menu.mobile-menu--sliding(data-menu='sliding')
         li.mobile-menu__item.mobile-menu__item--back
           a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
             +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
-            span.mobile-menu__text Business
+            span.mobile-menu__text back
     
+        li.mobile-menu__item.mobile-menu__item--section
+          .mobile-menu__link.mobile-menu__link--section
+            span.mobile-menu__text Business
         li.mobile-menu__item
           a.mobile-menu__link(href='#', data-link)
             span.mobile-menu__text Expatriates
