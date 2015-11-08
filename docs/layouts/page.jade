@@ -160,12 +160,12 @@ html
                 a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/releases") Changelog
 
     .site__mobile.mobile(data-mobile)
-      .l-row
-        .l-col.mobile__header
+      .row
+        .column.mobile__section
           h1.mobile__title Web Style Guide
 
-      .l-row
-        nav.l-col.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+      .row
+        nav.column.mobile-menu.mobile-menu--sliding(data-menu='sliding')
           ul.mobile-menu__level(data-level)
             li.mobile-menu__item
               a.mobile-menu__link(
@@ -174,6 +174,15 @@ html
               ) Web Style Guide
             each section in navigation
               +displayMobileMenu(section)
+
+      .row
+        .column.mobile__separator
+
+      .row
+        .column.list-group
+          a.list-group__item.list-group__item--link(href="https://github.com/axa-ch/style-guide")
+            +svg('github', ['list-group__icon'])
+            span.list-group__text View on GitHub
 
     script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")

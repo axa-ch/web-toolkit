@@ -8,11 +8,11 @@ include /components/includes/mixins.jade
 .mobile(data-mobile)
   .row
     .column.mobile__section
-      .dropdown.dropdown--link(data-dropdown)
-        .dropdown__label.dropdown__label--link
-          +svg('arrow-bottom', ['dropdown__label__icon', 'dropdown__label__icon--link'])
-          .dropdown__label__text.dropdown__label__text--link
-        select.dropdown__select.dropdown__select--link
+      .dropdown(data-dropdown)
+        .dropdown__label(data-label)
+          +svg('arrow-bottom', 'dropdown__label__icon')
+          .dropdown__label__text(data-text)
+        select.dropdown__select(data-select)
           option Private Individuals
           option Corporate Clients
 
@@ -50,7 +50,7 @@ include /components/includes/mixins.jade
           a.mobile-languages__link(href="#") FR
         li.mobile-languages__items
           a.mobile-languages__link(href="#") IT
-        li.mobile-languages__items
-          a.mobile-languages__link(href="#") EN
+        li.mobile-languages__items.is-active
+          a.mobile-languages__link.is-active(href="#") EN
 
 //- Copyright AXA Versicherungen AG 2015
