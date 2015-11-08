@@ -58,7 +58,11 @@ header.header
             a.menu-main__link(href="#") Menu Item 3
           li.menu-main__item
             a.menu-main__link(href="#") Menu Item 4
-      a.header__main__mobile-trigger(href="#")
-        +svg('burger', 'header__main__mobile-icon')
+      a.header__main__mobile-trigger.site__burger(data-burger, href="#")
+        svg.header__main__mobile-icon.icon-svg.icon--burger(data-burger, width="24", height="24", viewBox="0 0 24 24")
+          g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
+            path(d="M0,5 L24,5", class="top")
+            path(d="M0,12 L24,12", class="middle")
+            path(d="M0,19 L24,19", class="bottom")
 
 //- Copyright AXA Versicherungen AG 2015
