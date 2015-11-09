@@ -1,103 +1,76 @@
 @import '../variables';
 @import '../blocks/icon';
 @import '../blocks/control';
+@import '../mixins/font';
+@import '../mixins/make-link';
 
 @dropdown-arrow-width: 40px;
 
-.dropdown.dropdown--js {
-  &:focus {
-    outline: none;
-  }
+.dropdown {
+  .make-font-large;
+  .make-link();
+
+  position: relative;
 }
 
 .dropdown__label {
   display: none;
 }
 
-.dropdown--js {
+.dropdown__label.is-enhanced {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .dropdown__label {
-    .control();
+  width: 100%;
+  min-height: 3rem;
+  padding: 0 @grid-gutter-width/2 - 0.25rem;
 
-    padding-right: 0; // to get the icon to the right
-    border: @focus-border-width solid @color-gray--lighter;
-    overflow: hidden;
-  }
+  border: 1px solid @color-gray--light;
+  background-color: @color-gray--lighter;
+}
 
-  .dropdown__label__icon {
-    @width-without-margin:  - 2px;
-    float: right;
-    width: @dropdown-arrow-width;
-    height: 100%;
-    // the padding-top/-bottom fixes a bug on iOS 8 mis-aligning the icon
-    padding: 1px (@dropdown-arrow-width - 18px) / 2; // padd the icon the get it 18x18px
-    background: @color-blue-gray--light;
-    fill: @color-light-blue;
-  }
+.dropdown__label--condensed.is-enhanced {
+  min-height: 2rem;
+}
 
-  .dropdown__label__text {
-    margin-right: @dropdown-arrow-width + 15px; // add the 15px padding of the control
-  }
+.dropdown__label__text,
+.dropdown__label__icon {
+  margin: 0 0.25rem;
+}
 
-  &.dropdown:focus .dropdown__label {
-    border-color: @color-light-blue;
-  }
+.dropdown__label__text {
+  order: 1;
+  flex-grow: 1;
+}
 
-  &.dropdown:focus .dropdown__label:after {
-    border-color: @color-light-blue;
-  }
+.dropdown__label__icon {
+  order: 2;
+  flex-shrink: 0;
 
-  .dropdown__select {
-    display: block;
-
-    width: 100%;
-    height: 40px;
-    border: none;
-    margin: -40px 0 0 0;
-
-    opacity: 0;
-    filter: alpha(opacity=0);
-    background: @color-gray--lighter;
-  }
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .dropdown__select {
-  position: relative;
-  z-index: @z-index-dropdown-select;
-
   width: 100%;
-  height: 40px;
-
-  line-height: 40px;
 }
 
-// Firefox is not respecting line-height in select elements
-@-moz-document url-prefix() {
-  .dropdown__select {
-    padding-top: 10px;
-  }
-}
+.dropdown__select.is-enhanced {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
-.dropdown--condensed {
-  height: @control-height-condensed;
+  display: block;
 
-  .dropdown__label {
-    .control--condensed();
+  line-height: 3.5rem;
 
-    &::after {
-      height: @control-height-condensed;
-      line-height: @control-height-condensed;
-    }
-  }
-
-  .dropdown__select {
-    height: @control-height-condensed;
-  }
-
-  &.dropdown--js .dropdown__select {
-    margin-top: -@control-height-condensed;
-  }
-
+  opacity: 0;
+  filter: alpha(opacity=0);
+  border: none;
+  z-index: @z-index-dropdown-select;
 }
 
 // Copyright AXA Versicherungen AG 2015
