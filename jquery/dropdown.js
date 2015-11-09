@@ -4,9 +4,9 @@ class Dropdown {
   constructor(element) {
     this.$element = $(element)
 
-    this.$label = this.$element.find('[data-label]')
-    this.$text = this.$element.find('[data-text]')
-    this.$select = this.$element.find('[data-select]')
+    this.$label = this.$element.find('[data-dropdown-label]')
+    this.$text = this.$element.find('[data-dropdown-text]')
+    this.$select = this.$element.find('[data-dropdown-select]')
 
     this.init()
   }
