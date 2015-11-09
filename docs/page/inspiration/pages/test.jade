@@ -125,7 +125,9 @@ html
                 li.menu-main__item(data-item)
                   a.menu-main__link(href="#", data-link) Kundenportale
                   .menu-main__panel(data-panel) Kundenportale
-            a.header__main__mobile-trigger.site__burger(data-burger, href="#")
+            a.header__main__mobile-action(href="#")
+              +svg('search', ['header__main__mobile-icon', 'icon-svg'])
+            a.header__main__mobile-action.site__burger(data-burger, href="#")
               svg.header__main__mobile-icon.icon-svg.burger-icon(data-burger)
                 g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
                   path(d="M0,5 L24,5", class="burger-icon__top")
