@@ -31,7 +31,7 @@ class SlidingMenu
         event.data.level(subLevel)
 
   onWindowResize: (e) =>
-    @$element.css('height', @level().height())
+    @$element.css('height', @level().outerHeight())
 
   level: (toSet) ->
     if not toSet
@@ -47,7 +47,7 @@ class SlidingMenu
       if not level
         throw new Error 'Provided level not in menu!'
 
-      @$element.css('height', level.height())
+      @$element.css('height', level.outerHeight())
 
       parentLevels = level.parentsUntil @$element, '[data-level]'
       parentLinks = level.parentsUntil @$element, '[data-link]'

@@ -9,7 +9,7 @@ include ./includes/mixins.jade
 :markdown
   The mobile menu allows you to navigate the
   contents of an app on small viewports. It represents the
-  nevigation as a hierarchy.
+  navigation as a hierarchy.
   
   It is usually hidden in a drawer-like component that slides
   in with the tap onto a burger icon. However, that functionality
@@ -20,8 +20,6 @@ include ./includes/mixins.jade
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
       a(href='#sliding-mobile-menu').toc__anchor-navigation__link Sliding Mobile Menu
-    li.toc__anchor-navigation__item
-      a(href='#collapsing-mobile-menu').toc__anchor-navigation__link Collapsing Mobile Menu
 
 :markdown
   # Sliding Mobile Menu
@@ -79,62 +77,6 @@ include ./includes/mixins.jade
             
             // set level to the previously saved one
             menu.slidingMenu('level', level)
-            ```
-
-:markdown
-  ---
-  
-  # Collapsing Mobile Menu
-
-  The collapsing mobile menu is a tree-like navigational
-  structure. Multiple levels can be opened at once.
-
-+example('/components/demos/mobile-menu-collapsing.html')
-
-.toggle
-  .toggle__button(data-info, data-target='#code-collapsing')
-    +svg('source', ['icon-svg', 'toggle__icon'])
-    span See code
-  .toggle__content#code-collapsing
-    .tab-panel(data-tab, data-tab-default='html')
-      .tab-panel__header
-        .tab-panel__header__tabs
-          .tab-panel__header__tab(data-tab-toggle='html') HTML
-          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
-      .tab-panel__content
-        .tab-panel__content__tab(data-tab-content='html')
-          .tab-panel__content__tab__fullwidth-content
-            .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/mobile-menu-collapsing.jade
-        .tab-panel__content__tab(data-tab-content='js')
-          :markdown
-            If you omit the `data-menu="collapsing"` attribute, the
-            menu won't get any functionality.
-            
-            In order to add
-            the missing functionality programmatically, simply initialize the
-            `$().collapsingMenu()` plugin.
-            
-            ```js
-            var menu = $("[data-menu='collapsing']")
-            
-            // initialize the plugin
-            menu.collapsingMenu()
-            ```
-            
-            The plugin you activated provides the `toggle` method which
-            allows you to selectively open or close menu levels.
-            
-            In contrast
-            to the sliding menu, there's no way to get the *curren level*,
-            simply because there could be more of them open at the same time.
-            
-            ```js
-            // get an arbitary level as a jQuery node
-            var level = $(menu.find('[data-level]').get(2))
-            
-            // toggle selected level
-            menu.collapsingMenu('toggle', level)
             ```
 
 //- Copyright AXA Versicherungen AG 2015

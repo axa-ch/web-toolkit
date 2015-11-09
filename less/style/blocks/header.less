@@ -168,27 +168,35 @@
   });
 }
 
-.header__main__mobile-trigger {
+.header__main__mobile-action {
   order: 4;
-  align-self: stretch;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
 
-  padding: 0 25px;
-  fill: @color-blue;
+  padding: 0 20px;
+  height: 100%;
+
+  color: @color-black;
   cursor: pointer;
+
+  z-index: 10000;
+
+  &:hover {
+    color: @color-blue;
+  }
 
   .respond(large, {
     display: none;
   });
 }
 
-.header__main__mobile-icon {
-  width: 25px;
-  height: 20px;
+.header__main__mobile-trigger {
+}
 
-  pointer-events: none;
+.header__main__mobile-icon {
+  display: block;
 }
 
 // Copyright AXA Versicherungen AG 2015

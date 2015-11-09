@@ -1,16 +1,18 @@
-@import './container';
+@import '../variables';
+@import '../mixins/make-container';
 
 .page-content {
-  .container;
+  .make-container;
 
-  min-height: 512px;
-  margin-top: 30px;
+  max-width: @grid-breakpoint-lg;
+  min-height: 32rem;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .page-content--fluid {
-  max-width: initial;
-  padding: 0;
+  max-width: 100%;
 }
-
 
 // Copyright AXA Versicherungen AG 2015

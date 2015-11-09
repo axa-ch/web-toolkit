@@ -1,6 +1,7 @@
 // Attention: This file is generated automatically!
 
 @import '../variables';
+@import './icons/burger';
 
 @path: @icon-font-path;
 @name: @icon-font-name;
@@ -18,8 +19,8 @@
 
 .icon-svg {
   fill: currentColor;
-  height: 1em;
-  width: 1em;
+  height: 1.5rem;
+  width: 1.5rem;
 
   pointer-events: none;
 }

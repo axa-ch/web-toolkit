@@ -5,22 +5,15 @@ template: demo.jade
 
 include /components/includes/mixins.jade
 
-.site
-  .site__page
+.site(data-site)
+  .site__page(data-page)
+    .site__page__mask(data-mask)
     p.paragraph.
       Make sure you switch to one of the smaller viewports to see
       the mobile menu in action.
     p.paragraph
-      a.button.button--primary(
-        href="#",
-        data-toggle="site-menu",
-        data-target=".site") Open Mobile Menu
-  .site__mobile-menu
-    .site__mobile-menu__header
-      h1.site__mobile-menu__title
-        a.button.button--secondary(
-          href="#",
-          data-toggle="site-menu",
-          data-target=".site") Close Mobile Menu
+      a.button.button--primary(href="#", data-burger) Open Mobile Menu
+  .site__mobile(data-mobile)
+    a.button.button--secondary(href="#", data-burger) Close Mobile Menu
 
 //- Copyright AXA Versicherungen AG 2015
