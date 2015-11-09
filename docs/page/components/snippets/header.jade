@@ -22,7 +22,7 @@ header.header
         .search__suggestions.search--header
       .header__meta__item.header__meta__language
         a.header__meta__language-button(data-popover="#languageMenu")
-          | En
+          | EN
           +svg('arrow-bottom', ['icon--language-dropdown', 'icon-svg'])
         .popover(id="languageMenu")
           .popover__tail.popover__tail--top
@@ -58,7 +58,9 @@ header.header
             a.menu-main__link(href="#") Menu Item 3
           li.menu-main__item
             a.menu-main__link(href="#") Menu Item 4
-      a.header__main__mobile-trigger.site__burger(data-burger, href="#")
+      a.header__main__mobile-action(href="#")
+        +svg('search', ['header__main__mobile-icon', 'icon-svg'])
+      a.header__main__mobile-action.site__burger(data-burger, href="#")
         svg.header__main__mobile-icon.icon-svg.burger-icon(data-burger)
           g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
             path(d="M0,5 L24,5", class="burger-icon__top")
