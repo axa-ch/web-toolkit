@@ -1,6 +1,6 @@
 ---
 title: FAQ
-order: 5
+order: 6
 template: page.jade
 ---
 

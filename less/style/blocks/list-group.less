@@ -1,0 +1,53 @@
+@import '../variables';
+@import '../mixins/font';
+@import '../mixins/make-link';
+
+.list-group {
+  display: block;
+
+  padding: 0;
+}
+
+.list-group__item {
+  .make-font-large;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 3.5rem;
+  margin-bottom: -1px;
+  padding: 0 (@grid-gutter-width/2 - 0.25rem);
+
+  border-top: 1px solid @color-gray--light;
+  border-bottom: 1px solid @color-gray--light;
+}
+
+.list-group__item--link {
+  .make-link();
+}
+
+.list-group__text,
+.list-group__icon,
+.list-group__avatar {
+  margin: 0 0.25rem;
+}
+
+.list-group__text {
+  flex-grow: 1;
+}
+
+.list-group__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  padding: 0.5rem;
+}
+
+.list-group__avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  border-radius: 50%;
+}
+
+// Copyright AXA Versicherungen AG 2015

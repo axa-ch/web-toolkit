@@ -1,0 +1,42 @@
+---
+title: Grid
+order: 2
+template: page.jade
+---
+
+include ./includes/mixins.jade
+
+:markdown
+  The grid is an important part of every web app. It helps to align
+  content and makes your layout more consistent.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#quick-start').toc__anchor-navigation__link Quick start
+   
+
+:markdown
+  # Quick start
+
++example('/components/demos/grid-quick-start.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-sliding')
+    +svg('source', ['icon-svg', 'toggle__icon'])
+    span See code
+  .toggle__content#code-sliding
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/grid-quick-start.jade
+       
+
+//- Copyright AXA Versicherungen AG 2015

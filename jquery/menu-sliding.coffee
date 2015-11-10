@@ -1,92 +1,90 @@
-(($) ->
+$ = require 'jquery'
 
-  # Public class definition
-  class SlidingMenu
-    @DEFAULTS
+# Public class definition
+class SlidingMenu
+  @DEFAULTS
 
-    constructor: (element, options) ->
-      @$element = $ element
-      @options = $.extend {}, SlidingMenu.DEFAULTS, options
+  constructor: (element, options) ->
+    @$element = $ element
+    @options = $.extend {}, SlidingMenu.DEFAULTS, options
 
-      @init()
-      @level(@$element.children('[data-level]'))
+    @init()
+    @level(@$element.children('[data-level]'))
 
-      $(window).on('resize', @onWindowResize)
+    $(window).on('resize', @onWindowResize)
 
-    init: () ->
-      @$element.on 'click', '[data-back]', @, (event) ->
-        link = $(event.target)
-        currentLevel = link.closest('[data-level]')
-        upperLevel = currentLevel.parent().closest('[data-level]')
+  init: () ->
+    @$element.on 'click', '[data-back]', @, (event) ->
+      link = $(event.target)
+      currentLevel = link.closest('[data-level]')
+      upperLevel = currentLevel.parent().closest('[data-level]')
 
+      event.preventDefault()
+      event.data.level(upperLevel)
+
+    @$element.on 'click', '[data-link]', @, (event) ->
+      link = $(event.target)
+      subLevel = link.siblings('[data-level]')
+
+      if subLevel.length > 0
         event.preventDefault()
-        event.data.level(upperLevel)
+        event.data.level(subLevel)
 
-      @$element.on 'click', '[data-link]', @, (event) ->
-        link = $(event.target)
-        subLevel = link.siblings('[data-level]')
+  onWindowResize: (e) =>
+    @$element.css('height', @level().outerHeight())
 
-        if subLevel.length > 0
-          event.preventDefault()
-          event.data.level(subLevel)
+  level: (toSet) ->
+    if not toSet
+      return @$element.find '.is-current'
 
-    onWindowResize: (e) =>
-      @$element.css('height', @level().height())
+    else
+      @$element.find('.is-current').removeClass('is-current')
+      @$element.find('.is-active').removeClass('is-active')
+      @$element.find('[data-level]').css('left', '')
 
-    level: (toSet) ->
-      if not toSet
-        return @$element.find '.is-current'
+      level = @$element.find toSet
 
-      else
-        @$element.find('.is-current').removeClass('is-current')
-        @$element.find('.is-active').removeClass('is-active')
-        @$element.find('[data-level]').css('left', '')
+      if not level
+        throw new Error 'Provided level not in menu!'
 
-        level = @$element.find toSet
+      @$element.css('height', level.outerHeight())
 
-        if not level
-          throw new Error 'Provided level not in menu!'
+      parentLevels = level.parentsUntil @$element, '[data-level]'
+      parentLinks = level.parentsUntil @$element, '[data-link]'
 
-        @$element.css('height', level.height())
+      @$element.children('[data-level]').css('left', (parentLevels.length * -100) + '%')
 
-        parentLevels = level.parentsUntil @$element, '[data-level]'
-        parentLinks = level.parentsUntil @$element, '[data-link]'
+      level.addClass('is-current')
+      level.siblings('[data-link]').addClass('is-active')
+      parentLinks.addClass('is-active')
 
-        @$element.children('[data-level]').css('left', (parentLevels.length * -100) + '%')
+# Plugin definition
+Plugin = (option) ->
+  params = arguments
 
-        level.addClass('is-current')
-        level.siblings('[data-link]').addClass('is-active')
-        parentLinks.addClass('is-active')
+  return this.each () ->
+    $this = $ this
+    options = $.extend({}, SlidingMenu.DEFAULTS, data, typeof option == 'object' && option)
+    action = option if typeof option == 'string'
+    data = $this.data('axa.menu')
 
-  # Plugin definition
-  Plugin = (option) ->
-    params = arguments
+    if not data
+      data = new SlidingMenu this, options
+      $this.data 'axa.menu', data
 
-    return this.each () ->
-      $this = $ this
-      options = $.extend({}, SlidingMenu.DEFAULTS, data, typeof option == 'object' && option)
-      action = option if typeof option == 'string'
-      data = $this.data('axa.menu')
+    if action == 'level'
+      data.level(params[1])
 
-      if not data
-        data = new SlidingMenu this, options
-        $this.data 'axa.menu', data
+# Plugin registration
+$.fn.slidingMenu = Plugin
+$.fn.slidingMenu.Constructor = SlidingMenu
 
-      if action == 'level'
-        data.level(params[1])
+# DATA-API
+$(window).on 'load', () ->
+  $('[data-menu="sliding"]').each () ->
+    $menu = $(this)
+    data = $menu.data()
 
-  # Plugin registration
-  $.fn.slidingMenu = Plugin
-  $.fn.slidingMenu.Constructor = SlidingMenu
-
-  # DATA-API
-  $(window).on 'load', () ->
-    $('[data-menu="sliding"]').each () ->
-      $menu = $(this)
-      data = $menu.data()
-
-      Plugin.call($menu, data)
-
-)(jQuery)
+    Plugin.call($menu, data)
 
 #! Copyright AXA Versicherungen AG 2015

@@ -4,6 +4,7 @@ description: Dev tests
 thumbnail: /images/inspiration/pages/test.png
 order: 2
 ---
+
 doctype html
 html
   head
@@ -21,39 +22,11 @@ html
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/style.min.css"))
 
-    script(src=relative('/js/inspirations.all.min.js'))
-  body.site
+  body.site(data-site)
     include /components/includes/mixins.jade
     
-    .site__page
-      //.example-header
-        .example-header__sticky
-          a(href=relative("/examples")).example-header__back
-            +svg('arrow-left', ['example-header__back__icon', 'icon'])
-            | Back to overview
-          .example-header__headline Example
-        .example-header__text
-          p.example-header__paragaph.
-            Dies ist eine Beispielseite mit Demo-Inhalten.
-            <br /> Bitte besuchen Sie
-            <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
-            für Ihre Versicherungsanliegen.
-          p.example-header__paragaph.
-            This is an example page with demo content.
-            <br /> Please visit
-            <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
-            for your insurance concerns.
-          p.example-header__paragaph.
-            Ceci est un exemple de page avec du contenu de démonstration.
-            <br /> S'il vous plaît visitez
-            <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
-            pour vos préoccupations d'assurance.
-          p.example-header__paragaph.
-            Questa è una pagina di esempio con contenuti demo.
-            <br /> Si prega di visitare
-            <a class="example-header__link" href="http://axa.ch" >www.axa.ch</a>
-            per le vostre preoccupazioni di assicurazione.
-            
+    .site__page(data-page)
+      .site__page__mask(data-mask)
       header.header
         .header__meta
           .header__meta__content
@@ -72,7 +45,7 @@ html
               .search__suggestions.search--header
             .header__meta__item.header__meta__language
               a.header__meta__language-button(data-popover="#languageMenu")
-                | En
+                span DE
                 svg.icon.icon--language-dropdown
                   use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#arrow-bottom")
               .popover(id="languageMenu")
@@ -97,31 +70,77 @@ html
             a.header__meta__item.header__meta__action myAXA Login
         .header__main
           .header__main__content
-            .header__brand.brand
+            a.header__brand.brand(href="#")
               .brand__logo
               .brand__tagline.brand__tagline--de
             .header__menu
-              ul.menu.menu--main
-                li.menu__item
-                  a.menu__link Versicherungen & Mehr
-                li.menu__item.is-active
-                  a.menu__link Schaden
-                li.menu__item
-                  a.menu__link Kontakt & Hilfe
-                li.menu__item
-                  a.menu__link Prävention
-                li.menu__item
-                  a.menu__link Kundenportale
-            a.header__main__mobile-trigger(href="#")
-              +svg('burger', 'header__main__mobile-icon')
+              ul.menu-main(data-menu="main")
+                li.menu-main__item.is-active(data-item)
+                  a.menu-main__link.is-active(href="#", data-link) Versicherungen & Mehr
+                  .menu-main__panel(data-panel) Versicherungen & Mehr
+                li.menu-main__item(data-item)
+                  a.menu-main__link(href="#", data-link) Schaden
+                  .menu-main__panel(data-panel)
+                    .row
+                      .column.column--4
+                        h2 Wohnen & Eigentum
+                        ul.menu
+                          li.menu__item
+                            a.menu__link(href="#") Haushaltversicherung
+                          li.menu__item
+                            a.menu__link(href="#") Hausratversicherung
+                          li.menu__item
+                            a.menu__link(href="#") Privathaftpflichtversicherung
+                          li.menu__item
+                            a.menu__link(href="#") Rechtsschutzversicherung
+                      .column.column--4
+                        h2 Fahrzeug & Reise
+                        ul.menu
+                          li.menu__item
+                            a.menu__link(href="#") Autoversicherung
+                          li.menu__item
+                            a.menu__link(href="#") Autoversicherung für Elektroautos
+                          li.menu__item
+                            a.menu__link(href="#") Motorradversicherung
+                          li.menu__item
+                            a.menu__link(href="#") Rechtschutzversicherung
+                      .column.column--4
+                        h2 Vorsorge & Sparen
+                        ul.menu
+                          li.menu__item
+                            a.menu__link(href="#") Lebenversicherung
+                          li.menu__item
+                            a.menu__link(href="#") Finanzprodukte
+                          li.menu__item
+                            a.menu__link(href="#") Fondsinformationen
+                          li.menu__item
+                            a.menu__link(href="#") Aktuelle Zinssätze
 
-      .l-container(style="max-width: 1260px;")
-        .l-row
-          .l-full
+                li.menu-main__item(data-item)
+                  a.menu-main__link(href="#", data-link) Kontakt & Hilfe
+                  .menu-main__panel(data-panel) Kontakt & Hilfe
+                li.menu-main__item(data-item)
+                  a.menu-main__link(href="#", data-link) Prävention
+                  .menu-main__panel(data-panel) Prävention
+                li.menu-main__item(data-item)
+                  a.menu-main__link(href="#", data-link) Kundenportale
+                  .menu-main__panel(data-panel) Kundenportale
+            a.header__main__mobile-action(href="#")
+              +svg('search', ['header__main__mobile-icon', 'icon-svg'])
+            a.header__main__mobile-action.site__burger(data-burger, href="#")
+              svg.header__main__mobile-icon.icon-svg.burger-icon(data-burger)
+                g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
+                  path(d="M0,5 L24,5", class="burger-icon__top")
+                  path(d="M0,12 L24,12", class="burger-icon__middle")
+                  path(d="M0,19 L24,19", class="burger-icon__bottom")
+
+      .page-content
+        .row
+          .column.column--12
             h1 Welcome
 
-        .l-row
-          .l-primary
+        .row
+          .column.column--9
             p.paragraph.
               Bacon ipsum dolor sit amet chicken sirloin ball tip, capicola short ribs
               bresaola boudin ribeye ground round shankle shoulder frankfurter pork loin
@@ -134,7 +153,7 @@ html
               Biltong tri-tip venison porchetta rump leberkas short loin drumstick
               ham hock.
 
-          .l-secondary
+          .column.column--3
             p.paragraph.
               Turkey biltong beef ribs tail pork loin tongue pork belly pork chop
               pastrami short ribs capicola. Ground round biltong beef ribs,
@@ -143,62 +162,181 @@ html
               steak tongue meatloaf. T-bone cow andouille landjaeger.
 
       footer.footer
-        .footer__content
-        .footer__copyline
-          .l-container
-            ul.menu.menu--copyline
-              li.menu__item
-                span.menu__link AXA 2014 ©
+        .footer__main
+          .footer__main__container
+            .footer__main__row
+              section.footer__social.footer-social
+                h3.footer-social__headline In Kontakt bleiben
+                ul.footer-social__items
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('facebook', ['footer-social__icon'])
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('twitter', ['footer-social__icon'])
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('xing', ['footer-social__icon'])
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('youtube', ['footer-social__icon'])
+                  li.footer-social__item
+                    a.footer-social__link(href="#")
+                      +svg('linked-in', ['footer-social__icon'])
 
-    .site__mobile-menu.example-mobile-nav
-      .site__mobile-menu__header
-        h1.site__mobile-menu__title My App
-        p.site__mobile-menu__user Max Mustermann
-      nav#menu-mobile.menu.menu--sliding
-        ul.menu__level
-          li.menu__item
-            a(href='../').menu__link Overview
-          li.menu__item.is-active
-            a.menu__link.menu__link--parent.is-active
-              | Cool Stuff
-              +svg('arrow-right', ['menu__link__parent-icon', 'icon'])
-            ul.menu__level.is-current#active-level
-              li.menu__item.menu__item--back
-                a.menu__link.menu__link--back
-                  +svg('arrow-left', ['menu__link__back-icon', 'icon'])
-                  | Cool Stuff
-              li.menu__item
-                a.menu__link.is-active Item 1
-              li.menu__item
-                a.menu__link Item 2
-              li.menu__item
-                a.menu__link Item 3
-          li.menu__item
-            a.menu__link.menu__link--parent
-              | More Cool Stuff
-              +svg('arrow-right', ['menu__link__parent-icon', 'icon'])
-            ul.menu__level
-              li.menu__item.menu__item--back
-                a.menu__link.menu__link--back
-                  +svg('arrow-left', ['menu__link__back-icon', 'icon'])
-                  | More Cool Stuff
-              li.menu__item
-                a.menu__link Item 4
-              li.menu__item
-                a.menu__link Item 5
-              li.menu__item
-                a.menu__link Item 6
-      .site__mobile-menu__logout
-        a.site__mobile-menu__logout__link Logout
-      ul.site__mobile-menu__languages
-        li.language-item
-          a.language-link DE
-        li.language-item
-          a.language-link FR
-        li.language-item
-          a.language-link IT
-        li.language-item
-          a.language-link EN
+              section.footer__links.footer-links
+                h3.footer-links__headline AXA & Sie
+                ul.footer-links__menu
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Unternehmenskunden
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Stellenangebote
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Schaden melden
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text myAXA
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Broker
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Medien
+                      +svg('arrow-right', ['footer-links__icon'])
+                  li.footer-links__item
+                    a.footer-links__link(href="#")
+                      span.footer-links__text Blog
+                      +svg('arrow-right', ['footer-links__icon'])
+
+              section.footer__worldwide.footer-worldwide
+                .footer-worldwide__headline AXA weltweit
+                ul.footer-worldwide__entities
+                  li.footer-worldwide__entity(href="#")
+                    a.footer-worldwide__link(href="#")
+                      span.footer-worldwide__text AXA weltweit
+                      +svg('arrow-right', ['footer-worldwide__icon'])
+                      img.footer-worldwide__image(src=relative('/images/axa-world.svg'))
+
+        .footer__copyline.footer-copyline
+          .footer-copyline__container
+            span.footer-copyline__notice © 2015 AXA Versicherungen AG
+            ul.footer-copyline__entries
+              li.footer-copyline__item
+                a.footer-copyline__link(href="#") Impressum
+              li.footer-copyline__item
+                a.footer-copyline__link(href="#") Nutzungshinweise
+              li.footer-copyline__item
+                a.footer-copyline__link(href="#") Datenschutz
+
+    .site__mobile.mobile(data-mobile)
+      .row
+        .column.mobile__section
+          .dropdown(data-dropdown)
+            .dropdown__label(data-dropdown-label)
+              +svg('arrow-bottom', 'dropdown__label__icon')
+              .dropdown__label__text(data-dropdown-text)
+            select.dropdown__select(data-dropdown-select)
+              option Privatkunden
+              option Unternehmenskunden
+              option Über AXA
+
+      .row
+        nav#menu-mobile.column.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+          ul.mobile-menu__level(data-level)
+            li.mobile-menu__item
+              a.mobile-menu__link(href='#', data-link) Übersicht
+
+            li.mobile-menu__item
+              a.mobile-menu__link.mobile-menu__link--parent(href='#', data-link)
+                span.mobile-menu__text Versicherungen & Mehr
+                +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon-svg'])
+              
+              ul#active-level.mobile-menu__level(data-level)
+                li.mobile-menu__item.mobile-menu__item--back
+                  a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
+                    +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+                    span.mobile-menu__text zurück
+                
+                li.mobile-menu__item.mobile-menu__item--section
+                  .mobile-menu__link.mobile-menu__link--section
+                    span.mobile-menu__text Versicherungen & Mehr
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Wohnen & Eigentum
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Fahrzeug & Reise
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Vorsorge & Sparen
+
+            li.mobile-menu__item
+              a.mobile-menu__link.mobile-menu__link--parent(href='#', data-link)
+                span.mobile-menu__text Kontakt & Hilfe
+                +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon-svg'])
+
+              ul.mobile-menu__level(data-level)
+                li.mobile-menu__item.mobile-menu__item--back
+                  a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
+                    +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+                    span.mobile-menu__text zurück
+            
+                li.mobile-menu__item.mobile-menu__item--section
+                  .mobile-menu__link.mobile-menu__link--section
+                    span.mobile-menu__text Kontakt & Hilfe
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Schaden melden
+                li.mobile-menu__item
+                  a.mobile-menu__link(href='#', data-link)
+                    span.mobile-menu__text Berater suchen
+            
+            li.mobile-menu__item
+              a.mobile-menu__link(href='#', data-link)
+                span.mobile-menu__text Prävention
+
+            li.mobile-menu__item
+              a.mobile-menu__link(href='#', data-link)
+                span.mobile-menu__text Kundenportale
+    
+      .row
+        .column.mobile__separator
+
+      .row
+        .column.list-group
+          a.list-group__item.list-group__item--link(href="#")
+            img.list-group__avatar(src="https://avatars3.githubusercontent.com/u/198988?v=3&s=460")
+            span.list-group__text David Knezić
+          a.list-group__item.list-group__item--link(href="#")
+            +svg('feedback', ['list-group__icon'])
+            span.list-group__text Kontakt
+
+      .row
+        ul.column.mobile__section
+          .mobile-languages
+            li.mobile-languages__items.is-active
+              a.mobile-languages__link.is-active(href="#") DE
+            li.mobile-languages__items
+              a.mobile-languages__link(href="#") FR
+            li.mobile-languages__items
+              a.mobile-languages__link(href="#") IT
+            li.mobile-languages__items
+              a.mobile-languages__link(href="#") EN
+
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
+    script(src=relative('/js/style-guide-docs.js'))
 
     script(type='text/javascript').
       var $menu = $('#menu-mobile');

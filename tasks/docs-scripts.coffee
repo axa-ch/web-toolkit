@@ -1,29 +1,37 @@
+babelify = require 'babelify'
+browserify = require 'browserify'
+shim = require 'browserify-shim'
+coffeeify = require 'coffeeify'
 gulp = require 'gulp'
 sourcemaps = require 'gulp-sourcemaps'
-coffee = require 'gulp-coffee'
-concat = require 'gulp-concat'
-uglify = require 'gulp-uglify'
-gIf = require 'gulp-if'
+gutil = require 'gulp-util'
+buffer = require 'vinyl-buffer'
+source = require 'vinyl-source-stream'
+notifier = require 'node-notifier'
 
-errorify = require '../lib/errorify'
+module.exports = (cb) ->
+  browserify({
+      debug: true,
+      extensions: ['.js', '.coffee']
+    })
+    .transform(babelify)
+    .transform(coffeeify)
+    .transform(shim)
+    .add('docs/js/index.js')
+    .bundle()
+    .on 'error', (err) ->
+      gutil.log(err.message)
+      notifier.notify({
+        title: 'Browserify Failed',
+        message: err.message
+      })
+      this.emit('end')
 
-module.exports = ->
-    return gulp.src [
-        './node_modules/jquery/dist/jquery.js'
-        './node_modules/baconjs/dist/Bacon.js'
-        './node_modules/moment/min/moment-with-locales.js'
-        './node_modules/zeroclipboard/dist/ZeroClipboard.js'
-        './node_modules/svg4everybody/svg4everybody.js'
-        './node_modules/lunr/lunr.min.js' # use min here since non-minified version misses a semicolon at the end
-        './node_modules/iframe-resizer/src/iframeResizer.js'
-        './dist/jquery/axa-wsg.jquery.all.js'
-        './docs/js/**/*.coffee'
-      ]
-    .pipe gIf('**/*.coffee', coffee())
-      .pipe sourcemaps.init { loadMaps: true }
-      .on 'error', errorify
-      .pipe concat 'docs.all.min.js'
-    .pipe sourcemaps.write('.', sourceRoot: './' )
-      .pipe gulp.dest './dist/docs/js'
+    .pipe(source('style-guide-docs.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .on('error', gutil.log)
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('dist/docs/js'))
 
 #! Copyright AXA Versicherungen AG 2015

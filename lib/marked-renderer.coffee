@@ -33,7 +33,7 @@ renderer.image = (href, title, text) ->
       " alt=\"#{text}\""
       " src=\"#{@_relative href}\""
       " title=\"#{title}\""
-      " class=\"image image--responsive\" />\n"
+      " class=\"image image--responsive image--docs\" />\n"
   ].join ""
 
 renderer.link = (href, title, text) ->

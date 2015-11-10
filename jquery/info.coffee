@@ -1,49 +1,49 @@
-(($) ->
+$ = require 'jquery'
 
-  # Public class definition
-  class Info
+# Public class definition
+class Info
 
-    constructor: (element, options) ->
-      @$element = $ element
-      # @options = $.extend {}, options
+  constructor: (element, options) ->
+    @$element = $ element
+    # @options = $.extend {}, options
 
-      selector = @$element.data 'target'
-      selector = options.target if not selector?
+    selector = @$element.data 'target'
+    selector = options.target if not selector?
 
-      @$target = $ selector
+    @$target = $ selector
 
-      @$element.on 'click', @, (event) ->
-        event.data.toggle event
+    @$element.on 'click', @, (event) ->
+      event.data.toggle event
 
-    toggle: () ->
-      @$target.slideToggle()
-      @$element.toggleClass 'is-active'
+    @$target.slideToggle()
 
-  # Plugin definition
-  Plugin = (option) ->
-    params = arguments
+  toggle: () ->
+    @$target.slideToggle()
+    @$element.toggleClass 'is-active'
 
-    return this.each () ->
-      options = $.extend({}, data, typeof option == 'object' && option)
-      action = option if typeof option == 'string'
+# Plugin definition
+Plugin = (option) ->
+  params = arguments
 
-      $this = $ this
-      data = $this.data('axa.info')
+  return this.each () ->
+    options = $.extend({}, data, typeof option == 'object' && option)
+    action = option if typeof option == 'string'
 
-      if not data
-        data = new Info this, options
-        $this.data 'axa.info', data
+    $this = $ this
+    data = $this.data('axa.info')
 
-  # Plugin registration
-  $.fn.info = Plugin
-  $.fn.info.Constructor = Info
+    if not data
+      data = new Info this, options
+      $this.data 'axa.info', data
 
-  # DATA-API
-  $(window).on 'load', () ->
-    $('[data-info]').each () ->
-      $info = $(this)
-      Plugin.call($info)
+# Plugin registration
+$.fn.info = Plugin
+$.fn.info.Constructor = Info
 
-)(jQuery)
+# DATA-API
+$(window).on 'load', () ->
+  $('[data-info]').each () ->
+    $info = $(this)
+    Plugin.call($info)
 
 #! Copyright AXA Versicherungen AG 2015

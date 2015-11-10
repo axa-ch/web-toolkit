@@ -1,0 +1,36 @@
+@import '../variables';
+@import '../mixins/font';
+@import '../mixins/make-link';
+@import '../mixins/unstyle-list';
+
+.mobile-languages {
+  .unstyle-list;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.mobile-languages__item {
+}
+
+.mobile-languages__link {
+  .make-font-large;
+  .make-link;
+
+  display: flex;
+  width: 4rem;
+  height: 2.5rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-languages__link.is-active {
+  color: @color-blue;
+}
+
+// Copyright AXA Versicherungen AG 2015

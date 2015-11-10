@@ -47,29 +47,6 @@ html
     link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
     link(rel="stylesheet", href=relative("/css/style.min.css"))
 
-    script(src=relative('/js/docs-examples.all.min.js'))
-    script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
-
-    // Set the locale for momentjs used in the datepicker
-    script.
-      moment.locale('en_GB')
-
-    script.
-      // Include the UserVoice JavaScript SDK (only needed once on a page)
-      UserVoice=window.UserVoice||[];
-      UserVoice.push(['set', {
-        accent_color: '#103184',
-        screenshot_enabled: false
-      }]);
-      (function(){
-        var uv=document.createElement('script');
-        uv.type='text/javascript';
-        uv.async=true;
-        uv.src='//widget.uservoice.com/O8ex403PfbC0GjKz3DuQ.js';
-        var s=document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(uv,s)
-      })();
-
   body.site
     .site__page
       .example-header
@@ -136,5 +113,12 @@ html
                 span.menu__link= config.copyright
 
     .site__mobile-menu
+    
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
+    script(src=relative('/js/style-guide-docs.js'))
+    script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
 
 //- Copyright AXA Versicherungen AG 2015
