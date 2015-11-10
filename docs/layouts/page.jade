@@ -129,7 +129,7 @@ html
                   li.menu-main__item(class={ 'is-active': isActive(page) })
                     a.menu-main__link(class={ 'is-active': isActive(page) }, href=relative(page.link))= page.title
             a.header__main__mobile-action.site__burger(data-burger, href="#")
-              svg.header__main__mobile-icon.icon-svg.burger-icon(data-burger)
+              svg.header__main__mobile-icon.icon.burger-icon(data-burger)
                 g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
                   path(d="M0,5 L24,5", class="burger-icon__top")
                   path(d="M0,12 L24,12", class="burger-icon__middle")
@@ -154,7 +154,7 @@ html
         .footer__copyline.footer-copyline
           .footer-copyline__container
             span.footer-copyline__notice.
-              #{config.copyright} #[+svg('doge', ['icon-svg'])]
+              #{config.copyright} #[+svg('doge', ['icon'])]
             ul.footer-copyline__entries
               li.footer-copyline__item
                 a.footer-copyline__link(href="https://github.com/axa-ch/style-guide") GitHub
