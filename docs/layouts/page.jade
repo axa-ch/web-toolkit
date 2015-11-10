@@ -21,8 +21,8 @@ mixin displaySideMenu(pages, isNested, isOpen)
         ) #{page.title}
           if page.children
             .menu__dropdown__icon(class={ 'is-open': isActive(page) })
-              +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon-svg'])
-              +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon-svg'])
+              +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon'])
+              +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon'])
 
         if page.children
           +displaySideMenu(page.children, true, isActive(page))
@@ -39,7 +39,7 @@ mixin displayMobileMenu(page)
     )
       span.mobile-menu__text= page.title
       if page.children
-        +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon-svg'])
+        +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon'])
 
     if page.children
       ul.mobile-menu__level(data-level)
@@ -49,7 +49,7 @@ mixin displayMobileMenu(page)
             data-back
           )
             span.mobile-menu__text back
-            +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon-svg'])
+            +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon'])
         
         li.mobile-menu__item.mobile-menu__item--section
           .mobile-menu__link.mobile-menu__link--section
@@ -114,10 +114,10 @@ html
           .header__meta__content
             .header__meta__item.header__meta__search.autocomplete.search.search--header
               input.autocomplete__input.search__input.search--header(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
-              svg.search__icon.search--header.icon-svg
+              svg.search__icon.search--header.icon
                 use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
             a.header__meta__item.header__meta__action(href="https://github.com/axa-ch/style-guide")
-              +svg('github', ['button__icon', 'icon-svg', 'button__icon--left'])
+              +svg('github', ['button__icon', 'icon', 'button__icon--left'])
               | View on GitHub
         .header__main
           .header__main__content
@@ -129,7 +129,7 @@ html
                   li.menu-main__item(class={ 'is-active': isActive(page) })
                     a.menu-main__link(class={ 'is-active': isActive(page) }, href=relative(page.link))= page.title
             a.header__main__mobile-action.site__burger(data-burger, href="#")
-              svg.header__main__mobile-icon.icon-svg.burger-icon(data-burger)
+              svg.header__main__mobile-icon.icon.burger-icon(data-burger)
                 g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
                   path(d="M0,5 L24,5", class="burger-icon__top")
                   path(d="M0,12 L24,12", class="burger-icon__middle")
@@ -154,7 +154,7 @@ html
         .footer__copyline.footer-copyline
           .footer-copyline__container
             span.footer-copyline__notice.
-              #{config.copyright} #[+svg('doge', ['icon-svg'])]
+              #{config.copyright} #[+svg('doge', ['icon'])]
             ul.footer-copyline__entries
               li.footer-copyline__item
                 a.footer-copyline__link(href="https://github.com/axa-ch/style-guide") GitHub

@@ -25,7 +25,7 @@ aside.callout
 
 .toggle
   .toggle__button(data-info, data-target='#progressbar-code')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#progressbar-code
     .tab-panel(data-tab, data-tab-default='html')
@@ -37,12 +37,12 @@ aside.callout
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 If possible, add the <code class="code">site</code>
                 block to the <code class="code">body</code> element.
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 To automatically add toggling behavior to any of your
                 buttons or links simply assign them the

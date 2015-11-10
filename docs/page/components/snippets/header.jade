@@ -18,18 +18,18 @@ header.header
             a.menu__link About Us
       .header__meta__item.header__meta__search.search.search--header
         input.search__input.search--header(type='text')
-        +svg('search', ['search__icon', 'search--header', 'icon-svg'])
+        +svg('search', ['search__icon', 'search--header', 'icon'])
         .search__suggestions.search--header
       .header__meta__item.header__meta__language
         a.header__meta__language-button(data-popover="#languageMenu")
           | EN
-          +svg('arrow-bottom', ['icon--language-dropdown', 'icon-svg'])
+          +svg('arrow-bottom', ['icon--language-dropdown', 'icon'])
         .popover(id="languageMenu")
           .popover__tail.popover__tail--top
           .popover__box
             .popover__box__header
               a.popover__close
-                +svg('modal-close', ['modal__close-icon', 'icon-svg'])
+                +svg('modal-close', ['modal__close-icon', 'icon'])
               .popover__box__header__headline Language
             .popover__box__content__wrapper
               .popover__box__content
@@ -59,9 +59,9 @@ header.header
           li.menu-main__item
             a.menu-main__link(href="#") Menu Item 4
       a.header__main__mobile-action(href="#")
-        +svg('search', ['header__main__mobile-icon', 'icon-svg'])
+        +svg('search', ['header__main__mobile-icon', 'icon'])
       a.header__main__mobile-action.site__burger(data-burger, href="#")
-        svg.header__main__mobile-icon.icon-svg.burger-icon(data-burger)
+        svg.header__main__mobile-icon.icon.burger-icon(data-burger)
           g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
             path(d="M0,5 L24,5", class="burger-icon__top")
             path(d="M0,12 L24,12", class="burger-icon__middle")

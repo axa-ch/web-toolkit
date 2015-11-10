@@ -14,7 +14,7 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       The logo always links to the home page.
 
@@ -22,7 +22,7 @@ ul.checklist
 
 .toggle
   .toggle__button(data-info, data-target='#code')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code
     .tab-panel(data-tab, data-tab-default='html')
@@ -33,7 +33,7 @@ ul.checklist
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 The <code>header__mobile-trigger</code>
                 element is designed to trigger a mobile

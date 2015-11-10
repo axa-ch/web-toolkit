@@ -22,7 +22,7 @@ p.paragraph.
         herunterladen und gleich mit dem Layout anfanagen
 
 //-.downloads
-  +svg('download', ['downloads__icon', 'icon-svg'])
+  +svg('download', ['downloads__icon', 'icon'])
   a(href="../AXA.aco").downloads__link NOTIFICATION.PSD
 
 .hr
@@ -31,7 +31,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#code-1')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     | See code
   .toggle__content#code-1
     .tab-panel
@@ -52,15 +52,15 @@ h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Use notifications to indicate the state of background actions like copying to the clipboard.
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       This component guarantees the attention of the user. Don't overuse it.
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       It is not to be used as a confirmation page.
 

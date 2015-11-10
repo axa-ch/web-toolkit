@@ -34,7 +34,7 @@ p.paragraph.
 
 .toggle
   .toggle__button(data-info, data-target='#progressbar-code')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#progressbar-code
     .tab-panel(data-tab, data-tab-default='html')
@@ -45,7 +45,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 Modify the content of
                 <code>progressbar__percentage</code> and the
@@ -59,7 +59,7 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Do not use progressbars for technical activities (e.g. loading css, requesting file from source)
 
@@ -75,7 +75,7 @@ ul.checklist
 
 .toggle
   .toggle__button(data-info, data-target='#spinner-code')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#spinner-code
     .tab-panel(data-tab, data-tab-default='html')
@@ -87,12 +87,12 @@ ul.checklist
         .tab-panel__content__tab(data-tab-content='html')
           ul.checklist
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 The spinner is hidden by default. Use the
                 is-active modifier to toggle it.
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 The spinner uses CSS animations which are
                 not supported by &lt;=IE9. Add the
@@ -108,18 +108,18 @@ ul.checklist
         .tab-panel__content__tab(data-tab-content='js')
           ul.checklist
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 Use your own JavaScript to add and remove
                 the <code>is-active</code> state.
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 Use the <code>IE9Spinner</code> jQuery plugin
                 to handle the fallback for browsers that
                 don't support CSS animations.
             li.checklist__item
-              +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
                 To activate the plugin use the
                 <code>data-spinner</code> attribute on the
@@ -134,7 +134,7 @@ ul.checklist
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Always display a loading spinner if the page might
       be loading longer than 0.3 seconds.
