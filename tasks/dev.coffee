@@ -67,12 +67,6 @@ module.exports = [['build'], (cb) ->
   .on 'error', (err) -> errorify err.message, 'scripts'
 
   watch [
-    './ng/**/*'
-  ], ->
-    gulp.start 'ng'
-  .on 'error', (err) -> errorify err.message, 'ng'
-
-  watch [
     './less/**/*.less'
     './icons/*.svg'
     './less/colors.json'
