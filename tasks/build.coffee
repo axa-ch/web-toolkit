@@ -10,7 +10,6 @@ module.exports = (cb) ->
     'styles'
     'modernizr'
     'scripts'
-    'ng'
     'create-versions-file'
     'docs'
     cb

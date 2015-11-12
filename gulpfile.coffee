@@ -1,7 +1,6 @@
 gulp = require 'gulp'
 del = require 'del'
 runSequence = require 'run-sequence'
-npm = require 'npm'
 readJSONFile = require './lib/readJSONFile'
 errorify = require './lib/errorify'
 file = require './lib/file'

@@ -15,6 +15,11 @@
     "type": "git",
     "url": "https://github.com/axa-ch/style-guide.git"
   },
+  "scripts": {
+    "dev": "./node_modules/.bin/gulp dev",
+    "build": "./node_modules/.bin/gulp build",
+    "start": "./node_modules/.bin/gulp build && ./node_modules/.bin/gulp serve"
+  },
   "author": "AXA Versicherungen AG",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
@@ -98,7 +103,6 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.9.0",
     "node-notifier": "^4.3.1",
-    "npm": "^2.1.18",
     "octonode": "^0.7.1",
     "postcss-pseudoelements": "^1.0.0",
     "prompt": "^0.2.14",
