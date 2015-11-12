@@ -2,7 +2,6 @@ runSequence = require 'run-sequence'
 
 module.exports = (cb) ->
   runSequence(
-    'release',
     'deploy-clean',
     'deploy-copy',
     'deploy-init',
