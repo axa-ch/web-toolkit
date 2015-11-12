@@ -98,7 +98,6 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.9.0",
     "node-notifier": "^4.3.1",
-    "npm": "^2.1.18",
     "octonode": "^0.7.1",
     "postcss-pseudoelements": "^1.0.0",
     "prompt": "^0.2.14",
