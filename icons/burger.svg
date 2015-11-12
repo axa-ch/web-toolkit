@@ -1,7 +1,7 @@
 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd">
-    <path d="M0,5 L24,5" class="top"/>
-    <path d="M0,12 L24,12" class="middle"/>
-    <path d="M0,19 L24,19" class="bottom"/>
+    <path d="M0,5 L24,5" class="burger-icon__top"/>
+    <path d="M0,12 L24,12" class="burger-icon__middle"/>
+    <path d="M0,19 L24,19" class="burger-icon__bottom"/>
   </g>
 </svg>
