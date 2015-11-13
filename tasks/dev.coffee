@@ -1,11 +1,20 @@
 gulp = require 'gulp'
 watch = require 'gulp-watch'
 sequence = require 'gulp-watch-sequence'
+webserver = require 'gulp-webserver'
 
 errorify = require '../lib/errorify'
 
 module.exports = [['build'], (cb) ->
-  gulp.start 'serve'
+  gulp.src(['dist/docs'])
+    .pipe(webserver({
+      host: '0.0.0.0',
+      port: process.env.PORT or 3000,
+      livereload: {
+        enable: true,
+        port: 35730
+      }
+    }))
 
   watch [
     './docs/page/**/*'
