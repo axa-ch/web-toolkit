@@ -62,7 +62,7 @@ h2.heading.heading--secondary Primary palette
 .color-palette
   .row
     each colorCode, colorName in colors.primary
-      .column.column--3
+      .column.column--6.column--md-4
         +color(colorCode, colorName, undefined)
 
 h2.heading.heading--secondary Secondary palette
@@ -71,7 +71,7 @@ h2.heading.heading--secondary Secondary palette
   each colorGroup in colors.secondary
     .row
       each colorCode, colorName in colorGroup.colors
-        .column.column--1
+        .column.column--4.column--md-3
           +color(colorCode, colorName, 'secondary')
 
 script
