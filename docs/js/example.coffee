@@ -16,10 +16,16 @@ class Example
     @$tablet = @$el.find '[data-example-tablet]'
     @$desktop = @$el.find '[data-example-desktop]'
 
+    # store the availability of the viewports
+    @disableMobile = @$el.attr 'data-example-disable-mobile'
+    @disableTablet = @$el.attr 'data-example-disable-tablet'
+    @disableDesktop = @$el.attr 'data-example-disable-desktop'
+
     # we need both an initial resize and click
     initialResize = Bacon.once @$el.width()
     initialClick = Bacon.once @$el.width()
       .map @mapWidthToViewport
+      .map @mapToEnabledViewport(@disableMobile, @disableTablet, @disableDesktop)
 
     # viewport that we explicitly switched to
     @clickedTo = initialClick
@@ -35,6 +41,7 @@ class Example
       .merge initialResize
       .throttle 25
       .map @mapWidthToViewport
+      .map @mapToEnabledViewport(@disableMobile, @disableTablet, @disableDesktop)
       .skipDuplicates()
       .toProperty()
 
@@ -69,6 +76,12 @@ class Example
     return 'tablet' if width < 980
     return 'desktop'
 
+  mapToEnabledViewport: (disableMobile, disableTablet, disableDesktop) ->
+    return (viewport) ->
+      return 'mobile' if (viewport == 'mobile' && !disableMobile) || (disableTablet && disableDesktop)
+      return 'tablet' if (viewport == 'tablet' && !disableTablet) || disableDesktop
+      return 'desktop'
+
   mapViewportToWidth: (viewport) ->
     return '320px' if viewport == 'mobile'
     return '768px' if viewport == 'tablet'
@@ -90,9 +103,9 @@ class Example
   setModeAvailability: (maxViewport) ->
     maxViewportOrder = @viewportToOrder maxViewport
 
-    @$mobile.toggleClass 'is-available', maxViewportOrder > 0
-    @$tablet.toggleClass 'is-available', maxViewportOrder >= 1
-    @$desktop.toggleClass 'is-available', maxViewportOrder >= 2
+    @$mobile.toggleClass 'is-available', !@disableMobile && maxViewportOrder >= 0
+    @$tablet.toggleClass 'is-available', !@disableTablet && maxViewportOrder >= 1
+    @$desktop.toggleClass 'is-available', !@disableDesktop && maxViewportOrder >= 2
 
 $ ->
   $ '[data-example]'

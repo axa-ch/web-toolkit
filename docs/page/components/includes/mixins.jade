@@ -12,7 +12,12 @@ mixin example(path, options)
   - if (options.maxHeight) attrs.iframe['data-max-height'] = options.maxHeight
   - if (options.minHeight) attrs.iframe['data-min-height'] = options.minHeight
 
-  .example(data-example)
+  .example(
+    data-example,
+    data-example-disable-mobile = options.disableMobile
+    data-example-disable-tablet = options.disableTablet
+    data-example-disable-desktop = options.disableDesktop
+  )
     .example__header
       .example__device-selection
         a.example__device-selection__device.example__device-selection__device--mobile(data-example-mobile)
