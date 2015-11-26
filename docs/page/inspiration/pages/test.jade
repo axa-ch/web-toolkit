@@ -31,19 +31,19 @@ html
         .header__meta
           .header__meta__container
             .header__meta__row
-              ul.header__meta__item.header__meta__menu.meta-menu
+              ul.header__meta__item.header__meta__item--menu.meta-menu
                 li.meta-menu__item
                   a.meta-menu__link(href="#") Privatkunden
                 li.meta-menu__item.is-active
                   a.meta-menu__link.is-active(href="#") Unternehmenskunden
                 li.meta-menu__item
                   a.meta-menu__link(href="#") Über AXA
-              form.header__meta__item.header__meta__search.search.search--header(action="#")
+              form.header__meta__item.header__meta__item--search.search.search--header(action="#")
                 input.search__input.search--header(type='text')
                 svg.search__icon.search--header.icon-svg
                   use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
                 .search__suggestions.search--header
-              .header__meta__item.header__meta__language
+              .header__meta__item.header__meta__item--language
                 a.header__meta__language-button(href="#", data-popover="#languageMenu")
                   | DE
                   svg.icon-svg.icon--language-dropdown
@@ -67,14 +67,14 @@ html
                             a.menu__link Italiano
                           li.menu__item
                             a.menu__link English
-              a.header__meta__item.header__meta__action(href="#") myAXA Login
+              a.header__meta__item.header__meta__item--action(href="#") myAXA Login
         .header__main
           .header__main__container
             .header__main__row
-              a.header__main__item.header__main__brand.brand(href="#")
+              a.header__main__item.header__main__item--brand.brand(href="#")
                 .brand__logo
                 .brand__tagline.brand__tagline--de
-              ul.header__main__item.header__main__menu.menu-main(data-menu="main")
+              ul.header__main__item.header__main__item--menu.menu-main(data-menu="main")
                 li.menu-main__item.is-active(data-item)
                   a.menu-main__link.is-active(href="#", data-link) Versicherungen & Mehr
                   .menu-main__panel(data-panel) Versicherungen & Mehr
@@ -125,9 +125,9 @@ html
                 li.menu-main__item(data-item)
                   a.menu-main__link(href="#", data-link) Kundenportale
                   .menu-main__panel(data-panel) Kundenportale
-              a.header__main__item.header__main__mobile-action(href="#")
+              a.header__main__item.header__main__item--mobile-action(href="#")
                 +svg('search', ['header__main__mobile-icon', 'icon'])
-              a.header__main__item.header__main__mobile-action.site__burger(data-burger, href="#")
+              a.header__main__item.header__main__item--mobile-action.site__burger(data-burger, href="#")
                 svg.header__main__mobile-icon.icon.burger-icon(data-burger)
                   g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
                     path(d="M0,5 L24,5", class="burger-icon__top")
