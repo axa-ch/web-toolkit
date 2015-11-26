@@ -1,10 +1,7 @@
 @import '../variables';
-@import '../mixins/clearfix';
 @import '../mixins/respond';
 
 .menu-main {
-  &:extend(.clearfix all);
-
   display: flex;
   align-items: flex-end;
 
@@ -23,10 +20,6 @@
   padding: 0;
 
   line-height: 44px;
-
-  .respond(large, {
-    float: left;
-  });
 }
 
 .menu-main__link.is-active,
@@ -80,3 +73,5 @@
 .menu-main__panel.is-open {
   display: block;
 }
+
+// Copyright AXA Versicherungen AG 2015
