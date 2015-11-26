@@ -16,7 +16,9 @@ module.exports = (cb) ->
       debug: true,
       extensions: ['.js', '.coffee']
     })
-    .transform(babelify)
+    .transform(babelify, {
+      presets: ['es2015']
+    })
     .transform(coffeeify)
     .transform(shim)
     .add('jquery/index.js')
