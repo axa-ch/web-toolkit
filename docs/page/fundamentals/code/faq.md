@@ -15,7 +15,7 @@ We recommend using the following meta tag:
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 ```
 
-The <code>width=device-width</code> forces
+The `width=device-width` forces
 the browsers viewport to have a width that
 equals the device width.
 The device width means the width in CSS pixels
@@ -24,14 +24,14 @@ This means that normalization is already done.
 The width for an iPhone (1136 * 640 @ 2x) in
 portrait mode would be 320px.
 
-The <code>minimum-scale=1.0</code> and
-<code>maximum-scale=1.0</code> force the browser
+The `minimum-scale=1.0` and
+`maximum-scale=1.0` force the browser
 to start at zoom 1.0 and disable pinch'n'zoom.
 This will provide the most "native-app-like" experience.
 
 If you'd like to enable pinch'n'zoom you can
 replace the min and max scale with an
-<code>initial-scale=1.0</code>.
+`initial-scale=1.0`.
 
 Find more information on the
 [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)
@@ -40,8 +40,8 @@ or on the
 
 # X-UA-Compatible
 
-We recommend using a <code>X-UA-Compatible</code> meta tag with
-the content <code>"IE=edge"</code>.
+We recommend using a `X-UA-Compatible` meta tag with
+the content `"IE=edge"`.
 This forces Internet Explorer not to use any compatibility mode.
 
 This is required because there are some preferences
@@ -79,7 +79,7 @@ and this Developer Toolkit is based on it.
 > Sometimes Less might not be enough.
 > If you need further templating logic in Less files
 > we recommend using Lo-Dash or something similar.
-> Have a look at our <code>icons.less.lodash</code> file for
+> Have a look at our `icons.less.lodash` file for
 > a real world example.
 
 # What JavaScript libraries does the Web Style Guide need?
