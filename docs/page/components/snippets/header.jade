@@ -9,14 +9,13 @@ header.header
   .header__meta
     .header__meta__container
       .header__meta__row
-        .header__meta__item.header__meta__menu
-          ul.meta-menu
-            li.meta-menu__item
-              a.meta-menu__link(href="#") Individuals
-            li.meta-menu__item.is-active
-              a.meta-menu__link.is-active(href="#") Small Business Insurance
-            li.meta-menu__item
-              a.meta-menu__link(href="#") About Us
+        ul.header__meta__item.header__meta__menu.meta-menu
+          li.meta-menu__item
+            a.meta-menu__link(href="#") Individuals
+          li.meta-menu__item.is-active
+            a.meta-menu__link.is-active(href="#") Small Business Insurance
+          li.meta-menu__item
+            a.meta-menu__link(href="#") About Us
         .header__meta__item.header__meta__search.search.search--header
           input.search__input.search--header(type='text')
           +svg('search', ['search__icon', 'search--header', 'icon'])
