@@ -120,54 +120,6 @@
   }
 }
 
-.menu--meta {
-  height: 100%;
-
-  .menu__item {
-    height: 100%;
-    border-right: 1px solid @color-gray--mid;
-
-    font-size: 0.9em;
-    font-weight: bold;
-
-    &.is-active {
-      background: @color-white;
-      box-shadow: -4px 0px 3px -3px @color-gray--mid, 3px 0px 3px -3px @color-gray--mid, 0 0px 0px 0 @color-white,0 0px 0px 0 @color-white;
-    }
-
-    &.is-active,
-    &:hover {
-      .menu__link {
-        color: @color-blue;
-      }
-    }
-
-    .respond(large, {
-      float: left;
-    });
-  }
-
-  .menu__link {
-    display: inline-block;
-
-    height: 100%;
-    padding: 0 24px;
-
-    text-decoration: none;
-    color: @color-gray--darker;
-
-    &::before {
-      //This is used so the text of .menu__link is vertically aligned in the middle
-      //without having to totally fuck up the markup.
-      //todo: make a mixin?
-      display: inline-block;
-      content: "";
-      height: 100%;
-      vertical-align: middle
-    }
-  }
-}
-
 .menu--language{
   margin-left: 7px;
 

@@ -111,29 +111,30 @@ html
         data-notification-error=relative('/images/icons.svg#cross'))
       header.header
         .header__meta
-          .header__meta__content
-            .header__meta__item.header__meta__search.autocomplete.search.search--header
-              input.autocomplete__input.search__input.search--header(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
-              svg.search__icon.search--header.icon
-                use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
-            a.header__meta__item.header__meta__action(href="https://github.com/axa-ch/style-guide")
-              +svg('github', ['button__icon', 'icon', 'button__icon--left'])
-              | View on GitHub
+          .header__meta__container
+            .header__meta__row
+              .header__meta__item.header__meta__search.autocomplete.search.search--header
+                input.autocomplete__input.search__input.search--header(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
+                svg.search__icon.search--header.icon
+                  use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
+              a.header__meta__item.header__meta__action(href="https://github.com/axa-ch/style-guide")
+                +svg('github', ['button__icon', 'icon', 'button__icon--left'])
+                | View on GitHub
         .header__main
-          .header__main__content
-            a.header__brand.brand(href=relative("/index.html"))
-              span.brand__logo
-            .header__menu
-              ul.menu-main
+          .header__main__container
+            .header__main__row
+              a.header__main__item.header__main__brand.brand(href=relative("/index.html"))
+                span.brand__logo
+              ul.header__main__item.header__main__menu.menu-main
                 each page in navigation
                   li.menu-main__item(class={ 'is-active': isActive(page) })
                     a.menu-main__link(class={ 'is-active': isActive(page) }, href=relative(page.link))= page.title
-            a.header__main__mobile-action.site__burger(data-burger, href="#")
-              svg.header__main__mobile-icon.icon.burger-icon(data-burger)
-                g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
-                  path(d="M0,5 L24,5", class="burger-icon__top")
-                  path(d="M0,12 L24,12", class="burger-icon__middle")
-                  path(d="M0,19 L24,19", class="burger-icon__bottom")
+              a.header__main__item.header__main__mobile-action.site__burger(data-burger, href="#")
+                svg.header__main__mobile-icon.icon.burger-icon(data-burger)
+                  g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
+                    path(d="M0,5 L24,5", class="burger-icon__top")
+                    path(d="M0,12 L24,12", class="burger-icon__middle")
+                    path(d="M0,19 L24,19", class="burger-icon__bottom")
 
       .page-content
         if section
