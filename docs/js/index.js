@@ -10,8 +10,10 @@ require('./search')
 require('./tab')
 
 import moment from 'moment'
+import svg4everybody from 'svg4everybody'
 
 moment.locale('en_GB')
+svg4everybody()
 
 $('#showNotification').on('click', function () {
   let content = $('#notification_content').val()
