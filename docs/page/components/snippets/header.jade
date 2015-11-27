@@ -20,9 +20,9 @@ header.header
           input.search__input.search--header(type='text')
           +svg('search', ['search__icon', 'search--header', 'icon'])
           .search__suggestions.search--header
-        .header__meta__item.header__meta__item--language
-          a.header__meta__language-button(href="#", data-popover="#languageMenu")
-            | EN
+        .header__meta__item.header__meta__item--language.meta-language
+          a.meta-language__button(href="#", data-popover="#languageMenu")
+            | English
             +svg('arrow-bottom', ['icon--language-dropdown', 'icon'])
           .popover(id="languageMenu")
             .popover__tail.popover__tail--top
