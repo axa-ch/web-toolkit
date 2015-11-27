@@ -7,18 +7,18 @@ include /components/includes/mixins.jade
 
 header.header
   .header__main
-    .header__main__content
-      nav.header__menu
+    .header__main__container
+      .header__main__row
         // This is where it starts...
-        ul.menu-main(data-menu="main")
+        ul.header__main__item.header__main__menu.menu-main(data-menu="main")
           li.menu-main__item(data-item)
             a.menu-main__link(href="#insurance", data-link) Insurance
             section.menu-main__panel(data-panel) Insurance
           li.menu-main__item(data-item)
             a.menu-main__link(href="#claims", data-link) Claims
             section.menu-main__panel(data-panel)
-              .l-row
-                .l-third
+              .row
+                .column.column--4
                   h2 Services
                   ul.menu
                     li.menu__item
@@ -29,7 +29,7 @@ header.header
                       a.menu__link(href="#") Privathaftpflichtversicherung
                     li.menu__item
                       a.menu__link(href="#") Rechtsschutzversicherung
-                .l-third
+                .column.column--4
                   h2 Documents
                   ul.menu
                     li.menu__item
@@ -40,7 +40,7 @@ header.header
                       a.menu__link(href="#") Motorradversicherung
                     li.menu__item
                       a.menu__link(href="#") Rechtschutzversicherung
-                .l-third
+                .column.column--4
                   h2 Benefits
                   ul.menu
                     li.menu__item

@@ -7,48 +7,48 @@ include /components/includes/mixins.jade
 
 header.header
   .header__meta
-    .header__meta__content
-      .header__meta__item.header__meta__menu
-        ul.menu.menu--meta
-          li.menu__item.is-active
-            a.menu__link Individuals
-          li.menu__item
-            a.menu__link Small Business Insurance
-          li.menu__item
-            a.menu__link About Us
-      .header__meta__item.header__meta__search.search.search--header
-        input.search__input.search--header(type='text')
-        +svg('search', ['search__icon', 'search--header', 'icon'])
-        .search__suggestions.search--header
-      .header__meta__item.header__meta__language
-        a.header__meta__language-button(data-popover="#languageMenu")
-          | EN
-          +svg('arrow-bottom', ['icon--language-dropdown', 'icon'])
-        .popover(id="languageMenu")
-          .popover__tail.popover__tail--top
-          .popover__box
-            .popover__box__header
-              a.popover__close
-                +svg('modal-close', ['modal__close-icon', 'icon'])
-              .popover__box__header__headline Language
-            .popover__box__content__wrapper
-              .popover__box__content
-                ul.menu.menu--language
-                  li.menu__item
-                    a.menu__link Deutsch
-                  li.menu__item
-                    a.menu__link Français
-                  li.menu__item
-                    a.menu__link Italiano
-                  li.menu__item
-                    a.menu__link English
-      a.header__meta__item.header__meta__action myAXA Login
+    .header__meta__container
+      .header__meta__row
+        ul.header__meta__item.header__meta__item--menu.meta-menu
+          li.meta-menu__item
+            a.meta-menu__link(href="#") Individuals
+          li.meta-menu__item.is-active
+            a.meta-menu__link.is-active(href="#") Small Business Insurance
+          li.meta-menu__item
+            a.meta-menu__link(href="#") About Us
+        .header__meta__item.header__meta__item--search.search.search--header
+          input.search__input.search--header(type='text')
+          +svg('search', ['search__icon', 'search--header', 'icon'])
+          .search__suggestions.search--header
+        .header__meta__item.header__meta__item--language.meta-language
+          a.meta-language__button(href="#", data-popover="#languageMenu")
+            | English
+            +svg('arrow-bottom', ['icon--language-dropdown', 'icon'])
+          .popover(id="languageMenu")
+            .popover__tail.popover__tail--top
+            .popover__box
+              .popover__box__header
+                a.popover__close
+                  +svg('modal-close', ['modal__close-icon', 'icon'])
+                .popover__box__header__headline Language
+              .popover__box__content__wrapper
+                .popover__box__content
+                  ul.menu.menu--language
+                    li.menu__item
+                      a.menu__link Deutsch
+                    li.menu__item
+                      a.menu__link Français
+                    li.menu__item
+                      a.menu__link Italiano
+                    li.menu__item
+                      a.menu__link English
+        a.header__meta__item.header__meta__item--action myAXA Login
   .header__main
-    .header__main__content
-      .header__brand.brand
-        .brand__logo
-      .header__menu
-        ul.menu-main
+    .header__main__container
+      .header__main__row
+        a.header__main__item.header__main__item--brand.brand(href="#")
+          .brand__logo
+        ul.header__main__item.header__main__item--menu.menu-main
           li.menu-main__item
             a.menu-main__link(href="#") Menu Item 1
           li.menu-main__item.is-active
@@ -57,13 +57,13 @@ header.header
             a.menu-main__link(href="#") Menu Item 3
           li.menu-main__item
             a.menu-main__link(href="#") Menu Item 4
-      a.header__main__mobile-action(href="#")
-        +svg('search', ['header__main__mobile-icon', 'icon'])
-      a.header__main__mobile-action.site__burger(data-burger, href="#")
-        svg.header__main__mobile-icon.icon.burger-icon(data-burger)
-          g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
-            path(d="M0,5 L24,5", class="burger-icon__top")
-            path(d="M0,12 L24,12", class="burger-icon__middle")
-            path(d="M0,19 L24,19", class="burger-icon__bottom")
+        a.header__main__item.header__main__item--mobile-action(href="#")
+          +svg('search', ['header__main__mobile-icon', 'icon'])
+        a.header__main__item.header__main__item--mobile-action.site__burger(data-burger, href="#")
+          svg.icon.burger-icon(data-burger)
+            g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
+              path(d="M0,5 L24,5", class="burger-icon__top")
+              path(d="M0,12 L24,12", class="burger-icon__middle")
+              path(d="M0,19 L24,19", class="burger-icon__bottom")
 
 //- Copyright AXA Versicherungen AG 2015

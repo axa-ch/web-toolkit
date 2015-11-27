@@ -7,10 +7,10 @@ include /components/includes/mixins.jade
 
 header.header
   .header__main
-    .header__main__content
-      nav.header__menu
+    .header__main__container
+      .header__main__row
         // This is where it starts...
-        ul.menu-main
+        ul.header__main__item.header__main__menu.menu-main
           li.menu-main__item
             a.menu-main__link(href="#", data-link) Insurance
           li.menu-main__item.is-active
