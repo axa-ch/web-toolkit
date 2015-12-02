@@ -1,14 +1,14 @@
 dist/docs/
 docs/
-icon-font/
 icons/
 images/
 jquery/
 less/
 lib/
-ng/
 tasks/
 tmp/
+.travis.yml
 coffeelint.json
+Dockerfile
 gulpfile.coffee
-shippable.yml
+modernizr.json
