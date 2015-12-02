@@ -4,19 +4,11 @@
 # node
 node_modules/
 
-# bower
-bower_components/
-src/bower_components
-
 # project
-build/
 dist/
 tmp/
 
 # deployment
-.travis/deploy_key
-.travis/deploy_key.pub
-out/
 npm-debug.log
 
 # webstorm
