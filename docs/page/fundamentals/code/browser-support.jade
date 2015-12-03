@@ -15,7 +15,7 @@ tags: safari, ios, chrome, android, internet explorer, firefox,
 
   # What browsers to support?
 
-  Based on data from the 10th of september 2015 for the last 3 months, we are
+  Based on data from the 3th of december 2015 for the last 3 months, we are
   supporting the following browsers and mobile
   operating systems:
 
@@ -38,7 +38,7 @@ table.table.table--docs
       td.table__row__item
         .table__row__item__content Windows
       td.table__row__item
-        .table__row__item__content 9+
+        .table__row__item__content 10+
     tr.table__row
       td.table__row__item
         .table__row__item__content Firefox
@@ -99,142 +99,43 @@ table.table.table--docs
         .table__row__item__content 7.0+
 
 .hr
-
-:markdown
-  # Internet Explorer 8 & 9
-
-  You'll need to add some of the polyfills listed
-  below to add support for IE 9.
-
-  With the current release Internet Explorer 8 is
-  NOT supported. Please consider adding a "Your
-  browser is not supported page" or add support
-  for IE 8 on your own. The polyfills listed below
-  will do the major parts of the job.
-
-table.table.table--docs
-  thead
-    tr.table__header
-      th.table__header__item Version
-      th.table__header__item Polyfill
-  tbody.table__content
-    tr.table__row
-      td.table__row__item(style="min-width: 100px")
-        .table__row__item__content up to IE 9
-      td.table__row__item
-        .table__row__item__content.
-          HTML 5 Elements
-          <br/><br />
-          Don't use HTML 5 tags or add the
-          <a class="link" href="https://github.com/afarkas/html5shiv" class="link" >HTML5SHIV</a>
-          polyfill.
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content up to IE 8
-      td.table__row__item
-        .table__row__item__content.
-          Media queries
-          <br/><br/>
-          Add the
-          <a class="link" href="https://github.com/scottjehl/Respond" class="link" >respond.js</a>
-          polyfill to support media queries.
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content up to IE 8
-      td.table__row__item
-        .table__row__item__content.
-          CSS 3 pseudo element selectors (::selector)
-          <br/><br/>
-          Replace every double colon selector (::selector)
-          with a single colon one (:selector).
-          <br/><br/>
-          We recommend to use
-          <a class="link" href="https://www.npmjs.com/package/postcss-pseudoelements" >postcss-pseudoelements</a>
-          postcss plugin to automate this task.
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content up to IE 8
-      td.table__row__item
-        .table__row__item__content.
-          Border radius
-          <br/><br/>
-          Accept the square corners or add the
-          <a class="link" href="http://css3pie.com/" >css3pie</a>
-          polyfill. Note that this polyfill may slow
-          down the page rendering on IE 8.
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content up to IE 8
-      td.table__row__item
-        .table__row__item__content.
-          Background size
-          <br/><br/>
-          Add the
-          <a class="link" href="https://github.com/louisremi/background-size-polyfill" >background-size-polyfill</a>
-          to support this property in IE 7/8.
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content up to IE 8
-      td.table__row__item
-        .table__row__item__content.
-          jQuery
-          <br/><br/>
-          jQuery 2.0 dropped support for IE 8 in favour
-          of a major performance boost. Use the 1.x Version
-          instead to support IE 8.
-    tr.table__row
-      td.table__row__item
-        .table__row__item__content -
-      td.table__row__item
-        .table__row__item__content.
-          Other
-          <br/><br/>
-          Use
-          <a class="link" href="http://caniuse.com" >caniuse.com</a>
-          to look up browser support for a specific feature.
-          <br/><br/>
-          Take a look at the
-          <a class="link" href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills" >Modernizr wiki</a>
-          to find further polyfills.
-
 script.
   google.setOnLoadCallback(drawCharts);
   function drawCharts() {
     var androidData = google.visualization.arrayToDataTable([
       ['Android Version', 'Visits'],
-      ['5.x',     27437],
-      ['4.x',     25861],
-      ['older',  661],
-      ['undefined',  1146]
+      ['5.x',     9073],
+      ['4.x',     5423],
+      ['older',  126]
     ]);
 
     var iosData = google.visualization.arrayToDataTable([
       ['iOS Version', 'Visits'],
-      ['9.x',     133],
-      ['8.x',     48891],
-      ['7.x',      5519],
-      ['older',  856]
+      ['9.x',     22970],
+      ['8.x',     8034],
+      ['7.x',      1886],
+      ['older',  308]
     ]);
     
     var desktopData = google.visualization.arrayToDataTable([
       ['Browser & Version', 'Visits'],
-      ['Internet Explorer Older',     4948],
-      ['Internet Explorer 9',     13141],
-      ['Internet Explorer 10',     8285],
-      ['Internet Explorer 11',     53738],
-      ['Firefox Older',     11076],
-      ['Firefox 38',     11121],
-      ['Firefox 39',     13176],
-      ['Firefox 40',     7140],
-      ['Chrome Older',     4906],
-      ['Chrome 43.x',     18585],
-      ['Chrome 44.x',     15786],
-      ['Chrome 45+',     2128],
-      ['Safari Older',    7026],
-      ['Safari 7',     3595],
-      ['Safari 8',     11039],
-      ['Edge',      722],
-      ['other',  1308]
+      ['Internet Explorer Older',     2100],
+      ['Internet Explorer 9',     5100],
+      ['Internet Explorer 10',     3000],
+      ['Internet Explorer 11',     34300],
+      ['Firefox Older',     5997],
+      ['Firefox 40',     350],
+      ['Firefox 41',     4696],
+      ['Firefox 42+',     11272],
+      ['Chrome Older',     1627],
+      ['Chrome 44.x',     200],
+      ['Chrome 45.x',     405],
+      ['Chrome 46+',     21039],
+      ['Safari Older',    3967],
+      ['Safari 8',     1707],
+      ['Safari 9',     7648],
+      ['Edge',      2772],
+      ['other',  845]
     ]);
     
 
