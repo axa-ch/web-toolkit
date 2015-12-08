@@ -6,15 +6,10 @@ class SlidingMenu {
 
     this.init()
 
-    let lvl = this.level()
+    let $currentLevel = this.$element.find('.is-current')
+    let $uppermostLevel = this.$element.children('[data-level]')
 
-    if (lvl.length > 0) {
-      // initially set to the .is-current level
-      this.level(lvl)
-    } else {
-      // initially set to the highest level
-      this.level(this.$element.children('[data-level]'))
-    }
+    this.level(($currentLevel.length > 0 ? $currentLevel : $uppermostLevel))
 
     $(window).on('resize', this.onWindowResize)
   }
