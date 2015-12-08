@@ -50,7 +50,7 @@ class MainMenu {
   }
 }
 
-let Plugin = function () {
+function Plugin() {
   let params = arguments
 
   return this.each(function () {
@@ -67,11 +67,10 @@ let Plugin = function () {
 $.fn.mainMenu = Plugin
 $.fn.mainMenu.Constructor = MainMenu
 
-$(window).on('load', function () {
+$(function () {
   $('[data-menu="main"]').each(function () {
     let $menu = $(this)
-    let data = $menu.data()
-    Plugin.call($menu, data)
+    Plugin.call($menu)
   })
 })
 
