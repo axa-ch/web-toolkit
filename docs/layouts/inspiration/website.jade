@@ -1,6 +1,6 @@
 ---
 cache: true
-filename: page.jade
+filename: inspiration.jade
 ---
 
 include /components/includes/mixins.jade
@@ -30,10 +30,50 @@ html
                     .header__main__row
                       a.header__main__item.header__main__item--brand.brand(href=relative("/index.html"))
                         span.brand__logo
-                      ul.header__main__item.header__main__item--menu.menu-main
-                        each page in navigation
-                          li.menu-main__item(class={ 'is-active': isActive(page) })
-                            a.menu-main__link(class={ 'is-active': isActive(page) }, href=relative(page.link))= page.title
+                      ul.header__main__item.header__main__item--menu.menu-main(data-menu='main')
+                        li.menu-main__item(data-item='')
+                          a.menu-main__link(href='#', data-link='') Menu Item 1
+                          .menu-main__panel(data-panel='')
+                            .row
+                              .column.column--4
+                                h3 Wohnen &amp; Eigentum
+                                ul.menu
+                                  li.menu__item
+                                    a.menu__link(href='#') Haushaltversicherung Haushalt versicherung  Haushaltversicherung
+                                  li.menu__item
+                                    a.menu__link(href='#') Hausratversicherung  
+                                  li.menu__item
+                                    a.menu__link(href='#') Privathaftpflichtversicherung  
+                                  li.menu__item
+                                    a.menu__link(href='#') Rechtsschutzversicherung
+                              .column.column--4
+                                h3 Fahrzeug &amp; Reise
+                                ul.menu
+                                  li.menu__item
+                                    a.menu__link(href='#') Autoversicherung  
+                                  li.menu__item
+                                    a.menu__link(href='#') Autoversicherung f&uuml;r Elektroautos  
+                                  li.menu__item
+                                    a.menu__link(href='#') Motorradversicherung  
+                                  li.menu__item
+                                    a.menu__link(href='#') Rechtschutzversicherung
+                              .column.column--4
+                                h3 Vorsorge &amp; Sparen
+                                ul.menu
+                                  li.menu__item
+                                    a.menu__link(href='#') Lebenversicherung  
+                                  li.menu__item
+                                    a.menu__link(href='#') Finanzprodukte  
+                                  li.menu__item
+                                    a.menu__link(href='#') Fondsinformationen  
+                                  li.menu__item
+                                    a.menu__link(href='#') Aktuelle Zinss&auml;tze
+
+                        li.menu-main__item
+                          a.menu-main__link(href='#', data-link='') Menu Item 2
+                        li.menu-main__item
+                          a.menu-main__link(href='#', data-link='') Menu Item 3
+                          
                       a.header__main__item.header__main__item--mobile-action.site__burger(data-burger, href="#")
                         svg.icon.burger-icon(data-burger)
                           g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
@@ -41,33 +81,22 @@ html
                             path(d="M0,12 L24,12", class="burger-icon__middle")
                             path(d="M0,19 L24,19", class="burger-icon__bottom")
 
-      .page-content
-        if section
-          .row
-            nav.column.column--docs-side
-              +displaySideMenu(section.children, false, true)
-            .column.column--docs-main
-              if headline !== false
-                h1.heading.heading--page #{title}
-              div!= contents
 
-        else
-          if headline !== false
-            h1.heading.heading--page #{title}
-          div!= contents
+      div!= contents
           
       footer.footer
-        .footer__copyline.footer-copyline
-          .footer-copyline__container
-            span.footer-copyline__notice.
-              #{config.copyright} #[+svg('doge', ['icon'])]
-            ul.footer-copyline__entries
-              li.footer-copyline__item
-                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide") GitHub
-              li.footer-copyline__item
-                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/issues") Issues & Feature Requests
-              li.footer-copyline__item
-                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/releases") Changelog
+          .footer__copyline.footer-copyline
+            .footer-copyline__container
+              span.footer-copyline__notice.
+                #{config.copyright} #[+svg('doge', ['icon'])]
+              ul.footer-copyline__entries
+                li.footer-copyline__item
+                  a.footer-copyline__link(href="https://github.com/axa-ch/style-guide") GitHub
+                li.footer-copyline__item
+                  a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/issues") Issues & Feature Requests
+                li.footer-copyline__item
+                  a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/releases") Changelog
+
 
     .site__mobile.mobile(data-mobile)
       .row
