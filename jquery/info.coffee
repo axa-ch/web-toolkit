@@ -15,8 +15,6 @@ class Info
     @$element.on 'click', @, (event) ->
       event.data.toggle event
 
-    @$target.slideToggle()
-
   toggle: () ->
     @$target.slideToggle()
     @$element.toggleClass 'is-active'
