@@ -11,7 +11,7 @@ class SlidingMenu {
 
     this.level(($currentLevel.length > 0 ? $currentLevel : $uppermostLevel))
 
-    $(window).on('resize', this.onWindowResize)
+    $(window).on('resize', (e) => this.onWindowResize(e))
   }
 
   init() {
