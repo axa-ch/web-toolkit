@@ -73,7 +73,6 @@ html
             .header__main__row
               a.header__main__item.header__main__item--brand.brand(href="#")
                 .brand__logo
-                .brand__tagline.brand__tagline--de
               ul.header__main__item.header__main__item--menu.menu-main(data-menu="main")
                 li.menu-main__item.is-active(data-item)
                   a.menu-main__link.is-active(href="#", data-link) Versicherungen & Mehr
@@ -125,14 +124,16 @@ html
                 li.menu-main__item(data-item)
                   a.menu-main__link(href="#", data-link) Kundenportale
                   .menu-main__panel(data-panel) Kundenportale
-              a.header__main__item.header__main__item--mobile-action(href="#")
-                +svg('search', ['header__main__mobile-icon', 'icon'])
-              a.header__main__item.header__main__item--mobile-action.site__burger(data-burger, href="#")
-                svg.icon.burger-icon(data-burger)
-                  g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
-                    path(d="M0,5 L24,5", class="burger-icon__top")
-                    path(d="M0,12 L24,12", class="burger-icon__middle")
-                    path(d="M0,19 L24,19", class="burger-icon__bottom")
+              
+              .header__main__item.header__main__item--mobile-actions.mobile-actions
+                a.mobile-actions__item(href="#")
+                  +svg('search', ['mobile-actions__icon', 'icon'])
+                a.mobile-actions__item.site__burger(data-burger, href="#")
+                  svg.mobile-actions__icon.icon.burger-icon(data-burger)
+                    g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
+                      path.burger-icon__top(d="M0,5 L24,5")
+                      path.burger-icon__middle(d="M0,12 L24,12")
+                      path.burger-icon__bottom(d="M0,19 L24,19")
 
       .page-content
         .row
