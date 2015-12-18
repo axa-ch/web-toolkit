@@ -113,10 +113,10 @@ html
         .header__meta
           .header__meta__container
             .header__meta__row
-              .header__meta__item.header__meta__item--search.autocomplete.search.search--header
-                input.autocomplete__input.search__input.search--header(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
-                svg.search__icon.search--header.icon
-                  use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
+              .header__meta__item.header__meta__item--search.header-search.autocomplete
+                input.header-search__input.autocomplete__input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
+                .header-search__button
+                  +svg('search', ['header-search__icon', 'icon'])
               a.header__meta__item.header__meta__item--action(href="https://github.com/axa-ch/style-guide")
                 +svg('github', ['button__icon', 'icon', 'button__icon--left'])
                 | View on GitHub

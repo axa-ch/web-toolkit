@@ -16,7 +16,7 @@ class Search
     @$input = $ input
 
     # create the autocomplete suggestions box
-    @$suggestions = $ '<div class="autocomplete__suggestions"></div>'
+    @$suggestions = $ '<div class="header-search__suggestions autocomplete__suggestions"></div>'
 
     @$input.after @$suggestions
 
