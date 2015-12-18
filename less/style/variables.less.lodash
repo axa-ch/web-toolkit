@@ -35,7 +35,7 @@
 // #############################
 
 @transition-duration: 0.5s;
-@transition-fn-fancy: cubic-bezier(0.6, 0.0, 0.735, 0.045);
+@transition-fn-fancy: cubic-bezier(0, 0, 0.57, 0.95);
 @transition-duration-fast: 250ms;
 
 // #############################
