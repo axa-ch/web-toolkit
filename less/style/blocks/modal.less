@@ -90,7 +90,7 @@
   float: right;
 
   height: 40px;
-  width: 44px;
+  width: 40px;
 
   font-size: 14px;
   text-align: center;
@@ -104,7 +104,7 @@
   }
 
   .respond(medium; {
-    padding-top: 20px;
+    margin-top: 20px;
 
     font-size: 21px;
 
@@ -117,20 +117,15 @@
 }
 
 .modal__close-icon {
-  //width: 1em;
-  //height: 1em;
-  margin-top: 13px;
-
-  .respond(medium; {
-    //width: 1.5em;
-    //height: 1.5em;
-    margin-top: 0;
-  });
+  margin-top: 8px;
 }
 
 .modal__heading {
-  padding: 6px 0 5px 0;
+  padding: 9px 0 5px 0;
   margin-right: 44px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   .respond(medium; {
     padding: 0;
