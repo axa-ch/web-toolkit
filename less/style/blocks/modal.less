@@ -24,11 +24,11 @@
   position: fixed;
   top: 40px;
   right: 0;
-  bottom: 51px;
+  bottom: 68px;
   left: 0;
   z-index: @z-index-modal;
 
-  padding: 0 @modal-padding;
+  padding: @modal-padding;
 
   overflow: auto;
   background: white;
@@ -108,10 +108,10 @@
 
     font-size: 21px;
 
-    color: @color-light-blue;
+    color: @color-gray--darker;
 
     &:hover {
-      color: @color-light-blue;
+      color: @color-blue;
     }
   });
 }
@@ -141,9 +141,8 @@
   z-index: @z-index-modal;
 
   width: 100%;
-  height: 51px;
+  height: 68px;
   padding: 10px 0 15px 0;
-  border-top: 1px solid @color-gray--light;
 
   background: @color-gray--lighter;
 
@@ -163,7 +162,6 @@
 .modal__footer__wrapper {
   .respond(medium; {
     padding-top: 27px;
-    border-top: 1px dotted @color-blue;
   });
 }
 
