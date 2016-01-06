@@ -45,7 +45,6 @@ class SlidingMenu {
     }
 
     this.$element.find('.is-current').removeClass('is-current')
-    this.$element.find('.is-active').removeClass('is-active')
     this.$element.find('[data-level]').css('left', '')
 
     let lvl = this.$element.find(toSet)
@@ -63,8 +62,6 @@ class SlidingMenu {
     this.$element.children('[data-level]').css('left', `${left}%`)
 
     lvl.addClass('is-current')
-    lvl.siblings('[data-link]').addClass('is-active')
-    parentLinks.addClass('is-active')
   }
 }
 
