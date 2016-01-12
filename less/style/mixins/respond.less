@@ -22,4 +22,10 @@
   }
 }
 
+.respond(@bp; @rules) {
+  @media (min-width: @bp) {
+    @rules();
+  }
+}
+
 // Copyright AXA Versicherungen AG 2015
