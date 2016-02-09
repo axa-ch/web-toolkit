@@ -1,9 +1,5 @@
 dist/docs/
 docs/
-icons/
-images/
-jquery/
-less/
 lib/
 tasks/
 tmp/
@@ -11,4 +7,3 @@ tmp/
 coffeelint.json
 Dockerfile
 gulpfile.coffee
-modernizr.json
