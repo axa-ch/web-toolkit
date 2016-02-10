@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "./node_modules/.bin/gulp dev",
     "build": "./node_modules/.bin/gulp build",
-    "start": "./node_modules/.bin/gulp build && ./node_modules/.bin/gulp serve"
+    "start": "./node_modules/.bin/gulp serve"
   },
   "author": "AXA Versicherungen AG",
   "license": "SEE LICENSE IN LICENSE",
@@ -62,7 +62,6 @@
     "gulp-less": "^3.0.3",
     "gulp-load-tasks": "^0.8.4",
     "gulp-modernizr": "0.0.0",
-    "gulp-ng-annotate": "^0.5.2",
     "gulp-plumber": "^1.0.0",
     "gulp-postcss": "~2.0.0",
     "gulp-rename": "^1.2.0",
