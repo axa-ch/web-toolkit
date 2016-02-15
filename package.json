@@ -10,7 +10,7 @@
     "style",
     "guide"
   ],
-  "main": "jquery/index.js",
+  "main": "js/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/axa-ch/style-guide.git"
