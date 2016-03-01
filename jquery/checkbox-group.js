@@ -14,10 +14,13 @@ class CheckboxGroup {
     if (length > 5){
       
       this.$element.html('')
+      var $container = $('<div />')
+        .addClass('container')
+        .appendTo(this.$element)
 
       var $row = $('<div />')
         .addClass('row')
-        .appendTo(this.$element)
+        .appendTo($container)
 
       var columnCnt = Math.ceil(length / 5)
       if (columnCnt > 3) columnCnt = 3
@@ -27,7 +30,8 @@ class CheckboxGroup {
       for (var i=1; i<=columnCnt; i++){
         
         let $column = $('<div />')
-          .addClass('column column--' + (12 / columnCnt))
+          .addClass('column column--12' + ' column--md-' + (12 / 2) + ' column--lg-' + (12 / columnCnt))
+          .css({'margin-bottom': '16px'})
           .appendTo($row)
 
         for (var j=(i-1)*maxItemsPerColumn; j<=i*maxItemsPerColumn; j++){
