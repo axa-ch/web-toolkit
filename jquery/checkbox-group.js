@@ -7,34 +7,46 @@ class CheckboxGroup {
   }
 
   init() {
-    var items = this.$element.children()
-    var length = items.length
+
+    var   items,
+          length,
+          $container,
+          $row,
+          columnCnt,
+          maxItemsPerColumn,
+          i,
+          j;
+
+
+    items = this.$element.children()
+    length = items.length
     
     // Only add columns if there are enough items:
     if (length > 5){
       
       this.$element.html('')
-      var $container = $('<div />')
+      
+      $container = $('<div />')
         .addClass('container')
         .appendTo(this.$element)
 
-      var $row = $('<div />')
+      $row = $('<div />')
         .addClass('row')
         .appendTo($container)
 
-      var columnCnt = Math.ceil(length / 5)
+      columnCnt = Math.ceil(length / 5)
       if (columnCnt > 3) columnCnt = 3
 
-      var maxItemsPerColumn = Math.ceil(length / columnCnt)
+      maxItemsPerColumn = Math.ceil(length / columnCnt)
 
-      for (var i=1; i<=columnCnt; i++){
+      for (i=1; i<=columnCnt; i++){
         
         let $column = $('<div />')
           .addClass('column column--12' + ' column--md-' + (12 / 2) + ' column--lg-' + (12 / columnCnt))
           .css({'margin-bottom': '16px'})
           .appendTo($row)
 
-        for (var j=(i-1)*maxItemsPerColumn; j<=i*maxItemsPerColumn; j++){
+        for (j=(i-1)*maxItemsPerColumn; j<=i*maxItemsPerColumn; j++){
           if (typeof items[j] !== 'undefined') $(items[j]).appendTo($column)
         }
 
