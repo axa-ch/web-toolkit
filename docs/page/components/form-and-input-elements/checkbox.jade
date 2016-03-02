@@ -119,6 +119,29 @@ ul.checklist
 
 .hr
 
+h2.heading.heading--secondary#group Checkbox group as buttons
+p.paragraph.
+  You can display checkboxes as buttons.
+
++example('/components/form-and-input-elements/demos/checkbox-group-buttons.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-checkbox-group-buttons')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-checkbox-group-buttons
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/checkbox-group-buttons.jade
+
+.hr
+
 h2.heading.heading--secondary#non-enhanced Non enhanced checkbox
 
 p.paragraph.

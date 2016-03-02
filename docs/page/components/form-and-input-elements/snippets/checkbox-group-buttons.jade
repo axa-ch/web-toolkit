@@ -1,0 +1,30 @@
+---
+title: Checkbox-Group as Buttons
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.checkbox-group(data-checkbox-group)
+  label.checkbox.checkbox--button(data-checkbox)
+    input.checkbox__checkbox(type='checkbox')
+    .checkbox__label
+      +svg('checkmark', 'checkbox__label__icon')
+      .checkbox__label__text Sample checkbox one
+  label.checkbox.checkbox--button(data-checkbox)
+    input.checkbox__checkbox(type='checkbox')
+    .checkbox__label
+      +svg('checkmark', 'checkbox__label__icon')
+      .checkbox__label__text Sample checkbox two
+  label.checkbox.checkbox--button(data-checkbox)
+    input.checkbox__checkbox(type='checkbox')
+    .checkbox__label
+      +svg('checkmark', 'checkbox__label__icon')
+      .checkbox__label__text Sample checkbox three
+  label.checkbox.checkbox--button(data-checkbox)
+    input.checkbox__checkbox(type='checkbox')
+    .checkbox__label
+      +svg('checkmark', 'checkbox__label__icon')
+      .checkbox__label__text Sample checkbox four
+
+//- Copyright AXA Versicherungen AG 2015
