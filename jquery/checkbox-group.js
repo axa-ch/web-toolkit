@@ -1,8 +1,18 @@
 import $ from 'jquery'
 
 class CheckboxGroup {
-  constructor(element) {
+
+  constructor(element, options) {
     this.$element = $(element)
+
+    this.defaults = {
+      'minLength': 5,
+      'preferedColumnLength': 5,
+      'maxColumnCount': 3
+    }
+
+    this.options = $.extend({}, this.defaults, options)
+
     this.init()
   }
 
@@ -22,7 +32,7 @@ class CheckboxGroup {
     length = items.length
     
     // Only add columns if there are enough items:
-    if (length > 5){
+    if (length > this.options.minLength){
       
       this.$element.html('')
       
@@ -34,8 +44,8 @@ class CheckboxGroup {
         .addClass('row')
         .appendTo($container)
 
-      columnCnt = Math.ceil(length / 5)
-      if (columnCnt > 3) columnCnt = 3
+      columnCnt = Math.ceil(length / this.options.preferedColumnLength)
+      if (columnCnt > this.options.maxColumnCount) columnCnt = this.options.maxColumnCount
 
       maxItemsPerColumn = Math.ceil(length / columnCnt)
 
@@ -82,7 +92,8 @@ $.fn.checkboxGroup.Constructor = CheckboxGroup
 $(function () {
   $('[data-checkbox-group]').each(function () {
     let $checkboxGroup = $(this)
-    Plugin.call($checkboxGroup)
+    let data = $checkboxGroup.data()
+    Plugin.call($checkboxGroup, data)
   })
 })
 
