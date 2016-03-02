@@ -27,6 +27,16 @@ class Checkbox
 
     @$label.on 'keyup', @handleKeyUp
 
+    if typeof @options.color != 'undefined'
+      @$element.css {'border-color': @options.color}
+      @$element.on 'click', @handleCustomColorBG.bind(this)
+
+  handleCustomColorBG: () ->
+    if !@$element.hasClass 'is-active'
+      @$element.css {'background-color': @options.color}
+    else
+      @$element.css {'background-color': '#fff'}
+
   # Handle spacebar to toggle the checkbox
   handleKeyUp: (e) =>
     if e.which == 32
