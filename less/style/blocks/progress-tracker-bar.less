@@ -33,8 +33,13 @@
 
 .progress-bar__long .progress-bar__step {
 	border-left: none;
-	height: 23px;
-  	line-height: 23px;
+	height: 16px;
+  	line-height: 16px;
+  	
+  	.respond(medium, {
+    	height: 23px;
+  		line-height: 23px;
+  	});
 }
 
 .progress-bar__step.is-active {
