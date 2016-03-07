@@ -16,6 +16,8 @@ p.paragraph.
     li.toc__anchor-navigation__item
       a(href='#enhanced').toc__anchor-navigation__link Regular Dropdown
     li.toc__anchor-navigation__item
+      a(href='#large').toc__anchor-navigation__link Large Dropdown
+    li.toc__anchor-navigation__item
       a(href='#condensed').toc__anchor-navigation__link Condensed Dropdown
     li.toc__anchor-navigation__item
       a(href='#non-enhanced').toc__anchor-navigation__link Backup: Non enhanced dropdown
@@ -66,6 +68,30 @@ ul.checklist
     +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       On mobile devices, use native dropdown pickers.
+
+.hr
+
+h2.heading.heading--secondary#large Large Dropdown
+
++example('/components/form-and-input-elements/demos/dropdown-large.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-large')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-large
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown
+            To create a condensed dropdown element add the
+            `condensed` modifier to a regular dropdown.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/dropdown-large.jade
 
 .hr
 
