@@ -89,4 +89,27 @@ h2.heading.heading--secondary#condensed Condensed Datepicker
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/datepicker-condensed.jade
 
+.hr
+
+h2.heading.heading--secondary#birthday Birthday Datepicker
+
++example('/components/form-and-input-elements/demos/datepicker-birthday.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-birthday')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-birthday
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML/JS
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown
+            The birthday date picker uses three dropdowns that are interlinked to input a date.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/datepicker-birthday.jade
+
 //- Copyright AXA Versicherungen AG 2015
