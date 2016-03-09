@@ -26,3 +26,7 @@ $('#showNotification').on('click', function () {
     html: isHtml
   })
 })
+
+$('#cities-autocomplete').autocomplete({
+  source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']
+})
