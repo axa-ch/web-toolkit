@@ -1,8 +1,13 @@
 import $ from 'jquery'
 
 class BirthdayDatepicker {
-  constructor(element) {
+  constructor(element, options) {
     this.$element = $(element)
+
+    this.defaults = {
+      "maxAge"        : 120,
+      "minAge"        : 18
+    };
     
     this.$day = $(element).find('.birthday--day select')
     this.$month = $(element).find('.birthday--month select')
@@ -13,14 +18,35 @@ class BirthdayDatepicker {
     this.month = ''
     this.year = ''
 
+    this.options = $.extend({}, this.defaults, options)
+
     this.init()
   }
 
   init() {
     
+    this.generateOptions()
+
     this.$day.on('change', () => this.handleChange() )
     this.$month.on('change', () => this.handleChange() )
     this.$year.on('change', () => this.handleChange() )
+
+  }
+
+  generateOptions() {
+    
+    var x, currentYear;
+
+    // Days:
+    for (x = 1; x <= 31; x++) {
+      let $option = $('<option />').text(x).appendTo(this.$day)
+    }
+    
+    // Years:
+    currentYear = new Date().getFullYear()
+    for (x = (currentYear - this.options.minAge); x >= (currentYear - this.options.minAge - this.options.maxAge); x--) {
+      let $option = $('<option />').text(x).appendTo(this.$year)
+    }
 
   }
 
@@ -54,6 +80,11 @@ function Plugin() {
       data = new BirthdayDatepicker(this)
       $this.data('axa.datepicker-birthday', data)
     }
+
+    let method = params[0]
+    if (typeof(method) === 'string') {
+      data[method](...params.slice(1))
+    }
   })
 }
 
@@ -63,7 +94,8 @@ $.fn.birthdayDatepicker.Constructor = BirthdayDatepicker
 $(function () {
   $('[data-datepicker-birthday]').each(function () {
     let $birthdayDatepicker = $(this)
-    Plugin.call($birthdayDatepicker)
+    let data = $birthdayDatepicker.data()
+    Plugin.call($birthdayDatepicker, data)
   })
 })
 
