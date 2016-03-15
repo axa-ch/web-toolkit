@@ -2,6 +2,7 @@ import $ from 'jquery'
 
 class BirthdayDatepicker {
   constructor(element, options) {
+
     this.$element = $(element)
 
     this.defaults = {
@@ -17,7 +18,7 @@ class BirthdayDatepicker {
     this.day = ''
     this.month = ''
     this.year = ''
-
+    
     this.options = $.extend({}, this.defaults, options)
 
     this.init()
@@ -69,7 +70,7 @@ class BirthdayDatepicker {
 
 }
 
-function Plugin() {
+let Plugin = function (options) {
   let params = arguments
 
   return this.each(function () {
@@ -77,13 +78,8 @@ function Plugin() {
     let data = $this.data('axa.datepicker-birthday')
 
     if (!data) {
-      data = new BirthdayDatepicker(this)
+      data = new BirthdayDatepicker(this, options)
       $this.data('axa.datepicker-birthday', data)
-    }
-
-    let method = params[0]
-    if (typeof(method) === 'string') {
-      data[method](...params.slice(1))
     }
   })
 }
