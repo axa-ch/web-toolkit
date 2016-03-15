@@ -28,9 +28,9 @@ class BirthdayDatepicker {
     
     this.generateOptions()
 
-    this.$day.on('change', () => this.handleChange() )
-    this.$month.on('change', () => this.handleChange() )
-    this.$year.on('change', () => this.handleChange() )
+    this.$day.on('change', () => this.handleChange('day') )
+    this.$month.on('change', () => this.handleChange('month') )
+    this.$year.on('change', () => this.handleChange('year') )
 
   }
 
@@ -51,7 +51,11 @@ class BirthdayDatepicker {
 
   }
 
-  handleChange() {
+  daysInMonth(month, year) {
+    return new Date(year, month, 0).getDate()
+  }
+
+  handleChange(type) {
 
     this.day = this.$day.val()
     this.month = this.$month.val()
@@ -59,6 +63,31 @@ class BirthdayDatepicker {
 
     if (this.day !== '' && this.month !== '' && this.year !== ''){
       this.$input.val(`${this.year}-${this.addLeadingZero(this.month)}-${this.addLeadingZero(this.day)}`)
+    }
+
+    if ((type == 'month' || type == 'year') && this.month !== ''){
+      
+      let days = 30, x;
+
+      if (this.year !== ''){
+
+        days = this.daysInMonth(this.month, this.year)
+
+      } else {
+
+        if (this.month % 2 == 1) days = 31
+        if (this.month == 2) days = 29
+
+      }
+      
+      this.$day.html('')
+
+      for (x = 1; x <= days; x++) {
+        let $option = $('<option />').text(x).appendTo(this.$day)
+      }
+
+      this.$day.val(this.day)
+
     }
 
   }
