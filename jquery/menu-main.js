@@ -11,9 +11,8 @@ class MainMenu {
   }
 
   init() {
-    let currentlyOpen = this.$items
-      .asEventStream('mouseenter')
-      .merge(this.$items.asEventStream('mouseleave'))
+    let currentlyOpen = Bacon.$.asEventStream.call(this.$items, 'mouseenter')
+      .merge(Bacon.$.asEventStream.call(this.$items, 'mouseleave'))
       .throttle(100)
       .map((e) => {
         return {
@@ -74,4 +73,4 @@ $(function () {
   })
 })
 
-// Copyright AXA Versicherungen AG 2015
+// Copyright AXA Versicherungen AG 2016

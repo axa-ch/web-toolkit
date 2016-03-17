@@ -13,7 +13,6 @@
 .mobile-menu--sliding {
   position: relative;
   overflow: hidden;
-  transition: height @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
 }
 
 .mobile-menu--sliding .mobile-menu__level {
@@ -28,8 +27,7 @@
   width: 100%;
   padding-bottom: 1px;
 
-  transition: left @transition-duration cubic-bezier(0.6, 0.0, 0.735, 0.045), visibility @transition-duration;
-
+  transition: left @transition-duration @transition-fn-fancy, visibility @transition-duration;
   &.is-previous {
   }
 

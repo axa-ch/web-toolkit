@@ -8,8 +8,14 @@
 
   display: block;
 
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
+    outline: none;
+
+    .info-icon__svg {
+      fill: @color-blue;
+    }
   }
 
   &.is-active {

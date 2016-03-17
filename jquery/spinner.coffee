@@ -1,4 +1,4 @@
-import $ from 'jquery'
+$ = require 'jquery'
 
 # Public class definition
 class Spinner

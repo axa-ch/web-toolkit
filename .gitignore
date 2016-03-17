@@ -4,6 +4,9 @@
 # node
 node_modules/
 
+# build
+js/
+
 # project
 dist/
 tmp/
