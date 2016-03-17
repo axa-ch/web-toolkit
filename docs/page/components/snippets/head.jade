@@ -1,0 +1,39 @@
+include /components/includes/mixins.jade
+
+head
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width")
+  meta(name="description", content=config.description)
+  meta(name="keywords", content=config.keywords)
+  meta(name="author", content=config.author)
+    
+  +appicon_ios("57")
+  +appicon_ios("72")
+  +appicon_ios("76")
+  +appicon_ios("114")
+  +appicon_ios("120")
+  +appicon_ios("144")
+  +appicon_ios("152")
+  +appicon_ios("180")
+
+  meta(name="apple-mobile-web-app-title", content=config.name)
+    
+  link(media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)", rel="apple-touch-startup-image", href=relative("/images/splash-screen/ios/750x1294.png"))
+
+  // android/chrome app iocn
+  link(rel="manifest", href=relative("/content/manifest.json"))
+  link(rel="icon", sizes="192x192", href=relative("/images/app-icon/android/192x192.png"))
+  meta(name="mobile-web-app-capable", content="yes")
+    
+  // windows tiles
+  meta(name="application-name", content=config.name)
+  meta(name="msapplication-square70x70logo", content=relative("/images/app-icon/windows/128x128.png"))
+  meta(name="msapplication-square150x150logo", content=relative("/images/app-icon/windows/270x270.png"))
+  meta(name="msapplication-wide310x150logo", content=relative("/images/app-icon/windows/558x270.png"))
+  meta(name="msapplication-square310x310logo", content=relative("/images/app-icon/windows/558x558.png"))
+
+  title #{title} | #{config.name}
+  link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
+  link(rel="stylesheet", href=relative("/css/normalize.min.css"))
+  link(rel="stylesheet", href=relative("/css/docs.min.css"))
