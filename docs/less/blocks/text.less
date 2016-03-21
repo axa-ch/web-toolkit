@@ -1,0 +1,38 @@
+@import 'style/variables';
+@import 'style/mixins/respond';
+@import 'style/mixins/make-container';
+
+.text {
+  .make-container(0);
+
+  max-width: 72rem;
+}
+
+.text__content {
+  .make-column();
+  .make-column-span(12);
+
+  overflow: visible;
+
+  p {
+    margin: 1rem 0;
+  }
+}
+
+.text__content--center {
+  .respond(medium, {
+    text-align: center;
+  });
+}
+
+.text__content--lead {
+  font-size: 1.1875rem;
+  line-height: 1.68;
+}
+
+.text__content--narrow {
+  .respond(medium, {
+    .make-column-span(8);
+    .make-column-offset(2);
+  });
+}

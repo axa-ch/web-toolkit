@@ -1,0 +1,126 @@
+@import 'style/variables';
+@import 'style/mixins/font';
+@import 'style/mixins/make-container';
+@import 'style/mixins/respond';
+
+.global {
+}
+
+.global__map {
+  position: relative;
+
+  background-color: @color-blue;
+}
+
+.global__map__visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+.global__map__visual__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.global__map__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: fadeout(@color-blue, 15%);
+  color: @color-white;
+  z-index: 1;
+  opacity: .99; // ugly fix, to make z-index work with absolute elements
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: fadeout(@color-blue, 10%);
+  }
+}
+
+.global__map__content__container {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  .respond(medium, {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  });
+}
+
+.global__map__content__container__heading {
+  display: block;
+
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.4;
+  padding: 0;
+}
+
+.global__map__content__container__text {
+  font-size: 2rem;
+
+  color: lighten(@color-blue, 80%);
+}
+
+.global__cta {
+  .make-container();
+
+  max-width: 72rem;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+
+	text-align: center;
+}
+
+.global__cta__button {
+	width: 100%;
+	margin: 0.25rem 0.5rem;
+
+  transition: background-color 0.3s;
+
+	.respond(medium, {
+		width: auto;
+	});
+}
+
+.global__faq {
+  .make-container(0);
+
+  max-width: 72rem;
+  padding-bottom: 3rem;
+}
+
+.global__faq__title {
+  .make-column();
+  .make-column-span(12);
+  .make-font-heading-secondary();
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6.5rem;
+  margin-top: 0;
+
+  .respond(medium, {
+    .make-column-span(8);
+    .make-column-offset(2);
+  });
+}
+
+.global__faq__collapse {
+  .make-column();
+  .make-column-span(12);
+
+  .respond(medium, {
+    .make-column-span(8);
+    .make-column-offset(2);
+  });
+}

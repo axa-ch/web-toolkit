@@ -42,20 +42,23 @@ html
                       path.burger-icon__middle(d="M0,12 L24,12")
                       path.burger-icon__bottom(d="M0,19 L24,19")
 
-      .page-content
-        if section
-          .row
-            nav.column.column--docs-side
-              +displaySideMenu(section.children, false, true)
-            .column.column--docs-main
-              if headline !== false
-                h1.heading.heading--page #{title}
-              div!= contents
+      if landing
+        .contents!= contents
+      else
+        .page-content
+          if section
+            .row
+              nav.column.column--docs-side
+                +displaySideMenu(section.children, false, true)
+              .column.column--docs-main
+                if headline !== false
+                  h1.heading.heading--page #{title}
+                div!= contents
 
-        else
-          if headline !== false
-            h1.heading.heading--page #{title}
-          div!= contents
+          else
+            if headline !== false
+              h1.heading.heading--page #{title}
+            div!= contents
           
       footer.footer
         .footer__copyline.footer-copyline

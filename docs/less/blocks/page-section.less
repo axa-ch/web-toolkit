@@ -1,0 +1,20 @@
+@import 'style/variables';
+@import 'style/mixins/respond';
+
+.page-section {
+  overflow: auto;
+}
+
+.page-section--alternative {
+  background: @color-gray--lighter;
+}
+
+.page-section--padded {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .respond(medium, {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  });
+}
