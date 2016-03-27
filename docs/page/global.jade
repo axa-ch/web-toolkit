@@ -175,50 +175,59 @@ description: We're making this global!
   .page-section.page-section--global.page-section--gray
     h2.global-heading FAQ
     
-    section
-      header.
-        Will there be a #[strong Mobile] Style Guide, too?
-      
-      p.
-        It totally makes sense to expand
-        an initiative like this one to the mobile world, too.
-      
-      p.
-        However, our first priority is to set up
-        a web-focused style guide using the experience
-        we've gained over the past years doing this in a
-        local environment.
-      
-      p.
-        If you are coming from the native mobile world
-        and you are willing to integrate mobile guidelines,
-        let's get in touch.
-      
-    section
-      header.
-        How do I contribute?
-      
-      p.
-        We love and absolutely need contributors from
-        all web-related disciplines.
-      
-      p.
-        Make sure you get in touch with us and tell
-        us where you'd like to help.
-        
-      p
-        a.link(href="#", data-chat) Give us a shout.
-
-    section
-      header.
-        I have another question.
-      
-      p.
-        Simply get in touch with the team
-        using #[a.link(href="#", data-chat) our chat].
-        If it's a question whose answer might
-        be of general interest, we'll add another
-        entry to our FAQ.
+    .global-faq.collapse(data-collapse)
+      .collapse__panels__top-border
+      ul.collapse__panels
+        li.collapse__panels__item
+          a.collapse__panels__item__header(href="#", data-trigger="mobile")
+            span.collapse__panels__item__header__text Will there be a #[strong Mobile] Style Guide, too?
+            svg.icon.icon--toggle.collapse__panels__item__header__icon(viewBox="0 0 24 24", data-trigger="mobile")
+              path.horizontal(d='M0 11h24v2H0z',fill="currentColor")
+              path.vertical(d='M13 0h-2v24h2z',fill="currentColor")
+          .collapse__panels__item__body.is-hidden(data-panel="mobile")
+            p.
+              It totally makes sense to expand
+              an initiative like this one to the mobile world, too.
+            p.
+              However, our first priority is to set up
+              a web-focused style guide using the experience
+              we've gained over the past years doing this in a
+              local environment.
+            p.
+              If you are coming from the native mobile world
+              and you are willing to integrate mobile guidelines,
+              let's get in touch.
+          .collapse__panels__item__border
+        li.collapse__panels__item
+          a.collapse__panels__item__header(href="#", data-trigger="contribute")
+            span.collapse__panels__item__header__text How do I contribute?
+            svg.icon.icon--toggle.collapse__panels__item__header__icon(viewBox="0 0 24 24", data-trigger="contribute")
+              path.horizontal(d='M0 11h24v2H0z',fill="currentColor")
+              path.vertical(d='M13 0h-2v24h2z',fill="currentColor")
+          .collapse__panels__item__body.is-hidden(data-panel="contribute")
+            p.
+              We love and absolutely need contributors from
+              all web-related disciplines.
+            p.
+              Make sure you get in touch with us and tell
+              us where you'd like to help.
+            p
+              a.link(href="#", data-chat) Give us a shout.
+          .collapse__panels__item__border
+        li.collapse__panels__item
+          a.collapse__panels__item__header(href="#", data-trigger="another")
+            span.collapse__panels__item__header__text I have another question.
+            svg.icon.icon--toggle.collapse__panels__item__header__icon(viewBox="0 0 24 24", data-trigger="another")
+              path.horizontal(d='M0 11h24v2H0z',fill="currentColor")
+              path.vertical(d='M13 0h-2v24h2z',fill="currentColor")
+          .collapse__panels__item__body.is-hidden(data-panel="another")
+            p.
+              Simply get in touch with the team
+              using #[a.link(href="#", data-chat) our chat].
+              If it's a question whose answer might
+              be of general interest, we'll add another
+              entry to our FAQ.
+          .collapse__panels__item__border
 
   .page-section.page-section--global.global__section--heart
     svg.global__heart(width="82" height="77" viewBox="0 0 82 77" xmlns="http://www.w3.org/2000/svg")
