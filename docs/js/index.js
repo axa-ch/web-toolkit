@@ -41,3 +41,8 @@ $('[data-subscribe]').click((e) => {
   Intercom('showNewMessage', 'Hi there,\n\nPlease keep me updated about the Web Style Guide!\n\nRegards.');
   $('.intercom-composer-send-button').click()
 })
+
+$('[data-chat]').click((e) => {
+  e.preventDefault()
+  Intercom('show')
+})
