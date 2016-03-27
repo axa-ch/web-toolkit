@@ -195,11 +195,28 @@
   });
 }
 
-.global__section--heart {
+.global-heart {
+  .make-container();
+
+  max-width: 48rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.global__heart {
+.global-heart__icon {
   width: 3rem;
+}
+
+.global-heart__text {
+  text-align: center;
+  color: #FFBFD4;
+}
+
+.global-heart__link {
+  color: #FFBFD4;
+}
+
+.global-heart__link:hover {
+  color: darken(#FFBFD4, 10%);
 }
