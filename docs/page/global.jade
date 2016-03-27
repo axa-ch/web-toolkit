@@ -7,65 +7,155 @@ description: We're making this global!
 
 .global
   .page-section
+
     .global__map
       picture.global__map__visual
         img.global__map__visual__image(src='/images/global/map.png', alt='World Map', data-object-fit='cover')
       .global__map__content
         .global__map__content__container
-          .page-title
-            h1.page-title__heading.global__map__content__container__heading Web Style Guide
-          .text
-            .text__content.text__content--narrow.text__content--center.global__map__content__container__text
-              p
-                | A unified way to build web interactions
-                br
-                | across all of AXA.
+          h1 Web Style Guide
+
+          p.
+            Introducing a unified way
+            to build web interactions at AXA.
 
   .page-section
-    .icon-teaser(data-icon-teaser)
-      .icon-teaser__items(data-icon-teaser-container)
-        - var items = []
-        - items.push({ icon: 'speed', title: 'Speed', text: '' })
-        - items.push({ icon: 'consistency', title: 'Consistency', text: '' })
-        - items.push({ icon: 'community', title: 'Community', text: '' })
-        each item in items
-          .icon-teaser__item(data-icon-teaser-panel, data-title=item.title)
-            .icon-teaser__item__icon-wrapper
-            .icon-teaser__item__title= item.title
-            .icon-teaser__item__text= item.text
-
-  .page-section.page-section--padded
-    .text
-      .text__content.text__content--narrow.text__content--lead.text__content--center
-        p Are you willing to be part of that?
-        p Joining our community is as easy as one click!
-    .global__cta
-      a.global__cta__button.button(href="#", data-subscribe) Keep Me Updated
-    .text
-      .text__content.text__content--narrow.text__content--center
-        p You'll be the first to hear about exciting news!
+    p.
+      As AXA, we're building lots of
+      new and exciting user experiences.
+    
+    p.
+      Now let's create a global platform that
+      lets our teams share components,
+      patterns and guidelines.
       
-  .page-section.page-section--alternative.page-section--padded
-    .global__faq
-      h1.global__faq__title Frequently Asked Questions
-      .global__faq__collapse.collapse(data-collapse, data-single)
-        .collapse__panels__top-border
-        ul.collapse__panels
-          li.collapse__panels__item
-            a.collapse__panels__item__header(href="#", data-trigger="mobile")
-              span.collapse__panels__item__header__text Is there going to be a Mobile Style Guide too?
-              svg.icon.icon--toggle.collapse__panels__item__header__icon(viewBox="0 0 24 24", data-trigger="mobile")
-                path.horizontal(d='M0 11h24v2H0z',fill="currentColor")
-                path.vertical(d='M13 0h-2v24h2z',fill="currentColor")
-            .collapse__panels__item__body.is-hidden(data-panel="mobile").
-            .collapse__panels__item__border
-          li.collapse__panels__item
-            a.collapse__panels__item__header(href="#", data-trigger="contribute")
-              span.collapse__panels__item__header__text I'd like to contribute! How do I do that?
-              svg.icon.icon--toggle.collapse__panels__item__header__icon(viewBox="0 0 24 24", data-trigger="contribute")
-                path.horizontal(d='M0 11h24v2H0z',fill="currentColor")
-                path.vertical(d='M13 0h-2v24h2z',fill="currentColor")
-            .collapse__panels__item__body.is-hidden(data-panel="contribute").
-            .collapse__panels__item__border
+  .page-section
+    blockquote(cite="#")
+      p.
+        We want to be key players in the technology revolution,
+        not followers.
+      footer
+        span —
+        = ' '
+        a(href="#") Henry de Castries, CEO AXA
+      
+  .page-section
+    h2 Things we get from such a platform
+    
+    section
+      h3 Speed
+      p.
+        Collecting UX best practices,
+        designs and UI components allows our
+        product teams get up and running faster
+        reusing the fundamentals and
+        focusing on key customer value.
+      
+    section
+      h3 Consistency
+      p.
+        Sharing components and collaboratively
+        working on guidelines will naturally
+        make our experience more consitent,
+        making life easier for our customers.
+    
+    section
+      h3 Community
+      p.
+        Collaborating across teams worldwide
+        will create a vibrant and innovative
+        community of user experience architects,
+        designers, developers and potentially
+        any digital discipline.
+        Imagine all these brains getting together,
+        exchanging and improving their work.
+    
+    .page-section
+      h2 How we'll start
+      
+      section
+        h3 Design Guidelines
+        p.
+          A set of best practices and
+          branded guildelines will answer
+          all our brand, UX and design questions.
+          If not, we’ll extend them.
+      
+      section
+        h3 Web Toolkit
+        p.
+          A Bootstrap-like web toolkit will
+          provide common components for our
+          developers to use and extend.
+          The toolkit will be continuously
+          delivered and collaboratively developed.
+          
+      section
+        h3 Showcase
+        p.
+          Great web experiences will be promoted
+          on our very own showcase,
+          encouraging teams to connect to each other.
+  
+  .page-section
+    h2 Like what you read?
 
-  .page-section.page-section--padded
+    p.
+      Stay updated, subscribing to our hot newsletter.
+    
+    a(href="#", data-subscribe) Keep Me Updated
+    
+    p.
+      We will let you know when there
+      are news ant there sure will be great ones!
+
+  .page-section
+    h2 FAQ
+    
+    section
+      header.
+        Will there be a [strong Mobile] Style Guide, too?
+      
+      p.
+        It totally makes sense to expand
+        an initiative like this one to the mobile world, too.
+      
+      p.
+        However, our first priority is to set up
+        a web-focused style guide using the experience
+        we've gained over the past years doing this in a
+        local environment.
+      
+      p.
+        If you are coming from the native mobile world
+        and you are willing to integrate mobile guidelines,
+        let's get in touch.
+      
+    section
+      header.
+        How do I contribute?
+      
+      p.
+        We love and absolutely need contributors from
+        all web-related disciplines.
+      
+      p.
+        Make sure you get in touch with us and tell
+        us where you'd like to help.
+        
+      p
+        a(href="#", data-contribute) Give us a shout.
+
+    section
+      header.
+        I have another question.
+      
+      p.
+        Simply get in touch with the team
+        using [a(href="#") our chat].
+        If it's a question whose answer might
+        be of general interest, we'll add another
+        entry to our FAQ.
+
+  .page-section
+    // heart
