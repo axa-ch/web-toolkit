@@ -17,6 +17,42 @@
   text-align: center;
 }
 
+.global-intro {
+  .make-container();
+
+  max-width: 48rem;
+}
+
+.global-intro__row {
+  .make-row();
+}
+
+.global-intro__image {
+  .make-column();
+
+  display: none;
+
+  .respond(medium, {
+    .make-column-span(6);
+
+    display: block;
+  });
+}
+
+.global-intro__text {
+  .make-column();
+  .make-column-span(12);
+  .make-font-large();
+
+  font-size: 1.4rem;
+
+  .respond(medium, {
+    .make-column-span(6);
+
+    font-size: 1.4rem;
+  });
+}
+
 .global-faq {
   .make-container();
 
@@ -153,7 +189,7 @@
 }
 
 .global-quote__text__body {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .global-quote__text__meta {
