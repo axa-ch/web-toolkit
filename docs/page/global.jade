@@ -30,17 +30,18 @@ description: We're making this global!
       patterns and guidelines.
       
   .page-section.page-section--global.page-section--yellow
-    svg(width="94" height="69" viewBox="0 0 94 69" xmlns="http://www.w3.org/2000/svg")
-      path(fill="#004F94" d="M0 41.955C0 16.425 20.888 1.428 32.493 0l2.678 6.963c-6.783 4.463-12.496 12.14-11.96 16.603 7.676.536 20.174 4.82 20.174 21.425.178 12.676-6.963 23.21-20.71 23.21C10.534 68.2 0 59.81 0 41.955zM72.674 68.2C60.534 68.2 50 59.81 50 41.955 50 16.425 70.888 1.428 82.493 0l2.678 6.963c-6.783 4.463-12.496 12.14-11.96 16.603 7.676.536 20.174 4.82 20.174 21.425.178 12.676-6.963 23.21-20.71 23.21z")
-    
-    blockquote(cite="#")
-      p.
-        We want to be key players in the technology revolution,
-        not followers.
-      footer
-        span —
-        = ' '
-        a(href="#") Henry de Castries, CEO AXA
+    .global-quote
+      svg.global-quote__marks(width="94" height="69" viewBox="0 0 94 69" xmlns="http://www.w3.org/2000/svg")
+        path(fill="#004F94" d="M0 41.955C0 16.425 20.888 1.428 32.493 0l2.678 6.963c-6.783 4.463-12.496 12.14-11.96 16.603 7.676.536 20.174 4.82 20.174 21.425.178 12.676-6.963 23.21-20.71 23.21C10.534 68.2 0 59.81 0 41.955zM72.674 68.2C60.534 68.2 50 59.81 50 41.955 50 16.425 70.888 1.428 82.493 0l2.678 6.963c-6.783 4.463-12.496 12.14-11.96 16.603 7.676.536 20.174 4.82 20.174 21.425.178 12.676-6.963 23.21-20.71 23.21z")
+      
+      blockquote.global-quote__text(cite="#")
+        .global-quote__text__body.
+          We want to be key players in the technology revolution,
+          not followers.
+        footer.global-quote__text__meta
+          span —
+          = ' '
+          a.link(href="#") Henry de Castries, CEO AXA
       
   .page-section.page-section--global
     h2 Things we get from such a platform

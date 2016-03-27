@@ -70,25 +70,34 @@
   color: lighten(@color-blue, 80%);
 }
 
-.global__cta {
+.global-quote {
   .make-container();
 
-  max-width: 72rem;
-	padding-top: 1.25rem;
-	padding-bottom: 1.25rem;
-
-	text-align: center;
+  display: flex;
+  max-width: 48rem;
 }
 
-.global__cta__button {
-	width: 100%;
-	margin: 0.25rem 0.5rem;
+.global-quote__marks {
+  display: block;
+  width: 5rem;
+  margin-right: 2rem;
 
-  transition: background-color 0.3s;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
 
-	.respond(medium, {
-		width: auto;
-	});
+.global-quote__text {
+  margin: 0;
+
+  flex-grow: 1;
+}
+
+.global-quote__text__body {
+  font-size: 1.5rem;
+}
+
+.global-quote__text__meta {
+  margin-top: 1rem;
 }
 
 .global__faq {
