@@ -25,6 +25,9 @@
 
 .global-intro__row {
   .make-row();
+
+  display: flex;
+  justify-content: center;
 }
 
 .global-intro__image {
@@ -51,6 +54,7 @@
   .make-font-large();
 
   font-size: 1.4rem;
+  max-width: 32rem;
 
   .respond(medium, {
     .make-column-span(6);
