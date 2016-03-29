@@ -105,7 +105,6 @@
     "octonode": "^0.7.1",
     "postcss-pseudoelements": "^1.0.0",
     "run-sequence": "^0.3.6",
-    "slick-carousel": "^1.5.9",
     "svg4everybody": "git+https://github.com/jonathantneal/svg4everybody",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
