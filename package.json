@@ -101,6 +101,7 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.9.0",
     "node-notifier": "^4.3.1",
+    "object-fit-polyfill": "^0.1.0",
     "octonode": "^0.7.1",
     "postcss-pseudoelements": "^1.0.0",
     "run-sequence": "^0.3.6",
