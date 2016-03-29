@@ -257,11 +257,11 @@
 
 @keyframes mapAnimation {
   0% {
-    transform: rotate(-10deg)
+    transform: scale(1.5)
   }
 
   100% {
-    transform: rotate(0deg)
+    transform: scale(1);
   }
 }
 
@@ -272,7 +272,7 @@
 
   object-fit: cover;
 
-  animation: mapAnimation 1s 0s ease-out 1 both;
+  animation: mapAnimation 1s 0s cubic-bezier(0.075, 0.82, 0.165, 1) 1 both;
 }
 
 .global__map__overlay {
