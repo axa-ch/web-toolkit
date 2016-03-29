@@ -1,0 +1,95 @@
+.progress-bar {
+  width: 100%;
+}
+
+.progress-bar__container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+.progress-bar__step {
+  flex: 1;
+  background: @color-gray--lighter;
+  color: @color-gray--dark;
+  height: 23px;
+  line-height: 23px;
+  overflow: hidden;
+  
+  .respond(medium, {
+    border-left: 1px @color-white solid;
+    height: 40px;
+    line-height: 40px;
+  });
+
+  .respond(large, {
+    height: 59px;
+    line-height: 59px;
+  });
+
+}
+
+.progress-bar__long .progress-bar__step {
+  border-left: none;
+  height: 16px;
+  line-height: 16px;
+
+  .respond(medium, {
+    height: 23px;
+    line-height: 23px;
+  });
+}
+
+.progress-bar__step.is-active {
+  background: @color-light-blue--light;
+  color: @color-white;
+}
+
+.progress-bar__step:first-child {
+  border-left: none;
+}
+
+.progress-bar__step__nr {
+  vertical-align: middle;
+  font-size: 16px;
+  margin-left: 50%;
+  margin-right: 50%;
+  text-align: center;
+  
+  display: none;
+  
+  .respond(medium, {
+    display: inline;
+    font-size: 24px;
+  });
+
+ .respond(large, {
+    margin-left: 30px;
+    margin-right: 10px;
+    font-size: 36px;
+  });
+
+}
+
+.progress-bar__long .progress-bar__step__nr {
+  display: none;
+}
+
+.progress-bar__step__label {
+  vertical-align: middle;
+  
+  display: none;
+  
+  .respond(large, {
+    display: inline;
+  });
+
+}
+
+.progress-bar__long .progress-bar__step__label {
+  display: none;
+}
+
+// Copyright AXA Versicherungen AG 2015

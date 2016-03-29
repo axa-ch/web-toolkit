@@ -1,0 +1,50 @@
+---
+title: Birthday-Datepicker
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.l-container
+  .form
+    .form__group
+      label.form__group__label
+        .form__group__label__text Birthday
+      .form__group__control
+        .datepicker.datepicker--birthday(data-datepicker-birthday)
+          input(type='text').control.control--input.control--birthday
+          .birthday--day
+            .dropdown(data-dropdown)
+              .dropdown__label(data-dropdown-label)
+                +svg('arrow-bottom', 'dropdown__label__icon')
+                .dropdown__label__text(data-dropdown-text)
+              select.dropdown__select#day(data-dropdown-select)
+                option(value="") Tag
+          .birthday--month
+            .dropdown(data-dropdown)
+              .dropdown__label(data-dropdown-label)
+                +svg('arrow-bottom', 'dropdown__label__icon')
+                .dropdown__label__text(data-dropdown-text)
+              select.dropdown__select#month(data-dropdown-select)
+                option(value="") Monat
+                option(value=1) Januar
+                option(value=2) Februar
+                option(value=3) März
+                option(value=4) April
+                option(value=5) May
+                option(value=6) Juni
+                option(value=7) Juli
+                option(value=8) August
+                option(value=9) September
+                option(value=10) Oktober
+                option(value=11) Novemeber
+                option(value=12) Dezember
+          .birthday--year
+            .dropdown(data-dropdown)
+              .dropdown__label(data-dropdown-label)
+                +svg('arrow-bottom', 'dropdown__label__icon')
+                .dropdown__label__text(data-dropdown-text)
+              select.dropdown__select#year(data-dropdown-select)
+                option(value="") Jahr
+
+//- Copyright AXA Versicherungen AG 2015

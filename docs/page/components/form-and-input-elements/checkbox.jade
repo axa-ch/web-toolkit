@@ -88,6 +88,60 @@ ul.checklist
 
 .hr
 
+h2.heading.heading--secondary#group Long checkbox group
+p.paragraph.
+  A long checkbox group will organize itself into multiple columns.
+
++example('/components/form-and-input-elements/demos/checkbox-group-long.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-checkbox-group-long')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-checkbox-group-long
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/checkbox-group-long.jade
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content
+      :markdown
+        You can manually overwrite the settings with a data attribute containing the max-rows and columns.
+
+.hr
+
+h2.heading.heading--secondary#group Checkbox group as buttons
+p.paragraph.
+  You can display checkboxes as buttons.
+
++example('/components/form-and-input-elements/demos/checkbox-group-buttons.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-checkbox-group-buttons')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-checkbox-group-buttons
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/checkbox-group-buttons.jade
+
+.hr
+
 h2.heading.heading--secondary#non-enhanced Non enhanced checkbox
 
 p.paragraph.
