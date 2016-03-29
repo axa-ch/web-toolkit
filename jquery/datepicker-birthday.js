@@ -6,8 +6,8 @@ class BirthdayDatepicker {
     this.$element = $(element)
 
     this.defaults = {
-      "maxAge"        : 120,
-      "minAge"        : 18
+      maxAge: 120,
+      minAge: 18
     };
     
     this.$day = $(element).find('.birthday--day select')
@@ -35,16 +35,14 @@ class BirthdayDatepicker {
   }
 
   generateOptions() {
-    
-    var x, currentYear;
 
     // Days:
-    for (x = 1; x <= 31; x++) {
+    for (let x = 1; x <= 31; x++) {
       let $option = $('<option />').text(x).appendTo(this.$day)
     }
     
     // Years:
-    currentYear = new Date().getFullYear()
+    const currentYear = new Date().getFullYear()
     for (x = (currentYear - this.options.minAge); x >= (currentYear - this.options.minAge - this.options.maxAge); x--) {
       let $option = $('<option />').text(x).appendTo(this.$year)
     }
