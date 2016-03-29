@@ -54,7 +54,7 @@ description: We're making this global!
             Now let's create a global platform that
             lets our teams at AXA contribute their components,
             patterns and guidelines to. Allowing a community
-            to use and continuously improve them.
+            to use and continuously improve our work.
       
   .page-section.page-section--global.page-section--yellow
     .global-quote
@@ -88,10 +88,11 @@ description: We're making this global!
             h3.global-reasons__title Speed
             p.global-reasons__text.
               Collecting UX best practices,
-              designs and UI components allows our
-              product teams get up and running faster
+              designs and UI components and making
+              them as accessible as possible allows our
+              product teams to get up and running faster
               reusing the fundamentals and
-              focusing on key customer value.
+              focusing on customer value.
 
       .global-reasons__reason
         .global-reasons__row
@@ -108,7 +109,7 @@ description: We're making this global!
             p.global-reasons__text.
               Sharing components and collaboratively
               working on guidelines will naturally
-              make our experience more consitent,
+              make our experience more consistent,
               making life easier for our customers.
     
       .global-reasons__reason
@@ -182,7 +183,7 @@ description: We're making this global!
           .global-reasons__content.global-reasons__content--alternative
             h3.global-reasons__title Design Guidelines
             p.global-reasons__text.
-              A set of best practices and
+              A set of accessible best practices and
               branded guidelines will answer
               all our brand, UX and design questions.
               If not, we’ll extend them.
@@ -248,7 +249,8 @@ description: We're making this global!
             p.global-reasons__text.
               Great web experiences will be promoted
               on our very own showcase,
-              encouraging teams to connect to each other.
+              encouraging teams to connect with each other,
+              exchanging knowledge and insights.
   
   .page-section.page-section--global
     h2.global-heading Like what you read?
@@ -265,7 +267,7 @@ description: We're making this global!
 
         .global-subscribe__body
           p.global-subscribe__text.
-            Stay updated, #[br] subscribing to our hot newsletter.
+            Stay updated, #[br] subscribe to our hot newsletter!
           
           a.global-subscribe__button.button2.button2-primary.button2-primary--blue(href="#", data-subscribe) Keep Me Updated
           
@@ -279,6 +281,25 @@ description: We're making this global!
     .global-faq.collapse(data-collapse)
       .collapse__panels__top-border
       ul.collapse__panels
+        li.collapse__panels__item
+          a.collapse__panels__item__header(href="#", data-trigger="public")
+            span.collapse__panels__item__header__text Why is this public?
+            svg.icon.icon--toggle.collapse__panels__item__header__icon(viewBox="0 0 24 24", data-trigger="public")
+              path.horizontal(d='M0 11h24v2H0z',fill="currentColor")
+              path.vertical(d='M13 0h-2v24h2z',fill="currentColor")
+          .collapse__panels__item__body.is-hidden(data-panel="public")
+            p.
+              We think that in order to reach as many
+              people and disciplines as possible we need to keep this
+              initiative open and accessible. This is why we like
+              keeping things public.
+            p.
+              Moreover, we'd like to continue developing the
+              Web Style Guide publicly, we really believe that
+              we'll get more contributors and activity if there
+              is no hurdle of authentication.
+              
+          .collapse__panels__item__border
         li.collapse__panels__item
           a.collapse__panels__item__header(href="#", data-trigger="mobile")
             span.collapse__panels__item__header__text Will there be a #[strong Mobile] Style Guide, too?
