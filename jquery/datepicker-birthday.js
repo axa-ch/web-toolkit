@@ -9,7 +9,7 @@ class BirthdayDatepicker {
       maxAge: 120,
       minAge: 18
     };
-    
+
     this.$day = $(element).find('.birthday--day select')
     this.$month = $(element).find('.birthday--month select')
     this.$year = $(element).find('.birthday--year select')
@@ -18,14 +18,14 @@ class BirthdayDatepicker {
     this.day = ''
     this.month = ''
     this.year = ''
-    
+
     this.options = $.extend({}, this.defaults, options)
 
     this.init()
   }
 
   init() {
-    
+
     this.generateOptions()
 
     this.$day.on('change', () => this.handleChange('day') )
@@ -40,10 +40,10 @@ class BirthdayDatepicker {
     for (let x = 1; x <= 31; x++) {
       let $option = $('<option />').text(x).appendTo(this.$day)
     }
-    
+
     // Years:
     const currentYear = new Date().getFullYear()
-    for (x = (currentYear - this.options.minAge); x >= (currentYear - this.options.minAge - this.options.maxAge); x--) {
+    for (let x = (currentYear - this.options.minAge); x >= (currentYear - this.options.minAge - this.options.maxAge); x--) {
       let $option = $('<option />').text(x).appendTo(this.$year)
     }
 
@@ -64,7 +64,7 @@ class BirthdayDatepicker {
     }
 
     if ((type == 'month' || type == 'year') && this.month !== ''){
-      
+
       let days = 30, x;
 
       if (this.year !== ''){
@@ -77,7 +77,7 @@ class BirthdayDatepicker {
         if (this.month == 2) days = 29
 
       }
-      
+
       this.$day.html('')
 
       for (x = 1; x <= days; x++) {
