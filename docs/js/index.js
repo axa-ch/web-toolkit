@@ -1,10 +1,15 @@
 import $ from 'jquery'
 
+window.jQuery = $
+window.$ = $
+
 require('../..')
 require('./cheat')
+require('./collapse')
 require('./example')
 require('./iframe-resizer')
 require('./left-navigation')
+require('./object-fit')
 require('./octocat')
 require('./search')
 require('./tab')
@@ -29,4 +34,15 @@ $('#showNotification').on('click', function () {
 
 $('#cities-autocomplete').autocomplete({
   source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']
+})
+
+$('[data-subscribe]').click((e) => {
+  e.preventDefault()
+  Intercom('showNewMessage', 'Hi there,\n\nPlease keep me updated about the Web Style Guide!\n\nRegards.');
+  $('.intercom-composer-send-button').click()
+})
+
+$('[data-chat]').click((e) => {
+  e.preventDefault()
+  Intercom('show')
 })

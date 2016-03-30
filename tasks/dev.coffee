@@ -13,7 +13,12 @@ module.exports = [['build'], (cb) ->
       livereload: {
         enable: true,
         port: 35730
-      }
+      },
+      middleware: (req, res, next) ->
+        # make /global.html accessible on /global
+        if req.url && req.url == '/global'
+          req.url = '/global.html'
+        next()
     }))
 
   watch [
