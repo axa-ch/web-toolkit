@@ -377,3 +377,80 @@
 .global-heart__link:hover {
   color: darken(#FFBFD4, 10%);
 }
+
+.global-roadmap {
+  .make-container();
+
+  position: relative;
+  max-width: 48rem;
+}
+
+.global-roadmap__block {
+  position: relative;
+	margin: 3rem 0;
+
+	.respond(large, {
+    margin: 4rem 0;
+  });
+}
+
+.global-roadmap__block__icon {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 5rem;
+	height: 5rem;
+
+  .respond(large, {
+    left: 12.5rem;
+  });
+}
+
+.global-roadmap__block__content {
+  padding-left: 1.5rem + 5rem + 1rem;
+
+  .respond(large, {
+    position: relative;
+
+    padding-left: 12.5rem + 1.5rem + 5rem + 1rem;
+  });
+}
+
+.global-roadmap__block__content__title {
+  .make-font-heading-tertiary();
+}
+
+.global-roadmap__block__content__text {
+  .make-font-large();
+}
+
+.global-roadmap__block__content__date {
+  color: #2470A8;
+
+  .respond(large, {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 12.5rem - 1rem;
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  });
+}
+
+.global-roadmap__line {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.5rem + 2.5rem - 0.25/2rem;
+  height: 100%;
+  width: 0.25rem;
+  background: #DBEBF7;
+
+  .respond(large, {
+    left: 12.5rem + 1.5rem + 2.5rem - 0.25/2rem;
+  });
+}
