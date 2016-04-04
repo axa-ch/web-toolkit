@@ -13,14 +13,16 @@
 }
 
 .global-header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  
   transform: translateY(0);
   background-color: @color-white;
 
   &.is-sticky {
     position: fixed;
     top: 0;
-    right: 0;
-    left: 0;
     transform: translateY(-100%);
     z-index: 100;
   }
@@ -54,6 +56,14 @@
   .respond(large, {
     height: 3.5rem;
     line-height: 3.5rem;
+  });
+}
+
+.global-contents {
+  padding-top: 4.8125rem;
+
+  .respond(large, {
+    padding-top: 5.875rem;
   });
 }
 
