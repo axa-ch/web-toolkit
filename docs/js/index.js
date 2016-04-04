@@ -12,6 +12,7 @@ require('./left-navigation')
 require('./object-fit')
 require('./octocat')
 require('./search')
+require('./sticky')
 require('./tab')
 
 import moment from 'moment'

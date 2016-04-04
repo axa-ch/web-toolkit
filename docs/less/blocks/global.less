@@ -3,6 +3,60 @@
 @import 'style/mixins/make-container';
 @import 'style/mixins/respond';
 
+@keyframes reveal {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.global-header {
+  transform: translateY(0);
+  background-color: @color-white;
+
+  &.is-sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(-100%);
+    z-index: 100;
+  }
+
+  &.is-revealed,
+  &.is-hidden {
+    transition: transform 0.25s ease;
+  }
+
+  &.is-revealed {
+    transform: translateY(0%);
+  }
+
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
+}
+
+.global-header-item {
+  display: flex;
+  align-items: center;
+  order: 2;
+}
+
+.global-header-item__subscribe-button {
+  margin: 0;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1rem;
+
+  .respond(large, {
+    height: 3.5rem;
+    line-height: 3.5rem;
+  });
+}
+
 .global-heading {
   .make-container();
   .make-font-heading-secondary();
