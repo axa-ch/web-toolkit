@@ -271,6 +271,41 @@
   });
 }
 
+.global-subscribe__form {
+  width: 100%;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+
+  .respond(large, {
+    align-items: flex-start;
+  });
+}
+
+.global-subscribe__input {
+  background-color: #FF4778;
+  color: white;
+  height: 3.5rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+
+  &::placeholder {
+    color: lighten(#ff4778, 20%);
+  }
+
+  &:focus {
+    border: none;
+    outline: auto;
+  }
+
+  .respond(large, {
+    text-align: left;
+  });
+}
+
 .global-subscribe__icon {
   margin-bottom: 2rem;
 }
@@ -286,7 +321,7 @@
 }
 
 .global-subscribe__button {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   font-size: 1rem;
 }
 

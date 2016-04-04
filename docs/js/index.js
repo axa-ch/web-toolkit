@@ -37,9 +37,10 @@ $('#cities-autocomplete').autocomplete({
   source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']
 })
 
-$('[data-subscribe]').click((e) => {
+$('[data-subscribe]').submit((e) => {
   e.preventDefault()
-  Intercom('showNewMessage', 'Hi there,\n\nPlease keep me updated about the Web Style Guide!\n\nRegards.');
+  const email = $('[data-email]').val()
+  Intercom('showNewMessage', `Hi there,\n\nPlease keep me updated on ${email}!\n\nRegards.`);
   $('.intercom-composer-send-button').click()
 })
 

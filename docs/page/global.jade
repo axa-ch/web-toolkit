@@ -342,9 +342,15 @@ description: We're making this global!
         .global-subscribe__body
           p.global-subscribe__text.
             Stay updated, #[br] subscribe to our hot newsletter!
-
-          a.global-subscribe__button.button2.button2-primary.button2-primary--blue(
-            href="mailto:axa-webtoolkit@axagroupsolutions.flowdock.com?Subject=Web%20Guidelines%20Subscription") Keep Me Updated
+            
+          form.global-subscribe__form(action="#", data-subscribe)
+            input.global-subscribe__input.control.control--input(
+              type="email",
+              data-email
+              placeholder="me@example.com")
+            button.global-subscribe__button.button2.button2-primary.button2-primary--blue(
+              type="submit"
+              href="mailto:axa-webtoolkit@axagroupsolutions.flowdock.com?Subject=Web%20Guidelines%20Subscription") Keep Me Updated
 
           p.global-subscribe__notice.
             We will let you know when there
