@@ -21,6 +21,8 @@ p.paragraph.
       a(href='#condensed').toc__anchor-navigation__link Condensed Dropdown
     li.toc__anchor-navigation__item
       a(href='#non-enhanced').toc__anchor-navigation__link Backup: Non enhanced dropdown
+    li.toc__anchor-navigation__item
+      a(href='#css-only').toc__anchor-navigation__link Improvement: CSS-only
 
 .hr
 
@@ -139,5 +141,30 @@ p.paragraph.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/dropdown-non-enhanced.jade
+
+.hr
+
+h2.heading.heading--secondary#css-only CSS-only
+
+p.paragraph.
+  Possible replacement for JS-featured dropdown.
+
++example('/components/form-and-input-elements/demos/dropdown-2.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-2')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-2
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/dropdown-2.jade
+
 
 //- Copyright AXA Versicherungen AG 2015
