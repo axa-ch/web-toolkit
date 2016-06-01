@@ -9,6 +9,7 @@
   overflow: hidden;
   width: 100%;
 
+  /* important clear floats to get the HTML-Flow back in sync */
   &:after {
     content: '';
     clean: both;
@@ -27,21 +28,25 @@
   display: block;
   -webkit-appearance: none;
   appearance: none;
-  float: left;
   width: 100%;
+  /* important: fake it to have 0 width */
+  float: left;
   margin-right: -100%;
+  /* don't use background nor border - the parent deals with that */
   background: transparent;
   border: none;
   box-sizing: border-box;
   cursor: pointer;
   vertical-align: middle;
 
+  /* disable outline styles */
   &:active,
   &:focus {
     box-shadow: none !important;
     outline: none !important;
   }
 
+  /* fix native select arrows on IE */
   &::-ms-expand {
     display: none;
   }
@@ -54,6 +59,7 @@
   height: 3rem;
 }
 
+/* allign the icon correctly without position: absolute */
 .dropdown-2__icon-right {
   display: block;
   float: right;
