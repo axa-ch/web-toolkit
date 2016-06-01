@@ -1,0 +1,73 @@
+@import '../mixins/make-link.less';
+@import '../variables';
+
+.dropdown-2 {
+  .make-link();
+  display: block;
+  border: 1px solid @color-gray--light;
+  background: @color-gray--lighter;
+  overflow: hidden;
+  width: 100%;
+
+  &:after {
+    content: '';
+    clean: both;
+  }
+}
+
+.dropdown-2__label {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dropdown-2__select {
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  background: transparent;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  vertical-align: middle;
+
+  &:active,
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.dropdown-2__select--large {
+  padding: 0 1.25rem;
+
+  line-height: 3rem;
+  height: 3rem;
+}
+
+.dropdown-2__icon-right {
+  display: block;
+  float: right;
+  height: 3rem;
+  margin-left: -100%;
+  padding: 0 1.25rem;
+  pointer-events: none;
+  background: @color-gray--lighter;
+}
+.dropdown-2__icon {
+  display: block;
+  position: relative;
+  top: 50%;
+  margin-top: -0.625rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
