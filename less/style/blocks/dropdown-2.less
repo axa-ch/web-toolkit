@@ -46,6 +46,11 @@
     outline: none !important;
   }
 
+  &:focus::-ms-value {
+    background: transparent;
+    color: inherit;
+  }
+
   /* fix native select arrows on IE */
   &::-ms-expand {
     display: none;
