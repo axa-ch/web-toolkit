@@ -1,4 +1,5 @@
 @import "../variables.less";
+@import "./respond.less";
 
 .make-font-heading-primary {
   font-size: 1.5625rem; //25px
@@ -41,21 +42,21 @@
 }
 
 .make-font-large {
-  font-size: 1.125rem; //18px
-  line-height: 1.6;
+  font-size: 1rem; //16px
+  line-height: 1.8;
 
   .respond(medium, {
-    font-size: 1.1875rem; //19px
+    font-size: 1.0625rem; //17px
   });
 }
 
 .make-font-large-semibold {
-  font-size: 1.125rem; //18px
+  font-size: 1rem; //16px
   font-weight: @font-weight-medium;
-  line-height: 1.6;
+  line-height: 1.8;
 
   .respond(medium, {
-    font-size: 1.1875rem; //19px
+    font-size: 1.0625rem; //17px
   });
 }
 
