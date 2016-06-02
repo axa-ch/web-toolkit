@@ -39,6 +39,7 @@
   box-sizing: border-box;
   cursor: pointer;
   vertical-align: middle;
+  text-indent: 1.25rem;	/* not ideal, firefox is buggy here - see fix at the bottom */
 
   /* disable outline styles */
   &:active,
@@ -71,7 +72,7 @@
 .dropdown-2__select--large {
   padding: 0 1.25rem;
 
-  line-height: 3rem;
+  line-height: 3rem; /* not ideal, firefox is buggy here - see fix at the bottom */
   height: 3rem;
 }
 
@@ -99,4 +100,18 @@
   width: 1.5rem;
   height: 1.5rem;
   margin-top: -0.75rem;
+}
+
+/* ugly fix of firefox related issues */
+@-moz-document url-prefix() {
+  /* fix firefox dotted border on focused selects */
+  .dropdown-2__select {
+    color: rgba(0,0,0,0);
+    text-shadow: 0 0 0 #000;
+  }
+
+  /* Fix Firefox doubles text-indent value */
+  .dropdown-2__select {
+    text-indent: 1.25/2rem;
+  }
 }
