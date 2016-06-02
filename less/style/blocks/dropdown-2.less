@@ -1,4 +1,5 @@
 @import '../mixins/moz';
+@import '../mixins/ie';
 @import '../mixins/make-link.less';
 @import '../variables';
 
@@ -79,6 +80,10 @@
     display: none;
   }
 
+  .ie({
+    padding-left: @dropdown-indent;
+  });
+
   .moz({
     /* fix firefox dotted border on focused selects */
     color: rgba(0,0,0,0);
@@ -93,6 +98,10 @@
   line-height: @dropdown-height--large; /* not ideal, firefox is buggy here - see fix at the bottom */
   height: @dropdown-height--large;
   text-indent: @dropdown-indent--large;	/* not ideal, firefox is buggy here - see fix at the bottom */
+
+  .ie({
+    padding-left: @dropdown-indent--large;
+  });
 
   .moz({
     /* Fix Firefox doubles text-indent value */
