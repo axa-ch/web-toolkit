@@ -1,5 +1,14 @@
+@import '../mixins/moz';
 @import '../mixins/make-link.less';
 @import '../variables';
+
+@dropdown-indent: 0.8375rem;
+@dropdown-height: 2.5rem;
+@dropdown-icon-size: 1.25rem;
+
+@dropdown-indent--large: 1.25rem;
+@dropdown-height--large: 3rem;
+@dropdown-icon-size--large: 1.5rem;
 
 .dropdown-2 {
   .make-link();
@@ -39,7 +48,9 @@
   box-sizing: border-box;
   cursor: pointer;
   vertical-align: middle;
-  text-indent: 1.25rem;	/* not ideal, firefox is buggy here - see fix at the bottom */
+  line-height: @dropdown-height; /* not ideal, firefox is buggy here - see fix at the bottom */
+  height: @dropdown-height;
+  text-indent: @dropdown-indent;	/* not ideal, firefox is buggy here - see fix at the bottom */
 
   /* disable outline styles */
   &:active,
@@ -67,51 +78,55 @@
   &::-ms-expand {
     display: none;
   }
+
+  .moz({
+    /* fix firefox dotted border on focused selects */
+    color: rgba(0,0,0,0);
+    text-shadow: 0 0 0 #000;
+
+    /* Fix Firefox doubles text-indent value */
+    text-indent: @dropdown-indent/2;
+  });
 }
 
 .dropdown-2__select--large {
-  padding: 0 1.25rem;
+  line-height: @dropdown-height--large; /* not ideal, firefox is buggy here - see fix at the bottom */
+  height: @dropdown-height--large;
+  text-indent: @dropdown-indent--large;	/* not ideal, firefox is buggy here - see fix at the bottom */
 
-  line-height: 3rem; /* not ideal, firefox is buggy here - see fix at the bottom */
-  height: 3rem;
+  .moz({
+    /* Fix Firefox doubles text-indent value */
+    text-indent: @dropdown-indent--large/2;
+  });
 }
 
 /* allign the icon correctly without position: absolute */
 .dropdown-2__icon-right {
   display: block;
   float: right;
-  height: 3rem;
+  height: @dropdown-height;
   margin-left: -100%;
-  padding: 0 1.25rem;
+  padding: 0 @dropdown-indent;
   pointer-events: none;
   background: @color-gray--lighter;
+}
+
+.dropdown-2__icon-right--large {
+  height: @dropdown-height--large;
+  padding: 0 @dropdown-indent--large;
 }
 
 .dropdown-2__icon {
   display: block;
   position: relative;
   top: 50%;
-  margin-top: -0.625rem;
-  width: 1.25rem;
-  height: 1.25rem;
+  margin-top: -@dropdown-icon-size/2;
+  width: @dropdown-icon-size;
+  height: @dropdown-icon-size;
 }
 
 .dropdown-2__icon--large {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-top: -0.75rem;
-}
-
-/* ugly fix of firefox related issues */
-@-moz-document url-prefix() {
-  /* fix firefox dotted border on focused selects */
-  .dropdown-2__select {
-    color: rgba(0,0,0,0);
-    text-shadow: 0 0 0 #000;
-  }
-
-  /* Fix Firefox doubles text-indent value */
-  .dropdown-2__select {
-    text-indent: 1.25/2rem;
-  }
+  width: @dropdown-icon-size--large;
+  height: @dropdown-icon-size--large;
+  margin-top: -@dropdown-icon-size--large/2;
 }
