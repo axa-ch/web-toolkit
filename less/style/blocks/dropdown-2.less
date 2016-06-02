@@ -28,10 +28,11 @@
   display: block;
   -webkit-appearance: none;
   appearance: none;
-  width: 100%;
+  /* overflow is indented to fix browser who don'tsupport hiding the native arrow */
+  width: 120%;
   /* important: fake it to have 0 width */
   float: left;
-  margin-right: -100%;
+  margin-right: -120%;
   /* don't use background nor border - the parent deals with that */
   background: transparent;
   border: none;
