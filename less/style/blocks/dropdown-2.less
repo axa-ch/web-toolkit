@@ -11,6 +11,10 @@
 @dropdown-height--large: 3rem;
 @dropdown-icon-size--large: 1.5rem;
 
+@dropdown-indent--condensed: 0.8375rem;
+@dropdown-height--condensed: 1.875rem;
+@dropdown-icon-size--condensed: 1rem;
+
 .dropdown-2 {
   .make-link();
   display: block;
@@ -110,6 +114,21 @@
   });
 }
 
+.dropdown-2__select--condensed {
+  line-height: @dropdown-height--condensed; /* not ideal, firefox is buggy here - see fix at the bottom */
+  height: @dropdown-height--condensed;
+  text-indent: @dropdown-indent--condensed;	/* not ideal, firefox is buggy here - see fix at the bottom */
+
+  .ie({
+    padding-left: @dropdown-indent--condensed;
+  });
+
+  .moz({
+    /* Fix Firefox doubles text-indent value */
+    text-indent: @dropdown-indent--condensed/2;
+  });
+}
+
 /* allign the icon correctly without position: absolute */
 .dropdown-2__icon-right {
   display: block;
@@ -126,6 +145,11 @@
   padding: 0 @dropdown-indent--large;
 }
 
+.dropdown-2__icon-right--condensed {
+  height: @dropdown-height--condensed;
+  padding: 0 @dropdown-indent--condensed;
+}
+
 .dropdown-2__icon {
   display: block;
   position: relative;
@@ -139,4 +163,10 @@
   width: @dropdown-icon-size--large;
   height: @dropdown-icon-size--large;
   margin-top: -@dropdown-icon-size--large/2;
+}
+
+.dropdown-2__icon--condensed {
+  width: @dropdown-icon-size--condensed;
+  height: @dropdown-icon-size--condensed;
+  margin-top: -@dropdown-icon-size--condensed/2;
 }
