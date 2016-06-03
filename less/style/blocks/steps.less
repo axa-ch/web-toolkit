@@ -1,3 +1,5 @@
+@steps-bullet-diameter: 32px;
+
 .steps {
   margin: 15px;
 }
@@ -38,11 +40,11 @@
   }
 
   .step__bullet {
-    width: 32px;
-    height: 32px;
-    border-radius: 32px;
+    width: @steps-bullet-diameter;
+    height: @steps-bullet-diameter;
+    border-radius: @steps-bullet-diameter;
     left: -26px;
-    line-height: 30px;
+    line-height: @steps-bullet-diameter - 2px;
     font-size: 18px;
     font-weight: 600;
     background: @color-white;
