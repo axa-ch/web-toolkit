@@ -40,28 +40,4 @@ ul.checklist
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/prolist.jade
 
-.hr
-
-h2.heading.heading--secondary#enhanced Con List
-
-p.paragraph.
-  You can easily use the pro list pattern for con lists, just add one additional class and minus characters:
-
-+example('/components/form-and-input-elements/demos/conlist.html')
-
-.toggle
-  .toggle__button(data-info, data-target='#code')
-    +svg('source', ['icon', 'toggle__icon'])
-    span See code
-  .toggle__content#code
-    .tab-panel(data-tab, data-tab-default='html')
-      .tab-panel__header
-        .tab-panel__header__tabs
-          .tab-panel__header__tab(data-tab-toggle='html') HTML
-      .tab-panel__content
-        .tab-panel__content__tab(data-tab-content='html')
-          .tab-panel__content__tab__fullwidth-content
-            .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/conlist.jade
-
 //- Copyright AXA Versicherungen AG 2015
