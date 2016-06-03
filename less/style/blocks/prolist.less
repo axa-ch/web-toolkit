@@ -1,0 +1,39 @@
+@import '../variables';
+
+.prolist {
+  list-style-type: none;
+  margin: 25px 0 35px 0;
+  padding: 0;
+}
+
+.prolist__item {
+  margin: 0 0 15px 0;
+}
+
+.prolist__item__icon {
+  display: inline-block;
+  float: left;
+
+  width: 26px;
+  height: 26px;
+  border-radius: 26px;
+  line-height: 20px;
+  font-size: 24px;
+  font-weight: 200;
+  background: @color-white;
+  color: @color-gray;
+  border: 2px @color-gray solid;
+  text-align: center;
+}
+
+.prolist__item__content {
+  margin-top: -1px;
+  margin-left: 40px;
+  font-size: 19px;
+}
+
+.prolist--conlist .prolist__item__icon {
+  line-height: 24px;
+}
+
+// Copyright AXA Versicherungen AG 2015
