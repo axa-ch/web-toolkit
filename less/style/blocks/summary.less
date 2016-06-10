@@ -36,4 +36,128 @@
   font-weight: 600;
 }
 
+
+.summary--magic {
+
+  display: block;
+  max-width: 800px;
+  position: relative;
+
+  text-align: left;
+  margin-left: 50px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 140px;
+    left: -33px;
+    height: 450px;
+    border-left: 1px @color-gray solid;
+  }
+
+  h3 {
+
+    position: relative;
+    font-size: 19px;
+    margin-bottom: -9px;
+    margin-left: -23px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -10px;
+      width: 30px;
+      height: @steps-bullet-diameter;
+      background: #fff;
+    }
+
+    &:after {
+      content: "1";
+      position: absolute;
+      top: -3px;
+      left: -10px;
+      background-color: white;
+      color: black;
+      text-align: center;
+
+      width: @steps-bullet-diameter;
+      height: @steps-bullet-diameter;
+      border-radius: @steps-bullet-diameter;
+      left: -26px;
+      line-height: @steps-bullet-diameter - 2px;
+      font-size: 18px;
+      font-weight: 600;
+      background: @color-white;
+      color: @color-gray;
+      border: 2px @color-gray solid;
+    }
+
+  }
+
+  h3:nth-of-type(1) {
+    &:after {
+      content: "1";
+    }
+  }
+
+  h3:nth-of-type(2) {
+    &:after {
+      content: "2";
+    }
+  }
+
+  h3:nth-of-type(3) {
+    &:after {
+      content: "3";
+    }
+  }
+
+  h3:nth-of-type(4) {
+    &:after {
+      content: "4";
+    }
+  }
+
+  h3:nth-of-type(5) {
+    &:after {
+      content: "5";
+    }
+  }
+
+  ul:first-of-type {
+
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+
+    li {list-style-type: none;
+      margin: 5px 0 15px 20px;
+      padding: 0;
+    }
+
+    li:before {
+      content: '+';
+      display: inline-block;
+      float: left;
+
+      width: 26px;
+      height: 26px;
+      border-radius: 26px;
+      line-height: 20px;
+      font-size: 24px;
+      font-weight: 200;
+      background: @color-white;
+      color: @color-gray;
+      border: 2px @color-gray solid;
+      text-align: center;
+      margin-right: 10px;
+      margin-top: -2px;
+    }
+
+  }
+
+}
+
+
 // Copyright AXA Versicherungen AG 2015
