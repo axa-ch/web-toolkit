@@ -5,44 +5,43 @@
 }
 
 .steps__flow {
-  counter-reset: step;
+  counter-reset: steps;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .steps__step {
-
   width: 100%;
   border-left: 1px @color-gray solid;
   padding: 0;
   margin: 0;
 
-  .step__bullet {
-    width: @steps-bullet-diameter;
-    height: @steps-bullet-diameter;
-    border-radius: @steps-bullet-diameter;
-    left: -26px;
-    line-height: @steps-bullet-diameter - 2px;
-    font-size: 18px;
-    font-weight: 600;
-    background: @color-white;
-    color: @color-gray;
-    border: 2px @color-gray solid;
-  }
-
   &:last-child {
     border-left: none;
-
-    .step__bullet {
-      left: -25px;
-    }
   }
 }
 
 .steps__indicator {
   float: left;
   width: 20px;
+
+  &::before {
+    position: absolute;
+    counter-increment: steps;
+    content: counter(steps);
+    width: @steps-bullet-diameter;
+    height: @steps-bullet-diameter;
+    border-radius: @steps-bullet-diameter;
+    left: 0;
+    line-height: @steps-bullet-diameter - 2px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    background: @color-white;
+    color: @color-gray;
+    border: 2px @color-gray solid;
+  }
 }
 
 .steps__content {
@@ -51,8 +50,7 @@
 }
 
 .steps__title {
-  margin: 0px;
-  margin-bottom: -8px;
+  margin: 0 0 -8px;
 }
 
 // Copyright AXA Versicherungen AG 2015
