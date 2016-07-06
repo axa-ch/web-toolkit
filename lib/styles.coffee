@@ -29,8 +29,8 @@ module.exports = (glob, paths, dest) ->
       '!**/*.map'
     ]
     .pipe postcss [
-      csswring()
       cssmqpacker()
+      csswring()
     ]
     .pipe rename { extname: '.min.css' }
     .pipe sourcemaps.write('.', sourceRoot: './')
