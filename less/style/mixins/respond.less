@@ -22,7 +22,7 @@
   }
 }
 
-.respond(@bp; @rules) {
+.respond(@bp; @rules) when (isnumber(@bp) = true) {
   @media (min-width: @bp) {
     @rules();
   }
