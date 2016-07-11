@@ -218,6 +218,11 @@ dl
   to your build to make
   the css output work in older browsers.
 
+  Don't forget to minify your CSS, by first combining your media queries with
+  [css-mqpacker](https://github.com/hail2u/node-css-mqpacker)
+  and then mangle you CSS with [CSSWring](https://github.com/hail2u/node-csswring)
+  or [cssnano](https://github.com/ben-eb/cssnano).
+
   Have a look at the
   [postcss plugin list](https://github.com/postcss/postcss#plugins)
   for further processing.

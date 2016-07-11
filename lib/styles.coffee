@@ -9,7 +9,8 @@ filter = require 'gulp-filter'
 rename = require 'gulp-rename'
 
 pseudoelements = require 'postcss-pseudoelements'
-autoprefixer = require 'autoprefixer-core'
+autoprefixer = require 'autoprefixer'
+cssmqpacker = require 'css-mqpacker'
 csswring = require 'csswring'
 
 module.exports = (glob, paths, dest) ->
@@ -27,7 +28,10 @@ module.exports = (glob, paths, dest) ->
       '*'
       '!**/*.map'
     ]
-    .pipe postcss [ csswring() ]
+    .pipe postcss [
+      cssmqpacker()
+      csswring()
+    ]
     .pipe rename { extname: '.min.css' }
     .pipe sourcemaps.write('.', sourceRoot: './')
     .pipe gulp.dest dest
