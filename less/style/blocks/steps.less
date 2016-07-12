@@ -59,6 +59,24 @@
 
 .steps__description {
   .make-font-large;
+
+  p + ul {
+    // @todo: this needs to be refactored after we have introduced a normalizing/reseting CSS file
+    margin-top: -17px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 1.1em;
+
+    li {
+      &::before {
+        content: "–"; /* en dash */
+        position: absolute;
+        margin-left: -1.1em;
+      }
+    }
+  }
 }
 
 // Copyright AXA Versicherungen AG 2015
