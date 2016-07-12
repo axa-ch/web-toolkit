@@ -15,10 +15,12 @@
 }
 
 .steps__step {
+  position: relative;
   width: 100%;
   border-left: 1px @color-gray solid;
   padding: 0;
   margin: 0;
+  margin-left: @steps-bullet-diameter / 2;
 
   &:last-child {
     border-left: none;
@@ -26,24 +28,22 @@
 }
 
 .steps__indicator {
-  float: left;
-  width: 20px;
+  position: absolute;
+  width: @steps-bullet-diameter;
+  height: @steps-bullet-diameter;
+  border-radius: @steps-bullet-diameter;
+  left: @steps-bullet-diameter / -2;
+  line-height: @steps-bullet-diameter - 2px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  background: @color-white;
+  color: @color-gray;
+  border: 2px @color-gray solid;
 
   &::before {
-    position: absolute;
     counter-increment: steps;
     content: counter(steps);
-    width: @steps-bullet-diameter;
-    height: @steps-bullet-diameter;
-    border-radius: @steps-bullet-diameter;
-    left: 0;
-    line-height: @steps-bullet-diameter - 2px;
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-    background: @color-white;
-    color: @color-gray;
-    border: 2px @color-gray solid;
   }
 }
 
