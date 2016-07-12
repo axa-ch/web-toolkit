@@ -1,22 +1,24 @@
 @import '../variables';
+@import '../mixins/font';
 
 .summary {
   font-size: 19px;
 }
 
 .summary__heading {
-  font-size: 19px;
-  margin-bottom: -9px;
+  .make-font-heading-tertiary();
+  margin: 0;
 }
 
 .summary__label {
-  font-weight: 200;
-  margin-bottom: 8px;
+  .make-font-large();
+  margin: 1rem 0 0;
 }
 
 .summary__content {
-  font-weight: 600;
-  margin-bottom: 10px;
+  .make-font-large-semibold();
+
+  margin: 0 0 0.5rem;
 }
 
 .summary__items {
