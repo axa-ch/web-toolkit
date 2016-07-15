@@ -10,14 +10,12 @@ import svg4everybody from 'svg4everybody'
 
 require('../..')
 require('./cheat')
-require('./collapse')
 require('./example')
 require('./iframe-resizer')
 require('./left-navigation')
 require('./object-fit')
 require('./octocat')
 require('./search')
-require('./sticky')
 require('./tab')
 
 moment.locale('en_GB')
