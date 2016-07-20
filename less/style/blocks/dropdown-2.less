@@ -67,6 +67,14 @@
     border: none;
   }
 
+  &:focus {
+    color: @color-blue;
+
+    + .dropdown-2__icon-right {
+      color: @color-blue;
+    }
+  }
+
   /* fix firefox focus stuff */
   &::-moz-focus-inner,
   & option::-moz-focus-inner {
