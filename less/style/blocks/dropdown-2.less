@@ -1,6 +1,5 @@
-@import '../mixins/moz';
-@import '../mixins/ie';
 @import '../mixins/make-link.less';
+@import '../mixins/target.less';
 @import '../variables';
 
 @dropdown-indent: 0.8375rem;
@@ -85,12 +84,12 @@
     display: none;
   }
 
-  .ie({
+  .target(ie, {
     /* fix IE not adhering to `text-indent` rules at <select> tags */
     padding-left: @dropdown-indent;
   });
 
-  .moz({
+  .target(moz, {
     /* fix firefox dotted border on focused selects */
     color: rgba(0,0,0,0);
     text-shadow: 0 0 0 #000;
@@ -105,12 +104,12 @@
   height: @dropdown-height--large;
   text-indent: @dropdown-indent--large;	/* not ideal, firefox is buggy here - see fix at the bottom */
 
-  .ie({
+  .target(ie, {
     /* fix IE not adhering to `text-indent` rules at <select> tags */
     padding-left: @dropdown-indent--large;
   });
 
-  .moz({
+  .target(moz, {
     /* Fix Firefox doubles text-indent value */
     text-indent: @dropdown-indent--large/2;
   });
@@ -121,12 +120,12 @@
   height: @dropdown-height--condensed;
   text-indent: @dropdown-indent--condensed;	/* not ideal, firefox is buggy here - see fix at the bottom */
 
-  .ie({
+  .target(ie, {
     /* fix IE not adhering to `text-indent` rules at <select> tags */
     padding-left: @dropdown-indent--condensed;
   });
 
-  .moz({
+  .target(moz, {
     /* Fix Firefox doubles text-indent value */
     text-indent: @dropdown-indent--condensed/2;
   });
