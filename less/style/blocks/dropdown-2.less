@@ -1,3 +1,4 @@
+@import '../mixins/clearfix.less';
 @import '../mixins/font.less';
 @import '../mixins/make-link.less';
 @import '../mixins/target.less';
@@ -26,10 +27,7 @@
   width: 100%;
 
   /* important clear floats to get the HTML-Flow back in sync */
-  &:after {
-    content: '';
-    clean: both;
-  }
+  .clearfix();
 }
 
 .dropdown-2__label {
