@@ -1,0 +1,15 @@
+.target(ie, @rules) {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    @rules();
+  }
+}
+
+/* ugly fix of firefox related issues */
+.target(moz, @rules) {
+  @-moz-document url-prefix() {
+    @rules();
+  }
+}
+
+// Copyright AXA Versicherungen AG 2016

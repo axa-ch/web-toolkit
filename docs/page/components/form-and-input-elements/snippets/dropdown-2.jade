@@ -1,0 +1,36 @@
+---
+title: Dropdown-2
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.dropdown-2
+  label.dropdown-2__label
+    select.dropdown-2__select
+      option Schweiz
+      option Regenbogenland
+    .dropdown-2__icon-right
+      +svg('arrow-bottom', ['dropdown-2__icon'])
+
+hr
+
+.dropdown-2
+  label.dropdown-2__label
+    select.dropdown-2__select.dropdown-2__select--large
+      option Schweiz
+      option Regenbogenland
+    .dropdown-2__icon-right.dropdown-2__icon-right--large
+      +svg('arrow-bottom', ['dropdown-2__icon', 'dropdown-2__icon--large'])
+
+hr
+
+.dropdown-2
+  label.dropdown-2__label
+    select.dropdown-2__select.dropdown-2__select--condensed
+      option Schweiz
+      option Regenbogenland
+    .dropdown-2__icon-right.dropdown-2__icon-right--condensed
+      +svg('arrow-bottom', ['dropdown-2__icon', 'dropdown-2__icon--condensed'])
+
+//- Copyright AXA Versicherungen AG 2015
