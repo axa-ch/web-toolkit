@@ -1,3 +1,4 @@
+@import '../mixins/font.less';
 @import '../mixins/make-link.less';
 @import '../mixins/target.less';
 @import '../variables';
@@ -101,6 +102,7 @@
 }
 
 .dropdown-2__select--large {
+  .make-font-large();
   line-height: @dropdown-height--large; /* not ideal, firefox is buggy here - see fix at the bottom */
   height: @dropdown-height--large;
   text-indent: @dropdown-indent--large;	/* not ideal, firefox is buggy here - see fix at the bottom */
@@ -117,6 +119,7 @@
 }
 
 .dropdown-2__select--condensed {
+  font-size: @font-medium--size;
   line-height: @dropdown-height--condensed; /* not ideal, firefox is buggy here - see fix at the bottom */
   height: @dropdown-height--condensed;
   text-indent: @dropdown-indent--condensed;	/* not ideal, firefox is buggy here - see fix at the bottom */
