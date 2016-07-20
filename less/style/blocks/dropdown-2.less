@@ -93,8 +93,10 @@
 
   .target(moz, {
     /* fix firefox dotted border on focused selects */
-    color: rgba(0,0,0,0);
-    text-shadow: 0 0 0 #000;
+    &:focus {
+      color: transparent;
+      text-shadow: 0 0 0 @color-blue;
+    }
 
     /* Fix Firefox doubles text-indent value */
     text-indent: @dropdown-indent/2;
