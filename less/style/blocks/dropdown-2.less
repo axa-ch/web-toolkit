@@ -3,6 +3,8 @@
 @import '../mixins/target.less';
 @import '../variables';
 
+@dropdown-border-width: 1px;
+
 @dropdown-indent: 0.8125rem;  // 13px
 @dropdown-height: 2.5rem; // 40px
 @dropdown-icon-size: 1.25rem; // 20px
@@ -18,7 +20,7 @@
 .dropdown-2 {
   .make-link();
   display: block;
-  border: 1px solid @color-gray--light;
+  border: @dropdown-border-width solid @color-gray--light;
   background: @color-gray--lighter;
   overflow: hidden;
   width: 100%;
