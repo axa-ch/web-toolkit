@@ -20,5 +20,6 @@ require('./popover')
 require('./progress-bar')
 require('./segmented-control')
 require('./site')
+require('./summary')
 
 export default {}
