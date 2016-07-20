@@ -1,89 +1,140 @@
 @import "../variables.less";
 @import "./respond.less";
 
+@font-heading-primary--size: 1.5625rem; //25px
+@font-heading-primary--weight: bold;
+@font-heading-primary--line-height: 1.4;
+
+@font-heading-primary--size--medium: 3rem; //48px
+
 .make-font-heading-primary {
-  font-size: 1.5625rem; //25px
-  font-weight: bold;
-  line-height: 1.4;
+  font-size: @font-heading-primary--size; //25px
+  font-weight: @font-heading-primary--weight;
+  line-height: @font-heading-primary--line-height;
 
   .respond(medium, {
-    font-size: 3rem; //48px
+    font-size: @font-heading-primary--size--medium; //48px
   });
 }
+
+@font-heading-secondary--size: 1.5rem; //24px
+@font-heading-secondary--weight: bold;
+@font-heading-secondary--line-height: 1.4;
+
+@font-heading-secondary--size--medium: 2rem; //32px
 
 .make-font-heading-secondary {
-  font-size: 1.5rem; //24px
-  line-height: 1.4;
-  font-weight: bold;
+  font-size: @font-heading-secondary--size; //24px
+  font-weight: @font-heading-secondary--weight;
+  line-height: @font-heading-secondary--line-height;
 
   .respond(medium, {
-    font-size: 2rem; //32px
+    font-size: @font-heading-secondary--size--medium; //32px
   });
 }
+
+@font-heading-tertiary--size: 1.375rem; //22px
+@font-heading-tertiary--weight: bold;
+@font-heading-tertiary--line-height: 1.4;
+
+@font-heading-tertiary--size--medium: 1.5rem; //24px
 
 .make-font-heading-tertiary {
-  font-size: 1.375rem; //22px
-  font-weight: bold;
-  line-height: 1.4;
+  font-size: @font-heading-tertiary--size; //22px
+  font-weight: @font-heading-tertiary--weight;
+  line-height: @font-heading-tertiary--line-height;
 
   .respond(medium, {
-    font-size: 1.5rem; //24px
+    font-size: @font-heading-tertiary--size--medium; //24px
   });
 }
+
+@font-x-large--size: 1rem; //16px
+@font-x-large--weight: @font-weight-medium;
+@font-x-large--line-height: 1.6;
+
+@font-x-large--size--medium: 1.1875rem; //19px
 
 .make-font-x-large {
-  font-size: 1rem; //16px
-  font-weight: @font-weight-medium;
-  line-height: 1.6;
+  font-size: @font-x-large--size; //16px
+  font-weight: @font-x-large--weight;
+  line-height: @font-x-large--line-height;
 
   .respond(medium, {
-    font-size: 1.1875rem; //19px
+    font-size: @font-x-large--size--medium; //19px
   });
 }
+
+@font-large--size: 1rem; //16px
+@font-large--weight: normal;
+@font-large--line-height: 1.8;
+
+@font-large--size--medium: 1.0625rem; //17px
 
 .make-font-large {
-  font-size: 1rem; //16px
-  font-weight: normal;
-  line-height: 1.8;
+  font-size: @font-large--size; //16px
+  font-weight: @font-large--weight;
+  line-height: @font-large--line-height;
 
   .respond(medium, {
-    font-size: 1.0625rem; //17px
+    font-size: @font-large--size--medium; //17px
   });
 }
+
+@font-large-semibold--size: 1rem; //16px
+@font-large-semibold--weight: @font-weight-medium;
+@font-large-semibold--line-height: 1.8;
+
+@font-large-semibold--size--medium: 1.0625rem; //17px
 
 .make-font-large-semibold {
-  font-size: 1rem; //16px
-  font-weight: @font-weight-medium;
-  line-height: 1.8;
+  font-size: @font-large-semibold--size; //16px
+  font-weight: @font-large-semibold--weight;
+  line-height: @font-large-semibold--line-height;
 
   .respond(medium, {
-    font-size: 1.0625rem; //17px
+    font-size: @font-large-semibold--size--medium; //17px
   });
 }
+
+@font-medium--size: 0.875rem; //14px
+@font-medium--weight: normal;
+@font-medium--line-height: 1.6;
+
+@font-medium--size--medium: 1rem; //16px
 
 .make-font-medium {
-  font-size: 0.875rem; //14px
-  font-weight: normal;
-  line-height: 1.6;
+  font-size: @font-medium--size; //14px
+  font-weight: @font-medium--weight;
+  line-height: @font-medium--line-height;
 
   .respond(medium, {
-    font-size: 1rem; //16px
+    font-size: @font-medium--size--medium; //16px
   });
 }
+
+@font-medium-semibold--size: 0.875rem; //14px
+@font-medium-semibold--weight: @font-weight-medium;
+@font-medium-semibold--line-height: 1.6;
+
+@font-medium-semibold--size--medium: 1rem; //16px
 
 .make-font-medium-semibold {
-  font-size: 0.875rem; //14px
-  font-weight: @font-weight-medium;
-  line-height: 1.6;
+  font-size: @font-medium-semibold--size; //14px
+  font-weight: @font-medium-semibold--weight;
+  line-height: @font-medium-semibold--line-height;
 
   .respond(medium, {
-    font-size: 1rem; //16px
+    font-size: @font-medium-semibold--size--medium; //16px
   });
 }
 
-.make-font-small-semibold {
-  font-size: 0.875rem; //14px;
-  line-height: 1.6;
+@font-small-semibold--size: 0.875rem; //14px
+@font-small-semibold--weight: @font-weight-medium;
+@font-small-semibold--line-height: 1.6;
 
-  font-weight: @font-weight-medium;
+.make-font-small-semibold {
+  font-size: @font-small-semibold--size; //14px;
+  font-weight: @font-small-semibold--weight;
+  line-height: @font-small-semibold--line-height;
 }
