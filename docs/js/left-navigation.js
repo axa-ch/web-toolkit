@@ -1,20 +1,20 @@
-import $ from 'jquery';
+import $ from 'jquery'
 
 $(() =>
-  $('.left__menu .menu__level').each(function(i, el) {
-    let $el = $(el);
+  $('.left__menu .menu__level').each((i, el) => {
+    const $el = $(el)
+    const $headline = $el.siblings('.menu__link')
 
-    let $headline = $el.siblings('.menu__link');
+    return $headline.on('click', (e) => {
+      e.preventDefault()
 
-    return $headline.on('click', function(e) {
-      e.preventDefault();
+      $headline
+        .children('.menu__dropdown__icon')
+        .toggleClass('is-open')
 
-      $headline.children('.menu__dropdown__icon').toggleClass('is-open');
-      return $el.slideToggle('fast', () => $el.toggleClass('is-open')
-      );
-    }
-    );
+      return $el.slideToggle('fast', () => $el.toggleClass('is-open'))
+    })
   })
-);
+)
 
 //! Copyright AXA Versicherungen AG 2015
