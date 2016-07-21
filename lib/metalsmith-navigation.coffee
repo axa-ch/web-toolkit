@@ -21,7 +21,7 @@ module.exports = () ->
 
         page.section = h[0]
 
-        decorate page.children, h if page.children
+        decorate page.children, (h if page.children)
 
     decorate metadata.navigation
 
