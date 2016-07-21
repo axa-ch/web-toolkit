@@ -1,20 +1,21 @@
-import $ from 'jquery';
+/* global window, document */
+
+import $ from 'jquery'
 
 // Public class definition
 class Autogrow {
-
   constructor(element, options) {
-    this.element = element;
-    this.$element = $(element);
-    this.options = $.extend({}, options);
+    this.element = element
+    this.$element = $(element)
+    this.options = $.extend({}, options)
 
-    this.init();
+    this.init()
   }
 
   init() {
-    this.minHeight = this.$element.height();
+    this.minHeight = this.$element.height()
 
-    this.shadow = $('<div></div>');
+    this.shadow = $('<div></div>')
     this.shadow.css({
       position: 'absolute',
       top: -10000,
@@ -25,77 +26,72 @@ class Autogrow {
       'font-weight': this.$element.css('font-weight'),
       'line-height': this.$element.css('line-height'),
       resize: 'none',
-      'word-wrap': 'break-word'
-    }
-    );
+      'word-wrap': 'break-word',
+    })
 
-    this.shadow.appendTo(document.body);
+    this.shadow.appendTo(document.body)
 
-    this.$element.on('change keyup keydown', this, event => event.data.update(event)
-    );
+    this.$element.on('change keyup keydown', this, event => event.data.update(event))
 
-    return $(window).resize(this.update);
+    $(window).resize(this.update)
   }
   update(event) {
-    ({
-      times(string, number) {
-        let r = '';
-        while (num -= 1) {
-          r += string;
-        }
-        return r;
-      }
-    });
-
     if (this.element) {
-      let val = this.element.value.replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/&/g, '&amp;')
-        .replace(/\n$/, '<br/>&nbsp;')
+      let val = this.element.value.replace(/</g, '&lt')
+        .replace(/>/g, '&gt')
+        .replace(/&/g, '&amp')
+        .replace(/\n$/, '<br/>&nbsp')
         .replace(/\n/g, '<br/>')
-        .replace(/\s{2,}/g,space => times('&nbsp;', space.length - 1) + ' '
-        );
+        .replace(/\s{2,}/g, space => times('&nbsp', space.length - 1) + ' ')
 
       if ((event != null) && (event.data != null) && event.data.event === 'keydown' && event.keyCode === 13) {
-        val += '<br />';
+        val += '<br />'
       }
 
-      this.shadow.css('width', this.$element.width());
-      this.shadow.html(val);
+      this.shadow.css('width', this.$element.width())
+      this.shadow.html(val)
 
-      let newHeight = Math.max(this.shadow.height(), this.minHeight);
+      const newHeight = Math.max(this.shadow.height(), this.minHeight)
 
-      return this.$element.height(newHeight);
+      this.$element.height(newHeight)
+    }
+
+    function times(string, number) {
+      let num = number
+      let r = ''
+
+      while (--num) {
+        r += string
+      }
+
+      return r
     }
   }
 }
 
 // Plugin definition
-let Plugin = function(option) {
-  let params = arguments;
+const Plugin = () => this.each(() => {
+  const $this = $(this)
+  let data = $this.data('axa.autogrow')
 
-  return this.each(function() {
-    let $this = $(this);
-    let data = $this.data('axa.autogrow');
+  if (!data) {
+    data = new Autogrow(this)
+    return $this.data('axa.autogrow', data)
+  }
 
-    if (!data) {
-      data = new Autogrow(this);
-      return $this.data('axa.autogrow', data);
-    }
-  });
-};
+  return data
+})
 
 // Plugin registration
-$.fn.autogrow = Plugin;
-$.fn.autogrow.Constructor = Autogrow;
+$.fn.autogrow = Plugin
+$.fn.autogrow.Constructor = Autogrow
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-autogrow="autogrow"]').each(function() {
-    let $autogrow = $(this);
-    return Plugin.call($autogrow);
+  $('[data-autogrow="autogrow"]').each(() => {
+    const $autogrow = $(this)
+    Plugin.call($autogrow)
   })
-
-);
+)
 
 //! Copyright AXA Versicherungen AG 2015
