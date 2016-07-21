@@ -1,5 +1,5 @@
-import styles from '../lib/styles';
+import styles from '../lib/styles'
 
-export default () => styles([ './dist/less/{style,normalize}.less' ], [ './dist/less' ], './dist/css');
+export default () => styles(['./dist/less/{style,normalize}.less'], ['./dist/less'], './dist/css')
 
 //! Copyright AXA Versicherungen AG 2015
