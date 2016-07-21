@@ -1,97 +1,99 @@
-import $ from 'jquery';
+/* global window */
+
+import $ from 'jquery'
 
 // Public class definition
 class Autocomplete {
 
   constructor(element, options) {
-    this.element = element;
-    this.$element = $(element);
-    this.options = $.extend({}, options);
-    this.filtered = this.options.source;
-    if (this.filtered == null) { this.filtered = []; }
-    this.value = '';
-    this.isMouseOver = false;
+    this.element = element
+    this.$element = $(element)
+    this.options = $.extend({}, options)
+    this.filtered = this.options.source
 
-    this.$dropdown = $('<div class="autocomplete__suggestions"></div>');
-    this.$dropdown.hide();
-    this.$element.after(this.$dropdown);
+    if (this.filtered == null) {
+      this.filtered = []
+    }
+
+    this.value = ''
+    this.isMouseOver = false
+
+    this.$dropdown = $('<div class="autocomplete__suggestions"></div>')
+    this.$dropdown.hide()
+    this.$element.after(this.$dropdown)
 
     this.$element.on('keyup', this, event => event.data.filter(event)
-    );
+    )
 
-    this.$element.on('blur', this, function(event) {
+    this.$element.on('blur', this, (event) => {
       if (!event.data.isMouseOver) {
-        return event.data.$dropdown.hide();
+        event.data.$dropdown.hide()
       }
     }
-    );
+    )
   }
 
-  filter(event) {
+  filter() {
     if (this.value !== this.element.value) {
-      this.value = this.element.value;
-      this.filtered = (this.options.source.filter((text) => text.indexOf(this.value) > -1).map((text) => text));
-      this.$dropdown.empty();
+      this.value = this.element.value
+      this.filtered = (this.options.source.filter((text) => text.indexOf(this.value) > -1).map((text) => text))
+
+      this.$dropdown.empty()
+
       for (let i = 0; i < this.filtered.length; i++) {
-        let text = this.filtered[i];
-        this.$dropdown.append(this.createItem(text));
+        const text = this.filtered[i]
+        this.$dropdown.append(this.createItem(text))
       }
-      return this.$dropdown.show();
+
+      this.$dropdown.show()
     }
   }
 
   createItem(text) {
-    let item = $(`<div class="autocomplete__suggestions__item">${text}</div>`);
-    item.on('mouseover', this, function(event) {
-      event.data.isMouseOver = true;
-      return $(event.target).addClass('autocomplete__suggestions__item--selected');
-    }
-    );
-    item.on('mouseout', this, function(event) {
-      event.data.isMouseOver = false;
-      return $(event.target).removeClass('autocomplete__suggestions__item--selected');
-    }
-    );
-    item.on('click', this, event => event.data.selectItem(event)
-    );
+    const item = $(`<div class="autocomplete__suggestions__item">${text}</div>`)
+    item.on('mouseover', this, (event) => {
+      event.data.isMouseOver = true
+      $(event.target).addClass('autocomplete__suggestions__item--selected')
+    })
+    .on('mouseout', this, (event) => {
+      event.data.isMouseOver = false
+      $(event.target).removeClass('autocomplete__suggestions__item--selected')
+    })
+    .on('click', this, event => event.data.selectItem(event))
 
-    return item;
+    return item
   }
 
   selectItem(event) {
-    this.element.value = event.target.textContent;
-    return this.$dropdown.hide();
+    this.element.value = event.target.textContent
+    this.$dropdown.hide()
   }
 }
 
-
 // Plugin definition
-let Plugin = function(option) {
-  let params = arguments;
+const Plugin = (option) => this.each(() => {
+  const $this = $(this)
+  let data = $this.data('axa.autocomplete')
+  const options = $.extend({}, data, typeof option === 'object' && option)
 
-  return this.each(function() {
-    let options = $.extend({}, data, typeof option === 'object' && option);
-    let $this = $(this);
-    var data = $this.data('axa.autocomplete');
+  if (!data) {
+    data = new Autocomplete(this, options)
+    return $this.data('axa.autocomplete', data)
+  }
 
-    if (!data) {
-      data = new Autocomplete(this, options);
-      return $this.data('axa.autocomplete', data);
-    }
-  });
-};
+  return data
+})
 
 // Plugin registration
-$.fn.autocomplete = Plugin;
-$.fn.autocomplete.Constructor = Autocomplete;
+$.fn.autocomplete = Plugin
+$.fn.autocomplete.Constructor = Autocomplete
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-autocomplete]').each(function() {
-    let $autocomplete = $(this);
-    return Plugin.call($autocomplete);
+  $('[data-autocomplete]').each(() => {
+    const $autocomplete = $(this)
+    Plugin.call($autocomplete)
   })
-
-);
+)
 
 //! Copyright AXA Versicherungen AG 2015
