@@ -2,9 +2,9 @@ $ = require 'jquery'
 
 # Public class definition
 class Affix
-  @VERSION = '1.0.0'
+  @VERSION: '1.0.0'
 
-  @RESET = 'is-affixed is-affixed-top is-affixed-bottom'
+  @RESET: 'is-affixed is-affixed-top is-affixed-bottom'
 
   @DEFAULTS:
     offset: 0,
@@ -114,8 +114,8 @@ Plugin = (option) ->
     data = $this.data('axa.affix')
     options = typeof option == 'object' && option
 
-    $this.data('axa.affix', (data = new Affix(this, options))) if !data
-    data[option]() if typeof option == 'string'
+    ($this.data('axa.affix', (data = new Affix(this, options))) if !data)
+    (data[option]() if typeof option == 'string')
 
 # Plugin registration
 $.fn.affix = Plugin
