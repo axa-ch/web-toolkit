@@ -1,213 +1,196 @@
-import $ from 'jquery';
-import lunr from 'lunr';
+/* global window */
 
-let KEY_ENTER = 13;
-let KEY_UP = 38;
-let KEY_DOWN = 40;
+import $ from 'jquery'
+import lunr from 'lunr'
+
+const KEY_ENTER = 13
+const KEY_UP = 38
+const KEY_DOWN = 40
 
 class Search {
   constructor(input) {
-
     // defaults
-    this.initialized = false;
-    this.error = false;
+    this.initialized = false
+    this.error = false
 
     // get the target node
-    this.$input = $(input);
+    this.$input = $(input)
 
     // create the autocomplete suggestions box
-    this.$suggestions = $('<div class="header-search__suggestions autocomplete__suggestions"></div>');
+    this.$suggestions = $('<div class="header-search__suggestions autocomplete__suggestions"></div>')
 
-    this.$input.after(this.$suggestions);
+    this.$input.after(this.$suggestions)
 
     // get config options
-    this.baseUrl = this.$input.data('search-base-url');
+    this.baseUrl = this.$input.data('search-base-url')
 
     if (this.baseUrl === '') {
-      this.baseUrl = './';
+      this.baseUrl = './'
     }
 
     if (this.baseUrl.indexOf('/', this.baseUrl.length - 1) === -1) {
-      this.baseUrl += '/';
+      this.baseUrl += '/'
     }
 
     // load the search data / index
-    this.searchData = getSearchData(this.$input.data('search-index-data'));
+    this.searchData = getSearchData(this.$input.data('search-index-data'))
 
-    this.searchData.done(this.initIndex.bind(this));
+    this.searchData.done(this.initIndex.bind(this))
 
-    this.searchData.fail(this.fail.bind(this));
+    this.searchData.fail(this.fail.bind(this))
 
     // register keyboard events
     this.$input.on('keyup', e => {
-      let key = e.which;
+      const key = e.which
 
       switch (key) {
         case KEY_ENTER:
-          this.openSelected();
-          return e.preventDefault();
+          this.openSelected()
+          return e.preventDefault()
         case KEY_DOWN:
-          this.selectNext();
-          return e.preventDefault();
+          this.selectNext()
+          return e.preventDefault()
         case KEY_UP:
-          this.selectPrevious();
-          return e.preventDefault();
-        default: return this.updateDisplay();
+          this.selectPrevious()
+          return e.preventDefault()
+        default:
+          return this.updateDisplay()
       }
-    }
-    );
+    })
 
     // register focus / blur
     this.$input.on('focus blur', () => {
-      return this.updateDisplay();
-    }
-    );
+      this.updateDisplay()
+    })
   }
 
   openSelected() {
-    let $current = $(this.$suggestions.children('.autocomplete__suggestions__item--selected')[0]);
+    const $current = $(this.$suggestions.children('.autocomplete__suggestions__item--selected')[0])
 
-    return $current.click();
+    return $current.click()
   }
 
   selectNext() {
-    let $current = $(this.$suggestions.children('.autocomplete__suggestions__item--selected')[0]);
+    const $current = $(this.$suggestions.children('.autocomplete__suggestions__item--selected')[0])
 
-    let $next = $current.next();
+    const $next = $current.next()
 
     if (($next != null) && $next.length > 0) {
-      $current.removeClass('autocomplete__suggestions__item--selected');
-      return $next.addClass('autocomplete__suggestions__item--selected');
+      $current.removeClass('autocomplete__suggestions__item--selected')
+      $next.addClass('autocomplete__suggestions__item--selected')
     }
   }
 
   selectPrevious() {
-    let $current = $(this.$suggestions.children('.autocomplete__suggestions__item--selected')[0]);
+    const $current = $(this.$suggestions.children('.autocomplete__suggestions__item--selected')[0])
 
-    let $prev = $current.prev();
+    const $prev = $current.prev()
 
     if (($prev != null) && $prev.length > 0) {
-      $current.removeClass('autocomplete__suggestions__item--selected');
-      return $prev.addClass('autocomplete__suggestions__item--selected');
+      $current.removeClass('autocomplete__suggestions__item--selected')
+      $prev.addClass('autocomplete__suggestions__item--selected')
     }
   }
 
-  fail(jqXHR, textStatus, errorThrown) {
-
-    this.error = true;
+  fail() {
+    this.error = true
 
     // in case the target node is already focus'ed
-    return this.updateDisplay();
+    this.updateDisplay()
   }
 
-  initIndex(data, textStatus, jqXHR) {
-    this.searchData = data;
-    this.lunrIdx = lunr.Index.load(this.searchData.lunr);
-    this.lunrIdx.pipeline.remove(lunr.stopWordFilter);
-    this.initialized = true;
+  initIndex(data) {
+    this.searchData = data
+    this.lunrIdx = lunr.Index.load(this.searchData.lunr)
+    this.lunrIdx.pipeline.remove(lunr.stopWordFilter)
+    this.initialized = true
 
     // in case the target node is already focus'ed
-    return this.updateDisplay();
+    this.updateDisplay()
   }
 
   updateDisplay() {
-
     if (this.$input.is(':focus')) {
-
       if (this.error) {
-        return this.displayError();
+        this.displayError()
       } else {
         if (!this.initialized) {
-          return this.displayLoading();
+          this.displayLoading()
         } else {
-          return this.displayResult();
+          this.displayResult()
         }
       }
-
-
     } else {
-
-      return this.hideDisplay();
+      this.hideDisplay()
     }
   }
 
   hideDisplay() {
-    return this.$suggestions.empty();
+    this.$suggestions.empty()
   }
 
   displayError() {
+    const $error = $('<div class="docs-search__error" >Fehler</div>')
 
-    let $error = $('<div class="docs-search__error" >Fehler</div>');
-
-    this.$suggestions.empty();
-
-    return this.$suggestions.append($error);
+    this.$suggestions.empty()
+    this.$suggestions.append($error)
   }
 
   displayLoading() {
+    const $loading = $('<div class="docs-search__loading" >Loading</div>')
 
-    let $loading = $('<div class="docs-search__loading" >Loading</div>');
-
-    this.$suggestions.empty();
-
-    return this.$suggestions.append($loading);
+    this.$suggestions.empty()
+    this.$suggestions.append($loading)
   }
 
   displayResult() {
-
-    let results = [];
-
-    let term = this.$input.val().trim();
+    let results = []
+    const term = this.$input.val().trim()
 
     if (term !== '') {
-      let res = this.lunrIdx.search(term);
+      const res = this.lunrIdx.search(term)
+      const iterable = res.slice(0, 5)
 
-      let iterable = res.slice(0, 5);
-      for (let i = 0; i < iterable.length; i++) {
+      results = iterable.map((result) => {
+        const data = this.searchData.pages[result.ref]
+        const $res = $('<div class="autocomplete__suggestions__item"></div>')
 
-        let result = iterable[i];
-        results.push((() => {
-          let data = this.searchData.pages[result.ref];
-          let $res = $('<div class="autocomplete__suggestions__item"></div>');
-          $res.text(data.title);
-          $res.on('click', () => {
-            // TODO: base-url
-            return window.location.href = this.baseUrl + data.link;
-          }
-          );
+        $res.text(data.title)
+        $res.on('click', () => {
+          // @TODO: base-url
+          window.location.href = this.baseUrl + data.link
+        })
 
-          let $tags = $('<div class="docs-search__tags" ></div>');
-          $tags.text(data.tags);
-          return $res.append($tags);
-        }
-        )()
-        );
-      }
+        const $tags = $('<div class="docs-search__tags" ></div>')
+        $tags.text(data.tags)
+        return $res.append($tags)
+      })
 
-      let first = results[0];
+      const first = results[0]
 
       if (first != null) {
-        first.addClass('autocomplete__suggestions__item--selected');
+        first.addClass('autocomplete__suggestions__item--selected')
       }
     }
 
-    this.$suggestions.empty();
+    this.$suggestions.empty()
 
-    return this.$suggestions.append(results);
+    return this.$suggestions.append(results)
   }
 }
 
-let searchData = [];
-var getSearchData = function(searchDataUrl) {
+const searchData = []
+
+function getSearchData(searchDataUrl) {
   if (searchData[searchDataUrl] == null) {
-    searchData[searchDataUrl] = $.get(searchDataUrl);
+    searchData[searchDataUrl] = $.get(searchDataUrl)
   }
 
-  return searchData[searchDataUrl];
-};
+  return searchData[searchDataUrl]
+}
 
 $(() =>
-  $("[data-search]").each((i, el) => new Search(el))
-);
+  $('[data-search]').each((i, el) => new Search(el))
+)
 
 //! Copyright AXA Versicherungen AG 2015
