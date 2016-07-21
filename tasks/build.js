@@ -1,4 +1,4 @@
-import runSequence from 'run-sequence';
+import runSequence from 'run-sequence'
 
 export default cb =>
   // TODO: parellel (without docs)?
@@ -14,6 +14,5 @@ export default cb =>
     'docs',
     cb
   )
-;
 
 //! Copyright AXA Versicherungen AG 2015
