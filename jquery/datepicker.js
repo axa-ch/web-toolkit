@@ -271,6 +271,8 @@ const Plugin = (options) => {
     let data = $this.data('axa.datepicker')
 
     if (!data) {
+      let moment
+
       if (opts.moment != null) {
         ({ moment } = opts)
       } else if (window.moment != null) {
