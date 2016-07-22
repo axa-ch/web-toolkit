@@ -6,7 +6,7 @@ import sourcemaps from 'gulp-sourcemaps'
 
 import handleError from '../lib/handle-error'
 
-export default function() {
+export default function () {
   const coffey = gulp.src('jquery/*.coffee')
     .pipe(sourcemaps.init())
     .pipe(coffee({ bare: true }))
