@@ -17,7 +17,7 @@ class IFrameResizer {
   }
 }
 
-const Plugin = (option) => {
+function Plugin(option) {
   const $el = $(this)
   let data = $el.data('axa.iframe-resizer')
   const options = typeof option === 'object' && option
@@ -25,10 +25,8 @@ const Plugin = (option) => {
   // there's no instance yet
   if (!data) {
     data = new IFrameResizer(this, options)
-    return $el.data('axa.iframe-resizer', data)
+    $el.data('axa.iframe-resizer', data)
   }
-
-  return data
 }
 
 $(() =>

@@ -72,21 +72,23 @@ class Collapse {
   }
 }
 
-const Plugin = (options) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.collapse')
+function Plugin(options) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.collapse')
 
-  if (!data) {
-    data = new Collapse(this, options)
-    $this.data('axa.collapse', data)
-  }
-})
+    if (!data) {
+      data = new Collapse(this, options)
+      $this.data('axa.collapse', data)
+    }
+  })
+}
 
 $.fn.collapse = Plugin
 $.fn.collapse.Constructor = Collapse
 
 $(window).on('load', () => {
-  $('[data-collapse]').each(() => {
+  $('[data-collapse]').each(function () {
     const $collapse = $(this)
     const data = $collapse.data()
     Plugin.call($collapse, data)

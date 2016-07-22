@@ -56,7 +56,9 @@ const octodex = [
 const getRandomOctocat = () => octodex[Math.floor(Math.random() * (octodex.length - 1))]
 
 $(document).ready(() =>
-  $('[data-octocat]').each((index, element) => element.src = getRandomOctocat())
+  $('[data-octocat]').each(function () {
+    this.src = getRandomOctocat()
+  })
 )
 
 //! Copyright AXA Versicherungen AG 2015

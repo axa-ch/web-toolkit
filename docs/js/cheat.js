@@ -38,7 +38,7 @@ $.fn.cheat = Plugin
 $.fn.cheat.Constructor = Cheat
 
 $(() => {
-  $('[data-cheat]').each(() => {
+  $('[data-cheat]').each(function () {
     const $element = $(this)
     const options = $element.data()
 

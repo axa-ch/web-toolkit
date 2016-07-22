@@ -44,10 +44,8 @@ class Sticky {
 
 }
 
-const Plugin = function (options) {
-  const params = arguments
-
-  return this.each(function () {
+function Plugin(options) {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.sticky')
 
@@ -61,7 +59,7 @@ const Plugin = function (options) {
 $.fn.sticky = Plugin
 $.fn.sticky.Constructor = Sticky
 
-$(function () {
+$(() => {
   $('[data-sticky]').each(function () {
     const $sticky = $(this)
     const data = $sticky.data()
