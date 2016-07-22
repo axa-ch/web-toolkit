@@ -44,7 +44,7 @@ class Site {
 }
 
 function Plugin(method, ...args) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.site')
 
@@ -63,7 +63,7 @@ $.fn.site = Plugin
 $.fn.site.Constructor = Site
 
 $(() => {
-  $('[data-site]').each(() => {
+  $('[data-site]').each(function () {
     const $site = $(this)
     Plugin.call($site)
   })
