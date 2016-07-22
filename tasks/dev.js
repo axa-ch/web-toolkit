@@ -5,7 +5,7 @@ import webserver from 'gulp-webserver'
 
 import errorify from '../lib/errorify'
 
-export default [['build'], function (cb) {
+export default [['build'], (cb) => {
   gulp.src(['dist/docs'])
     .pipe(webserver({
       host: '0.0.0.0',
@@ -35,14 +35,14 @@ export default [['build'], function (cb) {
 
   watch([
     './modernizr.json',
-  ], function () {
+  ], () => {
     gulp.start('modernizr', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts')
   })
   .on('error', err => errorify(err.message, 'modernizr'))
 
   watch([
     './docs/js/**',
-  ], function () {
+  ], () => {
     gulp.start('docs-scripts')
   })
   .on('error', err => errorify(err.message, 'docs-scripts'))
