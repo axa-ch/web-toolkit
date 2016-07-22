@@ -26,22 +26,20 @@ class Dropdown {
   }
 
   handleKeyDown(e) {
-    if (e.which == 32) {
+    if (e.which === 32) {
       this.$select.focus()
     }
   }
 
   setLabelText() {
-    let value = this.$select.find('option:selected').text()
+    const value = this.$select.find('option:selected').text()
     this.$text.text(value)
   }
 }
 
 function Plugin() {
-  let params = arguments
-
-  return this.each(function () {
-    let $this = $(this)
+  this.each(function () {
+    const $this = $(this)
     let data = $this.data('axa.dropdown')
 
     if (!data) {
@@ -54,9 +52,9 @@ function Plugin() {
 $.fn.dropdown = Plugin
 $.fn.dropdown.Constructor = Dropdown
 
-$(function () {
+$(() => {
   $('[data-dropdown]').each(function () {
-    let $dropdown = $(this)
+    const $dropdown = $(this)
     Plugin.call($dropdown)
   })
 })

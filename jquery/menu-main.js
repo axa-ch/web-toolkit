@@ -11,20 +11,19 @@ class MainMenu {
   }
 
   init() {
-    let currentlyOpen = Bacon.$.asEventStream.call(this.$items, 'mouseenter')
+    const currentlyOpen = Bacon.$.asEventStream.call(this.$items, 'mouseenter')
       .merge(Bacon.$.asEventStream.call(this.$items, 'mouseleave'))
       .throttle(100)
-      .map((e) => {
-        return {
-          type: e.type,
-          $e: $(e.currentTarget)
-        }
-      })
+      .map((e) => ({
+        type: e.type,
+        $e: $(e.currentTarget),
+      }))
       .scan(null, (open, event) => {
-        if (event.type == 'mouseenter' || event.type == 'mouseover')
+        if (event.type === 'mouseenter' || event.type === 'mouseover') {
           return event.$e
-        if (event.type == 'mouseleave')
-          return null
+        }
+
+        return null
       })
 
     currentlyOpen.onValue((open) => {
@@ -41,8 +40,8 @@ class MainMenu {
     }
 
     this.$items.each((i, e) => {
-      let $e = $(e)
-      let toggleClass = $e.is($item)
+      const $e = $(e)
+      const toggleClass = $e.is($item)
 
       $e.find('[data-panel]').toggleClass('is-open', toggleClass)
     })
@@ -50,10 +49,8 @@ class MainMenu {
 }
 
 function Plugin() {
-  let params = arguments
-
-  return this.each(function () {
-    let $this = $(this)
+  this.each(function () {
+    const $this = $(this)
     let data = $this.data('aem.menu')
 
     if (!data) {
@@ -66,9 +63,9 @@ function Plugin() {
 $.fn.mainMenu = Plugin
 $.fn.mainMenu.Constructor = MainMenu
 
-$(function () {
+$(() => {
   $('[data-menu="main"]').each(function () {
-    let $menu = $(this)
+    const $menu = $(this)
     Plugin.call($menu)
   })
 })

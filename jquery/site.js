@@ -43,11 +43,9 @@ class Site {
   }
 }
 
-function Plugin() {
-  let params = arguments
-
-  return this.each(function () {
-    let $this = $(this)
+function Plugin(method, ...args) {
+  this.each(function () {
+    const $this = $(this)
     let data = $this.data('axa.site')
 
     if (!data) {
@@ -55,9 +53,8 @@ function Plugin() {
       $this.data('axa.site', data)
     }
 
-    let method = params[0]
     if (typeof(method) === 'string') {
-      data[method](...params.slice(1))
+      data[method](...args)
     }
   })
 }
@@ -65,9 +62,9 @@ function Plugin() {
 $.fn.site = Plugin
 $.fn.site.Constructor = Site
 
-$(function () {
+$(() => {
   $('[data-site]').each(function () {
-    let $site = $(this)
+    const $site = $(this)
     Plugin.call($site)
   })
 })

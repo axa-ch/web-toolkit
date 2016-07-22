@@ -1,25 +1,24 @@
-require('svg4everybody')
+import 'svg4everybody'
 
-require('./affix')
-require('./autocomplete')
-require('./autogrow')
-require('./checkbox')
-require('./checkbox-group')
-require('./datepicker')
-require('./datepicker-birthday')
-require('./dropdown')
-require('./dropzone')
-require('./ie9-spinner')
-require('./info')
-require('./menu-collapsing')
-require('./menu-main')
-require('./menu-sliding')
-require('./modal')
-require('./notification')
-require('./popover')
-require('./progress-bar')
-require('./segmented-control')
-require('./site')
-require('./summary')
+import './affix'
+import './autocomplete'
+import './autogrow'
+import './checkbox'
+import './checkbox-group'
+import './datepicker'
+import './datepicker-birthday'
+import './dropdown'
+import './dropzone'
+import './ie9-spinner'
+import './info'
+import './menu-collapsing'
+import './menu-main'
+import './menu-sliding'
+import './modal'
+import './notification'
+import './popover'
+import './progress-bar'
+import './segmented-control'
+import './site'
 
 export default {}

@@ -1,14 +1,13 @@
 import $ from 'jquery'
 
 class CheckboxGroup {
-
   constructor(element, options) {
     this.$element = $(element)
 
     this.defaults = {
-      'minLength': 5,
-      'preferedColumnLength': 5,
-      'maxColumnCount': 3
+      minLength: 5,
+      preferedColumnLength: 5,
+      maxColumnCount: 3,
     }
 
     this.options = $.extend({}, this.defaults, options)
@@ -17,25 +16,19 @@ class CheckboxGroup {
   }
 
   init() {
+    const items = this.$element.children()
+    const length = items.length
+    let $container
+    let $row
+    let columnCnt
+    let maxItemsPerColumn
+    let i
+    let j
 
-    var   items,
-          length,
-          $container,
-          $row,
-          columnCnt,
-          maxItemsPerColumn,
-          i,
-          j;
-
-
-    items = this.$element.children()
-    length = items.length
-    
     // Only add columns if there are enough items:
-    if (length > this.options.minLength){
-      
+    if (length > this.options.minLength) {
       this.$element.html('')
-      
+
       $container = $('<div />')
         .addClass('container')
         .appendTo(this.$element)
@@ -45,33 +38,33 @@ class CheckboxGroup {
         .appendTo($container)
 
       columnCnt = Math.ceil(length / this.options.preferedColumnLength)
-      if (columnCnt > this.options.maxColumnCount) columnCnt = this.options.maxColumnCount
+
+      if (columnCnt > this.options.maxColumnCount) {
+        columnCnt = this.options.maxColumnCount
+      }
 
       maxItemsPerColumn = Math.ceil(length / columnCnt)
 
-      for (i=1; i<=columnCnt; i++){
-        
-        let $column = $('<div />')
-          .addClass('column column--12' + ' column--md-' + (12 / 2) + ' column--lg-' + (12 / columnCnt))
-          .css({'margin-bottom': '16px'})
+      for (i = 1; i <= columnCnt; i++) {
+        const $column = $('<div />')
+          .addClass(`column column--12 column--md-6 column--lg-${(12 / columnCnt)}`)
+          .css({ 'margin-bottom': '16px' })
           .appendTo($row)
 
-        for (j=(i-1)*maxItemsPerColumn; j<=i*maxItemsPerColumn; j++){
-          if (typeof items[j] !== 'undefined') $(items[j]).appendTo($column)
+        for (j = (i - 1) * maxItemsPerColumn; j <= i * maxItemsPerColumn; j++) {
+          if (typeof items[j] !== 'undefined') {
+            $(items[j]).appendTo($column)
+          }
         }
-
       }
-
     }
   }
 
 }
 
-function Plugin() {
-  let params = arguments
-
-  return this.each(function () {
-    let $this = $(this)
+function Plugin(method, ...args) {
+  this.each(function () {
+    const $this = $(this)
     let data = $this.data('axa.checkbox-group')
 
     if (!data) {
@@ -79,9 +72,8 @@ function Plugin() {
       $this.data('axa.checkbox-group', data)
     }
 
-    let method = params[0]
     if (typeof(method) === 'string') {
-      data[method](...params.slice(1))
+      data[method](args)
     }
   })
 }
@@ -89,10 +81,10 @@ function Plugin() {
 $.fn.checkboxGroup = Plugin
 $.fn.checkboxGroup.Constructor = CheckboxGroup
 
-$(function () {
+$(() => {
   $('[data-checkbox-group]').each(function () {
-    let $checkboxGroup = $(this)
-    let data = $checkboxGroup.data()
+    const $checkboxGroup = $(this)
+    const data = $checkboxGroup.data()
     Plugin.call($checkboxGroup, data)
   })
 })

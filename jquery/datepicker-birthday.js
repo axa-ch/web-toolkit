@@ -2,13 +2,12 @@ import $ from 'jquery'
 
 class BirthdayDatepicker {
   constructor(element, options) {
-
     this.$element = $(element)
 
     this.defaults = {
       maxAge: 120,
-      minAge: 18
-    };
+      minAge: 18,
+    }
 
     this.$day = $(element).find('.birthday--day select')
     this.$month = $(element).find('.birthday--month select')
@@ -25,28 +24,25 @@ class BirthdayDatepicker {
   }
 
   init() {
-
     this.generateOptions()
 
-    this.$day.on('change', () => this.handleChange('day') )
-    this.$month.on('change', () => this.handleChange('month') )
-    this.$year.on('change', () => this.handleChange('year') )
-
+    this.$day.on('change', () => this.handleChange('day'))
+    this.$month.on('change', () => this.handleChange('month'))
+    this.$year.on('change', () => this.handleChange('year'))
   }
 
   generateOptions() {
-
     // Days:
     for (let x = 1; x <= 31; x++) {
-      let $option = $('<option />').text(x).appendTo(this.$day)
+      $('<option />').text(x).appendTo(this.$day)
     }
 
     // Years:
     const currentYear = new Date().getFullYear()
-    for (let x = (currentYear - this.options.minAge); x >= (currentYear - this.options.minAge - this.options.maxAge); x--) {
-      let $option = $('<option />').text(x).appendTo(this.$year)
-    }
 
+    for (let x = (currentYear - this.options.minAge); x >= (currentYear - this.options.minAge - this.options.maxAge); x--) {
+      $('<option />').text(x).appendTo(this.$year)
+    }
   }
 
   daysInMonth(month, year) {
@@ -54,54 +50,44 @@ class BirthdayDatepicker {
   }
 
   handleChange(type) {
-
     this.day = this.$day.val()
     this.month = this.$month.val()
     this.year = this.$year.val()
 
-    if (this.day !== '' && this.month !== '' && this.year !== ''){
+    if (this.day !== '' && this.month !== '' && this.year !== '') {
       this.$input.val(`${this.year}-${this.addLeadingZero(this.month)}-${this.addLeadingZero(this.day)}`)
     }
 
-    if ((type == 'month' || type == 'year') && this.month !== ''){
+    if ((type === 'month' || type === 'year') && this.month !== '') {
+      let days = 30
+      let x
 
-      let days = 30, x;
-
-      if (this.year !== ''){
-
+      if (this.year !== '') {
         days = this.daysInMonth(this.month, this.year)
-
       } else {
-
-        if (this.month % 2 == 1) days = 31
-        if (this.month == 2) days = 29
-
+        if (this.month % 2 === 1) days = 31
+        if (this.month === 2) days = 29
       }
 
       this.$day.html('')
 
       for (x = 1; x <= days; x++) {
-        let $option = $('<option />').text(x).appendTo(this.$day)
+        $('<option />').text(x).appendTo(this.$day)
       }
 
       this.$day.val(this.day)
-
     }
-
   }
 
   addLeadingZero(num) {
-    if (num < 10) num = '0' + num;
-    return num;
+    return (num < 10) ? `0${num}` : num
   }
 
 }
 
-let Plugin = function (options) {
-  let params = arguments
-
-  return this.each(function () {
-    let $this = $(this)
+function Plugin(options) {
+  this.each(function () {
+    const $this = $(this)
     let data = $this.data('axa.datepicker-birthday')
 
     if (!data) {
@@ -114,10 +100,10 @@ let Plugin = function (options) {
 $.fn.birthdayDatepicker = Plugin
 $.fn.birthdayDatepicker.Constructor = BirthdayDatepicker
 
-$(function () {
+$(() => {
   $('[data-datepicker-birthday]').each(function () {
-    let $birthdayDatepicker = $(this)
-    let data = $birthdayDatepicker.data()
+    const $birthdayDatepicker = $(this)
+    const data = $birthdayDatepicker.data()
     Plugin.call($birthdayDatepicker, data)
   })
 })
