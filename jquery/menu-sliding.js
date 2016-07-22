@@ -1,3 +1,5 @@
+/* global window */
+
 import $ from 'jquery'
 
 class SlidingMenu {
@@ -6,8 +8,8 @@ class SlidingMenu {
 
     this.init()
 
-    let $currentLevel = this.$element.find('.is-current')
-    let $uppermostLevel = this.$element.children('[data-level]')
+    const $currentLevel = this.$element.find('.is-current')
+    const $uppermostLevel = this.$element.children('[data-level]')
 
     this.level(($currentLevel.length > 0 ? $currentLevel : $uppermostLevel))
 
@@ -16,17 +18,17 @@ class SlidingMenu {
 
   init() {
     this.$element.on('click', '[data-back]', this, (event) => {
-      let link = $(event.target)
-      let currentLevel = link.closest('[data-level]')
-      let upperLevel = currentLevel.parent().closest('[data-level]')
+      const link = $(event.target)
+      const currentLevel = link.closest('[data-level]')
+      const upperLevel = currentLevel.parent().closest('[data-level]')
 
       event.preventDefault()
       event.data.level(upperLevel)
     })
 
     this.$element.on('click', '[data-link]', this, (event) => {
-      let link = $(event.target)
-      let subLevel = link.siblings('[data-level]')
+      const link = $(event.target)
+      const subLevel = link.siblings('[data-level]')
 
       if (subLevel.length > 0) {
         event.preventDefault()
@@ -35,19 +37,19 @@ class SlidingMenu {
     })
   }
 
-  onWindowResize(e) {
+  onWindowResize() {
     this.$element.css('height', this.level().outerHeight())
   }
 
   level(toSet) {
     if (!toSet) {
-      return this.$element.find('.is-current')
+      this.$element.find('.is-current')
     }
 
     this.$element.find('.is-current').removeClass('is-current')
     this.$element.find('[data-level]').css('left', '')
 
-    let lvl = this.$element.find(toSet)
+    const lvl = this.$element.find(toSet)
 
     if (!lvl) {
       throw new Error('Provided level not in menu!')
@@ -55,42 +57,36 @@ class SlidingMenu {
 
     this.$element.css('height', lvl.outerHeight())
 
-    let parentLevels = lvl.parentsUntil(this.$element, '[data-level]')
-    let parentLinks = lvl.parentsUntil(this.$element, '[data-link]')
+    const parentLevels = lvl.parentsUntil(this.$element, '[data-level]')
+    // const parentLinks = lvl.parentsUntil(this.$element, '[data-link]')
 
-    let left = -100 * parentLevels.length
+    const left = -100 * parentLevels.length
     this.$element.children('[data-level]').css('left', `${left}%`)
 
     lvl.addClass('is-current')
   }
 }
 
-function Plugin() {
-  let params = arguments
+const Plugin = (method, args) => this.each(function () {
+  const $this = $(this)
+  let data = $this.data('axa.menu')
 
-  return this.each(function () {
-    let $this = $(this)
-    let data = $this.data('axa.menu')
+  if (!data) {
+    data = new SlidingMenu(this)
+    $this.data('axa.menu', data)
+  }
 
-    if (!data) {
-      data = new SlidingMenu(this)
-      $this.data('axa.menu', data)
-    }
-
-    let method = params[0]
-    if (typeof(method) === 'string') {
-      let args = Array.prototype.slice.call(params, 1)
-      data[method](...args)
-    }
-  })
-}
+  if (typeof(method) === 'string') {
+    data[method](...args)
+  }
+})
 
 $.fn.slidingMenu = Plugin
 $.fn.slidingMenu.Constructor = SlidingMenu
 
-$(function () {
-  $('[data-menu="sliding"]').each(function () {
-    let $menu = $(this)
+$(() => {
+  $('[data-menu="sliding"]').each(() => {
+    const $menu = $(this)
     Plugin.call($menu)
   })
 })

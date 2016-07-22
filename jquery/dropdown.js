@@ -26,37 +26,33 @@ class Dropdown {
   }
 
   handleKeyDown(e) {
-    if (e.which == 32) {
+    if (e.which === 32) {
       this.$select.focus()
     }
   }
 
   setLabelText() {
-    let value = this.$select.find('option:selected').text()
+    const value = this.$select.find('option:selected').text()
     this.$text.text(value)
   }
 }
 
-function Plugin() {
-  let params = arguments
+const Plugin = () => this.each(function () {
+  const $this = $(this)
+  let data = $this.data('axa.dropdown')
 
-  return this.each(function () {
-    let $this = $(this)
-    let data = $this.data('axa.dropdown')
-
-    if (!data) {
-      data = new Dropdown(this)
-      $this.data('axa.dropdown', data)
-    }
-  })
-}
+  if (!data) {
+    data = new Dropdown(this)
+    $this.data('axa.dropdown', data)
+  }
+})
 
 $.fn.dropdown = Plugin
 $.fn.dropdown.Constructor = Dropdown
 
-$(function () {
-  $('[data-dropdown]').each(function () {
-    let $dropdown = $(this)
+$(() => {
+  $('[data-dropdown]').each(() => {
+    const $dropdown = $(this)
     Plugin.call($dropdown)
   })
 })
