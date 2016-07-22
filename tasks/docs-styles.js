@@ -1,10 +1,7 @@
-import gulp from 'gulp'
 import path from 'path'
-
 import styles from '../lib/styles'
 
 export default () =>
-
   styles(
     [
       './docs/less/docs.less',

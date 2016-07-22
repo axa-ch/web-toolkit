@@ -1,6 +1,5 @@
 import path from 'path'
 import marked from 'marked'
-import colors from 'colors'
 import gutil from 'gulp-util'
 import moment from 'moment'
 import _ from 'lodash'
@@ -188,10 +187,10 @@ export default function (cb) {
 
       return build()
     })
-  } else {
-    // Just build it w/o changelog
-    return build()
   }
+
+  // Just build it w/o changelog
+  return build()
 }
 
 //! Copyright AXA Versicherungen AG 2015
