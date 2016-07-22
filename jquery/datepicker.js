@@ -14,8 +14,8 @@ class Emitter {
   on(eventName, cb) {
     return this.events[eventName].push(cb)
   }
-  emit(eventName) {
-    return this.events[eventName].map((fx, ...args) =>
+  emit(eventName, ...args) {
+    return this.events[eventName].map((fx) =>
       fx.apply(null, args))
   }
 }
@@ -240,10 +240,10 @@ class Datepicker {
         this.onChange()
       }
 
-      this.picker.on('select', (date => {
+      this.picker.on('select', date => {
         this.$input.val(date)
         this.$input.trigger('change')
-      }))
+      })
 
       this.$element.append(this.picker.getDOMNode())
     }
