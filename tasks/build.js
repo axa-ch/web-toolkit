@@ -1,7 +1,7 @@
 import runSequence from 'run-sequence'
 
 export default cb =>
-  // TODO: parellel (without docs)?
+  // TODO: parallel (without docs)?
   runSequence(
     'clean',
     'images',
