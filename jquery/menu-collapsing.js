@@ -56,7 +56,7 @@ class CollapsingMenu {
 
 // Plugin definition
 function Plugin(option, ...args) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.menu')
     const options = $.extend({}, CollapsingMenu.DEFAULTS, data, typeof option === 'object' && option)
@@ -80,7 +80,7 @@ $.fn.collapsingMenu.Constructor = CollapsingMenu
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-menu="collapsing"]').each(() => {
+  $('[data-menu="collapsing"]').each(function () {
     const $menu = $(this)
     const data = $menu.data()
 

@@ -38,7 +38,7 @@ class Dropdown {
 }
 
 function Plugin() {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.dropdown')
 
@@ -53,7 +53,7 @@ $.fn.dropdown = Plugin
 $.fn.dropdown.Constructor = Dropdown
 
 $(() => {
-  $('[data-dropdown]').each(() => {
+  $('[data-dropdown]').each(function () {
     const $dropdown = $(this)
     Plugin.call($dropdown)
   })

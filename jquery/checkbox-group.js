@@ -63,7 +63,7 @@ class CheckboxGroup {
 }
 
 function Plugin(method, ...args) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.checkbox-group')
 
@@ -82,7 +82,7 @@ $.fn.checkboxGroup = Plugin
 $.fn.checkboxGroup.Constructor = CheckboxGroup
 
 $(() => {
-  $('[data-checkbox-group]').each(() => {
+  $('[data-checkbox-group]').each(function () {
     const $checkboxGroup = $(this)
     const data = $checkboxGroup.data()
     Plugin.call($checkboxGroup, data)

@@ -148,7 +148,7 @@ class SegmentedControl {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.segmentedControl')
     const options = $.extend({}, SegmentedControl.DEFAULTS, data, typeof option === 'object' && option)
@@ -166,7 +166,7 @@ $.fn.segmentedControl.Constructor = SegmentedControl
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-segmented-control]').each(() => {
+  $('[data-segmented-control]').each(function () {
     const $segmentedControl = $(this)
     const data = $segmentedControl.data()
 

@@ -68,7 +68,7 @@ class SlidingMenu {
 }
 
 function Plugin(method, args) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.menu')
 
@@ -87,7 +87,7 @@ $.fn.slidingMenu = Plugin
 $.fn.slidingMenu.Constructor = SlidingMenu
 
 $(() => {
-  $('[data-menu="sliding"]').each(() => {
+  $('[data-menu="sliding"]').each(function () {
     const $menu = $(this)
     Plugin.call($menu)
   })

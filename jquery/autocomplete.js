@@ -72,7 +72,7 @@ class Autocomplete {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(() => {
+  this.each(function() {
     const $this = $(this)
     let data = $this.data('axa.autocomplete')
     const options = $.extend({}, data, typeof option === 'object' && option)
@@ -90,7 +90,7 @@ $.fn.autocomplete.Constructor = Autocomplete
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-autocomplete]').each(() => {
+  $('[data-autocomplete]').each(function() {
     const $autocomplete = $(this)
     Plugin.call($autocomplete)
   })

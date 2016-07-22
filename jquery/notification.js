@@ -75,7 +75,7 @@ class NotificationPane {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.notification')
 
@@ -101,7 +101,7 @@ $.fn.notification = Plugin
 $.fn.notification.Constructor = NotificationPane
 
 // DATA-API
-$(document).on('click.axa.notification.data-api', '[data-notification]', (e) => {
+$(document).on('click.axa.notification.data-api', '[data-notification]', function (e) {
   e.preventDefault()
 
   const $this = $(this)

@@ -71,7 +71,7 @@ class Autogrow {
 
 // Plugin definition
 function Plugin() {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.autogrow')
 
@@ -88,7 +88,7 @@ $.fn.autogrow.Constructor = Autogrow
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-autogrow="autogrow"]').each(() => {
+  $('[data-autogrow="autogrow"]').each(function () {
     const $autogrow = $(this)
     Plugin.call($autogrow)
   })

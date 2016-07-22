@@ -49,7 +49,7 @@ class MainMenu {
 }
 
 function Plugin() {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('aem.menu')
 
@@ -64,7 +64,7 @@ $.fn.mainMenu = Plugin
 $.fn.mainMenu.Constructor = MainMenu
 
 $(() => {
-  $('[data-menu="main"]').each(() => {
+  $('[data-menu="main"]').each(function () {
     const $menu = $(this)
     Plugin.call($menu)
   })

@@ -24,7 +24,7 @@ class ProgressBar {
 }
 
 function Plugin(method, ...args) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.progress-bar')
 
@@ -43,7 +43,7 @@ $.fn.progressBar = Plugin
 $.fn.progressBar.Constructor = ProgressBar
 
 $(() => {
-  $('[data-progress-bar]').each(() => {
+  $('[data-progress-bar]').each(function () {
     const $progressBar = $(this)
     const data = $progressBar.data()
     Plugin.call($progressBar, data)

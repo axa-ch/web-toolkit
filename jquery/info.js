@@ -25,7 +25,7 @@ class Info {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(() => {
+  this.each(function() {
     const $this = $(this)
     let data = $this.data('axa.info')
     const options = $.extend({}, data, typeof option === 'object' && option)
@@ -43,7 +43,7 @@ $.fn.info.Constructor = Info
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-info]').each(() => {
+  $('[data-info]').each(function () {
     const $info = $(this)
     Plugin.call($info)
   })

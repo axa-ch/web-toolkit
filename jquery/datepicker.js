@@ -266,7 +266,7 @@ class Datepicker {
 function Plugin(options) {
   const opts = $.extend({}, $.fn.datepicker.defaults, options)
 
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.datepicker')
 
@@ -296,7 +296,7 @@ $.fn.datepicker = Plugin
 $.fn.datepicker.Constructor = Datepicker
 
 // DATA-API
-$(document).on('click.axa.datepicker.data-api', '[data-datepicker]', (e) => {
+$(document).on('click.axa.datepicker.data-api', '[data-datepicker]', function (e) {
   e.preventDefault()
 
   const $target = $($(this).data('datepicker'))

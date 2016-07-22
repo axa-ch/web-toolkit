@@ -20,7 +20,7 @@ class Spinner {
 
 // Plugin definition
 function Plugin(option, ...args) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.spinner')
 
@@ -61,7 +61,7 @@ $(window).on('load', () => {
   }
 
   // animation property not supported, activate fallback on all spinners
-  $('[data-spinner="bouncy"]').each(() => {
+  $('[data-spinner="bouncy"]').each(function () {
     const $spinner = $(this)
     Plugin.call($spinner)
   })

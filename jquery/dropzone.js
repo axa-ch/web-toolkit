@@ -35,7 +35,7 @@ class Dropzone {
 
 // Plugin definition
 function Plugin() {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.dropzone')
 
@@ -52,7 +52,7 @@ $.fn.dropzone.Constructor = Dropzone
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-dropzone="dropzone"]').each(() => {
+  $('[data-dropzone="dropzone"]').each(function () {
     const $dropzone = $(this)
     Plugin.call($dropzone)
   })

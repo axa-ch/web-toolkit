@@ -78,7 +78,7 @@ class Checkbox {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.checkbox')
     const options = $.extend({}, Checkbox.DEFAULTS, data, typeof option === 'object' && option)
@@ -96,7 +96,7 @@ $.fn.checkbox.Constructor = Checkbox
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-checkbox]').each(() => {
+  $('[data-checkbox]').each(function () {
     const $checkbox = $(this)
     const data = $checkbox.data()
 

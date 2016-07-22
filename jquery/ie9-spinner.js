@@ -13,7 +13,7 @@ class IE9Spinner {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.ie9Spinner')
     const options = $.extend({}, data, typeof option === 'object' && option)
@@ -51,7 +51,7 @@ $(window).on('load', () => {
   }
 
   // animation property not supported, activate fallback on all spinners
-  $('[data-spinner]').each(() => {
+  $('[data-spinner]').each(function () {
     const $spinner = $(this)
     Plugin.call($spinner)
   })

@@ -86,7 +86,7 @@ class BirthdayDatepicker {
 }
 
 function Plugin(options) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.datepicker-birthday')
 
@@ -101,7 +101,7 @@ $.fn.birthdayDatepicker = Plugin
 $.fn.birthdayDatepicker.Constructor = BirthdayDatepicker
 
 $(() => {
-  $('[data-datepicker-birthday]').each(() => {
+  $('[data-datepicker-birthday]').each(function () {
     const $birthdayDatepicker = $(this)
     const data = $birthdayDatepicker.data()
     Plugin.call($birthdayDatepicker, data)

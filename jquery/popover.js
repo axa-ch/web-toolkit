@@ -96,7 +96,7 @@ class Popover {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.popover')
     const options = $.extend({}, data, typeof option === 'object' && option)
@@ -114,7 +114,7 @@ $.fn.popover.Constructor = Popover
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-popover]').each(() => {
+  $('[data-popover]').each(function () {
     const $popover = $(this)
     Plugin.call($popover)
   })

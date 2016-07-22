@@ -21,7 +21,7 @@ class Modal {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(() => {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.modal')
 
@@ -41,7 +41,7 @@ $.fn.modal = Plugin
 $.fn.modal.Constructor = Modal
 
 // DATA-API
-$(document).on('click.axa.modal.data-api', '[data-modal]', (e) => {
+$(document).on('click.axa.modal.data-api', '[data-modal]', function (e) {
   e.preventDefault()
 
   const $target = $($(e.currentTarget).data('modal'))

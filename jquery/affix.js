@@ -130,7 +130,7 @@ class Affix {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(() => {
+  this.each(function() {
     const $this = $(this)
     let data = $this.data('axa.affix')
     const options = typeof option === 'object'
@@ -152,7 +152,7 @@ $.fn.affix.Constructor = Affix
 
 // DATA-API
 $(window).on('load', () =>
-  $('[data-spy="affix"]').each(() => {
+  $('[data-spy="affix"]').each(function () {
     const $spy = $(this)
     const data = $spy.data()
 
