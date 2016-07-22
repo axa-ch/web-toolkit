@@ -1,6 +1,6 @@
 import runSequence from 'run-sequence'
 
-export default cb =>
+module.exports = cb =>
   // TODO: parallel (without docs)?
   runSequence(
     'clean',

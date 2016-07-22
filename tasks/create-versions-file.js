@@ -2,7 +2,7 @@ import git from 'gulp-git'
 import writeJSONFile from '../lib/writeJSONFile'
 import after from '../lib/after'
 
-export default function (cb) {
+module.exports = (cb) => {
   const data = {
     tag: null,
     hash: {

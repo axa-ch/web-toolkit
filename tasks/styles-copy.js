@@ -1,6 +1,6 @@
 import gulp from 'gulp'
 
-export default () =>
+module.exports = () =>
   gulp.src(['./less/**/*.less'], { base: './less' })
     .pipe(gulp.dest('./dist/less'))
 

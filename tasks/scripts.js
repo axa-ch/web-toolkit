@@ -1,6 +1,6 @@
 import runSequence from 'run-sequence'
 
-export default cb => runSequence(
+module.exports = cb => runSequence(
   'scripts-transpile',
   'scripts-bundle',
   cb)

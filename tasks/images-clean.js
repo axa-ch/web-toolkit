@@ -1,5 +1,5 @@
 import del from 'del'
 
-export default cb => del(['./dist/images/**/*'], cb)
+module.exports = cb => del(['./dist/images/**/*'], cb)
 
 //! Copyright AXA Versicherungen AG 2015

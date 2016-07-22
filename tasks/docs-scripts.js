@@ -9,7 +9,7 @@ import buffer from 'vinyl-buffer'
 import source from 'vinyl-source-stream'
 import notifier from 'node-notifier'
 
-export default () =>
+module.exports = () =>
   browserify({
     debug: true,
     extensions: ['.js', '.coffee'],

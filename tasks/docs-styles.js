@@ -1,7 +1,7 @@
 import path from 'path'
 import styles from '../lib/styles'
 
-export default () =>
+module.exports = () =>
   styles(
     [
       './docs/less/docs.less',

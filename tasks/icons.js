@@ -2,8 +2,7 @@ import gulp from 'gulp'
 import svgmin from 'gulp-svgmin'
 import svgstore from 'gulp-svgstore'
 
-export default () =>
-
+module.exports = () =>
   gulp.src(['icons/**/*.svg'])
     .pipe(svgmin())
     .pipe(svgstore())

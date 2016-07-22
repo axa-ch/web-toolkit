@@ -9,7 +9,7 @@ import rename from 'gulp-rename'
 
 import handleError from '../lib/handle-error'
 
-export default () =>
+module.exports = () =>
   browserify()
     .transform(shim)
     .add('js/index.js')

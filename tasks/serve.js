@@ -1,7 +1,7 @@
 import gulp from 'gulp'
 import webserver from 'gulp-webserver'
 
-export default () => gulp.src(['dist/docs'])
+module.exports = () => gulp.src(['dist/docs'])
   .pipe(webserver({
     host: '0.0.0.0',
     port: process.env.PORT || 3000,

@@ -1,7 +1,6 @@
 import gulp from 'gulp'
 
-export default () =>
-
+module.exports = () =>
   gulp.src(['icons/**/*.svg'])
     .pipe(gulp.dest('./dist/icons/'))
 

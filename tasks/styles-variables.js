@@ -4,7 +4,7 @@ import rename from 'gulp-rename'
 
 import readJSONFile from '../lib/readJSONFile'
 
-export default () =>
+module.exports = () =>
   gulp.src(['./less/style/variables.less.lodash'], { base: './less/' })
     .pipe(template({ colors: readJSONFile('./less/colors.json') }))
     .pipe(rename({ extname: '' }))

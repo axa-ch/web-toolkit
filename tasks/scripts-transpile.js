@@ -4,7 +4,7 @@ import sourcemaps from 'gulp-sourcemaps'
 
 import handleError from '../lib/handle-error'
 
-export default function () {
+module.exports = () => {
   return gulp.src('jquery/*.js')
     .pipe(sourcemaps.init())
     .pipe(babel())

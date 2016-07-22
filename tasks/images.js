@@ -1,6 +1,6 @@
 import gulp from 'gulp'
 
-export default [
+module.exports = [
   [
     'images-clean',
   ],

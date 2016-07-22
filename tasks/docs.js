@@ -1,6 +1,6 @@
 import runSequence from 'run-sequence'
 
-export default cb =>
+module.exports = cb =>
   runSequence([
     'docs-pages',
     'docs-scripts',

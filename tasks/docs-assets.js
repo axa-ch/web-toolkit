@@ -1,6 +1,6 @@
 import gulp from 'gulp'
 
-export default () =>
+module.exports = () =>
   gulp.src([
     './node_modules/zeroclipboard/dist/ZeroClipboard.swf',
     // use an [i] to set the gulp base path to ./images/

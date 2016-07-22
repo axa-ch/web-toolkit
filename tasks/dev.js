@@ -5,7 +5,7 @@ import webserver from 'gulp-webserver'
 
 import errorify from '../lib/errorify'
 
-export default [['build'], () => {
+module.exports = [['build'], () => {
   gulp.src(['dist/docs'])
     .pipe(webserver({
       host: '0.0.0.0',

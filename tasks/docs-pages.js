@@ -31,7 +31,7 @@ import loadChangelog from '../lib/load-changelog'
 import navigation from '../lib/metalsmith-navigation'
 import relate from '../lib/metalsmith-relate'
 
-export default function (cb) {
+module.exports = (cb) => {
   const cwd = path.join(__dirname, '../')
   const config = readJSONFile(path.join(cwd, './docs/config.json'))
   const metalsmithSource = './docs/page'

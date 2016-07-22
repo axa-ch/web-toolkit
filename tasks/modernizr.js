@@ -4,7 +4,7 @@ import modernizr from 'gulp-modernizr'
 import errorify from '../lib/errorify'
 import readJson from '../lib/readJSONFile'
 
-export default function () {
+module.exports = () => {
   const settings = readJson('modernizr.json')
   return gulp.src('jquery/*.coffee')
     .pipe(modernizr('modernizr.js', settings))
