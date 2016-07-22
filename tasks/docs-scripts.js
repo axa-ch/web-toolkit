@@ -1,7 +1,6 @@
 import babelify from 'babelify'
 import browserify from 'browserify'
 import shim from 'browserify-shim'
-import coffeeify from 'coffeeify'
 import gulp from 'gulp'
 import sourcemaps from 'gulp-sourcemaps'
 import gutil from 'gulp-util'
@@ -14,10 +13,7 @@ module.exports = () =>
     debug: true,
     extensions: ['.js', '.coffee'],
   })
-  .transform(babelify, {
-    presets: ['es2015'],
-  })
-  .transform(coffeeify)
+  .transform(babelify)
   .transform(shim)
   .add('docs/js/index.js')
   .bundle()
