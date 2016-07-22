@@ -1,3 +1,5 @@
+/* global window */
+
 import $ from 'jquery'
 import Bacon from 'baconjs'
 
@@ -13,16 +15,16 @@ class Collapse {
   }
 
   init() {
-    let clicks = Bacon.$.asEventStream.call(this.$triggers, 'click')
+    const clicks = Bacon.$.asEventStream.call(this.$triggers, 'click')
       .doAction('.preventDefault')
       .map((event) => this.mapEventToCommand(event))
 
     clicks.onValue((event) => this.toggleTrigger(event))
     clicks.onValue((event) => this.togglePanel(event))
 
-    for (let o of this.options.open) {
-      let e = {
-        target: o
+    for (const o of this.options.open) {
+      const e = {
+        target: o,
       }
 
       this.toggleTrigger(e)
@@ -31,10 +33,10 @@ class Collapse {
   }
 
   mapEventToCommand(event) {
-    let $e = $(event.target)
+    const $e = $(event.target)
 
     return {
-      target: $e.data('trigger')
+      target: $e.data('trigger'),
     }
   }
 
@@ -51,9 +53,7 @@ class Collapse {
   }
 
   toggleTrigger(event) {
-    let triggers = this.$triggers.filter((index, e) => {
-      return $(e).data('trigger') === event.target
-    })
+    const triggers = this.$triggers.filter((index, e) => $(e).data('trigger') === event.target)
 
     triggers.each((i, e) => {
       $(e).toggleClass('is-active')
@@ -61,40 +61,34 @@ class Collapse {
   }
 
   togglePanel(event) {
-    let panel = this.$panels.filter((index, e) => {
-      return e.dataset.panel === event.target
-    })
-    let $panel = $(panel)
+    const panel = this.$panels.filter((index, e) => e.dataset.panel === event.target)
+    const $panel = $(panel)
+
     if (!$panel.hasClass('is-open')) {
       $panel.slideDown(this.options.speed).addClass('is-open')
-    }
-    else {
+    } else {
       $panel.slideUp(this.options.speed).removeClass('is-open')
     }
   }
 }
 
-let Plugin = function (options) {
-  let params = arguments
+const Plugin = (options) => this.each(() => {
+  const $this = $(this)
+  let data = $this.data('axa.collapse')
 
-  return this.each(function () {
-    let $this = $(this)
-    let data = $this.data('axa.collapse')
-
-    if (!data) {
-      data = new Collapse(this, options)
-      $this.data('axa.collapse', data)
-    }
-  })
-}
+  if (!data) {
+    data = new Collapse(this, options)
+    $this.data('axa.collapse', data)
+  }
+})
 
 $.fn.collapse = Plugin
 $.fn.collapse.Constructor = Collapse
 
-$(window).on('load', function () {
-  $('[data-collapse]').each(function () {
-    let $collapse = $(this)
-    let data = $collapse.data()
+$(window).on('load', () => {
+  $('[data-collapse]').each(() => {
+    const $collapse = $(this)
+    const data = $collapse.data()
     Plugin.call($collapse, data)
   })
 })
