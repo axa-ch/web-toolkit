@@ -19,7 +19,7 @@ class IFrameResizer {
 
 const Plugin = (option) => {
   const $el = $(this)
-  const data = $el.data('axa.iframe-resizer')
+  let data = $el.data('axa.iframe-resizer')
   const options = typeof option === 'object' && option
 
   // there's no instance yet
