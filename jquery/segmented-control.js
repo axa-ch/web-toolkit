@@ -16,7 +16,7 @@ class SegmentedControl {
     // TODO: Do not depend on css classes
     this.$radios = this.$element.find('.segmented-control__item__radio')
 
-    this.$radios.each(() => {
+    this.$radios.each(function () {
       const $radio = $(this)
       if (disabled) {
         $radio.prop('disabled', 'disabled')
@@ -130,7 +130,6 @@ class SegmentedControl {
       // no default
     }
   }
-
 
   setRadioState() {
     this.$radios.each((index, element) => {
