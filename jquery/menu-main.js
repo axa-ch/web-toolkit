@@ -48,7 +48,7 @@ class MainMenu {
   }
 }
 
-const Plugin = () => this.each(function () {
+const Plugin = () => this.each(() => {
   const $this = $(this)
   let data = $this.data('aem.menu')
 

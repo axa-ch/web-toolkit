@@ -37,7 +37,7 @@ class Dropdown {
   }
 }
 
-const Plugin = () => this.each(function () {
+const Plugin = () => this.each(() => {
   const $this = $(this)
   let data = $this.data('axa.dropdown')
 

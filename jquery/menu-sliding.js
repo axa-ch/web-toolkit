@@ -67,7 +67,7 @@ class SlidingMenu {
   }
 }
 
-const Plugin = (method, args) => this.each(function () {
+const Plugin = (method, args) => this.each(() => {
   const $this = $(this)
   let data = $this.data('axa.menu')
 

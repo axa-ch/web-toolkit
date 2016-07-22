@@ -42,7 +42,7 @@ class Autogrow {
         .replace(/&/g, '&amp')
         .replace(/\n$/, '<br/>&nbsp')
         .replace(/\n/g, '<br/>')
-        .replace(/\s{2,}/g, space => times('&nbsp', space.length - 1) + ' ')
+        .replace(/\s{2,}/g, space => `${(times('&nbsp', space.length - 1))} `)
 
       if ((event != null) && (event.data != null) && event.data.event === 'keydown' && event.keyCode === 13) {
         val += '<br />'
