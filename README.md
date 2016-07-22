@@ -102,7 +102,7 @@ we make use of many different technologies. It's great to have an understanding
 for what these do, when you decide to dive deeper into the code.
 
 * [LessCSS](http://lesscss.org) for mixins, variables and other fancy styling helpers
-* [CoffeeScript](http://coffeescript.org) for readable and extended scripts
+* [Babel](https://babeljs.io) for readable and extended scripts based on cutting edge standards (ES6, ES7)
 * [SVG](http://www.w3.org/TR/SVG2/) for colorful and sometimes animated icons
 * [Gulp](http://gulpjs.com) on which our whole build process is based
 * [Metalsmith](http://metalsmith.io) for our static site documentation
