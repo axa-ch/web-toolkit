@@ -43,7 +43,7 @@ class SlidingMenu {
 
   level(toSet) {
     if (!toSet) {
-      this.$element.find('.is-current')
+      return this.$element.find('.is-current')
     }
 
     this.$element.find('.is-current').removeClass('is-current')
@@ -63,7 +63,7 @@ class SlidingMenu {
     const left = -100 * parentLevels.length
     this.$element.children('[data-level]').css('left', `${left}%`)
 
-    lvl.addClass('is-current')
+    return lvl.addClass('is-current')
   }
 }
 
