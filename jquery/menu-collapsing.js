@@ -55,22 +55,24 @@ class CollapsingMenu {
 }
 
 // Plugin definition
-const Plugin = (option, ...args) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.menu')
-  const options = $.extend({}, CollapsingMenu.DEFAULTS, data, typeof option === 'object' && option)
+function Plugin(option, ...args) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.menu')
+    const options = $.extend({}, CollapsingMenu.DEFAULTS, data, typeof option === 'object' && option)
 
-  if (!data) {
-    data = new CollapsingMenu(this, options)
-    $this.data('axa.menu', data)
-  }
+    if (!data) {
+      data = new CollapsingMenu(this, options)
+      $this.data('axa.menu', data)
+    }
 
-  if (typeof option === 'string' && option === 'toggle') {
-    data.toggle(args[0])
-  }
+    if (typeof option === 'string' && option === 'toggle') {
+      data.toggle(args[0])
+    }
 
-  return data
-})
+    return data
+  })
+}
 
 // Plugin registration
 $.fn.collapsingMenu = Plugin
@@ -82,7 +84,7 @@ $(window).on('load', () =>
     const $menu = $(this)
     const data = $menu.data()
 
-    return Plugin.call($menu, data)
+    Plugin.call($menu, data)
   })
 )
 

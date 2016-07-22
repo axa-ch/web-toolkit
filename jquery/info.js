@@ -24,18 +24,18 @@ class Info {
 }
 
 // Plugin definition
-const Plugin = (option) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.info')
-  const options = $.extend({}, data, typeof option === 'object' && option)
+function Plugin(option) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.info')
+    const options = $.extend({}, data, typeof option === 'object' && option)
 
-  if (!data) {
-    data = new Info(this, options)
-    $this.data('axa.info', data)
-  }
-
-  return data
-})
+    if (!data) {
+      data = new Info(this, options)
+      $this.data('axa.info', data)
+    }
+  })
+}
 
 // Plugin registration
 $.fn.info = Plugin

@@ -34,17 +34,17 @@ class Dropzone {
 }
 
 // Plugin definition
-const Plugin = () => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.dropzone')
+function Plugin() {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.dropzone')
 
-  if (!data) {
-    data = new Dropzone(this)
-    $this.data('axa.dropzone', data)
-  }
-
-  return data
-})
+    if (!data) {
+      data = new Dropzone(this)
+      $this.data('axa.dropzone', data)
+    }
+  })
+}
 
 // Plugin registration
 $.fn.dropzone = Plugin

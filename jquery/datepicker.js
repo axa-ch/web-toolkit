@@ -263,10 +263,10 @@ class Datepicker {
 }
 
 // Plugin definition
-const Plugin = (options) => {
+function Plugin(options) {
   const opts = $.extend({}, $.fn.datepicker.defaults, options)
 
-  return this.each(() => {
+  this.each(() => {
     const $this = $(this)
     let data = $this.data('axa.datepicker')
 
@@ -286,10 +286,8 @@ const Plugin = (options) => {
     }
 
     if (opts.action != null) {
-      return data[opts.action]()
+      data[opts.action]()
     }
-
-    return data
   })
 }
 
@@ -311,7 +309,7 @@ $(document).on('click.axa.datepicker.data-api', '[data-datepicker]', (e) => {
 
   displayWeek = displayWeek && displayWeek !== 'false'
 
-  return Plugin.call($target, { input: $input, action: 'toggle', displayWeek, icons })
+  Plugin.call($target, { input: $input, action: 'toggle', displayWeek, icons })
 })
 
 //! Copyright AXA Versicherungen AG 2015

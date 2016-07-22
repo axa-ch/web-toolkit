@@ -74,27 +74,27 @@ class NotificationPane {
 }
 
 // Plugin definition
-const Plugin = (option) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.notification')
+function Plugin(option) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.notification')
 
-  if (!data) {
-    data = new NotificationPane(this)
-    $this.data('axa.notification', data)
-  }
+    if (!data) {
+      data = new NotificationPane(this)
+      $this.data('axa.notification', data)
+    }
 
-  if (typeof option === 'object') {
-    data.displayNotification(option)
-  }
+    if (typeof option === 'object') {
+      data.displayNotification(option)
+    }
 
-  if (typeof option === 'string') {
-    data.displayNotification({
-      content: option,
-    })
-  }
-
-  return data
-})
+    if (typeof option === 'string') {
+      data.displayNotification({
+        content: option,
+      })
+    }
+  })
+}
 
 // Plugin registration
 $.fn.notification = Plugin

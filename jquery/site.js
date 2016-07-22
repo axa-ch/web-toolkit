@@ -43,19 +43,21 @@ class Site {
   }
 }
 
-const Plugin = (method, ...args) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.site')
+function Plugin(method, ...args) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.site')
 
-  if (!data) {
-    data = new Site(this)
-    $this.data('axa.site', data)
-  }
+    if (!data) {
+      data = new Site(this)
+      $this.data('axa.site', data)
+    }
 
-  if (typeof(method) === 'string') {
-    data[method](...args)
-  }
-})
+    if (typeof(method) === 'string') {
+      data[method](...args)
+    }
+  })
+}
 
 $.fn.site = Plugin
 $.fn.site.Constructor = Site

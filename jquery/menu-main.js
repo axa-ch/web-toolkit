@@ -48,15 +48,17 @@ class MainMenu {
   }
 }
 
-const Plugin = () => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('aem.menu')
+function Plugin() {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('aem.menu')
 
-  if (!data) {
-    data = new MainMenu(this)
-    $this.data('aem.menu', data)
-  }
-})
+    if (!data) {
+      data = new MainMenu(this)
+      $this.data('aem.menu', data)
+    }
+  })
+}
 
 $.fn.mainMenu = Plugin
 $.fn.mainMenu.Constructor = MainMenu

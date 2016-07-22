@@ -129,22 +129,22 @@ class Affix {
 }
 
 // Plugin definition
-const Plugin = (option) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.affix')
-  const options = typeof option === 'object'
+function Plugin(option) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.affix')
+    const options = typeof option === 'object'
 
-  if (!data) {
-    data = new Affix(this, options)
-    $this.data('axa.affix', data)
-  }
+    if (!data) {
+      data = new Affix(this, options)
+      $this.data('axa.affix', data)
+    }
 
-  if (typeof option === 'string') {
-    return data[option]()
-  }
-
-  return data
-})
+    if (typeof option === 'string') {
+      data[option]()
+    }
+  })
+}
 
 // Plugin registration
 $.fn.affix = Plugin

@@ -95,18 +95,18 @@ class Popover {
 }
 
 // Plugin definition
-const Plugin = (option) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.popover')
-  const options = $.extend({}, data, typeof option === 'object' && option)
+function Plugin(option) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.popover')
+    const options = $.extend({}, data, typeof option === 'object' && option)
 
-  if (!data) {
-    data = new Popover(this, options)
-    $this.data('axa.popover', data)
-  }
-
-  return data
-})
+    if (!data) {
+      data = new Popover(this, options)
+      $this.data('axa.popover', data)
+    }
+  })
+}
 
 // Plugin registration
 $.fn.popover = Plugin

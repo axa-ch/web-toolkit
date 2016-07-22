@@ -77,18 +77,18 @@ class Checkbox {
 }
 
 // Plugin definition
-const Plugin = (option) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.checkbox')
-  const options = $.extend({}, Checkbox.DEFAULTS, data, typeof option === 'object' && option)
+function Plugin(option) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.checkbox')
+    const options = $.extend({}, Checkbox.DEFAULTS, data, typeof option === 'object' && option)
 
-  if (!data) {
-    data = new Checkbox(this, options)
-    return $this.data('axa.checkbox', data)
-  }
-
-  return data
-})
+    if (!data) {
+      data = new Checkbox(this, options)
+      $this.data('axa.checkbox', data)
+    }
+  })
+}
 
 // Plugin registration
 $.fn.checkbox = Plugin

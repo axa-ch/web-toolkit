@@ -147,18 +147,18 @@ class SegmentedControl {
 }
 
 // Plugin definition
-const Plugin = (option) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.segmentedControl')
-  const options = $.extend({}, SegmentedControl.DEFAULTS, data, typeof option === 'object' && option)
+function Plugin(option) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.segmentedControl')
+    const options = $.extend({}, SegmentedControl.DEFAULTS, data, typeof option === 'object' && option)
 
-  if (!data) {
-    data = new SegmentedControl(this, options)
-    $this.data('axa.segmentedControl', data)
-  }
-
-  return data
-})
+    if (!data) {
+      data = new SegmentedControl(this, options)
+      $this.data('axa.segmentedControl', data)
+    }
+  })
+}
 
 // Plugin registration
 $.fn.segmentedControl = Plugin
@@ -170,7 +170,7 @@ $(window).on('load', () =>
     const $segmentedControl = $(this)
     const data = $segmentedControl.data()
 
-    return Plugin.call($segmentedControl, data)
+    Plugin.call($segmentedControl, data)
   })
 )
 

@@ -23,19 +23,21 @@ class ProgressBar {
 
 }
 
-const Plugin = (method, ...args) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.progress-bar')
+function Plugin(method, ...args) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.progress-bar')
 
-  if (!data) {
-    data = new ProgressBar(this)
-    $this.data('axa.progress-bar', data)
-  }
+    if (!data) {
+      data = new ProgressBar(this)
+      $this.data('axa.progress-bar', data)
+    }
 
-  if (typeof(method) === 'string') {
-    data[method](...args)
-  }
-})
+    if (typeof(method) === 'string') {
+      data[method](...args)
+    }
+  })
+}
 
 $.fn.progressBar = Plugin
 $.fn.progressBar.Constructor = ProgressBar

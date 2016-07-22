@@ -67,19 +67,21 @@ class SlidingMenu {
   }
 }
 
-const Plugin = (method, args) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.menu')
+function Plugin(method, args) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.menu')
 
-  if (!data) {
-    data = new SlidingMenu(this)
-    $this.data('axa.menu', data)
-  }
+    if (!data) {
+      data = new SlidingMenu(this)
+      $this.data('axa.menu', data)
+    }
 
-  if (typeof(method) === 'string') {
-    data[method](...args)
-  }
-})
+    if (typeof(method) === 'string') {
+      data[method](...args)
+    }
+  })
+}
 
 $.fn.slidingMenu = Plugin
 $.fn.slidingMenu.Constructor = SlidingMenu

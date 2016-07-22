@@ -62,19 +62,21 @@ class CheckboxGroup {
 
 }
 
-const Plugin = (method, ...args) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.checkbox-group')
+function Plugin(method, ...args) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.checkbox-group')
 
-  if (!data) {
-    data = new CheckboxGroup(this)
-    $this.data('axa.checkbox-group', data)
-  }
+    if (!data) {
+      data = new CheckboxGroup(this)
+      $this.data('axa.checkbox-group', data)
+    }
 
-  if (typeof(method) === 'string') {
-    data[method](args)
-  }
-})
+    if (typeof(method) === 'string') {
+      data[method](args)
+    }
+  })
+}
 
 $.fn.checkboxGroup = Plugin
 $.fn.checkboxGroup.Constructor = CheckboxGroup

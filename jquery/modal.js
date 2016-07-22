@@ -20,21 +20,21 @@ class Modal {
 }
 
 // Plugin definition
-const Plugin = (option) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.modal')
+function Plugin(option) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.modal')
 
-  if (!data) {
-    data = new Modal(this)
-    $this.data('axa.modal', data)
-  }
+    if (!data) {
+      data = new Modal(this)
+      $this.data('axa.modal', data)
+    }
 
-  if (typeof option === 'string') {
-    data[option]()
-  }
-
-  return data
-})
+    if (typeof option === 'string') {
+      data[option]()
+    }
+  })
+}
 
 // Plugin registration
 $.fn.modal = Plugin
@@ -45,7 +45,6 @@ $(document).on('click.axa.modal.data-api', '[data-modal]', (e) => {
   e.preventDefault()
 
   const $target = $($(e.currentTarget).data('modal'))
-
   Plugin.call($target, 'toggle')
 })
 

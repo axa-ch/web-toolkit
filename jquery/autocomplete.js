@@ -71,18 +71,18 @@ class Autocomplete {
 }
 
 // Plugin definition
-const Plugin = (option) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.autocomplete')
-  const options = $.extend({}, data, typeof option === 'object' && option)
+function Plugin(option) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.autocomplete')
+    const options = $.extend({}, data, typeof option === 'object' && option)
 
-  if (!data) {
-    data = new Autocomplete(this, options)
-    return $this.data('axa.autocomplete', data)
-  }
-
-  return data
-})
+    if (!data) {
+      data = new Autocomplete(this, options)
+      $this.data('axa.autocomplete', data)
+    }
+  })
+}
 
 // Plugin registration
 $.fn.autocomplete = Plugin

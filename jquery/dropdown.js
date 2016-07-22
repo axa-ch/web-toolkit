@@ -37,15 +37,17 @@ class Dropdown {
   }
 }
 
-const Plugin = () => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.dropdown')
+function Plugin() {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.dropdown')
 
-  if (!data) {
-    data = new Dropdown(this)
-    $this.data('axa.dropdown', data)
-  }
-})
+    if (!data) {
+      data = new Dropdown(this)
+      $this.data('axa.dropdown', data)
+    }
+  })
+}
 
 $.fn.dropdown = Plugin
 $.fn.dropdown.Constructor = Dropdown

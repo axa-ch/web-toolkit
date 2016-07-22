@@ -70,17 +70,17 @@ class Autogrow {
 }
 
 // Plugin definition
-const Plugin = () => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.autogrow')
+function Plugin() {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.autogrow')
 
-  if (!data) {
-    data = new Autogrow(this)
-    return $this.data('axa.autogrow', data)
-  }
-
-  return data
-})
+    if (!data) {
+      data = new Autogrow(this)
+      $this.data('axa.autogrow', data)
+    }
+  })
+}
 
 // Plugin registration
 $.fn.autogrow = Plugin

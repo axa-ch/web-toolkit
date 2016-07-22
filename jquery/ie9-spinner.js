@@ -12,18 +12,18 @@ class IE9Spinner {
 }
 
 // Plugin definition
-const Plugin = (option) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.ie9Spinner')
-  const options = $.extend({}, data, typeof option === 'object' && option)
+function Plugin(option) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.ie9Spinner')
+    const options = $.extend({}, data, typeof option === 'object' && option)
 
-  if (!data) {
-    data = new IE9Spinner(this, options)
-    $this.data('axa.ie9Spinner', data)
-  }
-
-  return data
-})
+    if (!data) {
+      data = new IE9Spinner(this, options)
+      $this.data('axa.ie9Spinner', data)
+    }
+  })
+}
 
 // Plugin registration
 $.fn.ie9Spinner = Plugin

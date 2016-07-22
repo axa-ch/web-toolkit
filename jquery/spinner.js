@@ -19,21 +19,21 @@ class Spinner {
 }
 
 // Plugin definition
-const Plugin = (option, ...args) => this.each(() => {
-  const $this = $(this)
-  let data = $this.data('axa.spinner')
+function Plugin(option, ...args) {
+  this.each(() => {
+    const $this = $(this)
+    let data = $this.data('axa.spinner')
 
-  if (!data) {
-    data = new Spinner(this)
-    $this.data('axa.spinner', data)
-  }
+    if (!data) {
+      data = new Spinner(this)
+      $this.data('axa.spinner', data)
+    }
 
-  if (typeof option === 'string' && option === 'fallback') {
-    data.fallback(args[0])
-  }
-
-  return data
-})
+    if (typeof option === 'string' && option === 'fallback') {
+      data.fallback(args[0])
+    }
+  })
+}
 
 // Plugin registration
 $.fn.spinner = Plugin
