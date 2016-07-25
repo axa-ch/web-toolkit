@@ -49,7 +49,7 @@ module.exports = (cb) => {
     renderer: markedRenderer,
     langPrefix: '',
     highlight(code, lang) {
-      return highlight.highlight(lang, code).value
+      return highlight.getLanguage(lang) ? highlight.highlight(lang, code).value : undefined
     },
   })
 
