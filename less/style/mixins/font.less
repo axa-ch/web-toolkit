@@ -73,47 +73,47 @@
   });
 }
 
-@font-large--size: 1rem; //16px
+@font-large--size: 1.0625remrem; // 17px
 @font-large--weight: normal;
 @font-large--line-height: 1.8;
 
-@font-large--size--medium: 1.0625rem; //17px
+@font-large--size--medium: 1.0625rem; // 17px
 
 /**
  * Large Font (H4 in PDF)
  *
- * Mobile: 16px (1rem), medium (600), 1.6 (Should actually be 17px, but 17px doesn't render nicely)
- * Desktop: 19px (1.1875rem), medium (600), 1.6
+ * Mobile: 17px (1.0625rem), normal, 1.6
+ * Desktop: 17px (1.0625rem), normal, 1.6 (Should actually be 19px, but 19px doesn't render nicely)
  */ 
 .make-font-large {
-  font-size: @font-large--size; //16px
+  font-size: @font-large--size;
   font-weight: @font-large--weight;
   line-height: @font-large--line-height;
 
   .respond(medium, {
-    font-size: @font-large--size--medium; //17px
+    font-size: @font-large--size--medium;
   });
 }
 
-@font-large-semibold--size: 1rem; //16px
+@font-large-semibold--size: 1.0625rem; // 17px
 @font-large-semibold--weight: @font-weight-medium;
 @font-large-semibold--line-height: 1.6;
 
-@font-large-semibold--size--medium: 1.1875rem; //19px
+@font-large-semibold--size--medium: 1.0625rem; // 17px
 
 /**
  * Large Semibold Font (H5 in PDF)
  *
- * Mobile: 16px (1rem), semibold (600), 1.6 (Should actually be 17px, but 17px doesn't render nicely)
- * Desktop: 19px (1.1875rem), semibold (600), 1.6
+ * Mobile: 17px (1rem), semibold (600), 1.6
+ * Desktop: 17px (1.1875rem), semibold (600), 1.6 (Should actually be 19px, but 19px doesn't render nicely)
  */ 
 .make-font-large-semibold {
-  font-size: @font-large-semibold--size; //16px
+  font-size: @font-large-semibold--size;
   font-weight: @font-large-semibold--weight;
   line-height: @font-large-semibold--line-height;
 
   .respond(medium, {
-    font-size: @font-large-semibold--size--medium; //19px
+    font-size: @font-large-semibold--size--medium;
   });
 }
 
