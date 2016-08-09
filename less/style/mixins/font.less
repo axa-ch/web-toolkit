@@ -78,6 +78,7 @@
 @font-large--line-height: 1.6;
 
 @font-large--size--medium: 1.0625rem; // 17px
+@font-large--line-height--medium: 1.8; // make the font "feel" 19px as in design
 
 /**
  * Large Font (H4 in PDF)
@@ -92,6 +93,7 @@
 
   .respond(medium, {
     font-size: @font-large--size--medium;
+    line-height: @font-large--line-height--medium;
   });
 }
 
@@ -100,6 +102,7 @@
 @font-large-semibold--line-height: 1.6;
 
 @font-large-semibold--size--medium: 1.0625rem; // 17px
+@font-large-semibold--line-height--medium: 1.8; // make the font "feel" 19px as in design
 
 /**
  * Large Semibold Font (H5 in PDF)
@@ -114,6 +117,7 @@
 
   .respond(medium, {
     font-size: @font-large-semibold--size--medium;
+    line-height: @font-large-semibold--line-height--medium;
   });
 }
 
