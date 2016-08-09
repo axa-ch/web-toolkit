@@ -13,11 +13,11 @@ class Info {
 
     this.$target = $(selector)
 
-    this.$element.on('click', this, event => event.data.toggle(event)
-    )
+    this.$element.on('click', this, event => event.data.toggle(event))
   }
 
-  toggle() {
+  toggle(event) {
+    event.preventDefault()
     this.$target.slideToggle()
     return this.$element.toggleClass('is-active')
   }
@@ -25,7 +25,7 @@ class Info {
 
 // Plugin definition
 function Plugin(option) {
-  this.each(function() {
+  this.each(function () {
     const $this = $(this)
     let data = $this.data('axa.info')
     const options = $.extend({}, data, typeof option === 'object' && option)
