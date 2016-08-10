@@ -46,7 +46,7 @@ class Picker extends Emitter {
     this.$month = append('<div class="picker__month" ></div>', this.$content)
 
     // TODO: i18n
-    const weekdays = moment.localeData()._weekdaysMin
+    const weekdays = moment.weekdaysMin()
 
     this.$weekHeadline = append(`<div class="picker__week picker__week--headline">
       <div class="picker__day picker__day--headline">${weekdays[1]}</div>
