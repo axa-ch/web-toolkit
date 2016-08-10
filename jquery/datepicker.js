@@ -3,22 +3,7 @@
 import $ from 'jquery'
 import moment from 'moment'
 
-class Emitter {
-  constructor() {
-    this.on = this.on.bind(this)
-    this.emit = this.emit.bind(this)
-    this.events = {
-      select: [],
-    }
-  }
-  on(eventName, cb) {
-    return this.events[eventName].push(cb)
-  }
-  emit(eventName, ...args) {
-    return this.events[eventName].map((fx) =>
-      fx.apply(null, args))
-  }
-}
+import Emitter from './emitter'
 
 const append = (html, $parent) => {
   const $el = $(html)
