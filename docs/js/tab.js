@@ -31,7 +31,7 @@ class Tab {
 
     if (this.$activeContentPanel != null) {
       // @$activeContentPanel.toggleClass 'is-active'
-      this.$activeContentPanel.slideToggle('fast', () => {
+      this.$activeContentPanel.slideToggle('fast', function () {
         $(this).toggleClass('is-active')
       })
     }
@@ -43,7 +43,7 @@ class Tab {
     this.$activeToggle = this.$element.find(`[data-tab-toggle='${tabName}']`)
 
     // @$activeContentPanel.toggleClass 'is-active'
-    this.$activeContentPanel.slideToggle('fast', () => {
+    this.$activeContentPanel.slideToggle('fast', function () {
       $(this).toggleClass('is-active')
     })
     this.$activeToggle.toggleClass('is-active')
