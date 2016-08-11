@@ -5,6 +5,8 @@ import moment from 'moment'
 
 import Emitter from './emitter'
 
+const longDateFormatCode = 'L'
+
 const append = (html, $parent) => {
   const $el = $(html)
   $parent.append($el)
@@ -15,6 +17,7 @@ class Picker extends Emitter {
   constructor(moment1, displayWeek, icons) {
     super()
     this.moment = moment1
+    this.format = this.moment.localeData().longDateFormat(longDateFormatCode)
     this.displayWeek = displayWeek
     this.icons = icons
 
@@ -151,11 +154,11 @@ class Picker extends Emitter {
       $day.addClass(modifier)
     }
 
-    if ((this.selectedDate != null) && date.format('DD.MM.YYYY') === this.selectedDate.format('DD.MM.YYYY')) {
+    if ((this.selectedDate != null) && date.format(this.format) === this.selectedDate.format(this.format)) {
       $day.addClass('is-active')
     }
 
-    if (date.format('DD.MM.YYYY') === this.moment().format('DD.MM.YYYY')) {
+    if (date.format(this.format) === this.moment().format(this.format)) {
       $day.addClass('picker__day--today')
     }
 
@@ -164,7 +167,7 @@ class Picker extends Emitter {
       e.preventDefault()
 
       this.setSelectedDate(date)
-      this.emit('select', date.format('DD.MM.YYYY'))
+      this.emit('select', date.format(this.format))
       this.toggle()
     })
 
@@ -201,9 +204,11 @@ class Picker extends Emitter {
 }
 
 class Datepicker {
-  constructor(element, moment1, input, displayWeek, icons) {
+  constructor(element, moment1, input, displayWeek, icons, locale) {
     this.onChange = this.onChange.bind(this)
     this.moment = moment1
+    this.moment.locale(locale)
+    this.format = this.moment.localeData().longDateFormat(longDateFormatCode)
     this.$element = $(element)
 
     if (navigator.userAgent.match(/Android/i) ||
@@ -235,7 +240,7 @@ class Datepicker {
   }
 
   onChange() {
-    const dat = this.moment(this.$input.val(), 'DD.MM.YYYY')
+    const dat = this.moment(this.$input.val(), this.format)
 
     if (dat.isValid()) {
       this.picker.setSelectedDate(dat)
@@ -268,7 +273,7 @@ function Plugin(options) {
         $.error('Moment.js must either be passed as an option or be available globally')
       }
 
-      data = new Datepicker(this, moment, opts.input, opts.displayWeek, opts.icons)
+      data = new Datepicker(this, moment, opts.input, opts.displayWeek, opts.icons, opts.locale)
       $this.data('axa.datepicker', data)
     }
 
