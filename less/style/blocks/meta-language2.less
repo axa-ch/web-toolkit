@@ -1,0 +1,129 @@
+@import '../mixins/make-column';
+@import '../mixins/font';
+@import '../mixins/make-link';
+@import '../mixins/respond-max';
+@import '../mixins/respond';
+
+.meta-language2 {
+  position: relative;
+  height: 100%;
+}
+
+.meta-language2__button {
+  .make-column();
+  .make-link();
+  .make-font-small-semibold();
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  background-color: @color-gray--lighter;
+  z-index: 20;
+}
+
+.meta-language2__text {
+  text-transform: uppercase;
+}
+
+.meta-language2__icon {
+  margin-left: .75rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.meta-language2__icon.is-toggled {
+  transform: rotate(180deg);
+}
+
+.meta-language2__menu {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: auto;
+  transform: translateY(-100%);
+  transition: all 0.2s ease;
+
+  background-color: @color-gray--lighter;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.meta-language2__menu.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.meta-language2__menu--invert {
+  transform: translateY(0);
+  top: auto;
+  bottom: 100%;
+}
+
+.meta-language2__menu--invert.is-open {
+  transform: translateY(-100%);
+}
+
+.meta-language2__menu__items {
+  padding-bottom: 0.61875rem;
+}
+
+.meta-language2__menu__item {
+  .make-column();
+  .make-link();
+  .make-font-small-semibold();
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 2rem;
+  text-transform: uppercase;
+}
+
+.meta-language2__menu__item--nopad-first {
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.meta-language2__menu__item.is-active {
+  color: @color-blue;
+}
+
+.meta-language2--footer {
+  .meta-language2__menu--invert {
+    .meta-language2__menu__items {
+      padding: 0;
+
+      .respond(large, {
+        padding-top: 0.61875rem;
+      });
+    }
+  }
+
+  .respond-max(medium, {
+    .meta-language2__button {
+      display: none;
+    }
+
+    .meta-language2__menu {
+      position: static;
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+    }
+
+    .meta-language2__menu__item {
+      display: inline;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  });
+}
