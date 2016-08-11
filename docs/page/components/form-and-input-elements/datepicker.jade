@@ -18,6 +18,8 @@ p.paragraph.
     li.toc__anchor-navigation__item
       a(href='#condensed').toc__anchor-navigation__link Condensed Datepicker
     li.toc__anchor-navigation__item
+      a(href='#i18n').toc__anchor-navigation__link I18n and localization
+    li.toc__anchor-navigation__item
       a(href='#birthday').toc__anchor-navigation__link Birthday Datepicker
 
 .hr
@@ -90,6 +92,19 @@ h2.heading.heading--secondary#condensed Condensed Datepicker
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlightcode ./snippets/datepicker-condensed.jade
+
+.hr
+
+h2.heading.heading--secondary#i18n I18n and Localization
+
+p.paragraph
+  :markdown
+    Localization information of a Datepicker instance is either retrieved global by `html[lang]` attribute
+    or by default options of this jQuery Plugin.
+    You can also specify individual locales with `data-locale` attribute.
+
+    How to load locales see Moment's Docs here: http://momentjs.com/docs/#/i18n/loading-into-browser/
+    For Information about available locale data see: http://momentjs.com/docs/#/i18n/locale-data/
 
 .hr
 
