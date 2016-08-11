@@ -8,7 +8,8 @@ lunr: true
 include ./includes/mixins.jade
 
 p.paragraph.
-  A button indicates one or multiple actions to the user.
+  An Icon-Teaser is displayed to lead and interest users to/for other content, which is shown later.
+  It consists of an icon, followed by a short line, a bold text and a CTA button.
 
 .toc
   .toc__title Table of contents
@@ -21,7 +22,7 @@ p.paragraph.
 h2.heading.heading--secondary#icon-teaser Icon Teaser
 
 p.paragraph.
-  A buttons triggers an action to the page or an object. An additional icon can be added.
+  A Icon-Teaser triggers an action to the page or an object. An additional icon can be added.
 
 +example('/components/demos/icon-teaser.html')
 
@@ -41,9 +42,7 @@ p.paragraph.
             li.checklist__item
               +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
-                Prevent whitespace at the start and the end
-                of the button. It will add some additional spacing
-                between the icon and the button.
+                Make sure to include new icons, if you need more.
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
