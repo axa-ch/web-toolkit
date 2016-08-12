@@ -1,0 +1,55 @@
+---
+title: Icon Teaser
+order: 10
+template: page.jade
+lunr: true
+---
+
+include ./includes/mixins.jade
+
+p.paragraph.
+  An Icon-Teaser is displayed to lead and interest users to/for other content, which is shown later.
+  It consists of an icon, followed by a short line, a bold text and a CTA button.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#icon-teaser').toc__anchor-navigation__link Icon Teaser
+
+.hr
+
+h2.heading.heading--secondary#icon-teaser Icon Teaser
+
+p.paragraph.
+  A Icon-Teaser triggers an action to the page or an object. An additional icon can be added.
+
++example('/components/demos/icon-teaser.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-1')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-1
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='css') CSS
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          ul.checklist
+            li.checklist__item
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
+              .checklist__item__content.
+                Make sure to include new icons, if you need more.
+
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/icon-teaser.jade
+
+        .tab-panel__content__tab(data-tab-content='css')
+
+          p.paragraph.
+            Use the CSS classes mentioned in the HTML tab
+            as mixins.
