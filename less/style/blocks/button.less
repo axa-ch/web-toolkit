@@ -138,4 +138,37 @@
   });
 }
 
+.button--ghost {
+  .make-button-size(
+    @height: 3em;
+    @pad-lr: @button-pad-lr;
+    @icon-size: @button-icon-size;
+    @font-size: 0.875em;
+    @line-height: 1.4;
+  );
+
+  border: 0.125rem solid @color-white;
+  margin-top: 29rem/16;
+  margin-bottom: 57rem/16;
+
+  background: transparent;
+  color: @color-white;
+
+  &:hover,
+  &:focus {
+    background: rgba(0,0,0,0.5);
+  }
+
+  .respond(medium, {
+    .make-button-size(
+      @height: 3.3em;
+      @pad-lr: @button-pad-lr--medium;
+      @icon-size: @button-icon-size;
+      @font-size: 1em;
+      @line-height: 1.4;
+    );
+    border: 0.125rem solid @color-white;
+  });
+}
+
 // Copyright AXA Versicherungen AG 2015
