@@ -24,7 +24,7 @@ function Plugin(name, Constructor, defaults: {}) {
 
   $(domReady)
 
-  function Wrapper(options) {
+  function Wrapper(options, ...rest) {
     if (!(this instanceof $)) {
       $.extend(defaults, options)
     }
@@ -45,7 +45,7 @@ function Plugin(name, Constructor, defaults: {}) {
       if (typeof options === 'string'
         && options in instance
         && typeof instance[options] === 'function') {
-        instance[options]()
+        instance[options].apply(instance, rest)
       }
     })
   }
