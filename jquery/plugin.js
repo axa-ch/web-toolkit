@@ -15,6 +15,58 @@ import $ from 'jquery'
  * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
  * @param {Object} [defaults={}] - Default options available/needed by your jQuery plugin.
  * @function
+ *
+ * @example <caption>Registering a custom jQuery plugin</caption>
+ * // import the jQuery plugin boilerplate helper
+ * import Plugin from './plugin'
+ *
+ * const defaults = {
+ *  which: 'width'
+ * }
+ *
+ * // your custom Plugin implementation
+ * class LockDimensions {
+ *  construction(element, options) {
+ *    this.element = element
+ *    this.options = options
+ *
+ *    this.$element = $(element)
+ *    this.lock()
+ *  }
+ *
+ *  lock() {
+ *    if(!this.options.which || this.options.which === 'width')
+ *      this.$element.width( this.$element.width() )
+ *
+ *    if(!this.options.which || this.options.which === 'height')
+ *      this.$element.height( this.$element.height() )
+ *  }
+ *
+ *  unlock() {
+ *    if(!this.options.which || this.options.which === 'width')
+ *      this.$element.css('width', '')
+ *
+ *    if(!this.options.which || this.options.which === 'height')
+ *      this.$element.css('height', '')
+ *  }
+ * }
+ *
+ * // register your custom Plugin
+ * Plugin('lockDimension', LockDimensions, defaults)
+ *
+ * @example <caption>Override global defaults</caption>
+ * $.fn.lockDimension.defaults.which = false
+ *
+ * @example <caption>Override global defaults - nicer API</caption>
+ * $.lockDimension({
+ *  which: false
+ * })
+ *
+ * @example <caption>Calling a method of the plugin</caption>
+ * var locked = $('#lock-me').lockDimension()
+ *
+ * // call public method
+ * locked.lockDimension('unlock')
  */
 function Plugin(name, Constructor, defaults: {}) {
   // functional API to set defaults globally
@@ -52,7 +104,7 @@ function Plugin(name, Constructor, defaults: {}) {
       const namespace = `axa.${name}`
       let instance = $this.data(namespace)
 
-      // make sure instantiate no more than once
+      // make sure to instantiate no more than once
       if (!instance) {
         instance = new Constructor(this, {
           ...defaults,
