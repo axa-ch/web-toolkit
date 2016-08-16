@@ -1,5 +1,5 @@
 // @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
-.word-break() {
+.word-break(@hyphens: auto) {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -11,8 +11,8 @@
   word-break: break-word;
 
   /* Adds a hyphen where the word breaks, if supported (No Blink) */
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  -ms-hyphens: @hyphens;
+  -moz-hyphens: @hyphens;
+  -webkit-hyphens: @hyphens;
+  hyphens: @hyphens;
 }
