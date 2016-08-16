@@ -8,6 +8,7 @@ import $ from 'jquery'
  * - Plugin registration
  * - Automatic Plugin instantiation through `data-pluginName` attributes
  * - Handling of Plugin defaults
+ * - Instance-specific options through `data-pluginName-optionName` attributes or options hash
  * - Multiple Instatiation Guard
  *
  * @param {string} name - The unique `name` of the jQuery plugin.
