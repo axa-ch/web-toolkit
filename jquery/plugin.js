@@ -26,7 +26,9 @@ function Plugin(name, Constructor, defaults: {}) {
         $this.data(namespace, instance)
       }
 
-      if (typeof options === 'string' && options in instance) {
+      if (typeof options === 'string'
+        && options in instance
+        && typeof instance[options] === 'function') {
         instance[options]()
       }
     })
