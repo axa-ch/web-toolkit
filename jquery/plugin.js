@@ -17,23 +17,37 @@ import $ from 'jquery'
  * @function
  */
 function Plugin(name, Constructor, defaults: {}) {
-  $[name] = Wrapper
-  $.fn[name] = Wrapper
+  // functional API to set defaults globally
+  $[name] = PluginWrapper
+  // register plugin
+  $.fn[name] = PluginWrapper
+  // property based API to set defaults globally
   $.fn[name].defaults = defaults
   $.fn[name].Constructor = Constructor
 
   $(domReady)
 
-  function Wrapper(options, ...rest) {
+  /**
+   *
+   * @param {Object|string} options
+   * @param {any...} [rest]
+   * @returns {*}
+   * @constructor
+     */
+  function PluginWrapper(options, ...rest) {
+    // set defaults globally if the plugin isn't instantiated
     if (!(this instanceof $)) {
-      $.extend(defaults, options)
+      return $.extend(defaults, options)
     }
 
-    return this.each(function () {
+    let returns
+
+    this.each(function () {
       const $this = $(this)
       const namespace = `axa.${name}`
       let instance = $this.data(namespace)
 
+      // make sure instantiate no more than once
       if (!instance) {
         instance = new Constructor(this, {
           ...defaults,
@@ -42,12 +56,22 @@ function Plugin(name, Constructor, defaults: {}) {
         $this.data(namespace, instance)
       }
 
+      // If the first parameter is a string and
+      // it is available as a method of the plugin,
+      // treat this as a call to a public method.
       if (typeof options === 'string'
         && options in instance
         && typeof instance[options] === 'function') {
-        instance[options].apply(instance, rest)
+        // Call the method of our plugin instance,
+        // and pass it the supplied arguments.
+        returns = instance[options].apply(instance, rest)
       }
     })
+
+    // If the earlier cached method
+    // gives a value back return the value,
+    // otherwise return this to preserve chainability.
+    return returns !== void 0 ? returns : this
   }
 
   function domReady() {
@@ -55,7 +79,7 @@ function Plugin(name, Constructor, defaults: {}) {
       const $this = $(this)
       const options = $this.data()
 
-      Wrapper.call($this, options)
+      PluginWrapper.call($this, options)
     })
   }
 }
