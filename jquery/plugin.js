@@ -25,15 +25,20 @@ function Plugin(name, Constructor, defaults: {}) {
   $.fn[name].defaults = defaults
   $.fn[name].Constructor = Constructor
 
+  // listen for DOM-Ready event
   $(domReady)
 
   /**
+   * A really lightweight plugin wrapper around the constructor,
+   * preventing against multiple instantiations and allowing any
+   * public method to be called via the jQuery plugin,
+   * e.g. `$(element).defaultPluginName('functionName', arg1, arg2)`
    *
-   * @param {Object|string} options
-   * @param {any...} [rest]
-   * @returns {*}
+   * @param {Object|string} options - Either plugin's options or if of type `string` a method to call.
+   * @param {any...} [rest] - Any additional arguments passed to public method call if `options` is of type `string`.
+   * @returns {*} - Returns the jQuery collection itself for chainability or a value if public method returns something.
    * @constructor
-     */
+   */
   function PluginWrapper(options, ...rest) {
     // set defaults globally if the plugin isn't instantiated
     if (!(this instanceof $)) {
@@ -74,6 +79,10 @@ function Plugin(name, Constructor, defaults: {}) {
     return returns !== void 0 ? returns : this
   }
 
+  // Automatically instantiate the associated jQuery Plugin
+  // through searching for HTML5 data attributes with the
+  // following naming convention:
+  // `<tagname data-pluginname data-pluginname-option="value" />`
   function domReady() {
     $(`[data-${name}]`).each(function () {
       const $this = $(this)
