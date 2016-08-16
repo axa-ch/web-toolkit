@@ -1,19 +1,28 @@
 import $ from 'jquery'
 
-function Plugin(name, Constructor) {
+function Plugin(name, Constructor, defaults: {}) {
+  $[name] = Wrapper
   $.fn[name] = Wrapper
+  $.fn[name].defaults = defaults
   $.fn[name].Constructor = Constructor
 
   $(domReady)
 
   function Wrapper(options) {
-    this.each(function() {
+    if (!(this instanceof $)) {
+      $.extend(defaults, options)
+    }
+
+    return this.each(function () {
       const $this = $(this)
       const namespace = `axa.${name}`
       let instance = $this.data(namespace)
 
       if (!instance) {
-        instance = new Constructor(this, options)
+        instance = new Constructor(this, {
+          ...defaults,
+          ...options,
+        })
         $this.data(namespace, instance)
       }
 
@@ -24,7 +33,7 @@ function Plugin(name, Constructor) {
   }
 
   function domReady() {
-    $(`[data-${name}]`).each(function() {
+    $(`[data-${name}]`).each(function () {
       const $this = $(this)
       const options = $this.data()
 
