@@ -16,6 +16,15 @@ import $ from 'jquery'
  * @param {Object} [defaults={}] - Default options available/needed by your jQuery plugin.
  * @function
  *
+ * @see {@link http://learn.jquery.com/plugins/basic-plugin-creation/|How to Create a Basic Plugin}
+ * @see {@link http://learn.jquery.com/plugins/advanced-plugin-concepts/|Advanced Plugin Concepts}
+ * @see {@link https://jqueryboilerplate.com/|jQuery Boilerplate}
+ * @see {@link https://github.com/jquery-boilerplate/jquery-boilerplate/wiki/Extending-jQuery-Boilerplate|Extending jQuery Boilerplate}
+ * @see {@link https://github.com/jquery-boilerplate/jquery-boilerplate/wiki/Handling-plugin-defaults-and-predefinitions|Handling plugin defaults and predefinitions}
+ * @see {@link https://github.com/jquery-boilerplate/jquery-patterns/blob/master/patterns/jquery.highly-configurable.plugin.boilerplate.js|highly-configurable.plugin.boilerplate}
+ * @see {@link https://github.com/jquery-boilerplate/jquery-boilerplate/blob/master/src/jquery.boilerplate.js|jquery.boilerplate.js}
+ * @see {@link https://github.com/jquery-boilerplate/jquery-patterns|jQuery Plugin Patterns}
+ *
  * @example <caption>Registering a custom jQuery plugin</caption>
  * // import the jQuery plugin boilerplate helper
  * import Plugin from './plugin'
