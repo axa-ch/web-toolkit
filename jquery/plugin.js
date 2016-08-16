@@ -136,11 +136,17 @@ function Plugin(name, Constructor, defaults: {}) {
   // following naming convention:
   // `<tagname data-pluginname data-pluginname-option="value" />`
   function domReady() {
-    $(`[data-${name}]`).each(function () {
+    $(`[data-${dasherize(name)}]`).each(function () {
       const $this = $(this)
       const options = $this.data()
 
       PluginWrapper.call($this, options)
+    })
+  }
+
+  function dasherize(string) {
+    return string.replace(/[A-Z]/g, (char, index) => {
+      return (index !== 0 ? '-' : '') + char.toLowerCase()
     })
   }
 }
