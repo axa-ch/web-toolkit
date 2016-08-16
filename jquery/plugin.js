@@ -106,6 +106,9 @@ function Plugin(name, Constructor, defaults: {}) {
       return $.extend(defaults, options)
     }
 
+    // Cache the method call
+    // to make it possible
+    // to return a value
     let returns
 
     this.each(function () {
