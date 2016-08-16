@@ -1,5 +1,13 @@
 import $ from 'jquery'
 
+/**
+ * jQuery Plugin boilerplate code for plugin registration and instantiation.
+ *
+ * @param {string} name - The unique name of the jQuery plugin.
+ * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
+ * @param {Object} [defaults={}] - Default options available/needed by your jQuery plugin.
+ * @function
+ */
 function Plugin(name, Constructor, defaults: {}) {
   $[name] = Wrapper
   $.fn[name] = Wrapper
