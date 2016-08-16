@@ -1,9 +1,16 @@
 import $ from 'jquery'
 
 /**
- * jQuery Plugin boilerplate code for plugin registration and instantiation.
+ * jQuery Plugin boilerplate glue code for plugin registration and instantiation.
+ * This module is intended to streamline AXA's jQuery plugin development and to reduce boilerplate code.
  *
- * @param {string} name - The unique name of the jQuery plugin.
+ * **Supported features:**
+ * - Plugin registration
+ * - Automatic Plugin instantiation through `data-pluginName` attributes
+ * - Handling of Plugin defaults
+ * - Multiple Instatiation Guard
+ *
+ * @param {string} name - The unique `name` of the jQuery plugin.
  * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
  * @param {Object} [defaults={}] - Default options available/needed by your jQuery plugin.
  * @function
