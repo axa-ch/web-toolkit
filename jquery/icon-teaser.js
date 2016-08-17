@@ -25,6 +25,7 @@ class IconTeaser {
       slide: '[data-icon-teaser-panel]',
       customPaging: (slider, i) => {
         const label = this.$panels.eq(i).data('title')
+        // @Todo: change to anchor as soon as https://github.com/kenwheeler/slick/issues/2468 is fixed
         return `<div class="icon-teaser__link" data-role="none" role="button" aria-required="false">${label}</div>`
       },
       mobileFirst: true,
