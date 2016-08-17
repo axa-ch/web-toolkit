@@ -113,9 +113,8 @@ function Plugin(name, Constructor, defaults: {}) {
     let returns
 
     this.each(function () {
-      const $this = $(this)
       const namespace = `axa.${name}`
-      let instance = $this.data(namespace)
+      let instance = $.data(this, namespace)
 
       // make sure to instantiate no more than once
       if (!instance) {
@@ -123,7 +122,7 @@ function Plugin(name, Constructor, defaults: {}) {
           ...defaults,
           ...options,
         })
-        $this.data(namespace, instance)
+        $.data(this, namespace, instance)
       }
 
       // If the first parameter is a string and
