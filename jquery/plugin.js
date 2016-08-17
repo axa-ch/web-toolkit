@@ -15,6 +15,7 @@ import $ from 'jquery'
  * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
  * @param {Object} [defaults={}] - Default options available/needed by your jQuery plugin.
  * @function
+ * @requires jquery
  *
  * @see {@link http://learn.jquery.com/plugins/basic-plugin-creation/|How to Create a Basic Plugin}
  * @see {@link http://learn.jquery.com/plugins/advanced-plugin-concepts/|Advanced Plugin Concepts}
