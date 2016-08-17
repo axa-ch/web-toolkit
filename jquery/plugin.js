@@ -135,6 +135,11 @@ function Plugin(name, Constructor, defaults: {}) {
         // and pass it the supplied arguments.
         returns = instance[options].apply(instance, rest)
       }
+
+      // Allow instances to be destroyed via the 'destroy' method
+      if (options === 'destroy') {
+        $.data(this, namespace, null)
+      }
     })
 
     // If the earlier cached method
