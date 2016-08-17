@@ -3,22 +3,9 @@
 import $ from 'jquery'
 import moment from 'moment'
 
-class Emitter {
-  constructor() {
-    this.on = this.on.bind(this)
-    this.emit = this.emit.bind(this)
-    this.events = {
-      select: [],
-    }
-  }
-  on(eventName, cb) {
-    return this.events[eventName].push(cb)
-  }
-  emit(eventName, ...args) {
-    return this.events[eventName].map((fx) =>
-      fx.apply(null, args))
-  }
-}
+import Emitter from './emitter'
+
+const longDateFormatCode = 'L'
 
 const append = (html, $parent) => {
   const $el = $(html)
@@ -30,6 +17,7 @@ class Picker extends Emitter {
   constructor(moment1, displayWeek, icons) {
     super()
     this.moment = moment1
+    this.format = this.moment.localeData().longDateFormat(longDateFormatCode)
     this.displayWeek = displayWeek
     this.icons = icons
 
@@ -61,7 +49,7 @@ class Picker extends Emitter {
     this.$month = append('<div class="picker__month" ></div>', this.$content)
 
     // TODO: i18n
-    const weekdays = moment.localeData()._weekdaysMin
+    const weekdays = moment.weekdaysMin()
 
     this.$weekHeadline = append(`<div class="picker__week picker__week--headline">
       <div class="picker__day picker__day--headline">${weekdays[1]}</div>
@@ -166,11 +154,11 @@ class Picker extends Emitter {
       $day.addClass(modifier)
     }
 
-    if ((this.selectedDate != null) && date.format('DD.MM.YYYY') === this.selectedDate.format('DD.MM.YYYY')) {
+    if ((this.selectedDate != null) && date.format(this.format) === this.selectedDate.format(this.format)) {
       $day.addClass('is-active')
     }
 
-    if (date.format('DD.MM.YYYY') === this.moment().format('DD.MM.YYYY')) {
+    if (date.format(this.format) === this.moment().format(this.format)) {
       $day.addClass('picker__day--today')
     }
 
@@ -179,7 +167,7 @@ class Picker extends Emitter {
       e.preventDefault()
 
       this.setSelectedDate(date)
-      this.emit('select', date.format('DD.MM.YYYY'))
+      this.emit('select', date.format(this.format))
       this.toggle()
     })
 
@@ -216,9 +204,11 @@ class Picker extends Emitter {
 }
 
 class Datepicker {
-  constructor(element, moment1, input, displayWeek, icons) {
+  constructor(element, moment1, input, displayWeek, icons, locale) {
     this.onChange = this.onChange.bind(this)
     this.moment = moment1
+    this.moment.locale(locale)
+    this.format = this.moment.localeData().longDateFormat(longDateFormatCode)
     this.$element = $(element)
 
     if (navigator.userAgent.match(/Android/i) ||
@@ -250,7 +240,7 @@ class Datepicker {
   }
 
   onChange() {
-    const dat = this.moment(this.$input.val(), 'DD.MM.YYYY')
+    const dat = this.moment(this.$input.val(), this.format)
 
     if (dat.isValid()) {
       this.picker.setSelectedDate(dat)
@@ -264,7 +254,9 @@ class Datepicker {
 
 // Plugin definition
 function Plugin(options) {
-  const opts = $.extend({}, $.fn.datepicker.defaults, options)
+  const opts = $.extend({
+    locale: document.documentElement.lang || 'en',
+  }, $.fn.datepicker.defaults, options)
 
   this.each(function () {
     const $this = $(this)
@@ -281,7 +273,7 @@ function Plugin(options) {
         $.error('Moment.js must either be passed as an option or be available globally')
       }
 
-      data = new Datepicker(this, moment, opts.input, opts.displayWeek, opts.icons)
+      data = new Datepicker(this, moment, opts.input, opts.displayWeek, opts.icons, opts.locale)
       $this.data('axa.datepicker', data)
     }
 
@@ -299,7 +291,8 @@ $.fn.datepicker.Constructor = Datepicker
 $(document).on('click.axa.datepicker.data-api', '[data-datepicker]', function (e) {
   e.preventDefault()
 
-  const $target = $($(this).data('datepicker'))
+  const data = $(this).data()
+  const $target = $(data.datepicker)
   const $input = $($target.data('datepicker-watch'))
   let displayWeek = $target.data('datepicker-display-week')
   const icons = {
@@ -309,7 +302,13 @@ $(document).on('click.axa.datepicker.data-api', '[data-datepicker]', function (e
 
   displayWeek = displayWeek && displayWeek !== 'false'
 
-  Plugin.call($target, { input: $input, action: 'toggle', displayWeek, icons })
+  Plugin.call($target, {
+    ...data,
+    input: $input,
+    action: 'toggle',
+    displayWeek,
+    icons,
+  })
 })
 
 //! Copyright AXA Versicherungen AG 2015
