@@ -161,10 +161,10 @@ function Plugin(name, Constructor, defaults: {}) {
       PluginWrapper.call($this, options)
     })
   }
+}
 
-  function dasherize(string) {
-    return string.replace(/[A-Z]/g, (char, index) => (index !== 0 ? '-' : '') + char.toLowerCase())
-  }
+function dasherize(string) {
+  return string.replace(/[A-Z]/g, (char, index) => (index !== 0 ? '-' : '') + char.toLowerCase())
 }
 
 export default Plugin
