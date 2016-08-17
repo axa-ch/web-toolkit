@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import './html5data'
 
 /**
  * jQuery Plugin boilerplate glue code for plugin registration and instantiation.
@@ -156,7 +157,7 @@ function Plugin(name, Constructor, defaults: {}) {
   function domReady() {
     $(`[data-${dasherize(name)}]`).each(function () {
       const $this = $(this)
-      const options = $this.data()
+      const options = $this.html5data(name)
 
       PluginWrapper.call($this, options)
     })
