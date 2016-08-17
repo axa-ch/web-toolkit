@@ -7,6 +7,7 @@ $.fn.html5data = html5data
  *
  * @param {string} namespace - The HTML5 data-* attribute namespace.
  * @returns {Object} - Returns data-* attribute options filtered for given `namespace`.
+ * @requires jquery
  */
 function html5data(namespace) {
   let data = this.data()
