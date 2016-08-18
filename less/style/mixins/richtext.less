@@ -1,0 +1,14 @@
+.richtext-styled-list(@left: 1.1em, @style: "–") {
+  ul {
+    list-style-type: none;
+    padding-left: @left;
+
+    li {
+      &::before {
+        content: @style; /* en dash */
+        position: absolute;
+        margin-left: @left;
+      }
+    }
+  }
+}
