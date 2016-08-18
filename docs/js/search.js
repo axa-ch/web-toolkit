@@ -121,7 +121,9 @@ class Search {
         }
       }
     } else {
-      this.hideDisplay()
+      window.setTimeout(() => {
+        this.hideDisplay()
+      }, 200)
     }
   }
 
