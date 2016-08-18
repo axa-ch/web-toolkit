@@ -7,6 +7,7 @@ window.$ = $
 
 import moment from 'moment'
 import svg4everybody from 'svg4everybody'
+import './clipboard'
 
 require('../..')
 require('./cheat')
