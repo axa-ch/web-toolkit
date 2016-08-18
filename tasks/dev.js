@@ -30,7 +30,7 @@ module.exports = [['build'], () => {
     './less/colors.json',
     './package.json',
     './docs/config.json',
-  ], (files, cb) => gulp.start('docs-pages', cb))
+  ], () => gulp.start('docs-pages'))
   .on('error', err => errorify(err.message, 'docs-pages'))
 
   watch([
