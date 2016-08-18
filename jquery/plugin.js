@@ -82,7 +82,7 @@ import './html5data'
  * // call public method
  * locked.lockDimension('unlock')
  */
-function Plugin(name, Constructor, defaults: {}) {
+function Plugin(name, Constructor, defaults = {}) {
   // functional API to set defaults globally
   $[name] = PluginWrapper
   // register plugin
