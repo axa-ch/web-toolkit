@@ -12,3 +12,10 @@
     }
   }
 }
+
+.richtext-lift-successor(@first, @second: ul, @top: -17px) {
+  @{first} + @{second} {
+    // @todo: this needs to be refactored after we have introduced a normalizing/reseting CSS file
+    margin-top: @top;
+  }
+}
