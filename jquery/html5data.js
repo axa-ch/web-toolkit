@@ -1,3 +1,8 @@
+/**
+ * Extending jQuery's prototype directly.
+ * @module html5data
+ */
+
 import $ from 'jquery'
 
 $.fn.html5data = html5data
@@ -5,8 +10,9 @@ $.fn.html5data = html5data
 /**
  * The HTML5 `data-{namespace}-*` jQuery Plugin retrieves a hash of namespace-filtered options.
  *
+ * @function html5data
  * @param {string} namespace - The HTML5 `data-*` attribute namespace.
- * @returns {Object} - Returns `data-*` attribute options filtered for given `namespace`.
+ * @returns {Object} Returns `data-*` attribute options filtered for given `namespace`.
  * @requires jquery
  */
 function html5data(namespace) {
