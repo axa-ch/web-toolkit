@@ -7,6 +7,9 @@ node_modules/
 # build
 /js/
 
+# jsdoc
+/docs/page/jsdoc2md
+
 # project
 dist/
 tmp/
