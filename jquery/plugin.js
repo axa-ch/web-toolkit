@@ -1,3 +1,8 @@
+/**
+ * Exporting Plugin function directly.
+ * @module Plugin
+ */
+
 import $ from 'jquery'
 import dasherize from './dasherize'
 import './html5data'
@@ -13,14 +18,13 @@ import './html5data'
  * - Instance-specific options through `data-pluginName-optionName` attributes or options hash
  * - Multiple Instatiation Guard
  *
+ * @function Plugin
  * @param {string} name - The unique `name` of the jQuery plugin.
  * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
  * @param {Object} [defaults={}] - Default options available/needed by your jQuery plugin.
- * @function Plugin
  * @requires jquery
  * @requires dasherize
  * @requires html5data
- * @exports Plugin
  *
  * @see {@link http://learn.jquery.com/plugins/basic-plugin-creation/|How to Create a Basic Plugin}
  * @see {@link http://learn.jquery.com/plugins/advanced-plugin-concepts/|Advanced Plugin Concepts}
@@ -103,8 +107,8 @@ function Plugin(name, Constructor, defaults = {}) {
    *
    * @param {Object|string} options - Either plugin's options or if of type `string` a method to call.
    * @param {*} [rest...] - Any additional arguments passed to public method call if `options` is of type `string`.
-   * @returns {*} - Returns the jQuery collection itself for chainability or a value if public method returns something.
-   * @constructor
+   * @returns {*} Returns the jQuery collection itself for chainability or a value if public method returns something.
+   * @constructor PluginWrapper
    */
   function PluginWrapper(options, ...rest) {
     // set defaults globally if the plugin isn't instantiated
