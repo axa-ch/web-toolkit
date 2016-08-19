@@ -18,6 +18,7 @@ import './html5data'
  * @param {Object} [defaults={}] - Default options available/needed by your jQuery plugin.
  * @function Plugin
  * @requires jquery
+ * @requires dasherize
  * @requires html5data
  * @exports Plugin
  *
