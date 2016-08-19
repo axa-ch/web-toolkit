@@ -3,10 +3,10 @@ import $ from 'jquery'
 $.fn.html5data = html5data
 
 /**
- * The HTML5 `data-{namespace}-*` jQuery Plugin retrieves a hash of filters options.
+ * The HTML5 `data-{namespace}-*` jQuery Plugin retrieves a hash of namespace-filtered options.
  *
- * @param {string} namespace - The HTML5 data-* attribute namespace.
- * @returns {Object} - Returns data-* attribute options filtered for given `namespace`.
+ * @param {string} namespace - The HTML5 `data-*` attribute namespace.
+ * @returns {Object} - Returns `data-*` attribute options filtered for given `namespace`.
  * @requires jquery
  */
 function html5data(namespace) {
