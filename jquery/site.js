@@ -25,6 +25,7 @@ class Site {
 
   toggleMenu(show) {
     if (show === undefined) {
+      // eslint-disable-next-line no-param-reassign
       show = !this.$page.hasClass('is-pushed')
     }
 
