@@ -9,6 +9,8 @@ $.fn.html5data = html5data
 
 /**
  * The HTML5 `data-{namespace}-*` jQuery Plugin retrieves a hash of namespace-filtered options.
+ * Non-Namespaced options are always overwritten by namespaced options, like:
+ * `data-namespace-option="bar"` overwrites `data-option="baz"`.
  *
  * @function html5data
  * @param {string} namespace - The HTML5 `data-*` attribute namespace.
@@ -23,9 +25,16 @@ function html5data(namespace) {
     const namespaceLength = namespace.length
 
     data = keys.reduce((initial, key) => {
-      if (!!~key.indexOf(namespace)) {
-        // strip namespace from key
-        const html5key = key.charAt(namespaceLength).toLowerCase() + key.slice(namespaceLength + 1)
+      const isNamespaced = !!~key.indexOf(namespace)
+      let html5key = key
+
+      // strip namespace from key
+      if (isNamespaced) {
+        html5key = key.charAt(namespaceLength).toLowerCase() + key.slice(namespaceLength + 1)
+      }
+
+      // make sure to overwrite namespaced options
+      if (isNamespaced || !(html5key in initial)) {
         /* eslint-disable no-param-reassign */
         initial[html5key] = data[key]
       }
