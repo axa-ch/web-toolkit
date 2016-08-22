@@ -2,14 +2,14 @@ import $ from 'jquery'
 import Plugin from './plugin'
 
 class ProgressBar {
+  static DEFAULTS = {
+    max: 4,
+  }
+
   constructor(element, options) {
     this.$element = $(element)
 
-    this.defaults = {
-      max: 4,
-    }
-
-    this.options = $.extend({}, this.defaults, options)
+    this.options = options
 
     this.init()
   }
