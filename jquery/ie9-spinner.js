@@ -1,6 +1,7 @@
 /* global window, document */
 
 import $ from 'jquery'
+import Plugin from './plugin'
 
 // Public class definition
 class IE9Spinner {
@@ -11,26 +12,13 @@ class IE9Spinner {
   }
 }
 
-// Plugin definition
-function Plugin(option) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.ie9Spinner')
-    const options = $.extend({}, data, typeof option === 'object' && option)
-
-    if (!data) {
-      data = new IE9Spinner(this, options)
-      $this.data('axa.ie9Spinner', data)
-    }
-  })
+if (isAnimationSupported()) {
+  // Plugin definition
+  // eslint-disable-next-line new-cap
+  Plugin('ie9Spinner', IE9Spinner)
 }
 
-// Plugin registration
-$.fn.ie9Spinner = Plugin
-$.fn.ie9Spinner.Constructor = IE9Spinner
-
-// DATA-API
-$(window).on('load', () => {
+function isAnimationSupported() {
   // check for support of the animation property
   const elm = document.createElement('div')
   const properties = [
@@ -40,21 +28,18 @@ $(window).on('load', () => {
     'msAnimation',
     'OAnimation',
   ]
+  const length = properties.length
 
-  for (let i = 0; i < properties.length; i++) {
+  for (let i = 0; i < length; i++) {
     const property = properties[i]
 
     // if the animation property is supported, exit
     if (elm.style[property] != null) {
-      return
+      return true
     }
   }
 
-  // animation property not supported, activate fallback on all spinners
-  $('[data-spinner]').each(function () {
-    const $spinner = $(this)
-    Plugin.call($spinner)
-  })
-})
+  return false
+}
 
 //! Copyright AXA Versicherungen AG 2015
