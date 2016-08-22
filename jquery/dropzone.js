@@ -1,16 +1,14 @@
 /* global window */
 
 import $ from 'jquery'
+import Plugin from './plugin'
 
 // Public class definition
 class Dropzone {
-
   constructor(element, options) {
     this.element = element
     this.$element = $(element)
-    this.options = {
-      ...options,
-    }
+    this.options = options
 
     this.init()
   }
@@ -34,28 +32,7 @@ class Dropzone {
 }
 
 // Plugin definition
-function Plugin() {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.dropzone')
-
-    if (!data) {
-      data = new Dropzone(this)
-      $this.data('axa.dropzone', data)
-    }
-  })
-}
-
-// Plugin registration
-$.fn.dropzone = Plugin
-$.fn.dropzone.Constructor = Dropzone
-
-// DATA-API
-$(window).on('load', () =>
-  $('[data-dropzone="dropzone"]').each(function () {
-    const $dropzone = $(this)
-    Plugin.call($dropzone)
-  })
-)
+// eslint-disable-next-line new-cap
+Plugin('dropzone', Dropzone)
 
 //! Copyright AXA Versicherungen AG 2015
