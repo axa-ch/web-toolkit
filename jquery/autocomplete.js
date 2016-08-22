@@ -1,10 +1,10 @@
 /* global window */
 
 import $ from 'jquery'
+import Plugin from './plugin'
 
 // Public class definition
 class Autocomplete {
-
   constructor(element, options) {
     this.element = element
     this.$element = $(element)
@@ -52,10 +52,12 @@ class Autocomplete {
   createItem(text) {
     const item = $(`<div class="autocomplete__suggestions__item">${text}</div>`)
     item.on('mouseover', this, (event) => {
+      // eslint-disable-next-line no-param-reassign
       event.data.isMouseOver = true
       $(event.target).addClass('autocomplete__suggestions__item--selected')
     })
     .on('mouseout', this, (event) => {
+      // eslint-disable-next-line no-param-reassign
       event.data.isMouseOver = false
       $(event.target).removeClass('autocomplete__suggestions__item--selected')
     })
@@ -71,29 +73,7 @@ class Autocomplete {
 }
 
 // Plugin definition
-function Plugin(option) {
-  this.each(function() {
-    const $this = $(this)
-    let data = $this.data('axa.autocomplete')
-    const options = $.extend({}, data, typeof option === 'object' && option)
-
-    if (!data) {
-      data = new Autocomplete(this, options)
-      $this.data('axa.autocomplete', data)
-    }
-  })
-}
-
-// Plugin registration
-$.fn.autocomplete = Plugin
-$.fn.autocomplete.Constructor = Autocomplete
-
-// DATA-API
-$(window).on('load', () =>
-  $('[data-autocomplete]').each(function() {
-    const $autocomplete = $(this)
-    Plugin.call($autocomplete)
-  })
-)
+// eslint-disable-next-line new-cap
+Plugin('autocomplete', Autocomplete)
 
 //! Copyright AXA Versicherungen AG 2015
