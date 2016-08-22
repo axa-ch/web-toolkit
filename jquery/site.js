@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import Plugin from './plugin'
 
 class Site {
   constructor(element) {
@@ -43,30 +44,8 @@ class Site {
   }
 }
 
-function Plugin(method, ...args) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.site')
-
-    if (!data) {
-      data = new Site(this)
-      $this.data('axa.site', data)
-    }
-
-    if (typeof(method) === 'string') {
-      data[method](...args)
-    }
-  })
-}
-
-$.fn.site = Plugin
-$.fn.site.Constructor = Site
-
-$(() => {
-  $('[data-site]').each(function () {
-    const $site = $(this)
-    Plugin.call($site)
-  })
-})
+// Plugin definition
+// eslint-disable-next-line new-cap
+Plugin('site', Site)
 
 // Copyright AXA Versicherungen AG 2015
