@@ -8,6 +8,15 @@ import dasherize from './dasherize'
 import './html5data'
 
 /**
+ * Use this callback for custom instantiation of your jQuery plugin.
+ * This can be used if you want to delegate some events on the whole document,
+ * which should lazily instantiate your plugin, e.g. datepickers, modals, etc.
+ *
+ * @callback Plugin~customInstantiationCB
+ * @param {Function} PluginWrapper - Call it to instantiate your plugin the standard way.
+ */
+
+/**
  * jQuery Plugin boilerplate glue code for plugin registration and instantiation.
  * This module is intended to streamline AXA's jQuery plugin development and to reduce boilerplate code.
  *
@@ -21,7 +30,7 @@ import './html5data'
  * @function Plugin
  * @param {string} name - The unique `name` of the jQuery plugin.
  * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
- * @param {Function} [initCb] - A custom instantiation callback, use it e.g. if you need to delegate some custom events.
+ * @param {Plugin~customInstantiationCB} [customInstantiationCB] - A custom instantiation callback, use it e.g. if you need to delegate some custom events.
  * @requires jquery
  * @requires dasherize
  * @requires html5data
@@ -87,7 +96,7 @@ import './html5data'
  * // call public method
  * locked.lockDimension('unlock')
  */
-function Plugin(name, Constructor, initCb) {
+function Plugin(name, Constructor, customInstantiationCB) {
   // functional API to set defaults globally
   $[name] = PluginWrapper
   // register plugin
@@ -163,9 +172,9 @@ function Plugin(name, Constructor, initCb) {
   // following naming convention:
   // `<tagname data-pluginname data-pluginname-option="value" />`
   function domReady() {
-    // if initCb is defined, run custom instantiation magic
-    if (typeof initCb === 'function') {
-      initCb(PluginWrapper)
+    // if customInstantiationCB is defined, run custom instantiation magic
+    if (typeof customInstantiationCB === 'function') {
+      customInstantiationCB(PluginWrapper)
     }
     // else run standard jQuery Plugin instantiation on DOM-ready event
     else {
