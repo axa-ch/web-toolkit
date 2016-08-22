@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import Plugin from './plugin'
 
 class ProgressBar {
   constructor(element, options) {
@@ -20,34 +21,10 @@ class ProgressBar {
       this.$element.removeClass('progress-bar__long')
     }
   }
-
 }
 
-function Plugin(method, ...args) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.progress-bar')
-
-    if (!data) {
-      data = new ProgressBar(this)
-      $this.data('axa.progress-bar', data)
-    }
-
-    if (typeof(method) === 'string') {
-      data[method](...args)
-    }
-  })
-}
-
-$.fn.progressBar = Plugin
-$.fn.progressBar.Constructor = ProgressBar
-
-$(() => {
-  $('[data-progress-bar]').each(function () {
-    const $progressBar = $(this)
-    const data = $progressBar.data()
-    Plugin.call($progressBar, data)
-  })
-})
+// Plugin definition
+// eslint-disable-next-line new-cap
+Plugin('progress-bar', ProgressBar)
 
 // Copyright AXA Versicherungen AG 2015
