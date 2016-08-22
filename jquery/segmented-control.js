@@ -1,6 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
+import Plugin from './plugin'
 
 // Public class definition
 class SegmentedControl {
@@ -25,10 +26,7 @@ class SegmentedControl {
       $radio.data('item.element', $radio.closest('.segmented-control__item'))
     })
 
-    this.options = {
-      ...SegmentedControl.DEFAULTS,
-      ...options,
-    }
+    this.options = options
 
     this.init()
   }
@@ -145,32 +143,7 @@ class SegmentedControl {
   }
 }
 
-// Plugin definition
-function Plugin(option) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.segmentedControl')
-    const options = $.extend({}, SegmentedControl.DEFAULTS, data, typeof option === 'object' && option)
-
-    if (!data) {
-      data = new SegmentedControl(this, options)
-      $this.data('axa.segmentedControl', data)
-    }
-  })
-}
-
-// Plugin registration
-$.fn.segmentedControl = Plugin
-$.fn.segmentedControl.Constructor = SegmentedControl
-
-// DATA-API
-$(window).on('load', () =>
-  $('[data-segmented-control]').each(function () {
-    const $segmentedControl = $(this)
-    const data = $segmentedControl.data()
-
-    Plugin.call($segmentedControl, data)
-  })
-)
+// eslint-disable-next-line new-cap
+Plugin('segmented-control', SegmentedControl)
 
 //! Copyright AXA Versicherungen AG 2015
