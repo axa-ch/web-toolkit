@@ -1,6 +1,7 @@
 /* global window, document */
 
 import $ from 'jquery'
+import isAnimationSupported from './is-animation-supported'
 import Plugin from './plugin'
 
 // Public class definition
@@ -15,31 +16,7 @@ class IE9Spinner {
 if (isAnimationSupported()) {
   // Plugin definition
   // eslint-disable-next-line new-cap
-  Plugin('ie9Spinner', IE9Spinner)
-}
-
-function isAnimationSupported() {
-  // check for support of the animation property
-  const elm = document.createElement('div')
-  const properties = [
-    'animation',
-    'WebkitAnimation',
-    'MozAnimation',
-    'msAnimation',
-    'OAnimation',
-  ]
-  const length = properties.length
-
-  for (let i = 0; i < length; i++) {
-    const property = properties[i]
-
-    // if the animation property is supported, exit
-    if (elm.style[property] != null) {
-      return true
-    }
-  }
-
-  return false
+  Plugin('spinner', IE9Spinner)
 }
 
 //! Copyright AXA Versicherungen AG 2015
