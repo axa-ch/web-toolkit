@@ -27,6 +27,7 @@ class Popover {
   }
 
   toggle(event) {
+    // eslint-disable-next-line no-param-reassign
     event.data.isOpen = !event.data.isOpen
     event.data.position()
     event.data.$target.toggleClass('is-active')
