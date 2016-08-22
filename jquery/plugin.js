@@ -21,6 +21,7 @@ import './html5data'
  * @function Plugin
  * @param {string} name - The unique `name` of the jQuery plugin.
  * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
+ * @param {Function} [initCb] - A custom instantiation callback, use it e.g. if you need to delegate some custom events.
  * @requires jquery
  * @requires dasherize
  * @requires html5data
@@ -86,7 +87,7 @@ import './html5data'
  * // call public method
  * locked.lockDimension('unlock')
  */
-function Plugin(name, Constructor) {
+function Plugin(name, Constructor, initCb) {
   // functional API to set defaults globally
   $[name] = PluginWrapper
   // register plugin
@@ -162,12 +163,19 @@ function Plugin(name, Constructor) {
   // following naming convention:
   // `<tagname data-pluginname data-pluginname-option="value" />`
   function domReady() {
-    $(`[data-${dasherize(name)}]`).each(function () {
-      const $this = $(this)
-      const options = $this.html5data(name)
+    // if initCb is defined, run custom instantiation magic
+    if (typeof initCb === 'function') {
+      initCb(PluginWrapper)
+    }
+    // else run standard jQuery Plugin instantiation on DOM-ready event
+    else {
+      $(`[data-${dasherize(name)}]`).each(function () {
+        const $this = $(this)
+        const options = $this.html5data(name)
 
-      PluginWrapper.call($this, options)
-    })
+        PluginWrapper.call($this, options)
+      })
+    }
   }
 }
 
