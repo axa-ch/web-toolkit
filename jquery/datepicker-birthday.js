@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import Plugin from './plugin'
 
 class BirthdayDatepicker {
   constructor(element, options) {
@@ -85,27 +86,8 @@ class BirthdayDatepicker {
 
 }
 
-function Plugin(options) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.datepicker-birthday')
-
-    if (!data) {
-      data = new BirthdayDatepicker(this, options)
-      $this.data('axa.datepicker-birthday', data)
-    }
-  })
-}
-
-$.fn.birthdayDatepicker = Plugin
-$.fn.birthdayDatepicker.Constructor = BirthdayDatepicker
-
-$(() => {
-  $('[data-datepicker-birthday]').each(function () {
-    const $birthdayDatepicker = $(this)
-    const data = $birthdayDatepicker.data()
-    Plugin.call($birthdayDatepicker, data)
-  })
-})
+// Plugin definition
+// eslint-disable-next-line new-cap
+Plugin('datepicker-birthday', BirthdayDatepicker)
 
 // Copyright AXA Versicherungen AG 2015
