@@ -1,6 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
+import Plugin from './plugin'
 
 // Public class definition
 class Checkbox {
@@ -15,7 +16,7 @@ class Checkbox {
     this.$checkbox = this.$element.find('.checkbox__checkbox')
     this.$label = this.$element.find('.checkbox__label')
 
-    this.options = $.extend({}, Checkbox.DEFAULTS, options)
+    this.options = options
 
     this.init()
   }
@@ -77,31 +78,7 @@ class Checkbox {
 }
 
 // Plugin definition
-function Plugin(option) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.checkbox')
-    const options = $.extend({}, Checkbox.DEFAULTS, data, typeof option === 'object' && option)
-
-    if (!data) {
-      data = new Checkbox(this, options)
-      $this.data('axa.checkbox', data)
-    }
-  })
-}
-
-// Plugin registration
-$.fn.checkbox = Plugin
-$.fn.checkbox.Constructor = Checkbox
-
-// DATA-API
-$(window).on('load', () =>
-  $('[data-checkbox]').each(function () {
-    const $checkbox = $(this)
-    const data = $checkbox.data()
-
-    Plugin.call($checkbox, data)
-  })
-)
+// eslint-disable-next-line new-cap
+Plugin('checkbox', Checkbox)
 
 //! Copyright AXA Versicherungen AG 2015
