@@ -1,16 +1,17 @@
 import $ from 'jquery'
+import Plugin from './plugin'
 
 class CheckboxGroup {
+  static DEFAULTS = {
+    minLength: 5,
+    preferedColumnLength: 5,
+    maxColumnCount: 3,
+  }
+
   constructor(element, options) {
     this.$element = $(element)
 
-    this.defaults = {
-      minLength: 5,
-      preferedColumnLength: 5,
-      maxColumnCount: 3,
-    }
-
-    this.options = $.extend({}, this.defaults, options)
+    this.options = options
 
     this.init()
   }
@@ -62,31 +63,8 @@ class CheckboxGroup {
 
 }
 
-function Plugin(method, ...args) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.checkbox-group')
-
-    if (!data) {
-      data = new CheckboxGroup(this)
-      $this.data('axa.checkbox-group', data)
-    }
-
-    if (typeof(method) === 'string') {
-      data[method](args)
-    }
-  })
-}
-
-$.fn.checkboxGroup = Plugin
-$.fn.checkboxGroup.Constructor = CheckboxGroup
-
-$(() => {
-  $('[data-checkbox-group]').each(function () {
-    const $checkboxGroup = $(this)
-    const data = $checkboxGroup.data()
-    Plugin.call($checkboxGroup, data)
-  })
-})
+// Plugin definition
+// eslint-disable-next-line new-cap
+Plugin('checkbox-group', CheckboxGroup)
 
 // Copyright AXA Versicherungen AG 2015
