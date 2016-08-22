@@ -21,7 +21,6 @@ import './html5data'
  * @function Plugin
  * @param {string} name - The unique `name` of the jQuery plugin.
  * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
- * @param {Object} [defaults={}] - Default options available/needed by your jQuery plugin.
  * @requires jquery
  * @requires dasherize
  * @requires html5data
@@ -39,12 +38,12 @@ import './html5data'
  * // import the jQuery plugin boilerplate helper
  * import Plugin from './plugin'
  *
- * const defaults = {
- *  which: 'width'
- * }
- *
  * // your custom Plugin implementation
  * class LockDimensions {
+ *  static DEFAULTS = {
+ *    which: 'width',
+ *  }
+ *
  *  construction(element, options) {
  *    this.element = element
  *    this.options = options
@@ -71,10 +70,10 @@ import './html5data'
  * }
  *
  * // register your custom Plugin
- * Plugin('lockDimension', LockDimensions, defaults)
+ * Plugin('lockDimension', LockDimensions)
  *
  * @example <caption>Override global defaults</caption>
- * $.fn.lockDimension.defaults.which = false
+ * $.fn.lockDimension.DEFAULTS.which = false
  *
  * @example <caption>Override global defaults - nicer API</caption>
  * $.lockDimension({
@@ -87,14 +86,15 @@ import './html5data'
  * // call public method
  * locked.lockDimension('unlock')
  */
-function Plugin(name, Constructor, defaults = {}) {
+function Plugin(name, Constructor) {
   // functional API to set defaults globally
   $[name] = PluginWrapper
   // register plugin
   $.fn[name] = PluginWrapper
-  // property based API to set defaults globally
-  $.fn[name].defaults = defaults
   $.fn[name].Constructor = Constructor
+  // DEFAULTS shortcut API
+  const DEFAULTS = Constructor.DEFAULTS
+  $.fn[name].DEFAULTS = DEFAULTS
 
   // listen for DOM-Ready event
   $(domReady)
@@ -113,7 +113,7 @@ function Plugin(name, Constructor, defaults = {}) {
   function PluginWrapper(options, ...rest) {
     // set defaults globally if the plugin isn't instantiated
     if (!(this instanceof $)) {
-      return $.extend(defaults, options)
+      return $.extend(DEFAULTS, options)
     }
 
     // Cache the method call
@@ -128,7 +128,7 @@ function Plugin(name, Constructor, defaults = {}) {
       // make sure to instantiate no more than once
       if (!instance) {
         instance = new Constructor(this, {
-          ...defaults,
+          ...DEFAULTS,
           ...options,
         })
         $.data(this, namespace, instance)
