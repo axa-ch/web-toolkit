@@ -1,6 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
+import Plugin from './plugin'
 
 // Public class definition
 class Affix {
@@ -12,7 +13,7 @@ class Affix {
   }
 
   constructor(element, options) {
-    this.options = $.extend({}, Affix.DEFAULTS, options)
+    this.options = options
 
     this.$target = $(this.options.target)
       .on('scroll.axa.affix.data-api', $.proxy(this.checkPosition, this))
@@ -129,44 +130,7 @@ class Affix {
 }
 
 // Plugin definition
-function Plugin(option) {
-  this.each(function() {
-    const $this = $(this)
-    let data = $this.data('axa.affix')
-    const options = typeof option === 'object'
-
-    if (!data) {
-      data = new Affix(this, options)
-      $this.data('axa.affix', data)
-    }
-
-    if (typeof option === 'string') {
-      data[option]()
-    }
-  })
-}
-
-// Plugin registration
-$.fn.affix = Plugin
-$.fn.affix.Constructor = Affix
-
-// DATA-API
-$(window).on('load', () =>
-  $('[data-spy="affix"]').each(function () {
-    const $spy = $(this)
-    const data = $spy.data()
-
-    data.offset = data.offset || {}
-
-    if (data.offsetBottom !== null) {
-      data.offset.bottom = data.offsetBottom
-    }
-    if (data.offsetTop !== null) {
-      data.offset.top = data.offsetTop
-    }
-
-    Plugin.call($spy, data)
-  })
-)
+// eslint-disable-next-line new-cap
+Plugin('affix', Affix)
 
 //! Copyright AXA Versicherungen AG 2015
