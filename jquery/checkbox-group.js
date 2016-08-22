@@ -4,7 +4,7 @@ import Plugin from './plugin'
 class CheckboxGroup {
   static DEFAULTS = {
     minLength: 5,
-    preferedColumnLength: 5,
+    preferredColumnLength: 5,
     maxColumnCount: 3,
   }
 
@@ -38,7 +38,7 @@ class CheckboxGroup {
         .addClass('row')
         .appendTo($container)
 
-      columnCnt = Math.ceil(length / this.options.preferedColumnLength)
+      columnCnt = Math.ceil(length / this.options.preferredColumnLength)
 
       if (columnCnt > this.options.maxColumnCount) {
         columnCnt = this.options.maxColumnCount
