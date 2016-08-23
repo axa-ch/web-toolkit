@@ -4,7 +4,6 @@ import $ from 'jquery'
 import Plugin from './plugin'
 
 class Modal {
-
   constructor(element) {
     this.$element = $(element)
   }
