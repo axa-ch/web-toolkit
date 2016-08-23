@@ -84,6 +84,17 @@ import './html5data'
  * // register your custom Plugin
  * Plugin('lockDimension', LockDimensions)
  *
+ * @example <caption>Register jQuery Plugin with customized instantiation</caption>
+ * Plugin('foo', Foo, (PluginWrapper) => {
+ *  $(document).on(click, '[data-foo]', function(e) {
+ *    e.preventDefault()
+ *
+ *    const $this = $(this)
+ *    const data = $this.data()
+ *    PluginWrapper.call($this, data)
+ *  })
+ * })
+ *
  * @example <caption>Override global defaults</caption>
  * $.fn.lockDimension.DEFAULTS.which = false
  *
