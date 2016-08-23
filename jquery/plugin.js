@@ -190,6 +190,7 @@ function Plugin(name, Constructor, customInstantiationCB) {
       customInstantiationCB(PluginWrapper)
     }
     // else run standard jQuery Plugin instantiation on DOM-ready event
+    // eslint-disable-next-line brace-style
     else {
       $(`[data-${dasherize(name)}]`).each(function () {
         const $this = $(this)
