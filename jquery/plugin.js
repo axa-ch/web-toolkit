@@ -12,6 +12,8 @@ import './html5data'
  * This can be used if you want to delegate some events on the whole document,
  * which should lazily instantiate your plugin, e.g. datepickers, modals, etc.
  *
+ * This callback gets triggered on DOM-ready event.
+ *
  * @callback Plugin~customInstantiationCB
  * @param {Function} PluginWrapper - Call it to instantiate your plugin the standard way.
  */
