@@ -1,6 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
+import Plugin from './plugin'
 
 class SlidingMenu {
   constructor(element) {
@@ -67,29 +68,13 @@ class SlidingMenu {
   }
 }
 
-function Plugin(method, args) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.menu')
-
-    if (!data) {
-      data = new SlidingMenu(this)
-      $this.data('axa.menu', data)
-    }
-
-    if (typeof(method) === 'string') {
-      data[method](...args)
-    }
-  })
-}
-
-$.fn.slidingMenu = Plugin
-$.fn.slidingMenu.Constructor = SlidingMenu
-
-$(() => {
+// Plugin definition
+// eslint-disable-next-line new-cap
+Plugin('modal', SlidingMenu, (PluginWrapper) => {
   $('[data-menu="sliding"]').each(function () {
     const $menu = $(this)
-    Plugin.call($menu)
+
+    PluginWrapper.call($menu)
   })
 })
 
