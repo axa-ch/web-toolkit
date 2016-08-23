@@ -1,6 +1,7 @@
 /* global document */
 
 import $ from 'jquery'
+import Plugin from './plugin'
 
 class Modal {
 
@@ -20,32 +21,14 @@ class Modal {
 }
 
 // Plugin definition
-function Plugin(option) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.modal')
+// eslint-disable-next-line new-cap
+Plugin('modal', Modal, (PluginWrapper) => {
+  $(document).on('click.axa.modal.data-api', '[data-modal]', function (e) {
+    e.preventDefault()
 
-    if (!data) {
-      data = new Modal(this)
-      $this.data('axa.modal', data)
-    }
-
-    if (typeof option === 'string') {
-      data[option]()
-    }
+    const $target = $($(e.currentTarget).data('modal'))
+    PluginWrapper.call($target, 'toggle')
   })
-}
-
-// Plugin registration
-$.fn.modal = Plugin
-$.fn.modal.Constructor = Modal
-
-// DATA-API
-$(document).on('click.axa.modal.data-api', '[data-modal]', function (e) {
-  e.preventDefault()
-
-  const $target = $($(e.currentTarget).data('modal'))
-  Plugin.call($target, 'toggle')
 })
 
 //! Copyright AXA Versicherungen AG 2015
