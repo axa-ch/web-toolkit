@@ -2,6 +2,7 @@
 
 import $ from 'jquery'
 import moment from 'moment'
+import Plugin from './plugin'
 
 import Emitter from './emitter'
 
@@ -204,6 +205,10 @@ class Picker extends Emitter {
 }
 
 class Datepicker {
+  static DEFAULTS = {
+    locale: document.documentElement.lang || 'en',
+  }
+
   constructor(element, moment1, input, displayWeek, icons, locale) {
     this.onChange = this.onChange.bind(this)
     this.moment = moment1
@@ -253,61 +258,29 @@ class Datepicker {
 }
 
 // Plugin definition
-function Plugin(options) {
-  const opts = $.extend({
-    locale: document.documentElement.lang || 'en',
-  }, $.fn.datepicker.defaults, options)
+// eslint-disable-next-line new-cap
+Plugin('datepicker', Datepicker, (PluginWrapper) => {
+  $(document).on('click.axa.datepicker.data-api', '[data-datepicker]', function (e) {
+    e.preventDefault()
 
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.datepicker')
-
-    if (!data) {
-      let moment
-
-      if (opts.moment != null) {
-        ({ moment } = opts)
-      } else if (window.moment != null) {
-        ({ moment } = window)
-      } else {
-        $.error('Moment.js must either be passed as an option or be available globally')
-      }
-
-      data = new Datepicker(this, moment, opts.input, opts.displayWeek, opts.icons, opts.locale)
-      $this.data('axa.datepicker', data)
+    const data = $(this).data()
+    const $target = $(data.datepicker)
+    const $input = $($target.data('datepicker-watch'))
+    let displayWeek = $target.data('datepicker-display-week')
+    const icons = {
+      prev: $target.data('datepicker-icon-prev'),
+      next: $target.data('datepicker-icon-next'),
     }
 
-    if (opts.action != null) {
-      data[opts.action]()
-    }
-  })
-}
+    displayWeek = displayWeek && displayWeek !== 'false'
 
-// Plugin registration
-$.fn.datepicker = Plugin
-$.fn.datepicker.Constructor = Datepicker
-
-// DATA-API
-$(document).on('click.axa.datepicker.data-api', '[data-datepicker]', function (e) {
-  e.preventDefault()
-
-  const data = $(this).data()
-  const $target = $(data.datepicker)
-  const $input = $($target.data('datepicker-watch'))
-  let displayWeek = $target.data('datepicker-display-week')
-  const icons = {
-    prev: $target.data('datepicker-icon-prev'),
-    next: $target.data('datepicker-icon-next'),
-  }
-
-  displayWeek = displayWeek && displayWeek !== 'false'
-
-  Plugin.call($target, {
-    ...data,
-    input: $input,
-    action: 'toggle',
-    displayWeek,
-    icons,
+    PluginWrapper.call($target, {
+      ...data,
+      input: $input,
+      action: 'toggle',
+      displayWeek,
+      icons,
+    })
   })
 })
 
