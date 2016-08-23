@@ -74,7 +74,7 @@ module.exports = [['build'], () => {
 
   watch([
     './jquery/**/*',
-  ], (sequence(300)).getHandler('scripts', 'docs-scripts'))
+  ], (sequence(300)).getHandler('scripts', 'docs-scripts', 'docs-jsdoc2md'))
   .on('error', err => errorify(err.message, 'scripts'))
 
   return watch([
