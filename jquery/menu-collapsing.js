@@ -1,6 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
+import Plugin from './plugin'
 
 // Public class definition
 class CollapsingMenu {
@@ -55,37 +56,14 @@ class CollapsingMenu {
 }
 
 // Plugin definition
-function Plugin(option, ...args) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.menu')
-    const options = $.extend({}, CollapsingMenu.DEFAULTS, data, typeof option === 'object' && option)
-
-    if (!data) {
-      data = new CollapsingMenu(this, options)
-      $this.data('axa.menu', data)
-    }
-
-    if (typeof option === 'string' && option === 'toggle') {
-      data.toggle(args[0])
-    }
-
-    return data
-  })
-}
-
-// Plugin registration
-$.fn.collapsingMenu = Plugin
-$.fn.collapsingMenu.Constructor = CollapsingMenu
-
-// DATA-API
-$(window).on('load', () =>
+// eslint-disable-next-line new-cap
+Plugin('modal', CollapsingMenu, (PluginWrapper) => {
   $('[data-menu="collapsing"]').each(function () {
     const $menu = $(this)
     const data = $menu.data()
 
-    Plugin.call($menu, data)
+    PluginWrapper.call($menu, data)
   })
-)
+})
 
 //! Copyright AXA Versicherungen AG 2015
