@@ -54,7 +54,8 @@ class CheckboxGroup {
 
         for (j = (i - 1) * maxItemsPerColumn; j <= i * maxItemsPerColumn; j++) {
           if (typeof items[j] !== 'undefined') {
-            $(items[j]).appendTo($column).checkbox('init')
+            $(items[j]).appendTo($column)
+              .checkbox('init') // Important: call init, to make sure that event listeners are properly bounded
           }
         }
       }
