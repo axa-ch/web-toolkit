@@ -18,7 +18,7 @@ import './html5data'
  * - Instance-specific options through `data-pluginName-optionName` attributes or options hash
  * - Multiple Instatiation Guard
  *
- * @function Plugin
+ * @function registerPlugin
  * @param {string} name - The unique `name` of the jQuery plugin.
  * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
  * @param {customInstantiationCB} [customInstantiationCB] - A custom instantiation callback, use it e.g. if you need to delegate some custom events.
@@ -71,10 +71,10 @@ import './html5data'
  * }
  *
  * // register your custom Plugin
- * Plugin('lockDimension', LockDimensions)
+ * registerPlugin('lockDimension', LockDimensions)
  *
  * @example <caption>Register jQuery Plugin with customized instantiation</caption>
- * Plugin('foo', Foo, (PluginWrapper) => {
+ * registerPlugin('foo', Foo, (PluginWrapper) => {
  *  $(document).on(click, '[data-foo]', function(e) {
  *    e.preventDefault()
  *
@@ -98,7 +98,7 @@ import './html5data'
  * // call public method
  * locked.lockDimension('unlock')
  */
-function Plugin(name, Constructor, customInstantiationCB) {
+function registerPlugin(name, Constructor, customInstantiationCB) {
   // functional API to set defaults globally
   $[name] = PluginWrapper
   // register plugin
@@ -191,7 +191,7 @@ function Plugin(name, Constructor, customInstantiationCB) {
   }
 }
 
-export default Plugin
+export default registerPlugin
 
 /**
  * Use this callback for custom instantiation of your jQuery plugin.
