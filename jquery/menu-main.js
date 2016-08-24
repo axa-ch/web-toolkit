@@ -50,7 +50,7 @@ class MainMenu {
 }
 
 // Plugin definition
-registerPlugin('modal', MainMenu, (PluginWrapper) => {
+registerPlugin('mainMenu', MainMenu, (PluginWrapper) => {
   $('[data-menu="main"]').each(function () {
     const $menu = $(this)
 

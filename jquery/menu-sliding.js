@@ -69,7 +69,7 @@ class SlidingMenu {
 }
 
 // Plugin definition
-registerPlugin('modal', SlidingMenu, (PluginWrapper) => {
+registerPlugin('slidingMenu', SlidingMenu, (PluginWrapper) => {
   $('[data-menu="sliding"]').each(function () {
     const $menu = $(this)
 

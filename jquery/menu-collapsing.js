@@ -56,7 +56,7 @@ class CollapsingMenu {
 }
 
 // Plugin definition
-registerPlugin('modal', CollapsingMenu, (PluginWrapper) => {
+registerPlugin('collapsingMenu', CollapsingMenu, (PluginWrapper) => {
   $('[data-menu="collapsing"]').each(function () {
     const $menu = $(this)
     const data = $menu.data()
