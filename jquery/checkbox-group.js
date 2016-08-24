@@ -60,7 +60,6 @@ class CheckboxGroup {
       }
     }
   }
-
 }
 
 // Plugin definition
