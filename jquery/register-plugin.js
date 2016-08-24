@@ -21,7 +21,9 @@ import './html5data'
  * @function registerPlugin
  * @param {string} name - The unique `name` of the jQuery plugin.
  * @param {Class|Function} Constructor - The concrete implementation of your jQuery plugin.
- * @param {customInstantiationCB} [customInstantiationCB] - A custom instantiation callback, use it e.g. if you need to delegate some custom events.
+ * @param {customInstantiationCB|Object} [callbacks] - A hash of callbacks or a custom instantiation callback, use it e.g. if you need to delegate some custom events.
+ * @param {customInstantiationCB} [callbacks.customInstantiationCB] - A custom instantiation callback, use it e.g. if you need to delegate some custom events.
+ * @param {customInstantiationCB} [callbacks.afterInstantiationCB] - A after instantiation callback, use it e.g. if you need to delegate some custom events.
  * @requires jquery
  * @requires dasherize
  * @requires html5data
@@ -98,7 +100,19 @@ import './html5data'
  * // call public method
  * locked.lockDimension('unlock')
  */
-function registerPlugin(name, Constructor, customInstantiationCB) {
+function registerPlugin(name, Constructor, callbacks) {
+  let customInstantiationCB
+  let afterInstantiationCB
+
+  if (typeof callbacks === 'function') {
+    customInstantiationCB = callbacks
+  } else if (typeof callbacks === 'object') {
+    customInstantiationCB = callbacks.customInstantiationCB
+    afterInstantiationCB = callbacks.afterInstantiationCB
+  }
+  // cache callbacks
+
+
   // functional API to set defaults globally
   $[name] = PluginWrapper
   // register plugin
@@ -158,12 +172,14 @@ function registerPlugin(name, Constructor, customInstantiationCB) {
         && typeof instance[action] === 'function') {
         // Call the method of our plugin instance,
         // and pass it the supplied arguments.
-        returns = instance[action].apply(instance, rest)
+        returns = instance[action].apply(instance, rest || arguments)
       }
 
       // Allow instances to be destroyed via the 'destroy' method
       if (options === 'destroy') {
         $.data(this, namespace, null)
+      } else if (typeof afterInstantiationCB === 'function') {
+        afterInstantiationCB(instance, options, rest || arguments)
       }
     })
 
@@ -206,4 +222,17 @@ export default registerPlugin
  *
  * @callback customInstantiationCB
  * @param {Function} PluginWrapper - Call it to instantiate your plugin the standard way.
+ */
+
+/**
+ * Use this callback for custom code after instantiation of your jQuery plugin.
+ * This can be used if you want to delegate some events on the whole document,
+ * which should lazily show/hide your plugin, e.g. datepickers, modals, etc.
+ *
+ * This callback gets triggered after each call to `PluginWrapper`.
+ *
+ * @callback afterInstantiationCB
+ * @param {Object} instance - The instance of the current jQuery Plugin.
+ * @param {Object} options - Either plugin's options or if of type `string` a method to call.
+ * @param {Array} args - any additional arguments.
  */
