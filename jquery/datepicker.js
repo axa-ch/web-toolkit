@@ -258,7 +258,7 @@ class Datepicker {
 
   toggle() {
     if (isMobile) {
-      this.$input.click()
+      this.$input.focus()
     } else {
       this.picker.toggle()
     }
