@@ -74,18 +74,23 @@ class NotificationPane {
 }
 
 // Plugin definition
-registerPlugin('notification', NotificationPane, (PluginWrapper) => {
-  $(document).on('click.axa.notification.data-api', '[data-notification]', function (e) {
-    e.preventDefault()
+registerPlugin('notification', NotificationPane, {
+  customInstantiationCB: (PluginWrapper) => {
+    $(document).on('click.axa.notification.data-api', '[data-notification]', function (e) {
+      e.preventDefault()
 
-    const $this = $(this)
-    const $target = $($this.data('notification'))
+      const $this = $(this)
+      const $target = $($this.data('notification'))
 
-    PluginWrapper.call($target, {
-      content: $this.data('notification-content'),
-      modifier: $this.data('notification-modifier'),
+      PluginWrapper.call($target, {
+        content: $this.data('notification-content'),
+        modifier: $this.data('notification-modifier'),
+      })
     })
-  })
+  },
+  afterInstantiationCB: (instance, options) => {
+    instance.displayNotification(options)
+  },
 })
 
 //! Copyright AXA Versicherungen AG 2015
