@@ -146,15 +146,18 @@ function registerPlugin(name, Constructor, customInstantiationCB) {
         $.data(this, namespace, instance)
       }
 
-      // If the first parameter is a string and
-      // it is available as a method of the plugin,
+      // If the first parameter is a string or `__action__` is a property
+      // and it is available as a method of the plugin,
       // treat this as a call to a public method.
-      if (typeof options === 'string'
-        && options in instance
-        && typeof instance[options] === 'function') {
+      // eslint-disable-next-line no-underscore-dangle
+      const action = typeof options === 'object' ? options.__action__ : options
+
+      if (typeof action === 'string'
+        && action in instance
+        && typeof instance[action] === 'function') {
         // Call the method of our plugin instance,
         // and pass it the supplied arguments.
-        returns = instance[options].apply(instance, rest)
+        returns = instance[action].apply(instance, rest)
       }
 
       // Allow instances to be destroyed via the 'destroy' method
