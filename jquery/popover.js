@@ -1,7 +1,7 @@
 /* global window, document */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Popover {
@@ -97,7 +97,6 @@ class Popover {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('popover', Popover)
+registerPlugin('popover', Popover)
 
 //! Copyright AXA Versicherungen AG 2015

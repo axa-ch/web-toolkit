@@ -1,7 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Affix {
@@ -130,7 +130,6 @@ class Affix {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('affix', Affix)
+registerPlugin('affix', Affix)
 
 //! Copyright AXA Versicherungen AG 2015

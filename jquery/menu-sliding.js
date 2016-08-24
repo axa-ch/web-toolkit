@@ -1,7 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 class SlidingMenu {
   constructor(element) {
@@ -69,8 +69,7 @@ class SlidingMenu {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('modal', SlidingMenu, (PluginWrapper) => {
+registerPlugin('modal', SlidingMenu, (PluginWrapper) => {
   $('[data-menu="sliding"]').each(function () {
     const $menu = $(this)
 

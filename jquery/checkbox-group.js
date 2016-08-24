@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 class CheckboxGroup {
   static DEFAULTS = {
@@ -64,7 +64,6 @@ class CheckboxGroup {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('checkbox-group', CheckboxGroup)
+registerPlugin('checkbox-group', CheckboxGroup)
 
 // Copyright AXA Versicherungen AG 2015

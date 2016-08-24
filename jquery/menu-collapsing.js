@@ -1,7 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class CollapsingMenu {
@@ -56,8 +56,7 @@ class CollapsingMenu {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('modal', CollapsingMenu, (PluginWrapper) => {
+registerPlugin('modal', CollapsingMenu, (PluginWrapper) => {
   $('[data-menu="collapsing"]').each(function () {
     const $menu = $(this)
     const data = $menu.data()

@@ -2,7 +2,7 @@
 
 import $ from 'jquery'
 import isAnimationSupported from './is-animation-supported'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Spinner {
@@ -22,8 +22,7 @@ class Spinner {
 
 if (isAnimationSupported()) {
   // Plugin definition
-  // eslint-disable-next-line new-cap
-  Plugin('spinner', Spinner)
+  registerPlugin('spinner', Spinner)
 }
 
 //! Copyright AXA Versicherungen AG 2015

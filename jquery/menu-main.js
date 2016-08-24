@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 import Bacon from 'baconjs'
 
 class MainMenu {
@@ -50,8 +50,7 @@ class MainMenu {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('modal', MainMenu, (PluginWrapper) => {
+registerPlugin('modal', MainMenu, (PluginWrapper) => {
   $('[data-menu="main"]').each(function () {
     const $menu = $(this)
 

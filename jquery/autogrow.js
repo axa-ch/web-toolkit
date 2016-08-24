@@ -1,7 +1,7 @@
 /* global window, document */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Autogrow {
@@ -71,7 +71,6 @@ class Autogrow {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('autogrow', Autogrow)
+registerPlugin('autogrow', Autogrow)
 
 //! Copyright AXA Versicherungen AG 2015

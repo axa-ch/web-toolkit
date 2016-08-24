@@ -2,7 +2,7 @@
 
 import $ from 'jquery'
 import moment from 'moment'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 import Emitter from './emitter'
 
@@ -258,8 +258,7 @@ class Datepicker {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('datepicker', Datepicker, (PluginWrapper) => {
+registerPlugin('datepicker', Datepicker, (PluginWrapper) => {
   $(document).on('click.axa.datepicker.data-api', '[data-datepicker]', function (e) {
     e.preventDefault()
 

@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 class Dropdown {
   constructor(element) {
@@ -39,7 +39,6 @@ class Dropdown {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('dropdown', Dropdown)
+registerPlugin('dropdown', Dropdown)
 
 // Copyright AXA Versicherungen AG 2015

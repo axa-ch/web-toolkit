@@ -1,7 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Dropzone {
@@ -32,7 +32,6 @@ class Dropzone {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('dropzone', Dropzone)
+registerPlugin('dropzone', Dropzone)
 
 //! Copyright AXA Versicherungen AG 2015

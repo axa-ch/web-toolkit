@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 class BirthdayDatepicker {
   constructor(element, options) {
@@ -87,7 +87,6 @@ class BirthdayDatepicker {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('datepicker-birthday', BirthdayDatepicker)
+registerPlugin('datepicker-birthday', BirthdayDatepicker)
 
 // Copyright AXA Versicherungen AG 2015

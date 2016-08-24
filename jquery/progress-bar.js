@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 class ProgressBar {
   static DEFAULTS = {
@@ -24,7 +24,6 @@ class ProgressBar {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('progress-bar', ProgressBar)
+registerPlugin('progress-bar', ProgressBar)
 
 // Copyright AXA Versicherungen AG 2015

@@ -1,7 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class SegmentedControl {
@@ -143,7 +143,6 @@ class SegmentedControl {
   }
 }
 
-// eslint-disable-next-line new-cap
-Plugin('segmented-control', SegmentedControl)
+registerPlugin('segmented-control', SegmentedControl)
 
 //! Copyright AXA Versicherungen AG 2015

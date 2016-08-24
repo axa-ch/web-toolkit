@@ -1,7 +1,7 @@
 /* global document */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 class NotificationPane {
   constructor(element) {
@@ -74,8 +74,7 @@ class NotificationPane {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('modal', NotificationPane, (PluginWrapper) => {
+registerPlugin('modal', NotificationPane, (PluginWrapper) => {
   $(document).on('click.axa.notification.data-api', '[data-notification]', function (e) {
     e.preventDefault()
 

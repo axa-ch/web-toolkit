@@ -1,7 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Checkbox {
@@ -78,7 +78,6 @@ class Checkbox {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('checkbox', Checkbox)
+registerPlugin('checkbox', Checkbox)
 
 //! Copyright AXA Versicherungen AG 2015

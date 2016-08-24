@@ -1,7 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Info {
@@ -25,7 +25,6 @@ class Info {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('info', Info)
+registerPlugin('info', Info)
 
 //! Copyright AXA Versicherungen AG 2015

@@ -1,7 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Autocomplete {
@@ -73,7 +73,6 @@ class Autocomplete {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('autocomplete', Autocomplete)
+registerPlugin('autocomplete', Autocomplete)
 
 //! Copyright AXA Versicherungen AG 2015

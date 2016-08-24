@@ -1,7 +1,7 @@
 /* global document */
 
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 class Modal {
   constructor(element) {
@@ -20,8 +20,7 @@ class Modal {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('modal', Modal, (PluginWrapper) => {
+registerPlugin('modal', Modal, (PluginWrapper) => {
   $(document).on('click.axa.modal.data-api', '[data-modal]', function (e) {
     e.preventDefault()
 

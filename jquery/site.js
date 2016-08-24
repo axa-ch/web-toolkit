@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import Plugin from './plugin'
+import registerPlugin from './register-plugin'
 
 class Site {
   constructor(element) {
@@ -46,7 +46,6 @@ class Site {
 }
 
 // Plugin definition
-// eslint-disable-next-line new-cap
-Plugin('site', Site)
+registerPlugin('site', Site)
 
 // Copyright AXA Versicherungen AG 2015
