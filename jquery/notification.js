@@ -74,7 +74,7 @@ class NotificationPane {
 }
 
 // Plugin definition
-registerPlugin('modal', NotificationPane, (PluginWrapper) => {
+registerPlugin('notification', NotificationPane, (PluginWrapper) => {
   $(document).on('click.axa.notification.data-api', '[data-notification]', function (e) {
     e.preventDefault()
 
