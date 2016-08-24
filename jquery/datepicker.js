@@ -6,8 +6,6 @@ import registerPlugin from './register-plugin'
 
 import Emitter from './emitter'
 
-const longDateFormatCode = 'L'
-
 const append = (html, $parent) => {
   const $el = $(html)
   $parent.append($el)
@@ -15,10 +13,10 @@ const append = (html, $parent) => {
 }
 
 class Picker extends Emitter {
-  constructor(moment1, displayWeek, icons) {
+  constructor(moment1, displayWeek, icons, longDateFormat) {
     super()
     this.moment = moment1
-    this.format = this.moment.localeData().longDateFormat(longDateFormatCode)
+    this.format = this.moment.localeData().longDateFormat(longDateFormat)
     this.displayWeek = displayWeek
     this.icons = icons
 
@@ -206,29 +204,36 @@ class Picker extends Emitter {
 
 class Datepicker {
   static DEFAULTS = {
+    moment: window.moment,
     locale: document.documentElement.lang || 'en',
+    longDateFormat: 'L',
   }
 
-  constructor(element, moment1, input, displayWeek, icons, locale) {
+  constructor(element, options) {
     this.onChange = this.onChange.bind(this)
-    this.moment = moment1
-    this.moment.locale(locale)
-    this.format = this.moment.localeData().longDateFormat(longDateFormatCode)
+    this.options = options
+    this.moment = options.moment
+    this.moment.locale(options.locale)
+    this.format = this.moment.localeData().longDateFormat(options.longDateFormat)
     this.$element = $(element)
+
+    if (!this.moment) {
+      $.error('Moment.js must either be passed as an option or be available globally')
+    }
 
     if (navigator.userAgent.match(/Android/i) ||
       navigator.userAgent.match(/(iOS|iPhone|iPad|iPod)/i) ||
       navigator.userAgent.match(/Windows Phone/i)) {
-      this.$input = $(input)
+      this.$input = $(options.input)
 
       this.$input.prop('type', 'date')
 
       this.$input.focus()
     } else {
-      this.picker = new Picker(this.moment, displayWeek, icons)
+      this.picker = new Picker(this.moment, options.displayWeek, options.icons, options.longDateFormat)
 
-      if (input != null) {
-        this.$input = $(input)
+      if (options.input != null) {
+        this.$input = $(options.input)
 
         this.$input.on('change', this.onChange)
 
@@ -276,7 +281,7 @@ registerPlugin('datepicker', Datepicker, (PluginWrapper) => {
     PluginWrapper.call($target, {
       ...data,
       input: $input,
-      action: 'toggle',
+      __action__: 'toggle',
       displayWeek,
       icons,
     })
