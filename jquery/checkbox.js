@@ -10,6 +10,7 @@ class Checkbox {
   constructor(element, options) {
     this.handleKeyUp = this.handleKeyUp.bind(this)
     this.setCheckboxState = this.setCheckboxState.bind(this)
+    this.handleCustomColorBG = this.handleCustomColorBG.bind(this)
     this.$element = $(element)
 
     // TODO: Do not depend on css classes
@@ -29,14 +30,17 @@ class Checkbox {
 
     this.setCheckboxState()
 
-    this.$checkbox.on('change', this.setCheckboxState)
+    this.$checkbox.off('change.axa.checkbock')
+      .on('change.axa.checkbock', this.setCheckboxState)
 
-    this.$label.on('keyup', this.handleKeyUp)
+    this.$label.off('keyup.axa.checkbock')
+      .on('keyup.axa.checkbock', this.handleKeyUp)
 
     if (typeof this.options.color !== 'undefined') {
       this.handleCustomColorBG()
       this.$element.css({ 'border-color': this.options.color })
-      this.$element.on('click', this.handleCustomColorBG.bind(this))
+      this.$element.off('click.axa.checkbock')
+        .on('click.axa.checkbock', this.handleCustomColorBG)
     }
   }
 
