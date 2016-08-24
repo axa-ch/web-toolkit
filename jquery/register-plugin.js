@@ -86,6 +86,14 @@ import './html5data'
  *  })
  * })
  *
+ * @example <caption>Register jQuery Plugin with after instantiation callback</caption>
+ * registerPlugin('foo', Foo, {
+ *  afterInstantiationCB: (instance, options, args) => {
+ *    // call a method on every call to `PluginWrapper`
+ *    instance.display(options, args)
+ *  }
+ * })
+ *
  * @example <caption>Override global defaults</caption>
  * $.fn.lockDimension.DEFAULTS.which = false
  *
@@ -230,8 +238,11 @@ export default registerPlugin
  *
  * This callback gets triggered after each call to `PluginWrapper`.
  *
+ * **Note**
+ * This callback is not executed if `options` is `'destroy'`.
+ *
  * @callback afterInstantiationCB
  * @param {Object} instance - The instance of the current jQuery Plugin.
  * @param {Object} options - Either plugin's options or if of type `string` a method to call.
- * @param {Array} args - any additional arguments.
+ * @param {Array} args - Any additional arguments, either ...rest or args.
  */
