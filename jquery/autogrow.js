@@ -1,6 +1,7 @@
 /* global window, document */
 
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Autogrow {
@@ -70,28 +71,6 @@ class Autogrow {
 }
 
 // Plugin definition
-function Plugin() {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.autogrow')
-
-    if (!data) {
-      data = new Autogrow(this)
-      $this.data('axa.autogrow', data)
-    }
-  })
-}
-
-// Plugin registration
-$.fn.autogrow = Plugin
-$.fn.autogrow.Constructor = Autogrow
-
-// DATA-API
-$(window).on('load', () =>
-  $('[data-autogrow="autogrow"]').each(function () {
-    const $autogrow = $(this)
-    Plugin.call($autogrow)
-  })
-)
+registerPlugin('autogrow', Autogrow)
 
 //! Copyright AXA Versicherungen AG 2015

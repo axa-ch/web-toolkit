@@ -1,6 +1,8 @@
 /* global window, document */
 
 import $ from 'jquery'
+import isAnimationSupported from './is-animation-supported'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class IE9Spinner {
@@ -11,50 +13,9 @@ class IE9Spinner {
   }
 }
 
-// Plugin definition
-function Plugin(option) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.ie9Spinner')
-    const options = $.extend({}, data, typeof option === 'object' && option)
-
-    if (!data) {
-      data = new IE9Spinner(this, options)
-      $this.data('axa.ie9Spinner', data)
-    }
-  })
+if (isAnimationSupported()) {
+  // Plugin definition
+  registerPlugin('spinner', IE9Spinner)
 }
-
-// Plugin registration
-$.fn.ie9Spinner = Plugin
-$.fn.ie9Spinner.Constructor = IE9Spinner
-
-// DATA-API
-$(window).on('load', () => {
-  // check for support of the animation property
-  const elm = document.createElement('div')
-  const properties = [
-    'animation',
-    'WebkitAnimation',
-    'MozAnimation',
-    'msAnimation',
-    'OAnimation',
-  ]
-
-  for (let i = 0; i < properties.length; i++) {
-    const property = properties[i]
-
-    // if the animation property is supported, exit
-    if (elm.style[property] != null) {
-      return
-    }
-  }
-
-  // animation property not supported, activate fallback on all spinners
-  $('[data-spinner]').each(function () {
-    const $spinner = $(this)
-    Plugin.call($spinner)
-  })
-})
 
 //! Copyright AXA Versicherungen AG 2015

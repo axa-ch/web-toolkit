@@ -1,6 +1,7 @@
 /* global window, document */
 
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Popover {
@@ -26,6 +27,7 @@ class Popover {
   }
 
   toggle(event) {
+    // eslint-disable-next-line no-param-reassign
     event.data.isOpen = !event.data.isOpen
     event.data.position()
     event.data.$target.toggleClass('is-active')
@@ -95,29 +97,6 @@ class Popover {
 }
 
 // Plugin definition
-function Plugin(option) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.popover')
-    const options = $.extend({}, data, typeof option === 'object' && option)
-
-    if (!data) {
-      data = new Popover(this, options)
-      $this.data('axa.popover', data)
-    }
-  })
-}
-
-// Plugin registration
-$.fn.popover = Plugin
-$.fn.popover.Constructor = Popover
-
-// DATA-API
-$(window).on('load', () =>
-  $('[data-popover]').each(function () {
-    const $popover = $(this)
-    Plugin.call($popover)
-  })
-)
+registerPlugin('popover', Popover)
 
 //! Copyright AXA Versicherungen AG 2015

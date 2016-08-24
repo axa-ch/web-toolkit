@@ -1,16 +1,17 @@
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 
 class CheckboxGroup {
+  static DEFAULTS = {
+    minLength: 5,
+    preferredColumnLength: 5,
+    maxColumnCount: 3,
+  }
+
   constructor(element, options) {
     this.$element = $(element)
 
-    this.defaults = {
-      minLength: 5,
-      preferedColumnLength: 5,
-      maxColumnCount: 3,
-    }
-
-    this.options = $.extend({}, this.defaults, options)
+    this.options = options
 
     this.init()
   }
@@ -37,7 +38,7 @@ class CheckboxGroup {
         .addClass('row')
         .appendTo($container)
 
-      columnCnt = Math.ceil(length / this.options.preferedColumnLength)
+      columnCnt = Math.ceil(length / this.options.preferredColumnLength)
 
       if (columnCnt > this.options.maxColumnCount) {
         columnCnt = this.options.maxColumnCount
@@ -54,39 +55,15 @@ class CheckboxGroup {
         for (j = (i - 1) * maxItemsPerColumn; j <= i * maxItemsPerColumn; j++) {
           if (typeof items[j] !== 'undefined') {
             $(items[j]).appendTo($column)
+              .checkbox('init') // Important: call init, to make sure that event listeners are properly bounded
           }
         }
       }
     }
   }
-
 }
 
-function Plugin(method, ...args) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.checkbox-group')
-
-    if (!data) {
-      data = new CheckboxGroup(this)
-      $this.data('axa.checkbox-group', data)
-    }
-
-    if (typeof(method) === 'string') {
-      data[method](args)
-    }
-  })
-}
-
-$.fn.checkboxGroup = Plugin
-$.fn.checkboxGroup.Constructor = CheckboxGroup
-
-$(() => {
-  $('[data-checkbox-group]').each(function () {
-    const $checkboxGroup = $(this)
-    const data = $checkboxGroup.data()
-    Plugin.call($checkboxGroup, data)
-  })
-})
+// Plugin definition
+registerPlugin('checkbox-group', CheckboxGroup)
 
 // Copyright AXA Versicherungen AG 2015

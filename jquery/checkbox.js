@@ -1,6 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Checkbox {
@@ -9,13 +10,14 @@ class Checkbox {
   constructor(element, options) {
     this.handleKeyUp = this.handleKeyUp.bind(this)
     this.setCheckboxState = this.setCheckboxState.bind(this)
+    this.handleCustomColorBG = this.handleCustomColorBG.bind(this)
     this.$element = $(element)
 
     // TODO: Do not depend on css classes
     this.$checkbox = this.$element.find('.checkbox__checkbox')
     this.$label = this.$element.find('.checkbox__label')
 
-    this.options = $.extend({}, Checkbox.DEFAULTS, options)
+    this.options = options
 
     this.init()
   }
@@ -28,14 +30,17 @@ class Checkbox {
 
     this.setCheckboxState()
 
-    this.$checkbox.on('change', this.setCheckboxState)
+    this.$checkbox.off('change.axa.checkbock')
+      .on('change.axa.checkbock', this.setCheckboxState)
 
-    this.$label.on('keyup', this.handleKeyUp)
+    this.$label.off('keyup.axa.checkbock')
+      .on('keyup.axa.checkbock', this.handleKeyUp)
 
     if (typeof this.options.color !== 'undefined') {
       this.handleCustomColorBG()
       this.$element.css({ 'border-color': this.options.color })
-      this.$element.on('click', this.handleCustomColorBG.bind(this))
+      this.$element.off('click.axa.checkbock')
+        .on('click.axa.checkbock', this.handleCustomColorBG)
     }
   }
 
@@ -77,31 +82,6 @@ class Checkbox {
 }
 
 // Plugin definition
-function Plugin(option) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.checkbox')
-    const options = $.extend({}, Checkbox.DEFAULTS, data, typeof option === 'object' && option)
-
-    if (!data) {
-      data = new Checkbox(this, options)
-      $this.data('axa.checkbox', data)
-    }
-  })
-}
-
-// Plugin registration
-$.fn.checkbox = Plugin
-$.fn.checkbox.Constructor = Checkbox
-
-// DATA-API
-$(window).on('load', () =>
-  $('[data-checkbox]').each(function () {
-    const $checkbox = $(this)
-    const data = $checkbox.data()
-
-    Plugin.call($checkbox, data)
-  })
-)
+registerPlugin('checkbox', Checkbox)
 
 //! Copyright AXA Versicherungen AG 2015

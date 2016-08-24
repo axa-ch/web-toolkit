@@ -1,14 +1,15 @@
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 
 class ProgressBar {
+  static DEFAULTS = {
+    max: 4,
+  }
+
   constructor(element, options) {
     this.$element = $(element)
 
-    this.defaults = {
-      max: 4,
-    }
-
-    this.options = $.extend({}, this.defaults, options)
+    this.options = options
 
     this.init()
   }
@@ -20,34 +21,9 @@ class ProgressBar {
       this.$element.removeClass('progress-bar__long')
     }
   }
-
 }
 
-function Plugin(method, ...args) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.progress-bar')
-
-    if (!data) {
-      data = new ProgressBar(this)
-      $this.data('axa.progress-bar', data)
-    }
-
-    if (typeof(method) === 'string') {
-      data[method](...args)
-    }
-  })
-}
-
-$.fn.progressBar = Plugin
-$.fn.progressBar.Constructor = ProgressBar
-
-$(() => {
-  $('[data-progress-bar]').each(function () {
-    const $progressBar = $(this)
-    const data = $progressBar.data()
-    Plugin.call($progressBar, data)
-  })
-})
+// Plugin definition
+registerPlugin('progress-bar', ProgressBar)
 
 // Copyright AXA Versicherungen AG 2015

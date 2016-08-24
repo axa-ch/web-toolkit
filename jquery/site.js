@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 
 class Site {
   constructor(element) {
@@ -24,6 +25,7 @@ class Site {
 
   toggleMenu(show) {
     if (show === undefined) {
+      // eslint-disable-next-line no-param-reassign
       show = !this.$page.hasClass('is-pushed')
     }
 
@@ -43,30 +45,7 @@ class Site {
   }
 }
 
-function Plugin(method, ...args) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.site')
-
-    if (!data) {
-      data = new Site(this)
-      $this.data('axa.site', data)
-    }
-
-    if (typeof(method) === 'string') {
-      data[method](...args)
-    }
-  })
-}
-
-$.fn.site = Plugin
-$.fn.site.Constructor = Site
-
-$(() => {
-  $('[data-site]').each(function () {
-    const $site = $(this)
-    Plugin.call($site)
-  })
-})
+// Plugin definition
+registerPlugin('site', Site)
 
 // Copyright AXA Versicherungen AG 2015

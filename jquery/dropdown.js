@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 
 class Dropdown {
   constructor(element) {
@@ -37,26 +38,7 @@ class Dropdown {
   }
 }
 
-function Plugin() {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.dropdown')
-
-    if (!data) {
-      data = new Dropdown(this)
-      $this.data('axa.dropdown', data)
-    }
-  })
-}
-
-$.fn.dropdown = Plugin
-$.fn.dropdown.Constructor = Dropdown
-
-$(() => {
-  $('[data-dropdown]').each(function () {
-    const $dropdown = $(this)
-    Plugin.call($dropdown)
-  })
-})
+// Plugin definition
+registerPlugin('dropdown', Dropdown)
 
 // Copyright AXA Versicherungen AG 2015

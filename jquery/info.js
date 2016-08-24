@@ -1,6 +1,7 @@
 /* global window */
 
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Info {
@@ -24,29 +25,6 @@ class Info {
 }
 
 // Plugin definition
-function Plugin(option) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.info')
-    const options = $.extend({}, data, typeof option === 'object' && option)
-
-    if (!data) {
-      data = new Info(this, options)
-      $this.data('axa.info', data)
-    }
-  })
-}
-
-// Plugin registration
-$.fn.info = Plugin
-$.fn.info.Constructor = Info
-
-// DATA-API
-$(window).on('load', () =>
-  $('[data-info]').each(function () {
-    const $info = $(this)
-    Plugin.call($info)
-  })
-)
+registerPlugin('info', Info)
 
 //! Copyright AXA Versicherungen AG 2015

@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 import Bacon from 'baconjs'
 
 class MainMenu {
@@ -48,25 +49,12 @@ class MainMenu {
   }
 }
 
-function Plugin() {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('aem.menu')
-
-    if (!data) {
-      data = new MainMenu(this)
-      $this.data('aem.menu', data)
-    }
-  })
-}
-
-$.fn.mainMenu = Plugin
-$.fn.mainMenu.Constructor = MainMenu
-
-$(() => {
+// Plugin definition
+registerPlugin('mainMenu', MainMenu, (PluginWrapper) => {
   $('[data-menu="main"]').each(function () {
     const $menu = $(this)
-    Plugin.call($menu)
+
+    PluginWrapper.call($menu)
   })
 })
 

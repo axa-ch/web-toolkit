@@ -1,6 +1,8 @@
 /* global window, document */
 
 import $ from 'jquery'
+import isAnimationSupported from './is-animation-supported'
+import registerPlugin from './register-plugin'
 
 // Public class definition
 class Spinner {
@@ -18,53 +20,9 @@ class Spinner {
   }
 }
 
-// Plugin definition
-function Plugin(option, ...args) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.spinner')
-
-    if (!data) {
-      data = new Spinner(this)
-      $this.data('axa.spinner', data)
-    }
-
-    if (typeof option === 'string' && option === 'fallback') {
-      data.fallback(args[0])
-    }
-  })
+if (isAnimationSupported()) {
+  // Plugin definition
+  registerPlugin('spinner', Spinner)
 }
-
-// Plugin registration
-$.fn.spinner = Plugin
-$.fn.spinner.Constructor = Spinner
-
-// DATA-API
-$(window).on('load', () => {
-  // check for support of the animation property
-  const elm = document.createElement('div')
-  const properties = [
-    'animation',
-    'WebkitAnimation',
-    'MozAnimation',
-    'msAnimation',
-    'OAnimation',
-  ]
-
-  for (let i = 0; i < properties.length; i++) {
-    const property = properties[i]
-
-    // if the animation property is supported, exit
-    if (elm.style[property] != null) {
-      return
-    }
-  }
-
-  // animation property not supported, activate fallback on all spinners
-  $('[data-spinner="bouncy"]').each(function () {
-    const $spinner = $(this)
-    Plugin.call($spinner)
-  })
-})
 
 //! Copyright AXA Versicherungen AG 2015

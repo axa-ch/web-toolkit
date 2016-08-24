@@ -1,9 +1,9 @@
 /* global document */
 
 import $ from 'jquery'
+import registerPlugin from './register-plugin'
 
 class NotificationPane {
-
   constructor(element) {
     this.$element = $(element)
 
@@ -74,43 +74,23 @@ class NotificationPane {
 }
 
 // Plugin definition
-function Plugin(option) {
-  this.each(function () {
-    const $this = $(this)
-    let data = $this.data('axa.notification')
+registerPlugin('notification', NotificationPane, {
+  customInstantiationCB: (PluginWrapper) => {
+    $(document).on('click.axa.notification.data-api', '[data-notification]', function (e) {
+      e.preventDefault()
 
-    if (!data) {
-      data = new NotificationPane(this)
-      $this.data('axa.notification', data)
-    }
+      const $this = $(this)
+      const $target = $($this.data('notification'))
 
-    if (typeof option === 'object') {
-      data.displayNotification(option)
-    }
-
-    if (typeof option === 'string') {
-      data.displayNotification({
-        content: option,
+      PluginWrapper.call($target, {
+        content: $this.data('notification-content'),
+        modifier: $this.data('notification-modifier'),
       })
-    }
-  })
-}
-
-// Plugin registration
-$.fn.notification = Plugin
-$.fn.notification.Constructor = NotificationPane
-
-// DATA-API
-$(document).on('click.axa.notification.data-api', '[data-notification]', function (e) {
-  e.preventDefault()
-
-  const $this = $(this)
-  const $target = $($this.data('notification'))
-
-  Plugin.call($target, {
-    content: $this.data('notification-content'),
-    modifier: $this.data('notification-modifier'),
-  })
+    })
+  },
+  afterInstantiationCB: (instance, options) => {
+    instance.displayNotification(options)
+  },
 })
 
 //! Copyright AXA Versicherungen AG 2015
