@@ -118,6 +118,7 @@ function registerPlugin(name, Constructor, customInstantiationCB) {
    * e.g. `$(element).defaultPluginName('functionName', arg1, arg2)`
    *
    * @param {Object|string} options - Either plugin's options or if of type `string` a method to call.
+   * @param {string} options.\_\_action\_\_ - An alternative way to specify the public method to call.
    * @param {*} [rest...] - Any additional arguments passed to public method call if `options` is of type `string`.
    * @returns {*} Returns the jQuery collection itself for chainability or a value if public method returns something.
    * @constructor PluginWrapper
