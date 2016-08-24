@@ -7,12 +7,12 @@ template: page.jade
 p.
   We decided that our jQuery Plugins should be easily utilisable in a declarative manner.
   To achive this we utilise standard HTML5 data attributes, to attach a plugin to any DOM
-  and to pass options around. All options are namespaced simply by the plugin's name.
+  and to pass options around. All options can be namespaced simply by the plugin's name.
   The basic syntax is as follows:
 
 p
   :highlightcode
-    <div data-plugin data-plugin-option="value">
+    <div data-plugin data-option="foo" data-plugin-option="bar">
 
 p.
   To reduce boilerplate glue code we developed a generic function which let's you consistenly develop new jQuery plugins.
