@@ -257,7 +257,11 @@ class Datepicker {
   }
 
   toggle() {
-    this.picker.toggle()
+    if (isMobile) {
+      this.$input.click()
+    } else {
+      this.picker.toggle()
+    }
   }
 }
 
