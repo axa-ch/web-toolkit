@@ -101,6 +101,7 @@ import './html5data'
  * locked.lockDimension('unlock')
  */
 function registerPlugin(name, Constructor, callbacks) {
+  // cache callbacks
   let customInstantiationCB
   let afterInstantiationCB
 
@@ -110,8 +111,6 @@ function registerPlugin(name, Constructor, callbacks) {
     customInstantiationCB = callbacks.customInstantiationCB
     afterInstantiationCB = callbacks.afterInstantiationCB
   }
-  // cache callbacks
-
 
   // functional API to set defaults globally
   $[name] = PluginWrapper
