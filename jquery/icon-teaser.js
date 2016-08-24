@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import 'slick-carousel'
 import Bacon from 'baconjs'
+import registerPlugin from './register-plugin'
 import resizeStream from './resize-stream'
 
 class IconTeaser {
@@ -65,24 +66,4 @@ class IconTeaser {
   }
 }
 
-const Plugin = function () {
-  return this.each((i, element) => {
-    const $element = $(element)
-    let data = $element.data('aem.iconTeaser')
-
-    if (!data) {
-      data = new IconTeaser(element)
-      $element.data('aem.iconTeaser', data)
-    }
-  })
-}
-
-$.fn.iconTeaser = Plugin
-$.fn.iconTeaser.Constructor = IconTeaser
-
-$(() => {
-  $('[data-icon-teaser]').each((i, element) => {
-    const $element = $(element)
-    Plugin.call($element)
-  })
-})
+registerPlugin('iconTeaser', IconTeaser)
