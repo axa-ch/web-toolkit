@@ -1,6 +1,6 @@
 /**
  * Exporting Plugin function directly.
- * @module Plugin
+ * @module registerPlugin
  */
 
 import $ from 'jquery'
