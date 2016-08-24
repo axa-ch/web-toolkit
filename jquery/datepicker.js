@@ -1,8 +1,9 @@
-/* global window, document, navigator */
+/* global window, document */
 
 import $ from 'jquery'
 import moment from 'moment'
 import registerPlugin from './register-plugin'
+import isMobile from './is-mobile'
 
 import Emitter from './emitter'
 
@@ -221,9 +222,7 @@ class Datepicker {
       $.error('Moment.js must either be passed as an option or be available globally')
     }
 
-    if (navigator.userAgent.match(/Android/i) ||
-      navigator.userAgent.match(/(iOS|iPhone|iPad|iPod)/i) ||
-      navigator.userAgent.match(/Windows Phone/i)) {
+    if (isMobile) {
       this.$input = $(options.input)
 
       this.$input.prop('type', 'date')
