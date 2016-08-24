@@ -33,6 +33,7 @@
   },
   "homepage": "http://design.axa.ch",
   "dependencies": {
+    "babel-preset-react": "^6.11.1",
     "baconjs": "^0.7.73",
     "classnames": "^2.2.5",
     "jquery": "^2.1.3",
