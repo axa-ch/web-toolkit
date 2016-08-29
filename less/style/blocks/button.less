@@ -123,7 +123,7 @@
 
 .button--more {
   .make-button-size(
-    @height: 44px;
+    @height: @button-more-height - @button-border-width * 2;
     @pad-lr: @button-pad-lr;
     @icon-size: @button-icon-size;
     @font-size: @button-font-size;
@@ -137,7 +137,7 @@
   );
 
   .make-button-border(
-    @width: .125rem;
+    @width: @button-border-width;
     @color: @color-gray--mid;
     @highlight-color: @color-blue;
   );
@@ -151,25 +151,23 @@
   );
 
   .make-button-size(
-    @height: 3em;
+    @height: @button-ghost-height - @button-border-width * 2;
     @pad-lr: @button-pad-lr;
     @icon-size: @button-icon-size;
-    @font-size: 0.875em;
-    @line-height: 1.4;
+    @font-size: @button-ghost-font-size;
   );
 
   .make-button-border(
-    @width: .125rem;
+    @width: @button-border-width;
     @color: @color-white;
   );
 
   .respond(medium, {
     .make-button-size(
-      @height: 3.3em;
+      @height: @button-height--medium;
       @pad-lr: @button-pad-lr--medium;
       @icon-size: @button-icon-size;
-      @font-size: 1em;
-      @line-height: 1.4;
+      @font-size: @button-ghost-font-size--medium;
     );
   });
 }
