@@ -122,19 +122,17 @@
 }
 
 .button--more {
-  background: @color-white;
-  color: @color-gray--darker;
+  .make-button-color(@color-white, @color-gray--darker, @color-white, @color-blue);
+
   border: .125rem solid @color-gray--mid;
 
   &:hover,
   &:focus {
-    background: @color-white;
     border-color: @color-blue;
-    color: @color-blue;
   }
 
   .respond(medium, {
-
+    border: .125rem solid @color-gray--mid;
   });
 }
 
