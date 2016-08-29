@@ -10,19 +10,22 @@ module.exports = [
     'docs-jsdoc-clean',
   ],
   () =>
-    gulp.src('jquery/*.js', { read: false })
+    gulp.src('js/**/*.js', { base: 'js', read: false })
       .pipe(foreach(function (stream, file) {
-        const filename = path.basename(file.path)
+        const filename = file.relative
 
-        const docs = jsdoc2md.renderSync({
-          files: `jquery/${filename}`,
-          configure: '.jsdocrc',
-        })
+        // @todo: JSDoc does not work with JSX so far, consider ESDoc
+        try {
+          const docs = jsdoc2md.renderSync({
+            files: `js/${filename}`,
+            configure: '.jsdocrc',
+          })
 
-        if (docs) {
-          mkdirp.sync('docs/page/jsdoc2md')
-          fs.writeFileSync(`docs/page/jsdoc2md/${filename.replace('.js', '.md')}`, docs)
-        }
+          if (docs) {
+            mkdirp.sync(path.dirname(`docs/page/jsdoc2md/${filename}`))
+            fs.writeFileSync(`docs/page/jsdoc2md/${filename.replace('.js', '.md')}`, docs)
+          }
+        } catch (e) {}
 
         return stream
       })),
