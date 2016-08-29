@@ -34,7 +34,8 @@ const LanguageSwitch = ({
       <div className={menuClasses}>
         <div className="meta-language2__menu__items">
           {languages.map(lang => (
-            <a className={isActive(lang) ? 'meta-language2__menu__item is-active' : 'meta-language2__menu__item'}
+            <a
+              className={isActive(lang) ? 'meta-language2__menu__item is-active' : 'meta-language2__menu__item'}
               key={lang}
               onClick={() => onLanguageSelect(lang)}>{lang}</a>
           ))}
