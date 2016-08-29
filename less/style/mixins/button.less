@@ -50,4 +50,13 @@
   }
 }
 
+.make-button-border(@width, @style, @color, @hightlight-color: @color) {
+  border: @width @style @color;
+
+  &:hover,
+  &:focus {
+    border-color: @hightlight-color;
+  }
+}
+
 // Copyright AXA Versicherungen AG 2015
