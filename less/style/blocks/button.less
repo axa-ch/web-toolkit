@@ -121,4 +121,55 @@
   }
 }
 
+.button--more {
+  .make-button-size(
+    @height: @button-more-height - @button-border-width * 2;
+    @pad-lr: @button-pad-lr;
+    @icon-size: @button-icon-size;
+    @font-size: @button-font-size;
+  );
+
+  .make-button-color(
+    @bg-color: @color-white;
+    @color: @color-gray--darker;
+    @highlight-bg-color: @color-white;
+    @highlight-color: @color-blue;
+  );
+
+  .make-button-border(
+    @width: @button-border-width;
+    @color: @color-gray--mid;
+    @highlight-color: @color-blue;
+  );
+}
+
+.button--ghost {
+  .make-button-color(
+    @bg-color: transparent;
+    @color: @color-white;
+    @highlight-bg-color: fade(@color-black, 50%);
+  );
+
+  .make-button-size(
+    @height: @button-ghost-height - @button-border-width * 2;
+    @pad-lr: @button-pad-lr;
+    @icon-size: @button-icon-size;
+    @font-size: @button-ghost-font-size;
+  );
+
+  .make-button-border(
+    @width: @button-border-width;
+    @color: @color-white;
+  );
+
+  .respond(medium, {
+    .make-button-size(
+      @height: @button-height--medium;
+      @pad-lr: @button-pad-lr--medium;
+      @icon-size: @button-icon-size;
+      @font-size: @button-ghost-font-size--medium;
+    );
+  });
+}
+
 // Copyright AXA Versicherungen AG 2015

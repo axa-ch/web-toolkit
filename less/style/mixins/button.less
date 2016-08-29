@@ -5,28 +5,30 @@
   @calculated-line-height: @font-size * @line-height;
 
   padding: ((@height - @calculated-line-height) / 2) @pad-lr;
-  border: none;
 
   font-size: @font-size;
   line-height: @line-height;
-
-  border-radius: @border-radius;
 
   & .button__icon {
     display: inline;
 
     font-size: @icon-size;
   }
+
+  & when not (@border-radius = 0) {
+    border: none;
+    border-radius: @border-radius;
+  }
 }
 
 .make-button-color(@bg-color, @color, @highlight-bg-color: @bg-color, @highlight-color: @color) {
-
   text-decoration: none;
 
   background: @bg-color;
   color: @color;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: @highlight-bg-color;
     color: @highlight-color;
 
@@ -37,16 +39,19 @@
 
   &:focus {
     outline: none;
-    background: @highlight-bg-color;
-    color: @highlight-color;
-
-    & .button__icon {
-      color: @highlight-color;
-    }
   }
 
-  &.button__icon {
+  & .button__icon {
     color: @color;
+  }
+}
+
+.make-button-border(@width, @style: solid, @color, @highlight-color: @color) {
+  border: @width @style @color;
+
+  &:hover,
+  &:focus {
+    border-color: @highlight-color;
   }
 }
 
