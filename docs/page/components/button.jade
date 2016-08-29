@@ -138,6 +138,26 @@ p.paragraph.
 
 +example('/components/demos/button-more.html')
 
+.toggle
+  .toggle__button(data-info, data-target='#code-2')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-2
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='css') CSS
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/button-more.jade
+        .tab-panel__content__tab(data-tab-content='css')
+          p.paragraph.
+            Use the CSS classes mentioned in the HTML tab
+            as mixins.
+
 .hr
 
 h2.heading.heading--secondary#ghost Ghost button
@@ -148,6 +168,26 @@ p.paragraph.
   An additional icon can be added.
 
 +example('/components/demos/button-ghost.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-2')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-2
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='css') CSS
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/button-ghost.jade
+        .tab-panel__content__tab(data-tab-content='css')
+          p.paragraph.
+            Use the CSS classes mentioned in the HTML tab
+            as mixins.
 
 .hr
 
