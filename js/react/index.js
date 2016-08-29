@@ -1,1 +1,1 @@
-import './language-switch.jsx'
+import './language-switch.js'
