@@ -122,21 +122,37 @@
 }
 
 .button--more {
-  .make-button-color(@color-white, @color-gray--darker, @color-white, @color-blue);
+  .make-button-color(
+    @color-white,
+    @color-gray--darker,
+    @color-white,
+    @color-blue
+  );
 
-  border: .125rem solid @color-gray--mid;
-
-  &:hover,
-  &:focus {
-    border-color: @color-blue;
-  }
+  .make-button-border(
+    .125rem;
+    solid;
+    @color-gray--mid;
+    @color-blue;
+  );
 
   .respond(medium, {
-    border: .125rem solid @color-gray--mid;
+    .make-button-border(
+      .125rem;
+      solid;
+      @color-gray--mid;
+      @color-blue;
+    );
   });
 }
 
 .button--ghost {
+  .make-button-color(
+    transparent,
+    @color-white,
+    fade(@color-black, 50%)
+  );
+
   .make-button-size(
     @height: 3em;
     @pad-lr: @button-pad-lr;
@@ -145,17 +161,15 @@
     @line-height: 1.4;
   );
 
-  border: 0.125rem solid @color-white;
+  .make-button-border(
+    .125rem;
+    solid;
+    @color-white;
+  );
+
   margin-top: 29rem/16;
   margin-bottom: 57rem/16;
 
-  background: transparent;
-  color: @color-white;
-
-  &:hover,
-  &:focus {
-    background: rgba(0,0,0,0.5);
-  }
 
   .respond(medium, {
     .make-button-size(
@@ -165,7 +179,12 @@
       @font-size: 1em;
       @line-height: 1.4;
     );
-    border: 0.125rem solid @color-white;
+
+    .make-button-border(
+      .125rem;
+      solid;
+      @color-white;
+    );
   });
 }
 
