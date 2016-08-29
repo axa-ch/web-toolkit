@@ -26,7 +26,8 @@
   background: @bg-color;
   color: @color;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: @highlight-bg-color;
     color: @highlight-color;
 
@@ -37,15 +38,9 @@
 
   &:focus {
     outline: none;
-    background: @highlight-bg-color;
-    color: @highlight-color;
-
-    & .button__icon {
-      color: @highlight-color;
-    }
   }
 
-  &.button__icon {
+  & .button__icon {
     color: @color;
   }
 }
