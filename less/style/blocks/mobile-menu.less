@@ -4,6 +4,7 @@
 @import '../mixins/font';
 @import '../mixins/respond';
 @import '../mixins/unstyle-list';
+@import '../mixins/word-break';
 
 .mobile-menu {
   .unstyle-list();
@@ -48,22 +49,19 @@
 }
 
 .mobile-menu__link {
-  .make-font-large;
+  .make-font-large();
+  line-height: 1.3;
 
   display: flex;
   align-items: center;
 
-  height: 56px;
-  padding: 0 30px;
+  padding: 15px 30px;
 
   color: @color-gray--darker;
   border-top: 1px solid @color-gray--light;
   border-bottom: 1px solid @color-gray--light;
 
-  overflow: hidden;
-  white-space: nowrap;
   text-decoration: none;
-  text-overflow: ellipsis;
 
   &:hover {
     color: @color-blue;
@@ -78,6 +76,7 @@
   flex-grow: 1;
   order: 2;
   pointer-events: none;
+  .word-break();
 }
 
 .mobile-menu__link__parent-icon {
