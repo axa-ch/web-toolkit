@@ -123,34 +123,24 @@
 
 .button--more {
   .make-button-color(
-    @color-white,
-    @color-gray--darker,
-    @color-white,
-    @color-blue
+    @bg-color: @color-white;
+    @color: @color-gray--darker;
+    @highlight-bg-color: @color-white;
+    @highlight-color: @color-blue;
   );
 
   .make-button-border(
-    .125rem;
-    solid;
-    @color-gray--mid;
-    @color-blue;
+    @width: .125rem;
+    @color: @color-gray--mid;
+    @highlight-color: @color-blue;
   );
-
-  .respond(medium, {
-    .make-button-border(
-      .125rem;
-      solid;
-      @color-gray--mid;
-      @color-blue;
-    );
-  });
 }
 
 .button--ghost {
   .make-button-color(
-    transparent,
-    @color-white,
-    fade(@color-black, 50%)
+    @bg-color: transparent;
+    @color: @color-white;
+    @highlight-bg-color: fade(@color-black, 50%);
   );
 
   .make-button-size(
@@ -162,9 +152,8 @@
   );
 
   .make-button-border(
-    .125rem;
-    solid;
-    @color-white;
+    @width: .125rem;
+    @color: @color-white;
   );
 
   .respond(medium, {
@@ -174,12 +163,6 @@
       @icon-size: @button-icon-size;
       @font-size: 1em;
       @line-height: 1.4;
-    );
-
-    .make-button-border(
-      .125rem;
-      solid;
-      @color-white;
     );
   });
 }
