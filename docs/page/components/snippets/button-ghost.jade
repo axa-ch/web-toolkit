@@ -5,13 +5,14 @@ template: demo.jade
 
 include /components/includes/mixins.jade
 
-.button.button--ghost Sample button
-!=' '
-.button.button--ghost
-  +svg('cross', ['button__icon', 'button__icon--left', 'icon'])
-  | Icon and badge
-  span.button__badge.badge 159
-!=' '
-.button.button--ghost
-  | Icon right
-  +svg('cross', ['button__icon', 'button__icon--right', 'icon'])
+div(style="background: #0062a9")
+  .button.button--ghost Sample button
+  !=' '
+  .button.button--ghost
+    +svg('cross', ['button__icon', 'button__icon--left', 'icon'])
+    | Icon and badge
+    span.button__badge.badge 159
+  !=' '
+  .button.button--ghost
+    | Icon right
+    +svg('cross', ['button__icon', 'button__icon--right', 'icon'])
