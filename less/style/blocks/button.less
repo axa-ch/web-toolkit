@@ -122,6 +122,13 @@
 }
 
 .button--more {
+  .make-button-size(
+    @height: 44px;
+    @pad-lr: @button-pad-lr;
+    @icon-size: @button-icon-size;
+    @font-size: @button-font-size;
+  );
+
   .make-button-color(
     @bg-color: @color-white;
     @color: @color-gray--darker;
