@@ -2,6 +2,8 @@
 
 import $ from 'jquery'
 import registerPlugin from './register-plugin'
+import resizeStream from './resize-stream'
+import orientationchangeStream from './orientationchange-stream'
 
 // Public class definition
 class SegmentedControl {
@@ -48,17 +50,19 @@ class SegmentedControl {
 
     this.stackControlsIfNeeded()
 
-    $(window).on('resize', this.stackControlsIfNeeded)
-      .on('orientationchange', this.stackControlsIfNeeded)
+    const reorientStream = resizeStream.merge(orientationchangeStream)
+
+    reorientStream.debounce(100)
+      .onValue(this.stackControlsIfNeeded)
   }
 
   stackControlsIfNeeded() {
     const $element = this.$element
 
+    $element.removeClass('segmented-control--stacked')
+
     if ($element.outerWidth() >= $element.parent().innerWidth()) {
       $element.addClass('segmented-control--stacked')
-    } else {
-      $element.removeClass('segmented-control--stacked')
     }
   }
 
