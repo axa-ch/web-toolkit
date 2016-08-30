@@ -52,7 +52,7 @@ class SegmentedControl {
 
     const reorientStream = resizeStream.merge(orientationchangeStream)
 
-    reorientStream.debounce(100)
+    this.disposeReorient = reorientStream.debounce(100)
       .onValue(this.stackControlsIfNeeded)
   }
 
