@@ -54,10 +54,11 @@ class SegmentedControl {
 
   stackControlsIfNeeded() {
     const $element = this.$element
-    $element.removeClass('segmented-control--stacked')
 
     if ($element.outerWidth() >= $element.parent().innerWidth()) {
       $element.addClass('segmented-control--stacked')
+    } else {
+      $element.removeClass('segmented-control--stacked')
     }
   }
 
