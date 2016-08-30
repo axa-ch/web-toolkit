@@ -48,7 +48,8 @@ class SegmentedControl {
 
     this.stackControlsIfNeeded()
 
-    $('window').on('resize', this.stackControlsIfNeeded)
+    $(window).on('resize', this.stackControlsIfNeeded)
+      .on('orientationchange', this.stackControlsIfNeeded)
   }
 
   stackControlsIfNeeded() {
