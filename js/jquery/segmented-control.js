@@ -11,6 +11,8 @@ class SegmentedControl {
     this.handleKeyUp = this.handleKeyUp.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
     this.setRadioState = this.setRadioState.bind(this)
+    this.stackControlsIfNeeded = this.stackControlsIfNeeded.bind(this)
+
     this.$element = $(element)
     const disabled = this.$element.is('[disabled=disabled]')
 
