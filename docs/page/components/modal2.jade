@@ -1,0 +1,79 @@
+---
+title: Modal 2
+order: 7
+template: page.jade
+tags: terms, conditions, agb, avb
+---
+
+include ./includes/mixins.jade
+
+p.paragraph. A modal window can be used to present very specific information (such as terms & conditions) to the user.
+
++example('/components/demos/modal2.html', { maxHeight: '400' })
+
+.toggle
+  .toggle__button(data-info, data-target='#code-modal')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-modal
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.
+            The modal block represents a modal dialog.
+            It is hidden by default. Add the .is-active
+            state to make it visible. When the modal is
+            visible you have to add the .is-modal-open
+            state to the body element of your page to
+            hide the main scrollbar.
+
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/modal2.jade
+
+        .tab-panel__content__tab(data-tab-content='js')
+          p.paragraph.
+            Our jQuery plugin handles of showing and hiding a modal.
+
+          p.paragraph.
+            Activate the functionality with the data-* API
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <a data-modal2="#myModal" ></a>
+
+          p.paragraph.
+            Activate the functionality with JavaScript
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                $('#myModal').modal2(options)
+
+          h3 Methods
+          p.paragraph.
+            The <code>toggle</code> method manually toggles the modal.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                $('#myModal').modal2('toggle')
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      On mobile it is presented in full screen.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      The action buttons always stay visible.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Do not use them for accepting things like terms & conditions – only to display them.
+
+//- Copyright AXA Versicherungen AG 2015
