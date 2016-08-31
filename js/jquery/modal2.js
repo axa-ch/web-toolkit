@@ -103,7 +103,7 @@ class Modal2 {
     if (href) {
       this.load(href, insert.bind(this))
     } else {
-      insert.call(this, $(this.options['']).clone())
+      insert.call(this, this.options.html || $(this.options['']).clone())
     }
 
     function insert(html) {
