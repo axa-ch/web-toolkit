@@ -110,7 +110,12 @@ class Modal2 {
     $.ajax({
       url,
       success: (response) => {
-        const $html = $(response).find(this.options.selector)
+        let $html = $(response)
+
+        if (this.options.selector) {
+          $html = $html.find(this.options.selector)
+        }
+
         if ($html.length) {
           callback($html)
         } else {
