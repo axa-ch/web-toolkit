@@ -20,6 +20,7 @@ class Modal2 {
       backdrop: 'modal2__backdrop',
       content: 'modal2__content',
       close: 'modal2__close',
+      icon: 'modal2__close__icon',
     },
     onBeforeOpen: noop,
     onAfterOpen: noop,
@@ -52,7 +53,7 @@ class Modal2 {
           type="button"
           class="${classes.close} ${classes.close}--${this.options.closePosition}"
           data-modal2-close>
-            ${icon(this.options.iconClose)}
+            ${icon(this.options.iconClose, classes.icon)}
         </button>`, this.$content)
     }
   }
