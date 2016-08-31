@@ -68,12 +68,26 @@
   });
 }
 
-.modal2__close--inside {
-
-}
+.modal2__close--inside {}
 
 .modal2__close--outside {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 
+  color: @color-gray--darker;
+
+  &:hover {
+    color: @color-blue;
+  }
+
+  .respond(medium; {
+    color: @color-gray--lighter;
+
+    &:hover {
+      color: @color-white;
+    }
+  });
 }
 
 .modal2__close__icon {
