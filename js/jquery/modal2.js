@@ -88,7 +88,6 @@ class Modal2 {
 
   open() {
     if (this.isOpen) return
-
     this.isOpen = true
 
     this.$body.addClass('modal2-is-open')
@@ -107,7 +106,10 @@ class Modal2 {
     }
 
     function insert(html) {
-      this.$content.append(html)
+      if (html) {
+        this.$content.append(html)
+      }
+
       this.$html.append(this.$modal)
       this.bind()
 
@@ -137,6 +139,7 @@ class Modal2 {
 
   close() {
     if (!this.isOpen) return
+    this.isOpen = false
 
     this.options.onBeforeClose(this)
 
@@ -146,8 +149,6 @@ class Modal2 {
     this.$body.removeClass('modal2-is-open')
 
     this.options.onAfterClose(this)
-
-    this.isOpen = false
   }
 }
 
