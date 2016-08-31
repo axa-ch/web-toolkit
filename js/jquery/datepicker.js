@@ -259,25 +259,25 @@ class Datepicker {
   setLocale(locale) {
     this.moment.locale(locale)
 
-    if (this.moment.locale() !== locale) {
-      const domain = document.domain
-      const tld = domain.split('.').pop()
+    if (this.moment.locale() === locale) return
 
-      this.moment.locale(`${locale}-${tld}`)
-    }
+    const domain = document.domain
+    const tld = domain.split('.').pop()
 
-    if (!!~this.moment.locale().indexOf(locale)) {
-      const locales = this.moment.locales()
+    this.moment.locale(`${locale}-${tld}`)
 
-      locales.filter((loc) => !!~loc.indexOf(locale))
-        .forEach((loc) => {
-          this.moment.locale(loc)
+    if (~this.moment.locale().indexOf(locale)) return
 
-          if (!!~this.moment.locale().indexOf(locale)) {
-            return false
-          }
-        })
-    }
+    const locales = this.moment.locales()
+
+    locales.filter((loc) => !!~loc.indexOf(locale))
+      .forEach((loc) => {
+        this.moment.locale(loc)
+
+        if (this.moment.locale() === loc) {
+          return false
+        }
+      })
   }
 
   toggle() {
