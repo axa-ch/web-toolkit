@@ -71,8 +71,6 @@ class Modal2 {
 
     this.disposeClose = closeStream.doAction('.preventDefault')
       .onValue(this.close)
-
-    this.isOpen = true
   }
 
   unbind() {
@@ -80,23 +78,56 @@ class Modal2 {
   }
 
   open() {
+    this.isOpen = true
+
     this.$body.addClass('modal2-is-open')
+    const preventDefault = this.options.onBeforeOpen(this)
 
-    this.options.onOpen(this)
+    if (preventDefault === false) {
+      return
+    }
 
-    this.$content.append($(this.options['']).clone())
+    const href = this.element.href || this.options.href
 
-    this.$html.append(this.$element)
-    this.bind()
+    if (href) {
+      this.load(href, insert.bind(this))
+    } else {
+      insert($(this.options['']).clone())
+    }
+
+    function insert(html) {
+      this.$content.append(html)
+      this.$html.append(this.$element)
+      this.bind()
+
+      this.options.onAfterOpen(this)
+    }
+  }
+
+  load(url, callback) {
+    $.ajax({
+      url,
+      success: (response) => {
+        const $html = $(response).find(this.options.selector)
+        if ($html.length) {
+          callback($html)
+        } else {
+          this.close()
+        }
+      },
+      error: this.close,
+    })
   }
 
   close() {
-    this.options.onClose(this)
+    this.options.onBeforeClose(this)
 
     this.unbind()
 
     this.$element.remove()
     this.$body.removeClass('modal2-is-open')
+
+    this.options.onAfterClose(this)
 
     this.isOpen = false
   }
