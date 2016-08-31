@@ -150,6 +150,8 @@ class Modal2 {
     this.$modal.remove()
     this.$body.removeClass(this.options.classes.body)
 
+    this.$content.empty()
+
     this.options.onAfterClose(this)
   }
 }
