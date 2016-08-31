@@ -78,6 +78,8 @@ class Modal2 {
   }
 
   open() {
+    if (this.isOpen) return
+
     this.isOpen = true
 
     this.$body.addClass('modal2-is-open')
@@ -120,6 +122,8 @@ class Modal2 {
   }
 
   close() {
+    if (!this.isOpen) return
+
     this.options.onBeforeClose(this)
 
     this.unbind()
