@@ -263,10 +263,11 @@ class Datepicker {
 
     const domain = document.domain
     const tld = domain.split('.').pop()
+    const tldLocale = `${locale}-${tld}`
 
-    this.moment.locale(`${locale}-${tld}`)
+    this.moment.locale(tldLocale)
 
-    if (~this.moment.locale().indexOf(locale)) return
+    if (this.moment.locale() === tldLocale) return
 
     const locales = this.moment.locales()
 
