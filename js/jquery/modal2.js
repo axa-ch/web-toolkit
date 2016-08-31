@@ -7,6 +7,8 @@ import append from './append'
 import icon from './icon'
 import './html5data'
 
+const noop = () => {}
+
 class Modal2 {
   static DEFAULTS = {
     backdropClose: true,
@@ -16,6 +18,8 @@ class Modal2 {
       content: 'modal2__content',
       close: 'modal2__close',
     },
+    onOpen: noop,
+    onClose: noop,
   }
 
   constructor(element, options) {
@@ -72,6 +76,8 @@ class Modal2 {
   open() {
     this.$body.addClass('modal2-is-open')
 
+    this.options.onOpen(this)
+
     this.$content.append($(this.options['']).clone())
 
     this.$html.append(this.$element)
@@ -79,6 +85,8 @@ class Modal2 {
   }
 
   close() {
+    this.options.onClose(this)
+
     this.unbind()
 
     this.$element.remove()
