@@ -213,7 +213,7 @@ class Datepicker {
   constructor(element, options) {
     this.onChange = this.onChange.bind(this)
     this.options = options
-    this.moment = options.moment
+    this.moment = options.moment()
     this.moment.locale(options.locale)
     this.format = this.moment.localeData().longDateFormat(options.longDateFormat)
     this.$element = $(element)
