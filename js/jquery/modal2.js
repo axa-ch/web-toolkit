@@ -10,7 +10,7 @@ import './html5data'
 const noop = () => {}
 
 const ModalGuard = (modal) => {
-  if(ModalGuard.openModal) {
+  if (ModalGuard.openModal) {
     ModalGuard.openModal.close()
   }
 
