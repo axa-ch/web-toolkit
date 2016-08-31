@@ -10,6 +10,12 @@ import './html5data'
 class Modal2 {
   static DEFAULTS = {
     backdropClose: true,
+    classes: {
+      modal: 'modal2',
+      backdrop: 'modal2__backdrop',
+      content: 'modal2__content',
+      close: 'modal2__close',
+    },
   }
 
   constructor(element, options) {
@@ -24,10 +30,12 @@ class Modal2 {
   init() {
     this.close = this.close.bind(this)
 
-    this.$element = $('<div class="modal2">')
-    this.$backdrop = append('<div class="modal2__backdrop">', this.$element)
-    this.$content = append('<div class="modal2__content">', this.$backdrop)
-    this.$close = append(`<button type="button" class="modal2__close">${icon(this.options.iconClose)}</button>`, this.$content)
+    const classes = this.options.classes
+
+    this.$element = $(`<div class="${classes.modal}">`)
+    this.$backdrop = append(`<div class="${classes.backdrop}">`, this.$element)
+    this.$content = append(`<div class="${classes.content}">`, this.$backdrop)
+    this.$close = append(`<button type="button" class="${classes.close}">${icon(this.options.iconClose)}</button>`, this.$content)
   }
 
   toggle(options) {
