@@ -266,7 +266,7 @@ class Datepicker {
       this.moment.locale(`${locale}-${tld}`)
     }
 
-    if (this.moment.locale() !== locale) {
+    if (!!~this.moment.locale().indexOf(locale)) {
       const locales = this.moment.locales()
 
       locales.filter((loc) => !!~loc.indexOf(locale))
