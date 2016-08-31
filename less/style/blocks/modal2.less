@@ -1,4 +1,5 @@
 @import '../mixins/clearfix';
+@import '../mixins/respond';
 
 .modal2-is-open {
   overflow: hidden;
@@ -31,6 +32,52 @@
   /* fix collapsing margins */
   float: left;
   .clearfix()
+}
+
+.modal2__close {
+  display: block;
+  float: right;
+
+  height: 40px;
+  width: 40px;
+
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  color: @color-white;
+
+  &:hover {
+    color: @color-white;
+    cursor: pointer;
+  }
+
+  .respond(medium; {
+    margin-top: 20px;
+
+    font-size: 21px;
+
+    color: @color-gray--darker;
+
+    &:hover {
+      color: @color-blue;
+    }
+  });
+}
+
+.modal2__close--inside {
+
+}
+
+.modal2__close--outside {
+
+}
+
+.modal2__close__icon {
+  margin-top: 8px;
 }
 
 .modal2__content {
