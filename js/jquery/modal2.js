@@ -9,6 +9,14 @@ import './html5data'
 
 const noop = () => {}
 
+const ModalGuard = (modal) => {
+  if(ModalGuard.openModal) {
+    ModalGuard.openModal.close()
+  }
+
+  ModalGuard.openModal = modal
+}
+
 class Modal2 {
   static DEFAULTS = {
     backdropClose: true,
@@ -91,6 +99,8 @@ class Modal2 {
   open() {
     if (this.isOpen) return
     this.isOpen = true
+
+    ModalGuard(this)
 
     this.$body.addClass(this.options.classes.body)
     const preventDefault = this.options.onBeforeOpen(this, insert.bind(this))
