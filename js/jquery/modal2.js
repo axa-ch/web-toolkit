@@ -18,8 +18,11 @@ class Modal2 {
       content: 'modal2__content',
       close: 'modal2__close',
     },
-    onOpen: noop,
-    onClose: noop,
+    onBeforeOpen: noop,
+    onAfterOpen: noop,
+    onBeforeClose: noop,
+    onAfterClose: noop,
+    selector: '',
   }
 
   constructor(element, options) {
