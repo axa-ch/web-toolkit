@@ -83,7 +83,7 @@ class Modal2 {
     this.isOpen = true
 
     this.$body.addClass('modal2-is-open')
-    const preventDefault = this.options.onBeforeOpen(this, insert)
+    const preventDefault = this.options.onBeforeOpen(this, insert.bind(this))
 
     if (preventDefault === false) {
       return
@@ -94,7 +94,7 @@ class Modal2 {
     if (href) {
       this.load(href, insert.bind(this))
     } else {
-      insert($(this.options['']).clone())
+      insert.call(this, $(this.options['']).clone())
     }
 
     function insert(html) {
