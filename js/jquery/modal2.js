@@ -152,6 +152,10 @@ class Modal2 {
 
     this.$content.empty()
 
+    if (this.options.closeEnabled) {
+      this.$content.append(this.$close)
+    }
+
     this.options.onAfterClose(this)
   }
 }
