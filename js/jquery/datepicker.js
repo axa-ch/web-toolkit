@@ -272,12 +272,10 @@ class Datepicker {
     const locales = this.moment.locales()
 
     locales.filter((loc) => !!~loc.indexOf(locale))
-      .forEach((loc) => {
+      .some((loc) => {
         this.moment.locale(loc)
 
-        if (this.moment.locale() === loc) {
-          return false
-        }
+        return this.moment.locale() !== loc
       })
   }
 
