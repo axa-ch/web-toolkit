@@ -91,7 +91,7 @@ class Modal2 {
     if (this.isOpen) return
     this.isOpen = true
 
-    this.$body.addClass(options.classes.body)
+    this.$body.addClass(this.options.classes.body)
     const preventDefault = this.options.onBeforeOpen(this, insert.bind(this))
 
     if (preventDefault === false) {
@@ -147,7 +147,7 @@ class Modal2 {
     this.unbind()
 
     this.$modal.remove()
-    this.$body.removeClass(options.classes.body)
+    this.$body.removeClass(this.options.classes.body)
 
     this.options.onAfterClose(this)
   }
