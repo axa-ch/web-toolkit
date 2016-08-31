@@ -40,8 +40,8 @@ class Modal2 {
 
     const classes = this.options.classes
 
-    this.$element = $(`<div class="${classes.modal}">`)
-    this.$backdrop = append(`<div class="${classes.backdrop}">`, this.$element)
+    this.$modal = $(`<div class="${classes.modal}">`)
+    this.$backdrop = append(`<div class="${classes.backdrop}">`, this.$modal)
     this.$content = append(`<div class="${classes.content}">`, this.$backdrop)
     this.$close = append(`<button type="button" class="${classes.close}">
         ${icon(this.options.iconClose)}
@@ -99,7 +99,7 @@ class Modal2 {
 
     function insert(html) {
       this.$content.append(html)
-      this.$html.append(this.$element)
+      this.$html.append(this.$modal)
       this.bind()
 
       this.options.onAfterOpen(this)
@@ -128,7 +128,7 @@ class Modal2 {
 
     this.unbind()
 
-    this.$element.remove()
+    this.$modal.remove()
     this.$body.removeClass('modal2-is-open')
 
     this.options.onAfterClose(this)
