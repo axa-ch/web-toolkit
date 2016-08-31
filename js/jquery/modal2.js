@@ -26,6 +26,7 @@ class Modal2 {
   }
 
   constructor(element, options) {
+    this.element = element
     this.options = options
     this.$html = $(document.documentElement)
     this.$body = $(document.body)
