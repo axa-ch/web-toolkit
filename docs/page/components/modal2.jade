@@ -9,6 +9,18 @@ include ./includes/mixins.jade
 
 p.paragraph. A modal window can be used to present very specific information (such as terms & conditions) to the user.
 
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#modal').toc__anchor-navigation__link Modal
+    li.toc__anchor-navigation__item
+      a(href='#modal-ajax').toc__anchor-navigation__link Modal Ajax
+
+.hr
+
+h2.heading.heading--secondary#modal Modal
+
 +example('/components/demos/modal2.html', { maxHeight: '400' })
 
 .toggle
@@ -45,6 +57,62 @@ p.paragraph. A modal window can be used to present very specific information (su
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
                 <a data-modal2="#myModal" ></a>
+
+          p.paragraph.
+            Activate the functionality with JavaScript
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                $('#myModal').modal2(options)
+
+          h3 Methods
+          p.paragraph.
+            The <code>toggle</code> method manually toggles the modal.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                $('#myModal').modal2('toggle')
+
+.hr
+
+h2.heading.heading--secondary#modal-ajax Modal Ajax
+
++example('/components/demos/modal2-ajax.html', { maxHeight: '400' })
+
+.toggle
+  .toggle__button(data-info, data-target='#code-modal')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-modal
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.
+            The modal block represents a modal dialog.
+            It is hidden by default. Add the .is-active
+            state to make it visible. When the modal is
+            visible you have to add the .is-modal-open
+            state to the body element of your page to
+            hide the main scrollbar.
+
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/modal2-ajax.jade
+
+        .tab-panel__content__tab(data-tab-content='js')
+          p.paragraph.
+            Our jQuery plugin handles of showing and hiding a modal.
+
+          p.paragraph.
+            Activate the functionality with the data-* API
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <a href="foo.html" data-modal2 ></a>
 
           p.paragraph.
             Activate the functionality with JavaScript
