@@ -15,6 +15,7 @@ class Modal2 {
     closeEnabled: true,
     closePosition: 'inside',
     classes: {
+      body: 'modal2-is-open',
       modal: 'modal2',
       backdrop: 'modal2__backdrop',
       content: 'modal2__content',
@@ -90,7 +91,7 @@ class Modal2 {
     if (this.isOpen) return
     this.isOpen = true
 
-    this.$body.addClass('modal2-is-open')
+    this.$body.addClass(options.classes.body)
     const preventDefault = this.options.onBeforeOpen(this, insert.bind(this))
 
     if (preventDefault === false) {
@@ -146,7 +147,7 @@ class Modal2 {
     this.unbind()
 
     this.$modal.remove()
-    this.$body.removeClass('modal2-is-open')
+    this.$body.removeClass(options.classes.body)
 
     this.options.onAfterClose(this)
   }
