@@ -83,7 +83,7 @@ class Modal2 {
     this.isOpen = true
 
     this.$body.addClass('modal2-is-open')
-    const preventDefault = this.options.onBeforeOpen(this)
+    const preventDefault = this.options.onBeforeOpen(this, insert)
 
     if (preventDefault === false) {
       return
