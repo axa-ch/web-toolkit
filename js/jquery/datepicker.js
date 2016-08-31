@@ -213,8 +213,8 @@ class Datepicker {
   constructor(element, options) {
     this.onChange = this.onChange.bind(this)
     this.options = options
-    this.moment = options.moment
-    this.moment.locale(options.locale)
+    this.moment = options.moment()
+    this.setLocale(options.locale)
     this.format = this.moment.localeData().longDateFormat(options.longDateFormat)
     this.$element = $(element)
 
@@ -254,6 +254,29 @@ class Datepicker {
     if (dat.isValid()) {
       this.picker.setSelectedDate(dat)
     }
+  }
+
+  setLocale(locale) {
+    this.moment.locale(locale)
+
+    if (this.moment.locale() === locale) return
+
+    const domain = document.domain
+    const tld = domain.split('.').pop()
+    const tldLocale = `${locale}-${tld}`
+
+    this.moment.locale(tldLocale)
+
+    if (this.moment.locale() === tldLocale) return
+
+    const locales = this.moment.locales()
+
+    locales.filter((loc) => !!~loc.indexOf(locale))
+      .some((loc) => {
+        this.moment.locale(loc)
+
+        return this.moment.locale() !== loc
+      })
   }
 
   toggle() {
