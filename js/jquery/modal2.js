@@ -12,6 +12,8 @@ const noop = () => {}
 class Modal2 {
   static DEFAULTS = {
     backdropClose: true,
+    closeEnabled: true,
+    closePosition: 'inside',
     classes: {
       modal: 'modal2',
       backdrop: 'modal2__backdrop',
@@ -43,9 +45,15 @@ class Modal2 {
     this.$modal = $(`<div class="${classes.modal}">`)
     this.$backdrop = append(`<div class="${classes.backdrop}">`, this.$modal)
     this.$content = append(`<div class="${classes.content}">`, this.$backdrop)
-    this.$close = append(`<button type="button" class="${classes.close}">
-        ${icon(this.options.iconClose)}
-      </button>`, this.$content)
+
+    if (this.options.closeEnabled) {
+      this.$close = append(`<button
+          type="button"
+          class="${classes.close} ${classes.close}--${this.options.closePosition}"
+          data-modal2-close>
+            ${icon(this.options.iconClose)}
+        </button>`, this.$content)
+    }
   }
 
   toggle(options) {
@@ -59,7 +67,8 @@ class Modal2 {
   bind() {
     const keyUpStream = $(document).asEventStream('keyup.axa.modal2')
     const escapeStream = keyUpStream.filter((e) => e.keyCode === 27)
-    const closeClickStream = this.$close.asEventStream('click.axa.modal2')
+    const closeClickStream = this.$modal.find('[data-modal2-close]').asEventStream('click.axa.modal2')
+
     let closeStream = closeClickStream.merge(escapeStream)
 
     if (this.options.backdropClose) {
