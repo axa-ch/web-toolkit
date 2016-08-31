@@ -39,7 +39,9 @@ class Modal2 {
     this.$element = $(`<div class="${classes.modal}">`)
     this.$backdrop = append(`<div class="${classes.backdrop}">`, this.$element)
     this.$content = append(`<div class="${classes.content}">`, this.$backdrop)
-    this.$close = append(`<button type="button" class="${classes.close}">${icon(this.options.iconClose)}</button>`, this.$content)
+    this.$close = append(`<button type="button" class="${classes.close}">
+        ${icon(this.options.iconClose)}
+      </button>`, this.$content)
   }
 
   toggle(options) {
