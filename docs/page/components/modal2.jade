@@ -24,10 +24,10 @@ h2.heading.heading--secondary#modal Modal
 +example('/components/demos/modal2.html', { maxHeight: '400' })
 
 .toggle
-  .toggle__button(data-info, data-target='#code-modal')
+  .toggle__button(data-info, data-target='#code-modal2')
     +svg('source', ['icon', 'toggle__icon'])
     span See code
-  .toggle__content#code-modal
+  .toggle__content#code-modal2
     .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
@@ -36,10 +36,10 @@ h2.heading.heading--secondary#modal Modal
       .tab-panel__content
         .tab-panel__content__tab(data-tab-content='html')
           p.
-            The modal block represents a modal dialog.
+            The modal2 block represents a modal dialog.
             It is hidden by default. Add the .is-active
             state to make it visible. When the modal is
-            visible you have to add the .is-modal-open
+            visible you have to add the .modal2-is-open
             state to the body element of your page to
             hide the main scrollbar.
 
@@ -92,10 +92,10 @@ h2.heading.heading--secondary#modal-ajax Modal Ajax
       .tab-panel__content
         .tab-panel__content__tab(data-tab-content='html')
           p.
-            The modal block represents a modal dialog.
+            The modal2 block represents a modal dialog.
             It is hidden by default. Add the .is-active
             state to make it visible. When the modal is
-            visible you have to add the .is-modal-open
+            visible you have to add the .modal2-is-open
             state to the body element of your page to
             hide the main scrollbar.
 
@@ -119,7 +119,7 @@ h2.heading.heading--secondary#modal-ajax Modal Ajax
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               :highlight
-                $('#myModal').modal2(options)
+                $('#myModal').modal2({ href: 'foo.html' })
 
           h3 Methods
           p.paragraph.
