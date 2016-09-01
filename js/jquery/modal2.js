@@ -9,12 +9,12 @@ import './html5data'
 
 const noop = () => {}
 
-const ModalGuard = (modal) => {
-  if (ModalGuard.openModal) {
-    ModalGuard.openModal.close()
+const modalGuard = (modal) => {
+  if (modalGuard.openModal) {
+    modalGuard.openModal.close()
   }
 
-  ModalGuard.openModal = modal
+  modalGuard.openModal = modal
 }
 
 class Modal2 {
@@ -101,7 +101,7 @@ class Modal2 {
     if (this.isOpen) return
     this.isOpen = true
 
-    ModalGuard(this)
+    modalGuard(this)
 
     this.$body.addClass(this.options.classes.body)
     const preventDefault = this.options.onBeforeOpen(this, insert.bind(this))
