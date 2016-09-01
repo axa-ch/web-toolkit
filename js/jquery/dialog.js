@@ -1,6 +1,8 @@
+/* global document */
+
 import $ from 'jquery'
 import registerPlugin from './register-plugin'
-import './modal2'
+import Modal2 from './modal2'
 import icon from './icon'
 
 class Dialog {
@@ -8,6 +10,7 @@ class Dialog {
     classes: {
       dialog: 'dialog',
       header: 'dialog__header',
+      heading: 'dialog__heading',
       close: 'dialog__close',
       icon: 'dialog__close__icon',
       content: 'dialog__content',
@@ -20,6 +23,7 @@ class Dialog {
     this.options = options
 
     this.init()
+    this.isOpen = false
   }
 
   init() {
@@ -27,9 +31,9 @@ class Dialog {
     const dialog = this.options[''] || this.options.html ||
       `<div class="${classes.dialog}">
         <div class="${classes.header}">
-          <h1>${this.options.heading}</h1>
+          <h1 class="${classes.heading}">${this.options.heading}</h1>
           
-          <div class="${classes.close}">
+          <div class="${classes.close}" data-modal2-close>
             ${icon(this.options.iconClose, classes.icon)}
           </div>
         </div>
@@ -40,7 +44,7 @@ class Dialog {
         </div>
       </div>`
 
-    this.dialog = $(dialog)
+    this.dialog = $(dialog).clone()
   }
 
   bind() {
@@ -51,16 +55,45 @@ class Dialog {
 
   }
 
+  toggle() {
+    if (!this.isOpen) {
+      this.open()
+    } else {
+      this.close()
+    }
+  }
+
   open() {
+    if (this.isOpen) return
+    this.isOpen = true
+
     this.$element.modal2({
+      ...this.options.modal,
       closeEnabled: false,
       html: this.dialog,
+      mode: 'hidden',
+      onBeforeClose: this.close.bind(this),
     })
   }
 
   close() {
-    this.$element.modal2('close')
+    if (!this.isOpen) return
+    this.isOpen = false
   }
 }
 
-registerPlugin('dialog', Dialog)
+registerPlugin('dialog', Dialog, {
+  customInstantiationCB: (PluginWrapper) => {
+    $(document).on('click.axa.dialog', '[data-dialog]', function (e) {
+      e.preventDefault()
+
+      const $this = $(this)
+      const data = $this.html5data('dialog')
+
+      PluginWrapper.call($this, data)
+    })
+  },
+  afterInstantiationCB: (instance, options) => {
+    instance.toggle(options)
+  },
+})
