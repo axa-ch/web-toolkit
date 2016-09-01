@@ -91,21 +91,26 @@
   max-height: 100%;
   margin-top: 0;
   margin-bottom: 0;
+  padding: @modal-padding;
+
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
   .respond(medium, {
     height: auto;
+    padding: 0 @grid-gutter-width;
   });
 }
 
 .dialog__footer {
   background: @color-gray--lighter;
   margin-bottom: 0;
+  text-align: center;
 
   .respond(medium, {
     background: @color-white;
     margin-bottom: auto;
+    text-align: right;
   });
 }
