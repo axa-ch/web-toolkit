@@ -188,3 +188,5 @@ registerPlugin('modal2', Modal2, {
     instance.toggle(options)
   },
 })
+
+export default Modal2
