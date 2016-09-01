@@ -1,20 +1,49 @@
+@import '../mixins/respond';
+@import '../mixins/word-break';
+
 .dialog {
-  display: flex;
+  display: none;
   flex-direction: column;
+  allign-items: stretch;
+
+  height: 100%;
+
+  background: @color-white;
+
+  .is-open & {
+    display: flex;
+  }
 }
 
 .dialog__header {
-  align-self: flex-start;
+  background: fade(pink, 50%);
+  margin-top: auto;
+}
+
+.dialog__heading {
+  .word-break();
+}
+
+.dialog__close {
+  float: right;
+  cursor: pointer;
+}
+
+.dialog__close__icon {
+
 }
 
 .dialog__content {
+  background: fade(yellow, 50%);
+  max-height: 100%;
   margin-top: 0;
   margin-bottom: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .dialog__footer {
-  align-self: flex-end;
+  background: fade(green, 50%);
+  margin-bottom: auto;
 }
