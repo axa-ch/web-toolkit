@@ -71,7 +71,7 @@ class Dialog {
       ...this.options.modal,
       closeEnabled: false,
       html: this.dialog,
-      mode: 'hidden',
+      mode: 'fullscreen',
       onBeforeClose: this.close.bind(this),
     })
   }
