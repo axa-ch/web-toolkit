@@ -29,6 +29,7 @@ class Modal2 {
       content: 'modal2__content',
       close: 'modal2__close',
       icon: 'modal2__close__icon',
+      open: 'is-open',
     },
     onBeforeOpen: noop,
     onAfterOpen: noop,
@@ -122,6 +123,7 @@ class Modal2 {
         this.$content.append(html)
       }
 
+      this.$modal.addClass(this.options.classes.open)
       this.$html.append(this.$modal)
       this.bind()
 
@@ -159,6 +161,7 @@ class Modal2 {
 
     this.$modal.remove()
     this.$body.removeClass(this.options.classes.body)
+    this.$modal.removeClass(this.options.classes.open)
 
     this.$content.empty()
 
