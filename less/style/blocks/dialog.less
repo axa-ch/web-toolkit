@@ -8,7 +8,7 @@
 
   height: 100%;
 
-  background: @color-white;
+  background: transparent;
 
   .is-open & {
     display: flex;
@@ -16,25 +16,76 @@
 }
 
 .dialog__header {
-  background: fade(pink, 50%);
+  color: white;
+  background: @color-blue;
   margin-top: auto;
+  padding: 0 15px;
+
+  .respond(medium, {
+    background: @color-white;
+  });
 }
 
 .dialog__heading {
   .word-break();
+
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.2;
+  padding: 10px 0;
+
+  .respond(medium, {
+    padding: 0 @grid-gutter-width/2 18px;
+    margin-top: 54px;
+
+    line-height: 1.15;
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: @color-black;
+    background: @color-white;
+  });
 }
 
 .dialog__close {
+  display: block;
   float: right;
+
+  height: 40px;
+  width: 40px;
+
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+
+  color: @color-white;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: @color-white;
+  }
+
+  .respond(medium; {
+    margin-top: 20px;
+
+    font-size: 21px;
+
+    color: @color-gray--darker;
+
+    &:hover {
+      color: @color-blue;
+    }
+  });
 }
 
 .dialog__close__icon {
-
+  margin-top: 8px;
 }
 
 .dialog__content {
-  background: fade(yellow, 50%);
+  background: @color-white;
   max-height: 100%;
   margin-top: 0;
   margin-bottom: 0;
@@ -44,6 +95,10 @@
 }
 
 .dialog__footer {
-  background: fade(green, 50%);
+  background: @color-gray--lighter;
   margin-bottom: auto;
+
+  .respond(medium, {
+    background: @color-white;
+  })
 }
