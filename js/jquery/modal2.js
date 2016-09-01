@@ -31,6 +31,7 @@ class Modal2 {
       icon: 'modal2__close__icon',
       open: 'is-open',
     },
+    escapeClose: true,
     hideMainScrollbar: true,
     mode: 'scroll',
     onBeforeOpen: noop,
@@ -80,11 +81,16 @@ class Modal2 {
   bind() {
     this.unbind()
 
-    const keyUpStream = $(document).asEventStream('keyup.axa.modal2')
-    const escapeStream = keyUpStream.filter((e) => e.keyCode === 27)
     const closeClickStream = this.$modal.asEventStream('click.axa.modal2', '[data-modal2-close]')
 
-    let closeStream = closeClickStream.merge(escapeStream)
+    let closeStream = closeClickStream
+
+    if (this.options.escapeClose) {
+      const keyUpStream = $(document).asEventStream('keyup.axa.modal2')
+      const escapeStream = keyUpStream.filter((e) => e.keyCode === 27)
+
+      closeStream = closeStream.merge(escapeStream)
+    }
 
     if (this.options.backdropClose) {
       const backdropStream = this.$backdrop.asEventStream('click.axa.modal2')
