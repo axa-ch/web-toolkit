@@ -6,6 +6,7 @@
 }
 
 .modal2 {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,6 +20,10 @@
   -webkit-overflow-scrolling: touch;
 
   z-index: 1000;
+
+  &.is-open {
+    display: block;
+  }
 }
 
 .modal2__backdrop {
