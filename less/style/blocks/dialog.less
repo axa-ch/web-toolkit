@@ -114,3 +114,27 @@
     text-align: right;
   });
 }
+
+.dialog--top {
+  .respond(medium, {
+    .dialog__header {
+      margin-top: 0;
+    }
+
+    .dialog__footer {
+      margin-top: 0;
+    }
+  });
+}
+
+.dialog--bottom {
+  .respond(medium, {
+    .dialog__header {
+      margin-top: auto;
+    }
+
+    .dialog__footer {
+      margin-bottom: 0;
+    }
+  });
+}

@@ -16,6 +16,7 @@ class Dialog {
       content: 'dialog__content',
       footer: 'dialog__footer',
     },
+    position: 'middle',
   }
 
   constructor(element, options) {
@@ -29,7 +30,7 @@ class Dialog {
   init() {
     const classes = this.options.classes
     const dialog = this.options[''] || this.options.html ||
-      `<div class="${classes.dialog}">
+      `<div class="${classes.dialog} ${classes.dialog}--${this.options.position}">
         <div class="${classes.header}">
           <h1 class="${classes.heading}">${this.options.heading}</h1>
           
