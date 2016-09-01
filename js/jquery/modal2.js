@@ -81,7 +81,7 @@ class Modal2 {
 
     const keyUpStream = $(document).asEventStream('keyup.axa.modal2')
     const escapeStream = keyUpStream.filter((e) => e.keyCode === 27)
-    const closeClickStream = this.$modal.find('[data-modal2-close]').asEventStream('click.axa.modal2')
+    const closeClickStream = this.$modal.asEventStream('click.axa.modal2', '[data-modal2-close]')
 
     let closeStream = closeClickStream.merge(escapeStream)
 
