@@ -31,6 +31,7 @@ class Modal2 {
       icon: 'modal2__close__icon',
       open: 'is-open',
     },
+    hideMainScrollbar: true,
     mode: 'scroll',
     onBeforeOpen: noop,
     onAfterOpen: noop,
@@ -109,7 +110,10 @@ class Modal2 {
 
     modalGuard(this)
 
-    this.$body.addClass(this.options.classes.body)
+    if (this.options.hideMainScrollbar) {
+      this.$body.addClass(this.options.classes.body)
+    }
+
     const preventDefault = this.options.onBeforeOpen(this, insert.bind(this))
 
     if (preventDefault === false) {
@@ -166,7 +170,11 @@ class Modal2 {
     this.unbind()
 
     this.$modal.remove()
-    this.$body.removeClass(this.options.classes.body)
+
+    if (this.options.hideMainScrollbar) {
+      this.$body.removeClass(this.options.classes.body)
+    }
+
     this.$modal.removeClass(this.options.classes.open)
 
     this.$content.empty()
