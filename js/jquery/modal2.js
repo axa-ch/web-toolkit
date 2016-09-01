@@ -31,6 +31,7 @@ class Modal2 {
       icon: 'modal2__close__icon',
       open: 'is-open',
     },
+    mode: 'scroll',
     onBeforeOpen: noop,
     onAfterOpen: noop,
     onBeforeClose: noop,
@@ -53,7 +54,7 @@ class Modal2 {
 
     const classes = this.options.classes
 
-    this.$modal = $(`<div class="${classes.modal}">`)
+    this.$modal = $(`<div class="${classes.modal} ${classes.modal}--${this.options.mode}">`)
     this.$backdrop = append(`<div class="${classes.backdrop}">`, this.$modal)
     this.$content = append(`<div class="${classes.content}">`, this.$backdrop)
 
@@ -76,6 +77,8 @@ class Modal2 {
   }
 
   bind() {
+    this.unbind()
+
     const keyUpStream = $(document).asEventStream('keyup.axa.modal2')
     const escapeStream = keyUpStream.filter((e) => e.keyCode === 27)
     const closeClickStream = this.$modal.find('[data-modal2-close]').asEventStream('click.axa.modal2')
@@ -94,7 +97,10 @@ class Modal2 {
   }
 
   unbind() {
-    this.disposeClose()
+    if (this.disposeClose) {
+      this.disposeClose()
+      delete this.disposeClose
+    }
   }
 
   open() {
