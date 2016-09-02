@@ -31,9 +31,9 @@ class Dialog {
   init() {
     const classes = this.options.classes
     const dialog = this.options[''] || this.options.html ||
-      `<div class="${classes.dialog} ${classes.dialog}--${this.options.position}" role="dialog">
+      `<div class="${classes.dialog} ${classes.dialog}--${this.options.position}" role="dialog" aria-labelledby="dialog__aria-label">
         <div class="${classes.header}">
-          <h1 class="${classes.heading}">${this.options.heading}</h1>
+          <h1 class="${classes.heading}" id="dialog__aria-label">${this.options.heading}</h1>
           
           <button class="${classes.close}" type="button" data-modal2-close aria-label="${this.options.closeAriaLabel}">
             ${icon(this.options.iconClose, classes.icon)}

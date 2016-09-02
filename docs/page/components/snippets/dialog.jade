@@ -8,12 +8,12 @@ include /components/includes/mixins.jade
 div(style="height: 400px;")
   .button(data-dialog='#myDialog' data-dialog-icon-close=relative('/images/icons.svg#modal-close')) Show Dialog
 
-  #myDialog.dialog(role="dialog")
+  #myDialog.dialog(role="dialog" aria-labelledby="dialog__aria-label")
     .dialog__header
       button.dialog__close(data-modal2-close aria-label="close" type="button")
         +svg('modal-close', ['dialog__close__icon', 'icon'])
 
-      h1.dialog__heading Dialog Header should wrap nicely
+      h1.dialog__heading#dialog__aria-label Dialog Header should wrap nicely
 
     .dialog__content
       p.
