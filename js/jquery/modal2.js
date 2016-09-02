@@ -133,6 +133,8 @@ class Modal2 {
 
     modalGuard(this)
 
+    this.$body.attr('aria-hidden', true)
+
     if (this.options.hideMainScrollbar) {
       this.$body.addClass(this.options.classes.body)
     }
@@ -201,6 +203,8 @@ class Modal2 {
     this.unbind()
 
     this.$modal.remove()
+
+    this.$body.attr('aria-hidden', false)
 
     if (this.options.hideMainScrollbar) {
       this.$body.removeClass(this.options.classes.body)
