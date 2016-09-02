@@ -21,6 +21,7 @@ const lastFocused = []
 
 class Modal2 {
   static DEFAULTS = {
+    autofocus: true,
     backdropClose: true,
     closeAriaLabel: 'close',
     closeEnabled: true,
@@ -160,7 +161,11 @@ class Modal2 {
 
       this.$modal.addClass(this.options.classes.open)
       this.$html.append(this.$modal)
-      this.$content.focus()
+
+      if(this.options.autofocus) {
+        this.$content.focus()
+      }
+
       this.bind()
 
       this.options.onAfterOpen(this)
