@@ -60,9 +60,9 @@ class Modal2 {
   init() {
     const classes = this.options.classes
 
-    this.$modal = $(`<div class="${classes.modal} ${classes.modal}--${this.options.mode}" tabindex="0" aria-hidden="false">`)
+    this.$modal = $(`<div class="${classes.modal} ${classes.modal}--${this.options.mode}" aria-hidden="false">`)
     this.$backdrop = append(`<div class="${classes.backdrop}">`, this.$modal)
-    this.$content = append(`<div class="${classes.content}">`, this.$backdrop)
+    this.$content = append(`<div class="${classes.content}" tabindex="0">`, this.$backdrop)
 
     if (this.options.closeEnabled) {
       this.$close = append(`<button
@@ -160,7 +160,7 @@ class Modal2 {
 
       this.$modal.addClass(this.options.classes.open)
       this.$html.append(this.$modal)
-      this.$modal.focus()
+      this.$content.focus()
       this.bind()
 
       this.options.onAfterOpen(this)
