@@ -59,7 +59,7 @@ class Modal2 {
 
     const classes = this.options.classes
 
-    this.$modal = $(`<div class="${classes.modal} ${classes.modal}--${this.options.mode}">`)
+    this.$modal = $(`<div class="${classes.modal} ${classes.modal}--${this.options.mode}" tabindex="0">`)
     this.$backdrop = append(`<div class="${classes.backdrop}">`, this.$modal)
     this.$content = append(`<div class="${classes.content}">`, this.$backdrop)
 
@@ -147,6 +147,7 @@ class Modal2 {
 
       this.$modal.addClass(this.options.classes.open)
       this.$html.append(this.$modal)
+      this.$modal.focus()
       this.bind()
 
       this.options.onAfterOpen(this)
