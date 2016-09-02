@@ -10,7 +10,7 @@ div(style="height: 400px;")
 
   #myDialog.dialog
     .dialog__header
-      .dialog__close(data-modal2-close)
+      button.dialog__close(data-modal2-close aria-label="close" type="button")
         +svg('modal-close', ['dialog__close__icon', 'icon'])
 
       h1.dialog__heading Dialog Header should wrap nicely
