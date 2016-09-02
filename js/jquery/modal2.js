@@ -186,7 +186,7 @@ class Modal2 {
   }
 
   restrictFocus(event) {
-    if (!$.contains(this.$modal, event.target)) {
+    if (!$.contains(this.$modal[0], event.target)) {
       event.stopPropagation()
       this.$modal.focus()
     }
