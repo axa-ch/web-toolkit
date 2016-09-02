@@ -17,6 +17,8 @@ const modalGuard = (modal) => {
   modalGuard.openModal = modal
 }
 
+const lastFocused = []
+
 class Modal2 {
   static DEFAULTS = {
     backdropClose: true,
@@ -116,6 +118,8 @@ class Modal2 {
     if (this.isOpen) return
     this.isOpen = true
 
+    lastFocused.push(document.activeElement)
+
     modalGuard(this)
 
     if (this.options.hideMainScrollbar) {
@@ -192,6 +196,8 @@ class Modal2 {
     }
 
     this.options.onAfterClose(this)
+
+    lastFocused.pop().focus()
   }
 }
 
