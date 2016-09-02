@@ -50,13 +50,14 @@ class Modal2 {
     this.$html = $(document.documentElement)
     this.$body = $(document.body)
 
+    this.close = this.close.bind(this)
+    this.restrictFocus = this.restrictFocus.bind(this)
+
     this.init()
     this.isOpen = false
   }
 
   init() {
-    this.close = this.close.bind(this)
-
     const classes = this.options.classes
 
     this.$modal = $(`<div class="${classes.modal} ${classes.modal}--${this.options.mode}" tabindex="0">`)
@@ -85,12 +86,13 @@ class Modal2 {
   bind() {
     this.unbind()
 
+    const $document = $(document)
     const closeClickStream = this.$modal.asEventStream('click.axa.modal2', '[data-modal2-close]')
 
     let closeStream = closeClickStream
 
     if (this.options.escapeClose) {
-      const keyUpStream = $(document).asEventStream('keyup.axa.modal2')
+      const keyUpStream = $document.asEventStream('keyup.axa.modal2')
       const escapeStream = keyUpStream.filter((e) => e.keyCode === 27)
 
       closeStream = closeStream.merge(escapeStream)
@@ -105,12 +107,21 @@ class Modal2 {
 
     this.disposeClose = closeStream.doAction('.preventDefault')
       .onValue(this.close)
+
+    const focusStream = $document.asEventStream('focusin.axa.modal2')
+
+    this.disposeFocus = focusStream.onValue(this.restrictFocus)
   }
 
   unbind() {
     if (this.disposeClose) {
       this.disposeClose()
       delete this.disposeClose
+    }
+
+    if (this.disposeFocus) {
+      this.disposeFocus()
+      delete this.disposeFocus
     }
   }
 
@@ -172,6 +183,13 @@ class Modal2 {
       },
       error: this.close,
     })
+  }
+
+  restrictFocus(event) {
+    if (!$.contains(this.$modal, event.target)) {
+      event.stopPropagation()
+      this.$modal.focus()
+    }
   }
 
   close() {
