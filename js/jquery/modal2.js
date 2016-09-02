@@ -20,6 +20,7 @@ const modalGuard = (modal) => {
 class Modal2 {
   static DEFAULTS = {
     backdropClose: true,
+    closeAriaLabel: 'close',
     closeEnabled: true,
     closePosition: 'inside',
     classes: {
@@ -64,7 +65,8 @@ class Modal2 {
       this.$close = append(`<button
           type="button"
           class="${classes.close} ${classes.close}--${this.options.closePosition}"
-          data-modal2-close>
+          data-modal2-close
+          aria-label="${this.options.closeAriaLabel}">
             ${icon(this.options.iconClose, classes.icon)}
         </button>`, this.$content)
     }

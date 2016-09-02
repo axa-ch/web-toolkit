@@ -16,6 +16,7 @@ class Dialog {
       content: 'dialog__content',
       footer: 'dialog__footer',
     },
+    closeAriaLabel: 'close',
     position: 'middle',
   }
 
@@ -34,9 +35,9 @@ class Dialog {
         <div class="${classes.header}">
           <h1 class="${classes.heading}">${this.options.heading}</h1>
           
-          <div class="${classes.close}" data-modal2-close>
+          <button class="${classes.close}" type="button" data-modal2-close aria-label="${this.options.closeAriaLabel}">
             ${icon(this.options.iconClose, classes.icon)}
-          </div>
+          </button>
         </div>
         <div class="${classes.content}">
           ${this.options.content}
