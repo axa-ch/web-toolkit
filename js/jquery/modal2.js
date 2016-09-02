@@ -60,7 +60,7 @@ class Modal2 {
   init() {
     const classes = this.options.classes
 
-    this.$modal = $(`<div class="${classes.modal} ${classes.modal}--${this.options.mode}" tabindex="0">`)
+    this.$modal = $(`<div class="${classes.modal} ${classes.modal}--${this.options.mode}" tabindex="0" aria-hidden="false">`)
     this.$backdrop = append(`<div class="${classes.backdrop}">`, this.$modal)
     this.$content = append(`<div class="${classes.content}">`, this.$backdrop)
 
