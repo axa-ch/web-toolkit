@@ -31,7 +31,7 @@ class Dialog {
   init() {
     const classes = this.options.classes
     const dialog = this.options[''] || this.options.html ||
-      `<div class="${classes.dialog} ${classes.dialog}--${this.options.position}">
+      `<div class="${classes.dialog} ${classes.dialog}--${this.options.position}" role="dialog">
         <div class="${classes.header}">
           <h1 class="${classes.heading}">${this.options.heading}</h1>
           
