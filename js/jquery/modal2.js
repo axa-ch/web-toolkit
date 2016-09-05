@@ -76,7 +76,7 @@ class Modal2 {
     }
   }
 
-  toggle(options) {
+  toggle() {
     if (!this.isOpen) {
       this.open()
     } else {
@@ -162,7 +162,7 @@ class Modal2 {
       this.$modal.addClass(this.options.classes.open)
       this.$html.append(this.$modal)
 
-      if(this.options.autofocus) {
+      if (this.options.autofocus) {
         this.$content.focus()
       }
 
