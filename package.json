@@ -75,6 +75,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-cached": "^1.1.0",
     "gulp-concat": "^2.4.0",
+    "gulp-debug": "^2.1.2",
     "gulp-filter": "^2.0.2",
     "gulp-foreach": "^0.1.0",
     "gulp-generate-bower-json": "1.0.0",
