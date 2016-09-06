@@ -2,6 +2,7 @@ import runSequence from 'run-sequence'
 
 module.exports = cb =>
   runSequence(
+    'docs-jsdoc-clean',
     'docs-jsdoc2md',
     [
       'docs-pages',
