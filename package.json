@@ -58,6 +58,7 @@
     "babel-register": "^6.14.0",
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
+    "browserify-incremental": "^3.1.1",
     "browserify-shim": "^3.8.11",
     "cheet.js": "^0.3.3",
     "colors": "^1.1.2",
