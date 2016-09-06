@@ -8,7 +8,7 @@ import concat from 'concat-stream'
 import createBundler from '../lib/createBundler'
 import handleError from '../lib/handle-error'
 
-const transformBundler = (opts) => through2.obj(function(file, encoding, next) {
+const transformBundler = (opts) => through2.obj(function (file, encoding, next) {
   const bundler = createBundler(file.path, opts)
 
   bundler.bundle()
