@@ -27,7 +27,6 @@ import ignoreFmJadeFilter from '../lib/jade-filter-ignorefrontmatter'
 import markedRenderer from '../lib/marked-renderer'
 import markedChangelogRenderer from '../lib/marked-renderer-changelog'
 import searchIndexData from '../lib/search-index-data'
-import loadChangelog from '../lib/load-changelog'
 import navigation from '../lib/metalsmith-navigation'
 import relate from '../lib/metalsmith-relate'
 
@@ -170,26 +169,6 @@ module.exports = (cb) => {
       return cb()
     })
 
-  const username = process.env.GITHUB_USERNAME
-  const password = process.env.GITHUB_PASSWORD
-
-  if (username && password) {
-    gutil.log(`Will load GitHub changelog with user ${username.cyan}`)
-
-    // Amazingly load our GitHub changelog to include it into our build!
-    return loadChangelog(username, password, (err, changelog) => {
-      if (err) {
-        gutil.log('Failed loading changelog items!'.red)
-      } else {
-        config.changelog = changelog
-        gutil.log(`Successfully loaded ${`${changelog.length}`.cyan} changelog items!`)
-      }
-
-      return build()
-    })
-  }
-
-  // Just build it w/o changelog
   return build()
 }
 
