@@ -5,6 +5,7 @@ import rename from 'gulp-rename'
 import through2 from 'through2'
 import concat from 'concat-stream'
 
+import noParse from '../lib/scriptsNoParse'
 import createBundler from '../lib/createBundler'
 import handleError from '../lib/handle-error'
 
@@ -25,7 +26,12 @@ module.exports = () =>
     'dist/js/react/index.js',
     'dist/js/index.js',
   ], { base: 'dist/js', read: false })
-  .pipe(transformBundler())
+  .pipe(transformBundler({
+    browserField: true,
+    bundleExternal: false,
+    detectGlobals: false,
+    noParse,
+  }))
   .pipe(sourcemaps.init({ loadMaps: true }))
   .pipe(sourcemaps.write(''))
   .pipe(rename((path) => {
