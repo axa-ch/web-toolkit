@@ -47,6 +47,7 @@
     "svg4everybody": "^2.1.0"
   },
   "devDependencies": {
+    "aliasify": "^2.0.0",
     "autoprefixer": "^6.3.7",
     "babel-core": "^6.2.1",
     "babel-eslint": "^6.1.2",
