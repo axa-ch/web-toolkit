@@ -26,8 +26,8 @@ module.exports = () =>
   ], { base: 'docs/js', read: false })
     .pipe(transformBundler({
       browserField: true,
-      bundleExternal: false,
-      detectGlobals: false,
+      // bundleExternal: false,
+      // detectGlobals: false,
       transform: [babelify],
       noParse,
     }))

@@ -28,8 +28,8 @@ module.exports = () =>
   ], { base: 'dist/js', read: false })
   .pipe(transformBundler({
     browserField: true,
-    bundleExternal: false,
-    detectGlobals: false,
+    // bundleExternal: false,
+    // detectGlobals: false,
     noParse,
   }))
   .pipe(sourcemaps.init({ loadMaps: true }))
