@@ -2,23 +2,11 @@ import gulp from 'gulp'
 import sourcemaps from 'gulp-sourcemaps'
 import uglify from 'gulp-uglify'
 import rename from 'gulp-rename'
-import through2 from 'through2'
-import concat from 'concat-stream'
+import shim from 'browserify-shim'
 
 import noParse from '../lib/scriptsNoParse'
-import createBundler from '../lib/createBundler'
+import browserify from '../lib/gulp-browserify'
 import handleError from '../lib/handle-error'
-
-const transformBundler = (opts) => through2.obj(function (file, encoding, next) {
-  const bundler = createBundler(file.path, opts)
-
-  bundler.bundle()
-    .on('error', handleError('Browserify failed'))
-    .pipe(concat(data => {
-      file.contents = data
-      next(null, file)
-    }))
-})
 
 module.exports = () =>
   gulp.src([
@@ -26,10 +14,11 @@ module.exports = () =>
     'dist/js/react/index.js',
     'dist/js/index.js',
   ], { base: 'dist/js', read: false })
-  .pipe(transformBundler({
+  .pipe(browserify({
     browserField: true,
     // bundleExternal: false,
     // detectGlobals: false,
+    transform: [shim],
     noParse,
   }))
   .pipe(sourcemaps.init({ loadMaps: true }))
