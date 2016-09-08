@@ -102,6 +102,7 @@
     "gulp-watch": "^4.3.9",
     "gulp-watch-sequence": "^1.0.0",
     "gulp-webserver": "git+https://github.com/davidknezic/gulp-webserver#connect-livereload-update",
+    "happypack": "^2.2.1",
     "highlight.js": "^8.9.1",
     "iframe-resizer": "^2.8.10",
     "jsdoc-babel": "^0.2.1",
