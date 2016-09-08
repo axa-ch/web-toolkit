@@ -24,7 +24,23 @@ module.exports = () =>
   ], { base: 'dist/js/' })
     .pipe(named(getSourceName))
     .pipe(webpack({
+      cache : true,
       devtool: 'source-map',
+      module: {
+        noParse: [
+          'jquery',
+          // 'react',
+          // 'react-dom',
+          'baconjs',
+          'moment',
+          'classnames',
+          // 'svg4everybody',
+          'zeroclipboard',
+          'iframe-resizer',
+          'lunr',
+          'slick-carousel',
+        ].map((module) => new RegExp(require.resolve(module))),
+      },
     }))
     .on('error', handleError('Webpack failed'))
     .pipe(sourcemaps.init({ loadMaps: true }))
