@@ -1,0 +1,264 @@
+@import '../mixins/invisible-input';
+@import '../mixins/invisible-font';
+@import '../blocks/checkbox-group';
+@import '../blocks/checkbox';
+
+@mixin segmented-control-animation {
+  z-index: 0; // for animation
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  transition: color 0.3s;
+
+  // animation
+  &:before {
+    visibility: visible;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    will-change: width, opacity;
+    transition: width 0.6s, opacity 0.6s;
+    width: 0;
+    height: 20rem;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    background: $color-white;
+    transform: translate(-50%,-50%) rotate(45deg);
+    transform: translate3d(-50%,-50%, 0) rotate(45deg);
+    backface-visibility: hidden;
+  }
+
+  &:hover {
+    &:before {
+      background: darken($color-white, 5%);
+      width: 120%;
+      opacity: 1;
+    }
+  }
+
+  &:after {
+    visibility: visible;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transition: width 0.6s, opacity 0.6s;
+    width: 0;
+    height: 20rem;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    background: $color-white;
+    transform: translate(-50%,-50%) rotate(45deg);
+    transform: translate3d(-50%,-50%, 0) rotate(45deg);
+    backface-visibility: hidden;
+  }
+
+}
+
+.segmented-control {
+  @extend .checkbox-group;
+
+  margin-bottom: 12px;
+}
+.segmented-control__item {
+  @extend .checkbox;
+
+  &.chromebug {
+    width: 0 !important;
+    border: 0 !important;
+    cursor: default !important;
+    border-left: 1px $color-gray solid !important;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+.segmented-control__item__radio {
+  @extend .checkbox__checkbox;
+}
+
+.segmented-control--js:enabled {
+  &.segmented-control--stacked {
+    .segmented-control__item {
+      &.is-active {
+        border-top-color: $color-light-blue !important;
+      }
+      &.is-active + .segmented-control__item {
+        border-left-color: $color-gray;
+        border-top-color: $color-light-blue !important;
+      }
+    }
+  }
+}
+
+.segmented-control--js {
+  @extend .invisible-font;
+
+  &.segmented-control--stacked {
+    .segmented-control__item {
+      display: block;
+
+      width: 100%;
+      border-right-width: 1px;
+      margin-bottom: -1px;
+
+      &.is-active + .segmented-control__item {
+        border-left-color: $color-gray;
+      }
+    }
+    &.segmented-control:not(.no-focus):focus .segmented-control__item {
+      border-top-color: $color-gray !important;
+      border-bottom-color: $color-gray !important;
+      border-right-color: $color-light-blue;
+      border-left-color: $color-light-blue;
+
+      &:first-of-type {
+        border-top-color: $color-light-blue !important;
+      }
+
+      &:last-of-type {
+        border-bottom-color: $color-light-blue !important;
+      }
+    }
+  }
+
+  &.segmented-control {
+    max-width: 100%;
+    margin-top: 0; // reset inheritance of .checkbox-group
+
+    white-space: nowrap;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .segmented-control__item__label {
+    &:after {
+      content: '';
+
+      display: inline-block;
+
+      width: 14px;
+      min-height: 1px;
+      margin-left: 5px;
+    }
+  }
+
+  .segmented-control__item.is-active .segmented-control__item__label {
+    // TODO
+    //@include icon-after();
+    //@include icon-after--checkmark();
+  }
+
+  .segmented-control__item__radio {
+    @extend .invisible-input;
+  }
+
+  &.segmented-control.has-error .segmented-control__item {
+    border-color: #ff0000 !important; // important is needed when the item .is-active and the control .has-error
+  }
+
+  &.segmented-control:not(.no-focus):focus .segmented-control__item {
+    border-top-color: $color-light-blue !important;
+    border-bottom-color: $color-light-blue !important;
+
+    &:first-of-type {
+      border-left-color: $color-light-blue !important;
+    }
+
+    &:last-of-type {
+      border-right-color: $color-light-blue !important;
+    }
+  }
+
+  .segmented-control__item {
+    @extend .undo-invisible-font;
+
+    div {
+      @include segmented-control-animation();
+      height: 40px;
+      padding-left: 25px;
+      padding-right: 8px;
+
+      line-height: 40px;
+
+      margin-right: 1px;
+      margin-left: 1px;
+    }
+
+    &.is-active {
+
+      background-color: $color-light-blue !important;
+      transition: background-color 0.3s;
+      transition-delay: 0.3s;
+
+      div {
+        margin: 0 !important;
+        padding-left: 26px;
+        padding-right: 9px;
+
+        &:after {
+          background: $color-light-blue;
+          width: 120%;
+          opacity: 1;
+        }
+      }
+    }
+
+    display: inline-block;
+
+    border: 1px solid $color-gray;
+    border-right-width: 0;
+    margin-bottom: 0;
+
+    cursor: pointer;
+
+    &:last-of-type {
+      border-right-width: 1px;
+    }
+
+    /*
+    &:nth-child(2):last-of-type:not(.is-active) {
+      border-right-width: 1px;
+      border-right-color: $color-white;
+      box-shadow: 1px 0 0 $color-gray;
+      padding-right: 7px;
+    }
+    */
+
+    &.is-active {
+      background: $color-white;
+      color: white;
+      border-top-color: $color-light-blue;
+      border-bottom-color: $color-light-blue;
+      border-left-color: $color-light-blue;
+      border-right-color: $color-light-blue;
+    }
+
+    &.is-active + .segmented-control__item {
+      border-left-color: $color-light-blue;
+    }
+  }
+}
+
+.segmented-control--js[disabled] {
+  &.segmented-control:focus .segmented-control__item {
+    border: 1px solid $color-gray !important;
+  }
+
+  .segmented-control__item {
+    border: 1px solid $color-gray !important;
+    color: $color-gray;
+  }
+
+  .segmented-control__item.is-active {
+    color: white;
+    background-color: $color-gray;
+  }
+}
+
+
+// Copyright AXA Versicherungen AG 2015

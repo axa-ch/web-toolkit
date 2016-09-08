@@ -1,0 +1,20 @@
+.progress-tracker {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.progress-tracker__flow {
+  display: table-row;
+
+  & {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.progress-tracker__step {
+  display: table-cell;
+}
+
+// Copyright AXA Versicherungen AG 2015

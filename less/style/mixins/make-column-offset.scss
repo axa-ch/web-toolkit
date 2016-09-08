@@ -1,0 +1,3 @@
+@mixin make-column-offset($size, $columns: 12) {
+  margin-left: percentage($size / $columns);
+}

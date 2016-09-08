@@ -1,0 +1,426 @@
+@import '../variables';
+
+@import './control';
+
+// TODO: Instead of viewport we should consider usage of a --js which will be
+// added when js is available and it is a non-touch device
+
+@mixin make-picker-cell {
+  display: table-cell;
+
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  border-radius: 32px;
+
+  padding: 0;
+
+  text-align: center;
+  vertical-align: middle;
+}
+
+.example {
+  overflow: visible !important;
+}
+
+.datepicker {
+  @extend .clearfix;
+  @extend .control--short;
+}
+
+.datepicker--condensed {
+  @extend .control--condensed;
+
+  .datepicker__trigger,
+  .datepicker__trigger__icon {
+    height: $control-height-condensed;
+  }
+}
+
+.datepicker__input {
+  margin-right: 40px;
+}
+
+.datepicker__trigger {
+  cursor: pointer;
+
+  display: block;
+  position: absolute;
+  top: 6px;
+  right: 1px;
+
+  width: 62px;
+  height: 52px;
+  padding: 5px 21px;
+
+  z-index: 15;
+
+  border-left: 1px $color-blue-gray--light solid;
+
+  &:hover .datepicker__trigger__icon {
+    fill: $color-blue;
+  }
+}
+
+.datepicker__trigger__icon {
+  width: 20px;
+  height: 40px;
+  fill: $color-light-blue;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.picker {
+  display: none;
+  position: absolute;
+
+  top: -100px;
+  right: 80px;
+
+  width: 280px;
+  border-collapse: collapse;
+  margin-top: 6px;
+  z-index: $z-index-datepicker;
+
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.1);
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.picker__header {
+  padding: 20px 20px 20px 20px;
+  color: white;
+  background: $color-gray--mid;
+
+  &.active {
+    background: $color-light-blue;
+  }
+}
+
+.picker__selection {
+  margin: 0 30px;
+
+  line-height: 100%;
+  font-size: 1.1428em;
+  text-align: center;
+}
+
+.picker__selection__month {
+  display: inline;
+  font-weight: 600;
+}
+
+.picker__selection__day {
+  display: inline;
+  font-weight: 600;
+}
+
+.picker__selection__year {
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.picker__headline {
+  margin: 8px 30px;
+
+  line-height: 31px;
+  font-size: 1.1428em;
+  text-align: center;
+}
+
+.picker__headline__month {
+  display: inline;
+  font-weight: 700;
+}
+
+.picker__headline__year {
+  display: inline;
+  font-weight: 700;
+}
+
+.picker__prev,
+.picker__next {
+  display: block;
+
+  width: 40px;
+  height: 50px;
+
+  cursor: pointer;
+
+  &:hover {
+    .picker__icon--next,
+    .picker__icon--prev {
+      fill: $color-gray--light;
+    }
+  }
+}
+
+.picker__icon--next,
+.picker__icon--prev {
+  display: inline-block;
+  width: 11px;
+  height: 17px;
+  fill: white;
+}
+
+.picker__prev {
+  float: left;
+  padding-top: 14px;
+  text-align: right;
+}
+
+.picker__next {
+  float: right;
+  padding-top: 14px;
+  text-align: left;
+}
+
+.picker__content {
+  padding: 10px 17px 18px 17px;
+  background: $color-white;
+  border: 1px $color-gray--predarkest solid;
+  border-top: none;
+}
+
+.picker__month {
+  display: table;
+  width: 100%;
+}
+
+.picker__weeks {
+  display: table-row-group;
+}
+
+.picker__week {
+  display: table-row;
+}
+
+.picker__day {
+  @include make-picker-cell();
+
+  color: $color-black;
+  background: white;
+
+  cursor: pointer;
+
+  &:nth-last-child(2) {
+    border-left: 1px $color-gray--mid solid;
+  }
+
+  &:hover,
+  &.is-active {
+    background: $color-light-blue;
+    color: white;
+  }
+
+}
+
+.picker__day--today {
+  background: $color-gray--light;
+}
+
+.picker__day--headline {
+  font-size: 14px;
+
+  background: transparent;
+  color: $color-gray--dark;
+
+  cursor: default;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+.picker__day--prev-month,
+.picker__day--next-month {
+  color: $color-gray;
+}
+
+.picker__day--disabled {
+  background: $color-gray--dark;
+  color: white;
+
+  cursor: default;
+
+  &:hover {
+    background: $color-gray--dark;
+    color: white;
+  }
+}
+
+.picker__weeknumber {
+  @include make-picker-cell();
+  background: transparent;
+  color: $color-gray--lighter;
+  font-size: .8em;
+  display: none;
+}
+
+.picker__weeknumber--headline {
+
+}
+
+// Birthday Datepicker styles:
+
+.datepicker--birthday {
+
+  display: flex;
+  max-width: none;
+
+  flex-direction: column;
+
+  @include respond(large) {
+    flex-direction: row;
+  }
+
+  .control--birthday {
+    display: none;
+  }
+  .birthday--day {
+    flex: 3;
+    min-width: 120px;
+  }
+  .birthday--month {
+    flex: 5;
+    min-width: 190px;
+  }
+  .birthday--year {
+    flex: 3;
+    min-width: 120px;
+  }
+
+}
+
+// Birthday Datepicker V2 styles:
+
+.datepicker--birthday-v2 {
+
+  max-width: none;
+  margin-bottom: $material-group-bottom-margin - 20px;
+
+  border: solid $material-border-color-inactive 1px;
+  box-shadow: 0 2px 0 0 #fff;
+
+  .control--birthday {
+    display: none;
+  }
+
+  .birthday--day, .birthday--month, .birthday--year {
+
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    padding: 32px 15px 11px 15px;
+    border: none;
+    cursor: text;
+    font-size: $material-label-font-size-closed;
+    font-weight: 700;
+
+    &::-webkit-input-placeholder {
+      color: $material-placeholder-color;
+      font-weight: 200;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $material-placeholder-color;
+      font-weight: 200;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: $material-placeholder-color;
+      font-weight: 200;
+    }
+
+    &:-ms-input-placeholder {
+      color: $material-placeholder-color;
+      font-weight: 200;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .birthday--day {
+    width: 60px;
+    display: inline-block;
+  }
+  .birthday--month {
+    width: 60px;
+    display: inline-block;
+  }
+  .birthday--year {
+    width: 350px;
+    display: inline-block;
+  }
+
+  span {
+
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    width: 10px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+
+  }
+
+}
+
+.form__group.material-datepicker.focused, .form__group.material-datepicker.filled {
+
+  .datepicker--birthday-v2 {
+
+    .birthday--day, .birthday--month, .birthday--year {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+
+    span {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+  }
+
+  label {
+    font-size: $material-label-font-size-open;
+    top: 11px;
+    left: 15px;
+    transition: all 0.5s;
+  }
+
+}
+
+.form__group.material-datepicker.focused {
+
+  .datepicker--birthday-v2 {
+     border-color: $color-light-blue;
+  }
+}
+
+.form__group.material-datepicker {
+
+  position: relative;
+
+  label {
+    color: $material-label-color-default;
+    z-index: 10;
+    pointer-events: none;
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    font-size: $material-label-font-size-closed;
+    transition: all 0.5s;
+  }
+
+  &.focused label {
+    color: $material-label-color-active;
+  }
+
+}
+
+// Copyright AXA Versicherungen AG 2015

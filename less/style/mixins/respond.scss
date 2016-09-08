@@ -1,0 +1,20 @@
+@import '../variables';
+
+@mixin respond($condition) {
+  $media: "";
+
+  @if $condition == print {
+    $media: "print";
+  } @else if $condition == medium {
+    $media: "min-width: #{$respond-medium-min-width}";
+  } @else if $condition == large {
+    $media: "min-width: #{$respond-large-min-width}";
+  } @else {
+    $media: "min-width: #{$condition}";
+  }
+
+  @media ($media) {
+    @content;
+  }
+}
+

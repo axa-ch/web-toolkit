@@ -3,14 +3,14 @@
 @import '../mixins/respond';
 
 .button-row {
-  &:extend(.clearfix all);
+  @extend .clearfix;
   margin-bottom: 80px;
 
-  .respond(medium, {
+  @include respond(medium) {
     padding-top: 8px;
-    margin-left: -@grid-gutter-width;
-    margin-right: -@grid-gutter-width;
-  });
+    margin-left: -$grid-gutter-width;
+    margin-right: -$grid-gutter-width;
+  }
 }
 
 .button-row__button {
@@ -22,25 +22,25 @@
   &.button {
     display: block;
 
-    .respond(medium, {
+    @include respond(medium) {
       display: inline-block;
-    });
+    }
   }
 
   &:first-of-type {
     margin-top: 0;
   }
 
-  .respond(medium, {
+  @include respond(medium) {
     display: inline-block;
     margin-top: 0;
-  });
+  }
 }
 
 .button-row__button--right {
-  .respond(medium, {
+  @include respond(medium) {
     float: right;
-  });
+  }
 }
 
 // Copyright AXA Versicherungen AG 2015

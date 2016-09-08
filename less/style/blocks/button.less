@@ -29,25 +29,25 @@
   }
 
   .make-button-size(
-    @height: @button-height;
-    @pad-lr: @button-pad-lr;
-    @icon-size: @button-icon-size;
-    @font-size: @button-font-size;
+    @height: @button-height,
+    @pad-lr: @button-pad-lr,
+    @icon-size: @button-icon-size,
+    @font-size: @button-font-size
   );
 
-  .respond(medium; {
+  .respond(medium, {
     .make-button-size(
-      @height: @button-height--medium;
-      @pad-lr: @button-pad-lr--medium;
-      @icon-size: @button-icon-size;
-      @font-size: @button-font-size--medium;
+      @height: @button-height--medium,
+      @pad-lr: @button-pad-lr--medium,
+      @icon-size: @button-icon-size,
+      @font-size: @button-font-size--medium
     );
   });
 
   .make-button-color(
-    @bg-color: @button-primary-bg;
-    @color: @button-primary-color;
-    @highlight-bg-color: @button-primary-highlight-bg;
+    @bg-color: @button-primary-bg,
+    @color: @button-primary-color,
+    @highlight-bg-color: @button-primary-highlight-bg
   );
 }
 
@@ -67,27 +67,27 @@
 
 .button--small {
   .make-button-size(
-    @height: @button-sm-height;
-    @pad-lr: @button-sm-pad-lr;
-    @icon-size: @button-sm-icon-size;
-    @font-size: @button-sm-font-size;
+    @height: @button-sm-height,
+    @pad-lr: @button-sm-pad-lr,
+    @icon-size: @button-sm-icon-size,
+    @font-size: @button-sm-font-size
   );
 
-  .respond(medium; {
+  .respond(medium, {
     .make-button-size(
-      @height: @button-sm-height--medium;
-      @pad-lr: @button-sm-pad-lr;
-      @icon-size: @button-sm-icon-size;
-      @font-size: @button-sm-font-size;
+      @height: @button-sm-height--medium,
+      @pad-lr: @button-sm-pad-lr,
+      @icon-size: @button-sm-icon-size,
+      @font-size: @button-sm-font-size
     );
   });
 }
 
 .button--secondary {
   .make-button-color(
-    @bg-color: @button-secondary-bg;
-    @color: @button-secondary-color;
-    @highlight-bg-color: @button-secondary-highlight-bg;
+    @bg-color: @button-secondary-bg,
+    @color: @button-secondary-color,
+    @highlight-bg-color: @button-secondary-highlight-bg
   );
 }
 

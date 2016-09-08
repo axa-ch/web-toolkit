@@ -1,13 +1,12 @@
-@import '../mixins/respond.less';
-@import '../variables.less';
+@import '../mixins/respond.scss';
+@import '../variables.scss';
 
-@info-icon-diameter: 20px;
-@info-icon-diameter--medium: 28px;
+$info-icon-diameter: 20px;
+$info-icon-diameter--medium: 28px;
 
 .info-icon {
 
   display: block;
-  line-height: 0;
 
   &:hover,
   &:focus {
@@ -15,7 +14,7 @@
     outline: none;
 
     .info-icon__svg {
-      fill: @color-blue;
+      fill: $color-blue;
     }
   }
 
@@ -32,23 +31,23 @@
   &::before {
     font-size: 20px;
 
-    .respond(medium, {
+    @include respond(medium) {
       font-size: 28px;
-    });
+    }
   }
 }
 
 .info-icon__svg {
-  width: @info-icon-diameter;
-  height: @info-icon-diameter;
+  width: $info-icon-diameter;
+  height: $info-icon-diameter;
 
-  fill: @color-gray--darker;
+  fill: $color-gray--darker;
 
 
-  .respond(medium, {
-    width: @info-icon-diameter--medium;
-    height: @info-icon-diameter--medium;
-  });
+  @include respond(medium) {
+    width: $info-icon-diameter--medium;
+    height: $info-icon-diameter--medium;
+  }
 }
 
 .info-icon__svg--close {

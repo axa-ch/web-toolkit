@@ -1,0 +1,10 @@
+@import '../variables';
+
+@mixin make-link {
+  color: $color-gray--darker;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-blue;
+  }
+}

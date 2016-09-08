@@ -1,22 +1,22 @@
 @import '../variables';
 
-.respond(small; @rules) {
+.respond(small, @rules) {
   @rules();
 }
 
-.respond(print; @rules) {
+.respond(print, @rules) {
   @media print {
     @rules();
   }
 }
 
-.respond(medium; @rules) {
+.respond(medium, @rules) {
   @media (min-width: @respond-medium-min-width) {
     @rules();
   }
 }
 
-.respond(large; @rules) {
+.respond(large, @rules) {
   @media (min-width: @respond-large-min-width) {
     @rules();
   }

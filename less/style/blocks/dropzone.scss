@@ -1,0 +1,77 @@
+@import '../variables';
+
+.dropzone {
+  background-color: $color-white;
+}
+
+.dropzone__container {
+  height: 80px;
+  //border: 1px dashed $color-gray--dark;
+  background-image: repeating-linear-gradient(to right, $color-gray--dark 0%, $color-gray--dark 50%, transparent 50%, transparent 100%), repeating-linear-gradient(to right, $color-gray--dark 0%, $color-gray--dark 50%, transparent 50%, transparent 100%), repeating-linear-gradient(to bottom, $color-gray--dark 0%, $color-gray--dark 50%, transparent 50%, transparent 100%), repeating-linear-gradient(to bottom, $color-gray--dark 0%, $color-gray--dark 50%, transparent 50%, transparent 100%);
+  background-position: left top, left bottom, left top, right top;
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
+}
+
+.dropzone__container--dragover {
+  border-color: $color-light-blue--light;
+}
+
+.dropzone__icon-container {
+  float: left;
+
+  height: 100%;
+  padding: 0 20px;
+}
+
+.dropzone__icon {
+  height: 2.25em;
+  width: 2.25em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  color: $color-gray;
+}
+
+.dropzone__text-container {
+  display:table;
+  height: 100%;
+}
+
+.dropzone__text {
+  display:table-cell;
+  vertical-align: middle;
+  color: $color-gray--dark;
+}
+
+.dropzone__text__upload-link {
+  @extend .link;
+
+  font-variant: small-caps;
+  font-size: 18px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.dropzone__input,
+.dropzone-fallback__input {
+  display: none;
+}
+
+.dropzone-fallback {
+  height: 80px;
+}
+
+.dropzone-fallback__button {
+}
+
+.dropzone-fallback__button__icon {
+}
+
+.dropzone-fallback__button__text {
+  margin-left: 10px;
+}
+
+// Copyright AXA Versicherungen AG 2015

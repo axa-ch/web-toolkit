@@ -1,0 +1,134 @@
+@import '../variables';
+@import '../mixins/make-container';
+@import '../mixins/make-row';
+@import '../mixins/make-column';
+@import '../mixins/respond';
+
+.header {
+  border-bottom: 5px solid $color-blue;
+}
+
+.header__meta {
+  display: none;
+  height: 3.5rem;
+
+  background: $color-gray--lighter;
+
+  @include respond(large) {
+    display: block;
+  }
+}
+
+.header__main {
+  height: 4.8125rem;
+
+  @include respond(large) {
+    height: 5.875rem;
+  }
+}
+
+.header__meta__container,
+.header__main__container {
+  @include make-container();
+
+  // This is for the menu-main overlay!
+  position: relative;
+
+  max-width: $grid-breakpoint-lg;
+  height: 100%;
+}
+
+.header__meta__row,
+.header__main__row {
+  @include make-row();
+
+  // This is for the menu-main overlay!
+  position: static;
+
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.header__main__row {
+  justify-content: space-between;
+}
+
+.header__meta__item {
+  @include make-column();
+
+  height: 3.5rem;
+  padding: 0;
+}
+
+.header__main__item {
+  @include make-column();
+
+  height: 100%;
+}
+
+.header__meta__item--menu {
+  order: 1;
+  flex-grow: 1;
+}
+
+.header__meta__item--search {
+  @include make-link();
+
+  order: 3;
+  display: flex;
+}
+
+.header__meta__item--language {
+  order: 4;
+  flex-shrink: 0;
+}
+
+.header__meta__item--action {
+  @extend .make-font-small-semibold;
+  @include make-link();
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  order: 5;
+  flex-shrink: 0;
+  padding: 0 $grid-gutter-width/2;
+
+  color: $color-white;
+  background: $color-red;
+
+  &:hover {
+    color: darken($color-white, 10%);
+  }
+}
+
+.header__main__item--brand.brand {
+  order: 1;
+  align-self: center;
+}
+
+.header__main__item--menu.menu-main {
+  // This is for the menu-main overlay!
+  position: static;
+
+  display: none;
+  align-self: flex-end;
+
+  @include respond(large) {
+    display: inherit;
+    order: 3;
+  }
+}
+
+.header__main__item--mobile-actions.mobile-actions {
+  order: 4;
+  padding: 0;
+
+  @include respond(large) {
+    display: none;
+  }
+}
+
+// Copyright AXA Versicherungen AG 2015

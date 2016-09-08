@@ -1,0 +1,104 @@
+@import '../variables';
+@import '../mixins/font';
+@import '../mixins/respond';
+
+$mobile-nav-width: 80%;
+
+.site {
+  overflow-x: hidden;
+  background-color: $color-white;
+}
+
+.site.is-mobile-nav-open {
+  overflow-y: hidden;
+
+  @include respond(large) {
+    overflow-y: inherit;
+  }
+}
+
+.site__page {
+  position: relative;
+  right: 0;
+  overflow: hidden;
+
+  transition: transform $transition-duration $transition-fn-fancy;
+}
+
+.site__page.is-pushed {
+  transform: translateX(-$mobile-nav-width);
+
+  @include respond(large) {
+    transform: translateX(0);
+  }
+}
+
+.site__page__mask {
+  display: block;
+  width: 100%;
+  height: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: $color-black;
+  opacity: 0;
+  z-index: $z-index-site-page-masked;
+  cursor: pointer;
+  pointer-events: none;
+
+  transition:   opacity $transition-duration $transition-fn-fancy,
+                height 0 $transition-duration $transition-fn-fancy;
+}
+
+.site__page__mask.is-visible {
+  opacity: 0.5;
+  pointer-events: all;
+  height: 100%;
+
+  transition: opacity $transition-duration $transition-fn-fancy;
+
+  @include respond(large) {
+    opacity: 0;
+    height: 0;
+    pointer-events: none;
+  }
+}
+
+.site__mobile {
+  position: fixed;
+  right: 0;
+  transform: translateX(100%);
+  top: 0;
+
+  width: $mobile-nav-width;
+  height: 100%;
+
+  z-index: $z-index-site-mobile-nav;
+  overflow-y: scroll;
+
+  transition: transform $transition-duration $transition-fn-fancy;
+}
+
+.site__mobile.is-visible {
+  transform: translateX(0);
+
+  @include respond(large) {
+    transform: translateX(100%);
+  }
+}
+
+.site__burger {
+  transition: color $transition-duration $transition-fn-fancy;
+}
+
+.site__burger.is-open {
+  color: $color-white;
+
+  &:hover {
+    color: darken($color-white, 10%);
+  }
+}
+
+// Copyright AXA Versicherungen AG 2015

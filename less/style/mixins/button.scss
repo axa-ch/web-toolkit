@@ -1,0 +1,53 @@
+
+// Button mixins
+@mixin make-button-size($height, $pad-lr, $icon-size, $font-size, $line-height: 1.5, $border-radius: 0) {
+  // TODO: we may support $line-height in pixel or em using css guards
+  $calculated-line-height: $font-size * $line-height;
+
+  padding: (($height - $calculated-line-height) / 2) $pad-lr;
+  border: none;
+
+  font-size: $font-size;
+  line-height: $line-height;
+
+  border-radius: $border-radius;
+
+  & .button__icon {
+    display: inline;
+
+    font-size: $icon-size;
+  }
+}
+
+@mixin make-button-color($bg-color, $color, $highlight-bg-color: $bg-color, $highlight-color: $color) {
+
+  text-decoration: none;
+
+  background: $bg-color;
+  color: $color;
+
+  &:hover {
+    background: $highlight-bg-color;
+    color: $highlight-color;
+
+    & .button__icon {
+      color: $highlight-color;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    background: $highlight-bg-color;
+    color: $highlight-color;
+
+    & .button__icon {
+      color: $highlight-color;
+    }
+  }
+
+  &.button__icon {
+    color: $color;
+  }
+}
+
+// Copyright AXA Versicherungen AG 2015

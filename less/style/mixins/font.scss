@@ -1,0 +1,87 @@
+@import "../variables";
+@import "../mixins/respond";
+
+.make-font-heading-primary {
+  font-size: 1.5625rem; //25px
+  font-weight: bold;
+  line-height: 1.4;
+
+  @include respond(medium) {
+    font-size: 3rem; //48px
+  }
+}
+
+.make-font-heading-secondary {
+  font-size: 1.5rem; //24px
+  line-height: 1.4;
+  font-weight: bold;
+
+  @include respond(medium) {
+    font-size: 2rem; //32px
+  }
+}
+
+.make-font-heading-tertiary {
+  font-size: 1.375rem; //22px
+  font-weight: bold;
+  line-height: 1.4;
+
+  @include respond(medium) {
+    font-size: 1.5rem; //24px
+  }
+}
+
+.make-font-x-large {
+  font-size: 1rem; //16px
+  font-weight: $font-weight-medium;
+  line-height: 1.6;
+
+  @include respond(medium) {
+    font-size: 1.1875rem; //19px
+  }
+}
+
+.make-font-large {
+  font-size: 1.125rem; //18px
+  line-height: 1.6;
+
+  @include respond(medium) {
+    font-size: 1.1875rem; //19px
+  }
+}
+
+.make-font-large-semibold {
+  font-size: 1.125rem; //18px
+  font-weight: $font-weight-medium;
+  line-height: 1.6;
+
+  @include respond(medium) {
+    font-size: 1.1875rem; //19px
+  }
+}
+
+.make-font-medium {
+  font-size: 0.875rem; //14px
+  line-height: 1.6;
+
+  @include respond(medium) {
+    font-size: 1rem; //16px
+  }
+}
+
+.make-font-medium-semibold {
+  font-size: 0.875rem; //14px
+  font-weight: $font-weight-medium;
+  line-height: 1.6;
+
+  @include respond(medium) {
+    font-size: 1rem; //16px
+  }
+}
+
+.make-font-small-semibold {
+  font-size: 0.875rem; //14px;
+  line-height: 1.6;
+
+  font-weight: $font-weight-medium;
+}

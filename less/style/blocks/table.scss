@@ -1,9 +1,8 @@
 @import '../variables';
-@import '../mixins/clearfix';
 @import '../mixins/respond';
 
-.make-ie9-block(@display) {
-  &:extend(.clearfix all);
+@mixin make-ie9-block($display) {
+  @extend .clearfix;
 
   display: block;
   float: left;
@@ -12,49 +11,49 @@
   box-sizing: border-box;
   width: 100%;
 
-  .respond(medium, {
-    display: @display;
+  @include respond(medium) {
+    display: $display;
     float: none;
     clear: none;
 
     &::after {
       display: none;
     }
-  });
+  }
 }
 
 .table--clickable {
 
   .table__row:hover {
-    background: @color-gray--mid;
+    background: $color-gray--mid;
     cursor: pointer;
   }
 
   .table__row__item__content__link:hover {
-    color: @color-light-blue;
+    color: $color-light-blue;
     cursor: pointer;
   }
 
 }
 
 .table {
-  &:extend(.clearfix all);
+  @extend .clearfix;
 
   display: block;
   width: 100%;
 
-  .respond(medium, {
+  @include respond(medium) {
     display: table;
-  });
+  }
 
 }
 
 .table__header {
   display: none;
 
-  .respond(medium, {
+  @include respond(medium) {
     display: table-row;
-  });
+  }
 }
 
 .table__header__item {
@@ -67,77 +66,77 @@
 }
 
 .table__content {
-  .make-ie9-block(table-row-group);
+  @include make-ie9-block(table-row-group);
 
-  .respond(medium, {
-    border: 1px solid @color-gray--light;
-  });
+  @include respond(medium) {
+    border: 1px solid $color-gray--light;
+  }
 }
 
 .table__row {
-  .make-ie9-block(table-row);
+  @include make-ie9-block(table-row);
 
   padding: 15px 20px 5px;
-  border-top: 1px solid @color-gray--mid;
+  border-top: 1px solid $color-gray--mid;
 
   text-align: left;
 
   background: white;
 
   &:nth-of-type(2n) {
-    background: @color-gray--lighter;
+    background: $color-gray--lighter;
   }
 
   &:last-of-type {
-    border-bottom: 1px solid @color-gray--mid;
+    border-bottom: 1px solid $color-gray--mid;
 
     .table__row__item {
-      .respond(medium, {
-        border-bottom: 1px solid @color-gray--mid;
-      });
+      @include respond(medium) {
+        border-bottom: 1px solid $color-gray--mid;
+      }
     }
   }
 
-  .respond(medium, {
+  @include respond(medium) {
     padding: 15px 20px;
     border: none;
-  });
+  }
 }
 
 .table__row__item {
   display: inline-block;
   padding: 0 0 10px 0;
 
-  .respond(medium, {
+  @include respond(medium) {
     vertical-align: middle;
-  });
+  }
 
   &:last-of-type {
     .table__row__item__content::after {
       content: '';
     }
 
-    .respond(medium, {
-      border-right: 1px solid @color-gray--mid;
-    });
+    @include respond(medium) {
+      border-right: 1px solid $color-gray--mid;
+    }
   }
 
   &:first-of-type {
-    .respond(medium, {
-      border-left: 1px solid @color-gray--mid;
-    });
+    @include respond(medium) {
+      border-left: 1px solid $color-gray--mid;
+    }
   }
 
-  .respond(medium, {
+  @include respond(medium) {
     display: table-cell !important;
     padding: 12px 10px;
-    border-top: 1px solid @color-gray--mid;
-  });
+    border-top: 1px solid $color-gray--mid;
+  }
 
 }
 
 .table__row__item--multirow {
-  border-right: 1px solid @color-gray--mid;
+  border-right: 1px solid $color-gray--mid;
 }
 
 .table__row__item__content {
@@ -147,24 +146,24 @@
   &::after {
     content: ',\00a0';
 
-    .respond(medium, {
+    @include respond(medium) {
       content: '' !important;
       display: none;
-    });
+    }
   }
 
   &__label {
     display: inline-block;
 
-    .respond(medium, {
+    @include respond(medium) {
       display: none;
-    });
+    }
   }
 }
 
 .table__row__item__content__link {
   font-weight: bold;
-  color: @color-light-blue;
+  color: $color-light-blue;
 
   &:hover {
     cursor: pointer;
@@ -172,10 +171,10 @@
 }
 
 .table__row__item--headline {
-  .make-ie9-block(table-cell);
-  .respond(medium, {
+  @include make-ie9-block(table-cell);
+  @include respond(medium) {
     width: auto;
-  });
+  }
 
   .table__row__item__content::after {
     content: '';
@@ -184,9 +183,9 @@
   .table__row__item__content {
     font-size: 15px;
 
-    .respond(medium, {
+    @include respond(medium) {
       font-size: 14px;
-    });
+    }
   }
 }
 

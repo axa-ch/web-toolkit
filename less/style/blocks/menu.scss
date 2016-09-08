@@ -1,0 +1,162 @@
+@import '../variables';
+@import '../mixins/clearfix';
+@import '../mixins/respond';
+
+.menu {
+  @extend .clearfix;
+
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+.menu__item {
+  padding: 0;
+  margin: 0;
+}
+
+.menu__link {
+  @include make-link();
+  font-weight: 400;
+  display: block;
+  padding: 5px 0;
+}
+
+
+.menu--left {
+  display: block;
+  font-size: 0.9em;
+
+  .menu__item {
+    display: block;
+  }
+
+  .menu__link {
+    display: inline-block;
+
+    padding: 7px 0;
+
+    color: $color-gray--darkest;
+    text-decoration: none;
+
+    &.is-active, &.is-open {
+      font-weight: $font-weight-medium;
+      color: $color-blue;
+    }
+
+    &:hover, :focus {
+      color: $color-red;
+    }
+  }
+
+  .menu__level {
+    padding-left: 19px;
+    display: none;
+
+    &.is-open {
+      display: block;
+    }
+  }
+
+  .menu__dropdown__icon {
+    display: inline-block;
+
+    height: 0.7rem;
+    width: 0.7rem;
+    margin-left: 8px;
+
+    .menu__dropdown__icon__is-closed {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .menu__dropdown__icon__is-open {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.is-open {
+      .menu__dropdown__icon__is-closed {
+        display: none;
+      }
+
+      .menu__dropdown__icon__is-open {
+        display: block;
+      }
+    }
+  }
+}
+
+.menu--side {
+  display: none;
+
+  @include respond(large) {
+    display: block;
+  }
+
+  .menu__item {
+  }
+
+  .menu__link {
+    display: block;
+
+    width: 100%;
+    padding: 3px 10px;
+
+    text-decoration: none;
+    font-size: 1em;
+
+    color: $color-gray;
+
+    &:hover {
+      color: $color-gray--darker;
+    }
+
+    &.is-active,
+    &:active {
+      color: $color-blue;
+    }
+  }
+}
+
+.menu--language{
+  margin-left: 7px;
+
+  .menu__item {
+    margin-left: 7px;
+
+    font-size: 0.8em;
+    text-transform: uppercase;
+
+    &.is-active,
+    &:hover {
+      a {
+        color: $color-blue;
+      }
+    }
+
+    @include respond(large) {
+      float: left;
+    }
+  }
+
+  .menu__link {
+    text-decoration: none;
+    color: $color-gray--darker;
+  }
+}
+
+.menu--header-main {
+  margin-top: 15px;
+
+  .menu__item {
+    font-size: 20px; // TODO: fixed font-size
+    font-weight: bold;
+    color: $color-blue;
+  }
+}
+
+// Copyright AXA Versicherungen AG 2015

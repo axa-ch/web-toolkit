@@ -1,0 +1,69 @@
+@import '../variables';
+
+.progressbar {
+  position: relative;
+  margin-left: 10px;
+}
+
+.progressbar__progress {
+  width: 100%;
+  padding-right: 55px;
+}
+
+.progressbar__progress-background {
+  height: 20px;
+  background-color: $color-gray;
+}
+
+.progressbar__progress-foreground {
+  width: 0;
+  height: 100%;
+
+  background-color: $color-light-blue;
+
+  transition: width 0.4s ease-out;
+}
+
+.progressbar__description {
+  position: absolute;
+
+  width: 100%;
+  padding-right: 65px;
+  margin-left: 4px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  overflow: hidden;
+  color: $color-white;
+}
+
+.progressbar__percentage, .progressbar__error {
+  position: absolute;
+  float: right;
+  right: 0;
+
+  width: 55px;
+  padding: 0 10px 0 0;
+
+  text-align: right;
+  font-weight: bold;
+
+  color: $color-light-blue;
+}
+
+.progressbar__progress-error {
+  height: 20px;
+  background-color: $color-red;
+}
+
+.progressbar__error-icon {
+  color: $color-red;
+  vertical-align: middle;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Copyright AXA Versicherungen AG 2015

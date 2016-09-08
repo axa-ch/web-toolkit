@@ -1,0 +1,31 @@
+@import '../variables';
+
+.tag {
+  display: inline;
+
+  padding: .2em .6em .3em;
+
+  font-size: 85%;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+
+  color: $color-white;
+  border-radius: .25em;
+  background-color: $color-blue-gray;
+}
+
+.tag--primary {
+  background-color: $color-blue;
+}
+
+.tag--success {
+  background-color: $color-green;
+}
+
+.tag--danger {
+  background-color: $color-red;
+}
+
+// Copyright AXA Versicherungen AG 2015
