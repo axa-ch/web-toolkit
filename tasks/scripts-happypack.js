@@ -6,11 +6,9 @@ import uglify from 'gulp-uglify'
 import rename from 'gulp-rename'
 import named from 'vinyl-named'
 import through from 'through2'
-import os from 'os'
 
 import handleError from '../lib/handle-error'
 
-const cpuCount = os.cpus().length
 const skipSourcemaps = through.obj(function (file, enc, cb) {
   // Dont pipe through any source map files as it will be handled
   // by gulp-sourcemaps
