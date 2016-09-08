@@ -24,7 +24,7 @@ module.exports = () =>
   ], { base: 'dist/js/' })
     .pipe(named(getSourceName))
     .pipe(webpack({
-      cache : true,
+      cache: false,
       devtool: 'source-map',
       module: {
         noParse: [
@@ -57,10 +57,10 @@ function getSourceName(file) {
   const path = file.relative
   switch (path) {
     case 'index.js':
-      return 'axa-web-style-guide-all.js'
+      return 'axa-web-style-guide-all'
 
     default:
-      return path.replace('/index', `/${path.split('/')[0]}.bundle`)
+      return path.replace('/index.js', `/${path.split('/')[0]}.bundle`)
   }
 }
 
