@@ -17,6 +17,15 @@ const skipSourcemaps = through.obj(function (file, enc, cb) {
   cb()
 })
 
+const happy = new HappyPack({
+  id: 'js',
+  cache: true,
+  loaders: [
+    require.resolve('../lib/identity-loader'),
+  ],
+  threads: 2,
+})
+
 module.exports = () =>
   gulp.src([
     'dist/js/jquery/index.js',
@@ -28,19 +37,14 @@ module.exports = () =>
       cache: false,
       devtool: 'source-map',
       plugins: [
-        new HappyPack({
-          cache: true,
-          loaders: [
-            require.resolve('../lib/identity-loader'),
-          ],
-          threads: 2,
-        }),
+        happy,
       ],
       module: {
         loaders: [
           {
             test: /.js$/,
-            loaders: ['happypack/loader'],
+            loaders: ['happypack/loader?id=js'],
+            // happy: { id: 'js' },
           },
         ],
         noParse: [
