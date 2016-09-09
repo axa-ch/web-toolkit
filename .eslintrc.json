@@ -1,4 +1,4 @@
-module.exports = {
+{
   "extends": "airbnb",
   "parser": "babel-eslint",
   "parserOptions": {
@@ -10,7 +10,7 @@ module.exports = {
     }
   },
   "plugins": [
-    "react",
+    "react"
   ],
   "rules": {
     "dot-notation": "off",
@@ -20,8 +20,9 @@ module.exports = {
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
     "react/jsx-boolean-value": "warn",
     "react/jsx-closing-bracket-location": ["error", "after-props"],
-    "react/prop-types": "warn",
+    "react/prop-types": "error",
     "semi": ["error", "never"],
+    "quote-props": ["error", "consistent"]
   },
-  "globals": {},
+  "globals": {}
 }
