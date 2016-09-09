@@ -1,9 +1,4 @@
-/* global window */
-
-import $ from 'jquery'
 import React, { PropTypes } from 'react'
-import ReactDOM from 'react-dom'
-import Bacon from 'baconjs'
 import classNames from 'classnames'
 
 const LanguageSwitch = ({
@@ -71,34 +66,5 @@ LanguageSwitch.propTypes = {
   isMenuOpen: PropTypes.bool,
   onMenuToggle: PropTypes.func,
 }
-
-$(() => {
-  $('[data-language-switch]').each(function initLanguageSwitch() {
-    const $element = $(this)
-    const invert = typeof $element.data('invert') !== 'undefined'
-    const modifier = $element.data('modifier')
-    const isMenuOpenBus = new Bacon.Bus()
-
-    isMenuOpenBus.toProperty(false)
-      .onValue((isMenuOpen) => {
-        ReactDOM.render(
-          <LanguageSwitch
-            invert={invert}
-            current={$element.data('current')}
-            languages={['de', 'en', 'fr', 'it']}
-            modifier={modifier}
-            onLanguageSelect={lang => {
-              window.location.href = $element.data(`link-${lang}`)
-              isMenuOpenBus.push(false)
-            }}
-            isMenuOpen={isMenuOpen}
-            onMenuToggle={toggle => {
-              isMenuOpenBus.push(toggle)
-            }} />,
-          $element[0]
-        )
-      })
-  })
-})
 
 export default LanguageSwitch
