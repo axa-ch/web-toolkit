@@ -101,4 +101,70 @@
   }
 }
 
+.site--left {
+  .site__page.is-pushed {
+    transform: translateX(@mobile-nav-width);
+  }
+
+  .site__mobile {
+    left: 0;
+    right: auto;
+    transform: translateX(-100%);
+  }
+
+  .site__mobile.is-visible {
+    transform: translateX(0);
+
+    .respond(large, {
+      transform: translateX(-100%);
+    });
+  }
+}
+
+.site--stacked {
+  .site__page.is-pushed {
+    transform: translateX(0);
+  }
+}
+
+.site--desktop {
+  .site.is-mobile-nav-open {
+    .respond(large, {
+      overflow-y: hidden;
+    });
+  }
+
+  .site__page.is-pushed {
+    .respond(large, {
+      transform: translateX(-@mobile-nav-width);
+    });
+  }
+
+  &.site--left {
+    .site__page.is-pushed {
+      transform: translateX(@mobile-nav-width);
+    }
+  }
+
+  &.site--stacked {
+    .site__page.is-pushed {
+      transform: translateX(0);
+    }
+  }
+
+  .site__page__mask.is-visible {
+    .respond(large, {
+      opacity: 0.5;
+      pointer-events: all;
+      height: 100%;
+    });
+  }
+
+  .site__mobile.is-visible {
+    .respond(large, {
+      transform: translateX(0);
+    });
+  }
+}
+
 // Copyright AXA Versicherungen AG 2015
