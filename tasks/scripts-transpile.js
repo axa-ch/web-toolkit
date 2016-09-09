@@ -4,7 +4,7 @@ import sourcemaps from 'gulp-sourcemaps'
 
 import handleError from '../lib/handle-error'
 
-module.exports = () => gulp.src(['js/**/*.js'])
+module.exports = () => gulp.src(['js/**/*.js', 'js/**/*.jsx'])
   .pipe(sourcemaps.init())
   .pipe(babel())
   .on('error', handleError('Babel failed'))

@@ -11,7 +11,7 @@ import notifier from 'node-notifier'
 module.exports = () =>
   browserify({
     debug: true,
-    extensions: ['.js', '.coffee'],
+    extensions: ['.js', '.jsx'],
   })
   .transform(babelify)
   .transform(shim)

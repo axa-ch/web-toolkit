@@ -20,7 +20,9 @@ module.exports = () => {
   ]
 
   const tasks = files.map((file) =>
-    browserify()
+    browserify({
+      extensions: ['.js', '.jsx'],
+    })
       .transform(shim)
       .add(`dist/js/${file}`)
       .bundle()
