@@ -22,6 +22,7 @@ import icon from './icon'
  * @property {string} [classes.footer=dialog__footer] - The dialogs's content element class.
  * @property {string} [closeAriaLabel=close] - ARIA label for close button.
  * @property {string} [position=middle] - A string specifying the dialogs vertical position - `'top'`, `'middle'` or `'bottom'`.
+ * @property {Modal2#Options} [modal] - Specific options for the associated Modal2 instance.
  */
 
 /**
