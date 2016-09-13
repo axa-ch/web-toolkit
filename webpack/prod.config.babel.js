@@ -25,6 +25,14 @@ export default {
       query: {
         cacheDirectory: true,
       },
+    }, {
+      test: /\.less/,
+      loaders: [
+        'style',
+        'css',
+        'postcss-loader',
+        'less',
+      ],
     }],
     noParse: [
       'jquery',

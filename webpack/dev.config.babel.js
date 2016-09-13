@@ -9,6 +9,7 @@ export default {
   entry: [
     'webpack-hot-middleware/client?path=http://0.0.0.0:3001/__webpack_hmr',
     './js/index.js',
+    './js/styles.js',
   ],
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -24,6 +25,14 @@ export default {
       query: {
         cacheDirectory: true,
       },
+    }, {
+      test: /\.less/,
+      loaders: [
+        'style',
+        'css',
+        'postcss-loader',
+        'less',
+      ],
     }],
     noParse: [
       'jquery',
