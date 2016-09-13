@@ -87,7 +87,6 @@ mixin displayMobileMenu(page)
         each child in page.children
           +displayMobileMenu(child)
 
-// iOS app icon
 mixin appicon_ios(size)
   - var s = size + "x" + size
   link(rel="apple-touch-icon-precomposed", sizes=s, href=relative("/images/app-icon/ios/"+s+".png"))
