@@ -54,6 +54,12 @@ const lastFocused = []
  * Modal2 implements an encapsulated modal layer with a backdrop.
  *
  * @class
+ * @requires jquery
+ * @requires baconjs
+ * @requires register-plugin
+ * @requires append
+ * @requires icon
+ * @requires html5data
  */
 class Modal2 {
   /**
