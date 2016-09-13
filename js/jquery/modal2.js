@@ -24,6 +24,7 @@ const lastFocused = []
  *
  * **Note:**
  * All of those options can also be assigned through HTML `data-modal2-*` attributes.
+ * Except `href` attribute is also considered for opening links in a modal manner.
  *
  * @typedef Modal2#Options
  * @type {Object}
