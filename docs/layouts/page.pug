@@ -97,7 +97,11 @@ html
     script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
-    script(src=relative('/js/style-guide-docs.js'))
+    
+    if process.env.NODE_ENV === 'production'
+      script(src=relative('/js/style-guide-docs.js'))
+    else
+      script(src='http://localhost:3001/dist/bundle.js')
 
     script.
       var href = '#{relative(link)}'
