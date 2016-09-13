@@ -19,7 +19,43 @@ const modalGuard = (modal) => {
 
 const lastFocused = []
 
+/**
+ * @typedef Modal2#Options
+ * @type {Object}
+ * @property {boolean} [autofocus=true] - Should the modal automtically be focused.
+ * @property {boolean} [backdropClose=true] - Close the modal if it's backdrop is clicked.
+ * @property {string} [closeAriaLabel=close] - ARIA label for close button.
+ * @property {boolean} [closeEnabled=true] - Whether a close button is enabled or not.
+ * @property {string} [closePosition=inside] - The position of the close button, currently `'inside'` or `'outside'`.
+ * @property {Object} classes - A hash of class names which are rendered by this plugin.
+ * @property {string} [classes.body=modal2-is-open] - A class which is appended to the body like `<body class="modal2-is-open"`> to hide scroll bars.
+ * @property {string} [classes.modal=modal2] - The modal2 block class.
+ * @property {string} [classes.backdrop=modal2__backdrop] - The modal2's backdrop element class.
+ * @property {string} [classes.content=modal2__content] - The modal2's content element class.
+ * @property {string} [classes.close=modal2__close] - The modal2's close element class.
+ * @property {string} [classes.icon=modal2__close__icon] - The modal2's close icon element class.
+ * @property {string} [classes.open=is-open] - The modal2's is-open state class.
+ * @property {boolean} [escapeClose=true] - Closing the modal if `Esc` key is pressed.
+ * @property {boolean} [hideMainScrollbar=true] - Hide the main scrollbar.
+ * @property {string} [mode=scroll] - The overflow control mode of the model, either `'scroll'` which means handled by the model itself or `'fullscreen'` which means delegated to encapsulated content.
+ * @property {Function} [onBeforeOpen] - A callback before the modal opens.
+ * @property {Function} [onAfterOpen] - A callback after the modal has been opened.
+ * @property {Function} [onBeforeClose] - A callback before the modal closes.
+ * @property {Function} [onAfterClose] - A callback after the modal has benn closed.
+ * @property {string} [selector] - A CSS-Selector to feed the modal's content with just a portion of the supplied markup.
+ */
+
+/**
+ * Modal2 implements an encapsulated modal layer with a backdrop.
+ *
+ * @class
+ */
 class Modal2 {
+  /**
+   * Modal2 default options.
+   *
+   * @type {Modal2#Options}
+   */
   static DEFAULTS = {
     autofocus: true,
     backdropClose: true,
