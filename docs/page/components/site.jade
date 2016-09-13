@@ -10,24 +10,37 @@ include ./includes/mixins.jade
   Whenever there's a hierarchy of components, there needs to be an upmost
   element. The Site component is exactly that element.
   
-  This component splits the web app into a *content* and *mobile menu* part.
-  The *content* is fully visible by default. Whenever the menu
-  gets toggled it almost completely pushes the *content* away
-  from the visible area in favour of the *mobile menu*.
+  Additionally, the Site component helps split the page into a content and
+  a side navigation part.
 
-aside.callout
-  h2.callout__heading Most functionality on mobile only!
-  :markdown
-    Since we use easier ways of navigation on larger viewports, the
-    *mobile menu* isn't available on any other than small viewports.
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#default') Default
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#left-menu') Left Menu
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#stacked-menu') Stacked Menu
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#desktop-visibility') Desktop Visibility
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#fixed-menu') Fixed Menu
+
+h2.heading.heading--secondary#default Default
+
+p.paragraph.
+  In the default state of the Site component, the side navigation
+  only exists on mobile viewports. On those devices, the navigation slides
+  into the visible area from the right, pushing the page content away.
 
 +example('/components/demos/site.html', { minHeight: '400', disableDesktop: true })
 
 .toggle
-  .toggle__button(data-info, data-target='#progressbar-code')
+  .toggle__button(data-info, data-target='#code')
     +svg('source', ['icon', 'toggle__icon'])
     span See code
-  .toggle__content#progressbar-code
+  .toggle__content#code
     .tab-panel(data-tab, data-tab-default='html')
       .tab-panel__header
         .tab-panel__header__tabs
@@ -41,6 +54,8 @@ aside.callout
               .checklist__item__content.
                 If possible, add the <code class="code">site</code>
                 block to the <code class="code">body</code> element.
+                If this is impossible, make sure all parents span across
+                100% of the page's height.
             li.checklist__item
               +svg('checkmark', ['checklist__item__icon', 'icon'])
               .checklist__item__content.
@@ -77,5 +92,38 @@ aside.callout
             // Hide it
             $('.site').site('hideMenu')
             ```
+            
+h2.heading.heading--secondary#left-menu Left Menu
+
+p.paragraph.
+  Using the #[code.code site--left] modifier, the location of the side navigation can be
+  flipped to the left.
+
++example('/components/demos/site-left.html', { disableDesktop: true })
+
+h2.heading.heading--secondary#stacked-menu Stacked Menu
+
+p.paragraph.
+  If it's desired that the content area doesn't get pushed away, the
+  #[code.code site--stacked] modifier can be applied to the Site component.
+
++example('/components/demos/site-stacked.html', { disableDesktop: true })
+
+h2.heading.heading--secondary#desktop-visibility Desktop Visibility
+
+p.paragraph.
+  In some cases, a side navigation is preferred even on desktop
+  viewports. In that case the #[code.code site--desktop] modifier can be used.
+
++example('/components/demos/site-desktop.html')
+
+h2.heading.heading--secondary#fixed-menu Fixed Menu
+
+p.paragraph.
+  Sometimes it's desired to have the side navigation available on
+  desktop and make it visible all the time. This is what the
+  #[code.code site--fixed] modifier is for.
+
++example('/components/demos/site-fixed.html')
 
 //- Copyright AXA Versicherungen AG 2015
