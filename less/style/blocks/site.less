@@ -3,6 +3,7 @@
 @import '../mixins/respond';
 
 @mobile-nav-width: 80%;
+@mobile-nav-width-fixed: 300px;
 
 .site {
   overflow-x: hidden;
@@ -22,7 +23,9 @@
   right: 0;
   overflow: hidden;
 
-  transition: transform @transition-duration @transition-fn-fancy;
+  transition: transform @transition-duration @transition-fn-fancy,
+    padding-left @transition-duration @transition-fn-fancy,
+    padding-right @transition-duration @transition-fn-fancy;
 }
 
 .site__page.is-pushed {
@@ -78,6 +81,8 @@
   z-index: @z-index-site-mobile-nav;
   overflow-y: scroll;
 
+  background-color: @color-white;
+
   transition: transform @transition-duration @transition-fn-fancy;
 }
 
@@ -99,6 +104,131 @@
   &:hover {
     color: darken(@color-white, 10%);
   }
+}
+
+.site--left {
+  .site__page.is-pushed {
+    transform: translateX(@mobile-nav-width);
+  }
+
+  .site__mobile {
+    left: 0;
+    right: auto;
+    transform: translateX(-100%);
+  }
+
+  .site__mobile.is-visible {
+    transform: translateX(0);
+
+    .respond(large, {
+      transform: translateX(-100%);
+    });
+  }
+}
+
+.site--stacked {
+  .site__page.is-pushed {
+    transform: translateX(0);
+  }
+}
+
+.site--desktop,
+.site--fixed {
+  .site.is-mobile-nav-open {
+    .respond(large, {
+      overflow-y: hidden;
+    });
+  }
+
+  &.site--stacked {
+    .site__page.is-pushed {
+      transform: translateX(0);
+    }
+  }
+
+  .site__page__mask.is-visible {
+    .respond(large, {
+      opacity: 0.5;
+      pointer-events: all;
+      height: 100%;
+    });
+  }
+
+  .site__mobile.is-visible {
+    .respond(large, {
+      transform: translateX(0);
+    });
+  }
+}
+
+.site--desktop {
+  .site__page.is-pushed {
+    .respond(large, {
+      transform: translateX(-@mobile-nav-width);
+    });
+  }
+
+  &.site--left {
+    .site__page.is-pushed {
+      transform: translateX(@mobile-nav-width);
+    }
+  }
+}
+
+.site--fixed {
+  .site__mobile {
+    width: @mobile-nav-width-fixed;
+  }
+
+  .site__page.is-pushed {
+    transform: translateX(-@mobile-nav-width-fixed);
+  }
+
+  &.site--left .site__page.is-pushed {
+    transform: translateX(@mobile-nav-width-fixed);
+  }
+
+  &.site--stacked .site__page.is-pushed {
+    transform: translateX(0);
+  }
+
+  .respond(large, {
+    .site.is-mobile-nav-open {
+      overflow-y: inherit;
+    }
+
+    .site__page {
+      padding-right: @mobile-nav-width-fixed;
+      transform: translateX(0);
+    }
+
+    .site__page.is-pushed {
+      transform: translateX(0);
+    }
+
+    &.site--left .site__page,
+    &.site--left .site__page.is-pushed {
+      padding-left: @mobile-nav-width-fixed;
+      padding-right: 0;
+      transform: translateX(0);
+    }
+
+    .site__page__mask.is-visible {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .site__mobile {
+      width: @mobile-nav-width-fixed;
+      transform: translateX(0);
+      border-left: 1px solid @color-gray--light;
+    }
+
+    &.site--left .site__mobile {
+      border-right: 1px solid @color-gray--light;
+      border-left: none;
+    }
+  });
 }
 
 // Copyright AXA Versicherungen AG 2015
