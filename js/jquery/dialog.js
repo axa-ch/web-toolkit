@@ -2,7 +2,6 @@
 
 import $ from 'jquery'
 import registerPlugin from './register-plugin'
-import Modal2 from './modal2'
 import icon from './icon'
 
 /**
@@ -75,14 +74,6 @@ class Dialog {
       </div>`
 
     this.dialog = $(dialog).clone()
-  }
-
-  bind() {
-
-  }
-
-  unbind() {
-
   }
 
   toggle() {
