@@ -292,6 +292,11 @@ registerPlugin('modal2', Modal2, {
   },
 })
 
+/**
+ * Exports Modal2 Class.
+ * 
+ * @exports Modal2
+ */
 export default Modal2
 
 /**
