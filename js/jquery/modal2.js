@@ -43,10 +43,10 @@ const lastFocused = []
  * @property {boolean} [escapeClose=true] - Closing the modal if `Esc` key is pressed.
  * @property {boolean} [hideMainScrollbar=true] - Hide the main scrollbar.
  * @property {string} [mode=scroll] - The overflow control mode of the model, either `'scroll'` which means handled by the model itself or `'fullscreen'` which means delegated to encapsulated content.
- * @property {Function} [onBeforeOpen] - A callback before the modal opens.
- * @property {Function} [onAfterOpen] - A callback after the modal has been opened.
- * @property {Function} [onBeforeClose] - A callback before the modal closes.
- * @property {Function} [onAfterClose] - A callback after the modal has benn closed.
+ * @property {Modal2~onBeforeOpen} [onBeforeOpen] - A callback before the modal opens.
+ * @property {Modal2~onAfterOpen} [onAfterOpen] - A callback after the modal has been opened.
+ * @property {Modal2~onBeforeClose} [onBeforeClose] - A callback before the modal closes.
+ * @property {Modal2~onAfterClose} [onAfterClose] - A callback after the modal has benn closed.
  * @property {string} [selector] - A CSS-Selector to feed the modal's content with just a portion of the supplied markup.
  */
 
@@ -287,3 +287,29 @@ registerPlugin('modal2', Modal2, {
 })
 
 export default Modal2
+
+/**
+ * This callback triggers before the modal opens.
+ * @callback Modal2~onBeforeOpen
+ * @param {Modal2} - The current Modal2 instance.
+ * @param {Function} - A function which inserts the passed HTML into the modal.
+ * @returs {Boolean|*} - Return `false` to prevent the default content aquisition process.
+ */
+
+/**
+ * This callback triggers after the modal has been opened.
+ * @callback Modal2~onAfterOpen
+ * @param {Modal2} - The current Modal2 instance.
+ */
+
+/**
+ * This callback triggers before the modal closes.
+ * @callback Modal2~onBeforeClose
+ * @param {Modal2} - The current Modal2 instance.
+ */
+
+/**
+ * This callback triggers after the modal has benn closed.
+ * @callback Modal2~onAfterClose
+ * @param {Modal2} - The current Modal2 instance.
+ */
