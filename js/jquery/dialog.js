@@ -5,6 +5,34 @@ import registerPlugin from './register-plugin'
 import Modal2 from './modal2'
 import icon from './icon'
 
+/**
+ * The Dialog takes the following list of optional options.
+ *
+ * **Note:**
+ * All of those options can also be assigned through HTML `data-dialog-*` attributes.
+ *
+ * @typedef Dialog#Options
+ * @type {Object}
+ * @property {Object} classes - A hash of class names which are rendered by this plugin.
+ * @property {string} [classes.dialog=dialog] - The modal2 block class.
+ * @property {string} [classes.header=dialog__header] - The dialogs's backdrop element class.
+ * @property {string} [classes.heading=dialog__heading] - The dialogs's content element class.
+ * @property {string} [classes.close=dialog__close] - The dialogs's close element class.
+ * @property {string} [classes.icon=dialog__close__icon] - The dialogs's close icon element class.
+ * @property {string} [classes.content=dialog__content] - The dialogs's backdrop element class.
+ * @property {string} [classes.footer=dialog__footer] - The dialogs's content element class.
+ * @property {string} [closeAriaLabel=close] - ARIA label for close button.
+ * @property {string} [position=middle] - A string specifying the dialogs vertical position - `'top'`, `'middle'` or `'bottom'`.
+ */
+
+/**
+ * Dialog implements UI which is wrapped inside an Modal2 instance.
+ *
+ * @class
+ * @requires jquery
+ * @requires register-plugin
+ * @requires icon
+ */
 class Dialog {
   static DEFAULTS = {
     classes: {
