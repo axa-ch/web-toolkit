@@ -9,6 +9,18 @@ include ./includes/mixins.jade
 
 p.paragraph. A dialog window can be used to present very specific information (such as terms & conditions) to the user.
 
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#example').toc__anchor-navigation__link Example
+    li.toc__anchor-navigation__item
+      a(href='#dialog').toc__anchor-navigation__link Dialog jQuery Plugin docs
+
+.hr
+
+h2.heading.heading--secondary#example Example
+
 +example('/components/demos/dialog.html', { maxHeight: '400' })
 
 .toggle
