@@ -13,7 +13,7 @@ import icon from './icon'
  * @typedef Dialog#Options
  * @type {Object}
  * @property {Object} classes - A hash of class names which are rendered by this plugin.
- * @property {string} [classes.dialog=dialog] - The modal2 block class.
+ * @property {string} [classes.dialog=dialog] - The dialog block class.
  * @property {string} [classes.header=dialog__header] - The dialogs's backdrop element class.
  * @property {string} [classes.heading=dialog__heading] - The dialogs's content element class.
  * @property {string} [classes.close=dialog__close] - The dialogs's close element class.
