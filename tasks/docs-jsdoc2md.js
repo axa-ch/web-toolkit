@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import mkdirp from 'mkdirp'
 import gulp from 'gulp'
+import util from 'gulp-util'
 import foreach from 'gulp-foreach'
 import jsdoc2md from 'jsdoc-to-markdown'
 
@@ -25,7 +26,9 @@ module.exports = [
             mkdirp.sync(path.dirname(`docs/page/jsdoc2md/${filename}`))
             fs.writeFileSync(`docs/page/jsdoc2md/${filename.replace('.js', '.md')}`, docs)
           }
-        } catch (e) {}
+        } catch (e) {
+          util.log(e)
+        }
 
         return stream
       })),
