@@ -23,7 +23,7 @@ const lastFocused = []
  * The Modal-2 takes the following list of optional options.
  *
  * **Note:**
- * All of those options can also be assigned through HTML `data-modal2-* attributes`.
+ * All of those options can also be assigned through HTML `data-modal2-*` attributes.
  *
  * @typedef Modal2#Options
  * @type {Object}
