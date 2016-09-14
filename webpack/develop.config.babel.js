@@ -9,8 +9,7 @@ export default {
   progress: true,
   entry: [
     'webpack-hot-middleware/client?path=http://0.0.0.0:3001/__webpack_hmr',
-    './docs/js/index.js',
-    './js/styles.js',
+    './docs/js/index-with-styles.js',
   ],
   output: {
     path: path.resolve(__dirname, '../dist'),
