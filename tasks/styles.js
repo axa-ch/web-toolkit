@@ -3,7 +3,6 @@ import runSequence from 'run-sequence'
 module.exports = cb =>
   runSequence(
     'styles-copy',
-    'styles-variables',
     'styles-compile',
     cb)
 
