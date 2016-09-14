@@ -69,7 +69,7 @@ const lastFocused = []
  * @property {Modal2~onBeforeOpen} [onBeforeOpen] - A callback before the modal opens.
  * @property {Modal2~onAfterOpen} [onAfterOpen] - A callback after the modal has been opened.
  * @property {Modal2~onBeforeClose} [onBeforeClose] - A callback before the modal closes.
- * @property {Modal2~onAfterClose} [onAfterClose] - A callback after the modal has benn closed.
+ * @property {Modal2~onAfterClose} [onAfterClose] - A callback after the modal has been closed.
  * @property {string} [selector] - A CSS-Selector to feed the modal's content with just a portion of the supplied markup.
  */
 
@@ -343,7 +343,7 @@ export default Modal2
  */
 
 /**
- * This callback triggers after the modal has benn closed.
+ * This callback triggers after the modal has been closed.
  * @callback Modal2~onAfterClose
  * @param {Modal2} - The current Modal2 instance.
  */
