@@ -23,6 +23,7 @@
     "transpile": "babel js -d dist/js",
     "bundle-dev": "babel-node webpack/webpack-dev-server.js",
     "copy-images": "rm -rf dist/images && mkdir -p dist/images && cp -r images/ dist/images",
+    "copy-icons": "rm -rf dist/icons && mkdir -p dist/icons && cp -r icons/ dist/icons",
     "copy-less": "rm -rf dist/less && mkdir -p dist/less && cp -r less/ dist/less"
   },
   "author": "AXA Versicherungen AG",
@@ -66,6 +67,7 @@
     "browserify-incremental": "^3.1.1",
     "browserify-shim": "^3.8.11",
     "cheet.js": "^0.3.3",
+    "clean-webpack-plugin": "^0.1.10",
     "colors": "^1.1.2",
     "concat-stream": "^1.5.2",
     "css-loader": "^0.25.0",
@@ -149,6 +151,7 @@
     "postcss-pseudoelements": "^3.0.0",
     "pug": "^2.0.0-beta6",
     "run-sequence": "^0.3.6",
+    "strip-loader": "^0.1.2",
     "style-loader": "^0.13.1",
     "through2": "^2.0.1",
     "vinyl-buffer": "^1.0.0",
