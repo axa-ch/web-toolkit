@@ -8,7 +8,22 @@ import icon from './icon'
  * The Dialog takes the following list of optional options.
  *
  * **Note:**
- * All of those options can also be assigned through HTML `data-dialog-*` attributes.
+ * All of those options can also be assigned through HTML `data-dialog-*` attributes like:
+ *
+ * ```html
+ * <div data-dialog-classes="{
+ *    dialog: 'dialog',
+ *    header: 'dialog__header',
+ *    heading: 'dialog__heading',
+ *    close: 'dialog__close',
+ *    icon: 'dialog__close__icon',
+ *    content: 'dialog__content',
+ *    footer: 'dialog__footer'
+ *  }"
+ *  data-dialog-close-aria-label="close"
+ *  data-dialog-position="middle"
+ *  data-dialog-modal="{...}">
+ * ```
  *
  * @typedef Dialog#Options
  * @type {Object}
