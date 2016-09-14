@@ -9,15 +9,15 @@ import moment from 'moment'
 import svg4everybody from 'svg4everybody'
 import './clipboard'
 
-require('../../js/index.js')
-require('./cheat')
-require('./example')
-require('./iframe-resizer')
-require('./left-navigation')
-require('./object-fit')
-require('./octocat')
-require('./search')
-require('./tab')
+import '../../js/index'
+import './cheat'
+import './example'
+import './iframe-resizer'
+import './left-navigation'
+import './object-fit'
+import './octocat'
+import './search'
+import './tab'
 
 moment.locale('en_GB')
 svg4everybody()
