@@ -19,10 +19,11 @@
     "dev": "gulp dev",
     "build": "gulp build",
     "start": "gulp serve",
-    "scripts-dev": "webpack --verbose --colors --display-error-details --config webpack/dev.config.babel.js",
-    "scripts-prod": "webpack --verbose --colors --display-error-details --config webpack/prod.config.babel.js",
+    "bundle": "webpack --verbose --colors --display-error-details --config webpack/bundle.config.babel.js",
     "transpile": "babel js -d dist/js",
-    "watch-client": "babel-node webpack/webpack-dev-server.js"
+    "bundle-dev": "babel-node webpack/webpack-dev-server.js",
+    "copy-images": "rm -rf dist/images && mkdir -p dist/images && cp -r images/ dist/images",
+    "copy-less": "rm -rf dist/less && mkdir -p dist/less && cp -r less/ dist/less"
   },
   "author": "AXA Versicherungen AG",
   "license": "SEE LICENSE IN LICENSE",

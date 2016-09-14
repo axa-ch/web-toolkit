@@ -2,21 +2,27 @@ import path from 'path'
 import webpack from 'webpack'
 import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
+import cssmqpacker from 'css-mqpacker'
+import csswring from 'csswring'
+import CleanPlugin from 'clean-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 export default {
   cache: true,
   devtool: 'source-map',
   context: path.resolve(__dirname, '..'),
   progress: true,
-  entry: [
-    'webpack-hot-middleware/client?path=http://0.0.0.0:3001/__webpack_hmr',
-    './docs/js/index-with-styles.js',
-  ],
+  entry: {
+    docs: './docs/js/index.js',
+    all: ['./js/index-with-styles.js'],
+    jquery: ['./js/jquery/index.js'],
+    react: ['./js/react/index.js'],
+  },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     chunkFilename: '[name]-[chunkhash].js',
-    publicPath: 'http://0.0.0.0:3001/dist/',
+    publicPath: '/dist/',
   },
   resolve: {
     modulesDirectories: [
@@ -35,12 +41,11 @@ export default {
       },
     }, {
       test: /\.less/,
-      loaders: [
-        'style',
-        'css',
+      loader: ExtractTextPlugin.extract('style', [
+        'css?importLoaders=2&sourceMap',
         'postcss-loader',
-        'less',
-      ],
+        'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+      ]),
     }],
     noParse: [
       'jquery',
@@ -51,16 +56,25 @@ export default {
       'classnames',
       // 'svg4everybody',
       'zeroclipboard',
-      // 'iframe-resizer',
+      'iframe-resizer',
       'lunr',
       'slick-carousel',
     ].map((module) => new RegExp(require.resolve(module))),
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new CleanPlugin([
+      path.resolve(__dirname, '../dist'),
+    ], {
+      root: path.resolve(__dirname, '..'),
+    }),
+    new ExtractTextPlugin('[name].css', {
+      allChunks: true,
+    }),
   ],
   postcss: () => [
     pseudoelements,
     autoprefixer,
+    cssmqpacker({ sort: true }),
+    csswring,
   ],
 }

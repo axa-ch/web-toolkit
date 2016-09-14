@@ -1,26 +1,22 @@
 import path from 'path'
+import webpack from 'webpack'
 import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
-import cssmqpacker from 'css-mqpacker'
-import csswring from 'csswring'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 export default {
   cache: true,
   devtool: 'source-map',
   context: path.resolve(__dirname, '..'),
   progress: true,
-  entry: {
-    docs: './docs/js/index.js',
-    all: ['./js/index-with-styles.js'],
-    jquery: ['./js/jquery/index.js'],
-    react: ['./js/react/index.js'],
-  },
+  entry: [
+    'webpack-hot-middleware/client?path=http://0.0.0.0:3001/__webpack_hmr',
+    './docs/js/index-with-styles.js',
+  ],
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].js',
+    filename: 'bundle.js',
     chunkFilename: '[name]-[chunkhash].js',
-    publicPath: '/dist/',
+    publicPath: 'http://0.0.0.0:3001/dist/',
   },
   resolve: {
     modulesDirectories: [
@@ -39,11 +35,12 @@ export default {
       },
     }, {
       test: /\.less/,
-      loader: ExtractTextPlugin.extract('style', [
+      loaders: [
+        'style',
         'css?importLoaders=2&sourceMap',
         'postcss-loader',
         'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
-      ]),
+      ],
     }],
     noParse: [
       'jquery',
@@ -54,20 +51,16 @@ export default {
       'classnames',
       // 'svg4everybody',
       'zeroclipboard',
-      'iframe-resizer',
+      // 'iframe-resizer',
       'lunr',
       'slick-carousel',
     ].map((module) => new RegExp(require.resolve(module))),
   },
   plugins: [
-    new ExtractTextPlugin('[name].css', {
-      allChunks: true,
-    }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   postcss: () => [
     pseudoelements,
     autoprefixer,
-    cssmqpacker({ sort: true }),
-    csswring,
   ],
 }

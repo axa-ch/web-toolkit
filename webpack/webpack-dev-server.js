@@ -3,7 +3,7 @@ import webpack from 'webpack'
 import dev from 'webpack-dev-middleware'
 import hot from 'webpack-hot-middleware'
 
-import webpackConfig from './develop.config.babel'
+import webpackConfig from './bundle.dev.config.babel'
 
 const compiler = webpack(webpackConfig)
 
