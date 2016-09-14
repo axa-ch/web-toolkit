@@ -17,6 +17,9 @@ export default {
     chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/dist/',
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
   module: {
     loaders: [{
       test: /\.jsx?$/,
