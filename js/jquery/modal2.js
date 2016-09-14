@@ -26,6 +26,28 @@ const lastFocused = []
  * All of those options can also be assigned through HTML `data-modal2-*` attributes.
  * Except `href` attribute is also considered for opening links in a modal manner.
  *
+ * ```html
+ * <a href="foo.html"
+ *  data-modal2-autofocus="true"
+ *  data-modal2-backdrop-close="true"
+ *  data-modal2-close-aria-label="close"
+ *  data-modal2-close-enabled="true"
+ *  data-modal2-close-position="inside"
+ *  data-modal2-classes="{
+ *    body: 'modal2-is-open',
+ *    modal: 'modal2',
+ *    backdrop: 'modal2__backdrop',
+ *    content: 'modal2__content',
+ *    close: 'modal2__close',
+ *    icon: 'modal2__close__icon',
+ *    open: 'is-open'
+ *  }"
+ *  data-modal2-escape-close="true"
+ *  data-modal2-hide-main-scroll-bar="true"
+ *  data-modal2-mode="scroll"
+ *  data-modal2-selector=".foo">
+ * ```
+ *
  * @typedef Modal2#Options
  * @type {Object}
  * @property {boolean} [autofocus=true] - Should the modal automtically be focused.
