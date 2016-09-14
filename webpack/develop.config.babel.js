@@ -1,4 +1,5 @@
 import path from 'path'
+import webpack from 'webpack'
 import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 
@@ -51,6 +52,9 @@ export default {
       'slick-carousel',
     ].map((module) => new RegExp(require.resolve(module))),
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
   postcss: () => [
     pseudoelements,
     autoprefixer,
