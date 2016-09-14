@@ -19,6 +19,10 @@ export default {
     publicPath: 'http://0.0.0.0:3001/dist/',
   },
   resolve: {
+    modulesDirectories: [
+      'less',
+      'node_modules',
+    ],
     extensions: ['', '.js', '.jsx'],
   },
   module: {
