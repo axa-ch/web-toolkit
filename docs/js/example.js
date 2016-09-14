@@ -4,8 +4,7 @@ import $ from 'jquery'
 import Bacon from 'baconjs'
 
 // only one window size stream for all Example instances
-const resizes = $(window)
-  .asEventStream('resize')
+const resizes = Bacon.$.asEventStream.call($(window), 'resize')
 
 class Example {
   constructor(el) {
