@@ -1,4 +1,5 @@
 import path from 'path'
+import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 
 export default {
@@ -52,6 +53,7 @@ export default {
     ].map((module) => new RegExp(require.resolve(module))),
   },
   postcss: () => [
+    pseudoelements,
     autoprefixer,
   ],
 }

@@ -1,5 +1,8 @@
 import path from 'path'
+import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
+import cssmqpacker from 'css-mqpacker'
+import csswring from 'csswring'
 
 export default {
   cache: true,
@@ -52,6 +55,9 @@ export default {
     ].map((module) => new RegExp(require.resolve(module))),
   },
   postcss: () => [
+    pseudoelements,
     autoprefixer,
+    cssmqpacker({ sort: true }),
+    csswring,
   ],
 }
