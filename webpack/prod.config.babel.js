@@ -3,6 +3,7 @@ import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 import cssmqpacker from 'css-mqpacker'
 import csswring from 'csswring'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 export default {
   cache: true,
@@ -34,12 +35,11 @@ export default {
       },
     }, {
       test: /\.less/,
-      loaders: [
-        'style',
-        'css',
+      loader: ExtractTextPlugin.extract('style', [
+        'css?importLoaders=2&sourceMap',
         'postcss-loader',
-        'less',
-      ],
+        'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+      ]),
     }],
     noParse: [
       'jquery',
@@ -55,6 +55,11 @@ export default {
       'slick-carousel',
     ].map((module) => new RegExp(require.resolve(module))),
   },
+  plugins: [
+    new ExtractTextPlugin('[name].css', {
+      allChunks: true,
+    }),
+  ],
   postcss: () => [
     pseudoelements,
     autoprefixer,
