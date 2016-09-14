@@ -51,7 +51,7 @@ export default {
       'classnames',
       // 'svg4everybody',
       'zeroclipboard',
-      'iframe-resizer',
+      // 'iframe-resizer',
       'lunr',
       'slick-carousel',
     ].map((module) => new RegExp(require.resolve(module))),

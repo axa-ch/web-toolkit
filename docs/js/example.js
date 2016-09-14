@@ -33,9 +33,9 @@ class Example {
 
     // viewport that we explicitly switched to
     this.clickedTo = initialClick
-      .merge(this.$mobile.asEventStream('click').map('mobile'))
-      .merge(this.$tablet.asEventStream('click').map('tablet'))
-      .merge(this.$desktop.asEventStream('click').map('desktop'))
+      .merge(Bacon.$.asEventStream.call(this.$mobile, 'click').map('mobile'))
+      .merge(Bacon.$.asEventStream.call(this.$tablet, 'click').map('tablet'))
+      .merge(Bacon.$.asEventStream.call(this.$desktop, 'click').map('desktop'))
       .skipDuplicates()
       .toProperty()
 

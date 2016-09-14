@@ -23,6 +23,10 @@ export default {
     publicPath: '/dist/',
   },
   resolve: {
+    modulesDirectories: [
+      'less',
+      'node_modules',
+    ],
     extensions: ['', '.js', '.jsx'],
   },
   module: {
