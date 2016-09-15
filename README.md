@@ -1,16 +1,11 @@
-[![Build Status](https://travis-ci.org/axa-ch/style-guide.svg?branch=develop)](https://travis-ci.org/axa-ch/style-guide)
-[![Thinking](https://badge.waffle.io/axa-ch/style-guide.svg?label=thinking&title=Thinking)](http://waffle.io/axa-ch/style-guide)
-[![Adding Sparkles](https://badge.waffle.io/axa-ch/style-guide.svg?label=adding%20sparkles&title=Adding%20Sparkles)](http://waffle.io/axa-ch/style-guide)
-[![Hacking](https://badge.waffle.io/axa-ch/style-guide.svg?label=hacking&title=Hacking)](http://waffle.io/axa-ch/style-guide)
+# AXA Web Toolkit
 
-# AXA Switzerland Web Style Guide
-
-> Guides you through our design principles and helps you build web apps faster!
+> The CSS, JS and HTML framework for building responsive AXA web apps!
 
 ## Intro
 
-This project guides you on how to design and build web apps @ AXA Switzerland.
-Here you get all the CSS, icons, JS and additional assets to simplify the development of our web apps.
+Here you get all the CSS, icons, JS and additional assets
+to simplify and accelerate the development of AXA web apps.
 
 ## Use it!
 
@@ -152,6 +147,6 @@ Check the collaborators list for the people behind it.
 
 ## License
 
-Copyright 2016 AXA Versicherungen AG. All rights reserved.
+Copyright AXA 2016. All rights reserved.
 
-<!--- Copyright AXA Versicherungen AG 2016 -->
+<!--- Copyright AXA 2016 -->
