@@ -6,7 +6,7 @@ import readJson from '../lib/readJSONFile'
 
 module.exports = () => {
   const settings = readJson('modernizr.json')
-  return gulp.src('jquery/*.coffee')
+  return gulp.src('js/**/*.js')
     .pipe(modernizr('modernizr.js', settings))
     .on('error', errorify)
     .pipe(gulp.dest('./dist/docs/js'))
