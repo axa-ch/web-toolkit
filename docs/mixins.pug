@@ -72,18 +72,6 @@ mixin displayMobileMenu(page)
 
     if page.children
       ul.mobile-menu__level(data-level)
-        li.mobile-menu__item.mobile-menu__item--back
-          a.mobile-menu__link.mobile-menu__link--back(
-            href='#',
-            data-back
-          )
-            span.mobile-menu__text back
-            +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon'])
-
-        li.mobile-menu__item.mobile-menu__item--section
-          .mobile-menu__link.mobile-menu__link--section
-            span.mobile-menu__text= page.title
-
         each child in page.children
           +displayMobileMenu(child)
 

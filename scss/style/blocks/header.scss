@@ -7,7 +7,7 @@
 @import '../mixins/respond';
 
 .header {
-  border-bottom: 5px solid $color-blue;
+  border-bottom: 1px solid $color-gray--light;
 }
 
 .header__meta {
@@ -126,6 +126,35 @@
 
   @include respond(large) {
     display: none;
+  }
+}
+
+.header__main__item--title {
+  display: flex;
+  align-items: center;
+
+  order: 20;
+  flex-grow: 1;
+
+  font-size: 24px;
+
+  @include respond(large) {
+    font-size: 28px;
+  }
+}
+
+.header--compact {
+  .header__main {
+    height: 4.8125rem;
+
+    @include respond(large) {
+      height: 4.8125rem;
+    }
+  }
+}
+
+.header--fixed {
+  .header__main {
   }
 }
 
