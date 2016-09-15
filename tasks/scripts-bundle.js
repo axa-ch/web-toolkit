@@ -16,6 +16,7 @@ module.exports = () =>
   ], { base: 'dist/js', read: false })
   .pipe(browserify({
     browserField: true,
+    extensions: ['.js', '.jsx'],
     // bundleExternal: false,
     // detectGlobals: false,
     transform: [shim],

@@ -13,6 +13,7 @@ module.exports = () =>
   ], { base: 'docs/js', read: false })
     .pipe(browserify({
       browserField: true,
+      extensions: ['.js', '.jsx'],
       // bundleExternal: false,
       // detectGlobals: false,
       transform: [babelify, shim],
