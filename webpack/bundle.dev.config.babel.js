@@ -2,6 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
+import SvgStore from 'webpack-svgstore-plugin'
 
 export default {
   cache: true,
@@ -58,6 +59,13 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new SvgStore({
+      svgoOptions: {
+        plugins: [{ removeTitle: true }],
+      },
+      name: 'dist/icons.svg',
+      prefix: '',
+    }),
   ],
   postcss: () => [
     pseudoelements,

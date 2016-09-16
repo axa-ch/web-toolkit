@@ -6,6 +6,7 @@ import cssmqpacker from 'css-mqpacker'
 import csswring from 'csswring'
 import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import SvgStore from 'webpack-svgstore-plugin'
 
 export default {
   cache: true,
@@ -69,6 +70,12 @@ export default {
     }),
     new ExtractTextPlugin('[name].css', {
       allChunks: true,
+    }),
+    new SvgStore({
+      svgoOptions: {
+        plugins: [{ removeTitle: true }],
+      },
+      prefix: '',
     }),
   ],
   postcss: () => [
