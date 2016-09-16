@@ -9,7 +9,7 @@ import moment from 'moment'
 import svg4everybody from 'svg4everybody'
 import './clipboard'
 
-require('../..')
+require('../../js/index.js')
 require('./cheat')
 require('./example')
 require('./iframe-resizer')
