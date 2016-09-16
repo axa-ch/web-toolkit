@@ -1,56 +1,41 @@
-import browserify from 'browserify'
-import shim from 'browserify-shim'
 import gulp from 'gulp'
 import sourcemaps from 'gulp-sourcemaps'
-import buffer from 'vinyl-buffer'
-import source from 'vinyl-source-stream'
 import uglify from 'gulp-uglify'
 import rename from 'gulp-rename'
-import es from 'event-stream'
+import shim from 'browserify-shim'
 
+import noParse from '../lib/scriptsNoParse'
+import browserify from '../lib/gulp-browserify'
 import handleError from '../lib/handle-error'
 
-module.exports = () => {
-  // we define our input files, which we want to have
-  // bundled:
-  const files = [
-    'jquery/index.js',
-    'react/index.js',
-    'index.js',
-  ]
-
-  const tasks = files.map((file) =>
-    browserify({
-      extensions: ['.js', '.jsx'],
-    })
-      .transform(shim)
-      .add(`dist/js/${file}`)
-      .bundle()
-      .on('error', handleError('Browserify failed'))
-      .pipe(source(getSourceName(file)))
-      .pipe(buffer())
-      .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(sourcemaps.write(''))
-      .pipe(gulp.dest('dist/js'))
-      .pipe(uglify())
-      .on('error', handleError('Uglify failed'))
-      .pipe(rename({ extname: '.min.js' }))
-      .pipe(sourcemaps.write(''))
-      .pipe(gulp.dest('dist/js'))
-  )
-
-  // create a merged stream
-  return es.merge.apply(null, tasks)
-}
-
-function getSourceName(file) {
-  switch (file) {
-    case 'index.js':
-      return 'axa-web-style-guide-all.js'
-
-    default:
-      return file.replace('/index', `/${file.split('/')[0]}.bundle`)
-  }
-}
+module.exports = () =>
+  gulp.src([
+    'dist/js/jquery/index.js',
+    'dist/js/react/index.js',
+    'dist/js/index.js',
+  ], { base: 'dist/js', read: false })
+  .pipe(browserify({
+    browserField: true,
+    extensions: ['.js', '.jsx'],
+    // bundleExternal: false,
+    // detectGlobals: false,
+    transform: [shim],
+    noParse,
+  }))
+  .pipe(sourcemaps.init({ loadMaps: true }))
+  .pipe(sourcemaps.write(''))
+  .pipe(rename((path) => {
+    if (path.dirname === '.') {
+      path.basename = 'axa-web-style-guide-all.js'
+    } else {
+      path.basename = path.dirname + '.bundle'
+    }
+  }))
+  .pipe(gulp.dest('dist/js'))
+  .pipe(uglify())
+  .on('error', handleError('Uglify failed'))
+  .pipe(rename({ extname: '.min.js' }))
+  .pipe(sourcemaps.write(''))
+  .pipe(gulp.dest('dist/js'))
 
 //! Copyright AXA Versicherungen AG 2016
