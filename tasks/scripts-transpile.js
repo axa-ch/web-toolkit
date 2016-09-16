@@ -1,7 +1,6 @@
 import gulp from 'gulp'
 import babel from 'gulp-babel'
 import sourcemaps from 'gulp-sourcemaps'
-import remember from 'gulp-remember'
 import cached from 'gulp-cached'
 
 import handleError from '../lib/handle-error'
@@ -12,7 +11,6 @@ module.exports = () => gulp.src(['js/**/*.js', 'js/**/*.jsx'])
   .pipe(babel())
   .on('error', handleError('Babel failed'))
   .pipe(sourcemaps.write())
-  .pipe(remember('scripts-transpile'))
   .pipe(gulp.dest('dist/js'))
 
 //! Copyright AXA Versicherungen AG 2016
