@@ -3,12 +3,13 @@ import webpack from 'webpack'
 import dev from 'webpack-dev-middleware'
 import hot from 'webpack-hot-middleware'
 
+import createApp from '../lib/app'
 import webpackConfig from './bundle.dev.config.babel'
 
 const compiler = webpack(webpackConfig)
 
 const serverOptions = {
-  contentBase: 'http://0.0.0.0:3001',
+  contentBase: '/',
   quiet: true,
   noInfo: true,
   inline: true,
@@ -20,15 +21,16 @@ const serverOptions = {
 
 const app = express()
 
+app.use(createApp())
 app.use(dev(compiler, serverOptions))
 app.use(hot(compiler))
 
-app.listen(3001, (err) => {
+app.listen(3000, (err) => {
   if (err) {
     // eslint-disable-next-line no-console
     console.error(err)
   } else {
     // eslint-disable-next-line no-console, max-len
-    console.info('🚧　Webpack development server listening on http://0.0.0.0:3001')
+    console.info('🚧　Webpack development server listening on http://0.0.0.0:3000')
   }
 })

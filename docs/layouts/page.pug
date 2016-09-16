@@ -101,7 +101,7 @@ html
     if process.env.NODE_ENV === 'production'
       script(src=relative('/js/style-guide-docs.js'))
     else
-      script(src='http://localhost:3001/dist/bundle.js')
+      script(src='/dist/bundle.js')
 
     script.
       var href = '#{relative(link)}'

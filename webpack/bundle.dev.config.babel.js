@@ -9,14 +9,14 @@ export default {
   context: path.resolve(__dirname, '..'),
   progress: true,
   entry: [
-    'webpack-hot-middleware/client?path=http://0.0.0.0:3001/__webpack_hmr',
+    'webpack-hot-middleware/client?path=/__webpack_hmr',
     './docs/js/index-with-styles.js',
   ],
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
     chunkFilename: '[name]-[chunkhash].js',
-    publicPath: 'http://0.0.0.0:3001/dist/',
+    publicPath: '/dist/',
   },
   resolve: {
     modulesDirectories: [
