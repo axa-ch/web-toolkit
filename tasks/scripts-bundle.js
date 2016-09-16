@@ -26,7 +26,7 @@ module.exports = () =>
   .pipe(sourcemaps.write(''))
   .pipe(rename((path) => {
     if (path.dirname === '.') {
-      path.basename = 'axa-web-style-guide-all.js'
+      path.basename = 'axa-web-style-guide-all'
     } else {
       path.basename = path.dirname + '.bundle'
     }
