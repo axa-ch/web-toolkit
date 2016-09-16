@@ -73,7 +73,7 @@
     "event-stream": "^3.3.4",
     "extend": "^3.0.0",
     "front-matter": "^1.0.0",
-    "gulp": "^3.8.8",
+    "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-cached": "^1.1.0",
     "gulp-concat": "^2.4.0",
