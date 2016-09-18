@@ -23,9 +23,7 @@
     "transpile": "babel js -d dist/js",
     "docs": "babel-node lib/build-docs.js",
     "bundle-dev": "babel-node webpack/webpack-dev-server.js",
-    "copy-images": "rm -rf dist/images && mkdir -p dist/images && cp -r images/ dist/images",
-    "copy-icons": "rm -rf dist/icons && mkdir -p dist/icons && cp -r icons/ dist/icons",
-    "copy-less": "rm -rf dist/less && mkdir -p dist/less && cp -r less/ dist/less"
+    "copy-to-docs": "cp -R dist/*.css dist/*.js dist/*.svg dist/*.map images dist/docs"
   },
   "author": "AXA Versicherungen AG",
   "license": "SEE LICENSE IN LICENSE",

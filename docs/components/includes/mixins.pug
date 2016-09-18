@@ -1,7 +1,9 @@
+- fallback = process.env.NODE_ENV === 'production' ? '/icons.svg' : '/dist/icons.svg'
+
 mixin svg(id, classes, config)
   - config = config || {}
   - config.attrs = config.attrs || {}
-  - path = relative(config.path || '/dist/icons.svg') + '#' + id
+  - path = relative(config.path || fallback) + '#' + id
   svg(class=classes)&attributes(config.attrs)
     use(xlink:href=path)
 

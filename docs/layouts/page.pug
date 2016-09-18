@@ -99,7 +99,8 @@ html
     script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
     
     if process.env.NODE_ENV === 'production'
-      script(src=relative('/js/style-guide-docs.js'))
+      script(type="text/javascript", src=relative('/docs.js'))
+      link(rel="stylesheet", href=relative("/docs.css"))
     else
       script(src='/dist/bundle.js')
 
