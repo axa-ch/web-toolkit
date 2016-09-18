@@ -1,0 +1,10 @@
+web:
+  image: ${IMAGE}
+  environment:
+    NODE_ENV: production
+  ports:
+    - "8080"
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  stdin_open: false
