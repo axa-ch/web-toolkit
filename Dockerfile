@@ -1,6 +1,8 @@
 FROM node:5-slim
 EXPOSE 3000
 
+ENV BASE_URL '/'
+
 # Will unfortunately have to keep this as long as
 # we have git deps in package.json
 RUN apt-get update && apt-get install -y --no-install-recommends git \

@@ -6,6 +6,7 @@ node {
     def tagName = branchName != "master" ? branchName : "latest"
     def imageName = repositoryName + ":" + tagName.replaceAll("[.:_/\\\\]", '-')
     def projectName = imageName.replaceAll("[.:_/\\\\]", '-')
+    def baseUrl = '/toolkit'
 
     stage 'Checkout'
 
@@ -48,6 +49,7 @@ node {
       sh """
         set +x
         IMAGE=$imageName \
+        BASE_URL=$baseUrl \
           rancher-compose \
             --url \$RANCHER_URL \
             --access-key \$RANCHER_ACCESS_KEY \
@@ -83,6 +85,7 @@ node {
         sh """
           set +x
           IMAGE=$imageName \
+          BASE_URL=$baseUrl \
             rancher-compose \
               --url \$RANCHER_URL \
               --access-key \$RANCHER_ACCESS_KEY \
@@ -100,6 +103,7 @@ node {
         sh """
           set +x
           IMAGE=$imageName \
+          BASE_URL=$baseUrl \
             rancher-compose \
               --url \$RANCHER_URL \
               --access-key \$RANCHER_ACCESS_KEY \

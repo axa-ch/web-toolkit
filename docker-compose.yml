@@ -2,6 +2,7 @@ web:
   image: ${IMAGE}
   environment:
     NODE_ENV: production
+    BASE_URL: /
   ports:
     - "8080"
   labels:
