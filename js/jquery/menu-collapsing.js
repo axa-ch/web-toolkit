@@ -49,6 +49,10 @@ class CollapsingMenu {
         .removeClass('is-active')
     }
 
+    if (shouldOpen) {
+      parentLevels.toggleClass('is-open', true)
+    }
+
     level.toggleClass('is-open', shouldOpen)
       .siblings('[data-link]')
       .toggleClass('is-active', shouldOpen)
