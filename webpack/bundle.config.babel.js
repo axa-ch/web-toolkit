@@ -14,7 +14,7 @@ export default {
   context: path.resolve(__dirname, '..'),
   progress: true,
   entry: {
-    docs: './docs/js/index.js',
+    docs: './docs/js/index-with-styles.js',
     all: ['./js/index-with-styles.js'],
     jquery: ['./js/jquery/index.js'],
     react: ['./js/react/index.js'],
