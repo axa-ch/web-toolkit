@@ -9,7 +9,7 @@ node_modules/
 .happypack/
 
 # jsdoc
-/docs/page/jsdoc2md
+/docs/jsdoc2md
 
 # project
 dist/
