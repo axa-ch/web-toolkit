@@ -1,7 +1,7 @@
 node {
   try {
 
-    def repositoryName = "axacom/style-guide"
+    def repositoryName = "axacom/ui-toolkit"
     def branchName = env.BRANCH_NAME
     def tagName = branchName != "master" ? branchName : "latest"
     def imageName = repositoryName + ":" + tagName.replaceAll("[.:_/\\\\]", '-')
