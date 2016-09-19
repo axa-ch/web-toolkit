@@ -205,7 +205,7 @@ class Picker extends Emitter {
 
 class Datepicker {
   static DEFAULTS = {
-    moment: window.moment,
+    moment: moment,
     locale: document.documentElement.lang || 'en',
     longDateFormat: 'L',
   }
