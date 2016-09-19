@@ -44,6 +44,7 @@
   cursor: pointer;
 
   display: block;
+  position: relative;
   float: right;
 
   width: 40px;
@@ -59,6 +60,16 @@
   fill: @color-light-blue;
   display: inline-block;
   vertical-align: middle;
+}
+
+.datepicker__trigger__mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: transparent;
 }
 
 .picker {

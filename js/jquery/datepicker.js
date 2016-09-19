@@ -205,13 +205,14 @@ class Picker extends Emitter {
 
 class Datepicker {
   static DEFAULTS = {
-    moment: window.moment,
+    moment: moment,
     locale: document.documentElement.lang || 'en',
     longDateFormat: 'L',
   }
 
   constructor(element, options) {
     this.onChange = this.onChange.bind(this)
+    this.onChangeMobileTrigger = this.onChangeMobileTrigger.bind(this)
     this.options = options
     this.moment = options.moment
     this.setLocale(options.locale)
@@ -226,8 +227,11 @@ class Datepicker {
       this.$input = $(options.input)
 
       this.$input.prop('type', 'date')
+      this.$input.on('change', this.onChange)
 
-      this.$input.focus()
+      this.$triggerMobile = this.$element.find('.datepicker__trigger__mobile')
+      this.$triggerMobile.val(this.$input.val())
+      this.$triggerMobile.on('change', this.onChangeMobileTrigger)
     } else {
       this.picker = new Picker(this.moment, options.displayWeek, options.icons, options.longDateFormat)
 
@@ -239,7 +243,7 @@ class Datepicker {
         this.onChange()
       }
 
-      this.picker.on('select', date => {
+      this.picker.on('select', (date) => {
         this.$input.val(date)
         this.$input.trigger('change')
       })
@@ -249,11 +253,19 @@ class Datepicker {
   }
 
   onChange() {
-    const dat = this.moment(this.$input.val(), this.format)
+    if (isMobile) {
+      this.$triggerMobile.val(this.$input.val())
+    } else {
+      const dat = this.moment(this.$input.val(), this.format)
 
-    if (dat.isValid()) {
-      this.picker.setSelectedDate(dat)
+      if (dat.isValid()) {
+        this.picker.setSelectedDate(dat)
+      }
     }
+  }
+
+  onChangeMobileTrigger() {
+    this.$input.val(this.$triggerMobile.val())
   }
 
   setLocale(locale) {
@@ -280,9 +292,7 @@ class Datepicker {
   }
 
   toggle() {
-    if (isMobile) {
-      this.$input.focus()
-    } else {
+    if (!isMobile) {
       this.picker.toggle()
     }
   }
@@ -290,8 +300,16 @@ class Datepicker {
 
 // Plugin definition
 registerPlugin('datepicker', Datepicker, (PluginWrapper) => {
+  if (isMobile) {
+    $('.datepicker__trigger').each(function () {
+      $(this).append($('<input type="date" class="datepicker__trigger__mobile">'))
+    })
+  }
+
   $(document).on('click.axa.datepicker.data-api', '[data-datepicker]', function (e) {
-    e.preventDefault()
+    if (!isMobile) {
+      e.preventDefault()
+    }
 
     const data = $(this).data()
     const $target = $(data.datepicker)
