@@ -87,6 +87,7 @@
     "extend": "^3.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "front-matter": "^1.0.0",
+    "git-rev-sync": "^1.7.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-cached": "^1.1.0",
