@@ -10,6 +10,8 @@ class Autogrow {
     this.$element = $(element)
     this.options = $.extend({}, options)
 
+    this.update = this.update.bind(this)
+
     this.init()
   }
 
