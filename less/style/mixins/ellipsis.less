@@ -1,6 +1,12 @@
 // @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
-.ellipsis(@textOverflow: ellipsis) {
+.ellipsis(@textOverflow: ellipsis) when not (@textOverflow = none) {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: @textOverflow;
+}
+
+.ellipsis(none) {
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
 }

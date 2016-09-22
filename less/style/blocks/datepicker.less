@@ -24,7 +24,10 @@
 
 .datepicker {
   &:extend(.clearfix all);
-  .control--short();
+
+  .respond(medium, {
+    .control--short();
+  });
 }
 
 .datepicker--condensed {

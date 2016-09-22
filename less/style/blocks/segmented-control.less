@@ -1,5 +1,6 @@
 @import '../mixins/invisible-input';
 @import '../mixins/invisible-font';
+@import '../mixins/ellipsis';
 @import '../blocks/checkbox-group';
 @import '../blocks/checkbox';
 @import '../variables';
@@ -20,6 +21,7 @@
 
   &.segmented-control--stacked {
     .segmented-control__item {
+      .ellipsis();
       display: block;
 
       width: 100%;
