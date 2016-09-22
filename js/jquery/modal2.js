@@ -1,7 +1,7 @@
 /* global window, document */
 
 import $ from 'jquery'
-import 'baconjs'
+import Bacon from 'baconjs'
 import registerPlugin from './register-plugin'
 import append from './append'
 import icon from './icon'
@@ -158,19 +158,19 @@ class Modal2 {
     this.unbind()
 
     const $document = $(document)
-    const closeClickStream = this.$modal.asEventStream('click.axa.modal2', '[data-modal2-close]')
+    const closeClickStream = Bacon.$.asEventStream.call(this.$modal, 'click.axa.modal2', '[data-modal2-close]')
 
     let closeStream = closeClickStream
 
     if (this.options.escapeClose) {
-      const keyUpStream = $document.asEventStream('keyup.axa.modal2')
+      const keyUpStream = Bacon.$.asEventStream.call($document, 'keyup.axa.modal2')
       const escapeStream = keyUpStream.filter((e) => e.keyCode === 27)
 
       closeStream = closeStream.merge(escapeStream)
     }
 
     if (this.options.backdropClose) {
-      const backdropStream = this.$backdrop.asEventStream('click.axa.modal2')
+      const backdropStream = Bacon.$.asEventStream.call(this.$backdrop, 'click.axa.modal2')
         .filter((e) => !$.contains(this.$backdrop[0], e.target))
 
       closeStream = closeStream.merge(backdropStream)
@@ -179,7 +179,7 @@ class Modal2 {
     this.disposeClose = closeStream.doAction('.preventDefault')
       .onValue(this.close)
 
-    const focusStream = $document.asEventStream('focusin.axa.modal2')
+    const focusStream = Bacon.$.asEventStream.call($document, 'focusin.axa.modal2')
 
     this.disposeFocus = focusStream.onValue(this.restrictFocus)
   }
