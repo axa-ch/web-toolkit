@@ -28,8 +28,9 @@ class Search {
       this.baseUrl = './'
     }
 
-    if (this.baseUrl.indexOf('/', this.baseUrl.length - 1) === -1) {
-      this.baseUrl += '/'
+    // Remove trailing slash (/)
+    if (this.baseUrl.slice(-1) === '/') {
+      this.baseUrl = this.baseUrl.slice(0, -1)
     }
 
     // load the search data / index
