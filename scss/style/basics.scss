@@ -4,6 +4,7 @@
 // but allowing components to change
 html {
   box-sizing: border-box;
+  font-size: 18px;
 }
 
 *, *::before, *::after {
@@ -13,7 +14,7 @@ html {
 // Set basic typography
 body {
   color: $font-color;
-  font-family: "ITC Franklin Gothic W01", Arial, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   line-height: $line-height;
 }
 
