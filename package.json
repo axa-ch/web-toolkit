@@ -169,6 +169,8 @@
     "metalsmith-markdown": "git+https://github.com/axa-ch/metalsmith-markdown",
     "metalsmith-pug": "^1.1.0",
     "metalsmith-relative": "^1.0.3",
+    "metalsmith-templates": "git+https://github.com/axa-ch/metalsmith-templates",
+    "metalsmith-watch": "^1.0.3",
     "minimatch": "^3.0.3",
     "mkdirp": "^0.5.1",
     "node-notifier": "^4.3.1",
