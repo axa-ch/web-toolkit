@@ -8,9 +8,6 @@ node_modules/
 # /js/
 .happypack/
 
-# jsdoc
-/docs/jsdoc2md
-
 # project
 dist/
 tmp/

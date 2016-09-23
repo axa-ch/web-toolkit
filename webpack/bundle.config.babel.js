@@ -20,7 +20,7 @@ export default {
     react: ['./js/react/index.js'],
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../dist/bundles'),
     filename: '[name].js',
     chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/dist/',
@@ -64,7 +64,7 @@ export default {
   },
   plugins: [
     new CleanPlugin([
-      path.resolve(__dirname, '../dist'),
+      path.resolve(__dirname, '../dist/bundles'),
     ], {
       root: path.resolve(__dirname, '..'),
     }),

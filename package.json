@@ -16,14 +16,36 @@
     "url": "https://github.com/axa-ch/style-guide.git"
   },
   "scripts": {
-    "dev": "gulp dev",
-    "build": "gulp build",
+    "dev": "better-npm-run dev",
+    "build": "better-npm-run build",
     "start": "babel-node lib/server.js",
-    "bundle": "webpack --verbose --colors --display-error-details --config webpack/bundle.config.babel.js",
-    "transpile": "babel js -d dist/js",
-    "docs": "babel-node lib/build-docs.js",
-    "bundle-dev": "babel-node webpack/webpack-dev-server.js",
-    "copy-to-docs": "cp -R dist/*.css dist/*.js dist/*.svg dist/*.map images dist/docs"
+    "docs:build": "babel-node lib/build-docs.js",
+    "bundles:watch": "babel-node webpack/webpack-dev-server.js",
+    "bundles:build": "webpack --verbose --colors --display-error-details --config webpack/bundle.config.babel.js",
+    "bundles:copy": "cp -R dist/bundles docs/dist/",
+    "images:watch": "nodemon --watch images --exec npm run images:copy",
+    "images:copy": "cp -R images docs/images2/",
+    "less:watch": "nodemon --watch less --exec npm run less:copy",
+    "less:copy": "cp -R less docs/less2/",
+    "js:transpile": "babel js -d dist/js",
+    "js:watch": "nodemon --watch js --exec npm run js:copy",
+    "js:copy": "cp -R js docs/js2/",
+    "all:watch": "concurrently --kill-others 'npm run images:watch' 'npm run less:watch' 'npm run js:watch' 'npm run bundles:watch'",
+    "all:copy": "concurrently --kill-others 'npm run images:copy' 'npm run less:copy' 'npm run js:copy' 'npm run bundles:copy'"
+  },
+  "betterScripts": {
+    "dev": {
+      "command": "concurrently --kill-others 'npm run all:watch' 'sleep 2 && npm run docs:build'",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "build": {
+      "command": "npm run bundles:build && concurrently --kill-others 'npm run all:copy && npm run docs:build' 'npm run js:transpile'",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
   },
   "author": "AXA Versicherungen AG",
   "license": "SEE LICENSE IN LICENSE",
@@ -62,6 +84,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-register": "^6.14.0",
     "babelify": "^7.3.0",
+    "better-npm-run": "0.0.11",
     "browser-resolve": "^1.11.2",
     "browserify": "^13.0.1",
     "browserify-incremental": "^3.1.1",
@@ -70,6 +93,7 @@
     "clean-webpack-plugin": "^0.1.10",
     "colors": "^1.1.2",
     "concat-stream": "^1.5.2",
+    "concurrently": "^2.2.0",
     "css-loader": "^0.25.0",
     "css-mqpacker": "^5.0.1",
     "csswring": "^5.1.0",
@@ -146,6 +170,7 @@
     "minimatch": "^3.0.3",
     "mkdirp": "^0.5.1",
     "node-notifier": "^4.3.1",
+    "nodemon": "^1.10.2",
     "object-fit-polyfill": "^0.1.0",
     "octonode": "^0.7.1",
     "postcss-loader": "^0.13.0",
