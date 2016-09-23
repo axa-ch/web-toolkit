@@ -43,7 +43,7 @@
       }
     },
     "build": {
-      "command": "npm run bundles:build && concurrently --kill-others 'npm run docs:build:copy:all:before' 'npm run js:transpile' --names docs,js:transpile --prefix-colors cyan,magenta --prefix [{name}]",
+      "command": "npm run bundles:build && concurrently 'npm run docs:build:copy:all:before' 'npm run js:transpile' --names docs,js:transpile --prefix-colors cyan,magenta --prefix [{name}]",
       "env": {
         "NODE_ENV": "production"
       }
