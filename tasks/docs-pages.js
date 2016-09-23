@@ -8,8 +8,8 @@ import fs from 'fs'
 import highlight from 'highlight.js'
 import Metalsmith from 'metalsmith'
 import collections from 'metalsmith-collections'
-import templates from 'metalsmith-templates'
-import jade from 'metalsmith-jade'
+import layouts from 'metalsmith-layouts'
+import pug from 'metalsmith-pug'
 import markdown from 'metalsmith-markdown'
 import branch from 'metalsmith-branch'
 import define from 'metalsmith-define'
@@ -23,7 +23,6 @@ import ignore from 'metalsmith-ignore'
 import readJSONFile from '../lib/readJSONFile'
 import sampleJadeFilter from '../lib/jade-filter-sample'
 import highlightCodeJadeFilter from '../lib/jade-filter-highlightcode'
-import ignoreFmJadeFilter from '../lib/jade-filter-ignorefrontmatter'
 import markedRenderer from '../lib/marked-renderer'
 import markedChangelogRenderer from '../lib/marked-renderer-changelog'
 import searchIndexData from '../lib/search-index-data'
@@ -36,12 +35,13 @@ module.exports = (cb) => {
   const metalsmithSource = './docs/page'
 
   // basedir for include paths
-  const jadeBaseDir = path.join(cwd, metalsmithSource)
+  const pugBaseDir = path.join(cwd, metalsmithSource)
 
-  // Jade filters
-  jade.registerFilter('sample', sampleJadeFilter)
-  jade.registerFilter('highlightcode', highlightCodeJadeFilter)
-  jade.registerFilter('ignorefrontmatter', ignoreFmJadeFilter)
+  // Pug filters
+  const pugFilters = {
+    sample: sampleJadeFilter,
+    highlight: highlightCodeJadeFilter,
+  }
 
   // Configure marked
   marked.setOptions({
@@ -69,10 +69,8 @@ module.exports = (cb) => {
     package: readJSONFile(path.join(cwd, 'package.json')),
     config,
     moment,
-    marked,
-    changelogRenderer: markedChangelogRenderer,
     // basedir for layout files
-    basedir: jadeBaseDir,
+    basedir: pugBaseDir,
   }))
 
   // Do the markdown pages
@@ -85,9 +83,9 @@ module.exports = (cb) => {
       }))
   )
 
-  // Do the jade pages
+  // Do the Pug pages
   metalsmith.use(
-    branch(['**/*.jade'])
+    branch(['**/*.pug'])
       .use(filepath({
         absolute: true,
       }))
@@ -104,11 +102,12 @@ module.exports = (cb) => {
           refer: false,
         },
       }))
-      .use(jade({
+      .use(pug({
         useMetadata: true,
         locals: metalsmith.metadata(),
         pretty: true,
-        basedir: jadeBaseDir,
+        basedir: pugBaseDir,
+        filters: pugFilters,
       }))
   )
 
@@ -152,8 +151,8 @@ module.exports = (cb) => {
       '**/*.html',
       '!**/snippets/*.html',
     ])
-    .use(templates({
-      engine: 'jade',
+    .use(layouts({
+      engine: 'pug',
       directory: path.join(cwd, './docs/layouts'),
     }))
   )

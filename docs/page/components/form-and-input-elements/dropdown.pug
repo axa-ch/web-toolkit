@@ -1,0 +1,170 @@
+---
+title: Dropdown
+order: 4
+layout: page.pug
+tags: Dropdown, Select
+---
+
+include ../includes/mixins.pug
+
+p.paragraph.
+  A dropdown is always a great choice if it comes to selecting a single value out of a big list of values.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#enhanced').toc__anchor-navigation__link Regular Dropdown
+    li.toc__anchor-navigation__item
+      a(href='#large').toc__anchor-navigation__link Large Dropdown
+    li.toc__anchor-navigation__item
+      a(href='#condensed').toc__anchor-navigation__link Condensed Dropdown
+    li.toc__anchor-navigation__item
+      a(href='#non-enhanced').toc__anchor-navigation__link Backup: Non enhanced dropdown
+    li.toc__anchor-navigation__item
+      a(href='#css-only').toc__anchor-navigation__link Improvement: CSS-only
+
+.hr
+
+h2.heading.heading--secondary#enhanced Regular Dropdown
+
+p.paragraph.
+  The dropdown is used for a single selection out of a list.
+
++example('/components/form-and-input-elements/demos/dropdown-regular.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-regular')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-regular
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/dropdown-regular.pug
+        .tab-panel__content__tab(data-tab-content='js')
+          p.paragraph.
+            Our jQuery plugin adds the
+            <code>dropdown--js</code> modifier and handles
+            keyboard events.
+
+          p.paragraph.
+            Activate the functionality with the data-* API as used
+            in the HTML examples.
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content
+      :markdown-it
+        Generally, if you have less than 5 options, a <a class="link" href="./segmented-control.html">segmented control</a> might be the better option.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      On mobile devices, use native dropdown pickers.
+
+.hr
+
+h2.heading.heading--secondary#large Large Dropdown
+
++example('/components/form-and-input-elements/demos/dropdown-large.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-large')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-large
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown-it
+            To create a condensed dropdown element add the
+            `condensed` modifier to a regular dropdown.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/dropdown-large.pug
+
+.hr
+
+h2.heading.heading--secondary#condensed Condensed Dropdown
+
++example('/components/form-and-input-elements/demos/dropdown-condensed.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-condensed')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-condensed
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown-it
+            To create a condensed dropdown element add the
+            `condensed` modifier to a regular dropdown.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/dropdown-condensed.pug
+.hr
+
+h2.heading.heading--secondary#non-enhanced Non enhanced dropdown
+
+p.paragraph.
+  Use the non-enhanced dropdown as a fallback only.
+
++example('/components/form-and-input-elements/demos/dropdown-non-enhanced.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-non-enhanced')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-non-enhanced
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/dropdown-non-enhanced.pug
+
+.hr
+
+h2.heading.heading--secondary#css-only CSS-only
+
+p.paragraph.
+  Possible replacement for JS-featured dropdown.
+
++example('/components/form-and-input-elements/demos/dropdown-2.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-2')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-2
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/dropdown-2.pug
+
+
+//- Copyright AXA Versicherungen AG 2015

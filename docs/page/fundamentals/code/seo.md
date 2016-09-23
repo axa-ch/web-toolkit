@@ -1,7 +1,7 @@
 ---
 title: SEO
 order: 6
-template: page.jade
+layout: page.pug
 draft: true
 ---
 

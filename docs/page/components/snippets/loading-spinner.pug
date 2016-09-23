@@ -1,0 +1,15 @@
+---
+title: Loading Spinner
+layout: demo.pug
+---
+
+.spinner.is-active(data-spinner)
+  .backdrop
+    .backdrop__shadow.backdrop__shadow--light
+    .backdrop__content.backdrop__content--centered
+      .spinner__block
+        .spinner__animation
+          img.spinner__ie9-fallback(alt="spinner", src=relative('/images/ie9_spinner.gif'))
+        .spinner__caption searching for cat videos...
+
+//- Copyright AXA Versicherungen AG 2015

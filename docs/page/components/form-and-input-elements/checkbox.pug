@@ -1,0 +1,167 @@
+---
+title: Checkbox
+order: 2
+layout: page.pug
+tags: Checkbox, Select
+---
+
+include ../includes/mixins.pug
+
+p.paragraph.
+  A checkbox is a basic control that enables the user to select or deselect one or multiple options.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#enhanced').toc__anchor-navigation__link Basic Checkbox
+    li.toc__anchor-navigation__item
+      a(href='#group').toc__anchor-navigation__link Checkbox group
+    li.toc__anchor-navigation__item
+      a(href='#non-enhanced').toc__anchor-navigation__link Non enhanced checkbox
+
+h2.heading.heading--secondary#enhanced Basic Checkbox
+p.paragraph.
+  The basic checkbox can be used for accepting terms & conditions or alike.
+
++example('/components/form-and-input-elements/demos/checkbox-basic.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-basic')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-basic
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          :markdown-it
+            The jQuery plugin bound with `data-checkbox` wil add the
+            `checkbox--js` modifier for styling and `tabindex`
+            attributes to allow keyboard interactions.
+
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/checkbox-basic.pug
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Only set a default value if it is good for the user. In doubt, don't set a default value.
+
+.hr
+
+h2.heading.heading--secondary#group Checkbox group
+p.paragraph.
+  If a user needs to select multiple options, the checkbox group can be used.
+
++example('/components/form-and-input-elements/demos/checkbox-group.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-checkbox-group')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-checkbox-group
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/checkbox-group.pug
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content
+      :markdown-it
+        If you have more than 10 checkboxes in one form-field,
+        a <a href="./textfield.html#chips" class="link">chips component</a>
+        may be more appropriate.
+
+.hr
+
+h2.heading.heading--secondary#group Long checkbox group
+p.paragraph.
+  A long checkbox group will organize itself into multiple columns.
+
++example('/components/form-and-input-elements/demos/checkbox-group-long.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-checkbox-group-long')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-checkbox-group-long
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/checkbox-group-long.pug
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content
+      :markdown-it
+        You can manually overwrite the settings with a data attribute containing the max-rows and columns.
+
+.hr
+
+h2.heading.heading--secondary#group Checkbox group as buttons
+p.paragraph.
+  You can display checkboxes as buttons.
+
++example('/components/form-and-input-elements/demos/checkbox-group-buttons.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-checkbox-group-buttons')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-checkbox-group-buttons
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/checkbox-group-buttons.pug
+
+.hr
+
+h2.heading.heading--secondary#non-enhanced Non enhanced checkbox
+
+p.paragraph.
+  Use the non-enhanced checkbox as a fallback only.
+
++example('/components/form-and-input-elements/demos/checkbox-non-enhanced.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-non-enhanced')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-non-enhanced
+    .tab-panel
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab.is-active HTML
+      .tab-panel__content
+        .tab-panel__content__tab.is-active
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/checkbox-non-enhanced.pug
+
+//- Copyright AXA Versicherungen AG 2015

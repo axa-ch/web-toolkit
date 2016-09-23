@@ -1,0 +1,20 @@
+---
+title: Icon Teaser
+layout: demo.pug
+---
+
+include /components/includes/mixins.pug
+
+.icon-teaser(data-icon-teaser)    
+  ul.icon-teaser__items(data-icon-teaser-container)
+    - var items = []
+    - items.push({ icon: 'teaserMyAxa', title: 'myAXA', text: 'Verwalten Sie Ihre AXA Versicherungen zentral', action: 'Anmelden', link: '/pages/home.html' })
+    - items.push({ icon: 'teaserJobsKarriere', title: 'Karriere & Jobs', text: 'Profitieren Sie von flexiblen Arbeitsmodellen und guten Entwicklungs​möglichkeiten.', action: 'Bewerben', link: '/pages/jobs.html' })
+    - items.push({ icon: 'teaserBetaVersion', title: 'Beta Version', text: 'Werfen Sie einen Blick in die Zukunft der AXA Website.', action: 'Entdecken', link: '/pages/home.html' })
+    each item in items
+      li.icon-teaser__item(data-icon-teaser-panel, data-title=item.title)
+        .icon-teaser__item__icon-wrapper
+          +svg(item.icon, ['icon-teaser__item__icon'])
+        .icon-teaser__item__title= item.title
+        .icon-teaser__item__text= item.text
+        a.icon-teaser__item__action(href="#")= item.action

@@ -1,0 +1,54 @@
+---
+title: Mobile Drawer
+order: 6
+layout: page.pug
+---
+
+include ./includes/mixins.pug
+
+:markdown-it
+  The mobile drawer section contains the navigation and all
+  your app-wide actions. It provides a simple container that you
+  can fill according to the individual needs of your app.
+
+  The section is usually only available on small viewports, where
+  room is scarce. It can be opened using the burger button.
+  The drawer-behavior is part of the
+  [Site Component](/components/site.html "Site Component"), which
+  is the parent component of this one.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#overview').toc__anchor-navigation__link Overview
+
+:markdown-it
+  # Overview
+  
+  The mobile drawer section is totally flexible. It only provides
+  the container for your [Grid](/fundamentals/layout/grid.html "Grid System")
+  with some special styling for certain child components.
+  
+  It usually contains a
+  [Mobile Menu](/components/mobile-menu.html "Mobile Menu") and some
+  [Buttons](/components/button.html "Buttons").
+
++example('/components/demos/mobile.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/mobile.pug
+
+//- Copyright AXA Versicherungen AG 2015

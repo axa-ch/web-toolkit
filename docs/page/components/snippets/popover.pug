@@ -1,0 +1,22 @@
+---
+title: Popover
+layout: demo.pug
+---
+
+include /components/includes/mixins.pug
+
+a.button(id='toggleButton',data-popover='#popover') Show Popover
+.popover(id='popover')
+  .popover__tail
+  .popover__box
+    .popover__box__header
+      a.popover__close
+        +svg('modal-close', ['modal__close-icon', 'icon'])
+      .popover__box__header__headline Demo
+    .popover__box__content__wrapper
+      .popover__box__content
+        textarea.control.control--textarea
+        p.paragraph
+          a.button.button--small 'clicky click'
+
+//- Copyright AXA Versicherungen AG 2015

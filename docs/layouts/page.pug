@@ -1,0 +1,119 @@
+include /components/includes/mixins.pug
+
+doctype html
+html
+  include /components/snippets/head.pug
+  body.site(data-site)
+    .site__page(data-page)
+      .site__page__mask(data-mask)
+      #notification.notifications(data-notification-info=relative('/images/icons.svg#info')
+        data-notification-success=relative('/images/icons.svg#checkmark')
+        data-notification-error=relative('/images/icons.svg#cross'))
+      header.header
+        .header__meta
+          .header__meta__container
+            .header__meta__row
+              .header__meta__item.header__meta__item--search.header-search.autocomplete
+                input.header-search__input.autocomplete__input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
+                .header-search__button
+                  +svg('search', ['header-search__icon', 'icon'])
+              a.header__meta__item.header__meta__item--action(href="https://github.com/axa-ch/style-guide")
+                +svg('github', ['button__icon', 'icon', 'button__icon--left'])
+                | View on GitHub
+        .header__main
+          .header__main__container
+            .header__main__row
+              a.header__main__item.header__main__item--brand.brand(href=relative("/index.html"))
+                img.brand__image(src=relative('/images/logo.svg'), alt='AXA logo')
+              ul.header__main__item.header__main__item--menu.menu-main
+                each page in navigation
+                  li.menu-main__item(class={ 'is-active': isActive(page) })
+                    a.menu-main__link(class={ 'is-active': isActive(page) }, href=relative(page.link))= page.title
+              .header__main__item.header__main__item--mobile-actions.mobile-actions
+                a.mobile-actions__item.site__burger(data-burger, href="#")
+                  svg.mobile-actions__icon.icon.burger-icon(data-burger)
+                    g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
+                      path.burger-icon__top(d="M0,5 L24,5")
+                      path.burger-icon__middle(d="M0,12 L24,12")
+                      path.burger-icon__bottom(d="M0,19 L24,19")
+
+      if landing
+        .contents!= contents
+      else
+        .page-content
+          if section
+            .row
+              nav.column.column--docs-side
+                +displaySideMenu(section.children, false, true)
+              .column.column--docs-main
+                if headline !== false
+                  h1.heading.heading--page #{title}
+                div!= contents
+
+          else
+            if headline !== false
+              h1.heading.heading--page #{title}
+            div!= contents
+          
+      footer.footer
+        .footer__copyline.footer-copyline
+          .footer-copyline__container
+            span.footer-copyline__notice.
+              #{config.copyright} #[+svg('doge', ['icon'])]
+            ul.footer-copyline__entries
+              li.footer-copyline__item
+                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide") GitHub
+              li.footer-copyline__item
+                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/issues") Issues & Feature Requests
+              li.footer-copyline__item
+                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/releases") Changelog
+
+    .site__mobile.mobile(data-mobile)
+      .row
+        .column.mobile__section
+          h1.mobile__title Web Style Guide
+
+      .row
+        nav.column.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+          ul.mobile-menu__level(data-level)
+            li.mobile-menu__item
+              a.mobile-menu__link(
+                href=relative('/index.html'),
+                data-link
+              ) Home
+            each section in navigation
+              +displayMobileMenu(section)
+
+      .row
+        .column.mobile__separator
+
+      .row
+        .column.list-group
+          a.list-group__item.list-group__item--link(href="https://github.com/axa-ch/style-guide")
+            +svg('github', ['list-group__icon'])
+            span.list-group__text View on GitHub
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
+    script(src=relative('/js/style-guide-docs.js'))
+
+    script.
+      var href = '#{relative(link)}'
+      var mobile = $('[data-menu="sliding"]')
+      
+      var level = mobile
+        .find('[data-link]')
+        .filter('[href=\'' + href + '\']')
+        .closest('[data-level]')
+      
+      if (level.length > 0) {
+        mobile.slidingMenu('level', level)
+      }
+
+    script window.intercomSettings = { app_id: 'i82zr1ej' }
+    script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
+    script (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/i82zr1ej';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+
+//- Copyright AXA Versicherungen AG 2015

@@ -1,0 +1,218 @@
+---
+title: Textfield
+order: 11
+layout: page.pug
+tags: autocomplete, chips, textarea, multi
+---
+
+include ../includes/mixins.pug
+
+p.paragraph.
+  Basic input element. Use the single-line text field for entering basic values, such as a name, number or short phrase. For a longer text use a multi-line text field.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#single').toc__anchor-navigation__link Single-line text field
+    li.toc__anchor-navigation__item
+      a(href='#autocomplete').toc__anchor-navigation__link Auto-complete text-field
+    li.toc__anchor-navigation__item
+      a(href='#chips').toc__anchor-navigation__link Chips
+    li.toc__anchor-navigation__item
+      a(href='#multiline').toc__anchor-navigation__link Multi-line text field
+
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Only use Placeholder text if absolutely necessary . Placeholder text must not be used to replace a proper label .
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Make sure that on mobile a user can make use of the optimized keyboard layouts for different text types (phone,email,etc.).
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      If a field has a maximum  length in which the user probably will run into, add a signifier that shows how many characters are left.
+
+.hr
+
+h2.heading.heading--secondary#single Single-line text field
+
+p.paragraph The most common form of a text field.
+
++example('/components/form-and-input-elements/demos/textfield.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-single')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-single
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.paragraph.
+            In the example the input field is embedded into a
+            <a class="link" href="./form-group.html">Form Group</a>,
+            but the control block is independent.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/textfield.pug
+
+.hr
+
+h2.heading.heading--secondary#autocomplete Auto-complete text field
+
+p.paragraph.
+  Use the auto-complete feature to provide real-time completions in dropdowns to enhance accuracy and efficiency.  Use auto-complete instead of extreme long dropdown fields (country list).
+
++example('/components/form-and-input-elements/demos/textfield-autocomplete.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-autocomplete')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-autocomplete
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.paragraph.
+            The following markup is used for the
+            autocomplete control. Use Javascript to toggle
+            and filter the suggestions element. You can
+            also use our jQuery plugin to do it for you.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/textfield-autocomplete-markuponly.pug
+        .tab-panel__content__tab(data-tab-content='js')
+          p.paragraph.
+            Use the jQuery plugin as follows:
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <div class="autocomplete">
+                  <input id="cities-autocomplete" type="text" class="control control--input">
+                </div>
+
+                <script>
+                  $('#cities-autocomplete').autocomplete({
+                    source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach']});
+                </script>
+          p.paragraph.
+            If you implement your own solution use the
+            CSS property <code>display: block;</code> to
+            toggle the <code>suggestions</code> element.
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Analyse search statistics and optimize the algorithm to match your users search behaviour.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      E.g. if a name is searched: John Doe and Doe John should both be valid entries.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      depending on the amount of possible results, start suggesting  options after entering the first or the third character.
+
+.hr
+
+h2.heading.heading--secondary#chips Chips
+
+p.paragraph.
+  A chips element is used to allow multiple selections out of a long list.
+
++example('/components/form-and-input-elements/demos/textfield-chips.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-chips')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-chips
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.paragraph.
+            The following markup is used for the
+            chips control. Use Javascript to toggle
+            and filter the autocomplete-list.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/textfield-chips.pug
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content
+      :markdown-it
+        Do not use for lists with 10 or less items. Use a <a href="./checkbox.html#group" class="link">checkbox group</a> in this case.
+
+.hr
+
+h2.heading.heading--secondary#multiline Multi-line text field
+
+p.paragraph.
+  Used whenever more than just a few words should be entered.
+
++example('/components/form-and-input-elements/demos/textfield-multiline.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-multiline')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-multiline
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          p.paragraph.
+            The autogrow control is supposed to grow, as
+            the user types. Use the <code>autogrow</code>
+            plugin to achieve this.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/textfield-multiline.pug
+        .tab-panel__content__tab(data-tab-content='js')
+          p.paragraph.
+            Use the jQuery plugin as follows:
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              :highlight
+                <textarea type="text" data-autogrow="autogrow" class="control control--textarea"></textarea>
+          p.paragraph.
+            We create a shadow copy of the component to
+            measure it's dimensions and then set the size
+            on the original.
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Start with a small text field and let it grow as soon as the user enters more lines. Add a max height to prevent huge text fields.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Do not use multi-line text fields in combination with Chips or Autocomplete.
+
+//- Copyright AXA Versicherungen AG 2015

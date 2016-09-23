@@ -1,7 +1,7 @@
 ---
 title: Social metadata
 order: 7
-template: page.jade
+layout: page.pug
 draft: true
 ---
 
