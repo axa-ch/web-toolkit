@@ -20,6 +20,7 @@
     "build": "better-npm-run build",
     "start": "babel-node lib/server.js",
     "docs:build": "babel-node lib/build-docs.js",
+    "docs:build:delayed": "sleep 3 && npm run docs:build",
     "bundles:watch": "babel-node webpack/webpack-dev-server.js",
     "bundles:build": "webpack --verbose --colors --display-error-details --config webpack/bundle.config.babel.js",
     "bundles:copy": "sync-files dist/bundles docs/dist",
@@ -30,18 +31,18 @@
     "js:transpile": "babel js -d dist/js",
     "js:watch": "sync-files --watch js docs/js2",
     "js:copy": "sync-files js docs/js2",
-    "all:watch": "concurrently --kill-others 'npm run images:watch' 'npm run less:watch' 'npm run js:watch' 'npm run bundles:watch'",
-    "all:copy": "concurrently --kill-others 'npm run images:copy' 'npm run less:copy' 'npm run js:copy' 'npm run bundles:copy'"
+    "all:watch": "concurrently --kill-others 'npm run images:watch' 'npm run less:watch' 'npm run js:watch' 'npm run bundles:watch' --names images:watch,less:watch,js:watch,bundles:watch --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]",
+    "all:copy": "concurrently --kill-others 'npm run images:copy' 'npm run less:copy' 'npm run js:copy' 'npm run bundles:copy' --names images:copy,less:copy,js:copy,bundles:copy --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]"
   },
   "betterScripts": {
     "dev": {
-      "command": "concurrently --kill-others 'npm run all:watch' 'sleep 2 && npm run docs:build'",
+      "command": "concurrently --kill-others 'npm run all:watch' 'npm run docs:build:delayed' --names all:watch,docs:build --prefix-colors cyan,magenta --prefix [{name}]",
       "env": {
         "NODE_ENV": "development"
       }
     },
     "build": {
-      "command": "npm run bundles:build && concurrently --kill-others 'npm run all:copy && npm run docs:build' 'npm run js:transpile'",
+      "command": "npm run bundles:build && concurrently --kill-others 'npm run all:copy && npm run docs:build' 'npm run js:transpile' --names docs,js:transpile --prefix-colors cyan,magenta --prefix [{name}]",
       "env": {
         "NODE_ENV": "production"
       }
