@@ -173,6 +173,7 @@
     "metalsmith-watch": "^1.0.3",
     "minimatch": "^3.0.3",
     "mkdirp": "^0.5.1",
+    "multimatch": "^2.1.0",
     "node-notifier": "^4.3.1",
     "object-fit-polyfill": "^0.1.0",
     "octonode": "^0.7.1",
