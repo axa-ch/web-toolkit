@@ -22,7 +22,7 @@
     "docs:build": "babel-node lib/build-docs.js",
     "bundles:watch": "babel-node webpack/webpack-dev-server.js",
     "bundles:build": "webpack --verbose --colors --display-error-details --config webpack/bundle.config.babel.js",
-    "bundles:copy": "cp -R dist/bundles docs/dist/",
+    "bundles:copy": "sync-files dist/bundles docs/dist",
     "images:watch": "sync-files --watch images docs/images2",
     "images:copy": "sync-files images docs/images2",
     "less:watch": "sync-files --watch less docs/less2",
