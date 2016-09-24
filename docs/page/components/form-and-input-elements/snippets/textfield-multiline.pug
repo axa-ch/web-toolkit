@@ -1,0 +1,16 @@
+---
+title: Multi-line text field
+layout: demo.pug
+---
+
+include /components/includes/mixins.pug
+
+.l-container
+  .form
+    .form__group
+      label.form__group__label
+        .form__group__label__text Form label
+      .form__group__control
+        textarea.control.control--textarea(type='text',data-autogrow='autogrow')
+
+//- Copyright AXA Versicherungen AG 2015

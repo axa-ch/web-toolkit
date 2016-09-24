@@ -1,0 +1,27 @@
+---
+title: Captcha and Honeypot
+order: 1
+layout: page.pug
+tags: Captcha, Honeypot, SPAM
+---
+
+include ../includes/mixins.pug
+
+p.paragraph.
+  Do not use captchas ever. Use honeypots instead.
+
+h2.heading.heading--secondary#honeypots Honeypots
+
+p.paragprah.
+  Honeypots are hidden form fields that trick spam robots into entering information.
+  If such a field contains a value, the form can be rejected.
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Honeypot fields should still have a clear label (e.g. "Do not fill this field if you are human") due to accessibility reasons
+
+//- Copyright AXA Versicherungen AG 2015

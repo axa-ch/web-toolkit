@@ -1,0 +1,14 @@
+---
+title: Basic-Checkbox
+layout: demo.pug
+---
+
+include /components/includes/mixins.pug
+
+label.checkbox(data-checkbox)
+  input.checkbox__checkbox(type='checkbox')
+  .checkbox__label
+    +svg('checkmark', 'checkbox__label__icon')
+    .checkbox__label__text Sample checkbox
+
+//- Copyright AXA Versicherungen AG 2015

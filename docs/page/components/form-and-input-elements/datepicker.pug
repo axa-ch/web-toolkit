@@ -1,0 +1,132 @@
+---
+title: Datepicker
+order: 3
+layout: page.pug
+tags: Date, Time, Picker
+---
+
+include ../includes/mixins.pug
+
+p.paragraph.
+  The datepicker component helps the user selecting a date.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#regular').toc__anchor-navigation__link Regular Datepicker
+    li.toc__anchor-navigation__item
+      a(href='#condensed').toc__anchor-navigation__link Condensed Datepicker
+    li.toc__anchor-navigation__item
+      a(href='#i18n').toc__anchor-navigation__link I18n and localization
+    li.toc__anchor-navigation__item
+      a(href='#birthday').toc__anchor-navigation__link Birthday Datepicker
+
+.hr
+
+h2.heading.heading--secondary#regular Regular Datepicker
+
++example('/components/form-and-input-elements/demos/datepicker.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-basic')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-basic
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown-it
+            This is the pure HTML markup to create a
+            datepicker. Use our jQuery plugin or custom
+            code to generate the markup and implement
+            the required behaviour.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/datepicker-markuponly.pug
+
+        .tab-panel__content__tab(data-tab-content='js')
+          :markdown-it
+            To get localized strings use moment.locale as
+            described in the <a href="http://momentjs.com/docs/" class="link">momentjs docs</a>.
+
+            Use the jQuery plugin as follows. It will
+            create the calendar and implements user
+            interaction.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/datepicker.pug
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Use the native datepickers on mobile devices
+
+.hr
+
+h2.heading.heading--secondary#condensed Condensed Datepicker
+
++example('/components/form-and-input-elements/demos/datepicker-condensed.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-condensed')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-condensed
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML/JS
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown-it
+            To create a condensed datepicker, just add the
+            `condensed` modifier to the datepicker block
+            and the control element.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/datepicker-condensed.pug
+
+.hr
+
+h2.heading.heading--secondary#i18n I18n and Localization
+
+p.paragraph
+  :markdown-it
+    Localization information of a Datepicker instance is either retrieved global by `html[lang]` attribute
+    or by default options of this jQuery Plugin.
+    You can also specify individual locales with `data-locale` attribute.
+
+    How to load locales see Moment's Docs here: http://momentjs.com/docs/#/i18n/loading-into-browser/
+    For Information about available locale data see: http://momentjs.com/docs/#/i18n/locale-data/
+
+.hr
+
+h2.heading.heading--secondary#birthday Birthday Datepicker
+
++example('/components/form-and-input-elements/demos/datepicker-birthday.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-birthday')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-birthday
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML/JS
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          :markdown-it
+            The birthday date picker uses three dropdowns that are interlinked to input a date.
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/datepicker-birthday.pug
+
+//- Copyright AXA Versicherungen AG 2015

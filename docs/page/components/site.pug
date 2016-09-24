@@ -1,0 +1,129 @@
+---
+title: Site
+order: 1
+layout: page.pug
+---
+
+include ./includes/mixins.pug
+
+:markdown-it
+  Whenever there's a hierarchy of components, there needs to be an upmost
+  element. The Site component is exactly that element.
+  
+  Additionally, the Site component helps split the page into a content and
+  a side navigation part.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#default') Default
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#left-menu') Left Menu
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#stacked-menu') Stacked Menu
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#desktop-visibility') Desktop Visibility
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#fixed-menu') Fixed Menu
+
+h2.heading.heading--secondary#default Default
+
+p.paragraph.
+  In the default state of the Site component, the side navigation
+  only exists on mobile viewports. On those devices, the navigation slides
+  into the visible area from the right, pushing the page content away.
+
++example('/components/demos/site.html', { disableDesktop: true })
+
+.toggle
+  .toggle__button(data-info, data-target='#code')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+          .tab-panel__header__tab(data-tab-toggle='js') JavaScript
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          ul.checklist
+            li.checklist__item
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
+              .checklist__item__content.
+                If possible, add the <code class="code">site</code>
+                block to the <code class="code">body</code> element.
+                If this is impossible, make sure all parents span across
+                100% of the page's height.
+            li.checklist__item
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
+              .checklist__item__content.
+                To automatically add toggling behavior to any of your
+                buttons or links simply assign them the
+                <code class="code">data-toggle="site-menu"</code> and 
+                <code class="code">data-target=".site"</code>
+                attributes.
+
+          .tab-panel__content__tab__fullwidth-content
+            :markdown-it
+              ```html
+              <body class="site">
+                <section class="site__page">
+                  <a href="#" data-toggle="site-menu" data-target=".site">Toggle</a>
+                </section>
+                <section class="site__mobile-menu">
+                  <a href="#" data-toggle="site-menu" data-target=".site">Toggle</a>
+                </section>
+              </body>
+              ```
+        .tab-panel__content__tab(data-tab-content='js')
+          :markdown-it
+            The `site` jQuery plugin allows you to open or close
+            the mobile menu part programmatically.
+            
+            ```js
+            // Toggle the mobile menu part using a toggle boolean
+            $('.site').site('toggleMenu', shouldOpen)
+            
+            // Show the mobile menu part
+            $('.site').site('showMenu')
+            
+            // Hide it
+            $('.site').site('hideMenu')
+            ```
+            
+h2.heading.heading--secondary#left-menu Left Menu
+
+p.paragraph.
+  Using the #[code.code site--left] modifier, the location of the side navigation can be
+  flipped to the left.
+
++example('/components/demos/site-left.html', { disableDesktop: true })
+
+h2.heading.heading--secondary#stacked-menu Stacked Menu
+
+p.paragraph.
+  If it's desired that the content area doesn't get pushed away, the
+  #[code.code site--stacked] modifier can be applied to the Site component.
+
++example('/components/demos/site-stacked.html', { disableDesktop: true })
+
+h2.heading.heading--secondary#desktop-visibility Desktop Visibility
+
+p.paragraph.
+  In some cases, a side navigation is preferred even on desktop
+  viewports. In that case the #[code.code site--desktop] modifier can be used.
+
++example('/components/demos/site-desktop.html')
+
+h2.heading.heading--secondary#fixed-menu Fixed Menu
+
+p.paragraph.
+  Sometimes it's desired to have the side navigation available on
+  desktop and make it visible all the time. This is what the
+  #[code.code site--fixed] modifier is for.
+
++example('/components/demos/site-fixed.html')
+
+//- Copyright AXA Versicherungen AG 2015

@@ -1,7 +1,7 @@
 ---
 title: FAQ
 order: 6
-template: page.jade
+layout: page.pug
 ---
 
 > Projects decide what third party libraries and frameworks they want to use for

@@ -1,0 +1,153 @@
+---
+title: Browser support
+order: 3
+layout: page.pug
+tags: safari, ios, chrome, android, internet explorer, firefox,
+---
+
+:markdown-it
+  Customers, partners and employees are using an
+  extensive amount of different browsers.
+  Therefore, websites and applications should cater
+  to all of them and not rely on proprietary
+  technologies in or for different browsers.
+  The W3C standards are also our standards.
+
+  # What browsers to support?
+
+  Based on data from the 3th of december 2015 for the last 3 months, we are
+  supporting the following browsers and mobile
+  operating systems:
+
+h3 Desktop
+
+.row
+  .column.column--6
+    .docs-chart-container#desktop-piechart Desktop Browser
+
+table.table.table--docs
+  thead
+    tr.table__header
+      th.table__header__item Browser
+      th.table__header__item Platform
+      th.table__header__item Browser Version
+  tbody.table__content
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Internet Explorer
+      td.table__row__item
+        .table__row__item__content Windows
+      td.table__row__item
+        .table__row__item__content 10+
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Firefox
+      td.table__row__item
+        .table__row__item__content Desktop
+      td.table__row__item
+        .table__row__item__content 34.0+
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Chrome
+      td.table__row__item
+        .table__row__item__content Windows / Mac OS X
+      td.table__row__item
+        .table__row__item__content 39.0.2171+
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Safari
+      td.table__row__item
+        .table__row__item__content Mac OS X
+      td.table__row__item
+        .table__row__item__content 7.0+
+
+h3 Mobile & Tablet
+
+.row
+  .column.column--6
+    .docs-chart-container#android-piechart Android Chart
+  .column.column--6
+    .docs-chart-container#ios-piechart iOS Chart
+
+table.table.table--docs
+  thead
+    tr.table__header
+      th.table__header__item Browser
+      th.table__header__item Platform
+      th.table__header__item System Version
+  tbody.table__content
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Android Browser
+      td.table__row__item
+        .table__row__item__content Android
+      td.table__row__item
+        .table__row__item__content 4.0+
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Chrome
+      td.table__row__item
+        .table__row__item__content Android, iOS
+      td.table__row__item
+        .table__row__item__content 39.0.2171+ (Browser Version)
+    tr.table__row
+      td.table__row__item
+        .table__row__item__content Safari
+      td.table__row__item
+        .table__row__item__content iOS
+      td.table__row__item
+        .table__row__item__content 7.0+
+
+.hr
+script.
+  google.setOnLoadCallback(drawCharts);
+  function drawCharts() {
+    var androidData = google.visualization.arrayToDataTable([
+      ['Android Version', 'Visits'],
+      ['5.x',     9073],
+      ['4.x',     5423],
+      ['older',  126]
+    ]);
+
+    var iosData = google.visualization.arrayToDataTable([
+      ['iOS Version', 'Visits'],
+      ['9.x',     22970],
+      ['8.x',     8034],
+      ['7.x',      1886],
+      ['older',  308]
+    ]);
+    
+    var desktopData = google.visualization.arrayToDataTable([
+      ['Browser & Version', 'Visits'],
+      ['Internet Explorer Older',     2100],
+      ['Internet Explorer 9',     5100],
+      ['Internet Explorer 10',     3000],
+      ['Internet Explorer 11',     34300],
+      ['Firefox Older',     5997],
+      ['Firefox 40',     350],
+      ['Firefox 41',     4696],
+      ['Firefox 42+',     11272],
+      ['Chrome Older',     1627],
+      ['Chrome 44.x',     200],
+      ['Chrome 45.x',     405],
+      ['Chrome 46+',     21039],
+      ['Safari Older',    3967],
+      ['Safari 8',     1707],
+      ['Safari 9',     7648],
+      ['Edge',      2772],
+      ['other',  845]
+    ]);
+    
+
+    $('.docs-chart-container').addClass('is-active');
+    var androidChart = new google.visualization.PieChart(document.getElementById('android-piechart'));
+    var iosChart = new google.visualization.PieChart(document.getElementById('ios-piechart'));
+    var desktopChart = new google.visualization.PieChart(document.getElementById('desktop-piechart'));
+
+
+    androidChart.draw(androidData, { title: 'Android Version Share' });
+    iosChart.draw(iosData, { title: 'iOS Version Share' });
+    desktopChart.draw(desktopData, { title: 'Browser Share on Desktop' });
+  }
+
+//- Copyright AXA Versicherungen AG 2015
