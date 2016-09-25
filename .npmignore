@@ -6,4 +6,3 @@ tmp/
 .travis.yml
 coffeelint.json
 Dockerfile
-gulpfile.coffee

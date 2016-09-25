@@ -88,7 +88,7 @@ in the file system.
 
 ```sh
 # Start development mode (afterwards check http://localhost:3000)
-$ gulp dev
+$ npm run dev
 ```
 
 ### But but but.... Enterprise Proxy?
@@ -104,9 +104,9 @@ for what these do, when you decide to dive deeper into the code.
 * [LessCSS](http://lesscss.org) for mixins, variables and other fancy styling helpers
 * [Babel](https://babeljs.io) for readable and extended scripts based on cutting edge standards (ES6, ES7)
 * [SVG](http://www.w3.org/TR/SVG2/) for colorful and sometimes animated icons
-* [Gulp](http://gulpjs.com) on which our whole build process is based
 * [Metalsmith](http://metalsmith.io) for our static site documentation
-* [Jade](http://jade-lang.com) which simplifies how we write markup
+* [Webpack](http://webpack.github.io) for bundling JS, CSS and SVG icons
+* [Pug](http://pugjs.org) which simplifies how we write markup
 * [Markdown](http://daringfireball.net/projects/markdown/) for text-heavy documentation pages
 
 ## Feedback
