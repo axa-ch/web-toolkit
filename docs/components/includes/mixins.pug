@@ -1,9 +1,7 @@
-- fallback = process.env.NODE_ENV === 'production' ? '/icons.svg' : '/dist/icons.svg'
-
 mixin svg(id, classes, config)
   - config = config || {}
   - config.attrs = config.attrs || {}
-  - path = relative(config.path || fallback) + '#' + id
+  - path = relative(config.path || '/dist/icons.svg') + '#' + id
   svg(class=classes)&attributes(config.attrs)
     use(xlink:href=path)
 
@@ -81,16 +79,16 @@ mixin displayMobileMenu(page)
           )
             span.mobile-menu__text back
             +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon'])
-        
+
         li.mobile-menu__item.mobile-menu__item--section
           .mobile-menu__link.mobile-menu__link--section
             span.mobile-menu__text= page.title
-        
+
         each child in page.children
           +displayMobileMenu(child)
 
 mixin appicon_ios(size)
   - var s = size + "x" + size
   link(rel="apple-touch-icon-precomposed", sizes=s, href=relative("/images/app-icon/ios/"+s+".png"))
-    
+
 //- Copyright AXA Versicherungen AG 2015
