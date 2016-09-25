@@ -1,8 +1,8 @@
-include /components/includes/mixins.pug
+include ../mixins.pug
 
 doctype html
 html
-  include /components/snippets/head.pug
+  include ./head.pug
   body.site(data-site)
     .site__page(data-page)
       .site__page__mask(data-mask)
@@ -54,7 +54,7 @@ html
             if headline !== false
               h1.heading.heading--page #{title}
             div!= contents
-          
+
       footer.footer
         .footer__copyline.footer-copyline
           .footer-copyline__container
@@ -97,7 +97,7 @@ html
     script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
-    
+
     if process.env.NODE_ENV === 'production'
       script(src=relative('/dist/docs.js'))
       link(rel="stylesheet", href=relative("/dist/docs.css"))
@@ -107,12 +107,12 @@ html
     script.
       var href = '#{relative(link)}'
       var mobile = $('[data-menu="sliding"]')
-      
+
       var level = mobile
         .find('[data-link]')
         .filter('[href=\'' + href + '\']')
         .closest('[data-level]')
-      
+
       if (level.length > 0) {
         mobile.slidingMenu('level', level)
       }

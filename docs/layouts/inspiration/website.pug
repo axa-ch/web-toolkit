@@ -1,10 +1,10 @@
-include /components/includes/mixins.pug
+include ../../mixins.pug
 
 doctype html
 html
-  include /components/snippets/head.pug
-  
-  body.site(data-site)    
+  include ../head.pug
+
+  body.site(data-site)
     .site__page(data-page)
       .site__page__mask(data-mask)
       header.header
@@ -81,7 +81,7 @@ html
                 li.menu-main__item(data-item)
                   a.menu-main__link(href="#", data-link) Kundenportale
                   .menu-main__panel(data-panel) Kundenportale
-              
+
               .header__main__item.header__main__item--mobile-actions.mobile-actions
                 a.mobile-actions__item(href="#")
                   +svg('search', ['mobile-actions__icon', 'icon'])
@@ -216,13 +216,13 @@ html
               a.mobile-menu__link.mobile-menu__link--parent(href='#', data-link)
                 span.mobile-menu__text Versicherungen & Mehr
                 +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon'])
-              
+
               ul#active-level.mobile-menu__level(data-level)
                 li.mobile-menu__item.mobile-menu__item--back
                   a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
                     +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon'])
                     span.mobile-menu__text zurück
-                
+
                 li.mobile-menu__item.mobile-menu__item--section
                   .mobile-menu__link.mobile-menu__link--section
                     span.mobile-menu__text Versicherungen & Mehr
@@ -246,7 +246,7 @@ html
                   a.mobile-menu__link.mobile-menu__link--back(href='#', data-back)
                     +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon'])
                     span.mobile-menu__text zurück
-            
+
                 li.mobile-menu__item.mobile-menu__item--section
                   .mobile-menu__link.mobile-menu__link--section
                     span.mobile-menu__text Kontakt & Hilfe
@@ -256,7 +256,7 @@ html
                 li.mobile-menu__item
                   a.mobile-menu__link(href='#', data-link)
                     span.mobile-menu__text Berater suchen
-            
+
             li.mobile-menu__item
               a.mobile-menu__link(href='#', data-link)
                 span.mobile-menu__text Prävention
@@ -264,7 +264,7 @@ html
             li.mobile-menu__item
               a.mobile-menu__link(href='#', data-link)
                 span.mobile-menu__text Kundenportale
-    
+
       .row
         .column.mobile__separator
 

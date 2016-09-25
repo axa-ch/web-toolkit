@@ -4,8 +4,8 @@ order: 3
 layout: page.pug
 ---
 
-include ../../components/includes/mixins
-  
+include ../../mixins.pug
+
 h2.heading.heading--secondary Available icons
 
 p.paragraph.
@@ -38,10 +38,10 @@ h2.heading.heading--secondary Creating custom icons
 
 p.paragraph.
   Find some advise for creating custom icons below
-  
+
 ul.checklist
   li.checklist__item.
-    Size the view box as large as the icon really is 
+    Size the view box as large as the icon really is
     (do not add extra space to the top/right/bottom/left).
   li.checklist__item.
     Remove any extraneous markup added by your editor. We recommend
@@ -53,9 +53,9 @@ ul.checklist
   li.checklist__item.
     Do NOT add a fill property in a non-brand icon (e.g. a download icon).
   li.checklist__item.
-    To prevent blur effects through sub-pixel rendering you should 
+    To prevent blur effects through sub-pixel rendering you should
     design your icons in the size(es) you'll use it on your page.
-    (You can use media queries within SVGs to have diffrent looks for an 
+    (You can use media queries within SVGs to have diffrent looks for an
     icon depending on its size. Note that for SVGs the width and height
     of the view box is used for media queries and not of the browser viewport.)
 
