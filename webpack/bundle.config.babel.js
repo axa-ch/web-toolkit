@@ -1,5 +1,6 @@
 import path from 'path'
 import webpack from 'webpack'
+import HappyPack from 'happypack'
 import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 import cssmqpacker from 'css-mqpacker'
@@ -40,6 +41,7 @@ export default {
       query: {
         cacheDirectory: true,
       },
+      happy: { id: 'js' },
     }, {
       test: /\.less/,
       loader: ExtractTextPlugin.extract('style', [
@@ -47,6 +49,7 @@ export default {
         'postcss-loader',
         'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
       ]),
+      happy: { id: 'css' },
     }],
     noParse: [
       'jquery',
@@ -63,6 +66,16 @@ export default {
     ].map((module) => new RegExp(require.resolve(module))),
   },
   plugins: [
+    new HappyPack({
+      id: 'js',
+      cache: true,
+      threads: 2,
+    }),
+    new HappyPack({
+      id: 'css',
+      cache: true,
+      threads: 2,
+    }),
     new CleanPlugin([
       path.resolve(__dirname, '../dist/bundles'),
     ], {
