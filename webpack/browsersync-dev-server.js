@@ -13,10 +13,8 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackConfig from './bundle.dev.config.babel'
 
 const bundler = webpack(webpackConfig)
-const host = '0.0.0.0'
 const port = 3000
 const ui = {
-  host,
   port: 8001,
 }
 const docsPath = path.resolve(__dirname, '..', 'dist', 'docs')
@@ -46,7 +44,6 @@ browserSync({
     ],
   },
 
-  host,
   port,
   ui,
 
