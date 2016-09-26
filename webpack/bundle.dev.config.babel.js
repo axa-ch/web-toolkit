@@ -1,5 +1,6 @@
 import path from 'path'
 import webpack from 'webpack'
+import HappyPack from 'happypack'
 import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 import SvgStore from 'webpack-svgstore-plugin'
@@ -35,6 +36,7 @@ export default {
         'babel?cacheDirectory=true',
         'webpack-module-hot-accept',
       ],
+      happy: { id: 'js' },
     }, {
       test: /\.less/,
       loaders: [
@@ -43,6 +45,7 @@ export default {
         'postcss-loader',
         'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
       ],
+      happy: { id: 'css' },
     }],
     noParse: [
       'jquery',
@@ -59,6 +62,16 @@ export default {
     ].map((module) => new RegExp(require.resolve(module))),
   },
   plugins: [
+    new HappyPack({
+      id: 'js',
+      cache: true,
+      threads: 2,
+    }),
+    new HappyPack({
+      id: 'css',
+      cache: true,
+      threads: 2,
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new SvgStore({
       svgoOptions: {
