@@ -10,7 +10,8 @@ export default {
   context: path.resolve(__dirname, '..'),
   progress: true,
   entry: [
-    'webpack-hot-middleware/client?path=/__webpack_hmr',
+    'webpack/hot/dev-server',
+    'webpack-hot-middleware/client',
     './docs/js/index-with-styles.js',
   ],
   output: {
@@ -30,10 +31,10 @@ export default {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        cacheDirectory: true,
-      },
+      loaders: [
+        'babel?cacheDirectory=true',
+        'webpack-module-hot-accept',
+      ],
     }, {
       test: /\.less/,
       loaders: [
