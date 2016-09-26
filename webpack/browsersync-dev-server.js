@@ -15,6 +15,10 @@ import webpackConfig from './bundle.dev.config.babel'
 const bundler = webpack(webpackConfig)
 const host = '0.0.0.0'
 const port = 3000
+const ui = {
+  host,
+  port: 8001,
+}
 const docsPath = path.resolve(__dirname, '..', 'dist', 'docs')
 
 /**
@@ -44,6 +48,7 @@ browserSync({
 
   host,
   port,
+  ui,
 
   // no need to watch '*.js' here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
