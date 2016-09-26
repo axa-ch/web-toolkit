@@ -15,13 +15,14 @@ import webpackConfig from './bundle.dev.config.babel'
 const bundler = webpack(webpackConfig)
 const host = '0.0.0.0'
 const port = 3000
+const docsPath = path.resolve(__dirname, '..', 'dist', 'docs')
 
 /**
  * Run Browsersync and use middleware for Hot Module Replacement
  */
 browserSync({
   server: {
-    baseDir: [path.resolve(__dirname, '..', 'dist', 'docs')],
+    baseDir: [docsPath],
 
     middleware: [
       webpackDevMiddleware(bundler, {
@@ -47,6 +48,6 @@ browserSync({
   // no need to watch '*.js' here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
   files: [
-    'app/*.html',
+    `${docsPath}/**/*.html`,
   ],
 })
