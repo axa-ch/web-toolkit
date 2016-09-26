@@ -32,12 +32,12 @@
     "js:transpile": "babel js -d dist/js",
     "js:watch": "sync-files --watch js docs/js2",
     "js:copy": "sync-files js docs/js2",
-    "all:watch": "concurrently --kill-others 'npm run images:watch' 'npm run less:watch' 'npm run js:watch' 'npm run bundles:watch' --names images:watch,less:watch,js:watch,bundles:watch --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]",
+    "all:watch": "concurrently --kill-others \"npm run images:watch\" \"npm run less:watch\" \"npm run js:watch\" \"npm run bundles:watch\" --names images:watch,less:watch,js:watch,bundles:watch --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]",
     "all:copy": "concurrently 'npm run images:copy' 'npm run less:copy' 'npm run js:copy' 'npm run bundles:copy' --names images:copy,less:copy,js:copy,bundles:copy --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]"
   },
   "betterScripts": {
     "dev": {
-      "command": "concurrently --kill-others 'npm run all:watch' 'npm run docs:build:delayed' --names all:watch,docs:build --prefix-colors cyan,magenta --prefix [{name}]",
+      "command": "concurrently --kill-others \"npm run all:watch\" \"npm run docs:build:delayed\" --names all:watch,docs:build --prefix-colors cyan,magenta --prefix [{name}]",
       "env": {
         "NODE_ENV": "development"
       }
