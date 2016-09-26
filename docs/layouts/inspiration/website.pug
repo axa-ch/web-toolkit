@@ -296,6 +296,12 @@ html
     script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
     script(src=relative('/js/style-guide-docs.js'))
 
+    if process.env.NODE_ENV === 'production'
+      script(src=relative('/dist/docs.js'))
+      link(rel="stylesheet", href=relative("/dist/docs.css"))
+    else
+      script(src='/dist/bundle.js')
+    
     script(type='text/javascript').
       var $menu = $('#menu-mobile');
       var $activeLevel = $('#active-level');
