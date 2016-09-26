@@ -162,10 +162,10 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-named": "^1.1.0",
     "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2",
     "webpack-module-hot-accept": "^1.0.4",
-    "webpack-stream": "^3.2.0",
     "webpack-svgstore-plugin": "^3.0.4",
     "zeroclipboard": "^2.2.0"
   }
