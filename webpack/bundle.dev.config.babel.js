@@ -72,7 +72,9 @@ export default {
       cache: true,
       threads: 2,
     }),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new SvgStore({
       svgoOptions: {
         plugins: [{ removeTitle: true }],
