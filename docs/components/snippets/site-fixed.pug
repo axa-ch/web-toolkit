@@ -1,0 +1,22 @@
+---
+title: Fixed Menu Site
+layout: demo.pug
+---
+
+include ../../mixins.pug
+
+.site.site--fixed.site--left(data-site)
+  .site__page(data-page)
+    .site__page__mask(data-mask)
+    p.paragraph
+      a.link(href="#", data-burger) Open Menu
+    p.paragraph.
+      Opening only works on mobile.
+  .site__mobile(data-mobile)
+    p.paragraph
+      a.link(href="#", data-burger) Close Menu
+    p.paragraph.
+      Closing only works on mobile.
+    
+
+//- Copyright AXA Versicherungen AG 2015

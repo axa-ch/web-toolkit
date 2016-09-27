@@ -1,0 +1,62 @@
+---
+title: Icons
+order: 3
+layout: page.pug
+---
+
+include ../../mixins.pug
+
+h2.heading.heading--secondary Available icons
+
+p.paragraph.
+  An icon is a graphic that takes up a small portion of
+  screen and provides a quick, intuitive representation of
+  an action or a status.
+
+p.paragraph.
+  For all AXA Applications use Helveticons,
+  which are based on the Helvetica Bold typeface.
+  If you need further icons please contact us.
+
+.downloads
+  +svg('download', ['downloads__icon', 'icon'])
+  .downloads__item
+    a(href=relative('/content/Helveticons-basic-preview.png')).downloads__link Helveticons-basic-preview.png
+  .downloads__item
+    a(href=relative('/content/Helveticons-additional-preview.png')).downloads__link Helveticons-additional-preview.png
+  .downloads__item
+    a(href=relative('/content/Helveticons-extras-preview.png')).downloads__link Helveticons-extras-preview.png
+
+.icons
+  ul.icons-list
+    each icon in icons
+      li.icons-list__item
+        +svg(icon.name, ['icons-list__icon', 'icon'])
+        span.icons-list__text=icon.name
+
+h2.heading.heading--secondary Creating custom icons
+
+p.paragraph.
+  Find some advise for creating custom icons below
+
+ul.checklist
+  li.checklist__item.
+    Size the view box as large as the icon really is
+    (do not add extra space to the top/right/bottom/left).
+  li.checklist__item.
+    Remove any extraneous markup added by your editor. We recommend
+    using <a href="https://www.npmjs.com/package/svgo" >SVGO</a>
+    to remove this markup.
+  li.checklist__item.
+    For brand icons (e.g. social media icons) include the
+    fill property in he SVG itself.
+  li.checklist__item.
+    Do NOT add a fill property in a non-brand icon (e.g. a download icon).
+  li.checklist__item.
+    To prevent blur effects through sub-pixel rendering you should
+    design your icons in the size(es) you'll use it on your page.
+    (You can use media queries within SVGs to have diffrent looks for an
+    icon depending on its size. Note that for SVGs the width and height
+    of the view box is used for media queries and not of the browser viewport.)
+
+//- Copyright AXA Versicherungen AG 2015

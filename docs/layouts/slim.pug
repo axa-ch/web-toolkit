@@ -1,8 +1,8 @@
-include /components/includes/mixins.pug
+include ../mixins.pug
 
 doctype html
 html
-  include /components/snippets/head.pug
+  include ./head.pug
   body.site(data-site)
     .site__page(data-page)
       .site__page__mask(data-mask)
@@ -19,7 +19,7 @@ html
                 a.global-header-item__subscribe-button.button2.button2-primary.button2-primary--pink(href="#subscribe") Subscribe
 
       .contents.global-contents!= contents
-          
+
       footer.footer
         .footer__copyline.footer-copyline
           .footer-copyline__container

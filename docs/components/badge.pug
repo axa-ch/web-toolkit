@@ -1,0 +1,45 @@
+---
+title: Badge
+order: 3
+layout: page.pug
+tags: count, unread
+---
+
+include ../mixins.pug
+
+p.paragraph.
+  A badge is an element which can be attached to other components as an indicator for new or unread items.
+
++example('/components/demos/badge.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/badge.pug
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      If a badge is placed, the underlying element must be clickable.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      A badge always only contains a number. No icons allowed.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      It is always placed in the upper right corner of an element.
+
+//- Copyright AXA Versicherungen AG 2015

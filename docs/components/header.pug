@@ -1,0 +1,46 @@
+---
+title: Header
+order: 6
+layout: page.pug
+---
+
+include ../mixins.pug
+
+p.paragraph.
+  The header is a white band.
+  It provides a discreet statement of the brand
+  without interfering with the content and purpose of the site.
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      The logo always links to the home page.
+
++example('/components/demos/header.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          ul.checklist
+            li.checklist__item
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
+              .checklist__item__content.
+                The <code>header__mobile-trigger</code>
+                element is designed to trigger a mobile
+                slide-in menu.
+
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/header.pug
+
+//- Copyright AXA Versicherungen AG 2015

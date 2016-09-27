@@ -1,0 +1,80 @@
+---
+title: Footer
+order: 5
+layout: page.pug
+tags: full, slim, footer
+---
+
+include ../mixins.pug
+
+:markdown-it
+  The footer is a component as important as the header.
+  It can lead users to delve deeper into the site, instead of just leaving
+  it. It has also become natural that visitors explicitly search for
+  content in that undermost part of the app, like contact details.
+  
+  This is why adding a footer to your site is highly advised. Depending
+  on the type of your app, there are two types of footers.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#full-footer').toc__anchor-navigation__link Full Footer
+    li.toc__anchor-navigation__item
+      a(href='#slim-footer').toc__anchor-navigation__link Slim Footer
+
+:markdown-it
+  # Full Footer
+  
+  The default footer consists of two parts, one is the main
+  content part and the other the copyline. The main content
+  part consists of a link section, one for keeping in touch on
+  social media and finally one that connects to our group.
+
++example('/components/demos/footer-full.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-full')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-full
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/footer-full.pug
+
+:markdown-it
+  ---
+  
+  # Slim Footer
+
+  The slim footer only consists of the copyline part. It is
+  a very reduced version of the default footer and is especially
+  suitable for power user apps, where cross referencing
+  isn't a thing, but certain actions should still be
+  available on each and every page.
+
++example('/components/demos/footer-slim.html')
+
+.toggle
+  .toggle__button(data-info, data-target='#code-slim')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-slim
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlight ./snippets/footer-slim.pug
+
+//- Copyright AXA Versicherungen AG 2015

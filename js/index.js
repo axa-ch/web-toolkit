@@ -1,2 +1,2 @@
-import './jquery/index.js'
-import './react/index.js'
+import './jquery'
+import './react'

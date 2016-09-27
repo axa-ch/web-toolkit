@@ -1,0 +1,140 @@
+---
+title: Single Page Apps
+order: 1
+layout: page.pug
+---
+
+include ../mixins.pug
+
+p.paragraph.
+  A single-page application (SPA),
+  is a web application or web site that fits on
+  a single web page with the goal of providing a more
+  fluid user experience akin to a desktop application.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#seo').toc__anchor-navigation__link SEO & Analytics
+    li.toc__anchor-navigation__item
+      a(href='#performance').toc__anchor-navigation__link Mobile Performance
+    li.toc__anchor-navigation__item
+      a(href='#back').toc__anchor-navigation__link Browser Back Button
+    li.toc__anchor-navigation__item
+      a(href='#refresh').toc__anchor-navigation__link Refresh & Links
+    li.toc__anchor-navigation__item
+      a(href='#feedback').toc__anchor-navigation__link Instant Feedback
+    li.toc__anchor-navigation__item
+      a(href='#spinner').toc__anchor-navigation__link Load Spinners
+    li.toc__anchor-navigation__item
+      a(href='#animation').toc__anchor-navigation__link Animations & Transitions
+
+h2.heading.heading--secondary#seo SEO & Analytics
+
+p.paragraph.
+  Indexation of SPA can be difficult for search engines
+  like google or analytics tools like AT Internet.
+  Even though it is a technical task, discoverability
+  is crucial for users coming from google and co.
+
+.hr
+
+h2.heading.heading--secondary#performance Mobile Performance
+
+p.paragraph.
+  Again, a rather technical task - performance on
+  mobile devices may suffer if too many interactions are
+  about to happen on a page. Design thoughtfully and consider
+  adding more interactions for desktops instead of removing them for mobile.
+  Most importantly: Bring it up as early as possible in development.
+
+.hr
+
+h2.heading.heading--secondary#back  Browser Back Button
+
+p.paragraph.
+  Single page applications should react to the browser back button
+  as any other website would. Going back should be fast,
+  reliable (data consistency) and not trigger unnecessary
+  animations or effects.
+  Remember: The back button is the single most used
+  button in every web browser.
+
+.hr
+
+h2.heading.heading--secondary#refresh Refresh & Links
+
+p.paragraph.
+  URLs are not automatically updated in single page applications.
+  Additionally, if a link is shared or a url reloaded,
+  the user expects to get to the current page.
+
+.hr
+
+h2.heading.heading--secondary#feedback Instant Feedback
+
+p.paragraph.
+  Every actions creates a reaction. Users always need to know
+  if the system is working properly. Feedback to actions should
+    always start max. 0.1 seconds after the
+    user took action (pressed a button for example).
+
+.hr
+
+h2.heading.heading--secondary#spinner Load Spinners
+
+p.paragraph.
+  Load spinners tell a user that the site is loading or rendering.
+
+.hr
+
+h2.heading.heading--secondary#animation Animations & Transitions
+
+p.paragraph.
+  Moving elements are a powerful tool to attract and or
+  waste users’ attention.
+  When designing an animation consider its goal,
+  its frequency of occurrence, and its mechanics.
+  Employ them sparingly and only when they add meaning to the interaction.
+  Think about whether the animation will cause an attention shift or
+  not and whether the same user is likely to stumble over it again and again.
+  Will the animation reinforce relationships between UI elements?
+  Will users trigger it directly or not?
+  All these aspects matter in the design of a successful animation.
+
+h3.heading.heading--tertiary UX Checklist
+
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      For an animation to effectively convey a cause-and-effect
+      relationship between UI elements, the effect must begin
+      within 0.1 seconds of the initial user action.
+      This 0.1-second response time maintains the
+      feeling of direct manipulation and supports the
+      perception that the user action caused the new element to appear.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Follow web conventions so that password managers can store
+      the username and password for the user.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Slower transitions are less likely to cause an attention
+      shift and are thus less distracting.
+      They are appropriate for animations indirectly
+      triggered by the user or not user initiated in any way.
+      In these situations, the new element should appear with little or
+      no change in position to minimize distraction.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Fast animations are more likely to attract attention
+      when they happen outside the user’s focus of attention.
+      They are suitable for important elements that users must
+      attend to and act upon.
+
+//- Copyright AXA Versicherungen AG 2015

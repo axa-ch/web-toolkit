@@ -1,0 +1,19 @@
+---
+title: Site
+layout: demo.pug
+---
+
+include ../../mixins.pug
+
+.site(data-site)
+  .site__page(data-page)
+    .site__page__mask(data-mask)
+    p.paragraph.
+      Make sure you switch to one of the smaller viewports to see
+      the mobile menu in action.
+    p.paragraph
+      a.button.button--primary(href="#", data-burger) Open Mobile Menu
+  .site__mobile(data-mobile)
+    a.button.button--secondary(href="#", data-burger) Close Mobile Menu
+
+//- Copyright AXA Versicherungen AG 2015

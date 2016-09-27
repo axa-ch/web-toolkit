@@ -1,0 +1,19 @@
+---
+title: Button
+layout: demo.pug
+---
+
+include ../../mixins.pug
+
+.button.button--secondary Sample button
+!=' '
+.button.button--secondary
+  +svg('cross', ['button__icon', 'button__icon--left', 'icon'])
+  | Icon and badge
+  span.button__badge.badge 159
+!=' '
+.button.button--secondary
+  | Icon right
+  +svg('cross', ['button__icon', 'button__icon--right', 'icon'])
+
+//- Copyright AXA Versicherungen AG 2015

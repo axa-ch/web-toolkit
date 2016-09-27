@@ -11,10 +11,7 @@ WORKDIR /usr/src/app
 
 COPY package.json /usr/src/app/
 RUN npm install --quiet
-# Gulp can't find babel-register, nor babel-core/register, nor babel/register
-# Hence are build fails, though we have babel-core and babel-register in our package.json
-# To reinstall babel-register manually after npm install seems to workaround this issue
-RUN npm install babel-register --quiet
+
 COPY . /usr/src/app
 
 RUN npm run build

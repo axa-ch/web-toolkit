@@ -6,9 +6,7 @@ node_modules/
 
 # build
 # /js/
-
-# jsdoc
-/docs/page/jsdoc2md
+.happypack/
 
 # project
 dist/
