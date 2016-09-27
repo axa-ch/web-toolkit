@@ -1,6 +1,6 @@
-@import '~style/blocks/heading';
-@import '~style/mixins/clearfix';
-@import '~style/mixins/respond';
+@import '../../../scss/style/blocks/heading';
+@import '../../../scss/style/mixins/clearfix';
+@import '../../../scss/style/mixins/respond';
 
 .hero {
   @extend .clearfix;

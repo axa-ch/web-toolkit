@@ -1,5 +1,5 @@
-@import '~style/variables';
-@import '~style/mixins/clearfix';
+@import '../../../scss/style/variables';
+@import '../../../scss/style/mixins/clearfix';
 
 .color-palette__key__icon {
   fill: $color-light-blue;

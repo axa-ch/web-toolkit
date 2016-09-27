@@ -30,7 +30,6 @@ export default {
   },
   resolve: {
     modulesDirectories: [
-      'scss',
       'node_modules',
     ],
     extensions: ['', '.js', '.jsx'],
