@@ -1,0 +1,24 @@
+---
+title: Pro List
+layout: demo.pug
+---
+
+include ../../../mixins.pug
+
+h3.prolist__heading Ihre Vorteile
+
+ul.prolist
+  li.prolist__item
+    +svg('add', ['prolist__item__icon', 'icon'])
+    .prolist__item__content Reparatur nach Standards und Herstellervorschriften
+  li.prolist__item
+    +svg('add', ['prolist__item__icon', 'icon'])
+    .prolist__item__content Lebenslange Garantie auf geleistete Arbeit
+  li.prolist__item
+    +svg('add', ['prolist__item__icon', 'icon'])
+    .prolist__item__content Kostenloser Ersatzwagen während der Reparatur
+  li.prolist__item
+    +svg('add', ['prolist__item__icon', 'icon'])
+    .prolist__item__content Reinigung des Fahrzeugs
+
+//- Copyright AXA Versicherungen AG 2015

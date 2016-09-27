@@ -1,0 +1,173 @@
+---
+title: Forms
+order: 2
+layout: page.pug
+---
+
+include ../mixins.pug
+
+p.paragraph.
+  Try to find someone who likes filling forms, you won't.
+  This is the reason why we built this guide on how to build
+  less annoying and better performing forms for AXA.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a(href='#organisation').toc__anchor-navigation__link Form Organisation
+    li.toc__anchor-navigation__item
+      a(href='#path').toc__anchor-navigation__link Path To Completion
+    li.toc__anchor-navigation__item
+      a(href='#validation').toc__anchor-navigation__link Inline Validation
+
+.hr
+
+h2.heading.heading--secondary#organisation Form Organisation
+
+p.paragraph.
+  Organize your form as a conversation,
+  use natural breaks and group related questions.
+  Use the minimal amount of visual information to distinguish
+  different content groups. Avoid visual clutter
+  and don't interrupt scan lines.
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Remove unnecessary questions.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      few short topics > one page
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      few topics with large number of questions > multiple pages
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      one topic with large number of questions > one page
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Avoid visual clutter and don't interrupt scan lines.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Speak with one voice, despite questions from
+      different people or departments.
+
+.hr
+
+h2.heading.heading--secondary#path Path To Completion
+
+p.paragraph.
+  A straight path to completion is important for an
+  efficient form filling process. Especially complex forms,
+  e.g. claim reporting, require proper guidance.
+  This guidance depends on a superb navigation,
+  clear scan lines as well as an well-organized form.
+  On long & paginated forms, an introductory page may be used
+  to give upfront information about the form to follow.
+
+h3.heading.heading--tertiary Bad Scan Line
+img(src=relative('/images/pattern/forms-scanlines-bad.svg') alt="Bad Scan Line")
+
+h3.heading.heading--tertiary Good Scan Line
+img(src=relative('/images/pattern/forms-scanlines-good.svg') alt="Good Scan Lines")
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      On desktop, right align labels because
+      this allows easier scanning and filling of the form.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      On mobile, put the labels above the form element because
+      horizontal space is limited and scanning stays very easy.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Provide a meaningful title for every form because
+      users need to know they are at the right place
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Remove anything from the site that could distract the user.
+      The user needs support to concentrate. No ads!
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Introductory pages are useful for long forms.
+      Use them to tell the user about: -- How long does is approximately
+      take to fill in this form --
+      Does the user need any special information or documents he can prepare?
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Set the right tab-order to enable fast input.
+      Great UX is in the details.
+
+.hr
+
+h2.heading.heading--secondary#validation Inline Validation
+
+p.paragraph.
+ Inline validation can provide several types of feedback:
+
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      confirmation that an appropriate answer was given
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      suggestions for valid answers
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      real-time updates designed to help people stay within necessary limits.
+
+p.paragraph.
+  These bits of feedback usually happen when people begin,
+  continue, or stop entering answers within input fields.
+
+h3.heading.heading--tertiary UX Checklist
+ul.checklist
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Inline confirmations work best for questions with potentially
+      high error rates, specific formatting requirements or
+      actions like checking the availability of a username.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      Inline suggestions work best when there is a large
+      set of valid answers people can pick from.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      When validating people’s answers inline,
+      do so after they have finished providing an answer,
+      not during the process.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      If you need to change people’s responses into a specific format,
+      make sure you do so after they have finished providing an answer,
+      not during the process.
+  li.checklist__item
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
+    .checklist__item__content.
+      When input limits exist, communicate their boundaries using
+      real-time, dynamic updates.
+
+//- Copyright AXA Versicherungen AG 2015

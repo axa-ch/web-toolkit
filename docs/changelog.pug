@@ -1,0 +1,37 @@
+---
+title: What's new
+layout: page.pug
+tags: changelog, changes
+---
+
+if config.changelog
+  .changelog
+    .changelog__timeline
+      each item in config.changelog
+        .changelog__timeline__item
+          .changelog__timeline__item__version
+            span= item.name
+            if item.published_at
+              - var date = moment(item.published_at);
+              .changelog__timeline__item__version__date= date.format('ll')
+            else
+              .changelog__timeline__item__version__date pending          
+          .changelog__timeline__item__content!= marked(item.body, { renderer: changelogRenderer })
+else
+  aside.callout
+    h2.callout__heading No changelog here!
+    p.paragraph
+      | These docs haven't been built with the changelog information required
+      | for this page.
+      br
+      | This is usual for unofficial builds.
+    p.paragraph
+      | You can still find the changelog information on the official
+      | GitHub repository page.
+    p.paragraph
+      | If you're on the official page and you'd expected a full changelog
+      | we probably forgot a step while building the release. In this case
+      | please contact us or file an issue so we can fix our mistake.
+
+
+//- Copyright AXA Versicherungen AG 2015

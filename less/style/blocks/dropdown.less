@@ -2,6 +2,7 @@
 @import '../blocks/control';
 @import '../mixins/font';
 @import '../mixins/make-link';
+@import '../mixins/ellipsis';
 
 @dropdown-arrow-width: 40px;
 
@@ -30,11 +31,10 @@
 }
 
 .dropdown__label__text {
+  .ellipsis();
   order: 1;
   flex-grow: 1;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .dropdown__label__icon {

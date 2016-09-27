@@ -1,0 +1,18 @@
+---
+title: Overview
+layout: page.pug
+headline: false
+---
+
+.container.container--docs-home
+  h1.heading.heading--docs-home Welcome to the AXA Web Style Guide
+  .row
+    each item in navigation
+      .thumbnail.column.column--md-6
+        a.thumbnail__img-link(href=relative(item.link))
+          img.thumbnail__img(src=relative(item.thumbnail), alt=item.title)
+        h2.thumbnail__heading
+          a.thumbnail__link(href=relative(item.link))= item.title
+        p.thumbnail__text!= item.description
+
+//- Copyright AXA Versicherungen AG 2015

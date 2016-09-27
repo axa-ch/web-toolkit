@@ -1,11 +1,11 @@
 import $ from 'jquery'
-import iFrameResize from 'iframe-resizer'
+import { iframeResizer } from 'iframe-resizer'
 
 class IFrameResizer {
   constructor(el, options) {
     this.$el = $(el)
 
-    iFrameResize({
+    iframeResizer({
       autoResize: true,
       resizeFrom: 'child',
       checkOrigin: false,

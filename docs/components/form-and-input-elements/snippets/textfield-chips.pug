@@ -1,0 +1,33 @@
+---
+title: Chips
+layout: demo.pug
+---
+
+include ../../../mixins.pug
+
+.l-container
+  .form
+    .form__group
+      label.form__group__label
+        .form__group__label__text Form label
+      .form__group__control
+        .chips
+          .chips__field
+            .chips__chip
+              .chips__chip__text Foo
+              a.chips__chip__close-button(href='#')
+                +svg('cross', ['chips__chip__close-button__icon', 'icon'])
+            .chips__chip
+              .chips__chip__text Bar
+              a.chips__chip__close-button(href='#')
+                +svg('cross', ['chips__chip__close-button__icon', 'icon'])
+            .chips__chip
+              .chips__chip__text Test
+              a.chips__chip__close-button(href='#')
+                +svg('cross', ['chips__chip__close-button__icon', 'icon'])
+            input.chips__input(placeholder="add more...")
+          .chips__autocomplete.autocomplete__suggestions
+            .autocomplete__suggestions__item 8400 Winterthur
+            .autocomplete__suggestions__item 8472 Seuzach
+
+//- Copyright AXA Versicherungen AG 2015

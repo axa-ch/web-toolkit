@@ -1,0 +1,20 @@
+---
+title: Checkbox-Group
+layout: demo.pug
+---
+
+include ../../../mixins.pug
+
+.checkbox-group(data-checkbox-group)
+  label.checkbox(data-checkbox)
+    input.checkbox__checkbox(type='checkbox')
+    .checkbox__label
+      +svg('checkmark', 'checkbox__label__icon')
+      .checkbox__label__text Sample checkbox one
+  label.checkbox(data-checkbox)
+    input.checkbox__checkbox(type='checkbox')
+    .checkbox__label
+      +svg('checkmark', 'checkbox__label__icon')
+      .checkbox__label__text Sample checkbox two
+
+//- Copyright AXA Versicherungen AG 2015

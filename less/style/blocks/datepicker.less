@@ -24,7 +24,10 @@
 
 .datepicker {
   &:extend(.clearfix all);
-  .control--short();
+
+  .respond(medium, {
+    .control--short();
+  });
 }
 
 .datepicker--condensed {
@@ -44,6 +47,7 @@
   cursor: pointer;
 
   display: block;
+  position: relative;
   float: right;
 
   width: 40px;
@@ -59,6 +63,18 @@
   fill: @color-light-blue;
   display: inline-block;
   vertical-align: middle;
+}
+
+.datepicker__trigger__mobile {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  opacity: 0 !important;
+  background: transparent !important;
 }
 
 .picker {
@@ -218,7 +234,7 @@
 
 .datepicker--birthday {
   display: flex;
-  max-width: none;
+  max-width: none !important;
   
   flex-direction: column;
   
