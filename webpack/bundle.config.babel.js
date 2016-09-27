@@ -9,6 +9,8 @@ import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
 
+import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
+
 export default {
   cache: true,
   devtool: 'source-map',
@@ -37,11 +39,7 @@ export default {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        cacheDirectory: true,
-      },
-      happy: { id: 'js' },
+      loader: `happypack/loader?id=${getEnvId('jsx')}`,
     }, {
       test: /\.less/,
       loader: ExtractTextPlugin.extract('style', [
@@ -49,7 +47,8 @@ export default {
         'postcss-loader',
         'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
       ]),
-      happy: { id: 'css' },
+      // @todo: enable HappyPack for less as soon as https://github.com/amireh/happypack/issues/14#issuecomment-208254692 is fixed
+      // loader: ExtractTextPlugin.extract('style', `happypack/loader?id=${getEnvId('less')}`),
     }],
     noParse: [
       'jquery',
@@ -66,16 +65,13 @@ export default {
     ].map((module) => new RegExp(require.resolve(module))),
   },
   plugins: [
-    new HappyPack({
-      id: 'js',
-      cache: true,
-      threads: 2,
-    }),
-    new HappyPack({
-      id: 'css',
-      cache: true,
-      threads: 2,
-    }),
+    createHappyPlugin('jsx', ['babel?cacheDirectory=true']),
+    // @todo: enable HappyPack for less as soon as https://github.com/amireh/happypack/issues/14#issuecomment-208254692 is fixed
+    // createHappyPlugin('less', [
+    //   'css?importLoaders=2&sourceMap',
+    //   'postcss-loader',
+    //   'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+    // ]),
     new CleanPlugin([
       path.resolve(__dirname, '../dist/bundles'),
     ], {
