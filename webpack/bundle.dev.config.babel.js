@@ -5,6 +5,8 @@ import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 import SvgStore from 'webpack-svgstore-plugin'
 
+import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
+
 export default {
   cache: true,
   devtool: 'source-map',
@@ -32,20 +34,10 @@ export default {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loaders: [
-        'babel?cacheDirectory=true',
-        'webpack-module-hot-accept',
-      ],
-      happy: { id: 'js' },
+      loader: `happypack/loader?id=${getEnvId('jsx')}`,
     }, {
       test: /\.less/,
-      loaders: [
-        'style',
-        'css?importLoaders=2&sourceMap',
-        'postcss-loader',
-        'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
-      ],
-      happy: { id: 'css' },
+      loader: `happypack/loader?id=${getEnvId('less')}`,
     }],
     noParse: [
       'jquery',
@@ -62,16 +54,16 @@ export default {
     ].map((module) => new RegExp(require.resolve(module))),
   },
   plugins: [
-    new HappyPack({
-      id: 'js',
-      cache: true,
-      threads: 2,
-    }),
-    new HappyPack({
-      id: 'css',
-      cache: true,
-      threads: 2,
-    }),
+    createHappyPlugin('jsx', [
+      'babel?cacheDirectory=true',
+      'webpack-module-hot-accept',
+    ]),
+    createHappyPlugin('less', [
+      'style',
+      'css?importLoaders=2&sourceMap',
+      'postcss-loader',
+      'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+    ]),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
