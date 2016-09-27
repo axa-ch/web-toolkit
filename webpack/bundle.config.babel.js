@@ -47,6 +47,7 @@ export default {
         'postcss-loader',
         'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
       ]),
+      // @todo: enable HappyPack for less as soon as https://github.com/amireh/happypack/issues/14#issuecomment-208254692 is fixed
       // loader: ExtractTextPlugin.extract('style', `happypack/loader?id=${getEnvId('less')}`),
     }],
     noParse: [
@@ -65,6 +66,7 @@ export default {
   },
   plugins: [
     createHappyPlugin('jsx', ['babel?cacheDirectory=true']),
+    // @todo: enable HappyPack for less as soon as https://github.com/amireh/happypack/issues/14#issuecomment-208254692 is fixed
     // createHappyPlugin('less', [
     //   'css?importLoaders=2&sourceMap',
     //   'postcss-loader',
