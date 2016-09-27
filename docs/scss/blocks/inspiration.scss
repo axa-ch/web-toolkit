@@ -12,7 +12,7 @@
 .inspiration__item__image {
   display: block;
   @include make-column;
-  @include make-column(3);
+  @include make-column-span(3);
 }
 
 .inspiration__item__image__img {
@@ -21,7 +21,7 @@
 
 .inspiration__item__content {
   @include make-column;
-  @include make-column(9);
+  @include make-column-span(9);
 }
 
 .inspiration__item__title {

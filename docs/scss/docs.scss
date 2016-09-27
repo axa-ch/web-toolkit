@@ -37,9 +37,9 @@ $docs-width: 1260px;
 
 .column--docs-side {
   @include make-column;
-  @include make-column(12);
+  @include make-column-span(12);
   @include respond(large) {
-    @include make-column(2);
+    @include make-column-span(2);
   }
 
   display: none;
@@ -51,9 +51,9 @@ $docs-width: 1260px;
 
 .column--docs-main {
   @include make-column;
-  @include make-column(12);
+  @include make-column-span(12);
   @include respond(large) {
-    @include make-column(10);
+    @include make-column-span(10);
   }
 }
 

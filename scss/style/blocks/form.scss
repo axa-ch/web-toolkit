@@ -34,19 +34,19 @@
 
 .form__group__label {
   @include make-column;
-  @include make-column(12);
+  @include make-column-span(12);
 
   @extend .clearfix;
 
   margin-bottom: 6px;
 
   @include respond(medium) {
-    @include make-column(6);
+    @include make-column-span(6);
     line-height: 40px; // used for vertical-alignment
   }
 
   @include respond(large) {
-    @include make-column(5);
+    @include make-column-span(5);
   }
 
   .form__group__label__text {
@@ -80,14 +80,14 @@
 
 .form__group__control {
   @include make-column;
-  @include make-column(12);
+  @include make-column-span(12);
 
   @include respond(medium) {
-    @include make-column(6);
+    @include make-column-span(6);
   }
 
   @include respond(large) {
-    @include make-column(6);
+    @include make-column-span(6);
   }
 
 }
@@ -96,7 +96,7 @@
   @include make-column;
 
   @include respond(medium) {
-    @include make-column(12);
+    @include make-column-span(12);
   }
 
 }
