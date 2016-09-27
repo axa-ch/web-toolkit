@@ -34,31 +34,16 @@
 
 .checkbox--js {
 
-  position: relative;
-
   .checkbox__checkbox {
     @extend .invisible-input;
   }
 
   .checkbox__label {
-    position: relative;
     margin-left: 0;
-    
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 25px;
-      height: 25px;
-      background: transparent;
-      transition: all 0.3s ease-out;
-    }
   }
 
   .checkbox__label__icon {
-    display: inline-block;
+    display: block;
     position: absolute;
     padding: 3px;
     width: 30px;
@@ -66,9 +51,7 @@
     border: 1px solid $color-gray;
     fill-opacity: 0;
     fill: $color-light-blue;
-    background: transparent;
-    
-    transition: all 0.15s ease-out;
+    background: white;
 
     @include respond(medium) {
       width: 25px;
@@ -77,32 +60,8 @@
   }
 
   &.is-active {
-    .checkbox__label {
-      &:before {
-        background: $color-blue;
-        transition: all 0.3s ease-out;
-      }
-    }
     .checkbox__label__icon {
-      border-width: 2px;
-      border-color: $color-white !important;
-      border-left: none;
-      border-top: none;
-      width: 9px;
-      height: 16px;
-      margin-left: 8px;
-      top: 3px;
-      
-      -webkit-transform: rotate(35deg);
-      -moz-transform: rotate(35deg);
-      -o-transform: rotate(35deg); 
-      transform: rotate(35deg);
-
-      transition: all 0.15s ease-out;
-      /*
       fill-opacity: 1;
-      transition: all 0.25s ease-out;
-      */
     }
   }
 

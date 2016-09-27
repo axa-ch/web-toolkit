@@ -22,7 +22,7 @@
 }
 
 .footer-worldwide__entities {
-  @include unstyle-list();
+  @include unstyle-list;
 
   margin: 0 -30px;
 
@@ -65,6 +65,7 @@
 }
 
 .footer-worldwide__text {
+  @extend .make-font-medium-semibold;
   flex-grow: 1;
 
   @include respond(large) {

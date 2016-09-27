@@ -7,6 +7,7 @@ $info-icon-diameter--medium: 28px;
 .info-icon {
 
   display: block;
+  line-height: 0;
 
   &:hover,
   &:focus {

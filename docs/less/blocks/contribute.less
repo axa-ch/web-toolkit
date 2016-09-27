@@ -1,5 +1,5 @@
-@import '~style/variables';
-@import '~style/mixins/clearfix';
+@import '../../../less/style/variables';
+@import '../../../less/style/mixins/clearfix';
 
 .contribute {
   margin: 20px -15px;
@@ -8,7 +8,7 @@
 
   &:extend(.clearfix all);
 
-  .respond(medium; {
+  .respond(medium, {
     display: table;
     margin-left: 0;
     margin-right: 0;
@@ -18,13 +18,13 @@
 }
 
 .contribute__row {
-  .respond(medium; {
+  .respond(medium, {
     display: table-row;
   })
 }
 
 .contribute__content {
-  .respond(medium; {
+  .respond(medium, {
     display: table-cell;
     vertical-align: middle;
     padding: 20px;
@@ -34,7 +34,7 @@
 .contribute__image {
   display: none;
 
-  .respond(medium; {
+  .respond(medium, {
     display: table-cell;
     width: 100px;
     vertical-align: middle;

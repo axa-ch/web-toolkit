@@ -1,5 +1,7 @@
 @import '../variables';
+@import '../mixins/font';
 @import '../mixins/make-container';
+@import '../mixins/make-link';
 @import '../mixins/make-row';
 @import '../mixins/make-column';
 @import '../mixins/respond';
@@ -63,7 +65,6 @@
 
 .header__main__item {
   @include make-column();
-
   height: 100%;
 }
 
@@ -73,10 +74,7 @@
 }
 
 .header__meta__item--search {
-  @include make-link();
-
   order: 3;
-  display: flex;
 }
 
 .header__meta__item--language {
@@ -86,7 +84,7 @@
 
 .header__meta__item--action {
   @extend .make-font-small-semibold;
-  @include make-link();
+  @include make-link;
 
   display: flex;
   align-items: center;

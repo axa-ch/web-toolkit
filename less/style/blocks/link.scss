@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-.link {
+@mixin link {
   color: $color-blue;
   text-decoration: underline;
   cursor: pointer;
@@ -8,6 +8,10 @@
   &:hover {
     color: $color-red;
   }
+}
+
+.link {
+  @include link;
 }
 
 // Copyright AXA Versicherungen AG 2015

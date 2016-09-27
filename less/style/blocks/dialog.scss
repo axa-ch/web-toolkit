@@ -1,0 +1,145 @@
+@import './modal';
+@import '../mixins/word-break';
+
+.dialog {
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+
+  height: 100%;
+
+  background: transparent;
+
+  .is-open & {
+    display: flex;
+  }
+}
+
+.dialog__header {
+  color: white;
+  background: $color-blue;
+  margin-top: 0;
+  padding: 0 15px;
+
+  @include respond(medium) {
+    background: $color-white;
+    margin-top: auto;
+  }
+}
+
+.dialog__heading {
+  @include word-break();
+
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.2;
+  padding: 10px 0;
+
+  @include respond(medium) {
+    padding: 0 $grid-gutter-width/2 18px;
+    margin-top: 54px;
+
+    line-height: 1.15;
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: $color-black;
+    background: $color-white;
+  }
+}
+
+.dialog__close {
+  display: block;
+  float: right;
+
+  height: 40px;
+  width: 40px;
+
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+
+  color: $color-white;
+  cursor: pointer;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: $color-white;
+  }
+
+  @include respond(medium) {
+    margin-top: 20px;
+
+    font-size: 21px;
+
+    color: $color-gray--darker;
+
+    &:hover,
+    &:focus {
+      color: $color-blue;
+    }
+  }
+}
+
+.dialog__close__icon {
+  margin-top: 8px;
+}
+
+.dialog__content {
+  background: $color-white;
+  height: 100%;
+  max-height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: $modal-padding;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include respond(medium) {
+    height: auto;
+    padding: 0 $grid-gutter-width;
+  }
+}
+
+.dialog__footer {
+  background: $color-gray--lighter;
+  margin-bottom: 0;
+  text-align: center;
+
+  @include respond(medium) {
+    background: $color-white;
+    margin-bottom: auto;
+    text-align: right;
+  }
+}
+
+.dialog--top {
+  @include respond(medium) {
+    .dialog__header {
+      margin-top: 0;
+    }
+
+    .dialog__footer {
+      margin-top: 0;
+    }
+  }
+}
+
+.dialog--bottom {
+  @include respond(medium) {
+    .dialog__header {
+      margin-top: auto;
+    }
+
+    .dialog__footer {
+      margin-bottom: 0;
+    }
+  }
+}

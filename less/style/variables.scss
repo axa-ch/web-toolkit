@@ -84,12 +84,6 @@ $transition-fn-fancy: cubic-bezier(0, 0, 0.57, 0.95);
 $transition-duration-fast: 250ms;
 
 // #############################
-// # Images
-// #############################
-
-$images-path: '../images';
-
-// #############################
 // # Grid
 // #############################
 
@@ -118,6 +112,7 @@ $button-pad-lr--medium: 40px;
 $button-icon-size: 16px;
 $button-font-size: 16px;
 $button-font-size--medium: 18px;
+$button-border-width: 2px;
 
 $button-sm-height: 30px;
 $button-sm-height--medium: 30px;
@@ -133,11 +128,18 @@ $button-secondary-bg: $color-gray--dark;
 $button-secondary-color: white;
 $button-secondary-highlight-bg: lighten($color-gray--dark, 5%);
 
+$button-more-height: 48px;
+
+$button-ghost-height: 48px;
+$button-ghost-font-size: 14px;
+$button-ghost-font-size--medium: 16px;
+
 // #############################
 // # z-index
 // #############################
 
 $z-index-progress-step: 15;
+$z-index-meta-language: 20;
 $z-index-progress-step-bullet: 16;
 $z-index-dropdown: 30;
 $z-index-dropdown-select: 31;
@@ -146,51 +148,13 @@ $z-index-autocomplete: 33;
 $z-index-button__badge: 9800;
 $z-index-popover: 9900;
 $z-index-notifications: 9950;
-$z-index-site-mobile-nav: 9960;
-$z-index-site-page-masked: 9961;
+$z-index-site-mobile-nav: 9961;
+$z-index-site-page-masked: 9960;
 $z-index-example-header: 9970;
 $z-index-backdrop: 9980;
 $z-index-burger-icon: 9981;
 $z-index-backdrop-content: 9982;
 $z-index-modal-wrapper: 9998;
 $z-index-modal: 9999;
-
-// #############################
-// # Material inspired forms
-// #############################
-
-$material-form-container-max-width: 535px;
-$material-form-input-height: 64px;
-
-$material-border-color-inactive: #999;
-$material-border-color-active: $color-light-blue;
-$material-border-color-disabled: $color-gray--mid;
-$material-border-color-error: $color-red;
-
-$material-group-bottom-margin: 40px;
-$material-group-bottom-margin-textarea: $material-group-bottom-margin - 20px;
-
-$material-label-color-default: $color-gray--dark;
-$material-label-color-active: $color-light-blue;
-$material-label-color-disabled: $color-gray--mid;
-$material-label-color-error: $color-red;
-$material-label-font-size-closed: 1.15em;
-$material-label-font-size-open: 1.05em;
-$material-label-padding-left-closed: 15px;
-$material-label-padding-right-closed: 15px;
-$material-label-padding-top-closed: 21px;
-$material-label-padding-bottom-closed: 19px;
-$material-label-open-label-offset-top: -10px;
-
-$material-field-padding-top: $material-label-padding-top-closed + 11px;
-$material-field-padding-bottom: $material-label-padding-bottom-closed - 9px;
-$material-field-font-weight: bold;
-
-$material-placeholder-color: $color-gray;
-$material-placeholder-font-weight: normal;
-
-$material-form-group-info-icon-diameter: 22px;
-$material-form-group-info-color: $color-white;
-$material-form-group-info-bg-color: $color-gray--predarkest;
 
 // Copyright AXA Versicherungen AG 2015

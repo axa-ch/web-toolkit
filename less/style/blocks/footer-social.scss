@@ -19,7 +19,7 @@
 }
 
 .footer-social__items {
-  @include unstyle-list();
+  @include unstyle-list;
 
   display: flex;
   margin: -16px -10px;

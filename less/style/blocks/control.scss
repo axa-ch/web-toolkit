@@ -1,43 +1,63 @@
 @import '../variables';
 
-.control {
+@mixin control {
   display: block;
 
   width: 100%;
-  /*height: 40px;*/
+  height: 40px;
   border: none;
   padding-left: 13px;
   padding-right: 13px;
 
-  /*line-height: 36px;*/
+  line-height: 36px;
 
-  background: $color-white;
-  border: 1px $color-gray--predarkest solid;
-  color: $color-black;
+  background: $color-gray--lighter;
+  color: black;
   border-radius: 0;
 }
 
-.control--input {
+.control {
+  @include control;
+}
+
+@mixin control--input {
+  border: $focus-border-width solid $color-gray--lighter;
   -webkit-appearance: none;
 
   &.has-error {
-    border-color: $color-red;
+    border-color: #ff0000;
   }
 
+  &:focus {
+    border-color: $color-light-blue;
+    outline: none;
+  }
 }
 
-.control--short {
+.control--input {
+  @include control--input;
+}
+
+@mixin control--short {
   max-width: 160px;
 }
 
-.control--condensed {
+.control--short {
+  @include control--short;
+}
+
+@mixin control--condensed {
   height: $control-height-condensed;
   line-height: $control-height-condensed;
   font-size: 14px;
 }
 
+.control--condensed {
+  @include control--condensed;
+}
+
 .control--textarea {
-  @extend .control--input;
+  @include control--input();
 
   height: auto; // Reset height for textareas
   min-height: 90px; // approx. 3 lines of text

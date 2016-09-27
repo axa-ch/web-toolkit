@@ -1,235 +1,13 @@
 @import '../mixins/respond';
+@import '../mixins/make-column';
+@import '../mixins/make-row';
 @import '../blocks/info-icon';
 
-.form__container {
-  max-width: $material-form-container-max-width;
-  margin: 0 auto;
+.form {
 }
 
-.form__group.material {
-  margin-bottom: $material-group-bottom-margin;
-  position: relative;
-  width: 100%;
-  min-height: 3em;
-
-  &.is-textarea {
-    margin-bottom: $material-group-bottom-margin-textarea;
-
-    textarea {
-      overflow: hidden;
-    }
-  }
-}
-
-.form__group.material input,
-.form__group.material textarea,
-.form__group.material label {
-  cursor: text;
-  font-size: $material-label-font-size-closed;
-  padding-top: $material-label-padding-top-closed;
-  padding-right: $material-label-padding-right-closed;
-  padding-bottom: $material-label-padding-bottom-closed;
-  padding-left: $material-label-padding-left-closed;
-  position: absolute;
-  transition: padding 0.15s ease-in;
-  width: 100%;
-
-  &:disabled {
-    border-color: $material-border-color-disabled;
-    color: $material-label-color-disabled;
-    cursor: not-allowed;
-  }
-}
-
-.form__group.material input {
-  height: $material-form-input-height;
-}
-
-.form__group.material textarea {
-  height: 2 * $material-form-input-height;
-}
-
-.form__group.material input.has-icon {
-  padding-right: 50px;
-}
-
-.form__group.material.form__group__dropdown label {
-  top: 0;
-}
-
-.form__group.material.form__group__dropdown label.is-open {
-  top: -10px;
-  font-size: $material-label-font-size-open !important;
-}
-
-.form__group.material input,
-.form__group.material textarea {
-  border: solid $material-border-color-inactive 1px;
-  max-height: none;
-
-  &::-webkit-input-placeholder {
-    color: transparent;
-    font-weight: $material-placeholder-font-weight;
-    transition: color 0.5s;
-  }
-
-  &:-moz-placeholder { /* Firefox 18- */
-    color: transparent;
-    font-weight: $material-placeholder-font-weight;
-    transition: color 0.5s;
-  }
-
-  &::-moz-placeholder {  /* Firefox 19+ */
-    color: transparent;
-    font-weight: $material-placeholder-font-weight;
-    transition: color 0.5s;
-  }
-
-  &:-ms-input-placeholder {
-     color: transparent;
-     font-weight: $material-placeholder-font-weight;
-     transition: color 0.5s;
-  }
-
-  &:focus {
-    border-color: $material-border-color-active;
-    outline: none;
-
-    &::-webkit-input-placeholder {
-      color: $material-placeholder-color;
-    }
-
-    &:-moz-placeholder { /* Firefox 18- */
-      color: $material-placeholder-color;
-    }
-
-    &::-moz-placeholder {  /* Firefox 19+ */
-      color: $material-placeholder-color;
-    }
-
-    &:-ms-input-placeholder {
-      color: $material-placeholder-color;
-    }
-  }
-}
-
-.form__group.material label {
-  color: $material-label-color-default;
-  z-index: 10;
-  pointer-events: none;
-  transition: all 0.15s ease-out;
-}
-
-.form__group.material.filled label,
-.form__group.material.focused label {
-  font-size: $material-label-font-size-open;
-  position: absolute;
-  top: $material-label-open-label-offset-top;
-}
-
-.form__group.material.focused label {
-  color: $material-label-color-active;
-}
-
-.form__group.material.disabled label {
-  color: $material-label-color-disabled;
-}
-
-.form__group.material.filled input,
-.form__group.material.filled textarea,
-.form__group.material.focused input,
-.form__group.material.focused textarea {
-  padding-top: $material-field-padding-top;
-  padding-bottom: $material-field-padding-bottom;
-  font-weight: $material-field-font-weight;
-}
-
-.form__group.material input:focus,
-.form__group.material textarea:focus {
-  outline: none;
-  border: 1px $color-light-blue solid;
-}
-
-.form__group.material .form__group__error {
-  color: $color-red;
-  font-size: 1em;
-  line-height: 1.4em;
-  margin-top: 15px;
-}
-
-.form__group.material .form__group__info {
-  height: 0;
-  z-index: -1;
-  opacity: 0;
-  position: relative;
-  padidng: 0;
-  padding-left: 16px;
-  color: $material-form-group-info-color;
-  font-size: 19px;
-  font-weight: normal;
-  background: $material-form-group-info-bg-color;
-  width: 100%;
-  transition: all 0.3s ease-out;
-}
-
-.form__group.material .form__group__info.is-open {
-  height: auto;
-  opacity: 1;
-  padding: 16px;
-  padding-top: $material-form-input-height + 16px;
-  margin-bottom: -14px;
-  transition: all 0.15s ease-out;
-}
-
-.form__group.material.is-textarea .form__group__info.is-open {
-  padding-top: (2 * $material-form-input-height) + 16px;
-}
-
-.form__group.material .form__group__error {
-  color: $color-red;
-  font-size: 14px;
-  width: 100%;
-  padding-top: 5.1em;
-  margin-bottom: -21px;
-}
-
-.form__group.material.has-error label {
-  color: $material-label-color-error;
-}
-
-.form__group.material.focused.has-error label {
-  color: $material-label-color-active;
-}
-
-.form__group.material .control.has-error {
-  border-color: $material-border-color-error;
-}
-
-.form__group.material.focused .control.has-error {
-  border-color: $material-border-color-active;
-}
-
-.form__group.material {
-
-  .form__group__label__info-icon {
-
-    position: absolute;
-    top: 21px;
-    right: 21px;
-    z-index: 10;
-
-    width: $material-form-group-info-icon-diameter;
-
-    .info-icon__svg {
-      width: $material-form-group-info-icon-diameter;
-      height: $material-form-group-info-icon-diameter;
-    }
-
-  }
-
-}
-
-.form__group.default {
+.form__group {
+  @include make-row;
 
   margin-bottom: 15px;
 
@@ -238,36 +16,49 @@
   }
 }
 
-.form__group.default .form__group--condensed {
+.form__group--condensed {
   margin-bottom: 14px;
 
   .form__group__label {
     margin-bottom: 0;
-    font-size: 1em;
+
+    font-size: 0.9285em;
+
     color: $color-gray--darker;
+
+    @include respond(medium) {
+      font-size: 1em;
+    }
   }
 }
 
-.form__group.default .form__group__label {
-  line-height: 40px; // used for vertical-alignment
-  color: $color-gray--darker;
-  font-size: $material-label-font-size-closed;
+.form__group__label {
+  @include make-column;
+  @include make-column(12);
+
+  @extend .clearfix;
+
+  margin-bottom: 6px;
+
+  @include respond(medium) {
+    @include make-column(6);
+    line-height: 40px; // used for vertical-alignment
+  }
+
+  @include respond(large) {
+    @include make-column(5);
+  }
 
   .form__group__label__text {
-    display: block;
-    line-height: 1.8; // reset
+    display: inline-block;
+    line-height: 1.5; // reset
     vertical-align: middle;
   }
 
   .form__group__label__info-icon {
     float: right;
-    width: $info-icon-diameter;
-    margin-bottom: -15px;
 
-    .info-icon__svg {
-      width: 22px;
-      height: 22px;
-    }
+    width: $info-icon-diameter;
 
     @include respond(medium) {
       width: $info-icon-diameter--medium;
@@ -287,44 +78,40 @@
   }
 }
 
-.form__group.default.focused {
-  .form__group__label:not(.form__group__label--invalid) .form__group__label__text {
-    color: $color-light-blue;
+.form__group__control {
+  @include make-column;
+  @include make-column(12);
+
+  @include respond(medium) {
+    @include make-column(6);
   }
-}
 
-.form__group.default .form__group__label--invalid {
-  .form__group__label__text {
-    color: $color-red;
+  @include respond(large) {
+    @include make-column(6);
   }
+
 }
 
-.form__group.default .form__group__info {
-  color: $color-gray--dark;
-  font-size: 1em;
-  line-height: 1.4em;
-  margin-top: 15px;
+.form__group__control--fullwidth {
+  @include make-column;
+
+  @include respond(medium) {
+    @include make-column(12);
+  }
+
 }
 
-.form__group.default .form__group__error {
-  color: $color-red;
-  font-size: 1em;
-  line-height: 1.4em;
-  margin-top: 15px;
-}
-
-.form__group.default .form__info-text {
+.form__info-text {
   margin-top: 10px;
 }
 
-.form__group.default .form__error-message {
+.form__error-message {
   margin: 5px 0 0 0;
   color: #ff0000;
 }
 
-.form__group.default .form__footnote {
+.form__footnote {
   margin: 50px 0 50px 0;
 }
-
 
 // Copyright AXA Versicherungen AG 2015

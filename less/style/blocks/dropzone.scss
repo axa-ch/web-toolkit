@@ -1,16 +1,13 @@
+@import '../blocks/link';
 @import '../variables';
 
 .dropzone {
-  background-color: $color-white;
+  background-color: $color-gray--lighter;
 }
 
 .dropzone__container {
   height: 80px;
-  //border: 1px dashed $color-gray--dark;
-  background-image: repeating-linear-gradient(to right, $color-gray--dark 0%, $color-gray--dark 50%, transparent 50%, transparent 100%), repeating-linear-gradient(to right, $color-gray--dark 0%, $color-gray--dark 50%, transparent 50%, transparent 100%), repeating-linear-gradient(to bottom, $color-gray--dark 0%, $color-gray--dark 50%, transparent 50%, transparent 100%), repeating-linear-gradient(to bottom, $color-gray--dark 0%, $color-gray--dark 50%, transparent 50%, transparent 100%);
-  background-position: left top, left bottom, left top, right top;
-  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
-  background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
+  border: 2px dashed $color-gray;
 }
 
 .dropzone__container--dragover {
@@ -45,7 +42,7 @@
 }
 
 .dropzone__text__upload-link {
-  @extend .link;
+  @include link();
 
   font-variant: small-caps;
   font-size: 18px;

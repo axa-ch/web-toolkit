@@ -1,7 +1,7 @@
 // This is the classic clearfix hack.
 // FIXME: Consider the combinator clearfix!
 
-.clearfix {
+@mixin clearfix {
   display: block;
   zoom: 1;
 
@@ -16,6 +16,10 @@
 
     font-size: 0;
   }
+}
+
+.clearfix {
+  @include clearfix;
 }
 
 // Copyright AXA Versicherungen AG 2015

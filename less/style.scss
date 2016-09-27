@@ -2,14 +2,19 @@
 // Add this for full inclusion or only pick the needed block files.
 // Enjoy!
 
-@import './style/basics.scss';
+@import './normalize';
+@import './style/basics';
 
 @import './style/mixins/clearfix';
+@import './style/mixins/ellipsis';
 @import './style/mixins/font';
 @import './style/mixins/invisible-font';
 @import './style/mixins/invisible-input';
 @import './style/mixins/make-link';
 @import './style/mixins/respond';
+@import './style/mixins/respond-max';
+@import './style/mixins/richtext';
+@import './style/mixins/word-break';
 
 @import './style/blocks/autocomplete';
 @import './style/blocks/backdrop';
@@ -30,9 +35,12 @@
 @import './style/blocks/container';
 @import './style/blocks/control';
 @import './style/blocks/datepicker';
+@import './style/blocks/dialog';
 @import './style/blocks/downloads';
 @import './style/blocks/dropdown';
+@import './style/blocks/dropdown-2';
 @import './style/blocks/dropzone';
+@import './style/blocks/ellipsis';
 @import './style/blocks/example-header';
 @import './style/blocks/fieldset';
 @import './style/blocks/file-upload-multi';
@@ -48,6 +56,7 @@
 @import './style/blocks/heading';
 @import './style/blocks/hr';
 @import './style/blocks/icon';
+@import './style/blocks/icon-teaser';
 @import './style/blocks/image';
 @import './style/blocks/info-icon';
 @import './style/blocks/info-text';
@@ -59,33 +68,36 @@
 @import './style/blocks/menu-main';
 @import './style/blocks/menu';
 @import './style/blocks/meta-language';
+@import './style/blocks/meta-language2';
 @import './style/blocks/meta-menu';
 @import './style/blocks/mobile-actions';
 @import './style/blocks/mobile-languages';
 @import './style/blocks/mobile-menu';
 @import './style/blocks/mobile';
 @import './style/blocks/modal';
+@import './style/blocks/modal2';
 @import './style/blocks/notifications';
 @import './style/blocks/paragraph';
 @import './style/blocks/page-content';
 @import './style/blocks/popover';
+@import './style/blocks/prolist';
 @import './style/blocks/progress-container';
 @import './style/blocks/progress-tracker';
 @import './style/blocks/progress-tracker-bar';
 @import './style/blocks/progressbar';
-@import './style/blocks/prolist';
-@import './style/blocks/summary';
+@import './style/blocks/richtext';
 @import './style/blocks/row';
 @import './style/blocks/segmented-control';
 @import './style/blocks/site';
 @import './style/blocks/spinner';
 @import './style/blocks/step';
 @import './style/blocks/steps';
+@import './style/blocks/summary';
 @import './style/blocks/tab-panel';
 @import './style/blocks/table';
 @import './style/blocks/tag';
 @import './style/blocks/toc';
 @import './style/blocks/toggle';
-@import './style/blocks/worldwide';
+@import './style/blocks/word-break';
 
 // Copyright AXA Versicherungen AG 2015

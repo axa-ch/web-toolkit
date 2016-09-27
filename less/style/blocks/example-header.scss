@@ -1,3 +1,5 @@
+@import '../mixins/respond';
+@import '../blocks/paragraph';
 @import '../variables.scss';
 
 $example-header__sticky-height: 40px;

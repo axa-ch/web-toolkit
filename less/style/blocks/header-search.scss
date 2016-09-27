@@ -1,14 +1,18 @@
 @import '../variables';
 @import '../mixins/font';
+@import '../mixins/make-link';
 @import './control';
 
 .header-search {
+  @include make-link;
+
+  display: flex;
 }
 
 .header-search__input {
   @extend .make-font-large;
-  @extend .control;
-  @extend .control--input;
+  @include control;
+  @include control--input;
 
   height: 100%;
   width: 17rem;

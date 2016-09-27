@@ -12,6 +12,11 @@
   z-index: $z-index-autocomplete;
 }
 
+@mixin autocomplete__suggestions__item--selected {
+  background-color: $color-light-blue;
+  color: $color-white;
+}
+
 .autocomplete__suggestions__item {
   padding: 10px 15px;
 
@@ -20,13 +25,12 @@
   cursor: pointer;
 
   &:hover {
-    @extend .autocomplete__suggestions__item--selected;
+    @include autocomplete__suggestions__item--selected();
   }
 }
 
 .autocomplete__suggestions__item--selected {
-  background-color: $color-light-blue;
-  color: $color-white;
+  @include autocomplete__suggestions__item--selected();
 }
 
 // Copyright AXA Versicherungen AG 2015

@@ -2,70 +2,14 @@
 @import '../blocks/control';
 @import '../mixins/font';
 @import '../mixins/make-link';
+@import '../mixins/ellipsis';
 
 $dropdown-arrow-width: 40px;
 
 .dropdown {
+  @include make-link;
+
   position: relative;
-  cursor: pointer;
-
-  .dropdown__label__text.is-enhanced {
-    visibility: hidden;
-  }
-
-}
-
-.dropdown:focus {
-
-  outline: none;
-
-  .dropdown__label.is-enhanced {
-    border: 1px $material-border-color-active solid !important;
-  }
-
-  .dropdown__label__text.is-enhanced {
-    visibility: visible;
-    color: $material-label-color-default;
-    transition: color 0.3s;
-    transition-delay: 0.3s;
-  }
-
-}
-
-.form__group.dropdown {
-
-  .form__group__label.is-open {
-    font-size: $material-label-font-size-open !important;
-    position: absolute !important;
-    top: $material-label-open-label-offset-top - 2px !important;
-  }
-
-  &.filled {
-    top: $material-label-open-label-offset-top - 2px !important;
-  }
-
-}
-
-.form__group.filled .dropdown {
-
-  .dropdown__label__text.is-enhanced {
-    visibility: visible;
-    color: $color-black;
-    transition: color 0.3s;
-  }
-
-}
-
-.form__group.is-open .dropdown {
-
-  .dropdown__label__text.is-enhanced {
-    visibility: hidden;
-  }
-
-}
-
-.form__group__dropdown .form__group__label__text {
-  line-height: 1.5 !important;
 }
 
 .dropdown__label {
@@ -73,108 +17,56 @@ $dropdown-arrow-width: 40px;
 }
 
 .dropdown__label.is-enhanced {
-  @extend .control;
+  @include control;
+  color: inherit; // reset color set in .control
   display: flex;
   align-items: center;
 
-  border: solid $material-border-color-inactive 1px;
-  color: $material-label-color-default;
-  padding: 0;
-
-  font-size: $material-label-font-size-closed;
-
-  padding-top: $material-label-padding-top-closed;
-  padding-right: $material-label-padding-right-closed;
-  padding-bottom: $material-label-padding-bottom-closed;
-  padding-left: $material-label-padding-left-closed;
+  border: 1px solid $color-gray--light;
 }
 
-.dropdown.is-open.is-enhanced .dropdown__label.is-enhanced {
-  border: 1px $material-border-color-active solid;
-}
-
+.dropdown__label__text,
 .dropdown__label__icon {
   margin: 0 0.25rem;
 }
 
 .dropdown__label__text {
+  @include ellipsis();
   order: 1;
   flex-grow: 1;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-top: 12px;
-  margin-bottom: -12px;
-  color: $color-white;
-  font-weight: 600;
 }
 
 .dropdown__label__icon {
   order: 2;
   flex-shrink: 0;
-  z-index: 100;
+
   width: 1.25rem;
   height: 1.25rem;
-}
-
-.form__group.material.has-icon {
-  .dropdown__label__icon {
-    margin-right: 37px;
-  }
-  .form__group__label .form__group__label__info-icon {
-    top: 14px;
-    right: 12px;
-    svg {
-      width: $material-form-group-info-icon-diameter;
-      height: $material-form-group-info-icon-diameter;
-    }
-  }
-  .form__group__label.is-open .form__group__label__info-icon {
-    top: 25px;
-  }
-}
-
-.dropdown.is-open .dropdown__label__icon {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
 
 .dropdown__select {
   width: 100%;
 }
 
-.dropdown.is-enhanced {
+.dropdown__select.is-enhanced {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
 
-  dl {
-    display: none;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 100%;
-    background: $color-white;
-    border: 1px $color-light-blue solid;
-    border-top: none;
-    z-index: 20;
-    padding-bottom: 5px;
-    max-height: 280px;
-    overflow: auto;
-  }
+  display: block;
 
-  dt {
-    cursor: pointer;
-    color: $color-black;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 6px 15px 5px 15px;
+  line-height: 3.5rem;
 
-    &:hover, &.is-selected {
-      background: $color-light-blue;
-      color: $color-white;
-    }
-  }
-
+  opacity: 0;
+  filter: alpha(opacity=0);
+  border: none;
+  z-index: $z-index-dropdown-select;
 }
 
 .dropdown--large {
@@ -192,7 +84,7 @@ $dropdown-arrow-width: 40px;
 }
 
 .dropdown__label--condensed.is-enhanced {
-  @extend .control--condensed;
+  @include control--condensed;
 }
 
 .dropdown__label__icon--condensed {

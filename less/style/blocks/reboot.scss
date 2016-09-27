@@ -1,0 +1,22 @@
+@import '../mixins/font.scss';
+@import '../mixins/make-link.scss';
+
+a {
+  @include make-link();
+}
+
+h1 {
+  @extend .make-font-heading-primary;
+}
+
+h2 {
+  @extend .make-font-heading-secondary;
+}
+
+h3 {
+  @extend .make-font-heading-tertiary;
+}
+
+p {
+  @extend .make-font-large;
+}

@@ -1,0 +1,16 @@
+@import '../../../less/style/variables';
+
+.box {
+  display: block;
+
+  width: 100%;
+  min-height: 1px;
+
+  padding: ($grid-gutter-width / 2);
+  margin: 10px 0;
+
+  color: $color-blue;
+  background-color: #bcd9f4;
+}
+
+// Copyright AXA Versicherungen AG 2015

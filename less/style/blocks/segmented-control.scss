@@ -1,114 +1,44 @@
 @import '../mixins/invisible-input';
 @import '../mixins/invisible-font';
+@import '../mixins/ellipsis';
 @import '../blocks/checkbox-group';
 @import '../blocks/checkbox';
-
-@mixin segmented-control-animation {
-  z-index: 0; // for animation
-  position: relative;
-  overflow: hidden;
-  outline: none;
-  transition: color 0.3s;
-
-  // animation
-  &:before {
-    visibility: visible;
-    content: '';
-    position: absolute;
-    z-index: -1;
-    will-change: width, opacity;
-    transition: width 0.6s, opacity 0.6s;
-    width: 0;
-    height: 20rem;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    background: $color-white;
-    transform: translate(-50%,-50%) rotate(45deg);
-    transform: translate3d(-50%,-50%, 0) rotate(45deg);
-    backface-visibility: hidden;
-  }
-
-  &:hover {
-    &:before {
-      background: darken($color-white, 5%);
-      width: 120%;
-      opacity: 1;
-    }
-  }
-
-  &:after {
-    visibility: visible;
-    content: '';
-    position: absolute;
-    z-index: -1;
-    transition: width 0.6s, opacity 0.6s;
-    width: 0;
-    height: 20rem;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    background: $color-white;
-    transform: translate(-50%,-50%) rotate(45deg);
-    transform: translate3d(-50%,-50%, 0) rotate(45deg);
-    backface-visibility: hidden;
-  }
-
-}
+@import '../variables';
 
 .segmented-control {
   @extend .checkbox-group;
-
-  margin-bottom: 12px;
 }
 .segmented-control__item {
   @extend .checkbox;
-
-  &.chromebug {
-    width: 0 !important;
-    border: 0 !important;
-    cursor: default !important;
-    border-left: 1px $color-gray solid !important;
-
-    &:before {
-      display: none;
-    }
-  }
 }
 .segmented-control__item__radio {
   @extend .checkbox__checkbox;
 }
 
-.segmented-control--js:enabled {
-  &.segmented-control--stacked {
-    .segmented-control__item {
-      &.is-active {
-        border-top-color: $color-light-blue !important;
-      }
-      &.is-active + .segmented-control__item {
-        border-left-color: $color-gray;
-        border-top-color: $color-light-blue !important;
-      }
-    }
-  }
-}
-
 .segmented-control--js {
-  @extend .invisible-font;
+  @include invisible-font();
+  display: inline-block;
 
   &.segmented-control--stacked {
     .segmented-control__item {
+      @include ellipsis();
       display: block;
 
       width: 100%;
       border-right-width: 1px;
       margin-bottom: -1px;
 
+      &.is-active {
+        border-top-color: $color-light-blue !important;
+      }
+
       &.is-active + .segmented-control__item {
         border-left-color: $color-gray;
+        border-top-color: $color-light-blue !important;
       }
     }
-    &.segmented-control:not(.no-focus):focus .segmented-control__item {
+
+    &.segmented-control:focus .segmented-control__item {
       border-top-color: $color-gray !important;
       border-bottom-color: $color-gray !important;
       border-right-color: $color-light-blue;
@@ -136,6 +66,7 @@
   }
 
   .segmented-control__item__label {
+
     &:after {
       content: '';
 
@@ -149,8 +80,8 @@
 
   .segmented-control__item.is-active .segmented-control__item__label {
     // TODO
-    //@include icon-after();
-    //@include icon-after--checkmark();
+    //@extend .icon-after();
+    //@extend .icon-after--checkmark();
   }
 
   .segmented-control__item__radio {
@@ -161,7 +92,7 @@
     border-color: #ff0000 !important; // important is needed when the item .is-active and the control .has-error
   }
 
-  &.segmented-control:not(.no-focus):focus .segmented-control__item {
+  &.segmented-control:focus .segmented-control__item {
     border-top-color: $color-light-blue !important;
     border-bottom-color: $color-light-blue !important;
 
@@ -175,44 +106,17 @@
   }
 
   .segmented-control__item {
-    @extend .undo-invisible-font;
-
-    div {
-      @include segmented-control-animation();
-      height: 40px;
-      padding-left: 25px;
-      padding-right: 8px;
-
-      line-height: 40px;
-
-      margin-right: 1px;
-      margin-left: 1px;
-    }
-
-    &.is-active {
-
-      background-color: $color-light-blue !important;
-      transition: background-color 0.3s;
-      transition-delay: 0.3s;
-
-      div {
-        margin: 0 !important;
-        padding-left: 26px;
-        padding-right: 9px;
-
-        &:after {
-          background: $color-light-blue;
-          width: 120%;
-          opacity: 1;
-        }
-      }
-    }
+    @include undo-invisible-font();
 
     display: inline-block;
 
+    height: 40px;
+    padding-left: 25px;
+    padding-right: 8px;
     border: 1px solid $color-gray;
     border-right-width: 0;
-    margin-bottom: 0;
+
+    line-height: 40px;
 
     cursor: pointer;
 
@@ -220,17 +124,8 @@
       border-right-width: 1px;
     }
 
-    /*
-    &:nth-child(2):last-of-type:not(.is-active) {
-      border-right-width: 1px;
-      border-right-color: $color-white;
-      box-shadow: 1px 0 0 $color-gray;
-      padding-right: 7px;
-    }
-    */
-
     &.is-active {
-      background: $color-white;
+      background: $color-light-blue;
       color: white;
       border-top-color: $color-light-blue;
       border-bottom-color: $color-light-blue;
@@ -259,6 +154,5 @@
     background-color: $color-gray;
   }
 }
-
 
 // Copyright AXA Versicherungen AG 2015

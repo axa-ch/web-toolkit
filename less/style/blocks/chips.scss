@@ -1,4 +1,6 @@
 @import '../variables';
+@import '../mixins/font';
+@import '../mixins/respond';
 
 .chips {
   position: relative;
@@ -11,10 +13,10 @@
   padding-right: 2px;
   padding-bottom: 2px;
 
-  background: $color-white;
+  background: $color-gray--lighter;
   color: $color-black;
   border-radius: 0;
-  border: $focus-border-width solid $color-gray--predarkest;
+  border: $focus-border-width solid $color-gray--lighter;
   -webkit-appearance: none;
 
   @include respond(medium) {
