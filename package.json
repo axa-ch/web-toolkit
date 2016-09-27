@@ -111,7 +111,6 @@
     "extend": "^3.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "front-matter": "^1.0.0",
-    "git-rev-sync": "^1.7.1",
     "happypack": "^2.2.1",
     "highlight.js": "^8.9.1",
     "iframe-resizer": "^2.8.10",
