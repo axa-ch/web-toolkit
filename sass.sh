@@ -2,41 +2,46 @@
 echo 'git checkout'
 git checkout -- .
 
-echo 'delete sass files'
-find . -name "*.scss" -exec rm {} \;
+function convert {
+  echo 'delete sass files'
+  find $1 -name "*.scss" -exec rm {} \;
 
-echo 'fix mixin arguments that are separated by ; (-> ,)'
-for FOO in {1..10}
-do
-  find less -name "*.less" -type f -exec perl -i -0777 -pe 's/(.[a-zA-Z0-9\-_]*\([^\)\{;]*);([^\)]*\))/$1,$2/gs' {} \;
-done
+  echo 'fix mixin arguments that are separated by ; (-> ,)'
+  for FOO in {1..10}
+  do
+    find $1 -name "*.less" -type f -exec perl -i -0777 -pe 's/(.[a-zA-Z0-9\-_]*\([^\)\{;]*);([^\)]*\))/$1,$2/gs' {} \;
+  done
 
-echo 'fix dangling commas'
-find less -name "*.less" -type f -exec perl -i -0777 -pe 's/(.[a-zA-Z0-9\-_]*\([^\)]*),(\s*\))/$1$2/gs' {} \;
+  echo 'fix dangling commas'
+  find $1 -name "*.less" -type f -exec perl -i -0777 -pe 's/(.[a-zA-Z0-9\-_]*\([^\)]*),(\s*\))/$1$2/gs' {} \;
 
-less2sass less
+  less2sass $1
 
-echo 'remove unused scss'
-rm less/style/utils.scss
-perl -i -0777 -pe "s/\@import '.\/style\/utils';\n\n//g" less/style.scss
+  echo 'fix &:extend (-> @extend)'
+  find $1 -name "*.scss" -type f -exec perl -i -0777 -pe 's/&:extend\(\.([^ ]*) all\);?/\@extend .$1;/g' {} \;
 
-echo 'fix &:extend (-> @extend)'
-find less -name "*.scss" -type f -exec perl -i -0777 -pe 's/&:extend\(\.([^ ]*) all\);?/\@extend .$1;/g' {} \;
+  echo 'fix .respond usages'
+  find $1 -name "*.scss" -type f -exec perl -i -0777 -pe 's/\.respond\(([^,;]*)[,;]\s*{(.*?)}\);?/\@include respond($1) {$2}/gs' {} \;
 
-echo 'fix .respond usages'
-find less -name "*.scss" -type f -exec perl -i -0777 -pe 's/\.respond\(([^,;]*)[,;]\s*{(.*?)}\);?/\@include respond($1) {$2}/gs' {} \;
+  echo 'fix lost mixin declarations that do not have any arguments'
+  find $1 -name "*.scss" -type f -exec perl -i -0777 -pe 's/\.(.*)\(\) {/\@mixin $1 {/g' {} \;
+
+  echo 'fix lost mixin calls with a single number argument'
+  find $1 -name "*.scss" -type f -exec perl -i -0777 -pe 's/\.([a-zA-Z0-9\-_]*)\(([0-9]*)\);?/\@include $1($2);/g' {} \;
+
+  echo 'fix mixin call that was transformed to mixin declaration'
+  find $1 -name "*.scss" -type f -exec perl -i -0777 -pe 's/\@mixin ([a-zA-Z0-9\-_]*\(\);)/\@include $1/g' {} \;
+}
+
+convert "less"
+convert "docs/less"
 
 echo 'drop $charset delcaration from style.scss'
 perl -i -0777 -pe 's/\$charset "UTF-8";\n\n//g' less/style.scss
 
-echo 'fix lost mixin declarations that do not have any arguments'
-find less -name "*.scss" -type f -exec perl -i -0777 -pe 's/\.(.*)\(\) {/\@mixin $1 {/g' {} \;
-
-echo 'fix lost mixin calls with a single number argument'
-find less -name "*.scss" -type f -exec perl -i -0777 -pe 's/\.([a-zA-Z0-9\-_]*)\(([0-9]*)\);?/\@include $1($2);/g' {} \;
-
-echo 'fix mixin call that was transformed to mixin declaration'
-find less -name "*.scss" -type f -exec perl -i -0777 -pe 's/\@mixin ([a-zA-Z0-9\-_]*\(\);)/\@include $1/g' {} \;
+echo 'remove unused scss'
+rm less/style/utils.scss
+perl -i -0777 -pe "s/\@import '.\/style\/utils';\n\n//g" less/style.scss
 
 echo 'fix respond mixin definition'
 cat > less/style/mixins/respond.scss << EOL
@@ -105,3 +110,4 @@ cat > less/style/blocks/column.scss << EOL
 EOL
 
 node-sass less/style.scss
+node-sass docs/less/docs.scss
