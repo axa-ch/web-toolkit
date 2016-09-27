@@ -1,4 +1,4 @@
-import '../less/style.less'
+import '../scss/style.scss'
 
 import './jquery'
 import './react'

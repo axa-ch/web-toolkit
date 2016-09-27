@@ -1,0 +1,36 @@
+@import '~style/variables';
+@import '~style/blocks/heading';
+@import '~style/mixins/respond';
+
+.thumbnail {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.thumbnail__img-link {
+  display: block;
+}
+
+.thumbnail__img {
+  width: 260px;
+}
+
+.thumbnail__heading {
+  .heading();
+  .heading--secondary();
+  display: block;
+}
+
+.thumbnail__link {
+  text-decoration: none;
+  color: @color-blue;
+}
+
+.thumbnail__text {
+  display: block;
+  max-width: 300px; // set max, so it stays readable
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Copyright AXA Versicherungen AG 2015

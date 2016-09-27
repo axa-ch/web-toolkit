@@ -1,4 +1,4 @@
-import '../less/docs.less'
+import '../scss/docs.scss'
 
 import './index'
 
