@@ -1,5 +1,5 @@
-@import '../mixins/font.scss';
-@import '../mixins/make-link.scss';
+@import '../mixins/font';
+@import '../mixins/make-link';
 
 a {
   @include make-link();
