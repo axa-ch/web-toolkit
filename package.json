@@ -27,13 +27,13 @@
     "bundles:copy": "sync-files dist/bundles docs/dist",
     "images:watch": "sync-files --watch images docs/images2",
     "images:copy": "sync-files images docs/images2",
-    "less:watch": "sync-files --watch less docs/less2",
-    "less:copy": "sync-files less docs/less2",
+    "scss:watch": "sync-files --watch scss docs/scss2",
+    "scss:copy": "sync-files scss docs/scss2",
     "js:transpile": "babel js -d dist/js",
     "js:watch": "sync-files --watch js docs/js2",
     "js:copy": "sync-files js docs/js2",
-    "all:watch": "concurrently --kill-others \"npm run images:watch\" \"npm run less:watch\" \"npm run js:watch\" \"npm run bundles:watch\" --names images:watch,less:watch,js:watch,bundles:watch --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]",
-    "all:copy": "concurrently \"npm run images:copy\" \"npm run less:copy\" \"npm run js:copy\" \"npm run bundles:copy\" --names images:copy,less:copy,js:copy,bundles:copy --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]"
+    "all:watch": "concurrently --kill-others \"npm run images:watch\" \"npm run scss:watch\" \"npm run js:watch\" \"npm run bundles:watch\" --names images:watch,scss:watch,js:watch,bundles:watch --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]",
+    "all:copy": "concurrently \"npm run images:copy\" \"npm run scss:copy\" \"npm run js:copy\" \"npm run bundles:copy\" --names images:copy,scss:copy,js:copy,bundles:copy --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]"
   },
   "betterScripts": {
     "dev": {
