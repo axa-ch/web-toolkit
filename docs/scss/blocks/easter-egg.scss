@@ -1,0 +1,16 @@
+@import '../../../scss/style/variables';
+
+.easter-egg {
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+
+  transition: all $transition-duration $transition-fn-fancy;
+}
+
+.easter-egg.is-unlocked {
+  max-height: inherit;
+  visibility: visible;
+  opacity: 1;
+}

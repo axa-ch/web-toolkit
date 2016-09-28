@@ -1,0 +1,5 @@
+@mixin make-column-span($size, $columns: 12) {
+  flex: 0 0 percentage($size / $columns);
+  -ms-flex: 0 0 auto;
+  width: percentage($size / $columns);
+}

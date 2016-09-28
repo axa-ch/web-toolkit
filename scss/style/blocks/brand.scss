@@ -1,0 +1,19 @@
+@import '../variables';
+@import '../mixins/respond';
+@import '../mixins/invisible-font';
+
+.brand {
+  display: flex;
+  padding: 20px $grid-gutter-width/2;
+  text-decoration: none;
+}
+
+.brand__image {
+  height: 37px;
+
+  @include respond(large) {
+    height: 54px;
+  }
+}
+
+// Copyright AXA Versicherungen AG 2015

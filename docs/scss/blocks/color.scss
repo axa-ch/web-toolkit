@@ -1,0 +1,10 @@
+@import '../../../scss/style/variables';
+@import '../../../scss/style/mixins/clearfix';
+
+.color {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+// Copyright AXA Versicherungen AG 2015

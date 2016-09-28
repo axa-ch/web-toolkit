@@ -1,0 +1,117 @@
+@import '../mixins/respond';
+@import '../mixins/make-column';
+@import '../mixins/make-row';
+@import '../blocks/info-icon';
+
+.form {
+}
+
+.form__group {
+  @include make-row;
+
+  margin-bottom: 15px;
+
+  @include respond(medium) {
+    margin-bottom: 20px;
+  }
+}
+
+.form__group--condensed {
+  margin-bottom: 14px;
+
+  .form__group__label {
+    margin-bottom: 0;
+
+    font-size: 0.9285em;
+
+    color: $color-gray--darker;
+
+    @include respond(medium) {
+      font-size: 1em;
+    }
+  }
+}
+
+.form__group__label {
+  @include make-column;
+  @include make-column-span(12);
+
+  @extend .clearfix;
+
+  margin-bottom: 6px;
+
+  @include respond(medium) {
+    @include make-column-span(6);
+    line-height: 40px; // used for vertical-alignment
+  }
+
+  @include respond(large) {
+    @include make-column-span(5);
+  }
+
+  .form__group__label__text {
+    display: inline-block;
+    line-height: 1.5; // reset
+    vertical-align: middle;
+  }
+
+  .form__group__label__info-icon {
+    float: right;
+
+    width: $info-icon-diameter;
+
+    @include respond(medium) {
+      width: $info-icon-diameter--medium;
+      margin-top: 5px;
+    }
+  }
+
+  .form__group__label__info-icon-text-wrapper {
+    display: block;
+
+    margin-right: $info-icon-diameter + 10px;
+
+    @include respond(medium) {
+      line-height: 40px;
+      margin-right: $info-icon-diameter--medium + 20px;
+    }
+  }
+}
+
+.form__group__control {
+  @include make-column;
+  @include make-column-span(12);
+
+  @include respond(medium) {
+    @include make-column-span(6);
+  }
+
+  @include respond(large) {
+    @include make-column-span(6);
+  }
+
+}
+
+.form__group__control--fullwidth {
+  @include make-column;
+
+  @include respond(medium) {
+    @include make-column-span(12);
+  }
+
+}
+
+.form__info-text {
+  margin-top: 10px;
+}
+
+.form__error-message {
+  margin: 5px 0 0 0;
+  color: #ff0000;
+}
+
+.form__footnote {
+  margin: 50px 0 50px 0;
+}
+
+// Copyright AXA Versicherungen AG 2015

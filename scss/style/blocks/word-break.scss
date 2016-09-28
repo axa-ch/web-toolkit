@@ -1,0 +1,5 @@
+@import '../mixins/word-break';
+
+.word-break {
+  @include word-break();
+}

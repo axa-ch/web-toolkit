@@ -1,0 +1,85 @@
+@import '../mixins/font';
+@import '../variables';
+
+.heading {
+  font-weight: normal;
+}
+
+.heading--page {
+  @extend .make-font-heading-primary;
+
+  margin: 0 0 40px 0;
+
+  color: $color-blue;
+}
+
+.heading--primary {
+  @extend .make-font-heading-primary;
+  display: block;
+
+  padding: 0;
+
+  color: $color-black;
+}
+
+.heading--secondary {
+  @extend .make-font-heading-secondary;
+
+  color: $color-black;
+}
+
+.heading--tertiary {
+  @extend .make-font-heading-tertiary;
+
+  margin: 50px 0 20px 0;
+
+  color: $color-black;
+}
+
+.heading--modal {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+
+  @include respond(medium) {
+    padding: 0 $grid-gutter-width/2 18px;
+    margin-top: 54px;
+
+    line-height: 1.15;
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: $color-black;
+    background: white;
+  }
+}
+
+
+.heading--fieldset {
+  margin-top: 0; // TODO
+  margin-bottom: 25px;
+
+  font-size: 19px;
+  line-height: 1.15;
+
+  color: $color-blue;
+
+  @include respond(medium) {
+    margin-top: -5px;
+    font-size: 24px;
+  }
+}
+
+.heading--summary {
+  margin: 21px 0 6px 0;
+
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: bold;
+
+  @include respond(medium) {
+    margin: 22px 0 1px 0;
+  }
+}
+
+// Copyright AXA Versicherungen AG 2015

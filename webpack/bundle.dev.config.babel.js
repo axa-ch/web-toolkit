@@ -25,7 +25,6 @@ export default {
   },
   resolve: {
     modulesDirectories: [
-      'less',
       'node_modules',
     ],
     extensions: ['', '.js', '.jsx'],
@@ -36,8 +35,8 @@ export default {
       exclude: /node_modules/,
       loader: `happypack/loader?id=${getEnvId('jsx')}`,
     }, {
-      test: /\.less/,
-      loader: `happypack/loader?id=${getEnvId('less')}`,
+      test: /\.scss$/,
+      loader: `happypack/loader?id=${getEnvId('sass')}`,
     }],
     noParse: [
       'jquery',
@@ -58,11 +57,11 @@ export default {
       'babel?cacheDirectory=true',
       'webpack-module-hot-accept',
     ]),
-    createHappyPlugin('less', [
+    createHappyPlugin('sass', [
       'style',
       'css?importLoaders=2&sourceMap',
       'postcss-loader',
-      'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+      'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
     ]),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
