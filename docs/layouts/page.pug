@@ -83,7 +83,7 @@ html
       script(src=relative('/dist/docs.js'))
       link(rel="stylesheet", href=relative("/dist/docs.css"))
     else
-      script(src='/dist/bundle.js')
+      script(src=relative('/dist/bundle.js'))
 
     script.
       var href = '#{relative(link)}'
