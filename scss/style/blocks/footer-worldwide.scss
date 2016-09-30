@@ -1,8 +1,3 @@
-@import '../variables';
-@import '../mixins/font';
-@import '../mixins/respond';
-@import '../mixins/unstyle-list';
-
 .footer-worldwide {
 }
 
@@ -14,7 +9,7 @@
   padding: 48px 0;
   margin: 0;
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     display: block;
 
     padding: 32px 0;
@@ -26,13 +21,13 @@
 
   margin: 0 -30px;
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     margin: 0;
   }
 }
 
 .footer-worldwide__entity {
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     display: inline-block;
   }
 }
@@ -54,7 +49,7 @@
     color: $color-gray--mid;
   }
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     display: inline-block;
     padding: 0;
     height: auto;
@@ -68,7 +63,7 @@
   @extend .make-font-medium-semibold;
   flex-grow: 1;
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     display: none;
   }
 }
@@ -78,7 +73,7 @@
   width: 24px;
   margin-left: 20px;
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     display: none;
   }
 }
@@ -86,7 +81,7 @@
 .footer-worldwide__image {
   display: none;
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     display: block;
   }
 }
