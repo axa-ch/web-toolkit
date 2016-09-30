@@ -33,7 +33,8 @@
     "js:watch": "sync-files --watch js docs/js2",
     "js:copy": "sync-files js docs/js2",
     "all:watch": "concurrently --kill-others \"npm run images:watch\" \"npm run scss:watch\" \"npm run js:watch\" \"npm run bundles:watch\" --names images:watch,scss:watch,js:watch,bundles:watch --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]",
-    "all:copy": "concurrently \"npm run images:copy\" \"npm run scss:copy\" \"npm run js:copy\" \"npm run bundles:copy\" --names images:copy,scss:copy,js:copy,bundles:copy --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]"
+    "all:copy": "concurrently \"npm run images:copy\" \"npm run scss:copy\" \"npm run js:copy\" \"npm run bundles:copy\" --names images:copy,scss:copy,js:copy,bundles:copy --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]",
+    "bootstrap:copy": "sync-files node_modules/bootstrap-sass/assets/stylesheets/bootstrap scss/bootstrap"
   },
   "betterScripts": {
     "dev": {
@@ -63,6 +64,7 @@
   "homepage": "http://design.axa.ch",
   "dependencies": {
     "baconjs": "^0.7.73",
+    "bootstrap-sass": "3.3.7",
     "classnames": "^2.2.5",
     "jquery": "^2.1.3",
     "moment": "^2.9.0",
