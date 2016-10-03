@@ -1,7 +1,7 @@
 .page-content {
   @extend .container;
 
-  max-width: $grid-breakpoint-lg;
+  max-width: $container-lg;
   min-height: 512px;
 
   padding-top: 32px;

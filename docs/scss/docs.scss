@@ -26,8 +26,6 @@
 @import './blocks/thumbnail';
 @import './blocks/typeface';
 
-@import '../../scss/style/mixins/respond';
-
 $docs-width: 1260px;
 
 // increase max-width
@@ -40,7 +38,7 @@ $docs-width: 1260px;
 
   display: none;
 
-  @include respond(large) {
+  @media (min-width: $screen-lg-min) {
     display: block;
   }
 }
