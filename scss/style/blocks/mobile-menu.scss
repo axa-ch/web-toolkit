@@ -1,11 +1,5 @@
 // TODO: Destroy hierarchies with more BEM
 
-@import '../variables';
-@import '../mixins/font';
-@import '../mixins/respond';
-@import '../mixins/unstyle-list';
-@import '../mixins/word-break';
-
 .mobile-menu {
   @include unstyle-list();
 
@@ -29,7 +23,8 @@
   width: 100%;
   padding-bottom: 1px;
 
-  transition: left $transition-duration $transition-fn-fancy, visibility $transition-duration;
+  transition: left $transition-normal $transition-default, visibility $transition-normal;
+
   &.is-previous {
   }
 
@@ -66,8 +61,10 @@
 
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $color-blue;
+    text-decoration: none;
   }
 }
 
@@ -161,11 +158,11 @@
   list-style-type: none;
 
   // Watch out: prevent delayed closing with a bezier
-  transition: max-height $transition-duration cubic-bezier(0, 1.05, 0, 1), visibility $transition-duration;
+  transition: max-height $transition-normal cubic-bezier(0, 1.05, 0, 1), visibility $transition-normal;
 }
 
 .mobile-menu--collapsing .mobile-menu__level.is-open {
-  transition: max-height $transition-duration cubic-bezier(0.01, 0, 1, 0), visibility $transition-duration;
+  transition: max-height $transition-normal cubic-bezier(0.01, 0, 1, 0), visibility $transition-normal;
   visibility: visible;
 
   // Watch out: work around, since no transition to `height: auto` is possible
@@ -180,13 +177,13 @@
 }
 
 .mobile-menu--collapsing .mobile-menu__link__parent-icon {
-  transition: transform $transition-duration ease;
+  transition: transform $transition-normal ease;
   transform: rotate(0);
 }
 
 .mobile-menu--collapsing .mobile-menu__link--parent.is-active {
   .mobile-menu__link__parent-icon {
-    transition: transform $transition-duration ease;
+    transition: transform $transition-normal ease;
     transform: rotate(90deg);
   }
 }

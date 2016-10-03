@@ -1,22 +1,16 @@
-@import '../mixins/clearfix';
-@import '../mixins/font';
-@import '../mixins/make-link';
-@import '../mixins/target';
-@import '../variables';
-
 $dropdown-border-width: 1px;
 
-$dropdown-indent: 0.8125rem;  // 13px
-$dropdown-height: 2.5rem; // 40px
-$dropdown-icon-size: 1.25rem; // 20px
+$dropdown-indent: 13px;
+$dropdown-height: 40px;
+$dropdown-icon-size: 20px;
 
-$dropdown-indent--large: 1.25rem; // 20px
-$dropdown-height--large: 3rem;  // 48px
-$dropdown-icon-size--large: 1.5rem; // 24px
+$dropdown-indent--large: 20px;
+$dropdown-height--large: 48px;
+$dropdown-icon-size--large: 24px;
 
-$dropdown-indent--condensed: 0.8125rem; // 13px
-$dropdown-height--condensed: 1.875rem;  // 30px
-$dropdown-icon-size--condensed: 1rem; // 16px
+$dropdown-indent--condensed: 13px;
+$dropdown-height--condensed: 30px;
+$dropdown-icon-size--condensed: 16px;
 
 .dropdown-2 {
   @include make-link();

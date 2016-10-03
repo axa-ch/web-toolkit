@@ -1,7 +1,3 @@
-@import '../variables';
-@import '../mixins/respond';
-@import '../mixins/invisible-input';
-
 .checkbox {
   @extend .clearfix;
 
@@ -53,7 +49,7 @@
     fill: $color-light-blue;
     background: white;
 
-    @include respond(medium) {
+    @media (min-width: $screen-md-min) {
       width: 25px;
       height: 25px;
     }
@@ -71,7 +67,7 @@
 
     line-height: 1.5; // TODO: use more global definition
 
-    @include respond(medium) {
+    @media (min-width: $screen-md-min) {
       padding-top: 2px;
       margin-left: 35px;
     }

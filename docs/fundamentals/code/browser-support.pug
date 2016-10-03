@@ -22,7 +22,7 @@ tags: safari, ios, chrome, android, internet explorer, firefox,
 h3 Desktop
 
 .row
-  .column.column--6
+  .col-xs-6
     .docs-chart-container#desktop-piechart Desktop Browser
 
 table.table.table--docs
@@ -64,9 +64,9 @@ table.table.table--docs
 h3 Mobile & Tablet
 
 .row
-  .column.column--6
+  .col-xs-6
     .docs-chart-container#android-piechart Android Chart
-  .column.column--6
+  .col-xs-6
     .docs-chart-container#ios-piechart iOS Chart
 
 table.table.table--docs
@@ -116,7 +116,7 @@ script.
       ['7.x',      1886],
       ['older',  308]
     ]);
-    
+
     var desktopData = google.visualization.arrayToDataTable([
       ['Browser & Version', 'Visits'],
       ['Internet Explorer Older',     2100],
@@ -137,7 +137,7 @@ script.
       ['Edge',      2772],
       ['other',  845]
     ]);
-    
+
 
     $('.docs-chart-container').addClass('is-active');
     var androidChart = new google.visualization.PieChart(document.getElementById('android-piechart'));

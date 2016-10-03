@@ -1,5 +1,3 @@
-@import '../../../scss/style/variables';
-
 .callout {
   border: 1px solid $color-gray--lighter;
   border-left: 3px solid $color-blue;
@@ -10,8 +8,8 @@
 }
 
 .callout__heading {
-  font-size: 1.3em;
-  margin: 0 0 .5em 0;
+  font-size: 21px;
+  margin: 0 0 8px 0;
   color: $color-blue;
 }
 

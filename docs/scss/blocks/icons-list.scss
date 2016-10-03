@@ -15,7 +15,7 @@
     width: 50%;
     padding: 20px 10px 10px 10px;
 
-    @include respond(large) {
+    @media (min-width: $screen-lg-min) {
       width: 25%;
     }
 

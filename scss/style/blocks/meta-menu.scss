@@ -1,9 +1,3 @@
-@import '../variables';
-@import '../mixins/font';
-@import '../mixins/make-link';
-@import '../mixins/respond';
-@import '../mixins/unstyle-list';
-
 .meta-menu {
   @include unstyle-list;
 

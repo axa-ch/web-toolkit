@@ -1,34 +1,22 @@
-@import '../mixins/respond';
-@import '../mixins/make-container';
-@import '../mixins/make-row';
-@import '../mixins/make-column';
-@import '../mixins/make-column-span';
-@import '../mixins/make-link';
-@import '../mixins/unstyle-list';
-@import '../mixins/font';
-@import '../variables';
-@import './icon';
-
 .icon-teaser {
-  @include make-container();
+  @extend .container;
 
-  max-width: $grid-breakpoint-lg;
+  max-width: $container-lg;
 }
 
 .icon-teaser__items {
   @include unstyle-list();
   @include make-row();
 
-  padding-top: 4rem;
+  padding-top: 64px;
 
-  @include respond(large) {
+  @media (min-width: $screen-lg-min) {
     padding-top: 0;
   }
 }
 
 .icon-teaser__item {
-  @include make-column();
-  @include make-column-span(12);
+  @include make-lg-column(4);
 
   text-decoration: none;
   outline: none;
@@ -37,12 +25,8 @@
   flex-direction: column;
   align-items: center;
 
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-
-  @include respond(large) {
-    @include make-column-span(4);
-  }
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .icon-teaser__item__icon-wrapper {
@@ -53,10 +37,10 @@
   align-items: center;
   flex-shrink: 0;
 
-  height: 5rem;
-  width: 5rem;
+  height: 80px;
+  width: 80px;
   border: 2px solid $color-blue-gray--light;
-  border-radius: 2.5rem;
+  border-radius: 40px;
 
   background: $color-white;
 }
@@ -64,8 +48,8 @@
 .icon-teaser__item__icon {
   @extend .icon;
 
-  height: 2rem;
-  width: 2rem;
+  height: 32px;
+  width: 32px;
 
   color: $color-blue;
 }
@@ -73,7 +57,7 @@
 .icon-teaser__item__title {
   @extend .make-font-medium-semibold;
 
-  padding: 1.5rem 0 1rem 0;
+  padding: 24px 0 16px 0;
 
   color: $color-blue-gray;
 }
@@ -85,7 +69,7 @@
   text-align: center;
 
   max-width: 300px;
-  padding-bottom: 2rem;
+  padding-bottom: 32px;
 }
 
 .icon-teaser__item__action {
@@ -96,15 +80,15 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  padding: 15px 2rem;
+  padding: 15px 32px;
   margin: 0;
 
   background: $color-white;
   border: 2px solid $color-blue-gray--light;
-  transition: all $transition-duration-fast;
+  transition: all $transition-fast;
 
-  @include respond(large) {
-    padding: 13px 2rem 14px;
+  @media (min-width: $screen-lg-min) {
+    padding: 13px 32px 14px;
   }
 
   &:hover, &:focus {
@@ -124,7 +108,7 @@
   flex-wrap: nowrap;
 
   width: 100%;
-  height: 4rem;
+  height: 64px;
 
   margin: 0;
   padding: 0;
@@ -134,7 +118,7 @@
 
   background-color: $color-white;
 
-  @include respond(large) {
+  @media (min-width: $screen-lg-min) {
     display: none;
   }
 
@@ -153,12 +137,12 @@
       justify-content: center;
       align-items: flex-end;
       height: 100%;
-      width:100%;
+      width: 100%;
 
-      padding: 0.5rem $grid-gutter-width/2;
+      padding: 8px $grid-gutter-width/2;
 
       text-align: center;
-      font-size: 0.875em;
+      font-size: 14px;
       font-weight: 600;
       border-bottom: 5px solid transparent;
       outline: none;

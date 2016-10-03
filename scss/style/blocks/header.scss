@@ -1,48 +1,41 @@
-@import '../variables';
-@import '../mixins/font';
-@import '../mixins/make-container';
-@import '../mixins/make-link';
-@import '../mixins/make-row';
-@import '../mixins/make-column';
-@import '../mixins/respond';
-
 .header {
   border-bottom: 1px solid $color-gray--light;
 }
 
 .header__meta {
   display: none;
-  height: 3.5rem;
+  height: 56px;
 
   background: $color-gray--lighter;
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     display: block;
   }
 }
 
 .header__main {
-  height: 4.8125rem;
+  height: 77px;
 
-  @include respond(large) {
-    height: 5.875rem;
+  @media (min-width: $screen-md-min) {
+    height: 94px;
   }
 }
 
 .header__meta__container,
 .header__main__container {
-  @include make-container();
+  @extend .container;
 
   // This is for the menu-main overlay!
   position: relative;
 
-  max-width: $grid-breakpoint-lg;
   height: 100%;
 }
 
 .header__meta__row,
 .header__main__row {
-  @include make-row();
+  @extend .row;
+
+  display: flex;
 
   // This is for the menu-main overlay!
   position: static;
@@ -57,14 +50,21 @@
 }
 
 .header__meta__item {
-  @include make-column();
+  position: relative;
+  min-height: 1px;
+  padding-left:  ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
 
-  height: 3.5rem;
+  height: 56px;
   padding: 0;
 }
 
 .header__main__item {
-  @include make-column();
+  position: relative;
+  min-height: 1px;
+  padding-left:  ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
+
   height: 100%;
 }
 
@@ -114,7 +114,7 @@
   display: none;
   align-self: flex-end;
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     display: inherit;
     order: 3;
   }
@@ -124,7 +124,7 @@
   order: 4;
   padding: 0;
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     display: none;
   }
 }
@@ -138,17 +138,17 @@
 
   font-size: 24px;
 
-  @include respond(large) {
+  @media (min-width: $screen-md-min) {
     font-size: 28px;
   }
 }
 
 .header--compact {
   .header__main {
-    height: 4.8125rem;
+    height: 77px;
 
-    @include respond(large) {
-      height: 4.8125rem;
+    @media (min-width: $screen-md-min) {
+      height: 77px;
     }
   }
 }

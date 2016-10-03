@@ -5,20 +5,20 @@ layout: page.pug
 ---
 
 :markdown-it
-  We recommend to create square app icons since the devices will cut 
+  We recommend to create square app icons since the devices will cut
   round corners on their own.
 
   # App icon
 
   Produce the app icon in various sizes to cover diffrent devices/os. Use
   the tables below as a guideline on choosing the appropriate sizes.
-  
+
   See the screenshots to the right for examples.
 
-  ## iOS App icon  
+  ## iOS App icon
 
 .row
-  .column.column--7
+  .col-md-7
     :markdown-it
       Add a link tag for every app icon size to the head section. See the example
       for a 114x114px app icon below.
@@ -28,7 +28,7 @@ layout: page.pug
       <!-- Use the -precomposed rel to prevent icon modification in iOS 2.0-6.x -->
       <link rel="apple-touch-icon-precomposed" href="icon114.png" sizes="114x114">
       ```
-      
+
     table.table.table--docs
       caption App icon sizes for iOS devices in pixels
       thead
@@ -72,20 +72,20 @@ layout: page.pug
             .table__row__item__content 144 x 144
           td.table__row__item
             .table__row__item__content 152 x 152
-  .column.column--5
+  .col-md-5
     img(src=relative('/images/design/app-icons-ios.png'))
-    
+
 h3.heading.heading--tertiary Android app icon
 
 .row
-  .column.column--7
+  .col-md-7
     :markdown-it
-      This section is based on the 
+      This section is based on the
       [Chrome for Android guides](https://developer.chrome.com/multidevice/android/installtohomescreen).
 
       Since android has a wide os and browser fragmentation you may experience some issues.
       Do not hesitate to open a pull request to improve this section!
-      
+
     table.table.table--docs
       caption App icon sizes for Android devices with Chrome before version M39 in pixels
       thead
@@ -95,7 +95,7 @@ h3.heading.heading--tertiary Android app icon
         tr.table__row
           td.table__row__item
             .table__row__item__content 192 x 192
-              
+
     table.table.table--docs
       caption App icon sizes for Android devices with Chrome version M39 in pixels
       thead
@@ -133,18 +133,18 @@ h3.heading.heading--tertiary Android app icon
             .table__row__item__content 192 x 192
           td.table__row__item
             .table__row__item__content 3.00
-  .column.column--5
+  .col-md-5
     img(src=relative('/images/design/app-icons-android.png'))
-  
+
 h3.heading.heading--tertiary Windows tiles
 
 .row
-  .column.column--7
+  .col-md-7
     :markdown-it
-      You can set an application name, a background color and an 
-      (optionally transparent) icon for a windows tile. 
+      You can set an application name, a background color and an
+      (optionally transparent) icon for a windows tile.
       See the example below.
-      
+
       ```js
       <meta name="application-name" content="My fancy application"/>
       <meta name="msapplication-TileColor" content="#ffffff"/>
@@ -153,7 +153,7 @@ h3.heading.heading--tertiary Windows tiles
       <meta name="msapplication-wide310x150logo" content="wide.png"/>
       <meta name="msapplication-square310x310logo" content="large.png"/>
       ```
-      
+
     table.table.table--docs
       caption Tile icon sizes for Windows devices in pixels
       thead
@@ -199,7 +199,7 @@ h3.heading.heading--tertiary Windows tiles
             .table__row__item__content 248 x 248
           td.table__row__item
             .table__row__item__content 558 x 558
-  .column.column--5
+  .col-md-5
     img(src=relative('/images/design/app-icons-windows.png'))
 
 //- Copyright AXA Versicherungen AG 2015

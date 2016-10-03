@@ -54,7 +54,7 @@ p.paragraph.
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/progressbar.pug
+              include:highlight(renderPug) ./snippets/progressbar.pug
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
@@ -103,7 +103,7 @@ ul.checklist
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/loading-spinner.pug
+              include:highlight(renderPug) ./snippets/loading-spinner.pug
 
         .tab-panel__content__tab(data-tab-content='js')
           ul.checklist

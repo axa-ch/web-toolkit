@@ -1,6 +1,3 @@
-@import '../variables';
-@import '../mixins/respond';
-
 .progress-container {
   padding-bottom: 17px;
   margin-top: 40px;
@@ -8,7 +5,7 @@
   overflow: visible;
   background: $color-gray--lighter;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     margin-top: 60px;
     padding-bottom: 24px;
   }
@@ -20,7 +17,7 @@
 
   margin-bottom: 12px;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     top: -20px;
     margin-bottom: 5px;
   }
@@ -34,7 +31,7 @@
 
   color: $color-light-blue;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     font-size: 24px;
   }
 }

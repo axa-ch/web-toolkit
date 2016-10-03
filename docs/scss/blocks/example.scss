@@ -1,13 +1,10 @@
-@import '../../../scss/style/variables';
-@import '../../../scss/style/mixins/respond';
-
 $z-index-example-iframe: 50;
 $z-index-example-border-brackets: 49;
 
 .example {
   margin: 0 -10px 0 -10px;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     margin: 0 0 25px 0;
   }
 }
@@ -52,8 +49,8 @@ $z-index-example-border-brackets: 49;
 }
 
 .example__device-selection__icon {
-  height: 1.5em;
-  width: 1.5em;
+  height: 24px;
+  width: 24px;
   margin-top: 5px;
 }
 
@@ -62,7 +59,7 @@ $z-index-example-border-brackets: 49;
   background: #dfdfdf;
   text-align: center;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     padding: 80px 0;
   }
 }
@@ -108,7 +105,7 @@ $z-index-example-border-brackets: 49;
   background: $color-white;
   z-index: $z-index-example-iframe;
 
-  transition: max-width $transition-duration ease;
+  transition: max-width $transition-normal ease;
 }
 
 .example__separator {

@@ -1,7 +1,3 @@
-@import '../variables';
-@import '../mixins/button';
-@import '../mixins/respond';
-
 .button {
   display: inline-block;
   position: relative;
@@ -35,7 +31,7 @@
     $font-size: $button-font-size
   );
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     @include make-button-size(
       $height: $button-height--medium,
       $pad-lr: $button-pad-lr--medium,
@@ -53,8 +49,8 @@
 
 .button__icon {
     vertical-align: middle;
-    height: 1.2em;
-    width: 1.2em;
+    height: 19px;
+    width: 19px;
 }
 
 .button__icon--left {
@@ -73,7 +69,7 @@
     $font-size: $button-sm-font-size
   );
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     @include make-button-size(
       $height: $button-sm-height--medium,
       $pad-lr: $button-sm-pad-lr,
@@ -162,7 +158,7 @@
     $color: $color-white
   );
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     @include make-button-size(
       $height: $button-height--medium,
       $pad-lr: $button-pad-lr--medium,

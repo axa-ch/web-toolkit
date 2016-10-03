@@ -1,0 +1,323 @@
+// Bootstrap overrides
+
+$font-family-sans-serif: 'Source Sans Pro', Arial, sans-serif;
+$font-family-serif: 'PT Serif', serif;
+
+$font-size-base: 15px;
+$font-size-large: 15px;
+$font-size-small: 15px;
+
+$font-size-title-main: 78px;
+$font-size-title-l2: 62px;
+$font-size-title-l3: 48px;
+$font-size-title-l4: 28px;
+$font-size-item-highlight: 24px;
+$font-size-story: 20px;
+$font-size-body: 18px;
+$font-size-navigation: 13px;
+$font-size-header: 13px;
+
+$font-size-h1: $font-size-title-main;
+$font-size-h2: $font-size-title-l2;
+$font-size-h3: $font-size-title-l3;
+$font-size-h4: $font-size-title-l4;
+$font-size-h5: $font-size-item-highlight;
+$font-size-h6: $font-size-story;
+
+$line-height-base: 24px;
+$line-height-computed: $line-height-base;
+
+$padding-base-vertical: 7px;
+$padding-base-horizontal: 30px;
+
+$padding-large-vertical: 12px;
+$padding-large-horizontal: 30px;
+
+$padding-small-vertical: 1px;
+$padding-small-horizontal: 20px;
+
+$padding-xs-vertical: 0px;
+$padding-xs-horizontal: 10px;
+
+$line-height-large: 24px;
+$line-height-small: 24px;
+
+$line-height-large-computed: $line-height-base;
+$line-height-small-computed: $line-height-base;
+
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
+
+$input-height-large: ($line-height-large-computed + ($padding-large-vertical * 2) + 2);
+$input-height-small: ($line-height-small-computed + ($padding-small-vertical * 2) + 2);
+
+$jumbotron-font-size: $font-size-item-highlight;
+$jumbotron-heading-font-size: $font-size-title-main;
+
+// Custom transition variables
+
+$transition-default: cubic-bezier(0.4, 0.0, 0.2, 1);
+$transition-easeout: cubic-bezier(0.0, 0.0, 0.2, 1);
+$transition-easein: cubic-bezier(0.4, 0.0, 1, 1);
+$transition-ease: cubic-bezier(0.4, 0.0, 0.6, 1);
+
+$transition-fast: 195ms;
+$transition-slow: 375ms;
+$transition-normal: 225ms;
+
+
+// Colors
+//----- Basic palette
+
+/// @title Oxford Blue
+/// @color base-colors
+$color-oxford-blue: #333c4e;
+
+
+/// @title Bay Of Dragons
+/// @color base-colors
+$color-bay-of-dragons: #233878;
+
+/// @title Endeavour
+/// @color base-colors
+$color-endeavour: #22498e;
+
+/// @title Steel Blue
+/// @color base-colors
+$color-steel-blue: #4975ba;
+
+/// @title Azure
+/// @color base-colors
+$color-azure: #3466b4;
+
+/// @title Iceberg
+/// @color base-colors
+$color-iceberg: #d4eef5;
+
+
+/// @title Flamingo
+/// @color base-colors
+$color-flamingo: #ec4d33;
+
+/// @title Burnt Sienna
+/// @color base-colors
+$color-burnt-sienna: #f07662;
+
+
+/// @title Teal Blue
+/// @color base-colors
+$color-teal-blue: #064360;
+
+/// @title Venice Blue
+/// @color base-colors
+$color-venice-blue: #075d86;
+
+
+/// @title Mine Shaft
+/// @color base-colors
+$color-mine-shaft: #333333;
+
+/// @title Aluminium
+/// @color base-colors
+$color-aluminium: #999999;
+
+/// @title Iron
+/// @color base-colors
+$color-iron: #cccccc;
+
+/// @title White Smoke
+/// @color base-colors
+$color-white-smoke: #f5f5f5;
+
+
+/// @title White
+/// @color base-colors
+$color-white: #ffffff;
+
+/// @title Black
+/// @color base-colors
+$color-black: #000000;
+
+
+
+//----- Override bootstrap colors
+
+/// @title Primary
+/// @alias color-bay-of-dragons
+/// @color bootstrap-overrides
+$brand-primary:         $color-bay-of-dragons !default;
+
+/// Default bootstrap value
+/// @title Success
+/// @color bootstrap-overrides
+$brand-success:         #5cb85c !default;
+
+/// Default bootstrap value
+/// @title Info
+/// @color bootstrap-overrides
+$brand-info:            #5bc0de !default;
+
+/// Default bootstrap value
+/// @title Warning
+/// @color bootstrap-overrides
+$brand-warning:         #f0ad4e !default;
+
+/// @title Danger
+/// @alias color-flamingo
+/// @color bootstrap-overrides
+$brand-danger:          $color-flamingo !default;
+
+
+
+//----- Component colors
+
+/// @title Primary Button Color
+/// @alias color-steel-blue
+/// @color button-colors
+$color-button-primary: $color-steel-blue;
+
+/// @title Secondary Button Color
+/// @alias color-endeavour
+/// @color button-colors
+$color-button-secondary: $color-endeavour;
+
+
+//== Motion
+//
+//## Specify the basic motion constants
+$motion-default: cubic-bezier(0.4, 0.0, 0.2, 1);
+$motion-easeout: cubic-bezier(0.0, 0.0, 0.2, 1);
+$motion-easein: cubic-bezier(0.4, 0.0, 1, 1);
+$motion-ease: cubic-bezier(0.4, 0.0, 0.6, 1);
+
+$duration-fast: 195ms;
+$duration-slow: 375ms;
+$duration-normal: 225ms;
+
+
+// Custom variables
+
+// #############################
+// # Colors
+// #############################
+
+// Primary colors
+
+$color-blue: #103184;
+$color-red: #ff1821;
+
+// Secondary colors
+
+$color-light-blue--light: #5c91c0;
+$color-light-blue: #0062a9;
+$color-green: #7a9f35;
+$color-blue-gray--light: #dedee2;
+$color-blue-gray: #79838d;
+
+$color-white: #ffffff;
+$color-gray--lighter: #efefef;
+$color-gray--light: #e5e5e5;
+$color-gray--mid: #dadada;
+$color-gray: #b0b0b0;
+$color-gray--dark: #919191;
+$color-gray--darker: #6f6f6f;
+$color-gray--predarkest: #666666;
+$color-gray--darkest: #333333;
+$color-black: #000000;
+
+// TBD colors
+
+$color-tbd-4: #a5afcb;
+$color-tbd-5: #eff4f9;
+$color-tbd-6: #dde8f2;
+$color-tbd-7: #12369d;
+$color-tbd-8: #e0e0e0;
+$color-tbd-9: #22336a;
+$color-tbd-10: #040b20;
+$color-tbd-11: #131f44;
+$color-tbd-12: #f3f6fc;
+$color-tbd-13: #4f5d88;
+$color-tbd-16: #f2f2f2;
+$color-tbd-17: #dfdfdf;
+$color-tbd-23: #1762a5;
+$color-tbd-24: #010943;
+$color-tbd-25: #babfd3;
+
+// #############################
+// # Buttons
+// #############################
+
+$font-size: 16px;
+$font-weight-medium: 600;
+$line-height: 1.375;
+$font-color: $color-gray--darkest;
+
+
+// #############################
+// # Focus
+// #############################
+
+$focus-border-width: 1px;
+
+// #############################
+// # Controls
+// #############################
+
+$control-height-condensed: 30px;
+
+// #############################
+// # Buttons
+// #############################
+
+$button-height: 50px;
+$button-height--medium: 50px;
+$button-pad-lr: 30px;
+$button-pad-lr--medium: 40px;
+$button-icon-size: 16px;
+$button-font-size: 16px;
+$button-font-size--medium: 18px;
+$button-border-width: 2px;
+
+$button-sm-height: 30px;
+$button-sm-height--medium: 30px;
+$button-sm-pad-lr: 15px;
+$button-sm-icon-size: 14px;
+$button-sm-font-size: 14px;
+
+$button-primary-bg: $color-blue;
+$button-primary-color: white;
+$button-primary-highlight-bg: lighten($color-blue, 5%);
+
+$button-secondary-bg: $color-gray--dark;
+$button-secondary-color: white;
+$button-secondary-highlight-bg: lighten($color-gray--dark, 5%);
+
+$button-more-height: 48px;
+
+$button-ghost-height: 48px;
+$button-ghost-font-size: 14px;
+$button-ghost-font-size--medium: 16px;
+
+// #############################
+// # z-index
+// #############################
+
+$z-index-progress-step: 15;
+$z-index-meta-language: 20;
+$z-index-progress-step-bullet: 16;
+$z-index-dropdown: 30;
+$z-index-dropdown-select: 31;
+$z-index-datepicker: 32;
+$z-index-autocomplete: 33;
+$z-index-button__badge: 9800;
+$z-index-popover: 9900;
+$z-index-notifications: 9950;
+$z-index-site-mobile-nav: 9961;
+$z-index-site-page-masked: 9960;
+$z-index-example-header: 9970;
+$z-index-backdrop: 9980;
+$z-index-burger-icon: 9981;
+$z-index-backdrop-content: 9982;
+$z-index-modal-wrapper: 9998;
+$z-index-modal: 9999;

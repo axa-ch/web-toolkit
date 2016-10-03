@@ -1,7 +1,3 @@
-@import '../variables';
-@import '../mixins/font';
-@import '../mixins/respond';
-
 .chips {
   position: relative;
 }
@@ -19,7 +15,7 @@
   border: $focus-border-width solid $color-gray--lighter;
   -webkit-appearance: none;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
       padding-right: 4px;
       padding-bottom: 4px;
     }
@@ -38,7 +34,7 @@
   display: inline-flex;
   align-items: center;
 
-  height: 2rem;
+  height: 32px;
 
   margin-top: 4px;
   margin-left: 5px;
@@ -50,7 +46,7 @@
   @extend .make-font-medium;
 
   flex-grow: 1;
-  padding-left: 1rem;
+  padding-left: 16px;
 
   color: $color-white;
 }
@@ -59,7 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.8em;
+  width: 29px;
   height: 100%;
 
   text-align: center;
@@ -72,12 +68,12 @@
 
 .chips__chip__close-button__icon.icon {
   display: block;
-  height: 1rem;
-  width: 1rem;
+  height: 16px;
+  width: 16px;
 }
 
 .chips__input {
-  margin: 0.5rem;
+  margin: 8px;
 
   border: none;
   background: transparent;

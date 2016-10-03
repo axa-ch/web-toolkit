@@ -1,0 +1,56 @@
+@import '../variables';
+@import '../mixins/btn';
+
+.btn-axa {
+  @extend .typo-16;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  border-width: 0;
+  border-bottom-width: 2px;
+  border-style: solid;
+
+  &.btn.btn-lg {
+    border-width: 0;
+    border-bottom-width: 2px;
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large,
+      $line-height-large, $btn-border-radius-large);    
+  }
+
+  @include button-primary($color-button-primary, $color-button-secondary, $color-white);
+}
+
+.btn {
+  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base,
+    $line-height-base, $btn-border-radius-base);
+
+  &.btn-lg {
+    @include button-size(($padding-large-vertical - 1px), $padding-large-horizontal,
+      $font-size-large, $line-height-large, $btn-border-radius-large);
+    border-width: 2px;
+  }
+
+  &.btn-sm {
+    @include button-size($padding-small-vertical, $padding-small-horizontal,
+      $font-size-small, $line-height-small, $btn-border-radius-small);
+  }
+
+  &.btn-xs {
+    @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
+      $line-height-small, $btn-border-radius-small);
+  }
+
+  @extend .typo-16;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  .badge {
+    font-size: .9em;
+  }
+}
+
+.btn.btn-default {
+  @include button-color($color-button-primary, $color-button-secondary, $color-white);
+}

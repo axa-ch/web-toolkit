@@ -26,8 +26,6 @@
 @import './blocks/thumbnail';
 @import './blocks/typeface';
 
-@import '../../scss/style/mixins/respond';
-
 $docs-width: 1260px;
 
 // increase max-width
@@ -36,25 +34,17 @@ $docs-width: 1260px;
 }
 
 .column--docs-side {
-  @include make-column;
-  @include make-column-span(12);
-  @include respond(large) {
-    @include make-column-span(2);
-  }
+  @include make-lg-column(2);
 
   display: none;
 
-  @include respond(large) {
+  @media (min-width: $screen-lg-min) {
     display: block;
   }
 }
 
 .column--docs-main {
-  @include make-column;
-  @include make-column-span(12);
-  @include respond(large) {
-    @include make-column-span(10);
-  }
+  @include make-lg-column(10);
 }
 
 // floating feedback button

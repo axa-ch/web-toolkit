@@ -51,7 +51,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/fileupload-dropzone.pug
+              include:highlight(renderPug) ./snippets/fileupload-dropzone.pug
         .tab-panel__content__tab(data-tab-content='js')
           :markdown-it
             Use the `data-dropzone` plugin to handle the
@@ -97,7 +97,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/fileupload-list.pug
+              include:highlight(renderPug) ./snippets/fileupload-list.pug
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
@@ -133,7 +133,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/fileupload-fallback.pug
+              include:highlight(renderPug) ./snippets/fileupload-fallback.pug
 
 .hr
   
@@ -159,6 +159,6 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/fileupload-single.pug
+              include:highlight(renderPug) ./snippets/fileupload-single.pug
 
 //- Copyright AXA Versicherungen AG 2015

@@ -1,24 +1,16 @@
-@import '../variables';
-@import '../blocks/button';
-@import '../mixins/font';
-@import '../mixins/respond';
-@import '../mixins/make-container';
-@import '../mixins/make-link';
-@import '../mixins/unstyle-list';
-
 .mobile {
-  @include make-container();
+  @extend .container;
 
   background-color: $color-white;
 }
 
 .mobile__separator {
-  height: 4rem;
+  height: 64px;
 }
 
 .mobile__section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .mobile__title {

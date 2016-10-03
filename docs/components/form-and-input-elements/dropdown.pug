@@ -47,7 +47,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/dropdown-regular.pug
+              include:highlight(renderPug) ./snippets/dropdown-regular.pug
         .tab-panel__content__tab(data-tab-content='js')
           p.paragraph.
             Our jQuery plugin adds the
@@ -93,7 +93,7 @@ h2.heading.heading--secondary#large Large Dropdown
             `condensed` modifier to a regular dropdown.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/dropdown-large.pug
+              include:highlight(renderPug) ./snippets/dropdown-large.pug
 
 .hr
 
@@ -117,7 +117,7 @@ h2.heading.heading--secondary#condensed Condensed Dropdown
             `condensed` modifier to a regular dropdown.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/dropdown-condensed.pug
+              include:highlight(renderPug) ./snippets/dropdown-condensed.pug
 .hr
 
 h2.heading.heading--secondary#non-enhanced Non enhanced dropdown
@@ -140,7 +140,7 @@ p.paragraph.
         .tab-panel__content__tab.is-active
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/dropdown-non-enhanced.pug
+              include:highlight(renderPug) ./snippets/dropdown-non-enhanced.pug
 
 .hr
 
@@ -164,7 +164,7 @@ p.paragraph.
         .tab-panel__content__tab.is-active
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/dropdown-2.pug
+              include:highlight(renderPug) ./snippets/dropdown-2.pug
 
 
 //- Copyright AXA Versicherungen AG 2015
