@@ -51,7 +51,7 @@ p.paragraph.
             `.is-active` state on the active item.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/segmented-control-basic.pug
+              include:highlight(renderPug) ./snippets/segmented-control-basic.pug
         .tab-panel__content__tab(data-tab-content='js')
           :markdown-it
             If you can't use the jQuery plugin, use the
@@ -100,7 +100,7 @@ p.paragraph.
             if there's not enough space.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/segmented-control-stacked.pug
+              include:highlight(renderPug) ./snippets/segmented-control-stacked.pug
 
 h3.heading.heading--tertiary UX Checklist
 
@@ -136,7 +136,7 @@ p.paragraph.
             to the segmented-control to make it disabled.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/segmented-control-disabled.pug
+              include:highlight(renderPug) ./snippets/segmented-control-disabled.pug
 .hr
 
 h2.heading.heading--secondary#backup Backup: Radio Buttons
@@ -163,6 +163,6 @@ p.paragraph.
             `segmented-control--js` modifier.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/segmented-control-fallback.pug
+              include:highlight(renderPug) ./snippets/segmented-control-fallback.pug
 
 //- Copyright AXA Versicherungen AG 2015

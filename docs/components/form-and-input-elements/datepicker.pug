@@ -47,7 +47,7 @@ h2.heading.heading--secondary#regular Regular Datepicker
             the required behaviour.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/datepicker-markuponly.pug
+              include:highlight(renderPug) ./snippets/datepicker-markuponly.pug
 
         .tab-panel__content__tab(data-tab-content='js')
           :markdown-it
@@ -59,7 +59,7 @@ h2.heading.heading--secondary#regular Regular Datepicker
             interaction.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/datepicker.pug
+              include:highlight(renderPug) ./snippets/datepicker.pug
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
@@ -91,7 +91,7 @@ h2.heading.heading--secondary#condensed Condensed Datepicker
             and the control element.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/datepicker-condensed.pug
+              include:highlight(renderPug) ./snippets/datepicker-condensed.pug
 
 .hr
 
@@ -127,6 +127,6 @@ h2.heading.heading--secondary#birthday Birthday Datepicker
             The birthday date picker uses three dropdowns that are interlinked to input a date.
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/datepicker-birthday.pug
+              include:highlight(renderPug) ./snippets/datepicker-birthday.pug
 
 //- Copyright AXA Versicherungen AG 2015

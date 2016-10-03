@@ -45,7 +45,7 @@ ul.checklist
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/progress-tracker.pug
+              include:highlight(renderPug) ./snippets/progress-tracker.pug
 
 
 h2.heading.heading--tertiary Progress Bar Variation
@@ -68,7 +68,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/progress-tracker-bar.pug
+              include:highlight(renderPug) ./snippets/progress-tracker-bar.pug
 
 p.paragraph.
   With more than 4 steps, the progress bar will not show any numbers and labels:
@@ -88,6 +88,6 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/progress-tracker-bar-long.pug
+              include:highlight(renderPug) ./snippets/progress-tracker-bar-long.pug
 
 //- Copyright AXA Versicherungen AG 2015
