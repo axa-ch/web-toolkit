@@ -19,17 +19,17 @@ $mobile-nav-width-fixed: 300px;
   right: 0;
   overflow: hidden;
 
-  transition: transform $duration-normal $motion-easeout,
-    padding-left $duration-normal $motion-easeout,
-    padding-right $duration-normal $motion-easeout;
+  transition: transform $transition-normal $transition-easeout,
+    padding-left $transition-normal $transition-easeout,
+    padding-right $transition-normal $transition-easeout;
 }
 
 .site__page.is-pushed {
   transform: translateX(-$mobile-nav-width);
 
-  transition: transform $duration-normal $motion-easein,
-    padding-left $duration-normal $motion-easein,
-    padding-right $duration-normal $motion-easein;
+  transition: transform $transition-normal $transition-easein,
+    padding-left $transition-normal $transition-easein,
+    padding-right $transition-normal $transition-easein;
 
   @media (min-width: $screen-lg-min) {
     transform: translateX(0);
@@ -51,8 +51,8 @@ $mobile-nav-width-fixed: 300px;
   cursor: pointer;
   pointer-events: none;
 
-  transition: opacity $duration-normal $motion-easeout,
-    height $duration-normal $motion-easeout;
+  transition: opacity $transition-normal $transition-easeout,
+    height $transition-normal $transition-easeout;
 }
 
 .site__page__mask.is-visible {
@@ -60,8 +60,8 @@ $mobile-nav-width-fixed: 300px;
   pointer-events: all;
   height: 100%;
 
-  transition: opacity $duration-normal $motion-easein,
-    height $duration-normal $motion-easein;
+  transition: opacity $transition-normal $transition-easein,
+    height $transition-normal $transition-easein;
 
   @media (min-width: $screen-lg-min) {
     opacity: 0;
@@ -84,13 +84,13 @@ $mobile-nav-width-fixed: 300px;
 
   background-color: $color-white;
 
-  transition: transform $duration-normal $motion-easeout;
+  transition: transform $transition-normal $transition-easeout;
 }
 
 .site__mobile.is-visible {
   transform: translateX(0);
 
-  transition: transform $duration-normal $motion-easein;
+  transition: transform $transition-normal $transition-easein;
 
   @media (min-width: $screen-lg-min) {
     transform: translateX(100%);
@@ -98,7 +98,7 @@ $mobile-nav-width-fixed: 300px;
 }
 
 .site__burger {
-  transition: color $transition-duration $transition-fn-fancy;
+  transition: color $transition-normal $transition-default;
 }
 
 .site__burger.is-open {

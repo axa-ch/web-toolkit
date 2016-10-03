@@ -4,7 +4,7 @@
   opacity: 0;
   overflow: hidden;
 
-  transition: all $transition-duration $transition-fn-fancy;
+  transition: all $transition-normal $transition-default;
 }
 
 .easter-egg.is-unlocked {
