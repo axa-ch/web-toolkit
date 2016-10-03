@@ -12,6 +12,11 @@
   justify-content: center;
   height: 100%;
 
+  position: relative;
+  min-height: 1px;
+  padding-left:  ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
+
   background-color: $color-gray--lighter;
   z-index: $z-index-meta-language;
 }
@@ -21,9 +26,9 @@
 }
 
 .meta-language2__icon {
-  margin-left: .75rem;
-  width: 1rem;
-  height: 1rem;
+  margin-left: 12px;
+  width: 16px;
+  height: 16px;
 }
 
 .meta-language2__icon.is-toggled {
@@ -63,19 +68,23 @@
 }
 
 .meta-language2__menu__items {
-  padding-bottom: 0.61875rem;
+  padding-bottom: 10px;
 }
 
 .meta-language2__menu__item {
-  @include make-xs-column(12);
   @include make-link();
   @extend .make-font-small-semibold;
 
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 2rem;
+  height: 32px;
   text-transform: uppercase;
+
+  position: relative;
+  min-height: 1px;
+  padding-left:  ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
 }
 
 .meta-language2__menu__item--nopad-first {
@@ -93,14 +102,14 @@
     .meta-language2__menu__items {
       padding: 0;
 
-      @media (min-width: $screen-lg-min) {
-        padding-top: 0.61875rem;
+      @media (min-width: $screen-md-min) {
+        padding-top: 10px;
       }
     }
   }
 
   // FIXME: Make this mobile first!
-  @media (max-width: $screen-md-max) {
+  @media (max-width: $screen-sm-max) {
     .meta-language2__button {
       display: none;
     }

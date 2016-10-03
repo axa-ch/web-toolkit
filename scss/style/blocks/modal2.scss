@@ -75,8 +75,8 @@
 
 .modal2__close--outside {
   position: absolute;
-  top: 1em;
-  right: 1em;
+  top: 16px;
+  right: 16px;
 
   color: $color-gray--mid;
 
@@ -86,15 +86,15 @@
   }
 
   .modal2__close__icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-top: .5rem;
-    margin-left: .5rem;
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+    margin-left: 8px;
   }
 
   @media (min-width: $screen-md-min) {
-    top: 2rem;
-    right: 2rem;
+    top: 32px;
+    right: 32px;
 
     color: $color-gray--mid;
 

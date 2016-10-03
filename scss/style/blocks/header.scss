@@ -4,7 +4,7 @@
 
 .header__meta {
   display: none;
-  height: 3.5rem;
+  height: 56px;
 
   background: $color-gray--lighter;
 
@@ -14,10 +14,10 @@
 }
 
 .header__main {
-  height: 4.8125rem;
+  height: 77px;
 
-    height: 5.875rem;
   @media (min-width: $screen-md-min) {
+    height: 94px;
   }
 }
 
@@ -53,7 +53,7 @@
   padding-left:  ($grid-gutter-width / 2);
   padding-right: ($grid-gutter-width / 2);
 
-  height: 3.5rem;
+  height: 56px;
   padding: 0;
 }
 
@@ -143,10 +143,10 @@
 
 .header--compact {
   .header__main {
-    height: 4.8125rem;
+    height: 77px;
 
-      height: 4.8125rem;
     @media (min-width: $screen-md-min) {
+      height: 77px;
     }
   }
 }

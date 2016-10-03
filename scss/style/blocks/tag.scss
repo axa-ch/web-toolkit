@@ -1,7 +1,7 @@
 .tag {
   display: inline;
 
-  padding: .2em .6em .3em;
+  padding: 3px 10px 5px;
 
   font-size: 85%;
   line-height: 1;
@@ -10,7 +10,7 @@
   vertical-align: baseline;
 
   color: $color-white;
-  border-radius: .25em;
+  border-radius: 4px;
   background-color: $color-blue-gray;
 }
 

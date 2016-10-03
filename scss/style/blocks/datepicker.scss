@@ -101,7 +101,7 @@
   margin: 0 30px;
 
   line-height: 31px;
-  font-size: 1.1428em;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -184,7 +184,7 @@
 }
 
 .picker__day--headline {
-  font-size: 0.9285em;
+  font-size: 15px;
 
   background: transparent;
   color: white;
@@ -218,7 +218,7 @@
   @include make-picker-cell();
   background: transparent;
   color: white;
-  font-size: .8em;
+  font-size: 13px;
 }
 
 .picker__weeknumber--headline {

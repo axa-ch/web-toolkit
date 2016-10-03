@@ -19,8 +19,8 @@
 }
 
 .dropzone__icon {
-  height: 2.25em;
-  width: 2.25em;
+  height: 36px;
+  width: 36px;
   margin-top: 20px;
   margin-bottom: 20px;
 
@@ -33,7 +33,7 @@
 }
 
 .dropzone__text {
-  display:table-cell;
+  display: table-cell;
   vertical-align: middle;
   color: $color-gray--dark;
 }
