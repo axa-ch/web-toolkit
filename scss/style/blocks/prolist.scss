@@ -1,11 +1,8 @@
-@import '../variables';
-@import '../mixins/font';
-
-$prolist_item_icon_size: 1.625rem;
+$prolist_item_icon_size: 26px;
 
 .prolist {
   list-style-type: none;
-  margin: 1.5rem 0 2rem;
+  margin: 24px 0 32px;
   padding: 0;
 }
 
@@ -16,7 +13,7 @@ $prolist_item_icon_size: 1.625rem;
 }
 
 .prolist__item {
-  margin: 0 0 1rem;
+  margin: 0 0 16px;
 }
 
 .prolist__item__icon {
@@ -34,10 +31,10 @@ $prolist_item_icon_size: 1.625rem;
   stroke: $color-gray;
 
   // $todo: these font-size, line-height values should be coded in a central place as variables, that we can reuse it here.
-  margin-top: ((1rem * 1.8) - $prolist_item_icon_size) / 2;
+  margin-top: ((16px * 1.8) - $prolist_item_icon_size) / 2;
 
-  @include respond(medium) {
-    margin-top: ((1.0625rem * 1.8) - $prolist_item_icon_size) / 2;
+  @media (min-width: $screen-md-min) {
+    margin-top: ((17px * 1.8) - $prolist_item_icon_size) / 2;
   }
 }
 
@@ -45,7 +42,7 @@ $prolist_item_icon_size: 1.625rem;
   @extend .make-font-large;
 
   margin: 0;
-  margin-left: 2.25rem;
+  margin-left: 36px;
 }
 
 // Copyright AXA Versicherungen AG 2015

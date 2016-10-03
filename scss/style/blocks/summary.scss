@@ -1,6 +1,3 @@
-@import '../variables';
-@import '../mixins/font';
-
 .summary {
   font-size: 19px;
 }
@@ -12,13 +9,13 @@
 
 .summary__label {
   @extend .make-font-large;
-  margin: 1rem 0 0;
+  margin: 16px 0 0;
 }
 
 .summary__content {
   @extend .make-font-large-semibold;
 
-  margin: 0 0 0.5rem;
+  margin: 0 0 8px;
 }
 
 .summary__items {

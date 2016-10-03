@@ -1,14 +1,11 @@
-@import '../variables';
-@import '../mixins/make-container';
-
 .page-content {
-  @include make-container;
+  @extend .container;
 
   max-width: $grid-breakpoint-lg;
-  min-height: 32rem;
+  min-height: 512px;
 
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .page-content--fluid {

@@ -1,6 +1,3 @@
-@import '../mixins/respond';
-@import '../variables';
-
 .popover {
   visibility: hidden;
 
@@ -18,7 +15,7 @@
   width: 100%;
   height: 100%;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     position: absolute;
     height: auto;
     width: 320px;
@@ -36,7 +33,7 @@
   background: transparent;
   pointer-events:none;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     display: block;
   }
 }
@@ -67,7 +64,7 @@
   padding: 15px;
   background: #0062a9;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     height: 42px;
     padding-bottom: 0;
     background: $color-gray--dark;
@@ -78,7 +75,7 @@
   font-size: 18px;
   color: white;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     color: #0062a9;
   }
 }
@@ -88,7 +85,7 @@
   padding-top: 57px;
   margin-top: -57px;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     padding: 0;
     margin: 0;
     background: $color-gray--dark;
@@ -100,7 +97,7 @@
   padding: 15px;
   background: $color-gray--dark;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     height: auto;
   }
 }
