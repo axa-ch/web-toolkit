@@ -1,6 +1,3 @@
-@import './modal2';
-@import '../mixins/word-break';
-
 $dialog-padding: 15px;
 
 .dialog {
@@ -23,7 +20,7 @@ $dialog-padding: 15px;
   margin-top: 0;
   padding: 0 15px;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     background: $color-white;
     margin-top: auto;
   }
@@ -38,7 +35,7 @@ $dialog-padding: 15px;
   line-height: 1.2;
   padding: 10px 0;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     padding: 0 $grid-gutter-width/2 18px;
     margin-top: 54px;
 
@@ -74,7 +71,7 @@ $dialog-padding: 15px;
     color: $color-white;
   }
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     margin-top: 20px;
 
     font-size: 21px;
@@ -104,7 +101,7 @@ $dialog-padding: 15px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     height: auto;
     padding: 0 $grid-gutter-width;
   }
@@ -115,7 +112,7 @@ $dialog-padding: 15px;
   margin-bottom: 0;
   text-align: center;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     background: $color-white;
     margin-bottom: auto;
     text-align: right;
@@ -123,7 +120,7 @@ $dialog-padding: 15px;
 }
 
 .dialog--top {
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     .dialog__header {
       margin-top: 0;
     }
@@ -135,7 +132,7 @@ $dialog-padding: 15px;
 }
 
 .dialog--bottom {
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     .dialog__header {
       margin-top: auto;
     }

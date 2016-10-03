@@ -1,6 +1,3 @@
-@import '../mixins/respond';
-@import '../variables';
-
 $info-icon-diameter: 20px;
 $info-icon-diameter--medium: 28px;
 
@@ -32,7 +29,7 @@ $info-icon-diameter--medium: 28px;
   &::before {
     font-size: 20px;
 
-    @include respond(medium) {
+    @media (min-width: $screen-md-min) {
       font-size: 28px;
     }
   }
@@ -45,7 +42,7 @@ $info-icon-diameter--medium: 28px;
   fill: $color-gray--darker;
 
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     width: $info-icon-diameter--medium;
     height: $info-icon-diameter--medium;
   }

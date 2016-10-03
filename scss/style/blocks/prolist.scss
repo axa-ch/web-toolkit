@@ -1,6 +1,3 @@
-@import '../variables';
-@import '../mixins/font';
-
 $prolist_item_icon_size: 1.625rem;
 
 .prolist {
@@ -36,7 +33,7 @@ $prolist_item_icon_size: 1.625rem;
   // $todo: these font-size, line-height values should be coded in a central place as variables, that we can reuse it here.
   margin-top: ((1rem * 1.8) - $prolist_item_icon_size) / 2;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     margin-top: ((1.0625rem * 1.8) - $prolist_item_icon_size) / 2;
   }
 }

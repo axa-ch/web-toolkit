@@ -1,8 +1,3 @@
-@import '../mixins/respond';
-@import '../variables';
-
-@import './control';
-
 // TODO: Instead of viewport we should consider usage of a --js which will be
 // added when js is available and it is a non-touch device
 
@@ -25,7 +20,7 @@
 .datepicker {
   @extend .clearfix;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     @include control--short();
   }
 }
@@ -242,7 +237,7 @@
     display: none;
   }
 
-  @include respond(large) {
+  @media (min-width: $screen-lg-min) {
     flex-direction: row;
 
     .birthday--day {

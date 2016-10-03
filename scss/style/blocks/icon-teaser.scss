@@ -1,16 +1,5 @@
-@import '../mixins/respond';
-@import '../mixins/make-container';
-@import '../mixins/make-row';
-@import '../mixins/make-column';
-@import '../mixins/make-column-span';
-@import '../mixins/make-link';
-@import '../mixins/unstyle-list';
-@import '../mixins/font';
-@import '../variables';
-@import './icon';
-
 .icon-teaser {
-  @include make-container();
+  @extend .container;
 
   max-width: $grid-breakpoint-lg;
 }
@@ -21,14 +10,13 @@
 
   padding-top: 4rem;
 
-  @include respond(large) {
+  @media (min-width: $screen-lg-min) {
     padding-top: 0;
   }
 }
 
 .icon-teaser__item {
-  @include make-column();
-  @include make-column-span(12);
+  @include make-lg-column(4);
 
   text-decoration: none;
   outline: none;
@@ -39,10 +27,6 @@
 
   padding-top: 3rem;
   padding-bottom: 3rem;
-
-  @include respond(large) {
-    @include make-column-span(4);
-  }
 }
 
 .icon-teaser__item__icon-wrapper {
@@ -103,7 +87,7 @@
   border: 2px solid $color-blue-gray--light;
   transition: all $transition-duration-fast;
 
-  @include respond(large) {
+  @media (min-width: $screen-lg-min) {
     padding: 13px 2rem 14px;
   }
 
@@ -134,7 +118,7 @@
 
   background-color: $color-white;
 
-  @include respond(large) {
+  @media (min-width: $screen-lg-min) {
     display: none;
   }
 

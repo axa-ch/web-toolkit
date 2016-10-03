@@ -1,16 +1,9 @@
-@import '../mixins/make-column';
-@import '../mixins/font';
-@import '../mixins/make-link';
-@import '../mixins/respond-max';
-@import '../mixins/respond';
-
 .meta-language2 {
   position: relative;
   height: 100%;
 }
 
 .meta-language2__button {
-  @include make-column();
   @include make-link();
   @extend .make-font-small-semibold;
 
@@ -74,7 +67,7 @@
 }
 
 .meta-language2__menu__item {
-  @include make-column();
+  @include make-xs-column(12);
   @include make-link();
   @extend .make-font-small-semibold;
 
@@ -100,13 +93,14 @@
     .meta-language2__menu__items {
       padding: 0;
 
-      @include respond(large) {
+      @media (min-width: $screen-lg-min) {
         padding-top: 0.61875rem;
       }
     }
   }
 
-  @include respond-max(medium) {
+  // FIXME: Make this mobile first!
+  @media (max-width: $screen-md-max) {
     .meta-language2__button {
       display: none;
     }

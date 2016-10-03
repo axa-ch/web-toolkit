@@ -1,6 +1,3 @@
-@import '../mixins/clearfix';
-@import '../mixins/respond';
-
 .modal2-is-open {
   overflow: hidden;
 }
@@ -28,6 +25,8 @@
 }
 
 .modal2__backdrop {
+  @extend .clearfix;
+
   width: 100%;
   min-height: 100%;
 
@@ -37,7 +36,6 @@
 
   /* fix collapsing margins */
   float: left;
-  @include clearfix();
 }
 
 .modal2__close {
@@ -61,7 +59,7 @@
 .modal2__close--inside {
   color: $color-white;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     margin-top: 20px;
 
     font-size: 21px;
@@ -94,7 +92,7 @@
     margin-left: .5rem;
   }
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     top: 2rem;
     right: 2rem;
 
@@ -137,7 +135,7 @@
     background: transparent;
   }
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     .modal2__backdrop {
       padding: 40px 0 68px;
     }

@@ -38,7 +38,7 @@ html
                   a.menu-main__link(href="#", data-link) Schaden
                   .menu-main__panel(data-panel)
                     .row
-                      .column.column--4
+                      .col-md-4
                         h2 Wohnen & Eigentum
                         ul.menu
                           li.menu__item
@@ -49,7 +49,7 @@ html
                             a.menu__link(href="#") Privathaftpflichtversicherung
                           li.menu__item
                             a.menu__link(href="#") Rechtsschutzversicherung
-                      .column.column--4
+                      .col-md-4
                         h2 Fahrzeug & Reise
                         ul.menu
                           li.menu__item
@@ -60,7 +60,7 @@ html
                             a.menu__link(href="#") Motorradversicherung
                           li.menu__item
                             a.menu__link(href="#") Rechtschutzversicherung
-                      .column.column--4
+                      .col-md-4
                         h2 Vorsorge & Sparen
                         ul.menu
                           li.menu__item
@@ -94,11 +94,11 @@ html
 
       .page-content
         .row
-          .column.column--12
+          .col-md-12
             h1 Welcome
 
         .row
-          .column.column--9
+          .col-md-9
             p.paragraph.
               Bacon ipsum dolor sit amet chicken sirloin ball tip, capicola short ribs
               bresaola boudin ribeye ground round shankle shoulder frankfurter pork loin
@@ -111,7 +111,7 @@ html
               Biltong tri-tip venison porchetta rump leberkas short loin drumstick
               ham hock.
 
-          .column.column--3
+          .col-md-3
             p.paragraph.
               Turkey biltong beef ribs tail pork loin tongue pork belly pork chop
               pastrami short ribs capicola. Ground round biltong beef ribs,
@@ -196,7 +196,7 @@ html
 
     .site__mobile.mobile(data-mobile)
       .row
-        .column.mobile__section
+        .col-md-12.mobile__section
           .dropdown(data-dropdown)
             .dropdown__label(data-dropdown-label)
               +svg('arrow-bottom', 'dropdown__label__icon')
@@ -207,7 +207,7 @@ html
               option Über AXA
 
       .row
-        nav#menu-mobile.column.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+        nav#menu-mobile.col-md-12.mobile-menu.mobile-menu--sliding(data-menu='sliding')
           ul.mobile-menu__level(data-level)
             li.mobile-menu__item
               a.mobile-menu__link(href='#', data-link) Übersicht
@@ -266,10 +266,10 @@ html
                 span.mobile-menu__text Kundenportale
 
       .row
-        .column.mobile__separator
+        .col-md-12.mobile__separator
 
       .row
-        .column.list-group
+        .col-md-12.list-group
           a.list-group__item.list-group__item--link(href="#")
             img.list-group__avatar(src="https://avatars3.githubusercontent.com/u/198988?v=3&s=460")
             span.list-group__text David Knezić
@@ -278,7 +278,7 @@ html
             span.list-group__text Kontakt
 
       .row
-        ul.column.mobile__section
+        ul.col-md-12.mobile__section
           .mobile-languages
             li.mobile-languages__items.is-active
               a.mobile-languages__link.is-active(href="#") DE
@@ -301,7 +301,7 @@ html
       link(rel="stylesheet", href=relative("/dist/docs.css"))
     else
       script(src='/dist/bundle.js')
-    
+
     script(type='text/javascript').
       var $menu = $('#menu-mobile');
       var $activeLevel = $('#active-level');

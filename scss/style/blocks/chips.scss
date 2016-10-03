@@ -1,7 +1,3 @@
-@import '../variables';
-@import '../mixins/font';
-@import '../mixins/respond';
-
 .chips {
   position: relative;
 }
@@ -19,7 +15,7 @@
   border: $focus-border-width solid $color-gray--lighter;
   -webkit-appearance: none;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
       padding-right: 4px;
       padding-bottom: 4px;
     }

@@ -1,8 +1,3 @@
-@import '../variables';
-@import '../mixins/font';
-@import '../mixins/make-link';
-@import '../mixins/unstyle-list';
-
 .mobile-languages {
   @include unstyle-list;
 

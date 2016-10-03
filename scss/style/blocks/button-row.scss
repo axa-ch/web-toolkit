@@ -1,12 +1,9 @@
-@import '../variables';
-@import '../mixins/clearfix';
-@import '../mixins/respond';
-
 .button-row {
   @extend .clearfix;
+
   margin-bottom: 80px;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     padding-top: 8px;
     margin-left: -$grid-gutter-width;
     margin-right: -$grid-gutter-width;
@@ -22,7 +19,7 @@
   &.button {
     display: block;
 
-    @include respond(medium) {
+    @media (min-width: $screen-md-min) {
       display: inline-block;
     }
   }
@@ -31,14 +28,14 @@
     margin-top: 0;
   }
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     display: inline-block;
     margin-top: 0;
   }
 }
 
 .button-row__button--right {
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     float: right;
   }
 }

@@ -1,6 +1,3 @@
-@import '../../../scss/style/variables';
-@import '../../../scss/style/mixins/clearfix';
-
 .contribute {
   margin: 20px -15px;
   padding: 20px;
@@ -8,7 +5,7 @@
 
   @extend .clearfix;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     display: table;
     margin-left: 0;
     margin-right: 0;
@@ -18,13 +15,13 @@
 }
 
 .contribute__row {
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     display: table-row;
   }
 }
 
 .contribute__content {
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     display: table-cell;
     vertical-align: middle;
     padding: 20px;
@@ -34,7 +31,7 @@
 .contribute__image {
   display: none;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     display: table-cell;
     width: 100px;
     vertical-align: middle;

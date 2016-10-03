@@ -1,6 +1,3 @@
-@import '../blocks/link';
-@import '../variables';
-
 .dropzone {
   background-color: $color-gray--lighter;
 }
@@ -42,7 +39,7 @@
 }
 
 .dropzone__text__upload-link {
-  @include link();
+  @include make-link();
 
   font-variant: small-caps;
   font-size: 18px;

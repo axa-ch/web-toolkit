@@ -7,7 +7,7 @@ include ../../mixins.pug
 
 .mobile(data-mobile)
   .row
-    .column.mobile__section
+    .col-xs-12.mobile__section
       .dropdown(data-dropdown)
         .dropdown__label(data-dropdown-label)
           +svg('arrow-bottom', 'dropdown__label__icon')
@@ -17,7 +17,7 @@ include ../../mixins.pug
           option Corporate Clients
 
   .row
-    nav.column.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+    nav.col-xs-12.mobile-menu.mobile-menu--sliding(data-menu='sliding')
       ul.mobile-menu__level(data-level)
         li.mobile-menu__item
           a.mobile-menu__link(href='#', data-link)
@@ -30,10 +30,10 @@ include ../../mixins.pug
             span.mobile-menu__text Household Contents
 
   .row
-    .column.mobile__separator
+    .col-xs-12.mobile__separator
 
   .row
-    .column.list-group
+    .col-xs-12.list-group
       a.list-group__item.list-group__item--link(href="#")
         img.list-group__avatar(src="https://avatars3.githubusercontent.com/u/198988?v=3&s=460")
         span.list-group__text David Knezić
@@ -42,7 +42,7 @@ include ../../mixins.pug
         span.list-group__text Feedback
 
   .row
-    ul.column.mobile__section
+    ul.col-xs-12.mobile__section
       .mobile-languages
         li.mobile-languages__items
           a.mobile-languages__link(href="#") DE

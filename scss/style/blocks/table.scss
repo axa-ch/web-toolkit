@@ -1,7 +1,3 @@
-@import '../variables';
-@import '../mixins/clearfix';
-@import '../mixins/respond';
-
 @mixin make-ie9-block($display) {
   @extend .clearfix;
 
