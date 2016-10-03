@@ -1,247 +1,238 @@
-
-@mixin make-typo-sans {
-  font-family: $font-family-sans-serif;
-}
-
-@mixin make-typo-serif {
-  font-family: $font-family-serif;
-}
-
 /// font-size: $font-size-title-main;
 /// font-weight: bold;
 /// letter-spacing: -0.02em;
 /// line-height: 1.051
 ///
 /// @fontType serif
-.make-typo-78 {
-  @include make-typo-serif();
+.typo-78-serif {
+  font-family: $font-family-serif;
   font-size: 78px;
   font-weight: bold;
   letter-spacing: -0.01em;
   line-height: 1.051;
 }
 
-.make-typo-78-sans {
-  @include make-typo-sans();
+.typo-78 {
+  font-family: $font-family-sans-serif;
   font-size: 78px;
   font-weight: bold;
   letter-spacing: -0.01em;
   line-height: 1.051;
 }
 
-.make-typo-62 {
-  @include make-typo-serif();
+.typo-62-serif {
+  font-family: $font-family-serif;
   font-size: 62px;
   font-weight: bold;
   letter-spacing: -0.02em;
   line-height: 1.161;
 }
 
-.make-typo-62-sans {
-  @include make-typo-sans();
+.typo-62 {
+  font-family: $font-family-sans-serif;
   font-size: 62px;
   font-weight: bold;
   letter-spacing: -0.01em;
   line-height: 1.161;
 }
 
-.make-typo-48 {
-  @include make-typo-serif();
+.typo-48-serif {
+  font-family: $font-family-serif;
   font-size: 48px;
   font-weight: bold;
   letter-spacing: -0.02em;
   line-height: 1.125;
 }
 
-.make-typo-48-sans {
-  @include make-typo-sans();
+.typo-48 {
+  font-family: $font-family-sans-serif;
   font-size: 48px;
   font-weight: bold;
   letter-spacing: 0.01em;
   line-height: 1.125;
 }
 
-.make-typo-36 {
-  @include make-typo-sans();
+.typo-36 {
+  font-family: $font-family-sans-serif;
   font-size: 36px;
   font-weight: bold;
   letter-spacing: 0.01em;
   line-height: 1.125;
 }
 
-.make-typo-28 {
-  @include make-typo-serif();
+.typo-28-serif {
+  font-family: $font-family-serif;
   font-size: 28px;
   font-weight: bold;
   letter-spacing: -0.02em;
   line-height: 1.143;
 }
 
-.make-typo-28-sans {
-  @include make-typo-sans();
+.typo-28 {
+  font-family: $font-family-sans-serif;
   font-size: 28px;
   font-weight: bold;
   letter-spacing: 0.02em;
   line-height: 1.143;
 }
 
-.make-typo-24 {
-  @include make-typo-sans();
+.typo-24 {
+  font-family: $font-family-sans-serif;
   font-size: 24px;
   font-weight: bold;
   line-height: 1.2
 }
 
-.make-typo-20 {
-  @include make-typo-sans();
+.typo-20 {
+  font-family: $font-family-sans-serif;
   font-size: 20px;
   letter-spacing: 0.01em;
   line-height: 1.5;
 }
 
-.make-typo-18 {
-  @include make-typo-sans();
+.typo-18 {
+  font-family: $font-family-sans-serif;
   font-size: 18px;
   letter-spacing: 0.01em;
   line-height: 1.5;
 }
 
-.make-typo-16 {
-  @include make-typo-sans();
+.typo-16 {
+  font-family: $font-family-sans-serif;
   font-size: 16px;
   letter-spacing: 0.01em;
   line-height: 1.5;
 }
 
-.make-typo-14 {
-  @include make-typo-sans();
+.typo-14 {
+  font-family: $font-family-sans-serif;
   font-size: 14px;
   letter-spacing: 0.08em;
 }
 
-.make-typo-13 {
-  @include make-typo-sans();
+.typo-13 {
+  font-family: $font-family-sans-serif;
   font-size: 13px;
   letter-spacing: 0.08em;
 }
 
 .typo-main-title-editorial {
-  @extend .make-typo-78;
+  @extend .typo-78;
 }
 
 .typo-main-title {
-  @extend .make-typo-78-sans;
+  @extend .typo-78-sans;
 }
 
 .typo-title-l2-editorial {
-  @extend .make-typo-62;
+  @extend .typo-62;
 }
 
 .typo-title-l2 {
-  @extend .make-typo-62-sans;
+  @extend .typo-62-sans;
 }
 
 .typo-title-l3-editorial {
-  @extend .make-typo-48;
+  @extend .typo-48;
 }
 
 .typo-title-l3 {
-  @extend .make-typo-48-sans;
+  @extend .typo-48-sans;
 }
 
 .typo-title-menu, .typo-footer-l2 {
-  @extend .make-typo-36;
+  @extend .typo-36;
   text-transform: uppercase;
 }
 
 .typo-title-l4-editorial {
-  @extend .make-typo-28;
+  @extend .typo-28;
 }
 
 .typo-title-l4 {
-  @extend .make-typo-28-sans;
+  @extend .typo-28-sans;
 }
 
 .typo-footer-l1 {
-  @extend .make-typo-28;
+  @extend .typo-28;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .typo-item-highlight {
-  @extend .make-typo-24;
+  @extend .typo-24;
 }
 
 .typo-menu-item {
-  @extend .make-typo-24;
+  @extend .typo-24;
   text-transform: uppercase;
 }
 
 .typo-story-text {
-  @extend .make-typo-20;
+  @extend .typo-20;
 }
 
 .typo-body-text {
-  @extend .make-typo-18;
+  @extend .typo-18;
 }
 
 .typo-body-text ul, .typo-list-body-text {
-  @extend .make-typo-18;
+  @extend .typo-18;
   line-height: 2;
 }
 
 .typo-body-text strong, .typo-bold-text {
-  @extend .make-typo-18;
+  @extend .typo-18;
 
   font-weight: bold;
 }
 
 .typo-footer-main {
-  @extend .make-typo-16;
+  @extend .typo-16;
 
   font-weight: bold;
 }
 
 .typo-footer-sub {
-  @extend .make-typo-16;
+  @extend .typo-16;
 
   line-height: 2.063;
   letter-spacing: 0.01em;
 }
 
 .typo-button {
-  @extend .make-typo-16;
+  @extend .typo-16;
 
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .typo-article-header {
-  @extend .make-typo-14;
+  @extend .typo-14;
 
   text-transform: uppercase;
 }
 
 .typo-link, a {
-  @extend .make-typo-14;
+  @extend .typo-14;
 
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .typo-navigation, .typo-small-button {
-  @extend .make-typo-13;
+  @extend .typo-13;
 
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .typo-header-bar {
-  @extend .make-typo-13;
+  @extend .typo-13;
 
   text-transform: uppercase;
 }
 
 .typo-footer-legal {
-  @extend .make-typo-13;
+  @extend .typo-13;
 }
