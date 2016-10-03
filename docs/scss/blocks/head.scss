@@ -34,7 +34,7 @@
   padding: 10px 0;
   margin: 0;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     padding: 20px 0;
   }
 }

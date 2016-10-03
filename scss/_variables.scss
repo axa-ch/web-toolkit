@@ -66,26 +66,7 @@ $transition-fast: 195ms;
 $transition-slow: 375ms;
 $transition-normal: 225ms;
 
-// Custom Variables
-
-// #############################
-// # Grid
-// #############################
-
-$respond-medium-min-width: 768px;
-$respond-large-min-width: 980px;
-$respond-large-max-width: 1400px;
-
-$grid-breakpoint-sm: 0;
-$grid-breakpoint-md: 48rem;
-$grid-breakpoint-lg: 90rem;
-
-// #############################
-// # Icon font
-// #############################
-
-$icon-font-path: '../fonts';
-$icon-font-name: 'style-guide-font';
+// Custom variables
 
 // #############################
 // # Colors
@@ -114,7 +95,6 @@ $color-gray--darker: #6f6f6f;
 $color-gray--predarkest: #666666;
 $color-gray--darkest: #333333;
 $color-black: #000000;
-
 
 // TBD colors
 

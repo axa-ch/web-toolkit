@@ -4,7 +4,7 @@ $z-index-example-border-brackets: 49;
 .example {
   margin: 0 -10px 0 -10px;
 
-  @include respond(medium) {
+  @media (min-width: $screen-md-min) {
     margin: 0 0 25px 0;
   }
 }
