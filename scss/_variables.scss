@@ -66,6 +66,136 @@ $transition-fast: 195ms;
 $transition-slow: 375ms;
 $transition-normal: 225ms;
 
+// Colors
+//----- Basic palette
+
+/// @title Oxford Blue
+/// @color base-colors
+$color-oxford-blue: #333c4e;
+
+
+/// @title Bay Of Dragons
+/// @color base-colors
+$color-bay-of-dragons: #233878;
+
+/// @title Endeavour
+/// @color base-colors
+$color-endeavour: #22498e;
+
+/// @title Steel Blue
+/// @color base-colors
+$color-steel-blue: #4975ba;
+
+/// @title Azure
+/// @color base-colors
+$color-azure: #3466b4;
+
+/// @title Iceberg
+/// @color base-colors
+$color-iceberg: #d4eef5;
+
+
+/// @title Flamingo
+/// @color base-colors
+$color-flamingo: #ec4d33;
+
+/// @title Burnt Sienna
+/// @color base-colors
+$color-burnt-sienna: #f07662;
+
+
+/// @title Teal Blue
+/// @color base-colors
+$color-teal-blue: #064360;
+
+/// @title Venice Blue
+/// @color base-colors
+$color-venice-blue: #075d86;
+
+
+/// @title Mine Shaft
+/// @color base-colors
+$color-mine-shaft: #333333;
+
+/// @title Aluminium
+/// @color base-colors
+$color-aluminium: #999999;
+
+/// @title Iron
+/// @color base-colors
+$color-iron: #cccccc;
+
+/// @title White Smoke
+/// @color base-colors
+$color-white-smoke: #f5f5f5;
+
+
+/// @title White
+/// @color base-colors
+$color-white: #ffffff;
+
+/// @title Black
+/// @color base-colors
+$color-black: #000000;
+
+
+
+//----- Override bootstrap colors
+
+/// @title Primary
+/// @alias color-bay-of-dragons
+/// @color bootstrap-overrides
+$brand-primary:         $color-bay-of-dragons !default;
+
+/// Default bootstrap value
+/// @title Success
+/// @color bootstrap-overrides
+$brand-success:         #5cb85c !default;
+
+/// Default bootstrap value
+/// @title Info
+/// @color bootstrap-overrides
+$brand-info:            #5bc0de !default;
+
+/// Default bootstrap value
+/// @title Warning
+/// @color bootstrap-overrides
+$brand-warning:         #f0ad4e !default;
+
+/// @title Danger
+/// @alias color-flamingo
+/// @color bootstrap-overrides
+$brand-danger:          $color-flamingo !default;
+
+
+
+//----- Component colors
+
+/// @title Primary Button Color
+/// @alias color-steel-blue
+/// @color button-colors
+$color-button-primary: $color-steel-blue;
+
+/// @title Secondary Button Color
+/// @alias color-endeavour
+/// @color button-colors
+$color-button-secondary: $color-endeavour;
+
+
+//== Motion
+//
+//## Specify the basic motion constants
+$motion-default: cubic-bezier(0.4, 0.0, 0.2, 1);
+$motion-easeout: cubic-bezier(0.0, 0.0, 0.2, 1);
+$motion-easein: cubic-bezier(0.4, 0.0, 1, 1);
+$motion-ease: cubic-bezier(0.4, 0.0, 0.6, 1);
+
+$duration-fast: 195ms;
+$duration-slow: 375ms;
+$duration-normal: 225ms;
+
+
+
 // Custom Variables
 
 // #############################
