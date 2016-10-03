@@ -36,6 +36,11 @@
   padding-bottom: 16px;
 
   color: $color-gray--darker;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 .menu-main__link__home {

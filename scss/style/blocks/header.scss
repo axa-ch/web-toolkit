@@ -35,6 +35,8 @@
 .header__main__row {
   @extend .row;
 
+  display: flex;
+
   // This is for the menu-main overlay!
   position: static;
 
