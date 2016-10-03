@@ -117,27 +117,27 @@
 }
 
 .typo-main-title-editorial {
-  @extend .typo-78;
+  @extend .typo-78-serif;
 }
 
 .typo-main-title {
-  @extend .typo-78-sans;
+  @extend .typo-78;
 }
 
 .typo-title-l2-editorial {
-  @extend .typo-62;
+  @extend .typo-62-serif;
 }
 
 .typo-title-l2 {
-  @extend .typo-62-sans;
+  @extend .typo-62;
 }
 
 .typo-title-l3-editorial {
-  @extend .typo-48;
+  @extend .typo-48-serif;
 }
 
 .typo-title-l3 {
-  @extend .typo-48-sans;
+  @extend .typo-48;
 }
 
 .typo-title-menu, .typo-footer-l2 {
@@ -146,11 +146,11 @@
 }
 
 .typo-title-l4-editorial {
-  @extend .typo-28;
+  @extend .typo-28-serif;
 }
 
 .typo-title-l4 {
-  @extend .typo-28-sans;
+  @extend .typo-28;
 }
 
 .typo-footer-l1 {

@@ -4,7 +4,7 @@
 
 .btn-primary {
   // @include make-font-button();
-  @extend .make-typo-16;
+  @extend .typo-16;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
@@ -44,7 +44,7 @@
   }
 
   // @include make-font-button();
-  @extend .make-typo-16;
+  @extend .typo-16;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
