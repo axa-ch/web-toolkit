@@ -17,6 +17,7 @@
   },
   "scripts": {
     "dev": "better-npm-run dev",
+    "dev:watch-docs": "better-npm-run dev:watch-docs",
     "build": "better-npm-run build",
     "start": "babel-node lib/server.js",
     "docs:build": "babel-node lib/build-docs.js",
@@ -38,6 +39,12 @@
   },
   "betterScripts": {
     "dev": {
+      "command": "concurrently --kill-others \"npm run bundles:watch\" \"npm run docs:build:delayed\" --names bundles:watch,docs:build --prefix-colors cyan,magenta --prefix [{name}]",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "dev:watch-docs": {
       "command": "concurrently --kill-others \"npm run all:watch\" \"npm run docs:build:delayed\" --names all:watch,docs:build --prefix-colors cyan,magenta --prefix [{name}]",
       "env": {
         "NODE_ENV": "development"
