@@ -1,0 +1,120 @@
+@mixin button-primary($main, $secondary, $contrast) {
+  background: $color-button-primary;
+
+  color: $contrast;
+  background-image: linear-gradient(to bottom, $main 50%, $secondary 50%);
+  // Use a bit more than 200% to avoid anti-aliasing creating a small top border
+  // in hover state and not much more to not affect the animation
+  background-size: 100% 202%;
+  border-color: $secondary;
+  transition: background-position $duration-fast $motion-easein;
+
+  &:focus,
+  &.focus,
+  &:hover {
+    background-position: 0 100%;
+    border-color: $secondary;
+    color: $contrast;
+    transition: background-position $duration-fast $motion-easeout;
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-position: 0 100%;
+    border-color: $secondary;
+    color: $contrast;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $contrast;
+      border-color: $secondary;
+      background-color: darken($secondary, 8%);
+      border-color: darken($secondary, 8%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    background: lightgray;
+    background-image: none;
+    border-color: dimgray;
+    color: dimgray;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: lightgray;
+      border-color: dimgray;
+      color: dimgray;
+    }
+  }
+
+  .badge {
+    color: $main;
+    background-color: $contrast;
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    .badge {
+      color: $secondary;
+      background-color: $contrast;
+    }
+  }
+}
+
+@mixin button-color($main, $secondary, $contrast) {
+  border-color: $main;
+  background: $contrast;
+  color: $main;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $secondary;
+    border-color: $secondary;
+
+    .badge {
+      background-color: $secondary;
+      color: $contrast;
+    }
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    color: darken($secondary, 8%);
+    border-color: darken($secondary, 8%);
+
+    .badge {
+      background-color: darken($secondary, 8%);
+      color: $contrast;
+    }
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    border-color: $main;
+    background: $contrast;
+    color: $main;
+
+    cursor: $cursor-disabled;
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+  
+  .badge {
+    background-color: $main;
+    color: $contrast;
+  }
+}
