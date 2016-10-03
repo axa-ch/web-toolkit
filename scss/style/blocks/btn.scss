@@ -1,9 +1,7 @@
 @import '../variables';
-// @import '../mixins/fonts';
 @import '../mixins/btn';
 
 .btn-primary {
-  // @include make-font-button();
   @extend .typo-16;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -43,14 +41,13 @@
       $line-height-small, $btn-border-radius-small);
   }
 
-  // @include make-font-button();
   @extend .typo-16;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
 
   .badge {
-    font-size: .9em;    
+    font-size: .9em;
   }
 }
 
