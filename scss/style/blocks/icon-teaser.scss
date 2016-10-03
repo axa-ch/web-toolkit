@@ -85,7 +85,7 @@
 
   background: $color-white;
   border: 2px solid $color-blue-gray--light;
-  transition: all $transition-duration-fast;
+  transition: all $transition-fast;
 
   @media (min-width: $screen-lg-min) {
     padding: 13px 32px 14px;

@@ -6,7 +6,7 @@
 .burger-icon__top,
 .burger-icon__middle,
 .burger-icon__bottom {
-  transition: all $transition-duration ease;
+  transition: all $transition-normal ease;
   transform-origin: 50% 50%;
   opacity: 1;
 }

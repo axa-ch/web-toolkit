@@ -195,9 +195,9 @@
   -webkit-transition-delay: $transition-delay;
           transition-delay: $transition-delay;
 }
-@mixin transition-duration($transition-duration...) {
-  -webkit-transition-duration: $transition-duration;
-          transition-duration: $transition-duration;
+@mixin transition-duration($transition-normal...) {
+  -webkit-transition-duration: $transition-normal;
+          transition-duration: $transition-normal;
 }
 @mixin transition-timing-function($timing-function) {
   -webkit-transition-timing-function: $timing-function;

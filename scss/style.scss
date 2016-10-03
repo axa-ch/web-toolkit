@@ -2,11 +2,10 @@
 // Add this for full inclusion or only pick the needed block files.
 // Enjoy!
 
-@import 'bootstrap/normalize';
-
-// We do not include the standard Bootstrap variables file!
-//@import 'bootstrap/variables';
 @import 'variables';
+
+@import 'bootstrap/normalize';
+@import 'bootstrap/variables';
 
 // Core variables and mixins
 @import 'bootstrap/mixins';

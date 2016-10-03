@@ -105,7 +105,7 @@ $z-index-example-border-brackets: 49;
   background: $color-white;
   z-index: $z-index-example-iframe;
 
-  transition: max-width $transition-duration ease;
+  transition: max-width $transition-normal ease;
 }
 
 .example__separator {

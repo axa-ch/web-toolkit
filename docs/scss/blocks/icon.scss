@@ -1,6 +1,6 @@
 .icon--toggle {
   .vertical, .horizontal {
-    transition: transform $transition-duration ease;
+    transition: transform $transition-normal ease;
     transform-origin: 50% 50%;
   }
 }
