@@ -49,10 +49,10 @@ html
           span.brand__addition Web#[br]Toolkit
 
       .row
-        .header-search.autocomplete
-          input.header-search__input.autocomplete__input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
-          .header-search__button
-            +svg('search', ['header-search__icon', 'icon'])
+        .inline-search.autocomplete
+          input.inline-search__input.autocomplete__input(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'), placeholder="Search pages...")
+          .inline-search__button
+            +svg('search', ['inline-search__icon', 'icon'])
 
       .row
         nav.col-md-12.mobile-menu.mobile-menu--collapsing(data-menu='collapsing')

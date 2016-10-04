@@ -1,0 +1,42 @@
+.inline-search {
+  height: 56px;
+
+  .autocomplete__suggestions__item {
+    @extend .typo-16;
+
+    background-color: #4267c3;
+    color: #ffffff;
+  }
+
+  .autocomplete__suggestions__item--selected {
+    background-color: #103184;
+  }
+
+  .docs-search__tags {
+    @extend .typo-13;
+
+    opacity: 0.5;
+  }
+}
+
+.inline-search__input {
+  @extend .typo-18;
+
+  border: none;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 56px;
+  width: 100%;
+}
+
+.inline-search__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px;
+}
+
+.inline-search__icon {
+  height: 24px;
+  width: 24px;
+}
