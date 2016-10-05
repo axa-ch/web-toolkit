@@ -76,14 +76,16 @@
           <input class="header-search__input autocomplete__input" type="text" data-search="data-search" data-search-index-data="{{relative}}searchIndex.json" data-search-base-url="{{relative}}">
           <div class="header-search__button">
             {{> icon name="search" classes="header-search__icon icon"}}
+          </div>
+        </div>
       </div>
       <div class="row">
         <nav class="col-md-12 mobile-menu mobile-menu--collapsing" data-menu="collapsing">
-          <ul class="mobile-menu__level" data-level="data-level">
+          <ul class="mobile-menu__level" data-level>
             <li class="mobile-menu__item">
-              <a class="mobile-menu__link" href="{{relative}}index.html" data-link="data-link">Home</a>
+              <a class="mobile-menu__link" href="{{relative}}index.html" data-link>Home</a>
             </li>
-            {{#with navigation}}
+            {{#with sitemap}}
               {{> mobile-menu}}
             {{/with}}
             {{!--each section in navigation
@@ -120,12 +122,19 @@
       var href = '{{relative}}{{link}}'
       var mobile = $('[data-menu="collapsing"]')
 
-      var level = mobile
+      var activeElement = mobile
         .find('[data-link]')
         .filter('[href=\'' + href + '\']')
+ 
+      if (activeElement.length > 0) {
+        activeElement.toggleClass('is-active')
+      }
+        
+      var level = activeElement
         .closest('[data-level]')
 
       if (level.length > 0) {
+        level.toggleClass('is-active')
         mobile.collapsingMenu('toggle', level)
       }
     </script>
