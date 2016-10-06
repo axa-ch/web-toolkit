@@ -1,7 +1,7 @@
 ---
 title: FAQ
 order: 6
-layout: page.pug
+layout: page.hbs
 ---
 
 > Projects decide what third party libraries and frameworks they want to use for

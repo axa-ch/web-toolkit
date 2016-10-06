@@ -1,7 +1,7 @@
 ---
 title: Social metadata
 order: 7
-layout: page.pug
+layout: page.hbs
 draft: true
 ---
 
