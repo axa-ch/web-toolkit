@@ -52,7 +52,7 @@ aside.callout
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/main-menu-basic.pug
+              include:highlight(renderHandlebars) ./snippets/main-menu-basic.hbs
 
 :markdown-it
   ---
@@ -82,7 +82,7 @@ aside.callout
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/main-menu-multi.pug
+              include:highlight(renderHandlebars) ./snippets/main-menu-multi.hbs
         .tab-panel__content__tab(data-tab-content='js')
           :markdown-it
             If you omit the `data-menu="main"` attribute, the

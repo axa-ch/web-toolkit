@@ -1,0 +1,15 @@
+---
+title: Loading Spinner
+layout: demo.pug
+---
+<div data-spinner class="spinner is-active">
+  <div class="backdrop">
+    <div class="backdrop__shadow backdrop__shadow--light"></div>
+    <div class="backdrop__content backdrop__content--centered">
+      <div class="spinner__block">
+        <div class="spinner__animation"><img alt="spinner" src="{{relative "/images/ie9_spinner.gif"}}" class="spinner__ie9-fallback"></div>
+        <div class="spinner__caption">searching for cat videos...</div>
+      </div>
+    </div>
+  </div>
+</div>

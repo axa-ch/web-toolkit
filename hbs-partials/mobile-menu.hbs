@@ -3,7 +3,7 @@
     <li class="mobile-menu__item">
       <a class="mobile-menu__link{{#if children}} mobile-menu__link--parent{{/if}}"
         data-link
-        href={{#unless children}}"{{relative}}{{filename}}.html"{{else}}"#"{{/unless}}>
+        href={{#unless children}}"{{relative filename}}.html"{{else}}"#"{{/unless}}>
         <span class="mobile-menu__text">{{title}}</span>
         {{#if children}}
           {{> icon name="arrow-right" classes="mobile-menu__link__parent-icon icon"}}

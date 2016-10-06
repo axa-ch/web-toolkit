@@ -1,0 +1,16 @@
+---
+title: Bouncing Loading Spinner
+layout: demo.pug
+---
+<div data-spinner="bouncy" class="bouncy-spinner is-active">
+  <div class="backdrop">
+    <div class="backdrop__shadow backdrop__shadow--light"></div>
+    <div class="backdrop__content backdrop__content--centered">
+      <div class="bouncy-spinner__content">
+        <div class="bouncy-spinner__indicator"><img alt="spinner" src="{{relative "/images/axa.svg"}}" data-default class="bouncy-spinner__logo">
+          <div data-default class="bouncy-spinner__shadow"></div><img alt="spinner" src="{{relative "/images/ie9_spinner.gif"}}" data-fallback class="bouncy-spinner__ie9-fallback"></div>
+        <div class="bouncy-spinner__caption">bouncing smoothly...</div>
+      </div>
+    </div>
+  </div>
+</div>

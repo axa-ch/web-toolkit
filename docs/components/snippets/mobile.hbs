@@ -1,0 +1,45 @@
+---
+title: Mobile Drawer
+layout: demo.pug
+---
+<div data-mobile class="mobile">
+  <div class="row">
+    <div class="col-xs-12 mobile__section">
+      <div data-dropdown class="dropdown">
+        <div data-dropdown-label class="dropdown__label">
+          {{> icon name="arrow-bottom" classes="dropdown__label__icon" }}
+          <div data-dropdown-text class="dropdown__label__text"></div>
+        </div><select data-dropdown-select class="dropdown__select"><option>Private Individuals</option><option>Corporate Clients</option></select></div>
+    </div>
+  </div>
+  <div class="row">
+    <nav data-menu="sliding" class="col-xs-12 mobile-menu mobile-menu--sliding">
+      <ul data-level class="mobile-menu__level">
+        <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Car Insurance</span></a></li>
+        <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Personal Liability</span></a></li>
+        <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Household Contents</span></a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 mobile__separator"></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 list-group">
+      <a href="#" class="list-group__item list-group__item--link"><img src="https://avatars3.githubusercontent.com/u/198988?v=3&s=460" class="list-group__avatar"><span class="list-group__text">David Knezić</span></a>
+      <a href="#" class="list-group__item list-group__item--link">
+        {{> icon name="feedback" classes="list-group__icon" }}
+        <span class="list-group__text">Feedback</span></a>
+    </div>
+  </div>
+  <div class="row">
+    <ul class="col-xs-12 mobile__section">
+      <div class="mobile-languages">
+        <li class="mobile-languages__items"><a href="#" class="mobile-languages__link">DE</a></li>
+        <li class="mobile-languages__items"><a href="#" class="mobile-languages__link">FR</a></li>
+        <li class="mobile-languages__items"><a href="#" class="mobile-languages__link">IT</a></li>
+        <li class="mobile-languages__items is-active"><a href="#" class="mobile-languages__link is-active">EN</a></li>
+      </div>
+    </ul>
+  </div>
+</div>

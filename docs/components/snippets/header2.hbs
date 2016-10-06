@@ -1,0 +1,41 @@
+---
+title: Header
+layout: demo.pug
+---
+<header class="header">
+  <div class="header__meta">
+    <div class="header__meta__container">
+      <div class="header__meta__row">
+        <ul class="header__meta__item header__meta__item--menu meta-menu">
+          <li class="meta-menu__item"><a href="#" class="meta-menu__link">Individuals</a></li>
+          <li class="meta-menu__item is-active"><a href="#" class="meta-menu__link is-active">Small Business Insurance</a></li>
+          <li class="meta-menu__item"><a href="#" class="meta-menu__link">About Us</a></li>
+        </ul>
+        <form action="#" class="header__meta__item header__meta__item--search header-search"><input type="text" class="header-search__input"><button type="submit" class="header-search__button">{{> icon name="search" classes="icon header-search__icon" }}</button></form>
+        <div class="header__meta__item header__meta__item--language meta-language">
+          <div class="meta-language2"><a class="meta-language2__button"><span class="meta-language2__text"> de<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="meta-language2__icon icon is-toggled"><path d="M 24.003 6.81 l -1.505 -1.47 L 11.99 15.652 L 1.498 5.412 L 0.004 6.88 l 10.49 10.24 l -0.004 0.004 l 1.506 1.47 l 0.004 -0.003 l 0.004 0.005 l 1.496 -1.47 l -0.004 -0.003"></path></svg></span></a>
+            <div
+              class="meta-language2__menu is-open">
+              <div class="meta-language2__menu__items"><a class="meta-language2__menu__item is-active">de</a><a class="meta-language2__menu__item">en</a><a class="meta-language2__menu__item">fr</a><a class="meta-language2__menu__item">it</a></div>
+          </div>
+        </div>
+      </div><a class="header__meta__item header__meta__item--action">myAXA Login</a></div>
+  </div>
+  </div>
+  <div class="header__main">
+    <div class="header__main__container">
+      <div class="header__main__row">
+        <a href="#" class="header__main__item header__main__item--brand brand"><img src="{{relative "/images/logo.svg"}}" alt="AXA logo" class="brand__image"></a>
+        <ul class="header__main__item header__main__item--menu menu-main">
+          <li class="menu-main__item"><a href="#" class="menu-main__link">Menu Item 1</a></li>
+          <li class="menu-main__item is-active"><a href="#" class="menu-main__link is-active">Menu Item 2</a></li>
+          <li class="menu-main__item"><a href="#" class="menu-main__link">Menu Item 3</a></li>
+          <li class="menu-main__item"><a href="#" class="menu-main__link">Menu Item 4</a></li>
+        </ul>
+        <div class="header__main__item header__main__item--mobile-actions mobile-actions">
+          <a href="#" class="mobile-actions__item">{{> icon name="search" classes="icon mobile-actions__icon" }}</a><a data-burger href="#" class="mobile-actions__item site__burger"><svg data-burger class="mobile-actions__icon icon burger-icon"><g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd"><path d="M0,5 L24,5" class="burger-icon__top"></path><path d="M0,12 L24,12" class="burger-icon__middle"></path><path d="M0,19 L24,19" class="burger-icon__bottom"></path></g></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
