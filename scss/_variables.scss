@@ -70,30 +70,33 @@ $transition-normal: 225ms;
 // Colors
 //----- Basic palette
 
-/// @title Oxford Blue
+/// @title AXA Blue
 /// @color base-colors
-$color-oxford-blue: #333c4e;
+$color-axa-blue: #103184;
 
-
-/// @title Bay Of Dragons
+/// @title AXA Red
 /// @color base-colors
-$color-bay-of-dragons: #233878;
+$color-axa-red: #c91432;
 
-/// @title Endeavour
+/// @title Deep Saphire
 /// @color base-colors
-$color-endeavour: #22498e;
+$color-deep-saphire: #0d2970;
 
-/// @title Steel Blue
+/// @title St Tropaz
 /// @color base-colors
-$color-steel-blue: #4975ba;
+$color-st-tropaz: #22449a;
 
 /// @title Azure
 /// @color base-colors
-$color-azure: #3466b4;
+$color-azure: #3054ae;
 
-/// @title Iceberg
+/// @title Dark Indigo
 /// @color base-colors
-$color-iceberg: #d4eef5;
+$color-dark-indigo: #4267c3;
+
+/// @title Indigo
+/// @color base-colors
+$color-indigo: #5174cb;
 
 
 /// @title Flamingo
@@ -105,6 +108,47 @@ $color-flamingo: #ec4d33;
 $color-burnt-sienna: #f07662;
 
 
+/// @title Mine Shaft
+/// @color base-colors
+$color-mine-shaft: #333333;
+
+/// @title Scorpion
+/// @color base-colors
+$color-scorpion: #5f5f5f;
+
+/// @title Gray
+/// @color base-colors
+$color-gray: #7f7f7f;
+
+/// @title Dusty Gray
+/// @color base-colors
+$color-dusty-gray: #999999;
+
+/// @title Silver
+/// @color base-colors
+$color-silver: #cccccc;
+
+/// @title Wild Sand
+/// @color base-colors
+$color-wild-sand: #f5f5f5;
+
+/// @title Alabaster
+/// @color base-colors
+$color-alabaster: #fafafa;
+
+/// @title White
+/// @color base-colors
+$color-white: #ffffff;
+
+
+/// @title Periwinkle
+/// @color base-colors
+$color-periwinkle: #c9d8ff;
+
+/// @title Iceberg
+/// @color base-colors
+$color-iceberg: #d4eef5;
+
 /// @title Teal Blue
 /// @color base-colors
 $color-teal-blue: #064360;
@@ -113,31 +157,37 @@ $color-teal-blue: #064360;
 /// @color base-colors
 $color-venice-blue: #075d86;
 
-
-/// @title Mine Shaft
+/// @title Crimson
 /// @color base-colors
-$color-mine-shaft: #333333;
+$color-crimson: #c91432;
 
-/// @title Aluminium
+/// @title Amaranth
 /// @color base-colors
-$color-aluminium: #999999;
+$color-amaranth: #f02849;
 
-/// @title Iron
+/// @title Amber
 /// @color base-colors
-$color-iron: #cccccc;
+$color-amber: #ffbf00;
 
-/// @title White Smoke
+/// @title Bright Sun
 /// @color base-colors
-$color-white-smoke: #f5f5f5;
+$color-bright-sun: #ffd33b;
 
-
-/// @title White
+/// @title Mountain Meadow
 /// @color base-colors
-$color-white: #ffffff;
+$color-mountain-meadow: #1c9a67;
 
-/// @title Black
+/// @title Jungle Green
 /// @color base-colors
-$color-black: #000000;
+$color-jungle-green: #2ab27b;
+
+/// @title Fountain Blue
+/// @color base-colors
+$color-fountain-blue: #57c3c3;
+
+/// @title Monte Carlo
+/// @color base-colors
+$color-monte-carlo: #7ed2d2;
 
 
 
@@ -146,7 +196,7 @@ $color-black: #000000;
 /// @title Primary
 /// @alias color-bay-of-dragons
 /// @color bootstrap-overrides
-$brand-primary:         $color-bay-of-dragons !default;
+$brand-primary:         $color-axa-blue !default;
 
 /// Default bootstrap value
 /// @title Success
@@ -175,12 +225,13 @@ $brand-danger:          $color-flamingo !default;
 /// @title Primary Button Color
 /// @alias color-steel-blue
 /// @color button-colors
-$color-button-primary: $color-steel-blue;
+$color-button-primary: $color-indigo;
 
 /// @title Secondary Button Color
 /// @alias color-endeavour
 /// @color button-colors
-$color-button-secondary: $color-endeavour;
+$color-button-secondary: $color-st-tropaz;
+
 
 
 //== Motion
