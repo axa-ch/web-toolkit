@@ -194,29 +194,29 @@ $color-monte-carlo: #7ed2d2;
 //----- Override bootstrap colors
 
 /// @title Primary
-/// @alias color-bay-of-dragons
+/// @alias color-indigo
 /// @color bootstrap-overrides
-$brand-primary:         $color-axa-blue !default;
+$brand-primary:         $color-indigo !default;
 
-/// Default bootstrap value
 /// @title Success
+/// @alias color-jungle-green
 /// @color bootstrap-overrides
-$brand-success:         #5cb85c !default;
+$brand-success:         $color-jungle-green !default;
 
-/// Default bootstrap value
 /// @title Info
+/// @alias color-periwinkle
 /// @color bootstrap-overrides
-$brand-info:            #5bc0de !default;
+$brand-info:            $color-periwinkle !default;
 
-/// Default bootstrap value
 /// @title Warning
+/// @alias color-bright-sun
 /// @color bootstrap-overrides
-$brand-warning:         #f0ad4e !default;
+$brand-warning:         $color-bright-sun !default;
 
 /// @title Danger
-/// @alias color-flamingo
+/// @alias color-burnt-sienna
 /// @color bootstrap-overrides
-$brand-danger:          $color-flamingo !default;
+$brand-danger:          $color-burnt-sienna !default;
 
 
 
