@@ -140,6 +140,10 @@ $color-alabaster: #fafafa;
 /// @color base-colors
 $color-white: #ffffff;
 
+/// @title Black
+/// @color base-colors
+$color-black: #000000;
+
 
 /// @title Periwinkle
 /// @color base-colors
@@ -234,6 +238,15 @@ $color-button-secondary: $color-st-tropaz;
 
 $badge-bg: $color-indigo;
 
+$navbar-default-bg: $color-wild-sand;
+$navbar-default-border: $color-wild-sand;
+$navbar-default-color: $color-mine-shaft;
+$navbar-default-link-active-bg: $color-silver;
+
+$navbar-inverse-bg: $color-mine-shaft;
+$navbar-inverse-border: $color-mine-shaft;
+$navbar-inverse-color: $color-wild-sand;
+$navbar-inverse-link-active-bg: $color-black;
 
 //== Motion
 //
