@@ -39,7 +39,7 @@ $mobile-nav-width-fixed: 300px;
 .site__page__mask {
   display: block;
   width: 100%;
-  height: 0;
+  height: 100%;
 
   position: absolute;
   top: 0;
@@ -51,17 +51,14 @@ $mobile-nav-width-fixed: 300px;
   cursor: pointer;
   pointer-events: none;
 
-  transition: opacity $transition-normal $transition-easeout,
-    height 0;
+  transition: opacity $transition-normal $transition-slow $transition-ease;
 }
 
 .site__page__mask.is-visible {
   opacity: 0.5;
   pointer-events: all;
-  height: 100%;
 
-  transition: opacity $transition-normal $transition-easein,
-    height 0;
+  transition: opacity $transition-slow $transition-easein;
 
   @media (min-width: $screen-lg-min) {
     opacity: 0;
