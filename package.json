@@ -62,12 +62,6 @@
   "bugs": {
     "url": "https://github.com/axa-ch/style-guide/issues"
   },
-  "browserify-shim": {
-    "jquery": "global:jQuery",
-    "baconjs": "global:Bacon",
-    "iframe-resizer": "global:iFrameResize",
-    "moment": "global:moment"
-  },
   "homepage": "http://design.axa.ch",
   "dependencies": {
     "baconjs": "^0.7.73",
