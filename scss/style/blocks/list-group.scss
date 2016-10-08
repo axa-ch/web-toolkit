@@ -5,7 +5,7 @@
 }
 
 .list-group__item {
-  @extend .make-font-large;
+  @extend .typo-16;
 
   display: flex;
   align-items: center;
@@ -20,6 +20,11 @@
 
 .list-group__item--link {
   @include make-link();
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 .list-group__text,
