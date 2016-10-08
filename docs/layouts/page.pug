@@ -74,14 +74,9 @@ html
             +svg('github', ['list-group__icon'])
             span.list-group__text View on GitHub
 
-    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
-    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
-    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
-    script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
-
     if process.env.NODE_ENV === 'production'
-      script(src=relative('/dist/docs.js'))
       link(rel="stylesheet", href=relative("/dist/docs.css"))
+      script(src=relative('/dist/docs.js'))
     else
       script(src=relative('/dist/bundle.js'))
 

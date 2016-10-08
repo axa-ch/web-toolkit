@@ -1,6 +1,5 @@
 import path from 'path'
 import webpack from 'webpack'
-import HappyPack from 'happypack'
 import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 import SvgStore from 'webpack-svgstore-plugin'
@@ -38,19 +37,6 @@ export default {
       test: /\.scss$/,
       loader: `happypack/loader?id=${getEnvId('sass')}`,
     }],
-    noParse: [
-      'jquery',
-      // 'react',
-      // 'react-dom',
-      'baconjs',
-      'moment',
-      'classnames',
-      // 'svg4everybody',
-      'zeroclipboard',
-      // 'iframe-resizer',
-      'lunr',
-      'slick-carousel',
-    ].map((module) => new RegExp(require.resolve(module))),
   },
   plugins: [
     createHappyPlugin('jsx', [
