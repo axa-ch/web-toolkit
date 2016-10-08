@@ -81,7 +81,7 @@ $mobile-nav-width-fixed: 300px;
 
   background-color: $color-white;
 
-  transition: transform $transition-normal $transition-easeout;
+  transition: transform $transition-normal $transition-ease;
 }
 
 .site__mobile.is-visible {
