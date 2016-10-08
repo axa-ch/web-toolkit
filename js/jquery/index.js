@@ -23,4 +23,17 @@ import './progress-bar'
 import './segmented-control'
 import './site'
 
+import './bootstrap/affix'
+import './bootstrap/alert'
+import './bootstrap/button'
+import './bootstrap/carousel'
+import './bootstrap/collapse'
+import './bootstrap/dropdown'
+import './bootstrap/modal'
+import './bootstrap/popover'
+import './bootstrap/scrollspy'
+import './bootstrap/tab'
+import './bootstrap/tooltip'
+import './bootstrap/transition'
+
 export default {}

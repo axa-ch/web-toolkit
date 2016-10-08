@@ -4,8 +4,9 @@ import $ from 'jquery'
 import moment from 'moment'
 import svg4everybody from 'svg4everybody'
 
-import './clipboard'
 import '../../js/index'
+
+import './clipboard'
 import './cheat'
 import './example'
 import './iframe-resizer'
