@@ -1,14 +1,10 @@
 /* global window, Intercom */
 
 import $ from 'jquery'
-
-window.jQuery = $
-window.$ = $
-
 import moment from 'moment'
 import svg4everybody from 'svg4everybody'
-import './clipboard'
 
+import './clipboard'
 import '../../js/index'
 import './cheat'
 import './example'
@@ -18,6 +14,9 @@ import './object-fit'
 import './octocat'
 import './search'
 import './tab'
+
+window.jQuery = $
+window.$ = $
 
 moment.locale('en_GB')
 svg4everybody()
