@@ -3,6 +3,7 @@
 .mobile-menu {
   @include unstyle-list();
 
+  width: 100%;
   padding-bottom: 1px;
 }
 
@@ -44,7 +45,7 @@
 }
 
 .mobile-menu__link {
-  @extend .make-font-medium-semibold;
+  @extend .typo-16;
 
   line-height: 1.3;
 
