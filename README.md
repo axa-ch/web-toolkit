@@ -9,40 +9,35 @@ to simplify and accelerate the development of AXA web apps.
 
 ## Use it!
 
-Want to use the Web Style Guide in your web app? There are different ways of integration,
+Want to use the Web Toolkit in your web app?
+There are different ways of integration,
 but the preferred one is to add it as an npm dependency:
 
 ```sh
-$ npm install @axa-ch/style-guide
+$ npm install @axa/web-toolkit
 ```
 
 After that, include the styles from the `dist` folder into your less file:
 
 ```less
-// app.less
-@import 'less/normalize';
-@import 'less/style';
+@import 'scss/style';
 ```
 
 Or just consume the precompiled css files, also from the `dist` folder:
 
 ```html
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="dist/bundles/all.css">
 ```
 
 If you don't want to reimplement the interactivity of our components,
 just use our jQuery plugins:
 
 ```html
-<script src="jquery/axa-wsg.jquery.all.js"></script>
+<script src="dist/bundles/all.js"></script>
 ```
 
-You'll additionally need to copy the `images` folder into your project.
-
-If you don't want to use npm to include the style guide, you might download the
-latests release package from our GitHub releases page. We're also working
-on a bower distribution.
+If you don't want to use npm to include the Web Toolkit, you might download the
+latests release package from our GitHub releases page.
 
 ## Versioning
 
@@ -56,13 +51,10 @@ A typical version number has the format of `MAJOR.MINOR.PATCH`.
 * `MINOR` changes when we add functionality in a backwards-compatible manner
 * `PATCH` changes when we make backwards-compatible bug fixes
 
-But keep in mind that as long as we run in `0.y.z`,
-anything can break at any time. This is called *Initial Development*.
-
 ## Build it yourself!
 
 Do you want to add an exciting new feature or fix a bug? For that you'll need
-to build the Web Style Guide yourself, so you can make sure things work.
+to build the Web Toolkit yourself, so you can make sure things work.
 In order to do that, it's required that you have
 node with npm installed on your system, whether
 it's Windows, Linux or Mac OS X. With Git installed you'll be able to deploy
@@ -77,12 +69,11 @@ $ npm install
 ```
 
 With the dependencies in place, you're now able to run one of the many
-build tasks we provide for you. Using the `dev` task you can build the
+npm scripts we provide for you. Using the `dev` script you can build the
 assets, run the showcase and let it refresh your browser on each change
 in the file system.
 
 ```sh
-# Start development mode (afterwards check http://localhost:3000)
 $ npm run dev
 ```
 
@@ -96,12 +87,12 @@ In order to make changes as easy as possible and simplify our build process,
 we make use of many different technologies. It's great to have an understanding
 for what these do, when you decide to dive deeper into the code.
 
-* [LessCSS](http://lesscss.org) for mixins, variables and other fancy styling helpers
-* [Babel](https://babeljs.io) for readable and extended scripts based on cutting edge standards (ES6, ES7)
+* [Sass](http://sass-lang.com) for mixins, variables and other fancy styling helpers
+* [Babel](https://babeljs.io) for readable and extended scripts based on cutting edge standards (ES6)
 * [SVG](http://www.w3.org/TR/SVG2/) for colorful and sometimes animated icons
 * [Metalsmith](http://metalsmith.io) for our static site documentation
 * [Webpack](http://webpack.github.io) for bundling JS, CSS and SVG icons
-* [Pug](http://pugjs.org) which simplifies how we write markup
+* [Handlebars](http://handlebarsjs.com) which simplifies how we write markup
 * [Markdown](http://daringfireball.net/projects/markdown/) for text-heavy documentation pages
 
 ## Feedback
@@ -110,7 +101,7 @@ We love feedback! File an issue and we'll reach out to you.
 
 ## Contributing
 
-Do not hesitate, we appreciate every contribution. Do not fear non-perfect Pull Requests, nobody is perfect.
+Do not hesitate, we appreciate every contribution.
 
 When contributing please stick to the following guides:
 
@@ -137,12 +128,9 @@ We stick to the following naming conventions for branches:
 Rule number one: Consistency is key; So when you contribute follow the code style
 patterns you see in the code you're changing.
 
-For LESS code, we stick to the guidelines formulated by [@mdo](https://twitter.com/mdo).
-Take a look at http://codeguide.co/#css.
-
 ## Who's behind it?
 
-The project is developed by UX, design and IT people at AXA Switzerland.
+The project is developed by UX, design and IT people at AXA.
 Check the collaborators list for the people behind it.
 
 ## License
