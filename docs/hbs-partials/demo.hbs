@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <!--[if lt IE 10]><html class="lt-ie10"><![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content=config.description>
+    <meta name="keywords" content=config.keywords>
+    <meta name="author" content=config.author>
+
+    <title>{{#if title}}{{title}}{{/if}} | Demo | {{config.name}}</title>
+    <link rel="stylesheet" href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css">
+
+  </head>
+  <body>
+    <div class="example">
+{{!Do not indent this line because all lines of the rendered partial will also
+  be indented, which affects <pre> tags}}
+{{{contents}}}
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
+
+    {{#eq process.env.NODE_ENV 'production'}}
+      <script src="{{relative "/dist/docs.js"}}"></script>
+      <link rel="stylesheet" href="{{relative "/dist/docs.css"}}">
+    {{else}}
+      <script src="{{relative "/dist/bundle.js"}}"></script>
+    {{/eq}}
+  </body>
+</html>

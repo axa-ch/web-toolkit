@@ -1,7 +1,7 @@
 ---
 title: Popover
 order: 9
-layout: page.pug
+layout: page.hbs
 draft: true
 ---
 
@@ -25,7 +25,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight(renderPug) ./snippets/popover.pug
+              include:highlight(renderHandlebars) ./snippets/popover.hbs
 
 h3.heading.heading--tertiary UX Checklist
 ul.checklist

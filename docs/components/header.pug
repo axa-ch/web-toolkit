@@ -1,7 +1,7 @@
 ---
 title: Header
 order: 6
-layout: page.pug
+layout: page.hbs
 ---
 
 include ../mixins.pug
@@ -41,6 +41,6 @@ ul.checklist
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/header.pug
+              include:highlight(renderHandlebars) ./snippets/header.hbs
 
 //- Copyright AXA Versicherungen AG 2015

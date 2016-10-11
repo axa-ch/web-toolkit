@@ -1,7 +1,7 @@
 ---
 title: Button
 order: 4
-layout: page.pug
+layout: page.hbs
 lunr: true
 ---
 
@@ -72,7 +72,7 @@ p.paragraph.
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight(renderPug) ./snippets/button-primary.pug
+              include:highlight(renderHandlebars) ./snippets/button-primary.hbs
 
         .tab-panel__content__tab(data-tab-content='css')
 
@@ -113,7 +113,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight(renderPug) ./snippets/button-secondary.pug
+              include:highlight(renderHandlebars) ./snippets/button-secondary.hbs
         .tab-panel__content__tab(data-tab-content='css')
           p.paragraph.
             Use the CSS classes mentioned in the HTML tab
@@ -152,7 +152,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight(renderPug) ./snippets/button-more.pug
+              include:highlight(renderHandlebars) ./snippets/button-more.hbs
         .tab-panel__content__tab(data-tab-content='css')
           p.paragraph.
             Use the CSS classes mentioned in the HTML tab
@@ -183,7 +183,7 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight(renderPug) ./snippets/button-ghost.pug
+              include:highlight(renderHandlebars) ./snippets/button-ghost.hbs
         .tab-panel__content__tab(data-tab-content='css')
           p.paragraph.
             Use the CSS classes mentioned in the HTML tab
@@ -219,7 +219,7 @@ p.paragraph.
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight(renderPug) ./snippets/button-floating.pug
+              include:highlight(renderHandlebars) ./snippets/button-floating.hbs
 
         .tab-panel__content__tab(data-tab-content='css')
           p.paragraph.

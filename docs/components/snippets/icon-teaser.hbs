@@ -1,0 +1,33 @@
+---
+title: Icon Teaser
+teaserItems:
+  - icon: 'teaserMyAxa'
+    title: 'myAXA'
+    text: 'Verwalten Sie Ihre AXA Versicherungen zentral'
+    action: 'Anmelden'
+    link: '#'
+  - icon: 'teaserJobsKarriere'
+    title: 'Karriere & Jobs'
+    text: 'Profitieren Sie von flexiblen Arbeitsmodellen und guten Entwicklungs​möglichkeiten.'
+    action: 'Bewerben'
+    link: '#'
+  - icon: 'teaserBetaVersion'
+    title: 'Beta Version'
+    text: 'Werfen Sie einen Blick in die Zukunft der AXA Website.'
+    action: 'Entdecken'
+    link: '#'
+layout: demo.hbs
+---
+<div data-icon-teaser class="icon-teaser">
+  <ul data-icon-teaser-container class="icon-teaser__items">
+    {{#each teaserItems as |item|}}
+      <li data-icon-teaser-panel data-title="{{item.title}}" class="icon-teaser__item">
+        <div class="icon-teaser__item__icon-wrapper">
+          {{> icon name=item.icon classes="icon-teaser__item__icon" }}
+        </div>
+        <div class="icon-teaser__item__title">{{item.title}}</div>
+        <div class="icon-teaser__item__text">{{item.text}}</div><a href="#" class="icon-teaser__item__action">{{item.action}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</div>

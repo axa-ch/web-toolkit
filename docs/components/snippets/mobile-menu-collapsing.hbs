@@ -1,0 +1,32 @@
+---
+title: Collapsing Mobile Menu
+layout: demo.hbs
+---
+<nav data-menu="collapsing" class="mobile-menu mobile-menu--collapsing">
+  <ul data-level class="mobile-menu__level is-open">
+    <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link">Home</a></li>
+    <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link mobile-menu__link--parent"><span class="mobile-menu__text">Individuals</span>{{> icon name="arrow-right" classes="icon menu__link__parent-icon" }}</a>
+      <ul data-level class="mobile-menu__level">
+        <li class="mobile-menu__item mobile-menu__item--back"><a href="#" data-back class="mobile-menu__link mobile-menu__link--back"><span class="mobile-menu__text">Individuals</span>{{> icon name="arrow-left" classes="icon menu__link__back-icon" }}</a></li>
+        <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Contents Insurance</span></a></li>
+        <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Liability Insurance</span></a></li>
+        <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link mobile-menu__link--parent"><span class="mobile-menu__text">Services</span>{{> icon name="arrow-right" classes="icon menu__link__parent-icon" }}</a>
+          <ul data-level class="mobile-menu__level">
+            <li class="mobile-menu__item mobile-menu__item--back"><a href="#" data-back class="mobile-menu__link mobile-menu__link--back"><span class="mobile-menu__text">Services</span>{{> icon name="arrow-left" classes="icon menu__link__back-icon" }}</a></li>
+            <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Claims</span></a></li>
+            <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Contracts</span></a></li>
+            <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Calculators</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link mobile-menu__link--parent"><span class="mobile-menu__text">Business</span>{{> icon name="arrow-right" classes="icon menu__link__parent-icon" }}</a>
+      <ul data-level class="mobile-menu__level">
+        <li class="mobile-menu__item mobile-menu__item--back"><a href="#" data-back class="mobile-menu__link mobile-menu__link--back"><span class="mobile-menu__text">Business</span>{{> icon name="arrow-left" classes="icon menu__link__back-icon" }}</a></li>
+        <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Expatriates</span></a></li>
+        <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">Online client service</span></a></li>
+      </ul>
+    </li>
+    <li class="mobile-menu__item"><a href="#" data-link class="mobile-menu__link"><span class="mobile-menu__text">About Us</span></a></li>
+  </ul>
+</nav>

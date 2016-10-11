@@ -1,0 +1,38 @@
+---
+title: Notification
+layout: demo.hbs
+---
+<div id="notification" data-notification-info="{{relative "/images/icons.svg#info"}}" data-notification-success="{{relative "/images/icons.svg#checkmark"}}" data-notification-error="{{relative "/images/icons.svg#cross"}}"></div>
+<div class="form">
+  <div class="form__group">
+    <div class="form__group__label">
+      <div class="form__group__text">Modifier</div>
+    </div>
+    <div class="form__group__control">
+      <div data-segmented-control id="notification__modifier" class="segmented-control"><label class="segmented-control__item"><input type="radio" name="notification__modifier" value="info" checked class="segmented-control__item__radio"><span class="segmented-control__item__label">Default</span></label><label class="segmented-control__item"><input type="radio" name="notification__modifier" value="success" class="segmented-control__item__radio"><span class="segmented-control__item__label">Success</span></label>
+        <label
+          class="segmented-control__item"><input type="radio" name="notification__modifier" value="error" class="segmented-control__item__radio"><span class="segmented-control__item__label">Error</span></label>
+      </div>
+    </div>
+  </div>
+  <div class="form__group">
+    <div class="form__group__label">
+      <div class="form__group__text">Content</div>
+    </div>
+    <div class="form__group__control"><textarea id="notification_content" class="control control--textarea">Notification text</textarea></div>
+  </div>
+  <div class="form__group">
+    <div class="form__group__label">
+      <div class="form__group__text"></div>
+    </div>
+    <div class="form__group__control"><label data-checkbox="data-checkbox" class="checkbox"><input type="checkbox" id="notification_html" class="checkbox__checkbox"><div class="checkbox__label"><div class="checkbox__label__text">HTML</div></div></label></div>
+  </div>
+  <div class="form__group">
+    <div class="form__group__label">
+      <div class="form__group__text"></div>
+    </div>
+    <div class="form__group__control">
+      <div id="showNotification" class="button">Show notification</div>
+    </div>
+  </div>
+</div>

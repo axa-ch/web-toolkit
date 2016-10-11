@@ -1,0 +1,62 @@
+---
+title: Footer
+layout: demo.hbs
+---
+<div class="footer">
+  <div class="footer__content">
+    <div class="footer__item footer__item--keep-in-touch">
+      <div class="footer__item__headline">Keep in touch</div>
+      <ul class="menu menu--keep-in-touch">
+        <li class="menu__item">
+          <a class="menu__link">
+            {{> icon name="facebook" classes="icon footer__social-media-icon icon--facebook" }}
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link">
+            {{> icon name="twitter" classes="icon footer__social-media-icon icon--twitter" }}
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link">
+            {{> icon name="xing" classes="icon footer__social-media-icon icon--xing" }}
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link">
+            {{> icon name="google-plus" classes="icon footer__social-media-icon icon--google-plus" }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__item footer__item--links">
+      <div class="footer__item__headline">AXA & You</div>
+      <div class="footer__item__menu">
+        <ul class="menu menu--footer">
+          <li class="menu__item is-active"><a class="menu__link">Contact Us</a></li>
+          <li class="menu__item"><a class="menu__link">Help & Advice</a></li>
+          <li class="menu__item"><a class="menu__link">Latest News</a></li>
+        </ul>
+        <ul class="menu menu--footer">
+          <li class="menu__item is-active"><a class="menu__link">Lorem ipsum</a></li>
+          <li class="menu__item"><a class="menu__link">Lorem ipsum</a></li>
+          <li class="menu__item"><a class="menu__link">Lorem ipsum</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__item footer__item--international">
+      <div class="footer__item__headline">AXA worldwide</div>
+      <a class="footer__international"><img src="{{relative "/images/axa-world.svg"}}" class="footer__international__image"><span class="footer__international__text">AXA Worldwide</span></a>
+    </div>
+  </div>
+  <div class="footer__copyline">
+    <div class="l-container">
+      <ul class="menu menu--copyline">
+        <li class="menu__item"><a class="menu__link">Sitemap</a></li>
+        <li class="menu__item"><a class="menu__link">Privacy</a></li>
+        <li class="menu__item"><a class="menu__link">Disclaimer</a></li>
+        <li class="menu__item"><span class="menu__link">AXA 2015 ©</span></li>
+      </ul>
+    </div>
+  </div>
+</div>

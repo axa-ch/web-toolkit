@@ -1,7 +1,7 @@
 ---
 title: Notification
 order: 8
-layout: page.pug
+layout: page.hbs
 tags: notifications, information, alert
 ---
 
@@ -46,7 +46,7 @@ p.paragraph.
             Test bla bla <br /> test
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/notification.pug
+              include:highlight(renderHandlebars) ./snippets/notification.hbs
 
 h3.heading.heading--tertiary UX Checklist
 

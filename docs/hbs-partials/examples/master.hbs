@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="{{config.description}}">
+  <meta name="keywords" content="{{config.keywords}}">
+  <meta name="author" content="{{config.author}}">
+  {{> appicon-ios size=57 }}
+  {{> appicon-ios size=72 }}
+  {{> appicon-ios size=76 }}
+  {{> appicon-ios size=114 }}
+  {{> appicon-ios size=120 }}
+  {{> appicon-ios size=144 }}
+  {{> appicon-ios size=152 }}
+  {{> appicon-ios size=180 }}
+  <meta name="apple-mobile-web-app-title" content="{{config.name}}">
+  <link href="images/splash-screen/ios/750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+  <!-- android/chrome app iocn-->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" sizes="192x192" href="images/app-icon/android/192x192.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- windows tiles-->
+  <meta name="application-name" content="{{config.name}}">
+  <meta name="msapplication-square70x70logo" content="images/app-icon/windows/128x128.png">
+  <meta name="msapplication-square150x150logo" content="images/app-icon/windows/270x270.png">
+  <meta name="msapplication-wide310x150logo" content="images/app-icon/windows/558x270.png">
+  <meta name="msapplication-square310x310logo" content="images/app-icon/windows/558x558.png">
+  <title>{{title}} | {{config.name}}</title>
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css">
+  <link rel="stylesheet" href="{{relative "/css/style.min.css"}}">
+</head>
+
+<body class="site">
+  <div class="site__page">
+    <div class="example-header">
+      <div class="example-header__sticky">
+        <a href="{{relative "/examples"}}" class="example-header__back">
+          {{> icon name="arrow-left" classes="icon mple-header__back__icon" }} Back to overview</a>
+        <div class="example-header__headline">Example</div>
+      </div>
+      <div class="example-header__text">
+        <p class="example-header__paragaph">Dies ist eine Beispielseite mit Demo-Inhalten.
+          <br /> Bitte besuchen Sie
+          <a class="example-header__link" href="http://axa.ch">www.axa.ch</a> für Ihre Versicherungsanliegen.</p>
+        <p class="example-header__paragaph">This is an example page with demo content.
+          <br /> Please visit
+          <a class="example-header__link" href="http://axa.ch">www.axa.ch</a> for your insurance concerns.</p>
+        <p class="example-header__paragaph">Ceci est un exemple de page avec du contenu de démonstration.
+          <br /> S'il vous plaît visitez
+          <a class="example-header__link" href="http://axa.ch">www.axa.ch</a> pour vos préoccupations d'assurance.</p>
+        <p class="example-header__paragaph">Questa è una pagina di esempio con contenuti demo.
+          <br /> Si prega di visitare
+          <a class="example-header__link" href="http://axa.ch">www.axa.ch</a> per le vostre preoccupazioni di assicurazione.
+        </p>
+      </div>
+    </div>
+    <header class="header">
+      <div class="header__container l-container">
+        <div data-toggle="site-menu" data-target=".site" class="header__mobile-trigger"></div>
+        <a href="{{relative "/"}}" class="header__brand brand"><img src="{{relative "/images/logo.svg"}}" alt="AXA logo" class="brand__image"></a>
+        <div class="header__meta">
+          <div class="header__meta__upper">
+            <div class="header__meta__language">
+              <ul class="menu menu--language">
+                <li class="menu__item is-active"><a class="menu__link">DE</a></li>
+                <li class="menu__item"><a class="menu__link">EN</a></li>
+              </ul>
+            </div>
+            <div class="header__meta__menu">
+              <ul class="menu menu--meta">
+                <li class="menu__item"><a href="../" class="menu__link">Back to overview</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="header__meta__lower">
+            <div class="header__meta__welcome">
+              <ul>
+                <li class="header__meta__welcome__item">Example</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>{{contents}}</div>
+    <footer class="footer">
+      <div class="footer__content"></div>
+      <div class="footer__copyline">
+        <div class="l-container">
+          <ul class="menu menu--copyline">
+            <li class="menu__item"><span class="menu__link">{{config.copyright}}</span></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="site__mobile-menu"></div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js"></script>
+  <script src="{{relative "/js/style-guide-docs.js"}}"></script>
+  <script src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
+</body>
+
+</html>

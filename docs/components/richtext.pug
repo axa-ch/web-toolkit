@@ -1,7 +1,7 @@
 ---
 title: Richtext
 order: 10
-layout: page.pug
+layout: page.hbs
 ---
 
 include ../mixins.pug
@@ -25,6 +25,6 @@ p.paragraph.
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight(renderPug) ./snippets/richtext.pug
+              include:highlight(renderHandlebars) ./snippets/richtext.hbs
 
 //- Copyright AXA Versicherungen AG 2015

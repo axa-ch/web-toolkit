@@ -1,7 +1,7 @@
 ---
 title: Modal 2
 order: 7
-layout: page.pug
+layout: page.hbs
 tags: terms, conditions, agb, avb
 ---
 
@@ -48,7 +48,7 @@ h2.heading.heading--secondary#static-content Static Content
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/modal2-static.pug
+              include:highlight(renderHandlebars) ./snippets/modal2-static.hbs
 
         .tab-panel__content__tab(data-tab-content='js')
           p.paragraph.
@@ -104,7 +104,7 @@ h2.heading.heading--secondary#external-content-ajax External Content (Ajax)
 
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlight ./snippets/modal2-ajax.pug
+              include:highlight(renderHandlebars) ./snippets/modal2-ajax.hbs
 
         .tab-panel__content__tab(data-tab-content='js')
           p.paragraph.
