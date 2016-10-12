@@ -176,12 +176,12 @@
   @extend .typo-18;
 }
 
-.typo-body-text ul, .typo-list-body-text {
+.typo-body-text, .typo-list-body-text {
   @extend .typo-18;
   line-height: 2;
 }
 
-.typo-body-text strong, .typo-bold-text {
+.typo-body-text, .typo-bold-text {
   @extend .typo-18;
 
   font-weight: bold;
