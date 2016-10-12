@@ -116,7 +116,7 @@
   letter-spacing: 0.08em;
 }
 
-.typo-main-title-editorial, h1 {
+.typo-main-title-editorial {
   @extend .typo-78-serif;
 }
 
@@ -124,7 +124,7 @@
   @extend .typo-78;
 }
 
-.typo-title-l2-editorial, h2 {
+.typo-title-l2-editorial {
   @extend .typo-62-serif;
 }
 
@@ -132,7 +132,7 @@
   @extend .typo-62;
 }
 
-.typo-title-l3-editorial, h3 {
+.typo-title-l3-editorial {
   @extend .typo-48-serif;
 }
 
@@ -145,7 +145,7 @@
   text-transform: uppercase;
 }
 
-.typo-title-l4-editorial, h4 {
+.typo-title-l4-editorial {
   @extend .typo-28-serif;
 }
 
@@ -176,12 +176,12 @@
   @extend .typo-18;
 }
 
-.typo-body-text ul, .typo-list-body-text {
+.typo-body-text, .typo-list-body-text {
   @extend .typo-18;
   line-height: 2;
 }
 
-.typo-body-text strong, .typo-bold-text {
+.typo-body-text, .typo-bold-text {
   @extend .typo-18;
 
   font-weight: bold;
