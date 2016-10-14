@@ -41,16 +41,34 @@
     @include button-size(($padding-large-vertical - 1px), $padding-large-horizontal,
       $font-size-large, $line-height-large, $btn-border-radius-large);
     border-width: 2px;
+
+    .glyphicon {
+      width: 50px;
+      margin-right: -$padding-large-horizontal;
+      margin-left: $padding-large-horizontal;
+    }
   }
 
   &.btn-sm {
     @include button-size($padding-small-vertical, $padding-small-horizontal,
       $font-size-small, $line-height-small, $btn-border-radius-small);
+
+    .glyphicon {
+      width: 30px;
+      margin-right: -$padding-small-horizontal;
+      margin-left: $padding-small-horizontal;
+    }
   }
 
   &.btn-xs {
     @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
       $line-height-small, $btn-border-radius-small);
+
+    .glyphicon {
+      width: 25px;
+      margin-right: -$padding-xs-horizontal;
+      margin-left: $padding-xs-horizontal;
+    }
   }
 
   @extend .typo-16;
@@ -60,6 +78,16 @@
 
   .badge {
     font-size: .9em;
+  }
+
+  .glyphicon {
+    width: 40px;
+    height: 100%;
+    margin-right: -$padding-base-horizontal;
+    margin-left: $padding-base-horizontal;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-left-color: $color-periwinkle;
   }
 }
 
