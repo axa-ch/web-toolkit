@@ -55,6 +55,7 @@ $input-height-small: ($line-height-small-computed + ($padding-small-vertical * 2
 $jumbotron-font-size: $font-size-item-highlight;
 $jumbotron-heading-font-size: $font-size-title-main;
 
+$icon-font-path: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/';
 // Custom transition variables
 
 $transition-default: cubic-bezier(0.4, 0.0, 0.2, 1);
