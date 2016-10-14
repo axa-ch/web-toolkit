@@ -45,7 +45,7 @@
     .glyphicon {
       width: 50px;
       margin-right: -$padding-large-horizontal;
-      margin-left: $padding-large-horizontal;
+      // margin-left: $padding-large-horizontal;
     }
   }
 
@@ -56,7 +56,7 @@
     .glyphicon {
       width: 30px;
       margin-right: -$padding-small-horizontal;
-      margin-left: $padding-small-horizontal;
+      // margin-left: $padding-small-horizontal;
     }
   }
 
@@ -67,7 +67,7 @@
     .glyphicon {
       width: 25px;
       margin-right: -$padding-xs-horizontal;
-      margin-left: $padding-xs-horizontal;
+      // margin-left: $padding-xs-horizontal;
     }
   }
 
@@ -84,10 +84,10 @@
     width: 40px;
     height: 100%;
     margin-right: -$padding-base-horizontal;
-    margin-left: $padding-base-horizontal;
-    border-left-width: 2px;
-    border-left-style: solid;
-    border-left-color: $color-periwinkle;
+    // margin-left: $padding-base-horizontal;
+    // border-left-width: 2px;
+    // border-left-style: solid;
+    // border-left-color: $color-periwinkle;
   }
 }
 
