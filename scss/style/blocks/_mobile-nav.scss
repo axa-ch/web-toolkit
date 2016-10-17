@@ -1,0 +1,41 @@
+$mobile-nav-panel-xs-height: 300px;
+$mobile-nav-panel-sm-height: 300px;
+$mobile-nav-panel-md-height: 300px;
+$mobile-nav-panel-lg-height: 400px;
+
+.mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  height: 0;
+
+  transition: height $transition-normal $transition-easeout, visibility 0s linear $transition-delay-normal;
+
+  background: $color-white;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+
+  &.is-open {
+    height: $mobile-nav-panel-xs-height;
+
+    transition: height $transition-normal $transition-easein, visibility 0s linear;
+
+    visibility: visible;
+    opacity: 1;
+
+    @media (min-width: $screen-sm-min) {
+      height: $mobile-nav-panel-sm-height;
+    }
+
+    @media (min-width: $screen-md-min) {
+      height: $mobile-nav-panel-md-height;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      height: $mobile-nav-panel-lg-height;
+    }
+  }
+}
