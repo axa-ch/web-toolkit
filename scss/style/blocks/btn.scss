@@ -1,5 +1,3 @@
-@import '../mixins/btn';
-
 /// This is unique style for the normal buttons.
 /// This button has a border only on the bottom and features a nice animation on hover.
 ///
@@ -19,7 +17,7 @@
     border-width: 0;
     border-bottom-width: 2px;
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large,
-      $line-height-large, $btn-border-radius-large);    
+      $line-height-large, $btn-border-radius-large);
   }
 
   @include button-primary($color-button-primary, $color-button-secondary, $color-white);
