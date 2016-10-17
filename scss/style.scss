@@ -57,19 +57,8 @@
 @import 'bootstrap/utilities';
 @import 'bootstrap/responsive-utilities';
 
-@import 'style/mixins/button';
-@import 'style/mixins/clearfix';
-@import 'style/mixins/ellipsis';
-@import 'style/mixins/font';
-@import 'style/mixins/invisible-font';
-@import 'style/mixins/invisible-input';
-@import 'style/mixins/make-link';
-@import 'style/mixins/richtext';
-@import 'style/mixins/target';
-@import 'style/mixins/unstyle-list';
-@import 'style/mixins/word-break';
-
 // Mixins and utilities
+@import 'style/mixins';
 @import 'style/utilities';
 @import 'style/type';
 
@@ -156,4 +145,4 @@
 
 @import 'style/blocks/btn';
 
-// Copyright AXA Versicherungen AG 2015
+// Copyright AXA 2016
