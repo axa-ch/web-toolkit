@@ -113,11 +113,6 @@
         </div>
       </div>
     </div>
-    
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js"></script>
 
     {{#eq process.env.NODE_ENV 'production'}}
       <script src="{{relative "/dist/docs.js"}}"></script>
@@ -133,11 +128,11 @@
       var activeElement = mobile
         .find('[data-link]')
         .filter('[href=\'' + href + '\']')
- 
+
       if (activeElement.length > 0) {
         activeElement.toggleClass('is-active')
       }
-        
+
       var level = activeElement
         .closest('[data-level]')
 
@@ -146,6 +141,7 @@
         mobile.collapsingMenu('toggle', level)
       }
     </script>
+
     <script> window.intercomSettings = { app_id: 'i82zr1ej' }</script>
     <script src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
     <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/i82zr1ej';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
