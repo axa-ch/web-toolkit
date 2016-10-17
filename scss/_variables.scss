@@ -66,6 +66,10 @@ $transition-fast: 195ms;
 $transition-slow: 375ms;
 $transition-normal: 225ms;
 
+$transition-delay-fast: $transition-fast;
+$transition-delay-slow: $transition-slow;
+$transition-delay-normal: $transition-normal;
+
 
 // Colors
 //----- Basic palette
