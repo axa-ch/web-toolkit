@@ -120,7 +120,7 @@ $nav-panel-lg-height: 400px;
 
   transform: translate(0, 0);
   transform: translate3d(0, 0, 0);
-  transition: height $transition-normal $transition-ease, width $transition-normal $transition-ease, transform $transition-normal $transition-ease, opacity 0s linear;
+  transition: height $transition-fast $transition-ease, width $transition-fast $transition-ease, transform $transition-fast $transition-ease, opacity 0s linear $transition-fast;
 
   background: $color-axa-red;
   opacity: 0;
@@ -128,7 +128,7 @@ $nav-panel-lg-height: 400px;
 
   &.is-visible {
     height: 3px;
-    transition: height $transition-normal $transition-ease, width $transition-normal $transition-ease, transform $transition-normal $transition-ease, opacity 0s linear;
+    transition: height $transition-fast $transition-ease, width $transition-normal $transition-ease, transform $transition-normal $transition-ease, opacity 0s linear;
 
     opacity: 1;
   }

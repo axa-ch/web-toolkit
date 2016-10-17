@@ -35,5 +35,6 @@ import './bootstrap/scrollspy'
 import './bootstrap/tab'
 import './bootstrap/tooltip'
 import './bootstrap/transition'
+import './stroke'
 
 export default {}
