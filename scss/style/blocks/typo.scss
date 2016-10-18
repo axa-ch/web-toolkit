@@ -77,25 +77,37 @@
   line-height: 1.2
 }
 
-.typo-20 {
+@mixin typo-20() {
   font-family: $font-family-sans-serif;
   font-size: 20px;
   letter-spacing: 0.01em;
   line-height: 1.5;
 }
 
-.typo-18 {
+.typo-20 {
+  @include typo-20();
+}
+
+@mixin typo-18() {
   font-family: $font-family-sans-serif;
   font-size: 18px;
   letter-spacing: 0.01em;
   line-height: 1.5;
 }
 
-.typo-16 {
+.typo-18 {
+  @include typo-18();
+}
+
+@mixin typo-16() {
   font-family: $font-family-sans-serif;
   font-size: 16px;
   letter-spacing: 0.01em;
   line-height: 1.5;
+}
+
+.typo-16 {
+  @include typo-16();
 }
 
 .typo-14 {
