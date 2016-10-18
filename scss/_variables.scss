@@ -56,6 +56,22 @@ $jumbotron-font-size: $font-size-item-highlight;
 $jumbotron-heading-font-size: $font-size-title-main;
 
 $icon-font-path: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/';
+
+//Add vertical and mobile paddings in addition to the standard
+//bootstrap paddings....................................................
+//........ yeah.....
+$padding-mobile-base-vertical: 10.5px;
+$padding-mobile-base-horizontal: $padding-base-horizontal;
+
+$padding-mobile-large-vertical: 14px;
+$padding-mobile-large-horizontal: $padding-large-horizontal;
+
+$padding-mobile-small-vertical: 1px;
+$padding-mobile-small-horizontal: $padding-small-horizontal;
+
+$padding-mobile-xs-vertical: 0px;
+$padding-mobile-xs-horizontal: $padding-xs-horizontal;
+
 // Custom transition variables
 
 $transition-default: cubic-bezier(0.4, 0.0, 0.2, 1);
