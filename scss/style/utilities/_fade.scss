@@ -1,0 +1,9 @@
+.fade-in {
+  opacity: 1;
+  transition: opacity $transition-normal $transition-easeout;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity $transition-normal $transition-easeout;
+}
