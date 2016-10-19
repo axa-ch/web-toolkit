@@ -162,7 +162,7 @@ $header-main-height: 72px;
     width: 23px;
     height: 2px;
     transition: all $transition-normal $transition-ease;
-    background: $color-axa-red;
+    background: $color-axa-blue;
 
     &:before,
     &:after {
@@ -172,7 +172,7 @@ $header-main-height: 72px;
       width: 23px;
       height: 2px;
       transition: all $transition-normal $transition-ease;
-      background: $color-axa-red;
+      background: $color-axa-blue;
       content: '';
       z-index: 0;
     }
