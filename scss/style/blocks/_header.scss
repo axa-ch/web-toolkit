@@ -72,8 +72,6 @@ $header-search-lg-width: 500px;
     width: $header-search-xs-width;
     transition: width $transition-normal $transition-easein $transition-delay-normal;
 
-    width: $mobile-nav-panel-xs-height;
-
     @media (min-width: $screen-sm-min) {
       width: $header-search-sm-width;
     }
