@@ -1,9 +1,23 @@
 .fade-in {
   opacity: 1;
-  transition: opacity $transition-normal $transition-easeout;
+  visibility: visible;
+  transition: opacity $transition-normal $transition-easeout, visibility 0s linear;
+}
+
+.fade-in-delayed {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear $transition-delay-normal;
 }
 
 .fade-out {
   opacity: 0;
-  transition: opacity $transition-normal $transition-easeout;
+  visibility: hidden;
+  transition: opacity $transition-normal $transition-easeout, visibility 0s linear $transition-delay-normal;
+}
+
+.fade-out-delayed {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear ($transition-delay-normal + $transition-normal);
 }
