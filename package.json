@@ -143,7 +143,7 @@
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-in-place": "^1.4.4",
     "metalsmith-layouts": "^1.6.5",
-    "metalsmith-lunr": "git+https://github.com/sventschui/metalsmith-lunr",
+    "metalsmith-lunr": "^0.2.1",
     "metalsmith-markdown": "git+https://github.com/axa-ch/metalsmith-markdown",
     "metalsmith-pug": "^1.1.0",
     "metalsmith-relative": "^1.0.3",
