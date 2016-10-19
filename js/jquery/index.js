@@ -20,6 +20,7 @@ import './modal2'
 import './notification'
 import './popover'
 import './progress-bar'
+import './search'
 import './segmented-control'
 import './site'
 
