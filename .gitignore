@@ -25,3 +25,5 @@ npm-debug.log
 *.njsproj
 *.sln
 WebEssentials-Settings.json
+phantomjs
+screenshots/
