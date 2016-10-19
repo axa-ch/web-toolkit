@@ -19,26 +19,14 @@
   &.btn.btn-lg {
     border-width: 0;
     border-bottom-width: 2px;
-    @include button-size($padding-mobile-large-vertical, $padding-mobile-large-horizontal, 20px,
+    @include btn-split-icon($padding-mobile-large-vertical, $padding-mobile-large-horizontal, 20px,
       $line-height-large, $btn-border-radius-large);
     @include typo-20();
 
-    .glyphicon {
-      width: 50px;
-      margin-right: -$padding-mobile-large-horizontal;
-      // margin-left: $padding-large-horizontal;
-    }
-    
     @media (min-width: $screen-md-min) {
-      @include button-size($padding-large-vertical, $padding-large-horizontal, 16px,
+      @include btn-split-icon($padding-large-vertical, $padding-large-horizontal, 16px,
         $line-height-large, $btn-border-radius-large);
       @include typo-16();
-
-      .glyphicon {
-        width: 50px;
-        margin-right: -$padding-large-horizontal;
-        // margin-left: $padding-large-horizontal;
-      }
     }
   }
 
@@ -53,80 +41,55 @@
 /// @example html - HTML Usage
 ///   <button type="button" class="btn btn-primary">Primary Button</button>
 .btn {
-  @include button-size($padding-mobile-base-vertical, $padding-mobile-base-horizontal, 18px,
+  @include btn-split-icon($padding-mobile-base-vertical, $padding-mobile-base-horizontal, 18px,
     $line-height-base, $btn-border-radius-base);
   @include typo-18();
 
   &.btn-lg {
-    @include button-size(($padding-mobile-large-vertical - 1px), $padding-mobile-large-horizontal,
+    @include btn-split-icon(($padding-mobile-large-vertical - 1px), $padding-mobile-large-horizontal,
       20px, $line-height-large, $btn-border-radius-large);
     border-width: 2px;
     @include typo-20();
-
-    .glyphicon {
-      width: 50px;
-      margin-right: -$padding-mobile-large-horizontal;
+      
+    &.btn-split-icon {
+      & .glyphicon {
+        border-left-width: 2px;
+      }
     }
   }
 
   &.btn-sm {
-    @include button-size($padding-mobile-small-vertical, $padding-mobile-small-horizontal,
+    @include btn-split-icon($padding-mobile-small-vertical, $padding-mobile-small-horizontal,
       16px, $line-height-small, $btn-border-radius-small);
     @include typo-16();
-
-    .glyphicon {
-      width: 30px;
-      margin-right: -$padding-mobile-small-horizontal;
-    }
   }
 
   &.btn-xs {
-    @include button-size($padding-mobile-xs-vertical, $padding-mobile-xs-horizontal, $font-size-small,
+    @include btn-split-icon($padding-mobile-xs-vertical, $padding-mobile-xs-horizontal, $font-size-small,
       16px, $btn-border-radius-small);
     @include typo-16();
-
-    .glyphicon {
-      width: 25px;
-      margin-right: -$padding-mobile-xs-horizontal;
-    }
   }
 
   @media (min-width: $screen-md-min) {
-    @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base,
+    @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
       $line-height-base, $btn-border-radius-base);
     @include typo-16();
 
     &.btn-lg {
       // Reduce vertical padding by 1px because we increase border-width by 1px
-      @include button-size(($padding-large-vertical - 1px), $padding-large-horizontal,
+      @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
         $font-size-large, $line-height-large, $btn-border-radius-large);
       border-width: 2px;
-
-      .glyphicon {
-        width: 50px;
-        margin-right: -$padding-large-horizontal;
-        // margin-left: $padding-large-horizontal;
-      }
     }
 
     &.btn-sm {
-      @include button-size($padding-small-vertical, $padding-small-horizontal,
+      @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
         $font-size-small, $line-height-small, $btn-border-radius-small);
-
-      .glyphicon {
-        width: 30px;
-        margin-right: -$padding-small-horizontal;
-      }
     }
 
     &.btn-xs {
-      @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
+      @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
         $line-height-small, $btn-border-radius-small);
-
-      .glyphicon {
-        width: 25px;
-        margin-right: -$padding-xs-horizontal;
-      }
     }
   }
 
@@ -137,12 +100,6 @@
 
   .badge {
     font-size: .9em;
-  }
-
-  .glyphicon {
-    width: 40px;
-    height: 100%;
-    margin-right: -$padding-base-horizontal;
   }
 }
 
