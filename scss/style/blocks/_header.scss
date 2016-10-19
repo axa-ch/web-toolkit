@@ -161,7 +161,7 @@ $header-main-height: 72px;
     position: relative;
     width: 23px;
     height: 2px;
-    transition: 0.2s;
+    transition: all $transition-normal $transition-ease;
     background: $color-axa-red;
 
     &:before,
@@ -171,7 +171,7 @@ $header-main-height: 72px;
       left: 0;
       width: 23px;
       height: 2px;
-      transition: 0.2s;
+      transition: all $transition-normal $transition-ease;
       background: $color-axa-red;
       content: '';
       z-index: 0;
@@ -186,7 +186,7 @@ $header-main-height: 72px;
     }
   }
 
-  &.is-active {
+  &.is-open {
     .header-burger-line {
       background: transparent;
 
@@ -204,7 +204,6 @@ $header-main-height: 72px;
       &:after {
         transform: rotate(-45deg);
         transform: rotate3d(0, 0, 1, -45deg);
-        box-shadow: 0 0 0 2px $color-white;
       }
     }
   }
