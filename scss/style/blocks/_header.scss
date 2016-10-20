@@ -13,10 +13,6 @@ $header-search-lg-width: 500px;
   width: 100%;
 
   border-top: 2px solid $color-dark-indigo;
-
-  &.transparent {
-    background: linear-gradient(to bottom, fade-out($color-black, 0.6) 0%, fade-out($color-black, 1) 100%);
-  }
 }
 
 .header-title {
@@ -249,11 +245,20 @@ $header-search-lg-width: 500px;
     &:after {
       top: 8px;
     }
+
+    .header.transparent &,
+    .header.transparent &:before,
+    .header.transparent &:after, {
+      background: $color-white;
+    }
   }
 
   &.is-open {
     .header-burger-line {
-      background: transparent;
+      &,
+      .header.transparent & {
+        background: transparent;
+      }
 
       &:before,
       &:after {
