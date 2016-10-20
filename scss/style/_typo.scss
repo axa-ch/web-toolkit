@@ -22,6 +22,14 @@ p {
 
   // Limit width to increase legibility
   max-width: 750px;
+
+  ul {
+    @extend .typo-list-body-text;
+  }
+
+  strong {
+    @extend .typo-bold-text;
+  }
 }
 
 .lead {
