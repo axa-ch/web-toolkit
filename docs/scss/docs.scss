@@ -1,12 +1,9 @@
 @import '../../scss/style';
 @import './highlight';
 
-@import './blocks/inline-search';
-
 @import './blocks/block';
 @import './blocks/box';
 @import './blocks/callout';
-@import './blocks/changelog';
 @import './blocks/color-palette';
 @import './blocks/color';
 @import './blocks/contribute';
@@ -19,92 +16,10 @@
 @import './blocks/icon';
 @import './blocks/icons-list';
 @import './blocks/image';
-@import './blocks/inspiration';
-@import './blocks/menu';
-@import './blocks/nav';
+@import './blocks/inline-search';
 @import './blocks/panel';
-@import './blocks/principle';
 @import './blocks/sample';
 @import './blocks/thumbnail';
 @import './blocks/typeface';
 
-$docs-width: 1260px;
-
-// increase max-width
-.container {
-  max-width: $docs-width;
-}
-
-.column--docs-side {
-  @include make-lg-column(2);
-
-  display: none;
-
-  @media (min-width: $screen-lg-min) {
-    display: block;
-  }
-}
-
-.column--docs-main {
-  @include make-lg-column(10);
-}
-
-// floating feedback button
-.docs-floating-action {
-  float: right;
-  width: 50px; // TODO
-
-  .docs-floating-action__button {
-    position: fixed;
-    bottom: 10px;
-    z-index: 98;
-  }
-}
-
-// github icon
-.docs-github-icon {
-  line-height: 21px;
-  font-size: 17px;
-  &::before {
-    font-size: 17px !important;
-  }
-}
-
-.docs-github-loading {
-  height: 21px;
-  margin-bottom: -5px;
-}
-
-.docs-chart-container {
-  &.is-active {
-    height: 202px;
-    margin: 20px 0 40px 0;
-    border: 1px solid $color-gray--lighter;
-    box-shadow: 0 0 5px #ccc;
-    box-shadow: 0 0 5px rgba(0,0,0,.2);
-  }
-}
-
-dl {
-  dt {
-    font-weight: bold;
-  }
-
-  dt,dd {
-    padding: 5px;
-  }
-}
-
-.heading--docs-home {
-  @extend .heading--secondary;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
-
-.container--docs-home {
-  max-width: 900px;
-}
-
-
-// Copyright AXA Versicherungen AG 2015
+// Copyright AXA 2016
