@@ -1,0 +1,70 @@
+.drawer {
+  position: fixed;
+  top: 2px;
+
+  height: 100%;
+
+  z-index: $z-index-site-mobile-nav;
+  overflow-y: scroll;
+
+  background-color: $color-white;
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $width: map-get($drawer-widths, $breakpoint);
+
+    @include media-breakpoint-up($breakpoint) {
+      width: $width;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+
+    .persistent-#{$breakpoint}-left {
+      left: 0;
+      transform: translateX(0);
+    }
+
+    .persistent-#{$breakpoint}-right {
+      right: 0;
+      transform: translateX(0);
+    }
+
+    .togglable-#{$breakpoint}-left {
+      left: 0;
+      transform: translateX(-100%);
+      transition: transform $transition-normal $transition-ease;
+
+      &.in {
+        transform: translateX(0);
+        transition: transform $transition-normal $transition-easein;
+      }
+    }
+
+    .togglable-#{$breakpoint}-right {
+      right: 0;
+      transform: translateX(100%);
+      transition: transform $transition-normal $transition-ease;
+
+      &.in {
+        transform: translateX(0);
+        transition: transform $transition-normal $transition-easein;
+      }
+    }
+
+    .togglable-#{$breakpoint}-top {
+      left: 0;
+      right: 0;
+      width: auto;
+      transform: translateY(-100%);
+      transition: transform $transition-normal $transition-ease;
+
+      &.in {
+        transform: translateY(0);
+        transition: transform $transition-normal $transition-easein;
+      }
+    }
+
+  }
+}
