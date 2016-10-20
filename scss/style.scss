@@ -57,6 +57,10 @@
 @import 'bootstrap/utilities';
 @import 'bootstrap/responsive-utilities';
 
+@import 'style/utilities';
+
+@import 'style/typo';
+
 @import 'style/mixins/button';
 @import 'style/mixins/clearfix';
 @import 'style/mixins/ellipsis';
@@ -68,8 +72,6 @@
 @import 'style/mixins/target';
 @import 'style/mixins/unstyle-list';
 @import 'style/mixins/word-break';
-
-@import 'style/blocks/typo';
 
 @import 'style/blocks/autocomplete';
 @import 'style/blocks/backdrop';

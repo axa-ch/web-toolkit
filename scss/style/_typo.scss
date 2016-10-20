@@ -1,0 +1,26 @@
+h1, .h1 {
+  @extend .typo-main-title;
+}
+
+h2, .h2 {
+  @extend .typo-title-l2;
+}
+
+h3, .h3 {
+  @extend .typo-title-l3;
+}
+
+h4, .h4 {}
+h5, .h5 {}
+h6, .h6 {}
+
+p {
+  @extend .typo-body-text;
+
+  // Limit width to increase legibility
+  max-width: 750px;
+}
+
+.lead {
+  @extend .typo-story-text;
+}

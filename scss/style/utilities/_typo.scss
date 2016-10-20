@@ -134,7 +134,8 @@
   @extend .typo-48;
 }
 
-.typo-title-menu, .typo-footer-l2 {
+.typo-title-menu,
+.typo-footer-l2 {
   @extend .typo-36;
   text-transform: uppercase;
 }
@@ -170,12 +171,12 @@
   @extend .typo-18;
 }
 
-.typo-body-text ul, .typo-list-body-text {
+.typo-list-body-text {
   @extend .typo-18;
   line-height: 2;
 }
 
-.typo-body-text strong, .typo-bold-text {
+.typo-bold-text {
   @extend .typo-18;
 
   font-weight: bold;
@@ -214,7 +215,8 @@
   text-transform: uppercase;
 }
 
-.typo-navigation, .typo-small-button {
+.typo-navigation,
+.typo-small-button {
   @extend .typo-13;
 
   font-weight: 600;
