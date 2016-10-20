@@ -1,3 +1,6 @@
+var webpage = require('webpage');
+var fs = require('fs');
+
 var demos = [
   '/components/demos/badge',
   '/components/demos/bouncing-spinner',
@@ -89,25 +92,46 @@ baseUrl = 'http://localhost:3000';
 //   }
 // }, 250);
 
-// console.log('Number of URLS: ' + demos.length);
-
+var delay = 50;
 
 function openPage(index) {
   var demo = demos[index];
-  var page = require('webpage').create();
+  var page = webpage.create();
+
+  page.viewportSize = { width: 375, height: 667 }
+  
+  page.settings.localToRemoteUrlAccessEnabled = true
+
   console.log('Opening page ', demo)
   page.open(baseUrl + demo + '.html', function(status) {
-    console.log('Rendering page ', demo)
-    page.render('screenshots' + demo + '.png');
+    var filename = 'screenshots' + demo + '.bmp';
+    console.log('Rendering page into', filename);
+    
+    page.render(filename);
 
-    if (status && index+1 < demos.length) {
-      //Do a timeout of 100ms because shit gets fucked up otherwise
-      setTimeout(function () {
+    function nextPage() {
+      if (!fs.exists(filename)) {
+        console.log('file', filename, 'does not exist. Waiting', delay, 'ms and repeating rendering.');
+        setTimeout(function() {
+          page.render(filename);
+          nextPage();
+        }, delay);
+        return;
+      }
+      console.log('file', filename, 'exists. Proceeding with next file.');
+
+      page.close();
+      console.log('page closed');
+
+      if (status && index + 1 < demos.length) {
         openPage(index + 1)
-      }, 100) 
-    } else {
-      phantom.exit(1)
-    }
+      } else if (status) {
+        phantom.exit(1);
+      } else {
+        phantom.exit(0);
+      }
+    }    
+    nextPage();
   });
 }
 
