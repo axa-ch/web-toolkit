@@ -172,7 +172,8 @@ $header-search-lg-width: 500px;
 
   &.is-active,
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     cursor: pointer;
     text-decoration: none;
 
