@@ -43,95 +43,61 @@ var demos = [
 var baseUrl = 'http://192.168.99.100:3000';
 baseUrl = 'http://localhost:3000';
 
-// var PAGE_WIDTH = 960;
-// var PAGE_HEIGHT = 640;
+var delay = 10;
+var mobileViewport = { width: 375, height: 200 }
+var tabletViewport = { width: 900, height: 200 }
+var desktopViewport = { width: 1400, height: 400 }
 
-// // phantomjs page object and helper flag
-// var page = require('webpage').create(),
-//   loadInProgress = false,
-//   pageIndex = 0;
-
-
-// // set clip and viewport based on PAGE_WIDTH and PAGE_HEIGHT constants
-// if (PAGE_WIDTH > 0 && PAGE_HEIGHT > 0) {
-//   page.viewportSize = {
-//     width: PAGE_WIDTH,
-//     height: PAGE_HEIGHT
-//   };
-
-//   page.clipRect = {
-//     top: 0,
-//     left: 0,
-//     width: PAGE_WIDTH,
-//     height: PAGE_HEIGHT
-//   };
-// }
-
-// // page handlers
-// page.onLoadStarted = function() {
-//   loadInProgress = true;
-//   console.log('page ' + (pageIndex + 1) + ' load started');
-// };
-
-// page.onLoadFinished = function() {
-//   loadInProgress = false;
-//   page.render('screenshots' + demo + '_' + PAGE_WIDTH + 'x' + PAGE_HEIGHT + '.png');
-//   console.log('page ' + (pageIndex + 1) + ' load finished');
-//   pageIndex++;
-// };
-
-// // try to load or process a new page every 250ms
-// setInterval(function() {
-//   if (!loadInProgress && pageIndex < demos.length) {
-//     console.log('image ' + (pageIndex + 1));
-//     page.open('http://192.168.99.100:3000' + demos[pageIndex] + '.html');
-//   }
-//   if (pageIndex == demos.length) {
-//     console.log('image render complete!');
-//     phantom.exit();
-//   }
-// }, 250);
-
-var delay = 50;
+var viewports = [
+  mobileViewport,
+  tabletViewport,
+  desktopViewport
+]
 
 function openPage(index) {
   var demo = demos[index];
   var page = webpage.create();
 
-  page.viewportSize = { width: 375, height: 667 }
+  page.viewportSize = viewports[0];
   
   page.settings.localToRemoteUrlAccessEnabled = true
 
   console.log('Opening page ', demo)
   page.open(baseUrl + demo + '.html', function(status) {
-    var filename = 'screenshots' + demo + '.bmp';
-    console.log('Rendering page into', filename);
-    
-    page.render(filename);
+    function renderViewport(viewportIndex) {
+      if (page.viewports !== viewports[viewportIndex])
+      {
+        page.viewportSize = viewports[viewportIndex];
+        page.reload();
+      }
+      var filename = 'screenshots' + demo + '_' + page.viewportSize.width + 'x' + page.viewportSize.height + '.png';
+      console.log('Rendering page ', demo);
+      page.render(filename);
 
-    function nextPage() {
       if (!fs.exists(filename)) {
-        console.log('file', filename, 'does not exist. Waiting', delay, 'ms and repeating rendering.');
+        console.log('file', filename, 'has not been correctly rendered. Waiting', delay, 'ms and retrying.');
         setTimeout(function() {
-          page.render(filename);
-          nextPage();
+          renderViewport(viewportIndex);
         }, delay);
         return;
       }
       console.log('file', filename, 'exists. Proceeding with next file.');
 
-      page.close();
-      console.log('page closed');
-
-      if (status && index + 1 < demos.length) {
-        openPage(index + 1)
-      } else if (status) {
-        phantom.exit(1);
-      } else {
-        phantom.exit(0);
+      if (viewportIndex < viewports.length-1) {
+        renderViewport(viewportIndex + 1)
       }
-    }    
-    nextPage();
+      else {
+        page.close();
+        if (index + 1 < demos.length) {
+          openPage(index + 1);
+        }
+        else {
+          phantom.exit(0);
+        }
+      }
+    }
+
+    renderViewport(0);
   });
 }
 
