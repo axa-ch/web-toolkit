@@ -71,6 +71,14 @@ $transition-delay-fast: $transition-fast;
 $transition-delay-slow: $transition-slow;
 $transition-delay-normal: $transition-normal;
 
+// Drawer (Side Menu) width
+
+$drawer-widths: (
+  xs: 300px,
+  sm: 300px,
+  md: 300px,
+  lg: 300px
+);
 
 // Colors
 //----- Basic palette

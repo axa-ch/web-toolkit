@@ -1,0 +1,13 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .overflow-hidden-#{$breakpoint}-up {
+      overflow: hidden;
+    }
+  }
+
+  @include media-breakpoint-down($breakpoint) {
+    .overflow-hidden-#{$breakpoint}-down {
+      overflow: hidden;
+    }
+  }
+}
