@@ -1,0 +1,46 @@
+.table-of-contents {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  padding-left: 25px;
+  border-left: 2px solid $color-azure;
+}
+
+.table-of-contents__heading {
+  @extend .typo-16;
+
+  padding-bottom: 10px;
+  color: $color-silver;
+  font-weight: bold;
+}
+
+.table-of-contents__nav {
+}
+
+.table-of-contents__menu {
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+.table-of-contents__item {
+  padding-bottom: 10px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.table-of-contents__link {
+  @extend .typo-24;
+
+  color: $color-azure;
+  font-weight: normal;
+  text-decoration: none;
+
+  &:active, &:hover, &:focus {
+    color: $color-axa-blue;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}

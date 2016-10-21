@@ -60,6 +60,8 @@
 // Mixins and utilities
 @import 'style/mixins';
 @import 'style/utilities';
+
+@import 'style/table-of-contents';
 @import 'style/type';
 
 @import 'style/blocks/nav';
@@ -142,7 +144,6 @@
 @import 'style/blocks/tab-panel';
 @import 'style/blocks/table';
 @import 'style/blocks/tag';
-@import 'style/blocks/toc';
 @import 'style/blocks/toggle';
 @import 'style/blocks/word-break';
 
