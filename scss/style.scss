@@ -61,12 +61,13 @@
 @import 'style/mixins';
 @import 'style/utilities';
 
+@import 'style/header';
+@import 'style/mobile-nav';
+@import 'style/nav';
+@import 'style/sliding-menu';
 @import 'style/table-of-contents';
 @import 'style/type';
 
-@import 'style/blocks/nav';
-@import 'style/blocks/mobile-nav';
-@import 'style/blocks/sliding-menu';
 @import 'style/blocks/autocomplete';
 @import 'style/blocks/backdrop';
 @import 'style/blocks/blockquote';
@@ -100,7 +101,6 @@
 @import 'style/blocks/footer-worldwide';
 @import 'style/blocks/footer';
 @import 'style/blocks/header-search';
-@import 'style/blocks/header';
 @import 'style/blocks/heading';
 @import 'style/blocks/hr';
 @import 'style/blocks/icon';
