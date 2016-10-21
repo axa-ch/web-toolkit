@@ -38,6 +38,24 @@
 
       <div class="contents">
         <main class="container-fluid">
+
+          {{#if title}}
+            <h1 class="h2">{{title}}</h1>
+          {{/if}}
+
+          {{#if toc}}
+            <div class="toc">
+              <div class="toc__title">Table of contents</div>
+              <ul class="toc__anchor-navigation">
+                {{#each toc}}
+                  <li class="toc__anchor-navigation__item">
+                    <a class="toc__anchor-navigation__link" href="#{{slug}}">{{title}}</a>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+
 {{!Do not indent this line because all lines of the rendered partial will also
   be indented, which affects <pre> tags}}
 {{#> content }}
