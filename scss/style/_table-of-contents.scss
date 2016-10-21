@@ -37,10 +37,11 @@
   color: $color-azure;
   font-weight: normal;
   text-decoration: none;
+  transition: color $transition-fast $transition-easeout;
 
   &:active, &:hover, &:focus {
     color: $color-axa-blue;
-    font-weight: 700;
     text-decoration: none;
+    transition: color $transition-fast $transition-easein;
   }
 }
