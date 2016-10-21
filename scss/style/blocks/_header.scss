@@ -119,14 +119,8 @@ $header-search-lg-width: 500px;
 .header-meta {
   @include clearfix();
 
-  display: none;
   height: $header-meta-height;
-
   border-bottom: 1px solid $color-wild-sand;
-
-  @media (min-width: $screen-md-min) {
-    display: block;
-  }
 
   .header.transparent & {
     border-bottom: none;
