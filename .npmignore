@@ -16,3 +16,4 @@ Dockerfile
 Jenkinsfile
 rancher-compose.yml
 sass.sh
+tests/

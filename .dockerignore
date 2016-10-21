@@ -6,3 +6,4 @@ tmp/
 .gitignore
 .npmignore
 .travis.yml
+tests/
