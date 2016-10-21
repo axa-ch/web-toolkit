@@ -14,6 +14,7 @@ $header-search-lg-width: 500px;
 
   background-color: $color-white;
   border-top: 2px solid $color-dark-indigo;
+  transition: background-color $transition-normal $transition-ease;
 
   &.transparent {
     background-color: transparent;
@@ -137,9 +138,10 @@ $header-search-lg-width: 500px;
 
   height: $header-meta-height;
   border-bottom: 1px solid $color-wild-sand;
+  transition: border-bottom $transition-normal $transition-ease;
 
   .header.transparent & {
-    border-bottom: none;
+    border-bottom-color: transparent;
   }
 
   .container,
@@ -209,9 +211,10 @@ $header-search-lg-width: 500px;
   height: $header-main-height;
 
   border-bottom: 2px solid $color-wild-sand;
+  transition: border-bottom $transition-normal $transition-ease;
 
   .header.transparent & {
-    border-bottom: none;
+    border-bottom-color: transparent;
   }
 
   .container,
