@@ -23,6 +23,7 @@ import './progress-bar'
 import './search'
 import './segmented-control'
 import './site'
+import './stroke'
 
 import './bootstrap/affix'
 import './bootstrap/alert'
@@ -36,6 +37,5 @@ import './bootstrap/scrollspy'
 import './bootstrap/tab'
 import './bootstrap/tooltip'
 import './bootstrap/transition'
-import './stroke'
 
 export default {}
