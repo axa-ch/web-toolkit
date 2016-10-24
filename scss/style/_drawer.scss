@@ -21,17 +21,17 @@
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
 
-    .persistent-#{$breakpoint}-left {
+    .drawer.persistent-#{$breakpoint}-left {
       left: 0;
       transform: translateX(0);
     }
 
-    .persistent-#{$breakpoint}-right {
+    .drawer.persistent-#{$breakpoint}-right {
       right: 0;
       transform: translateX(0);
     }
 
-    .togglable-#{$breakpoint}-left {
+    .drawer.togglable-#{$breakpoint}-left {
       left: 0;
       transform: translateX(-100%);
       transition: transform $transition-normal $transition-ease;
@@ -42,7 +42,7 @@
       }
     }
 
-    .togglable-#{$breakpoint}-right {
+    .drawer.togglable-#{$breakpoint}-right {
       right: 0;
       transform: translateX(100%);
       transition: transform $transition-normal $transition-ease;
@@ -53,7 +53,7 @@
       }
     }
 
-    .togglable-#{$breakpoint}-top {
+    .drawer.togglable-#{$breakpoint}-top {
       left: 0;
       right: 0;
       width: auto;
