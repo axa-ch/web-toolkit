@@ -11,7 +11,7 @@ title: AXA Strategic Ventures
     <title>Template: AXA Strategic Ventures</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:700|Source+Sans+Pro:400,600,700">
     {{#eq process.env.NODE_ENV 'production'}}
-      <link rel="stylesheet" href="{{relative "/dist/docs.css"}}">
+      <link rel="stylesheet" href="{{relative "/dist/all.css"}}">
     {{/eq}}
   </head>
   <body>
@@ -75,10 +75,6 @@ title: AXA Strategic Ventures
       </div>
     </header>
 
-    {{#eq process.env.NODE_ENV 'production'}}
-      <script src="{{relative "/dist/all.js"}}"></script>
-    {{else}}
-      <script src="{{relative "/dist/bundle.js"}}"></script>
-    {{/eq}}
+    <script src="{{relative "/dist/all.js"}}"></script>
   </body>
 </html>
