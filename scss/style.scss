@@ -13,7 +13,7 @@
 // Reset and dependencies
 @import 'bootstrap/normalize';
 @import 'bootstrap/print';
-//@import 'bootstrap/glyphicons';
+@import 'bootstrap/glyphicons';
 
 // Core CSS
 @import 'bootstrap/scaffolding';
@@ -57,27 +57,22 @@
 @import 'bootstrap/utilities';
 @import 'bootstrap/responsive-utilities';
 
+// Mixins and utilities
+@import 'style/mixins';
 @import 'style/utilities';
 
+@import 'style/header';
+@import 'style/nav';
+@import 'style/sliding-menu';
+@import 'style/table-of-contents';
 @import 'style/type';
-
-@import 'style/mixins/button';
-@import 'style/mixins/clearfix';
-@import 'style/mixins/ellipsis';
-@import 'style/mixins/font';
-@import 'style/mixins/invisible-font';
-@import 'style/mixins/invisible-input';
-@import 'style/mixins/make-link';
-@import 'style/mixins/richtext';
-@import 'style/mixins/target';
-@import 'style/mixins/unstyle-list';
-@import 'style/mixins/word-break';
 
 @import 'style/blocks/autocomplete';
 @import 'style/blocks/backdrop';
 @import 'style/blocks/blockquote';
 @import 'style/blocks/bouncy-spinner';
 @import 'style/blocks/brand';
+@import 'style/blocks/btn';
 @import 'style/blocks/bubble';
 @import 'style/blocks/button-row';
 @import 'style/blocks/button';
@@ -105,7 +100,6 @@
 @import 'style/blocks/footer-worldwide';
 @import 'style/blocks/footer';
 @import 'style/blocks/header-search';
-@import 'style/blocks/header';
 @import 'style/blocks/heading';
 @import 'style/blocks/hr';
 @import 'style/blocks/icon';
@@ -149,10 +143,7 @@
 @import 'style/blocks/tab-panel';
 @import 'style/blocks/table';
 @import 'style/blocks/tag';
-@import 'style/blocks/toc';
 @import 'style/blocks/toggle';
 @import 'style/blocks/word-break';
 
-@import 'style/blocks/btn';
-
-// Copyright AXA Versicherungen AG 2015
+// Copyright AXA 2016

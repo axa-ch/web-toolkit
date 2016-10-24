@@ -1,0 +1,45 @@
+// TODO: These utilities will become obsolete when we upgrade to Bootstrap v4
+
+.hidden-xs-down {
+  @media (max-width: $screen-xs-max) {
+    display: none !important;
+  }
+}
+
+.hidden-sm-down {
+  @media (max-width: $screen-sm-max) {
+    display: none !important;
+  }
+}
+
+.hidden-md-down {
+  @media (max-width: $screen-md-max) {
+    display: none !important;
+  }
+}
+
+.hidden-lg-down {
+  display: none !important;
+}
+
+.hidden-xs-up {
+  display: none !important;
+}
+
+.hidden-sm-up {
+  @media (min-width: $screen-sm-min) {
+    display: none !important;
+  }
+}
+
+.hidden-md-up {
+  @media (min-width: $screen-md-min) {
+    display: none !important;
+  }
+}
+
+.hidden-lg-up {
+  @media (min-width: $screen-lg-min) {
+    display: none !important;
+  }
+}

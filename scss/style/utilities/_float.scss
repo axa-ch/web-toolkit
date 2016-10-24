@@ -1,0 +1,67 @@
+// TODO: These utilities will become obsolete when we upgrade to Bootstrap v4
+
+.float-xs-left {
+  float: left !important;
+}
+
+.float-sm-left {
+  @media (min-width: $screen-sm-min) {
+    float: left !important;
+  }
+}
+
+.float-md-left {
+  @media (min-width: $screen-md-min) {
+    float: left !important;
+  }
+}
+
+.float-lg-left {
+  @media (min-width: $screen-lg-min) {
+    float: left !important;
+  }
+}
+
+.float-xs-right {
+  float: right !important;
+}
+
+.float-sm-right {
+  @media (min-width: $screen-sm-min) {
+    float: right !important;
+  }
+}
+
+.float-md-right {
+  @media (min-width: $screen-md-min) {
+    float: right !important;
+  }
+}
+
+.float-lg-right {
+  @media (min-width: $screen-lg-min) {
+    float: right !important;
+  }
+}
+
+.float-xs-none {
+  float: none !important;
+}
+
+.float-sm-none {
+  @media (min-width: $screen-sm-min) {
+    float: none !important;
+  }
+}
+
+.float-md-none {
+  @media (min-width: $screen-md-min) {
+    float: none !important;
+  }
+}
+
+.float-lg-none {
+  @media (min-width: $screen-lg-min) {
+    float: none !important;
+  }
+}

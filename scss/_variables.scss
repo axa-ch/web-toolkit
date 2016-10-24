@@ -55,6 +55,7 @@ $input-height-small: ($line-height-small-computed + ($padding-small-vertical * 2
 $jumbotron-font-size: $font-size-item-highlight;
 $jumbotron-heading-font-size: $font-size-title-main;
 
+$icon-font-path: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/';
 // Custom transition variables
 
 $transition-default: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -66,89 +67,58 @@ $transition-fast: 195ms;
 $transition-slow: 375ms;
 $transition-normal: 225ms;
 
+$transition-delay-fast: $transition-fast;
+$transition-delay-slow: $transition-slow;
+$transition-delay-normal: $transition-normal;
+
 
 // Colors
 //----- Basic palette
 
 $color-axa-blue: #103184;
-
 $color-axa-red: #c91432;
-
 $color-deep-saphire: #0d2970;
-
 $color-st-tropaz: #22449a;
-
 $color-azure: #3054ae;
-
 $color-dark-indigo: #4267c3;
-
 $color-indigo: #5174cb;
 
-
 $color-flamingo: #ec4d33;
-
 $color-burnt-sienna: #f07662;
 
-
 $color-mine-shaft: #333333;
-
 $color-scorpion: #5f5f5f;
-
 $color-gray: #7f7f7f;
-
 $color-dusty-gray: #999999;
-
 $color-silver: #cccccc;
-
 $color-mercury: #e5e5e5;
 
 $color-wild-sand: #f5f5f5;
-
 $color-alabaster: #fafafa;
-
 $color-white: #ffffff;
-
 $color-black: #000000;
 
-
 $color-periwinkle: #c9d8ff;
-
 $color-iceberg: #d4eef5;
-
 $color-teal-blue: #064360;
-
 $color-venice-blue: #075d86;
-
 $color-crimson: #c91432;
-
 $color-amaranth: #f02849;
-
 $color-amber: #ffbf00;
-
 $color-bright-sun: #ffd33b;
-
 $color-mountain-meadow: #1c9a67;
-
 $color-jungle-green: #2ab27b;
-
 $color-fountain-blue: #57c3c3;
-
 $color-monte-carlo: #7ed2d2;
-
 
 
 //----- Override bootstrap colors
 
 $brand-primary:         $color-indigo !default;
-
 $brand-success:         $color-jungle-green !default;
-
 $brand-info:            $color-periwinkle !default;
-
 $brand-warning:         $color-bright-sun !default;
-
 $brand-danger:          $color-burnt-sienna !default;
-
 
 
 //----- Component colors
@@ -175,7 +145,7 @@ $navbar-inverse-link-hover-color: $color-wild-sand;
 $navbar-inverse-link-active-bg: $color-black;
 $navbar-default-link-disabled-color: $color-dusty-gray;
 
-$well-bg: $color-wild-sand; 
+$well-bg: $color-wild-sand;
 $well-border: $color-silver;
 
 //== Motion
