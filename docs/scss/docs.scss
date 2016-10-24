@@ -1,8 +1,7 @@
 @import '../../scss/style';
 
+@import 'highlight';
 @import 'type';
-
-@import './highlight';
 
 @import './blocks/block';
 @import './blocks/box';
@@ -24,5 +23,10 @@
 @import './blocks/sample';
 @import './blocks/thumbnail';
 @import './blocks/typeface';
+
+body {
+  // Pad the page to make room for the fixed header
+  padding-top: 74px;
+}
 
 // Copyright AXA 2016
