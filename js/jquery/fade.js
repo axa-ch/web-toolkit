@@ -1,11 +1,10 @@
 import $ from 'jquery'
 
-const NAME = 'fade'
+const NAME = 'axaFade'
 const VERSION = '1.0.0-alpha.2'
 const DATA_KEY = 'axa.fade'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
-const JQUERY_NO_CONFLICT = $.fn[NAME]
 
 const Selector = {
   FADE: '[data-fade="search"]',
@@ -115,9 +114,5 @@ $(document)
 
 $.fn[NAME] = Fade._jQueryInterface
 $.fn[NAME].Constructor = Fade
-$.fn[NAME].noConflict = function () {
-  $.fn[NAME] = JQUERY_NO_CONFLICT
-  return Fade._jQueryInterface
-}
 
 export default Fade

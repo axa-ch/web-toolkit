@@ -1,11 +1,10 @@
 import $ from 'jquery'
 
-const NAME = 'search'
+const NAME = 'axaSearch'
 const VERSION = '1.0.0-alpha.2'
 const DATA_KEY = 'axa.search'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
-const JQUERY_NO_CONFLICT = $.fn[NAME]
 
 const Selector = {
   SEARCH: '[data-search="header"]',
@@ -113,9 +112,5 @@ $(document)
 
 $.fn[NAME] = Search._jQueryInterface
 $.fn[NAME].Constructor = Search
-$.fn[NAME].noConflict = function () {
-  $.fn[NAME] = JQUERY_NO_CONFLICT
-  return Search._jQueryInterface
-}
 
 export default Search

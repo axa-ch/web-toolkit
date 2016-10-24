@@ -1,11 +1,10 @@
 import $ from 'jquery'
 
-const NAME = 'stroke'
+const NAME = 'axaStroke'
 const VERSION = '1.0.0-alpha.2'
 const DATA_KEY = 'axa.stroke'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
-const JQUERY_NO_CONFLICT = $.fn[NAME]
 
 const Selector = {
   STROKE: '[data-spy="stroke"]',
@@ -149,9 +148,5 @@ $(document)
 
 $.fn[NAME] = Stroke._jQueryInterface
 $.fn[NAME].Constructor = Stroke
-$.fn[NAME].noConflict = function () {
-  $.fn[NAME] = JQUERY_NO_CONFLICT
-  return Stroke._jQueryInterface
-}
 
 export default Stroke
