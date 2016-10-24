@@ -151,6 +151,7 @@ $header-search-lg-width: 500px;
 }
 
 .header-meta-menu {
+  display: inline-block;
   height: 100%;
 }
 
@@ -224,7 +225,7 @@ $header-search-lg-width: 500px;
 }
 
 .header-burger {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   order: 6;
 
