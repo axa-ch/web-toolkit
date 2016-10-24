@@ -1,11 +1,10 @@
 import $ from 'jquery'
 
-const NAME = 'drawer'
+const NAME = 'axaDrawer'
 const VERSION = '1.0.0-alpha.2'
 const DATA_KEY = 'axa.drawer'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
-const JQUERY_NO_CONFLICT = $.fn[NAME]
 
 const Selector = {
   DRAWER: '[data-make="drawer"]',
@@ -111,9 +110,5 @@ $(document)
 
 $.fn[NAME] = Drawer._jQueryInterface
 $.fn[NAME].Constructor = Drawer
-$.fn[NAME].noConflict = function () {
-  $.fn[NAME] = JQUERY_NO_CONFLICT
-  return Drawer._jQueryInterface
-}
 
 export default Drawer
