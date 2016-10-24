@@ -4,13 +4,10 @@ $nav-panel-md-height: 300px;
 $nav-panel-lg-height: 400px;
 
 .nav {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-block;
+  height: 100%;
 
   overflow: hidden;
-
-  width: auto;
-  height: 100%;
 }
 
 .nav-list {
