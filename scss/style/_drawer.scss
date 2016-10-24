@@ -2,8 +2,6 @@
   position: fixed;
   top: 0;
 
-  height: 100%;
-
   margin-left: -1px;
   margin-right: -1px;
 
@@ -28,16 +26,19 @@
 
     .drawer.persistent-#{$breakpoint}-left {
       left: 0;
+      height: 100%;
       transform: translateX(0);
     }
 
     .drawer.persistent-#{$breakpoint}-right {
       right: 0;
+      height: 100%;
       transform: translateX(0);
     }
 
     .drawer.togglable-#{$breakpoint}-left {
       left: 0;
+      height: 100%;
       transform: translateX(-100%);
       transition: transform $transition-normal $transition-ease;
 
@@ -49,6 +50,7 @@
 
     .drawer.togglable-#{$breakpoint}-right {
       right: 0;
+      height: 100%;
       transform: translateX(100%);
       transition: transform $transition-normal $transition-ease;
 
