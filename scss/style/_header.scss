@@ -19,6 +19,12 @@ $header-search-lg-width: 500px;
   &.transparent {
     background-color: transparent;
   }
+
+  &.header-fixed-top,
+  &.affix {
+    position: fixed;
+    top: 0;
+  }
 }
 
 .header-title {
