@@ -7,18 +7,6 @@
   top: 0;
   left: 0;
 
-  background-color: $color-black;
-  opacity: 0;
+  background-color: fade-out($color-black, 0.5);
   z-index: $z-index-site-page-masked;
-  cursor: pointer;
-  pointer-events: none;
-
-  transition: opacity $transition-normal $transition-slow $transition-ease;
-}
-
-.mask.in {
-  opacity: 0.5;
-  pointer-events: all;
-
-  transition: opacity $transition-slow $transition-easein;
 }

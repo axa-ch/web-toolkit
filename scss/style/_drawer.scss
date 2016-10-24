@@ -1,13 +1,18 @@
 .drawer {
   position: fixed;
-  top: 2px;
+  top: 0;
 
   height: 100%;
+
+  margin-left: -1px;
+  margin-right: -1px;
 
   z-index: $z-index-site-mobile-nav;
   overflow-y: scroll;
 
   background-color: $color-white;
+  border-right: 1px solid $color-mercury;
+  border-left: 1px solid $color-mercury;
 
   @each $breakpoint in map-keys($grid-breakpoints) {
     $width: map-get($drawer-widths, $breakpoint);

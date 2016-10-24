@@ -10,7 +10,7 @@ const JQUERY_NO_CONFLICT = $.fn[NAME]
 const Selector = {
   DRAWER: '[data-make="drawer"]',
   MASK: '.mask',
-  BURGER: '.site__burger',
+  BURGER: '.header-burger',
 }
 
 const Event = {

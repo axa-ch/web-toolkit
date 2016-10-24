@@ -24,7 +24,6 @@ import './popover'
 import './progress-bar'
 import './search'
 import './segmented-control'
-import './site'
 import './stroke'
 
 import './bootstrap/affix'
