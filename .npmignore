@@ -10,9 +10,7 @@ webpack/
 .editorconfig
 .eslintrc.json
 .jsdocrc
-.travis.yml
 docker-compose.yml
 Dockerfile
 Jenkinsfile
 rancher-compose.yml
-sass.sh
