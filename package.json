@@ -4,7 +4,7 @@
   "description": "The CSS, JS and HTML framework for building responsive AXA web apps!",
   "author": "AXA",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://design.axa.com",
+  "homepage": "https://design.axa.com/toolkit",
   "keywords": [
     "axa",
     "insurance",
@@ -24,6 +24,7 @@
     "url": "https://github.com/axa-group/web-toolkit.git"
   },
   "title": "AXA Web Toolkit",
+  "copyline": "Copyright 2016 AXA",
   "main": "dist/js/index.js",
   "scripts": {
     "dev": "better-npm-run dev",
