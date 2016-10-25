@@ -1,19 +1,52 @@
 ---
 title: Bootstrap
-order: -1
 layout: page.hbs
+toc:
+  - title: Jumbotron
+    slug: jumbotron
+  - title: Buttons
+    slug: buttons
+  - title: Tables
+    slug: tables
+  - title: Forms
+    slug: forms
+  - title: Thumbnails
+    slug: thumbnails
+  - title: Lables
+    slug: lables
+  - title: Badges
+    slug: badges
+  - title: Dropdown menus
+    slug: dropdown-menus
+  - title: Navs
+    slug: navs
+  - title: Navbars
+    slug: navbars
+  - title: Alerts
+    slug: alerts
+  - title: Progress bars
+    slug: progress-bars
+  - title: List groups
+    slug: list-groups
+  - title: Panels
+    slug: panels
+  - title: Wells
+    slug: wells
+  - title: Carousel
+    slug: carousel
+  - title: Breadcrumbs
+    slug: breadcrumbs
 ---
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
+<h2 class="h3" id="jumbotron">Jumbotron</h2>
 <div class="jumbotron">
   <h1>Theme example</h1>
   <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
 </div>
 
 
-<div class="page-header">
-  <h1>Buttons</h1>
-</div>
+<h2 class="h3" id="buttons">Buttons</h2>
 <p>
   <button type="button" class="btn btn-lg btn-default">Default</button>
   <button type="button" class="btn btn-lg btn-axa">Axa Button</button>
@@ -54,11 +87,49 @@ layout: page.hbs
   <button type="button" class="btn btn-xs btn-danger">Danger</button>
   <button type="button" class="btn btn-xs btn-link">Link</button>
 </p>
-
-
-<div class="page-header">
-  <h1>Tables</h1>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
 </div>
+<p>
+  <div class="btn-group btn-group-lg" role="group" aria-label="...">
+    <button type="button" class="btn btn-default">Left</button>
+    <button type="button" class="btn btn-default">Middle</button>
+    <button type="button" class="btn btn-default">Right</button>
+  </div>
+</p>
+<p>
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default">Left</button>
+    <button type="button" class="btn btn-default">Middle</button>
+    <button type="button" class="btn btn-default">Right</button>
+  </div>
+</p>
+<p>
+  <div class="btn-group btn-group-sm" role="group" aria-label="...">
+    <button type="button" class="btn btn-default">Left</button>
+    <button type="button" class="btn btn-default">Middle</button>
+    <button type="button" class="btn btn-default">Right</button>
+  </div>
+</p>
+<p>
+  <div class="btn-group btn-group-xs" role="group" aria-label="...">
+    <button type="button" class="btn btn-default">Left</button>
+    <button type="button" class="btn btn-default">Middle</button>
+    <button type="button" class="btn btn-default">Right</button>
+  </div>
+</p>
+
+
+<h2 class="h3" id="tables">Tables</h2>
 <div class="row">
   <div class="col-md-6">
     <table class="table">
@@ -233,15 +304,58 @@ layout: page.hbs
 </div>
 
 
-<div class="page-header">
-  <h1>Thumbnails</h1>
+<h2 class="h3" id="forms">Forms</h2>
+<p>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">@</span>
+    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+  </div>
+</p>
+<p>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+    <span class="input-group-addon" id="basic-addon2">@example.com</span>
+  </div>
+</p>
+<p>
+  <div class="input-group">
+    <span class="input-group-addon">$</span>
+    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <span class="input-group-addon">.00</span>
+  </div>
+</p>
+<p>
+  <label for="basic-url">Your vanity URL</label>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+  </div>
+</p>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for...">
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div>
+  </div>
 </div>
+
+
+<h2 class="h3" id="thumbnails">Thumbnails</h2>
 <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzIwMHgyMDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTc4ZWE0OTg0MiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NzhlYTQ5ODQyIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjczLjcxODc1IiB5PSIxMDQuNTMyODEyNSI+MjAweDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
 
 
-<div class="page-header">
-  <h1>Labels</h1>
-</div>
+<h2 class="h3" id="labels">Labels</h2>
 <h1>
   <span class="label label-default">Default</span>
   <span class="label label-primary">Primary</span>
@@ -300,9 +414,7 @@ layout: page.hbs
 </p>
 
 
-<div class="page-header">
-  <h1>Badges</h1>
-</div>
+<h2 class="h3" id="badges">Badges</h2>
 <p>
   <a href="#">Inbox <span class="badge">42</span></a>
 </p>
@@ -313,9 +425,7 @@ layout: page.hbs
 </ul>
 
 
-<div class="page-header">
-  <h1>Dropdown menus</h1>
-</div>
+<h2 class="h3" id="dropdown-menus">Dropdown menus</h2>
 <div class="dropdown theme-dropdown clearfix">
   <a id="dropdownMenu1" href="#" class="sr-only dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="position: static; display: block; margin-bottom: 20px;">
@@ -328,9 +438,7 @@ layout: page.hbs
 </div>
 
 
-<div class="page-header">
-  <h1>Navs</h1>
-</div>
+<h2 class="h3" id="navs">Navs</h2>
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#">Home</a></li>
   <li role="presentation"><a href="#">Profile</a></li>
@@ -343,10 +451,7 @@ layout: page.hbs
 </ul>
 
 
-<div class="page-header">
-  <h1>Navbars</h1>
-</div>
-
+<h2 class="h3" id="navbars">Navbars</h2>
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
@@ -414,9 +519,7 @@ layout: page.hbs
 </nav>
 
 
-<div class="page-header">
-  <h1>Alerts</h1>
-</div>
+<h2 class="h3" id="alerts">Alerts</h2>
 <div class="alert alert-success" role="alert">
   <strong>Well done!</strong> You successfully read this important alert message.
 </div>
@@ -431,9 +534,7 @@ layout: page.hbs
 </div>
 
 
-<div class="page-header">
-  <h1>Progress bars</h1>
-</div>
+<h2 class="h3" id="progress-bars">Progress bars</h2>
 <div class="progress">
   <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"><span class="sr-only">60% Complete</span></div>
 </div>
@@ -459,9 +560,7 @@ layout: page.hbs
 </div>
 
 
-<div class="page-header">
-  <h1>List groups</h1>
-</div>
+<h2 class="h3" id="list-groups">List groups</h2>
 <div class="row">
   <div class="col-sm-4">
     <ul class="list-group">
@@ -502,9 +601,7 @@ layout: page.hbs
 </div>
 
 
-<div class="page-header">
-  <h1>Panels</h1>
-</div>
+<h2 class="h3" id="panels">Panels</h2>
 <div class="row">
   <div class="col-sm-4">
     <div class="panel panel-default">
@@ -563,17 +660,13 @@ layout: page.hbs
 </div>
 
 
-<div class="page-header">
-  <h1>Wells</h1>
-</div>
+<h2 class="h3" id="wells">Wells</h2>
 <div class="well">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
 </div>
 
 
-<div class="page-header">
-  <h1>Carousel</h1>
-</div>
+<h2 class="h3" id="carousel">Carousel</h2>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -600,9 +693,9 @@ layout: page.hbs
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="page-header">
-  <h1>Breadcrumbs</h1>
-</div>
+
+
+<h2 class="h3" id="breadcrumbs">Breadcrumbs</h2>
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
   <li><a href="#">Library</a></li>
