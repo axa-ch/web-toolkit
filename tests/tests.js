@@ -16,6 +16,10 @@ function getDefinitions() {
   };
   var definitions = [];
 
+  definitions.push(addDefinition('/components/demos/font-test', [
+    { name: 'font_mobile', viewport: viewports.mobile, expected: 'expected/badge_mobile.png' },
+    { name: 'font_desktop', viewport: viewports.desktop, expected: 'expected/badge_tablet.png' }
+  ]));
   definitions.push(addDefinition('/components/demos/badge', [
     { name: 'badge_mobile', viewport: viewports.mobile, expected: 'expected/badge_mobile.png' },
     { name: 'badge_tablet', viewport: viewports.tablet, expected: 'expected/badge_tablet.png' }
