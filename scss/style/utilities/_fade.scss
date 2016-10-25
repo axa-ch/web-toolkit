@@ -1,23 +1,53 @@
-.fade-in {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity $transition-normal $transition-easeout, visibility 0s linear;
-}
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .fade-in-#{$breakpoint}-up {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity $transition-normal $transition-easeout, visibility 0s linear;
+    }
 
-.fade-in-delayed {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear $transition-delay-normal;
-}
+    .fade-in-delayed-#{$breakpoint}-up {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear $transition-delay-normal;
+    }
 
-.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity $transition-normal $transition-easeout, visibility 0s linear $transition-delay-normal;
-}
+    .fade-out-#{$breakpoint}-up {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition-normal $transition-easeout, visibility 0s linear $transition-delay-normal;
+    }
 
-.fade-out-delayed {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear ($transition-delay-normal + $transition-normal);
+    .fade-out-delayed-#{$breakpoint}-up {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear ($transition-delay-normal + $transition-normal);
+    }
+  }
+
+  @include media-breakpoint-down($breakpoint) {
+    .fade-in-#{$breakpoint}-down {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity $transition-normal $transition-easeout, visibility 0s linear;
+    }
+
+    .fade-in-delayed-#{$breakpoint}-down {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear $transition-delay-normal;
+    }
+
+    .fade-out-#{$breakpoint}-down {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition-normal $transition-easeout, visibility 0s linear $transition-delay-normal;
+    }
+
+    .fade-out-delayed-#{$breakpoint}-down {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear ($transition-delay-normal + $transition-normal);
+    }
+  }
 }

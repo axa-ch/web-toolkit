@@ -15,9 +15,16 @@ $header-search-lg-width: 500px;
   background-color: $color-white;
   border-top: 2px solid $color-dark-indigo;
   transition: background-color $transition-normal $transition-ease;
+  z-index: $z-index-header;
 
   &.transparent {
     background-color: transparent;
+  }
+
+  &.header-fixed-top,
+  &.affix {
+    position: fixed;
+    top: 0;
   }
 }
 

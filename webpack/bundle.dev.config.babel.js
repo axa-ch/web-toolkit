@@ -11,14 +11,21 @@ export default {
   devtool: 'source-map',
   context: path.resolve(__dirname, '..'),
   progress: true,
-  entry: [
-    'webpack/hot/dev-server',
-    'webpack-hot-middleware/client',
-    './docs/js/index-with-styles.js',
-  ],
+  entry: {
+    docs: [
+      'webpack/hot/dev-server',
+      'webpack-hot-middleware/client',
+      './docs/js/index-with-styles.js',
+    ],
+    all: [
+      'webpack/hot/dev-server',
+      'webpack-hot-middleware/client',
+      './js/index-with-styles.js'
+    ],
+  },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/dist/',
   },

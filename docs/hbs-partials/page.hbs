@@ -1,95 +1,122 @@
 <!DOCTYPE html>
 <html>
-  {{> head}}
-  <body class="site site--stacked site--left site--desktop site--fixed" data-site>
+  <head>
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{config.description}}">
+    <meta name="keywords" content="{{config.keywords}}">
+    <meta name="author" content="{{config.author}}">
 
-    <a href="#content" class="sr-only sr-only-focusable" id="skippy">
-      <div class="container-fluid">
-        <span class="skiplink-text">Skip to main content</span>
-      </div>
+    {{> appicon-ios size=57 }}
+    {{> appicon-ios size=72 }}
+    {{> appicon-ios size=76 }}
+    {{> appicon-ios size=114 }}
+    {{> appicon-ios size=120 }}
+    {{> appicon-ios size=144 }}
+    {{> appicon-ios size=152 }}
+    {{> appicon-ios size=180 }}
+
+    <meta name="apple-mobile-web-app-title" content="{{config.name}}">
+    <link media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" href="{{relative "/images/splash-screen/ios/750x1294.png"}}">
+
+    <link rel="manifest" href="{{relative "/content/manifest.json"}}">
+    <link rel="icon" sizes="192x192" href="{{relative "/images/app-icon/android/192x192.png"}}">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content={{config.name}}>
+    <meta name="msapplication-square70x70logo" content="{{relative "/images/app-icon/windows/128x128.png"}}">
+    <meta name="msapplication-square150x150logo" content="{{relative "/images/app-icon/windows/270x270.png"}}">
+    <meta name="msapplication-wide310x150logo" content="{{relative "/images/app-icon/windows/558x270.png"}}">
+    <meta name="msapplication-square310x310logo" content="{{relative "/images/app-icon/windows/558x558.png"}}">
+
+    <title>{{#if title}}{{title}}{{/if}} | {{config.name}}</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:700|Source+Sans+Pro:400,600,700">
+
+    {{#eq process.env.NODE_ENV 'production'}}
+      <link rel="stylesheet" href="{{relative "/dist/docs.css"}}">
+    {{/eq}}
+  </head>
+  <body class="push-lg-left" data-make="drawer" data-fade="drawer" data-target="body" data-in="overflow-hidden-md-down">
+    <a href="#content" class="sr-only sr-only-focusable btn btn-default btn-block" id="skippy">
+      <span class="skiplink-text">Skip to main content</span>
     </a>
 
-    <div class="site__page" data-page>
-      <div class="site__page__mask" data-mask></div>
+    <a href="#" class="mask fade-out-delayed-md-down fade-out-lg-up" data-fade="drawer" data-target="body" data-in="fade-in-md-down" data-out="fade-out-delayed-md-down"></a>
 
-      <div id="notification" class="notifications"
-        data-notification-info="{{relative "/images/icons.svg#info"}}"
-        data-notification-success="{{relative "/images/icons.svg#checkmark"}}"
-        data-notification-error="{{relative "/images/icons.svg#cross"}}">
-      </div>
+    <div id="notification" class="notifications"
+      data-notification-info="{{relative "/images/icons.svg#info"}}"
+      data-notification-success="{{relative "/images/icons.svg#checkmark"}}"
+      data-notification-error="{{relative "/images/icons.svg#cross"}}">
+    </div>
 
-      <header class="header">
-        <div class="header-main">
-          <div class="container-fluid">
-            <a href="#" class="header-brand hidden-xs-up">
-              <img class="header-brand-image" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUiIGhlaWdodD0iNDUiIHZpZXdCb3g9IjAgMCA0NSA0NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBmaWxsPSIjRkMxNzIxIiBkPSJNMjguMTg0IDIyLjMwOGwtMy4zMTUtLjAwOUw0Mi4yNDcuMDAxIDQ0Ljk1IDB6Ii8+CiAgPHBhdGggZD0iTTI2LjIzIDMxLjE1NmMxLjM3Ny0xLjY5NiAyLjUxNi0zLjIxIDIuOTgtMy45NTdsLjE4NC0uMjk2LjAxNS4zOTVjLjAwNy4yMTYuMDMyLjQ3OC4wNTUuNTgxLjA1NS4yNTIuMzIzIDEuMTM2LjY5IDIuMjc5LjE2NS41MTUuMzA2Ljk2NS4zMTMuOTk4bC4wMTMuMDZIMjYuMThsLjA1LS4wNnptLTcuNzA3IDQuODUzYy0uMjQyLS43NS0uMzQ5LTEuMTE3LS4zMzQtMS4xNDcuMDM5LS4wNzYgMS4wNjMtMS4zOTQgMS4wODQtMS4zOTQuMDEgMCAuMDU5LjExNy4xMDYuMjYuMTY2LjUwMi41IDEuNDQzLjU4MiAxLjYzNmwuMDgyLjE5NS0uMTQ5LjIwN2MtLjQ0Ni42MjMtLjk4MiAxLjM0Ny0uOTk3IDEuMzQ3LS4wMSAwLS4xNzgtLjQ5Ny0uMzc0LTEuMTA0em0tOS42MDUtNC44MjZsLjU2LS43MDRjLjcyMS0uOTAzIDEuNDU1LTEuODYgMS44NTMtMi40MTcuMzM3LS40NzIuNzMtMS4wNy43My0xLjExIDAtLjAxNC4wMTItLjAyNC4wMjctLjAyNC4wMTYgMCAuMDI2LjEyLjAyNi4zMDQgMCAuMTY4LjAxOS40MTIuMDQxLjU0My4wNDYuMjYzLjI5MyAxLjEuNzM5IDIuNDkzLjE2LjUwMy4yOTIuOTIzLjI5Mi45MzIgMCAuMDA5LS45NjYuMDE2LTIuMTQ3LjAxNi0xLjcxNCAwLTIuMTQyLS4wMDctMi4xMjItLjAzM3oiIGZpbGw9IiMwMDU0OTciLz4KICA8cGF0aCBkPSJNNDQuOTczIDQ0Ljk5MlMuMDI4IDQ0Ljk4NC4wMTggNDQuOTc0Qy4wMDggNDQuOTY0IDAgNDAuMzgyIDAgNDAuMzgyaC45NjVjLjg4NSAwIC45NjgtLjAwNCAxLjAwNi0uMDQ3LjAyNC0uMDI1LjE0MS0uMjA2LjI2Mi0uNDAxLjI5OC0uNDgyLjc5MS0xLjE4NSAxLjEwNC0xLjU3NC4yNi0uMzIyIDEuMzc3LTEuNzc2IDMuMDA4LTMuOTE0bC44OC0xLjE1M2g2LjY0MmwuMzMgMS4xNC4zOCAxLjMyLjA1My4xOC0uNTUzLjcxN2MtMS43MDcgMi4yMTUtMS45NjkgMi41MzEtMi42MyAzLjE3Ny0uMzAzLjI5Ni0uNDU4LjQ2Ni0uNDUzLjQ5Ni4wMDguMDQyLjEyNC4wNDYgMS41NzIuMDUzLjg2LjAwNCAxLjU3OS0uMDAyIDEuNTk4LS4wMTQuMDItLjAxLjEyOC0uMjA0LjI0Mi0uNDI5LjIxNS0uNDI3LjQzMi0uNzU0Ljg4My0xLjMyOGwuMy0uMzgyYy4wMTYtLjAyMS4wMzYtLjAzOC4wNDUtLjAzOC4wMTcgMCAuMi41NjQuMzIyLjk5NC4wMzYuMTI2LjEuNDMyLjE0LjY3OS4wNDMuMjU3LjA5LjQ2NS4xMTIuNDg3LjAzMS4wMzEuMy4wMzcgMS42My4wMzdoMS41OTJsLjAzNy0uMDZjLjAyLS4wMzMuMTI2LS4yMjkuMjM1LS40MzUuMTEtLjIwNi4yOS0uNDk4LjQwMy0uNjQ5LjI5Mi0uMzkxLjgwNC0uOTguODMtLjk1NS4wNi4wNjIuMzI4IDEuMDU3LjQxMiAxLjUzNC4wNTQuMzEzLjEwNS41MjkuMTI2LjU0Mi4wNC4wMjYgNC4wMTUuMDMyIDQuMDguMDA3LjAyNC0uMDA5LjA0My0uMDMuMDQzLS4wNDggMC0uMDE4LS4xMDQtLjIxOC0uMjMtLjQ0Ni0uNDktLjg3Ny0uNDU0LS43ODMtMS40MDMtMy43NDFhNTYuMTY2IDU2LjE2NiAwIDAgMS0uNDMxLTEuMzc1YzAtLjAxOC4yMy0uMzU3LjUxMS0uNzU0bC41MTItLjcyMiAzLjM0LjAwNyAzLjM0MS4wMDYuNDkgMS41ODJjLjcyNiAyLjM0IDEuMTU1IDMuNzQ4IDEuMjI3IDQuMDI0LjA4LjMxLjE0NC43MzQuMTY2IDEuMTEyLjAxLjIuMDI5LjMwOC4wNTQuMzM0LjAzMi4wMzEuMzYyLjAzNyAyLjEyNS4wMzcgMS4xNDcgMCAyLjEwNS0uMDA3IDIuMTI4LS4wMTYuMDYyLS4wMjQuMDU0LS4wNTMtLjA1NC0uMTkzLS4xOTYtLjI1Ni0uNTE3LTEtLjkxNy0yLjEyNi0uMjM0LS42NTgtLjczLTIuMTctMS4zOTktNC4yNTZhODcuNTQzIDg3LjU0MyAwIDAgMC0uNTEyLTEuNTY2Yy0uMTUyLS40MTEtMi4xOTEtNy41MjktMi4yMzItNy43OS0uMDIyLS4xNC0uMDUzLS4zODEtLjA3LS41MzZhMy45ODggMy45ODggMCAwIDAtLjA0My0uMzI4Yy0uMDEzLS4wNDQtLjExNy0uMDQ3LTEuNjg1LS4wNDdoLTEuNjcybC0uMTE3LjI0OGMtLjE1NS4zMjYtLjU3IDEuMDQtLjc5MiAxLjM2LS41OTIuODU4LTUuMjQzIDYuOTk0LTUuMjc1IDYuOTYtLjAyMy0uMDI0LS40OTMtMS42OTUtLjQ4NC0xLjcyLjAxMi0uMDI4IDEuMDA3LTEuMjk3IDMuMzEyLTQuMjIxIDEuMDgtMS4zNyAxLjU5Mi0xLjk2IDIuMDM3LTIuMzQ1LjEyLS4xMDQuMjE3LS4yMDkuMjE3LS4yMzUgMC0uMDQ0LS4xLS4wNDctMS43MTUtLjA0N0gyNC4zMWwtLjAxMy4wNmE2Ljg2IDYuODYgMCAwIDAtLjA0Mi4yMjdjLS4wNjIuMzY4LS4xNzcuNjA3LS40ODYgMS4wMTMtLjQ5OC42NTUtMi42MTYgMy4zMi0yLjY0NyAzLjMzMS0uMDExLjAwNC0uMDcyLS4xNzYtLjEzNS0uNDAyLS4xODQtLjY2NS0uNjU0LTIuMzI2LS44MTUtMi44OGE0LjU2MiA0LjU2MiAwIDAgMS0uMjEyLTEuMjE1bC0uMDA2LS4xMi0yLjAzNi0uMDA3Yy0xLjI0Ni0uMDA0LTIuMDQ1LjAwMy0yLjA2LjAxOC0uMDE2LjAxNi4wMi4xMTQuMDk2LjI2Mi4zMi42MjMuNDcxIDEuMDQ1IDEuNDY4IDQuMTEuNTQ3IDEuNjg0Ljk5IDMuMDgyLjk4MyAzLjEwNy0uMDIuMDc0LTEuMDQ2IDEuMzctMS4wNjggMS4zNDgtLjA1My0uMDU1LTIuMjE0LTcuMTI0LTIuMjYyLTcuNDAzYTE1LjEwMyAxNS4xMDMgMCAwIDEtLjA5NS0uNzc4Yy0uMDMtLjMwMi0uMDYtLjU3Ny0uMDY3LS42MWwtLjAxMi0uMDZoLTMuNTI4bC0uMzY0LjczYy0uMi40MDEtLjQ1Ni44ODItLjU2NyAxLjA2OS0uMjUzLjQyNS0xLjg2NyAyLjU4OC00LjE5NyA1LjYyNC0uNDguNjI3LTEuMTQ0IDEuNDk1LTEuNDc0IDEuOTNhMjMzLjIxNSAyMzMuMjE1IDAgMCAxLTMuNzUxIDQuODA5Yy0uNDk1LjYxOC0uOTI2IDEuMTU0LS45NTkgMS4xOTJsLS4wNi4wN0wwIDBoNDIuMzU5UzM3Ljc2IDYuMDA1IDI4LjUyMiAxNy45NTdjLTEuNzg2IDIuMzEyLTMuMjQ4IDQuMjI1LTMuMjQ4IDQuMjUyIDAgLjAyOC4wMjUuMDU2LjA2LjA2NS4wOC4wMjEgMi40NTUuMDIxIDIuNTM0IDAgLjA2NC0uMDE3LjEwMy0uMDY3IDMuNjkyLTQuNzI3YTE1MjUyLjkgMTUyNTIuOSAwIDAgMSAyLjY1Mi0zLjQ0NEMzNS42NTIgMTIuMjM1IDQ0LjkzNi4wMTQgNDQuOTUgMGwuMDI0IDQ0Ljk5MnoiIGZpbGw9IiMwMDU0OTciLz4KPC9zdmc+Cg==" />
-            </a>
+    <header class="header header-fixed-top">
+      <div class="header-main">
+        <div class="container-fluid">
+          <a href="#" class="header-brand hidden-xs-up">
+            <img class="header-brand-image" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUiIGhlaWdodD0iNDUiIHZpZXdCb3g9IjAgMCA0NSA0NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBmaWxsPSIjRkMxNzIxIiBkPSJNMjguMTg0IDIyLjMwOGwtMy4zMTUtLjAwOUw0Mi4yNDcuMDAxIDQ0Ljk1IDB6Ii8+CiAgPHBhdGggZD0iTTI2LjIzIDMxLjE1NmMxLjM3Ny0xLjY5NiAyLjUxNi0zLjIxIDIuOTgtMy45NTdsLjE4NC0uMjk2LjAxNS4zOTVjLjAwNy4yMTYuMDMyLjQ3OC4wNTUuNTgxLjA1NS4yNTIuMzIzIDEuMTM2LjY5IDIuMjc5LjE2NS41MTUuMzA2Ljk2NS4zMTMuOTk4bC4wMTMuMDZIMjYuMThsLjA1LS4wNnptLTcuNzA3IDQuODUzYy0uMjQyLS43NS0uMzQ5LTEuMTE3LS4zMzQtMS4xNDcuMDM5LS4wNzYgMS4wNjMtMS4zOTQgMS4wODQtMS4zOTQuMDEgMCAuMDU5LjExNy4xMDYuMjYuMTY2LjUwMi41IDEuNDQzLjU4MiAxLjYzNmwuMDgyLjE5NS0uMTQ5LjIwN2MtLjQ0Ni42MjMtLjk4MiAxLjM0Ny0uOTk3IDEuMzQ3LS4wMSAwLS4xNzgtLjQ5Ny0uMzc0LTEuMTA0em0tOS42MDUtNC44MjZsLjU2LS43MDRjLjcyMS0uOTAzIDEuNDU1LTEuODYgMS44NTMtMi40MTcuMzM3LS40NzIuNzMtMS4wNy43My0xLjExIDAtLjAxNC4wMTItLjAyNC4wMjctLjAyNC4wMTYgMCAuMDI2LjEyLjAyNi4zMDQgMCAuMTY4LjAxOS40MTIuMDQxLjU0My4wNDYuMjYzLjI5MyAxLjEuNzM5IDIuNDkzLjE2LjUwMy4yOTIuOTIzLjI5Mi45MzIgMCAuMDA5LS45NjYuMDE2LTIuMTQ3LjAxNi0xLjcxNCAwLTIuMTQyLS4wMDctMi4xMjItLjAzM3oiIGZpbGw9IiMwMDU0OTciLz4KICA8cGF0aCBkPSJNNDQuOTczIDQ0Ljk5MlMuMDI4IDQ0Ljk4NC4wMTggNDQuOTc0Qy4wMDggNDQuOTY0IDAgNDAuMzgyIDAgNDAuMzgyaC45NjVjLjg4NSAwIC45NjgtLjAwNCAxLjAwNi0uMDQ3LjAyNC0uMDI1LjE0MS0uMjA2LjI2Mi0uNDAxLjI5OC0uNDgyLjc5MS0xLjE4NSAxLjEwNC0xLjU3NC4yNi0uMzIyIDEuMzc3LTEuNzc2IDMuMDA4LTMuOTE0bC44OC0xLjE1M2g2LjY0MmwuMzMgMS4xNC4zOCAxLjMyLjA1My4xOC0uNTUzLjcxN2MtMS43MDcgMi4yMTUtMS45NjkgMi41MzEtMi42MyAzLjE3Ny0uMzAzLjI5Ni0uNDU4LjQ2Ni0uNDUzLjQ5Ni4wMDguMDQyLjEyNC4wNDYgMS41NzIuMDUzLjg2LjAwNCAxLjU3OS0uMDAyIDEuNTk4LS4wMTQuMDItLjAxLjEyOC0uMjA0LjI0Mi0uNDI5LjIxNS0uNDI3LjQzMi0uNzU0Ljg4My0xLjMyOGwuMy0uMzgyYy4wMTYtLjAyMS4wMzYtLjAzOC4wNDUtLjAzOC4wMTcgMCAuMi41NjQuMzIyLjk5NC4wMzYuMTI2LjEuNDMyLjE0LjY3OS4wNDMuMjU3LjA5LjQ2NS4xMTIuNDg3LjAzMS4wMzEuMy4wMzcgMS42My4wMzdoMS41OTJsLjAzNy0uMDZjLjAyLS4wMzMuMTI2LS4yMjkuMjM1LS40MzUuMTEtLjIwNi4yOS0uNDk4LjQwMy0uNjQ5LjI5Mi0uMzkxLjgwNC0uOTguODMtLjk1NS4wNi4wNjIuMzI4IDEuMDU3LjQxMiAxLjUzNC4wNTQuMzEzLjEwNS41MjkuMTI2LjU0Mi4wNC4wMjYgNC4wMTUuMDMyIDQuMDguMDA3LjAyNC0uMDA5LjA0My0uMDMuMDQzLS4wNDggMC0uMDE4LS4xMDQtLjIxOC0uMjMtLjQ0Ni0uNDktLjg3Ny0uNDU0LS43ODMtMS40MDMtMy43NDFhNTYuMTY2IDU2LjE2NiAwIDAgMS0uNDMxLTEuMzc1YzAtLjAxOC4yMy0uMzU3LjUxMS0uNzU0bC41MTItLjcyMiAzLjM0LjAwNyAzLjM0MS4wMDYuNDkgMS41ODJjLjcyNiAyLjM0IDEuMTU1IDMuNzQ4IDEuMjI3IDQuMDI0LjA4LjMxLjE0NC43MzQuMTY2IDEuMTEyLjAxLjIuMDI5LjMwOC4wNTQuMzM0LjAzMi4wMzEuMzYyLjAzNyAyLjEyNS4wMzcgMS4xNDcgMCAyLjEwNS0uMDA3IDIuMTI4LS4wMTYuMDYyLS4wMjQuMDU0LS4wNTMtLjA1NC0uMTkzLS4xOTYtLjI1Ni0uNTE3LTEtLjkxNy0yLjEyNi0uMjM0LS42NTgtLjczLTIuMTctMS4zOTktNC4yNTZhODcuNTQzIDg3LjU0MyAwIDAgMC0uNTEyLTEuNTY2Yy0uMTUyLS40MTEtMi4xOTEtNy41MjktMi4yMzItNy43OS0uMDIyLS4xNC0uMDUzLS4zODEtLjA3LS41MzZhMy45ODggMy45ODggMCAwIDAtLjA0My0uMzI4Yy0uMDEzLS4wNDQtLjExNy0uMDQ3LTEuNjg1LS4wNDdoLTEuNjcybC0uMTE3LjI0OGMtLjE1NS4zMjYtLjU3IDEuMDQtLjc5MiAxLjM2LS41OTIuODU4LTUuMjQzIDYuOTk0LTUuMjc1IDYuOTYtLjAyMy0uMDI0LS40OTMtMS42OTUtLjQ4NC0xLjcyLjAxMi0uMDI4IDEuMDA3LTEuMjk3IDMuMzEyLTQuMjIxIDEuMDgtMS4zNyAxLjU5Mi0xLjk2IDIuMDM3LTIuMzQ1LjEyLS4xMDQuMjE3LS4yMDkuMjE3LS4yMzUgMC0uMDQ0LS4xLS4wNDctMS43MTUtLjA0N0gyNC4zMWwtLjAxMy4wNmE2Ljg2IDYuODYgMCAwIDAtLjA0Mi4yMjdjLS4wNjIuMzY4LS4xNzcuNjA3LS40ODYgMS4wMTMtLjQ5OC42NTUtMi42MTYgMy4zMi0yLjY0NyAzLjMzMS0uMDExLjAwNC0uMDcyLS4xNzYtLjEzNS0uNDAyLS4xODQtLjY2NS0uNjU0LTIuMzI2LS44MTUtMi44OGE0LjU2MiA0LjU2MiAwIDAgMS0uMjEyLTEuMjE1bC0uMDA2LS4xMi0yLjAzNi0uMDA3Yy0xLjI0Ni0uMDA0LTIuMDQ1LjAwMy0yLjA2LjAxOC0uMDE2LjAxNi4wMi4xMTQuMDk2LjI2Mi4zMi42MjMuNDcxIDEuMDQ1IDEuNDY4IDQuMTEuNTQ3IDEuNjg0Ljk5IDMuMDgyLjk4MyAzLjEwNy0uMDIuMDc0LTEuMDQ2IDEuMzctMS4wNjggMS4zNDgtLjA1My0uMDU1LTIuMjE0LTcuMTI0LTIuMjYyLTcuNDAzYTE1LjEwMyAxNS4xMDMgMCAwIDEtLjA5NS0uNzc4Yy0uMDMtLjMwMi0uMDYtLjU3Ny0uMDY3LS42MWwtLjAxMi0uMDZoLTMuNTI4bC0uMzY0LjczYy0uMi40MDEtLjQ1Ni44ODItLjU2NyAxLjA2OS0uMjUzLjQyNS0xLjg2NyAyLjU4OC00LjE5NyA1LjYyNC0uNDguNjI3LTEuMTQ0IDEuNDk1LTEuNDc0IDEuOTNhMjMzLjIxNSAyMzMuMjE1IDAgMCAxLTMuNzUxIDQuODA5Yy0uNDk1LjYxOC0uOTI2IDEuMTU0LS45NTkgMS4xOTJsLS4wNi4wN0wwIDBoNDIuMzU5UzM3Ljc2IDYuMDA1IDI4LjUyMiAxNy45NTdjLTEuNzg2IDIuMzEyLTMuMjQ4IDQuMjI1LTMuMjQ4IDQuMjUyIDAgLjAyOC4wMjUuMDU2LjA2LjA2NS4wOC4wMjEgMi40NTUuMDIxIDIuNTM0IDAgLjA2NC0uMDE3LjEwMy0uMDY3IDMuNjkyLTQuNzI3YTE1MjUyLjkgMTUyNTIuOSAwIDAgMSAyLjY1Mi0zLjQ0NEMzNS42NTIgMTIuMjM1IDQ0LjkzNi4wMTQgNDQuOTUgMGwuMDI0IDQ0Ljk5MnoiIGZpbGw9IiMwMDU0OTciLz4KPC9zdmc+Cg==" />
+          </a>
 
-            <a class="header-burger float-xs-left hidden-lg-up" href="#" data-burger>
-              <span class="header-burger-line"></span>
-            </a>
+          <a href="#" class="header-burger float-xs-left hidden-lg-up" data-fade="drawer" data-target="body" data-in="is-open">
+            <span class="header-burger-line"></span>
+          </a>
 
-            <div class="header-title float-xs-left">
-              <span>{{title}}</span>
-            </div>
+          <div class="header-title float-xs-left">
+            <span>{{title}}</span>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <div class="contents">
-        <main class="container-fluid">
+    <main id="content" class="container-fluid">
+      {{#if title}}
+        <h1 class="h2">{{title}}</h1>
+      {{/if}}
 
-          {{#if title}}
-            <h1 class="h2">{{title}}</h1>
-          {{/if}}
-
-          {{#if toc}}
-            <div class="table-of-contents">
-              <div class="table-of-contents__heading">Table of Contents</div>
-              <nav class="table-of-contents__nav">
-                <ul class="table-of-contents__menu">
-                  {{#each toc}}
-                    <li class="table-of-contents__item">
-                      <a href="#{{slug}}" class="table-of-contents__link">{{title}}</a>
-                    </li>
-                  {{/each}}
-                </ul>
-              </nav>
-            </div>
-          {{/if}}
+      {{#if toc}}
+        <div class="table-of-contents">
+          <div class="table-of-contents__heading">Table of Contents</div>
+          <nav class="table-of-contents__nav">
+            <ul class="table-of-contents__menu">
+              {{#each toc}}
+                <li class="table-of-contents__item">
+                  <a href="#{{slug}}" class="table-of-contents__link">{{title}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </nav>
+        </div>
+      {{/if}}
 
 {{!Do not indent this line because all lines of the rendered partial will also
   be indented, which affects <pre> tags}}
 {{#> content }}
   {{{contents}}}
 {{/content}}
-        </main>
-      </div>
+    </main>
 
-      <footer class="footer">
-        <div class="footer__copyline footer-copyline">
-          <div class="footer-copyline__container">
-            <span class="footer-copyline__notice">
-              {{config.copyright}} {{> icon name="doge" classes="icon" }}
-            </span>
-            <ul class="footer-copyline__entries">
-              <li class="footer-copyline__item">
-                <a class="footer-copyline__link" href="https://github.com/axa-ch/style-guide">GitHub</a>
-              </li>
-              <li class="footer-copyline__item">
-                <a class="footer-copyline__link" href="https://github.com/axa-ch/style-guide/issues">Issues & Feature Requests</a>
-              </li>
-              <li class="footer-copyline__item">
-                <a class="footer-copyline__link" href="https://github.com/axa-ch/style-guide/releases">Changelog</a>
-              </li>
-            </ul>
-          </div>
+    <footer class="footer">
+      <div class="footer__copyline footer-copyline">
+        <div class="footer-copyline__container">
+          <span class="footer-copyline__notice">
+            {{config.copyright}} {{> icon name="doge" classes="icon" }}
+          </span>
+          <ul class="footer-copyline__entries">
+            <li class="footer-copyline__item">
+              <a class="footer-copyline__link" href="https://github.com/axa-ch/style-guide">GitHub</a>
+            </li>
+            <li class="footer-copyline__item">
+              <a class="footer-copyline__link" href="https://github.com/axa-ch/style-guide/issues">Issues & Feature Requests</a>
+            </li>
+            <li class="footer-copyline__item">
+              <a class="footer-copyline__link" href="https://github.com/axa-ch/style-guide/releases">Changelog</a>
+            </li>
+          </ul>
         </div>
-      </footer>
+      </div>
+    </footer>
 
-    </div>
-
-    <div class="site__mobile mobile" data-mobile>
+    <div class="drawer togglable-xs-left persistent-lg-left mobile" data-fade="drawer" data-target="body" data-in="in">
       <div class="row">
         <a class="col-md-12 brand" href="{{relative "/index.html"}}">
           <svg class="brand__image" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -134,12 +161,7 @@
       </div>
     </div>
 
-    {{#eq process.env.NODE_ENV 'production'}}
-      <script src="{{relative "/dist/docs.js"}}"></script>
-      <link rel="stylesheet" href="{{relative "/dist/docs.css"}}">
-    {{else}}
-      <script src="{{relative "/dist/bundle.js"}}"></script>
-    {{/eq}}
+    <script src="{{relative "/dist/docs.js"}}"></script>
 
     <script>
       var href = '{{relative link}}'
@@ -163,7 +185,6 @@
     </script>
 
     <script> window.intercomSettings = { app_id: 'i82zr1ej' }</script>
-    <script src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
     <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/i82zr1ej';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
   </body>
 </html>

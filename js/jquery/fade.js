@@ -7,20 +7,19 @@ const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
 
 const Selector = {
-  FADE: '[data-fade="search"]',
+  FADE_DRAWER: '[data-fade="drawer"]',
+  FADE_SEARCH: '[data-fade="search"]',
+  DRAWER: '[data-make="drawer"]',
   SEARCH: '[data-search="header"]',
 }
 
 const Event = {
   SHOW: `show${EVENT_KEY}`,
   HIDE: `hide${EVENT_KEY}`,
+  OPEN_DRAWER: 'open.axa.drawer',
+  CLOSE_DRAWER: 'close.axa.drawer',
   OPEN_SEARCH: 'open.axa.search',
   CLOSE_SEARCH: 'close.axa.search',
-}
-
-const ClassName = {
-  FADE_IN: 'fade-in-delayed',
-  FADE_OUT: 'fade-out',
 }
 
 class Fade {
@@ -64,13 +63,13 @@ class Fade {
   }
 
   _show() {
-    $(this._element).addClass($(this._element).data('in') || ClassName.FADE_IN)
-    $(this._element).removeClass($(this._element).data('out') || ClassName.FADE_OUT)
+    $(this._element).addClass($(this._element).data('in'))
+    $(this._element).removeClass($(this._element).data('out'))
   }
 
   _hide() {
-    $(this._element).addClass($(this._element).data('out') || ClassName.FADE_OUT)
-    $(this._element).removeClass($(this._element).data('in') || ClassName.FADE_IN)
+    $(this._element).addClass($(this._element).data('out'))
+    $(this._element).removeClass($(this._element).data('in'))
   }
 
   static _jQueryInterface(config) {
@@ -91,9 +90,29 @@ class Fade {
 }
 
 $(document)
+  .on(Event.OPEN_DRAWER, Selector.DRAWER, (event) => {
+    let drawer = event.target
+    let $fade = $(Selector.FADE_DRAWER).filter((i, element) => {
+      let target = $(element).data('target')
+      let match = $(drawer).is(target)
+      return match
+    })
+
+    Fade._jQueryInterface.call($fade, 'show')
+  })
+  .on(Event.CLOSE_DRAWER, Selector.DRAWER, (event) => {
+    let drawer = event.target
+    let $fade = $(Selector.FADE_DRAWER).filter((i, element) => {
+      let target = $(element).data('target')
+      let match = $(drawer).is(target)
+      return match
+    })
+
+    Fade._jQueryInterface.call($fade, 'hide')
+  })
   .on(Event.OPEN_SEARCH, Selector.SEARCH, (event) => {
     let search = event.target
-    let $fade = $(Selector.FADE).filter((i, element) => {
+    let $fade = $(Selector.FADE_SEARCH).filter((i, element) => {
       let target = $(element).data('target')
       let match = $(search).is(target)
       return match
@@ -103,7 +122,7 @@ $(document)
   })
   .on(Event.CLOSE_SEARCH, Selector.SEARCH, (event) => {
     let search = event.target
-    let $fade = $(Selector.FADE).filter((i, element) => {
+    let $fade = $(Selector.FADE_SEARCH).filter((i, element) => {
       let target = $(element).data('target')
       let match = $(search).is(target)
       return match

@@ -71,6 +71,14 @@ $transition-delay-fast: $transition-fast;
 $transition-delay-slow: $transition-slow;
 $transition-delay-normal: $transition-normal;
 
+// Drawer (Side Menu) width
+
+$drawer-widths: (
+  xs: 300px,
+  sm: 300px,
+  md: 300px,
+  lg: 300px
+);
 
 // Colors
 //----- Basic palette
@@ -268,6 +276,13 @@ $button-ghost-font-size--medium: 16px;
 // # z-index
 // #############################
 
+// New z-index
+$z-index-drawer-top: 10;
+$z-index-header: 15;
+$z-index-mask: 17;
+$z-index-drawer-side: 20;
+
+// Old z-index
 $z-index-progress-step: 15;
 $z-index-meta-language: 20;
 $z-index-progress-step-bullet: 16;

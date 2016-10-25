@@ -11,7 +11,7 @@ title: AXA Strategic Ventures
     <title>Template: AXA Strategic Ventures</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:700|Source+Sans+Pro:400,600,700">
     {{#eq process.env.NODE_ENV 'production'}}
-      <link rel="stylesheet" href="{{relative "/dist/docs.css"}}">
+      <link rel="stylesheet" href="{{relative "/dist/all.css"}}">
     {{/eq}}
   </head>
   <body>
@@ -38,11 +38,11 @@ title: AXA Strategic Ventures
 
       <div class="header-main">
         <div class="container">
-          <a href="#" class="header-brand" data-fade="search" data-target=".header-search">
+          <a href="#" class="header-brand" data-fade="search" data-target=".header-search" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
             <span><strong>AXA</strong><br />Strategic <strong>Ventures</strong></span>
           </a>
 
-          <a class="header-burger float-xs-right hidden-lg-up" href="#" data-burger>
+          <a class="header-burger float-xs-right hidden-lg-up" href="#">
             <span class="header-burger-line"></span>
           </a>
 
@@ -56,11 +56,11 @@ title: AXA Strategic Ventures
             </div>
           </form>
 
-          <div class="header-item float-xs-right hidden-xs-down" data-fade="search" data-target=".header-search">
+          <div class="header-item float-xs-right hidden-xs-down" data-fade="search" data-target=".header-search" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
             <a href="#" class="btn btn-axa">File a Claim</a>
           </div>
 
-          <nav class="nav float-xs-right hidden-md-down" data-fade="search" data-target=".header-search">
+          <nav class="nav float-xs-right hidden-md-down" data-fade="search" data-target=".header-search" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
             <ul class="nav-list">
               <li class="nav-item">
                 <a class="nav-link" href="#">Web Guidelines</a>
@@ -75,10 +75,6 @@ title: AXA Strategic Ventures
       </div>
     </header>
 
-    {{#eq process.env.NODE_ENV 'production'}}
-      <script src="{{relative "/dist/all.js"}}"></script>
-    {{else}}
-      <script src="{{relative "/dist/bundle.js"}}"></script>
-    {{/eq}}
+    <script src="{{relative "/dist/all.js"}}"></script>
   </body>
 </html>
