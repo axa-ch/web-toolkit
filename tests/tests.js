@@ -1,6 +1,6 @@
 function addDefinition(page, testcases) {
   for (var i = 0; i < testcases.length; i++) {
-    testcases[i].screenshot = 'actual' + page;
+    testcases[i].screenshot = 'actual/' + testcases[i].name + '.png';
   }
   return {
     page: page + '.html',
@@ -17,12 +17,12 @@ function getDefinitions() {
   var definitions = [];
 
   definitions.push(addDefinition('/components/demos/badge', [
-    { viewport: viewports.mobile, expected: '/badge_mobile.png' },
-    { viewport: viewports.tablet, expected: '/badge_tablet.png' }
+    { name: 'badge_mobile', viewport: viewports.mobile, expected: 'expected/badge_mobile.png' },
+    { name: 'badge_tablet', viewport: viewports.tablet, expected: 'expected/badge_tablet.png' }
   ]));
   definitions.push(addDefinition('/components/demos/button-ghost', [
-    { viewport: viewports.mobile, expected: '/button-ghost_mobile.png' },
-    { viewport: viewports.tablet, expected: '/button-ghost_tablet.png' }
+    { name: 'button-ghost_mobile', viewport: viewports.mobile, expected: 'expected/button-ghost_mobile.png' },
+    { name: 'button-ghost_tablet', viewport: viewports.tablet, expected: 'expected/button-ghost_tablet.png' }
   ]));
 
   return definitions;
