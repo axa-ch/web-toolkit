@@ -18,12 +18,13 @@ function openPage(index) {
   console.log('Opening page ', baseUrl + demo.page)
   page.open(baseUrl + demo.page, function(status) {
     function executeTest(testIndex) {
-      if (page.viewports !== demo.tests[testIndex].viewport)
+      var test = demo.tests[testIndex];
+      if (page.viewports !== test.viewport)
       {
-        page.viewportSize = demo.tests[testIndex].viewport;
+        page.viewportSize = test.viewport;
         page.reload();
       }
-      var filename = 'screenshots' + demo.page + '_' + page.viewportSize.width + 'x' + page.viewportSize.height + '.png';
+      var filename = test.screenshot; 
       console.log('Rendering page ', demo.page);
       page.render(filename);
 
