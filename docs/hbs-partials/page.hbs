@@ -4,9 +4,9 @@
     <meta charset="utf-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="{{config.description}}">
-    <meta name="keywords" content="{{config.keywords}}">
-    <meta name="author" content="{{config.author}}">
+    <meta name="description" content="{{package.description}}">
+    <meta name="keywords" content="{{package.keywords}}">
+    <meta name="author" content="{{package.author}}">
 
     {{> appicon-ios size=57 }}
     {{> appicon-ios size=72 }}
@@ -17,19 +17,18 @@
     {{> appicon-ios size=152 }}
     {{> appicon-ios size=180 }}
 
-    <meta name="apple-mobile-web-app-title" content="{{config.name}}">
+    <meta name="apple-mobile-web-app-title" content="{{package.title}}">
     <link media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" href="{{relative "/images/splash-screen/ios/750x1294.png"}}">
-
-    <link rel="manifest" href="{{relative "/content/manifest.json"}}">
+    <link rel="manifest" href="{{relative "/manifest.json"}}">
     <link rel="icon" sizes="192x192" href="{{relative "/images/app-icon/android/192x192.png"}}">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content={{config.name}}>
+    <meta name="application-name" content={{package.title}}>
     <meta name="msapplication-square70x70logo" content="{{relative "/images/app-icon/windows/128x128.png"}}">
     <meta name="msapplication-square150x150logo" content="{{relative "/images/app-icon/windows/270x270.png"}}">
     <meta name="msapplication-wide310x150logo" content="{{relative "/images/app-icon/windows/558x270.png"}}">
     <meta name="msapplication-square310x310logo" content="{{relative "/images/app-icon/windows/558x558.png"}}">
 
-    <title>{{#if title}}{{title}}{{/if}} | {{config.name}}</title>
+    <title>{{#if title}}{{title}}{{/if}} | {{package.title}}</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:700|Source+Sans+Pro:400,600,700">
 
@@ -153,7 +152,7 @@
       </div>
       <div class="row">
         <div class="col-md-12 list-group">
-          <a class="list-group__item list-group__item--link" href="https://github.com/axa-ch/style-guide">
+          <a class="list-group__item list-group__item--link" href="{{package.repository.url}}">
             {{> icon name="github" classes="list-group__icon"}}
             <span class="list-group__text">View on GitHub</span>
           </a>
