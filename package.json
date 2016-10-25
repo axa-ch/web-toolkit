@@ -2,6 +2,9 @@
   "name": "@axa/web-toolkit",
   "version": "1.0.0-alpha.3",
   "description": "The CSS, JS and HTML framework for building responsive AXA web apps!",
+  "author": "AXA",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://design.axa.com",
   "keywords": [
     "axa",
     "insurance",
@@ -13,11 +16,15 @@
     "css",
     "js"
   ],
-  "main": "dist/js/index.js",
+  "bugs": {
+    "url": "https://github.com/axa-group/web-toolkit/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/axa-group/web-toolkit.git"
   },
+  "title": "AXA Web Toolkit",
+  "main": "dist/js/index.js",
   "scripts": {
     "dev": "better-npm-run dev",
     "dev:watch-docs": "better-npm-run dev:watch-docs",
@@ -63,12 +70,6 @@
       }
     }
   },
-  "author": "AXA",
-  "license": "SEE LICENSE IN LICENSE",
-  "bugs": {
-    "url": "https://github.com/axa-group/web-toolkit/issues"
-  },
-  "homepage": "https://design.axa.com",
   "dependencies": {
     "baconjs": "^0.7.73",
     "bootstrap-sass": "3.3.7",
