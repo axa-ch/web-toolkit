@@ -1,0 +1,36 @@
+{
+  "name": "@axa/web-toolkit-tests",
+  "version": "1.0.0-alpha.3",
+  "description": "Screenshot tests for the axa web toolkit!",
+  "keywords": [
+    "axa",
+    "insurance",
+    "group",
+    "web",
+    "toolkit",
+    "framework",
+    "html",
+    "css",
+    "js"
+  ],
+  "main": "test2.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axa-group/web-toolkit.git"
+  },
+  "scripts": {
+    "start": "test2.js"
+  },
+  "author": "AXA",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/axa-group/web-toolkit/issues"
+  },
+  "homepage": "https://design.axa.com",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "canvas": "^1.6.1",
+    "node-resemble": "1.1.3"
+  }
+}
