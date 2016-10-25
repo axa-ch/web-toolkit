@@ -2,6 +2,7 @@
 title: Grid
 order: 2
 layout: page.hbs
+draft: true
 ---
 
 include ../mixins.pug
@@ -15,7 +16,7 @@ include ../mixins.pug
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
       a(href='#quick-start').toc__anchor-navigation__link Quick start
-   
+
 
 :markdown-it
   # Quick start
@@ -31,12 +32,12 @@ include ../mixins.pug
       .tab-panel__header
         .tab-panel__header__tabs
           .tab-panel__header__tab(data-tab-toggle='html') HTML
-          
+
       .tab-panel__content
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
               include:highlight(renderHandlebars) ./snippets/grid-quick-start.hbs
-       
+
 
 //- Copyright AXA Versicherungen AG 2015
