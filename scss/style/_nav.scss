@@ -78,13 +78,11 @@ $nav-panel-lg-height: 400px;
   background: $color-wild-sand;
   overflow: hidden;
   visibility: hidden;
-  z-index: -2;
 
   .nav-item:hover &,
   &.is-open {
     transition: height $transition-normal $transition-easein, visibility 0s linear;
     visibility: visible;
-    z-index: -1;
   }
 
   .nav-item:hover &,
@@ -134,7 +132,6 @@ $nav-panel-lg-height: 400px;
 
   background: $color-axa-red;
   opacity: 0;
-  z-index: 0;
 
   &.is-visible {
     height: 3px;

@@ -28,12 +28,14 @@
       left: 0;
       height: 100%;
       transform: translateX(0);
+      z-index: $z-index-drawer-side;
     }
 
     .drawer.persistent-#{$breakpoint}-right {
       right: 0;
       height: 100%;
       transform: translateX(0);
+      z-index: $z-index-drawer-side;
     }
 
     .drawer.togglable-#{$breakpoint}-left {
@@ -41,6 +43,7 @@
       height: 100%;
       transform: translateX(-100%);
       transition: transform $transition-normal $transition-ease;
+      z-index: $z-index-drawer-side;
 
       &.in {
         transform: translateX(0);
@@ -53,6 +56,7 @@
       height: 100%;
       transform: translateX(100%);
       transition: transform $transition-normal $transition-ease;
+      z-index: $z-index-drawer-side;
 
       &.in {
         transform: translateX(0);
@@ -64,8 +68,10 @@
       left: 0;
       right: 0;
       width: auto;
+      max-height: 100%;
       transform: translateY(-100%);
       transition: transform $transition-normal $transition-ease;
+      z-index: $z-index-drawer-top;
 
       &.in {
         transform: translateY(0);
