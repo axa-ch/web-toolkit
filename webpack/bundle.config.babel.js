@@ -7,7 +7,7 @@ import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
 
-import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
+import createHappyPlugin, { getEnvId } from '../lib/create-happy-plugin'
 
 export default {
   cache: true,
