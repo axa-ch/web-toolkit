@@ -36,7 +36,7 @@
     "docs:build:delayed": "sleep 3 && npm run docs:build",
     "docs:build:copy:all:before": "npm run all:copy && npm run docs:build",
     "bundles:watch": "babel-node webpack/browsersync-dev-server.js",
-    "bundles:build": "webpack --verbose --colors --display-error-details --config webpack/bundle.config.babel.js",
+    "bundles:build": "webpack --verbose --display-modules --colors --display-error-details --config webpack/bundle.config.babel.js",
     "bundles:copy": "sync-files --no-notify-update dist/bundles docs/dist",
     "images:watch": "sync-files --no-notify-update --watch images docs/images2",
     "images:copy": "sync-files --no-notify-update images docs/images2",

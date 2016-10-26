@@ -62,6 +62,11 @@ export default {
     ], {
       root: path.resolve(__dirname, '..'),
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"',
+      },
+    }),
     new ExtractTextPlugin('[name].css', {
       allChunks: true,
     }),
@@ -71,7 +76,13 @@ export default {
       },
       prefix: '',
     }),
+
+    // ignore dev config
+    new webpack.IgnorePlugin(/\.\/dev/, /\/config$/),
+
+    // optimizations
     new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
