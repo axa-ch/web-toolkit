@@ -17,8 +17,11 @@ toc:
 ---
 
 {{#> page}}
-  {{#*inline "title"}}{{title}}{{/inline}}
   {{#*inline "content"}}
+
+    <h1 class="h2">{{title}}</h1>
+
+    {{> table-of-contents}}
 
     <h2 id="overview" class="h3">Overview</h2>
 

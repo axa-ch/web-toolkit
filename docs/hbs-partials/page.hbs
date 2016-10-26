@@ -68,25 +68,6 @@
     </header>
 
     <main id="content" class="container-fluid">
-      {{#if title}}
-        <h1 class="h2">{{title}}</h1>
-      {{/if}}
-
-      {{#if toc}}
-        <div class="table-of-contents">
-          <div class="table-of-contents__heading">Table of Contents</div>
-          <nav class="table-of-contents__nav">
-            <ul class="table-of-contents__menu">
-              {{#each toc}}
-                <li class="table-of-contents__item">
-                  <a href="#{{slug}}" class="table-of-contents__link">{{title}}</a>
-                </li>
-              {{/each}}
-            </ul>
-          </nav>
-        </div>
-      {{/if}}
-
 {{!Do not indent this line because all lines of the rendered partial will also
   be indented, which affects <pre> tags}}
 {{#> content }}

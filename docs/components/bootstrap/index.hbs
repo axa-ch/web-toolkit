@@ -41,8 +41,11 @@ toc:
 ---
 
 {{#> page}}
-  {{#*inline "title"}}{{title}}{{/inline}}
   {{#*inline "content"}}
+
+    <h1 class="h2">{{title}}</h1>
+
+    {{> table-of-contents}}
 
     <h2 class="h3" id="jumbotron">Jumbotron</h2>
     <div class="jumbotron">
