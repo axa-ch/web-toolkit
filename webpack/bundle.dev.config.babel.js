@@ -20,7 +20,7 @@ export default {
     all: [
       'webpack/hot/dev-server',
       'webpack-hot-middleware/client',
-      './js/index-with-styles.js'
+      './js/index-with-styles.js',
     ],
   },
   output: {
