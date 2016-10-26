@@ -5,6 +5,7 @@ import cssmqpacker from 'css-mqpacker'
 import csswring from 'csswring'
 import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import webpack from 'webpack'
 import SvgStore from 'webpack-svgstore-plugin'
 
 import createHappyPlugin, { getEnvId } from '../lib/create-happy-plugin'
@@ -69,6 +70,12 @@ export default {
         plugins: [{ removeTitle: true }],
       },
       prefix: '',
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false },
+      output: { comments: false },
+      sourceMap: true,
     }),
   ],
   postcss: () => [
