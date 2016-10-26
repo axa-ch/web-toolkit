@@ -8,10 +8,28 @@ order: 98
 {{#> page}}
   {{#*inline "content"}}
 
-    <div class="alert alert-info" role="alert" style="margin: 50px 0;">
-      <p><strong>Heads up!</strong> This page is being rewritten
-      in order to make browsing inspiring templates based on the AXA Web Toolkit
-      an ease. Come back again in a couple of days!</p>
+    <p class="lead" style="margin: 50px 0;">
+      Components can be composed in different ways. To provide some
+      inspiration and real-world use cases, this page contains a couple
+      of very helpful templates for you to get started with.
+    </p>
+
+    <div class="row">
+      {{#each menu.templates.childrenArray}}
+        {{#with file}}
+          <div class="col-md-4 col-sm-6">
+            <div class="thumbnail">
+              <img src="{{thumbnail}}" alt="{{description}}">
+              <div class="caption">
+                <p>{{description}}</p>
+                <p>
+                  <a href="{{relative link}}" class="btn btn-primary" role="button">View the template</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        {{/with}}
+      {{/each}}
     </div>
 
   {{/inline}}
