@@ -1,0 +1,36 @@
+---
+title: Templates
+description: A collection of real-world templates built using the AXA Web Toolkit.
+nav: side/templates
+order: 98
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <p class="lead" style="margin: 50px 0;">
+      Components can be composed in different ways. To provide some
+      inspiration and real-world use cases, this page contains a couple
+      of very helpful templates for you to get started with.
+    </p>
+
+    <div class="row">
+      {{#each menu.templates.childrenArray}}
+        {{#with file}}
+          <div class="col-md-4 col-sm-6">
+            <div class="thumbnail">
+              <img src="{{thumbnail}}" alt="{{description}}">
+              <div class="caption">
+                <p>{{description}}</p>
+                <p>
+                  <a href="{{relative link}}" class="btn btn-primary" role="button">View the template</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        {{/with}}
+      {{/each}}
+    </div>
+
+  {{/inline}}
+{{/page}}

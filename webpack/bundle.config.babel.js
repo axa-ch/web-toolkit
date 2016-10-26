@@ -5,9 +5,10 @@ import cssmqpacker from 'css-mqpacker'
 import csswring from 'csswring'
 import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import webpack from 'webpack'
 import SvgStore from 'webpack-svgstore-plugin'
 
-import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
+import createHappyPlugin, { getEnvId } from '../lib/create-happy-plugin'
 
 export default {
   cache: true,
@@ -61,6 +62,11 @@ export default {
     ], {
       root: path.resolve(__dirname, '..'),
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"',
+      },
+    }),
     new ExtractTextPlugin('[name].css', {
       allChunks: true,
     }),
@@ -69,6 +75,18 @@ export default {
         plugins: [{ removeTitle: true }],
       },
       prefix: '',
+    }),
+
+    // ignore dev config
+    new webpack.IgnorePlugin(/\.\/dev/, /\/config$/),
+
+    // optimizations
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false },
+      output: { comments: false },
+      sourceMap: true,
     }),
   ],
   postcss: () => [

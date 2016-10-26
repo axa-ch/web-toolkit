@@ -4,7 +4,7 @@ import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 import SvgStore from 'webpack-svgstore-plugin'
 
-import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
+import createHappyPlugin, { getEnvId } from '../lib/create-happy-plugin'
 
 export default {
   cache: true,
@@ -20,7 +20,7 @@ export default {
     all: [
       'webpack/hot/dev-server',
       'webpack-hot-middleware/client',
-      './js/index-with-styles.js'
+      './js/index-with-styles.js',
     ],
   },
   output: {
