@@ -1,0 +1,17 @@
+---
+title: Templates
+description: A collection of real-world templates built using the AXA Web Toolkit.
+nav: side/templates
+order: 98
+---
+
+{{#> page}}
+  {{#*inline "title"}}{{title}}{{/inline}}
+  {{#*inline "content"}}
+
+    <h2 id="overview" class="h3">Overview</h2>
+
+    <p>{{description}}</p>
+
+  {{/inline}}
+{{/page}}

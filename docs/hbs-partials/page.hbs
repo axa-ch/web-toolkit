@@ -137,12 +137,8 @@
       <div class="row">
         <nav class="col-md-12 mobile-menu mobile-menu--collapsing" data-menu="collapsing">
           <ul class="mobile-menu__level" data-level>
-            <li class="mobile-menu__item">
-              <a class="mobile-menu__link" href="{{relative "/index.html"}}" data-link>Home</a>
-            </li>
-
-            {{#with sitemap}}
-              {{> mobile-menu}}
+            {{#with menu.side}}
+              {{> menu}}
             {{/with}}
           </ul>
         </nav>
