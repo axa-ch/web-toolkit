@@ -75,6 +75,7 @@
     "react-dom": "^15.3.0",
     "serve-static": "^1.11.1",
     "slick-carousel": "^1.6.0",
+    "slug": "^0.9.1",
     "svg4everybody": "^2.1.0"
   },
   "devDependencies": {
