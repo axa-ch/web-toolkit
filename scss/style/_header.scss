@@ -25,6 +25,7 @@ $header-search-lg-width: 500px;
   &.affix {
     position: fixed;
     top: 0;
+    z-index: $z-index-fixed-header;
   }
 }
 
