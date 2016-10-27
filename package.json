@@ -54,12 +54,6 @@
   },
   "betterScripts": {
     "dev": {
-      "command": "concurrently --kill-others \"npm run bundles:watch\" \"npm run docs:build:delayed\" --names bundles:watch,docs:build --prefix-colors cyan,magenta --prefix [{name}]",
-      "env": {
-        "NODE_ENV": "development"
-      }
-    },
-    "dev:watch-docs": {
       "command": "concurrently --kill-others \"npm run all:watch\" \"npm run docs:build:delayed\" --names all:watch,docs:build --prefix-colors cyan,magenta --prefix [{name}]",
       "env": {
         "NODE_ENV": "development"
