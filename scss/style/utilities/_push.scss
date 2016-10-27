@@ -4,12 +4,52 @@
   $width: map-get($drawer-widths, $breakpoint);
 
   @include media-breakpoint-up($breakpoint) {
+
+    /// Utility that makes your page (ex. body)
+    /// play nicely together with the side drawer. Use it
+    /// to pad your element to the left, so there's room for the drawer.
+    ///
+    /// @example html - HTML Usage
+    ///   <body class="push-lg-left">...</body>
     .push-#{$breakpoint}-left {
       padding-left: $width;
     }
 
+    /// Utility that makes your page (ex. body)
+    /// play nicely together with the side drawer. Use it
+    /// to pad your element to the right, so there's room for the drawer.
+    ///
+    /// @example html - HTML Usage
+    ///   <body class="push-lg-right">...</body>
     .push-#{$breakpoint}-right {
       padding-right: $width;
+    }
+  }
+
+  @include media-breakpoint-up($breakpoint) {
+
+    /// Utility that makes your absolutely positioned (ex. sticky)
+    /// elements play nicely together with the side drawer. Use it
+    /// to push the absolute element by the drawers width on the left side.
+    ///
+    /// @example html - HTML Usage
+    ///   <header class="header header header-fixed-top push-absolute-lg-left">...</header>
+    .push-absolute-#{$breakpoint}-left {
+      right: 0;
+      left: $width;
+      width: auto !important;
+    }
+
+    /// Utility that makes your absolutely positioned (ex. sticky)
+    /// elements play nicely together with the side drawer. Use it
+    /// to push the absolute element by the drawers width on the right side.
+    ///
+    /// @example html - HTML Usage
+    ///   <header class="header header header-fixed-top push-absolute-lg-right">...</header>
+    .push-absolute-#{$breakpoint}-right {
+      right: $width;
+      left: 0;
+      width: auto !important;
     }
   }
 }
