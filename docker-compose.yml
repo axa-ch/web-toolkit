@@ -9,3 +9,9 @@ web:
     io.rancher.container.pull_image: always
   tty: true
   stdin_open: false
+test:
+  image: ${TEST_IMAGE}
+  environment:
+    BASE_URL: http://web:3000/${BASE_URL}/
+  labels:
+    io.rancher.container.pull_image: always

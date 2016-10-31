@@ -52,6 +52,7 @@ node {
       sh """
         set +x
         IMAGE=$imageName \
+        TEST_IMAGE=$testImageName \
         BASE_URL=$baseUrl \
           rancher-compose \
             --url \$RANCHER_URL \
