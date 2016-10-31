@@ -5,6 +5,7 @@ node {
     def branchName = env.BRANCH_NAME
     def tagName = branchName != "master" ? branchName : "latest"
     def imageName = repositoryName + ":" + tagName.replaceAll("[.:_/\\\\]", '-')
+    def testImageName = repositoryName + "-test" + ":" + tagName.replaceAll("[.:_/\\\\]", '-')
     def projectName = imageName.replaceAll("[.:_/\\\\]", '-')
     def baseUrl = '/toolkit'
 
@@ -17,9 +18,10 @@ node {
     sh """
       set +x
       docker build -t $imageName .
+      docker build -t $testImageName ./test
     """
 
-    stage 'Push Docker Image'
+    stage 'Push Docker Images'
 
     withCredentials([[
       $class: 'UsernamePasswordMultiBinding',
@@ -31,6 +33,7 @@ node {
         set +x
         docker login -u \$DOCKER_HUB_USERNAME -p \$DOCKER_HUB_PASSWORD
         docker push $imageName
+        docker push $testImageName
       """
     }
 
