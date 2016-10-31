@@ -18,7 +18,7 @@ node {
     sh """
       set +x
       docker build -t $imageName .
-      docker build -t $testImageName ./test
+      docker build -t $testImageName ./tests
     """
 
     stage 'Push Docker Images'
