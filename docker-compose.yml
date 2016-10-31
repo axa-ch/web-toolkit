@@ -11,6 +11,8 @@ web:
   stdin_open: false
 test:
   image: ${TEST_IMAGE}
+  links:
+    - web
   environment:
     BASE_URL: http://web:3000/${BASE_URL}/
   labels:
