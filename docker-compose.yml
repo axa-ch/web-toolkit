@@ -12,9 +12,9 @@ web:
 test:
   image: ${TEST_IMAGE}
   links:
-    - web
+    - web:web
   environment:
-    BASE_URL: http://web:3000/${BASE_URL}/
+    BASE_URL: http://web:3000${BASE_URL}/
   labels:
     io.rancher.container.pull_image: always
     io.rancher.container.start_once: true
