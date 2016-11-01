@@ -8,7 +8,11 @@ ENV BASE_URL '/'
 RUN apt-get update && apt-get install -y --no-install-recommends git \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app/dist/docs
+RUN mkdir /usr/src/app/tests
+RUN ln -s /usr/src/app/tests/ /usr/src/app/dist/docs/tests
+VOLUME "/usr/src/app/tests"
+
 WORKDIR /usr/src/app
 
 COPY package.json /usr/src/app/
