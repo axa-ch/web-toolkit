@@ -8,7 +8,9 @@ RUN npm install --quiet
 RUN mkdir diff
 
 COPY . /usr/src/app
+RUN chmod +x ./run-tests.sh
 
 # Phantom on linux cannot load fonts from the web. They must be present locally. Yeah...
 RUN mv /usr/src/app/fonts /usr/share/fonts/truetype/
+
 CMD [ "./run-tests.sh" ]
