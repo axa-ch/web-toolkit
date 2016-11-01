@@ -11,7 +11,7 @@ order: -1
     {{#with menu.sassdoc}}
       {{#each childrenArray}}
         {{#with file}}
-          <h2 class="h3">{{comment.context.name}}</h2>
+          <h2 class="h3" id="{{slug}}">{{comment.context.name}}</h2>
           <p class="lead">{{comment.description}}</p>
 
           <p>Type: <span class="label label-primary">{{comment.context.type}}</span></p>
