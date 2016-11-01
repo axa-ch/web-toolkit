@@ -1,6 +1,7 @@
 var resemble = require('node-resemble');
 var fs = require('fs');
 var pages = require('./test-definitions').getDefinitions();
+var resultPage = require('./result-page');
 
 for (var pageIndex = 0; pageIndex < pages.length; pageIndex++) {
   var page = pages[pageIndex];
@@ -34,3 +35,7 @@ for (var pageIndex = 0; pageIndex < pages.length; pageIndex++) {
       });
   }
 }
+
+console.log('All tests finished. Writing results page.')
+
+resultPage.createResultPage(pages)
