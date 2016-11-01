@@ -1,14 +1,14 @@
 var resemble = require('node-resemble');
 var fs = require('fs');
-var definitions = require('./tests').getDefinitions();
+var pages = require('./test-definitions').getDefinitions();
 
-for (var pageIndex = 0; pageIndex < definitions.length; pageIndex++) {
-  var definition = definitions[pageIndex];
+for (var pageIndex = 0; pageIndex < pages.length; pageIndex++) {
+  var page = pages[pageIndex];
 
-  console.log(definition);
+  console.log(page);
 
-  for (var testIndex = 0; testIndex < definition.tests.length; testIndex++) {
-    var test = definition.tests[testIndex];
+  for (var testIndex = 0; testIndex < page.tests.length; testIndex++) {
+    var test = page.tests[testIndex];
 
     console.log('-----');
     console.log('Test:', test.name);
@@ -17,8 +17,10 @@ for (var pageIndex = 0; pageIndex < definitions.length; pageIndex++) {
       .compareTo(test.expected)
       .onComplete(function (result) {
         console.log('Mismatch percentage:', result.misMatchPercentage);
+        test.misMatchPercentage = result.misMatchPercentage;
         if (result.misMatchPercentage > 0) {
-          var diffPath = 'diff/' + test.name + '.png';
+          var diffPath = 'tests/diff/' + test.name + '.png';
+          test.diff = diffPath;
           console.log('Mismatch percentage greater than 0. Saving the diff to', diffPath);
           
           var imgDataUrl = result.getImageDataUrl();

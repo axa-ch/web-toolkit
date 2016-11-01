@@ -1,6 +1,6 @@
 var webpage = require('webpage');
 var fs = require('fs');
-var definitions = require('./tests').getDefinitions();
+var definitions = require('./test-definitions').getDefinitions();
 var system = require('system');
 
 var baseUrl = system.env.BASE_URL || 'http://192.168.99.100:3000';
