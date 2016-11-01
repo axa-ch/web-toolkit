@@ -23,11 +23,14 @@ const docsPath = path.resolve(__dirname, '..', 'dist', 'docs')
  * Run Browsersync and use middleware for Hot Module Replacement
  */
 browserSync({
+  logFileChanges: false,
   server: {
     baseDir: [docsPath],
 
     middleware: [
       webpackDevMiddleware(bundler, {
+        quiet: true,
+        noInfo: true,
         // IMPORTANT: dev middleware can't access config, so we should
         // provide publicPath by ourselves
         publicPath: webpackConfig.output.publicPath,
