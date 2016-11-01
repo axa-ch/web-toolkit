@@ -15,6 +15,8 @@ test:
     - web:web
   environment:
     BASE_URL: http://web:3000${BASE_URL}/
+  volumes_from:
+    - web
   labels:
     io.rancher.container.pull_image: always
     io.rancher.container.start_once: true
