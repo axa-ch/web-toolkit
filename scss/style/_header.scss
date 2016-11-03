@@ -16,6 +16,7 @@ $header-search-lg-width: 500px;
   border-top: 2px solid $color-dark-indigo;
   transition: background-color $transition-normal $transition-ease;
   z-index: $z-index-header;
+  overflow-x: hidden;
 
   &.transparent {
     background-color: transparent;
