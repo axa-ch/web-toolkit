@@ -111,6 +111,7 @@
     "front-matter": "^1.0.0",
     "handlebars": "^4.0.5",
     "happypack": "^2.2.1",
+    "highlight.js": "^8.9.1",
     "iframe-resizer": "^2.8.10",
     "jsdoc-babel": "^0.2.1",
     "jsdoc-to-markdown": "^2.0.0-alpha.15",
