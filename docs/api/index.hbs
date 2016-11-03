@@ -8,11 +8,58 @@ order: -1
 {{#> page}}
   {{#*inline "content"}}
 
-    <div class="alert alert-info" role="alert" style="margin: 50px 0;">
-      <p><strong>Heads up!</strong> This page is being rewritten
-      in order to make understanding the API of the AXA Web Toolkit
-      as easy as possible. Come back again in a couple of days!</p>
-    </div>
+    {{#with menu.sassdoc}}
+      {{#each childrenArray}}
+        {{#with file}}
+          <h2 class="h3" id="{{slug}}">{{comment.context.name}}</h2>
+          <p class="lead">{{comment.description}}</p>
+
+          <p>Type: <span class="label label-primary">{{comment.context.type}}</span></p>
+
+          {{#if comment.context.code}}
+          <div>
+            <h3 class="h4">Source:</h3>
+            <pre>{{comment.context.code}}</pre>
+          </div>
+          {{/if}}
+
+          {{#if comment.context.value}}
+          <div>
+            <h3 class="h4">Source</h3>
+            <pre>{{comment.context.value}}</pre>
+          </div>
+          {{/if}}
+
+          {{#if comment.parameter}}
+            <h3 class="h4">Parameters</h3>
+            <dl>
+              {{#each comment.parameter}}
+                <dt>{{name}} ({{type}} - Default: {{default}})</dt>
+                <dd>{{description}}</dd>
+              {{/each}}
+            <dl>
+          {{/if}}
+
+          {{#if comment.see}}
+            <h3 class="h4">See</h3>
+            <ul>
+              {{#each comment.see}}
+                <li><code>{{name}}</code></li>
+              {{/each}}
+            </ul>
+          {{/if}}
+
+          {{#if comment.example}}
+            {{#each comment.example}}
+              <div>
+                <h3 class="h4">Example {{@index}}: {{description}} ({{type}})</h3>
+                <pre>{{code}}</pre>
+              </div>
+            {{/each}}
+          {{/if}}
+        {{/with}}
+      {{/each}}
+    {{/with}}
 
   {{/inline}}
 {{/page}}
