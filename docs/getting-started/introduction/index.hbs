@@ -2,16 +2,102 @@
 title: Introduction
 nav: side/getting-started/introduction
 order: 1
+fontUrl: https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700
+cssUrl: https://design.axa.com/toolkit/dist/all.css
+jsUrl: https://design.axa.com/toolkit/dist/all.js
+toc:
+  - title: Quick Start
+    slug: quick-start
+  - title: Starter Template
+    slug: starter-template
+  - title: Important Globals
+    slug: important-globals
 ---
 
 {{#> page}}
   {{#*inline "content"}}
 
-    <div class="alert alert-info" role="alert" style="margin: 50px 0;">
-      <p><strong>Heads up!</strong> This page is being rewritten
-      in order to the introduction into AXA Web Toolkit
-      as easy as possible. Come back again in a couple of days!</p>
-    </div>
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <p class="lead">
+      The Web Toolkit is the <em>CSS, JS and HTML framework</em>
+      that we use globally at <a href="https://www.axa.com">AXA</a>
+      <em>for modern and responsive web apps</em>. It is based
+      on <em>Bootstrap 3</em> and provides <em>many specific components
+      and utilities</em> for you to use. It makes developing great web apps
+      that follow our
+      <a href="{{package.homepageWebGuidelines}}">Web Guidelines</a> super easy!
+    </p>
+
+    <p>This is how to get started with the AXA Web Toolkit using
+    assets from our CDN and a simple starter template.</p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 id="quick-start" class="docs-h3">Quick Start</h2>
+
+    <p>Looking to quickly add the Web Toolkit to your project?
+    Use our CDN. Using a package manager
+    or need to download the source files?
+    <a href="{{relative '/getting-started/downloads/'}}">Check out
+    the downloads page.</a></p>
+
+    <p>Copy-paste the stylesheet <code>&lt;link&gt;</code> of the
+    Web Toolkit and the fonts into your <code>&lt;head&gt;</code>
+    before all other stylesheets to load our CSS.</p>
+
+    {{#code-snippet "html"}}
+      <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{{cssUrl}}}" crossorigin="anonymous">
+    {{/code-snippet}}
+
+    <p>Add our JavaScript plugins and jQuery near the end of your pages,
+    right before the closing <code>&lt;/body&gt;</code> tag.
+    Be sure to place jQuery first, as our code depends on them.</p>
+
+    {{#code-snippet "html"}}
+      <script src="{{{jsUrl}}}" crossorigin="anonymous"></script>
+    {{/code-snippet}}
+
+    <p>And that's it—you're on your way to a fully
+    bootstrapped site. If you're at all unsure
+    about the general page structure,
+    keep reading for an example page template.</p>
+
+    <h2 id="starter-template" class="docs-h3">Starter Template</h2>
+
+    <p></p>
+
+    {{#code-snippet "html"}}
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <!-- Required meta tags always come first. -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <!-- Fonts first, then the AXA Web Toolkit CSS. -->
+        <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{{cssUrl}}}" crossorigin="anonymous">
+      </head>
+      <body>
+        <h1>Hello, world!</h1>
+
+        <!-- jQuery first, then the AXA Web Toolkit JS. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="{{{jsUrl}}}" crossorigin="anonymous"></script>
+      </body>
+      </html>
+    {{/code-snippet}}
+
+    <h2 id="important-globals" class="docs-h3">Important Globals</h2>
+
+    <h3 class="docs-h4">HTML5 doctype</h3>
+
+    <p>We require the use of the HTML5 doctype.
+    Without it, you’ll see some funky incomplete styling,
+    but including it shouldn’t cause any considerable hiccups.</p>
 
   {{/inline}}
 {{/page}}
