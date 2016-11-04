@@ -1,0 +1,20 @@
+---
+title: Buttons
+description: Showcases and descriptions of the different types of buttons and how to use them. 
+nav: side/components/buttons
+order: -1
+toc:
+  - title: Jumbotron
+    slug: jumbotron
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">{{title}}</h1>
+    {{> table-of-contents data=toc}}
+
+    {{> example path="/components/buttons/demos/standard-button.html"}}
+
+    {{> highlight-code snippet="/components/buttons/snippets/standard-button" }}
+  {{/inline}}
+{{/page}}
