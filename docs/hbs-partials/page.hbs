@@ -121,6 +121,7 @@
     <script>
       var href = '{{relative link}}'
       var mobile = $('[data-menu="collapsing"]')
+      var upmost = mobile.find('[data-level]').first()
 
       var activeElement = mobile
         .find('[data-link]')
@@ -135,8 +136,11 @@
 
       if (level.length > 0) {
         level.toggleClass('is-active')
-        mobile.collapsingMenu('toggle', level)
+      } else {
+        level = upmost
       }
+
+      mobile.collapsingMenu('toggle', level)
     </script>
 
     <script> window.intercomSettings = { app_id: 'i82zr1ej' }</script>
