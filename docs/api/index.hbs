@@ -11,7 +11,7 @@ order: -1
     {{#with menu.sassdoc}}
       {{#each childrenArray}}
         {{#with file}}
-          <h2 class="h3" id="{{slug}}">{{comment.context.name}}</h2>
+          <h2 class="docs-h3" id="{{slug}}">{{comment.context.name}}</h2>
           <p class="lead">{{comment.description}}</p>
 
           <p>Type: <span class="label label-primary">{{comment.context.type}}</span></p>
@@ -25,13 +25,13 @@ order: -1
 
           {{#if comment.context.value}}
           <div>
-            <h3 class="h4">Source</h3>
+            <h3 class="docs-h4">Source</h3>
             <pre>{{comment.context.value}}</pre>
           </div>
           {{/if}}
 
           {{#if comment.parameter}}
-            <h3 class="h4">Parameters</h3>
+            <h3 class="docs-h4">Parameters</h3>
             <dl>
               {{#each comment.parameter}}
                 <dt>{{name}} ({{type}} - Default: {{default}})</dt>
@@ -41,7 +41,7 @@ order: -1
           {{/if}}
 
           {{#if comment.see}}
-            <h3 class="h4">See</h3>
+            <h3 class="docs-h4">See</h3>
             <ul>
               {{#each comment.see}}
                 <li><code>{{name}}</code></li>
