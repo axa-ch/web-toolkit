@@ -18,8 +18,10 @@ order: -1
 
           {{#if comment.context.code}}
           <div>
-            <h3 class="h4">Source:</h3>
-            <pre>{{comment.context.code}}</pre>
+            <h3 class="docs-h4">Source:</h3>
+            {{#code-snippet comment.context.type}}
+              {{{comment.context.code}}}
+            {{/code-snippet}}
           </div>
           {{/if}}
 
@@ -52,8 +54,10 @@ order: -1
           {{#if comment.example}}
             {{#each comment.example}}
               <div>
-                <h3 class="h4">Example {{@index}}: {{description}} ({{type}})</h3>
-                <pre>{{code}}</pre>
+                <h3 class="docs-h4">Example {{@index}}: {{description}} ({{type}})</h3>
+                {{#code-snippet type}}
+                  {{{code}}}
+                {{/code-snippet}}
               </div>
             {{/each}}
           {{/if}}

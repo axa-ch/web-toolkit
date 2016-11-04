@@ -33,5 +33,20 @@ simple_example:
       </nav>
     </div>
 
+    {{#code-snippet "html"}}
+      <div class="table-of-contents">
+        <div class="table-of-contents__heading">Chapters</div>
+        <nav class="table-of-contents__nav">
+          <ul class="table-of-contents__menu">
+            {{#each simple_example}}
+              <li class="table-of-contents__item">
+                <a href="#" class="table-of-contents__link">{{title}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </nav>
+      </div>
+    {{/code-snippet}}
+
   {{/inline}}
 {{/page}}
