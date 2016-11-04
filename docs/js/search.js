@@ -193,7 +193,7 @@ function getSearchData(searchDataUrl) {
 }
 
 $(() =>
-  $('[data-search]').each((i, el) => new Search(el))
+  $('[data-search="docs"]').each((i, el) => new Search(el))
 )
 
 //! Copyright AXA Versicherungen AG 2015

@@ -1,6 +1,3 @@
-@import '../variables';
-@import '../mixins/btn';
-
 /// This is unique style for the normal buttons.
 /// This button has a border only on the bottom and features a nice animation on hover.
 ///
@@ -19,15 +16,8 @@
   &.btn.btn-lg {
     border-width: 0;
     border-bottom-width: 2px;
-    @include btn-split-icon($padding-mobile-large-vertical, $padding-mobile-large-horizontal, 20px,
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large,
       $line-height-large, $btn-border-radius-large);
-    @include typo-20();
-
-    @media (min-width: $screen-md-min) {
-      @include btn-split-icon($padding-large-vertical, $padding-large-horizontal, 16px,
-        $line-height-large, $btn-border-radius-large);
-      @include typo-16();
-    }
   }
 
   @include button-primary($color-button-primary, $color-button-secondary, $color-white);
@@ -41,56 +31,25 @@
 /// @example html - HTML Usage
 ///   <button type="button" class="btn btn-primary">Primary Button</button>
 .btn {
-  @include btn-split-icon($padding-mobile-base-vertical, $padding-mobile-base-horizontal, 18px,
+  @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
     $line-height-base, $btn-border-radius-base);
-  @include typo-18();
+  @include typo-16();
 
   &.btn-lg {
-    @include btn-split-icon(($padding-mobile-large-vertical - 1px), $padding-mobile-large-horizontal,
-      20px, $line-height-large, $btn-border-radius-large);
+    // Reduce vertical padding by 1px because we increase border-width by 1px
+    @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
+      $font-size-large, $line-height-large, $btn-border-radius-large);
     border-width: 2px;
-    @include typo-20();
-      
-    &.btn-split-icon {
-      & .glyphicon {
-        border-left-width: 2px;
-      }
-    }
   }
 
   &.btn-sm {
-    @include btn-split-icon($padding-mobile-small-vertical, $padding-mobile-small-horizontal,
-      16px, $line-height-small, $btn-border-radius-small);
-    @include typo-16();
+    @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
+      $font-size-small, $line-height-small, $btn-border-radius-small);
   }
 
   &.btn-xs {
-    @include btn-split-icon($padding-mobile-xs-vertical, $padding-mobile-xs-horizontal, $font-size-small,
-      16px, $btn-border-radius-small);
-    @include typo-16();
-  }
-
-  @media (min-width: $screen-md-min) {
-    @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
-      $line-height-base, $btn-border-radius-base);
-    @include typo-16();
-
-    &.btn-lg {
-      // Reduce vertical padding by 1px because we increase border-width by 1px
-      @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
-        $font-size-large, $line-height-large, $btn-border-radius-large);
-      border-width: 2px;
-    }
-
-    &.btn-sm {
-      @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
-        $font-size-small, $line-height-small, $btn-border-radius-small);
-    }
-
-    &.btn-xs {
-      @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
-        $line-height-small, $btn-border-radius-small);
-    }
+    @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
+      $line-height-small, $btn-border-radius-small);
   }
 
   line-height: 1.5;

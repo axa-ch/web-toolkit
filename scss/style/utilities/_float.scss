@@ -1,0 +1,17 @@
+// TODO: These utilities will become obsolete when we upgrade to Bootstrap v4
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .float-#{$breakpoint}-left {
+      float: left !important;
+    }
+
+    .float-#{$breakpoint}-right {
+      float: right !important;
+    }
+
+    .float-#{$breakpoint}-none {
+      float: none !important;
+    }
+  }
+}

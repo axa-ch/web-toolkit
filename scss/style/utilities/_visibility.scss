@@ -1,0 +1,15 @@
+// TODO: These utilities will become obsolete when we upgrade to Bootstrap v4
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .hidden-#{$breakpoint}-up {
+      display: none !important;
+    }
+  }
+
+  @include media-breakpoint-down($breakpoint) {
+    .hidden-#{$breakpoint}-down {
+      display: none !important;
+    }
+  }
+}

@@ -1,8 +1,6 @@
+.DS_Store/
 .git/
 dist/
 node_modules/
-tmp/
-.DS_Store/
 .gitignore
 .npmignore
-.travis.yml

@@ -1,0 +1,155 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+
+    /// Utility that makes an element fade in with a nice transition,
+    /// from the specified breakpoint and above.
+    ///
+    /// @see .fade-in-delayed-#{$breakpoint}-up
+    /// @see .fade-out-#{$breakpoint}-up
+    /// @see .fade-out-delayed-#{$breakpoint}-up
+    /// @see .fade-in-#{$breakpoint}-down
+    /// @see .fade-in-delayed-#{$breakpoint}-down
+    /// @see .fade-out-#{$breakpoint}-down
+    /// @see .fade-out-delayed-#{$breakpoint}-down
+    /// @example html - HTML Usage
+    ///   <div class="fade-in-xs-up">...</div>
+    .fade-in-#{$breakpoint}-up {
+      transition: opacity $transition-normal $transition-easeout, visibility 0s linear;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /// Utility that makes an element fade in with a nice transition and a
+    /// delay that is the length of an usual transition,
+    /// from the specified breakpoint and above.
+    ///
+    /// @see .fade-in-#{$breakpoint}-up
+    /// @see .fade-out-#{$breakpoint}-up
+    /// @see .fade-out-delayed-#{$breakpoint}-up
+    /// @see .fade-in-#{$breakpoint}-down
+    /// @see .fade-in-delayed-#{$breakpoint}-down
+    /// @see .fade-out-#{$breakpoint}-down
+    /// @see .fade-out-delayed-#{$breakpoint}-down
+    /// @example html - HTML Usage
+    ///   <div class="fade-in-delayed-xs-up">...</div>
+    .fade-in-delayed-#{$breakpoint}-up {
+      transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear $transition-delay-normal;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /// Utility that makes an element fade out with a nice transition
+    /// from the specified breakpoint and above.
+    ///
+    /// @see .fade-in-#{$breakpoint}-up
+    /// @see .fade-in-delayed-#{$breakpoint}-up
+    /// @see .fade-out-delayed-#{$breakpoint}-up
+    /// @see .fade-in-#{$breakpoint}-down
+    /// @see .fade-in-delayed-#{$breakpoint}-down
+    /// @see .fade-out-#{$breakpoint}-down
+    /// @see .fade-out-delayed-#{$breakpoint}-down
+    /// @example html - HTML Usage
+    ///   <div class="fade-out-xs-up">...</div>
+    .fade-out-#{$breakpoint}-up {
+      transition: opacity $transition-normal $transition-easeout, visibility 0s linear $transition-delay-normal;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /// Utility that makes an element fade out with a nice transition and a
+    /// delay that is the length of an usual transition,
+    /// from the specified breakpoint and above.
+    ///
+    /// @see .fade-in-#{$breakpoint}-up
+    /// @see .fade-in-delayed-#{$breakpoint}-up
+    /// @see .fade-out-#{$breakpoint}-up
+    /// @see .fade-in-#{$breakpoint}-down
+    /// @see .fade-in-delayed-#{$breakpoint}-down
+    /// @see .fade-out-#{$breakpoint}-down
+    /// @see .fade-out-delayed-#{$breakpoint}-down
+    /// @example html - HTML Usage
+    ///   <div class="fade-out-delayed-xs-up">...</div>
+    .fade-out-delayed-#{$breakpoint}-up {
+      transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear ($transition-delay-normal + $transition-normal);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @include media-breakpoint-down($breakpoint) {
+
+    /// Utility that makes an element fade in with a nice transition,
+    /// from the specified breakpoint and below.
+    ///
+    /// @see .fade-in-#{$breakpoint}-up
+    /// @see .fade-in-delayed-#{$breakpoint}-up
+    /// @see .fade-out-#{$breakpoint}-up
+    /// @see .fade-out-delayed-#{$breakpoint}-up
+    /// @see .fade-in-delayed-#{$breakpoint}-down
+    /// @see .fade-out-#{$breakpoint}-down
+    /// @see .fade-out-delayed-#{$breakpoint}-down
+    /// @example html - HTML Usage
+    ///   <div class="fade-in-md-down">...</div>
+    .fade-in-#{$breakpoint}-down {
+      transition: opacity $transition-normal $transition-easeout, visibility 0s linear;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /// Utility that makes an element fade in with a nice transition and a
+    /// delay that is the length of an usual transition,
+    /// from the specified breakpoint and below.
+    ///
+    /// @see .fade-in-#{$breakpoint}-up
+    /// @see .fade-in-delayed-#{$breakpoint}-up
+    /// @see .fade-out-#{$breakpoint}-up
+    /// @see .fade-out-delayed-#{$breakpoint}-up
+    /// @see .fade-in-#{$breakpoint}-down
+    /// @see .fade-out-#{$breakpoint}-down
+    /// @see .fade-out-delayed-#{$breakpoint}-down
+    /// @example html - HTML Usage
+    ///   <div class="fade-in-delayed-md-down">...</div>
+    .fade-in-delayed-#{$breakpoint}-down {
+      transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear $transition-delay-normal;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /// Utility that makes an element fade out with a nice transition
+    /// from the specified breakpoint and below.
+    ///
+    /// @see .fade-in-#{$breakpoint}-up
+    /// @see .fade-in-delayed-#{$breakpoint}-up
+    /// @see .fade-out-#{$breakpoint}-up
+    /// @see .fade-out-delayed-#{$breakpoint}-up
+    /// @see .fade-in-#{$breakpoint}-down
+    /// @see .fade-in-delayed-#{$breakpoint}-down
+    /// @see .fade-out-delayed-#{$breakpoint}-down
+    /// @example html - HTML Usage
+    ///   <div class="fade-out-md-down">...</div>
+    .fade-out-#{$breakpoint}-down {
+      transition: opacity $transition-normal $transition-easeout, visibility 0s linear $transition-delay-normal;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /// Utility that makes an element fade out with a nice transition and a
+    /// delay that is the length of an usual transition,
+    /// from the specified breakpoint and below.
+    ///
+    /// @see .fade-in-#{$breakpoint}-up
+    /// @see .fade-in-delayed-#{$breakpoint}-up
+    /// @see .fade-out-#{$breakpoint}-up
+    /// @see .fade-out-delayed-#{$breakpoint}-up
+    /// @see .fade-in-#{$breakpoint}-down
+    /// @see .fade-in-delayed-#{$breakpoint}-down
+    /// @see .fade-out-#{$breakpoint}-down
+    /// @example html - HTML Usage
+    ///   <div class="fade-out-delayed-md-down">...</div>
+    .fade-out-delayed-#{$breakpoint}-down {
+      transition: opacity $transition-normal $transition-easeout $transition-delay-normal, visibility 0s linear ($transition-delay-normal + $transition-normal);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

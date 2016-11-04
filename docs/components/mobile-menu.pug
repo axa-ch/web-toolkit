@@ -2,6 +2,7 @@
 title: Mobile Menu
 order: 6
 layout: page.hbs
+draft: true
 ---
 
 include ../mixins.pug
@@ -10,7 +11,7 @@ include ../mixins.pug
   The mobile menu allows you to navigate the
   contents of an app on small viewports. It represents the
   navigation as a hierarchy.
-  
+
   It is usually hidden in a drawer-like component that slides
   in with the tap onto a burger icon. However, that functionality
   is part of the [Site Component](/components/site.html "Site Component").
@@ -23,11 +24,11 @@ include ../mixins.pug
 
 :markdown-it
   # Sliding Mobile Menu
-  
+
   The sliding mobile menu only shows one level of hierarchy
   at a time. It transitions between levels by sliding to the left
   or right side.
-  
+
   When deeper than the highest level, the uppermost item
   tells the user which level he's in. Clicking that item
   transitions back to the parent level.
@@ -53,28 +54,28 @@ include ../mixins.pug
           :markdown-it
             If you omit the `data-menu="sliding"` attribute, the
             menu won't get any functionality.
-            
+
             In order to add
             the missing functionality programmatically, simply initialize the
             `$().slidingMenu()` plugin.
-            
+
             ```js
             var menu = $("[data-menu='sliding']")
-            
+
             // initialize the plugin
             menu.slidingMenu()
             ```
-            
+
             The plugin you activated provides the `level` method which
             allows you to get or set the current level that is displayed
             in the menu.
-            
+
             ```js
             // get the current level as a jQuery node
             var level = menu.slidingMenu('level')
-            
+
             // navigate to another level
-            
+
             // set level to the previously saved one
             menu.slidingMenu('level', level)
             ```

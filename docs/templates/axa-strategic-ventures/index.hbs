@@ -1,0 +1,85 @@
+---
+title: AXA Strategic Ventures
+description: An image-centric transparent-header example of the AXA Strategic Ventures homepage.
+thumbnail: https://cloud.githubusercontent.com/assets/198988/19729616/eec3baae-9b97-11e6-8d27-6b60b567b648.png
+bgImage: https://cloud.githubusercontent.com/assets/198988/19979108/8b2d3476-a1f9-11e6-8ffd-c352eeeb053e.jpg
+nav: templates/axa-strategic-ventures
+order: 2
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Template: {{title}}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:700|Source+Sans+Pro:400,600,700">
+    {{#eq process.env.NODE_ENV 'production'}}
+      <link rel="stylesheet" href="{{relative "/dist/all.css"}}">
+    {{/eq}}
+  </head>
+  <body>
+    <div style="height: 90vh; min-height: 600px; background: url({{bgImage}}) no-repeat center top; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+
+    <header class="header transparent" style="position: fixed; top: 0;">
+      <div class="header-meta hidden-md-down">
+        <div class="container">
+          <nav class="header-meta-menu float-xs-right">
+            <ul class="header-meta-menu-list">
+              <li class="header-meta-menu-item">
+                <a href="#" class="header-meta-menu-link">Individuals</a>
+              </li>
+              <li class="header-meta-menu-item">
+                <a href="#" class="header-meta-menu-link">Small Businesses</a>
+              </li>
+              <li class="header-meta-menu-item">
+                <a href="#" class="header-meta-menu-link">Businesses</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="header-main">
+        <div class="container">
+          <a href="#" class="header-brand" data-fade="search" data-target=".header-search" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
+            <span><strong>AXA</strong><br />Strategic <strong>Ventures</strong></span>
+          </a>
+
+          <a class="header-burger float-xs-right hidden-lg-up" href="#">
+            <span class="header-burger-line"></span>
+          </a>
+
+          <form class="header-search float-xs-right" data-search="header">
+            <div class="header-search-dunno">
+              <input type="text" class="header-search-input" name="q" placeholder="Search the entire axa.com" />
+              <button type="submit" class="header-search-button">
+                <span class="sr-only">Search</span>
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
+
+          <div class="header-item float-xs-right hidden-xs-down" data-fade="search" data-target=".header-search" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
+            <a href="#" class="btn btn-axa">File a Claim</a>
+          </div>
+
+          <nav class="nav float-xs-right hidden-md-down" data-fade="search" data-target=".header-search" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Web Guidelines</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Toolkit</a>
+              </li>
+            </ul>
+            <div class="nav-stroke" data-spy="stroke" data-target=".nav" />
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <script src="{{relative "/dist/all.js"}}"></script>
+  </body>
+</html>

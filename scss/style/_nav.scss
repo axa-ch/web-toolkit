@@ -1,0 +1,142 @@
+$nav-panel-xs-height: 300px;
+$nav-panel-sm-height: 300px;
+$nav-panel-md-height: 300px;
+$nav-panel-lg-height: 400px;
+
+.nav {
+  display: inline-block;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.nav-list {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+
+  height: 100%;
+
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+.nav-item {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  @extend .typo-navigation;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+
+  transition: color $transition-normal $transition-ease;
+
+  color: $color-axa-blue;
+  text-align: center;
+  text-decoration: none;
+
+  .header.transparent & {
+    color: $color-white;
+  }
+
+  &.is-active,
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-axa-blue;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    .header.transparent & {
+      color: $color-white;
+    }
+  }
+}
+
+.nav-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  height: 0;
+
+  transition: height $transition-normal $transition-easeout $transition-delay-slow, visibility 0s linear ($transition-delay-slow + $transition-normal);
+
+  background: $color-wild-sand;
+  overflow: hidden;
+  visibility: hidden;
+
+  .nav-item:hover &,
+  &.is-open {
+    transition: height $transition-normal $transition-easein, visibility 0s linear;
+    visibility: visible;
+  }
+
+  .nav-item:hover &,
+  &.is-open,
+  .nav-list:hover &,
+  .nav-list.is-open & {
+    height: $nav-panel-xs-height;
+
+    @media (min-width: $screen-sm-min) {
+      height: $nav-panel-sm-height;
+    }
+
+    @media (min-width: $screen-md-min) {
+      height: $nav-panel-md-height;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      height: $nav-panel-lg-height;
+    }
+  }
+}
+
+.nav-panel-wrapper {
+  padding-top: 3.75rem;
+
+  transition: opacity $transition-normal linear ($transition-delay-slow + $transition-normal);
+  opacity: 0;
+
+  .nav-item:hover &,
+  &.is-open {
+    transition: opacity $transition-normal linear $transition-delay-slow;
+    opacity: 1;
+  }
+}
+
+.nav-stroke {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+
+  width: 7.5rem;
+  height: 0;
+
+  transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
+  transition: height $transition-fast $transition-ease, width $transition-fast $transition-ease, transform $transition-fast $transition-ease, opacity 0s linear $transition-fast;
+
+  background: $color-axa-red;
+  opacity: 0;
+
+  &.is-visible {
+    height: 3px;
+    transition: height $transition-fast $transition-ease, width $transition-normal $transition-ease, transform $transition-normal $transition-ease, opacity 0s linear;
+
+    opacity: 1;
+  }
+}
