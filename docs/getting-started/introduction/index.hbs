@@ -5,6 +5,7 @@ order: 1
 fontUrl: https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700
 cssUrl: https://design.axa.com/toolkit/dist/all.css
 jsUrl: https://design.axa.com/toolkit/dist/all.js
+metaExplanationUrl: https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do
 toc:
   - title: Quick Start
     slug: quick-start
@@ -66,7 +67,18 @@ toc:
 
     <h2 id="starter-template" class="docs-h3">Starter Template</h2>
 
-    <p></p>
+    <p>Be sure to have your pages set up with
+    the latest design and development standards.
+    That means:</p>
+
+    <ul>
+      <li>Using an HTML5 doctype</li>
+      <li>Forcing Internet Explorer to use its latest rendering mode
+        (<a href="{{{metaExplanationUrl}}}">read more</a>)</li>
+      <li>And, utilizing the viewport meta tag.</li>
+    </ul>
+
+    <p>Put it all together and your pages should look like this:</p>
 
     {{#code-snippet "html"}}
       <!DOCTYPE html>
@@ -90,6 +102,12 @@ toc:
       </body>
       </html>
     {{/code-snippet}}
+
+    <p>That's all you need for overall page requirements.
+    Visit the
+    <a href="{{relative '/layout/overview'}}">Layout docs</a> or our
+    more <a href="{{relative '/templates'}}">advanced templates</a>
+    to start laying out your site's content and components.</p>
 
     <h2 id="important-globals" class="docs-h3">Important Globals</h2>
 
