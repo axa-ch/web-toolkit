@@ -3,16 +3,96 @@ title: Downloads
 description: Find the right way to include the AXA Web Toolkit into your app.
 nav: side/getting-started/downloads
 order: 2
+lunr: true
+toc:
+  - title: CSS and JS
+    slug: css-and-js
+  - title: Source files
+    slug: source-files
+  - title: CDN
+    slug: cdn
+  - title: Package managers
+    slug: package-managers
+fontUrl: https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700
+cssUrl: https://design.axa.com/toolkit/dist/all.css
+jsUrl: https://design.axa.com/toolkit/dist/all.js
+autoprefixerUrl: https://github.com/postcss/autoprefixer
+flexbugsUrl: https://github.com/luisrudge/postcss-flexbugs-fixes
 ---
 
 {{#> page}}
   {{#*inline "content"}}
 
-    <div class="alert alert-info" role="alert" style="margin: 50px 0;">
-      <p><strong>Heads up!</strong> This page is being rewritten
-      in order to make including the AXA Web Toolkit
-      as easy as possible. Come back again in a couple of days!</p>
-    </div>
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <p class="lead">The <strong>AXA Web Toolkit {{package.version}}</strong>
+    is available for download in several ways, including some of your favorite
+    package managers. Choose from the options below
+    to get just what you need.</p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 id="css-and-js" class="docs-h3">CSS and JS</h2>
+
+    <p><strong>Download the AXA Web Toolkit's ready-to-use code
+    to easily drop into your project.</strong>
+    Includes compiled and minified versions of the CSS bundle
+    and JavaScript plugins.
+    Doesn't include documentation or source files.</p>
+
+    <p>
+      <a href="{{replace package.distArchive '{tag}' package.version}}" class="btn btn-default btn-lg" role="button">Download AXA Web Toolkit</a>
+    </p>
+
+    <h2 id="source-files" class="docs-h3">Source files</h2>
+
+    <p><strong>Want to compile the toolkit with
+    your project's asset pipeline?</strong>
+    Choose this option to download our source Sass, JavaScript,
+    and documentation files. Requires a Sass compiler,
+    <a href="{{autoprefixerUrl}}">Autoprefixer</a>,
+    <a href="{{flexbugsUrl}}">postcss-flexbugs-fixes</a>,
+    and some setup.</p>
+
+    <p>
+      <a href="{{replace package.sourceArchive '{tag}' package.version}}" class="btn btn-default" role="button">Download source</a>
+    </p>
+
+    <h2 id="cdn" class="docs-h3">CDN</h2>
+
+    <p>Skip the download and use our CDN to deliver
+    the compiled CSS and JS to your project.</p>
+
+    {{#code-snippet "html"}}
+      <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{{cssUrl}}}" crossorigin="anonymous">
+      <script src="{{{jsUrl}}}" crossorigin="anonymous"></script>
+    {{/code-snippet}}
+
+    <h2 id="package-managers" class="docs-h3">Package managers</h2>
+
+    <p>Pull in the Web Toolkit's source files into nearly any project
+    with some of the most popular package managers.
+    No matter the package manager,
+    you'll need a Sass compiler,
+    <a href="{{autoprefixerUrl}}">Autoprefixer</a>, and
+    <a href="{{flexbugsUrl}}">postcss-flexbugs-fixes</a>
+    for a setup that matches our official compiled versions.</p>
+
+    <h3 class="docs-h4">npm</h3>
+
+    <p>Install Bootstrap in your Node powered apps with
+    <a href="{{package.npmjsPackage}}">the npm package</a>:</p>
+
+    {{#code-snippet "bash"}}
+      npm install {{package.name}}@{{package.version}}
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Others</h3>
+
+    <p><a href="{{package.bugs.url}}">Let us know</a> if
+    there's another package manager you'd
+    like to get dedicated release packages for.</p>
 
   {{/inline}}
 {{/page}}
