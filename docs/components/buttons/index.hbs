@@ -4,16 +4,51 @@ description: Showcases and descriptions of the different types of buttons and ho
 nav: side/components/buttons
 order: -1
 toc:
-  - title: Standard Buttons
+  - title: Standard Button
     slug: standard-buttons
+  - title: Icon Button
+    slug: icon-buttons
+  - title: AXA Button
+    slug: axa-buttons
+  - title: Ghost Button
+    slug: ghost-buttons
 ---
 
 {{#> page}}
   {{#*inline "content"}}
     <h1 class="h2">{{title}}</h1>
+    <p>
+      Our buttons are based completely on the default bootstrap buttons.
+    </p>
+    <p>
+      This means that you can use all components provided by your favorite
+      platform or third party framework that are based on
+      bootstrap buttons and apply our styles easily.
+    </p>
+    <p>
+      Complex components with advanced behavior implemented in
+      third party technologies will also work.
+    </p>
+    <h2 class="h3">Modifications to default bootstrap buttons</h2>
+    <p>
+      Some modifications have been applied to the buttons.
+    </p>
+    <p>
+      The modifications are implemented in a way that should not adversely
+      affect other frameworks that are based  
+    </p>
+    <ul>
+      <li>Margins and paddings have been changed</li>
+      <li>Border-Thickness has been increased to 2px on default and large size</li>
+      <li>Size properties
+      <li>
+        The <code>btn-axa</code> modifier is also built on bootstrap
+        but has a border only on the side and a special hover effect.
+      </li>
+    </ul>
     {{> table-of-contents data=toc}}
 
-    <h2 class="h3" id="standard-buttons">Standard Buttons</h2>
+    <h2 class="h3" id="standard-buttons">Standard Button</h2>
     <p>
       Use the <code>btn-primary</code> modifier for standard buttons.
     </p>
@@ -22,6 +57,34 @@ toc:
 
 {{> highlight-code snippet="/components/buttons/snippets/standard-button" }}
 
+    <h2 class="h3" id="icon-buttons">Icon Button</h2>
+    <p>
+      Use the <code>btn-split-icon</code> modifier in your bootstrap
+      buttons to support the distinct style of the Web Guidelines. 
+    </p>
     
+    {{> example path="/components/buttons/demos/icon-button.html"}}
+
+{{> highlight-code snippet="/components/buttons/snippets/icon-button" }}
+
+    <h2 class="h3" id="axa-buttons">AXA Button</h2>
+    <p>
+      Use the <code>btn-axa</code> modifier to create the primary 
+      AXA button.
+    </p>
+    
+    {{> example path="/components/buttons/demos/axa-button.html"}}
+
+{{> highlight-code snippet="/components/buttons/snippets/axa-button" }}
+
+    <h2 class="h3" id="ghost-buttons">Ghost Button</h2>
+    <p>
+      Use the <code>btn-ghost</code> modifier to create buttons with
+      transparent backgrounds to be used over images 
+    </p>
+    
+    {{> example path="/components/buttons/demos/ghost-button.html"}}
+
+{{> highlight-code snippet="/components/buttons/snippets/ghost-button" }}
   {{/inline}}
 {{/page}}
