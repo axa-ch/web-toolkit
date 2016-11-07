@@ -112,11 +112,38 @@ toc:
 
     <h2 id="important-globals" class="docs-h3">Important Globals</h2>
 
+    <p>The Web Toolkit and Bootstrap employ a handful
+    of important global styles and settings
+    that you'll need to be aware of when using them,
+    all of which are almost exclusively geared towards
+    the normalization of cross browser styles. Let's dive in.</p>
+
     <h3 class="docs-h4">HTML5 doctype</h3>
 
     <p>We require the use of the HTML5 doctype.
-    Without it, you’ll see some funky incomplete styling,
-    but including it shouldn’t cause any considerable hiccups.</p>
+    Without it, you risk having incomplete styling.
+    Luckily, including it shouldn't cause any problems.</p>
+
+    {{#code-snippet "html"}}
+      <!DOCTYPE html>
+      <html lang="en">
+        ...
+      </html>
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Responsive meta tag</h3>
+
+    {{#code-snippet "html"}}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Box-sizing</h3>
+
+    {{#code-snippet "css"}}
+      .selector-for-some-widget {
+        box-sizing: content-box;
+      }
+    {{/code-snippet}}
 
   {{/inline}}
 {{/page}}
