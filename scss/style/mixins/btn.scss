@@ -1,3 +1,30 @@
+@mixin btn-split-icon($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  @include button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius);
+
+  & .glyphicon {
+    margin-right: -$padding-horizontal;
+    width: $line-height + $padding-vertical + $padding-vertical;
+  }
+
+  &.btn-split-icon {
+    display: inline-flex;
+
+    & .glyphicon {
+      display: flex;
+      margin-left: 20px;
+      margin-right: -$padding-horizontal;
+      margin-top: (-$padding-vertical - 1px);
+      margin-bottom: (-$padding-vertical - 1px);
+      height: $line-height + 2*$padding-vertical;
+      width: $line-height + 2*$padding-vertical;
+      align-items: center;
+      justify-content: center;
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+  }
+}
+
 @mixin button-primary($main, $secondary, $contrast) {
   background: $color-button-primary;
 
@@ -68,6 +95,18 @@
       color: $secondary;
       background-color: $contrast;
     }
+    
+    &.btn-split-icon {
+      & .glyphicon {
+        border-left-color: $main;
+      }
+    }
+  }
+     
+  &.btn-split-icon {
+    & .glyphicon {
+      border-left-color: $secondary;
+    }
   }
 }
 
@@ -116,5 +155,11 @@
   .badge {
     background-color: $main;
     color: $contrast;
+  }
+  
+  &.btn-split-icon {
+    & .glyphicon {
+      border-left-color: $main;
+    }
   }
 }
