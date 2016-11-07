@@ -65,3 +65,7 @@
 .btn.btn-default {
   @include button-color($color-button-primary, $color-button-secondary, $color-white);
 }
+
+.btn-ghost {
+  @include button-color($color-azure, $color-axa-blue, transparent);  
+}
