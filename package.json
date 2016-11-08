@@ -6,7 +6,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://design.axa.com/toolkit",
   "homepageWebGuidelines": "https://design.axa.com/introduction",
-  "distArchive": "https://github.com/axa-group/web-toolkit/releases/download/{tag}/web-toolkit-{tag}-dist.zip",
+  "distArchive": "https://github.com/axa-group/web-toolkit/releases/download/v{tag}/web-toolkit-v{tag}-dist.zip",
   "sourceArchive": "https://github.com/axa-group/web-toolkit/archive/{tag}.zip",
   "npmjsPackage": "https://www.npmjs.com/package/@axa/web-toolkit",
   "keywords": [
@@ -53,7 +53,8 @@
     "all:copy": "concurrently \"npm run images:copy\" \"npm run scss:copy\" \"npm run js:copy\" \"npm run bundles:copy\" --names images:copy,scss:copy,js:copy,bundles:copy --prefix-colors cyan,magenta,blue,yellow --prefix [{name}]",
     "bootstrap:scss:copy": "sync-files --no-notify-update node_modules/bootstrap-sass/assets/stylesheets/bootstrap scss/bootstrap",
     "bootstrap:js:copy": "sync-files --no-notify-update node_modules/bootstrap-sass/assets/javascripts/bootstrap js/jquery/bootstrap",
-    "bootstrap:js:fix": "find js/jquery/bootstrap -type f -exec sed -i '' -e '1s/^/import jQuery from \"jquery\"\\'$'\\n/g' {} \\;"
+    "bootstrap:js:fix": "find js/jquery/bootstrap -type f -exec sed -i '' -e '1s/^/import jQuery from \"jquery\"\\'$'\\n/g' {} \\;",
+    "release:dist:zip": "bestzip web-toolkit-v$npm_package_version-dist.zip dist/bundles/*"
   },
   "betterScripts": {
     "dev": {
@@ -94,6 +95,7 @@
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.11.1",
     "babel-register": "^6.14.0",
+    "bestzip": "^1.1.3",
     "better-npm-run": "0.0.11",
     "browser-sync": "^2.16.0",
     "cheet.js": "^0.3.3",
