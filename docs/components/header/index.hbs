@@ -1,0 +1,246 @@
+---
+title: Header
+description: The flexible wrapper component for branding, navigation and other elements.
+nav: side/components/header
+order: 2
+lunr: true
+toc:
+  - title: Overview
+    slug: overview
+  - title: Supported content
+    slug: supported-content
+  - title: Positioning content
+    slug: positioning-content
+  - title: Containers
+    slug: containers
+  - title: Appearance
+    slug: appearance
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <h1 class="docs-h2">{{title}}</h1>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 id="overview" class="docs-h3">Overview</h2>
+
+    <p>The header is a flexible wrapper for branding, navigation
+    and other elements. It's easily extensible in order to
+    satisfy the needs of many kinds of apps.</p>
+
+    <p>This is the example standard-colored header using most of
+    the possible components.</p>
+
+    {{> example path="/components/header/demos/standard-header.html"}}
+
+    {{#code-snippet "html"}}
+      <header class="header">
+        <div class="header-meta hidden-md-down">
+          <!-- items for the upper header part -->
+        </div>
+        <div class="header-main">
+          <!-- items for the main header part -->
+        </div>
+      </header>
+    {{/code-snippet}}
+
+    <h2 id="supported-content" class="docs-h3">Supported Content</h2>
+
+    <p>There are a handful of sub-components that come
+    with the header. These can be mix and matched from the
+    following as is needed.</p>
+
+    <p>
+      <ul>
+        <li><code>header-meta-menu</code></li>
+        <li><code>header-brand</code></li>
+        <li><code>header-burger</code></li>
+        <li><code>header-search</code></li>
+        <li><code>nav</code></li>
+        <li><code>header-item</code> for <code>btn</code> or other elements</li>
+      </ul>
+    </p>
+
+    <p>The provided sub-components are described in the
+    following sections.</p>
+
+    <h3 class="docs-h4">Meta menu</h3>
+
+    <p>The meta menu is always located in the upper part of the
+    header. It allows you to interconnect separate parts
+    of your app or even link to other related apps. It is used
+    with the <code>.header-meta-menu</code> block.</p>
+
+    {{> example path="/components/header/demos/meta-menu.html"}}
+
+    {{#code-snippet "html"}}
+      <nav class="header-meta-menu">
+        <ul class="header-meta-menu-list">
+          <li class="header-meta-menu-item">
+            <a href="#" class="header-meta-menu-link">Individuals</a>
+          </li>
+          <!-- more items -->
+        </ul>
+      </nav>
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Brand</h3>
+
+    <p>The brand block allows you to brand your app so people can set
+    it apart from others more easily.
+    Use the <code>.header-brand</code> for that.
+    The element should be a link, so you can link back to your home page.
+    Make sure that there is only one node in the brand component.</p>
+
+    {{> example path="/components/header/demos/brand.html"}}
+
+    {{#code-snippet "html"}}
+      <a href="#" class="header-brand">
+        <span>
+          <strong>AXA</strong>
+          <br />
+          <span>Strategic Ventures</span>
+        </span>
+      </a>
+    {{/code-snippet}}
+
+    <p>You can also provide an image like a logo by simply replacing
+    any text and adding an image to the <code>.header-brand</code>
+    item.</p>
+
+    {{> example path="/components/header/demos/brand-image.html"}}
+
+    {{#code-snippet "html"}}
+      <a href="#" class="header-brand">
+        <img class="header-brand-image" src="axa.svg" />
+      </a>
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Burger</h3>
+
+    <p>The burger is a well recognized pattern to open a
+    menu drawer and should be placed in the main part of the header.
+    It is created using the <code>.header-burger</code> block. Make
+    sure it is placed correctly on the side where the drawer is
+    going to appear.</p>
+
+    {{> example path="/components/header/demos/burger.html"}}
+
+    {{#code-snippet "html"}}
+      <a href="#" class="header-burger">
+        <span class="header-burger-line"></span>
+      </a>
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Search</h3>
+
+    <p>The search is an interactive element and always expands
+    to the left. It is created using the <code>.header-search</code> block.
+    This is why it always has to be on the right side.</p>
+
+    {{> example path="/components/header/demos/search.html"}}
+
+    {{#code-snippet "html"}}
+      <form class="header-search float-xs-right" data-search="header">
+        <div class="header-search-dunno">
+          <input type="text" class="header-search-input" name="q" placeholder="Search the entire axa.com" />
+          <button type="submit" class="header-search-button">
+            <span class="sr-only">Search</span>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </div>
+      </form>
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Navigation</h3>
+
+    <p>The navigation is essential in every header. It can be easily
+    added using the <code>.nav</code> block.</p>
+
+    {{> example path="/components/header/demos/navigation.html"}}
+
+    {{#code-snippet "html"}}
+    <nav id="demoNav" class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#" class="nav-link">Web Guidelines</a>
+        </li>
+        <!-- more items -->
+      </ul>
+      <div class="nav-stroke" data-spy="stroke" data-target="#demoNav" />
+    </nav>
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">All other items</h3>
+
+    <p>Sometimes it makes sense to put other elements into the header.
+    A good example for that is a call-to-action button or a dropdown button.
+    Make sure you wrap those components in a <code>.header-item</code> block.</p>
+
+    {{> example path="/components/header/demos/custom-items.html"}}
+
+    {{#code-snippet "html"}}
+      <div class="header-item">
+        <a href="#" class="btn btn-default">File a Claim</a>
+      </div>
+    {{/code-snippet}}
+
+    <h2 id="positioning-content" class="docs-h3">Positioning content</h2>
+
+    <p>You can specifically position header items for every viewport
+    using some helpful utility classes.</p>
+
+    <p>To position components to the left or right, use
+    <code>.float-{breakpoint}-left</code> or
+    <code>.float-{breakpoint}-right</code>, respectively. You can also
+    reset a float using <code>.float-{breakpoint}-none</code>. You can
+    apply these utilities to every header item.</p>
+
+    <p>To hide items on certain viewports and show them on others, simply
+    use the <code>.hidden-{breakpoint}-down</code> or
+    <code>.hidden-{breakpoint}-up</code> utilities. When using
+    <code>down</code> the item will be hidden on your selected
+    breakpoint and every lower viewport. The opposite happens
+    when using <code>up</code>.</p>
+
+    <h2 id="containers" class="docs-h3">Containers</h2>
+
+    <p>Most commonly, all items of your header should be placed in a
+    <code>.container</code> in order for them to be nicely centered
+    and padded on the page.</p>
+
+    {{> example path="/components/header/demos/container.html"}}
+
+    {{#code-snippet "html"}}{{#get snippets "/components/header/snippets/container"}}{{{this}}}{{/get}}{{/code-snippet}}
+
+    <p>If you're building a web app that needs to have full-width content,
+    consider making the header expand to the full width too. Use
+    <code>.container-fluid</code> to wrap all the header items in that case.</p>
+
+    {{> example path="/components/header/demos/container-fluid.html"}}
+
+    {{#code-snippet "html"}}{{#get snippets "/components/header/snippets/container-fluid"}}{{{this}}}{{/get}}{{/code-snippet}}
+
+    <h2 id="appearance" class="docs-h3">Appearance</h2>
+
+    <h3 class="docs-h4">Transparent</h3>
+
+    <p>It is possible to change the default appearance of the header
+    to be transparent. This is great in situations where you use
+    large hero images and you want them to be visible behind the header.
+    Make sure that in this case those images
+    provide a dark gradient on the top, though. This is important
+    in order for the light text to be legible.</p>
+
+    {{> example path="/components/header/demos/transparent-header.html"}}
+
+    {{#code-snippet "html"}}
+      <header class="header transparent">
+        <!-- header content -->
+      </header>
+    {{/code-snippet}}
+
+  {{/inline}}
+{{/page}}

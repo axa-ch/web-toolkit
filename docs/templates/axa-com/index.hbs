@@ -1,0 +1,102 @@
+---
+title: AXA.com
+description: An example of the AXA.com homepage.
+thumbnail: https://cloud.githubusercontent.com/assets/198988/19978824/8781849a-a1f8-11e6-998e-bad4698869c3.jpg
+bgImage: https://cloud.githubusercontent.com/assets/198988/19978342/e9769b6a-a1f6-11e6-8011-2a6ff6f4cc2c.jpg
+nav: templates/axa-com
+order: 1
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Template: {{title}}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:700|Source+Sans+Pro:400,600,700">
+    {{#eq process.env.NODE_ENV 'production'}}
+      <link rel="stylesheet" href="{{relative "/dist/all.css"}}">
+    {{/eq}}
+  </head>
+  <body data-make="drawer">
+
+    <header class="header">
+      <div class="header-main">
+        <div class="container">
+          <a href="#" class="header-brand" data-fade="search" data-target=".header-search" data-in="fade-in-delayed-xs-down" data-out="fade-out-xs-down">
+            <img class="header-brand-image" src="{{relative "/templates/axa-com/logo.svg"}}" alt="AXA logo" height="45">
+          </a>
+
+          <a href="#" class="header-burger float-xs-right hidden-md-up" data-fade="drawer" data-target="body" data-in="is-open">
+            <span class="header-burger-line"></span>
+          </a>
+
+          <form class="header-search float-xs-right" data-search="header">
+            <div class="header-search-dunno">
+              <input type="text" class="header-search-input" name="q" placeholder="Search the entire axa.com" />
+              <button type="submit" class="header-search-button">
+                <span class="sr-only">Search</span>
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
+
+          <nav class="nav float-xs-right hidden-sm-down" data-fade="search" data-target=".header-search" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Spotlight</a>
+                <div class="nav-panel">
+                  <div class="container">
+                    <div class="h4">Spotlight</div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+                <div class="nav-panel">
+                  <div class="container">
+                    <div class="h4">About Us</div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Newsroom</a>
+                <div class="nav-panel">
+                  <div class="container">
+                    <div class="h4">Newsroom</div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Investors</a>
+                <div class="nav-panel">
+                  <div class="container">
+                    <div class="h4">Investors</div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Careers</a>
+                <div class="nav-panel">
+                  <div class="container">
+                    <div class="h4">Careers</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="nav-stroke" data-spy="stroke" data-target=".nav" />
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div style="height: 80vh; min-height: 600px; background: url({{bgImage}}) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+
+    <div class="drawer togglable-xs-top hidden-md-up" data-fade="drawer" data-target="body" data-in="in">
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+    <script src="{{relative "/dist/all.js"}}"></script>
+  </body>
+</html>

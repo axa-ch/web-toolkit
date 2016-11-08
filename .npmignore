@@ -1,3 +1,4 @@
+.DS_Store/
 .git/
 .happypack/
 dist/bundles/docs*
@@ -10,10 +11,8 @@ webpack/
 .editorconfig
 .eslintrc.json
 .jsdocrc
-.travis.yml
 docker-compose.yml
 Dockerfile
 Jenkinsfile
 rancher-compose.yml
-sass.sh
 tests/

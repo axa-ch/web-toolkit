@@ -1,0 +1,69 @@
+---
+title: API Reference
+description: Browse the API reference of our components, utilities and plugins.
+nav: side/api/api-reference
+order: -1
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    {{#with menu.sassdoc}}
+      {{#each childrenArray}}
+        {{#with file}}
+          <h2 class="docs-h3" id="{{slug}}">{{comment.context.name}}</h2>
+          <p class="lead">{{comment.description}}</p>
+
+          <p>Type: <span class="label label-primary">{{comment.context.type}}</span></p>
+
+          {{#if comment.context.code}}
+          <div>
+            <h3 class="docs-h4">Source:</h3>
+            {{#code-snippet comment.context.type}}
+              {{{comment.context.code}}}
+            {{/code-snippet}}
+          </div>
+          {{/if}}
+
+          {{#if comment.context.value}}
+          <div>
+            <h3 class="docs-h4">Source</h3>
+            <pre>{{comment.context.value}}</pre>
+          </div>
+          {{/if}}
+
+          {{#if comment.parameter}}
+            <h3 class="docs-h4">Parameters</h3>
+            <dl>
+              {{#each comment.parameter}}
+                <dt>{{name}} ({{type}} - Default: {{default}})</dt>
+                <dd>{{description}}</dd>
+              {{/each}}
+            <dl>
+          {{/if}}
+
+          {{#if comment.see}}
+            <h3 class="docs-h4">See</h3>
+            <ul>
+              {{#each comment.see}}
+                <li><code>{{name}}</code></li>
+              {{/each}}
+            </ul>
+          {{/if}}
+
+          {{#if comment.example}}
+            {{#each comment.example}}
+              <div>
+                <h3 class="docs-h4">Example {{@index}}: {{description}} ({{type}})</h3>
+                {{#code-snippet type}}
+                  {{{code}}}
+                {{/code-snippet}}
+              </div>
+            {{/each}}
+          {{/if}}
+        {{/with}}
+      {{/each}}
+    {{/with}}
+
+  {{/inline}}
+{{/page}}

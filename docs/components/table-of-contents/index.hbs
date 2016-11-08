@@ -1,0 +1,53 @@
+---
+title: Table of Contents
+description: This component provides an easy and clean way to provide a table of contents for a longer article.
+nav: side/components/table-of-contents
+order: 99
+lunr: true
+simple_example:
+  - title: Example
+  - title: Only for Showcasing
+  - title: The Default ToC Component
+  - title: The End
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <h2 id="overview" class="docs-h3">Overview</h2>
+
+    <p>This component provides an easy and clean way to
+    provide a table of contents for a longer article.</p>
+
+    <div class="table-of-contents">
+      <div class="table-of-contents__heading">Chapters</div>
+      <nav class="table-of-contents__nav">
+        <ul class="table-of-contents__menu">
+          {{#each simple_example}}
+            <li class="table-of-contents__item">
+              <a href="#" class="table-of-contents__link">{{title}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      </nav>
+    </div>
+
+    {{#code-snippet "html"}}
+      <div class="table-of-contents">
+        <div class="table-of-contents__heading">Chapters</div>
+        <nav class="table-of-contents__nav">
+          <ul class="table-of-contents__menu">
+            {{#each simple_example}}
+              <li class="table-of-contents__item">
+                <a href="#" class="table-of-contents__link">{{title}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </nav>
+      </div>
+    {{/code-snippet}}
+
+  {{/inline}}
+{{/page}}

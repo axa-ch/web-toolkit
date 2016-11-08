@@ -10,7 +10,7 @@ node_modules/
 
 # project
 dist/
-tmp/
+*-dist.zip
 
 # deployment
 npm-debug.log

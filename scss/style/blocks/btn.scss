@@ -1,13 +1,10 @@
-@import '../variables';
-@import '../mixins/btn';
-
 /// This is unique style for the normal buttons.
 /// This button has a border only on the bottom and features a nice animation on hover.
 ///
 /// @example html - HTML Usage
 ///   <button type="button" class="btn btn-axa">AXA Button</button>
 .btn-axa {
-  @extend .typo-16;
+  @include typo-16();
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
@@ -20,7 +17,7 @@
     border-width: 0;
     border-bottom-width: 2px;
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large,
-      $line-height-large, $btn-border-radius-large);    
+      $line-height-large, $btn-border-radius-large);
   }
 
   @include button-primary($color-button-primary, $color-button-secondary, $color-white);
@@ -34,26 +31,28 @@
 /// @example html - HTML Usage
 ///   <button type="button" class="btn btn-primary">Primary Button</button>
 .btn {
-  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base,
+  @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
     $line-height-base, $btn-border-radius-base);
+  @include typo-16();
 
   &.btn-lg {
-    @include button-size(($padding-large-vertical - 1px), $padding-large-horizontal,
+    // Reduce vertical padding by 1px because we increase border-width by 1px
+    @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
       $font-size-large, $line-height-large, $btn-border-radius-large);
     border-width: 2px;
   }
 
   &.btn-sm {
-    @include button-size($padding-small-vertical, $padding-small-horizontal,
+    @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
       $font-size-small, $line-height-small, $btn-border-radius-small);
   }
 
   &.btn-xs {
-    @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
+    @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
       $line-height-small, $btn-border-radius-small);
   }
 
-  @extend .typo-16;
+  line-height: 1.5;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
@@ -65,4 +64,8 @@
 
 .btn.btn-default {
   @include button-color($color-button-primary, $color-button-secondary, $color-white);
+}
+
+.btn-ghost {
+  @include button-color($color-azure, $color-axa-blue, transparent);  
 }

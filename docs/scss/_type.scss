@@ -1,0 +1,17 @@
+.docs-h2 {
+  @extend .h2;
+
+  margin-top: 36px;
+}
+
+.docs-h3 {
+  @extend .h3;
+
+  margin-top: 48px;
+}
+
+.docs-h4 {
+  @extend .h4;
+
+  margin-top: 24px;
+}

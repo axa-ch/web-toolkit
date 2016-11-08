@@ -1,0 +1,29 @@
+<div class="docs-example"
+    data-example
+    {{#if disableMobile}}data-example-disable-mobile="true"{{/if}}
+    {{#if disableTablet}}data-example-disable-tablet="true"{{/if}}
+    {{#if disableDesktop}}data-example-disable-desktop="true"{{/if}}>
+  <div class="docs-example-devices-list">
+    <a class="docs-example-device docs-example-device--mobile"
+        data-example-mobile>
+      {{> icon name="mobile" classes="docs-example-device-icon" }}
+    </a>
+    <a class="docs-example-device docs-example-device--tablet"
+        data-example-tablet>
+      {{> icon name="tablet" classes="docs-example-device-icon" }}
+    </a>
+    <a class="docs-example-device docs-example-device--desktop"
+        data-example-desktop>
+      {{> icon name="desktop" classes="docs-example-device-icon" }}
+    </a>
+  </div>
+  <div class="docs-example-content">
+    <iframe class="docs-example-iframe"
+      src="{{relative path}}"
+      data-iframe-resizer
+      data-example-iframe
+      {{#if maxHeight}}data-max-height="{{maxHeight}}"{{/if}}
+      {{#if minHeight}}data-min-height="{{minHeight}}"{{/if}}
+      ></iframe>
+  </div>
+</div>

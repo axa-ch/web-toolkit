@@ -1,0 +1,48 @@
+---
+title: Home
+description: The CSS, JS and HTML framework for building responsive AXA web apps!
+order: -2
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <p class="lead" style="margin: 50px 0;">
+      The Web Toolkit is the <em>CSS, JS and HTML framework</em>
+      that we use globally at <a href="https://www.axa.com">AXA</a>
+      <em>for modern and responsive web apps</em>. It is based
+      on <em>Bootstrap 3</em> and provides <em>many specific components
+      and utilities</em> for you to use. It makes developing great web apps
+      that follow our
+      <a href="{{package.homepageWebGuidelines}}">Web Guidelines</a> super easy!
+    </p>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="jumbotron" style="padding: 35px;">
+          <p>Get started quickly with the AXA Web Toolkit.</p>
+          <p>
+            <a href="{{relative "/getting-started/"}}" class="btn btn-primary" role="button">Get started</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="jumbotron" style="padding: 35px;">
+          <p>View the source code, add issues and contribute.</p>
+          <p>
+            <a href="{{package.repository.url}}" class="btn btn-default" role="button">View on GitHub</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="jumbotron" style="padding: 35px;">
+          <p>Read the API reference of the components, utilities and plugins.</p>
+          <p>
+            <a href="{{relative "/api/"}}" class="btn btn-default" role="button">Browse API reference</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  {{/inline}}
+{{/page}}

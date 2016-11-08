@@ -2,6 +2,7 @@
 title: Main Menu
 order: 6
 layout: page.hbs
+draft: true
 ---
 
 include ../mixins.pug
@@ -10,11 +11,11 @@ include ../mixins.pug
   The main menu is the primary navigation on large viewports.
   It is prominently placed in the
   [Header Component](/components/header.html "Header Component").
-  
+
   The component displays the first level of your navigation.
   Further levels are displayed on hover or touch, where they
   appear in an overlay residing directly under the main menu.
-  
+
 aside.callout
   h2.callout__heading Not mobile-ready!
   :markdown-it
@@ -33,7 +34,7 @@ aside.callout
 
 :markdown-it
   # Basic Menu
-  
+
   The basic main menu only displays the first level of
   your navigation.
 
@@ -56,13 +57,13 @@ aside.callout
 
 :markdown-it
   ---
-  
+
   # Multi-Level Menu
 
   The multi-level main menu is an extension of the basic menu.
   It allows you to define another navigational level which
   is then displayed in an overlay.
-  
+
   The overlay is triggered on touch or hover, depending on the
   capabilities of the used device.
 
@@ -87,14 +88,14 @@ aside.callout
           :markdown-it
             If you omit the `data-menu="main"` attribute, the
             menu won't get any functionality.
-            
+
             In order to add
             the missing functionality programmatically, simply initialize the
             `$().mainMenu()` plugin.
-            
+
             ```js
             var menu = $("[data-menu='main']")
-            
+
             // initialize the plugin
             menu.mainMenu()
             ```

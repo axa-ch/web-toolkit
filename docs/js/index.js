@@ -1,7 +1,6 @@
 /* global window, Intercom */
 
 import $ from 'jquery'
-import moment from 'moment'
 import svg4everybody from 'svg4everybody'
 
 import '../../js/index'
@@ -10,16 +9,13 @@ import './clipboard'
 import './cheat'
 import './example'
 import './iframe-resizer'
-import './left-navigation'
 import './object-fit'
-import './octocat'
 import './search'
 import './tab'
 
 window.jQuery = $
 window.$ = $
 
-moment.locale('en_GB')
 svg4everybody()
 
 $('#showNotification').on('click', () => {

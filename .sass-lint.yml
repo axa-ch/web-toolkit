@@ -1,0 +1,62 @@
+options:
+  merge-default-rules: false
+  formatter: stylish
+
+files:
+  include:
+    - 'scss/style/**/*.scss'
+    - 'docs/scss/**/*.scss'
+
+# Find rules on https://github.com/sasstools/sass-lint/tree/master/docs/rules
+rules:
+  empty-line-between-blocks:
+    - 2
+    -
+      include: true
+      allow-single-line-rulesets: false
+
+  extends-before-mixins: 2
+  extends-before-declarations: 2
+
+  mixins-before-declarations:
+    - 2
+    -
+      exclude:
+        - breakpoint
+        - mq
+
+  no-warn: 1
+  no-debug: 1
+  no-ids: 2
+  no-important: 2
+  no-color-keywords: 2
+  no-misspelled-properties: 2
+  no-trailing-zero: 2
+  no-transition-all: 2
+  one-declaration-per-line: 2
+
+  space-after-colon: 2
+  space-before-brace: 2
+
+  hex-notation:
+    - 2
+    -
+      style: lowercase
+
+  indentation: 2
+
+  property-sort-order:
+    - 1
+    -
+      order: 'smacss'
+      ignore-custom-properties: true
+
+  variable-for-property:
+    - 2
+    -
+      properties:
+        - margin
+        - content
+
+  final-newline: 2
+  quotes: 2
