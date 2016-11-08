@@ -1,0 +1,138 @@
+.tree-menu {
+  width: 100%;
+  margin: 0;
+  padding: 0 0 1px 0;
+
+  list-style-type: none;
+}
+
+.tree-menu__item {
+  margin-bottom: -1px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.tree-menu__link {
+  @extend .typo-16;
+
+  display: flex;
+  align-items: center;
+
+  height: 60px;
+
+  padding: 0 30px;
+
+  border-top: 1px solid $color-gray--lighter;
+  border-bottom: 1px solid $color-gray--lighter;
+  color: $color-light-blue;
+
+  line-height: 1.3;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $color-blue;
+    text-decoration: none;
+  }
+}
+
+.tree-menu__link.is-active {
+  color: $color-blue;
+}
+
+.tree-menu__text {
+  @include word-break();
+
+  flex-grow: 1;
+  order: 2;
+  pointer-events: none;
+}
+
+.tree-menu__link__parent-icon {
+  order: 3;
+
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  margin-left: 20px;
+
+  fill: currentColor;
+  pointer-events: none;
+}
+
+// Level 1
+.tree-menu__level .tree-menu__link {
+  background: $color-white;
+}
+
+.tree-menu__level .tree-menu__link.is-active {
+  background: $color-white;
+}
+
+// Level 2
+.tree-menu__level .tree-menu__level .tree-menu__link {
+  padding-left: (30px + 24px);
+  background-color: $color-white;
+}
+
+.tree-menu__level .tree-menu__level .tree-menu__link.is-active {
+  background-color: $color-white;
+}
+
+// Level 3
+.tree-menu__level .tree-menu__level .tree-menu__level .tree-menu__link {
+  height: 41px;
+  padding-top: 10px;
+  padding-bottom: 9px;
+  border-top: none;
+  border-bottom: 1px solid $color-tbd-13;
+
+  background-color: $color-tbd-12;
+  color: $color-tbd-9;
+}
+
+.tree-menu__level .tree-menu__level .tree-menu__level .tree-menu__link.is-active {
+  background-color: $color-tbd-12;
+}
+
+.tree-menu__level {
+  width: 100%;
+  max-height: 0px;
+
+  margin: 0;
+  padding: 0;
+
+  // Watch out: prevent delayed closing with a bezier
+  transition: max-height $transition-normal cubic-bezier(0, 1.05, 0, 1), visibility $transition-normal;
+
+  overflow: hidden;
+  visibility: hidden;
+  list-style-type: none;
+}
+
+.tree-menu__level.is-open {
+  // Watch out: work around, since no transition to `height: auto` is possible
+  max-height: 3999px;
+
+  transition: max-height $transition-normal cubic-bezier(0.01, 0, 1, 0), visibility $transition-normal;
+  visibility: visible;
+}
+
+.tree-menu__item {
+}
+
+.tree-menu__item--back {
+  display: none;
+}
+
+.tree-menu__link__parent-icon {
+  transform: rotate(0);
+  transition: transform $transition-normal ease;
+}
+
+.tree-menu__link--parent.is-active .tree-menu__link__parent-icon {
+  transform: rotate(90deg);
+  transition: transform $transition-normal ease;
+}
