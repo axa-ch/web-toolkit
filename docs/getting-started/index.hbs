@@ -1,0 +1,195 @@
+---
+title: Introduction
+nav: side/getting-started/introduction
+order: 1
+lunr: true
+fontUrl: https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700
+cssUrl: https://design.axa.com/toolkit/dist/all.css
+jsUrl: https://design.axa.com/toolkit/dist/all.js
+metaExplanationUrl: https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do
+toc:
+  - title: Quick Start
+    slug: quick-start
+  - title: Starter Template
+    slug: starter-template
+  - title: Important Globals
+    slug: important-globals
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <p class="lead">
+      The Web Toolkit is the <em>CSS, JS and HTML framework</em>
+      that we use globally at <a href="https://www.axa.com">AXA</a>
+      <em>for modern and responsive web apps</em>. It is based
+      on <em>Bootstrap 3</em> and provides <em>many specific components
+      and utilities</em> for you to use. It makes developing great web apps
+      that follow our
+      <a href="{{package.homepageWebGuidelines}}">Web Guidelines</a> super easy!
+    </p>
+
+    <p>This is how to get started with the AXA Web Toolkit using
+    assets from our CDN and a simple starter template.</p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 id="quick-start" class="docs-h3">Quick Start</h2>
+
+    <p>Looking to quickly add the Web Toolkit to your project?
+    Use our CDN. Using a package manager
+    or need to download the source files?
+    <a href="{{relative '/getting-started/downloads/'}}">Check out
+    the downloads page.</a></p>
+
+    <div class="alert alert-danger" role="alert">
+      <p><strong>Watch out!</strong> Our CDN isn't ready yet,
+      which is why the URLs you'll find below aren't properly
+      versioned and highly available. To use the AXA Web Toolkit productively,
+      choose an
+      <a href="{{relative '/getting-started/downloads/'}}">alternative
+      download method</a>.</p>
+    </div>
+
+    <p>Copy-paste the stylesheet <code>&lt;link&gt;</code> of the
+    Web Toolkit and the fonts into your <code>&lt;head&gt;</code>
+    before all other stylesheets to load our CSS.</p>
+
+    {{#code-snippet "html"}}
+      <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{{cssUrl}}}" crossorigin="anonymous">
+    {{/code-snippet}}
+
+    <p>Add our JavaScript plugins and jQuery near the end of your pages,
+    right before the closing <code>&lt;/body&gt;</code> tag.
+    Be sure to place jQuery first, as our code depends on them.</p>
+
+    {{#code-snippet "html"}}
+      <script src="{{{jsUrl}}}" crossorigin="anonymous"></script>
+    {{/code-snippet}}
+
+    <p>And that's it—you're on your way to a fully
+    bootstrapped site. If you're at all unsure
+    about the general page structure,
+    keep reading for an example page template.</p>
+
+    <h2 id="starter-template" class="docs-h3">Starter Template</h2>
+
+    <p>Be sure to have your pages set up with
+    the latest design and development standards.
+    That means:</p>
+
+    <ul>
+      <li>Using an HTML5 doctype</li>
+      <li>Forcing Internet Explorer to use its latest rendering mode
+        (<a href="{{{metaExplanationUrl}}}">read more</a>)</li>
+      <li>And, utilizing the viewport meta tag.</li>
+    </ul>
+
+    <p>Put it all together and your pages should look like this:</p>
+
+    {{#code-snippet "html"}}
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <!-- Required meta tags always come first. -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <!-- Fonts first, then the AXA Web Toolkit CSS. -->
+        <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{{cssUrl}}}" crossorigin="anonymous">
+      </head>
+      <body>
+        <h1>Hello, world!</h1>
+
+        <!-- jQuery first, then the AXA Web Toolkit JS. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="{{{jsUrl}}}" crossorigin="anonymous"></script>
+      </body>
+      </html>
+    {{/code-snippet}}
+
+    <p>That's all you need for overall page requirements.
+    Visit the
+    <a href="{{relative '/layout/'}}">Layout docs</a> or our
+    more <a href="{{relative '/templates/'}}">advanced templates</a>
+    to start laying out your site's content and components.</p>
+
+    <h2 id="important-globals" class="docs-h3">Important Globals</h2>
+
+    <p>The Web Toolkit and Bootstrap employ a handful
+    of important global styles and settings
+    that you'll need to be aware of when using them,
+    all of which are almost exclusively geared towards
+    the normalization of cross browser styles. Let's dive in.</p>
+
+    <h3 class="docs-h4">HTML5 doctype</h3>
+
+    <p>We require the use of the HTML5 doctype.
+    Without it, you risk having incomplete styling.
+    Luckily, including it shouldn't cause any problems.</p>
+
+    {{#code-snippet "html"}}
+      <!DOCTYPE html>
+      <html lang="en">
+        ...
+      </html>
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Responsive meta tag</h3>
+
+    <p>The AXA Web Toolkit and Bootstrap are both developed mobile first,
+    a strategy in which we optimize code for mobile devices first
+    and then scale up components as necessary using CSS media queries.
+    To ensure proper rendering and touch zooming for all devices,
+    <strong>add the responsive viewport meta tag</strong>
+    to your <code>&lt;head&gt;</code>.</p>
+
+    {{#code-snippet "html"}}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{/code-snippet}}
+
+    <p>You can see an example of this in action in the
+    <a href="#starter-template">starter template</a>.</p>
+
+    <h3 class="docs-h4">Box-sizing</h3>
+
+    <p>For more straightforward sizing in CSS,
+    Bootstrap switches the global <code>box-sizing</code> value from
+    <code>content-box</code> to <code>border-box</code>.
+    This ensures <code>padding</code> does not affect
+    the final computed width of an element,
+    but it can cause problems with some third party software
+    like Google Maps and Google Custom Search Engine.</p>
+
+    <p>On the rare occasion you need to override it,
+    use something like the following:</p>
+
+    {{#code-snippet "css"}}
+      .selector-for-some-widget {
+        box-sizing: content-box;
+      }
+    {{/code-snippet}}
+
+    With the above snippet, nested elements—including
+    generated content via <code>:before</code> and <code>:after</code>—will
+    all inherit the specified <code>box-sizing</code> for that
+    <code>.selector-for-some-widget</code>.
+
+    <p>Learn more about <a href="https://css-tricks.com/box-sizing/">box model
+    and sizing at CSS Tricks</a>.</p>
+
+    <h3 class="docs-h4">Normalize.css</h3>
+
+    <p>For improved cross-browser rendering, Bootstrap uses
+    <a href="https://necolas.github.io/normalize.css/">Normalize.css</a>
+    to correct small inconsistencies across browsers and devices.
+    It further builds on this with its own, slightly more opinionated styles
+    with Reboot.</p>
+
+  {{/inline}}
+{{/page}}

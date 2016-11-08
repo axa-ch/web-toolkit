@@ -15,21 +15,21 @@ h4, .h4 {
 }
 
 h5, .h5 {}
+
 h6, .h6 {}
 
 p {
   @extend .typo-body-text;
 
-  // Limit width to increase legibility
-  max-width: 750px;
-
-  ul {
-    @extend .typo-list-body-text;
-  }
+  max-width: $text-legibility-max-width;
 
   strong {
     @extend .typo-bold-text;
   }
+}
+
+ul {
+  @extend .typo-list-body-text;
 }
 
 .lead {

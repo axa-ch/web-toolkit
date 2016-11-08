@@ -1,0 +1,20 @@
+.docs-code-snippet {
+  max-width: $text-legibility-max-width;
+  margin: 20px 0;
+  padding: 20px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: $color-wild-sand;
+
+  // reset the default pre styles when wrapped in .code-snippet
+  pre {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    code {
+      white-space: nowrap;
+    }
+  }
+}
