@@ -3,7 +3,6 @@ var fs = require('fs');
 
 function createResultPage(pages) {
   handlebars.registerHelper('gt', function(a, b, opts) {
-    console.log(a, b, opts);
     if (a > b)
       return opts.fn(this);
     else
@@ -44,7 +43,6 @@ function createResultPage(pages) {
     numberOfPages: numberOfPages,
     numberOfTests: numberOfTests
   });
-  console.log(output);
 
   fs.writeFileSync('tests/results.html', output);
 }

@@ -15,7 +15,6 @@ function openPage(index) {
   
   page.settings.localToRemoteUrlAccessEnabled = true
 
-  console.log('Opening page ', baseUrl + demo.page)
   page.open(baseUrl + demo.page, function(status) {
     function executeTest(testIndex) {
       var test = demo.tests[testIndex];
@@ -25,17 +24,14 @@ function openPage(index) {
         page.reload();
       }
       var filename = test.screenshot; 
-      console.log('Rendering page ', demo.page);
       page.render(filename);
 
       if (!fs.exists(filename)) {
-        console.log('file', filename, 'has not been correctly rendered. Waiting', delay, 'ms and retrying.');
         setTimeout(function() {
           executeTest(testIndex);
         }, delay);
         return;
       }
-      console.log('file', filename, 'has been created. Proceeding with next file.');
 
       if (testIndex < demo.tests.length-1) {
         executeTest(testIndex + 1)
