@@ -1,0 +1,47 @@
+---
+title: Drawer
+description: Add a fixed drawer-like element for your mobile or desktop navigation.
+nav: side/layout/drawer
+order: 2
+lunr: true
+toc:
+  - title: Examples
+    slug: examples
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <p class="lead">The drawer is a flexible layout component,
+    mostly containing a site menu and
+    meant to be togglable on mobile devices or persistently fixed
+    on larger viewports.</p>
+
+    <p></p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 id="examples" class="docs-h3">Examples</h2>
+
+    <div class="docs-layout-example-wrapper push-xs-left">
+      <div class="docs-layout-example-header"></div>
+      <div class="docs-layout-example-body">Hover over me</div>
+      <div class="docs-layout-example-drawer drawer togglable-xs-left"></div>
+    </div>
+
+    <p></p>
+
+    {{#code-snippet "html"}}
+      <body>
+        <h1>Content</h1>
+
+        <div class="drawer">
+          ...
+        </div>
+      </body>
+    {{/code-snippet}}
+
+  {{/inline}}
+{{/page}}

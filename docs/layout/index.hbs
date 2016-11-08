@@ -4,16 +4,29 @@ description: Layout your app according to your needs using the AXA Web Toolkit.
 nav: side/layout/overview
 order: 2
 lunr: true
+toc:
+  - title: Quick Start
+    slug: quick-start
+  - title: Starter Template
+    slug: starter-template
+  - title: Important Globals
+    slug: important-globals
 ---
 
 {{#> page}}
   {{#*inline "content"}}
 
-    <div class="alert alert-info" role="alert" style="margin: 50px 0;">
-      <p><strong>Heads up!</strong> This page is being rewritten
-      in order to layouting with the AXA Web Toolkit
-      as easy as possible. Come back again in a couple of days!</p>
-    </div>
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <p class="lead"></p>
+
+    <p></p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 id="quick-start" class="docs-h3"></h2>
+
+    <p></p>
 
   {{/inline}}
 {{/page}}
