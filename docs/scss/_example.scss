@@ -1,0 +1,74 @@
+$z-index-example-iframe: 50;
+$z-index-example-border-brackets: 49;
+
+.docs-example {
+  margin: 0 -10px 0 -10px;
+
+  @media (min-width: $screen-md-min) {
+    margin: 0;
+  }
+}
+
+.docs-example-devices-list {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.docs-example-device {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+
+  border-radius: 25px;
+  background: $color-periwinkle;
+  color: $color-mine-shaft;
+  text-align: center;
+  cursor: pointer;
+
+  &::before {
+    font-size: 18px;
+    line-height: 40px;
+  }
+
+  &.is-active,
+  &:hover {
+    background: $color-indigo;
+    color: $color-white;
+  }
+
+  &.is-available {
+    display: flex;
+  }
+}
+
+.docs-example-device-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.docs-example-content {
+  padding: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: $color-wild-sand;
+  text-align: center;
+}
+
+.docs-example-iframe {
+  display: block;
+  position: relative;
+
+  width: 100%;
+  margin: 0 auto;
+
+  transition: max-width $transition-normal ease;
+
+  border: none;
+  background: $color-white;
+  z-index: $z-index-example-iframe;
+}
