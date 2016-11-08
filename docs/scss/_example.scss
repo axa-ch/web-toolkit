@@ -26,12 +26,13 @@ $z-index-example-border-brackets: 49;
 
   margin: 0 5px;
   padding: .5rem 1rem;
-  border-radius: .25rem;
 
+  transition: background $transition-slow $transition-ease, color $transition-slow $transition-ease;
+
+  border-radius: .25rem;
   color: $color-dark-indigo;
   text-align: center;
   cursor: pointer;
-  transition: background $transition-slow $transition-ease, color $transition-slow $transition-ease;
 
   &.is-active,
   &:hover {
