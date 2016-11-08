@@ -36,9 +36,14 @@ toc:
     {{> example path="/components/header/demos/standard-header.html"}}
 
     {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/standard-header"}}
-        {{{.}}}
-      {{/get}}
+      <header class="header">
+        <div class="header-meta hidden-md-down">
+          <!-- items for the upper header part -->
+        </div>
+        <div class="header-main">
+          <!-- items for the main header part -->
+        </div>
+      </header>
     {{/code-snippet}}
 
     <h2 id="supported-content" class="docs-h3">Supported Content</h2>
@@ -71,9 +76,14 @@ toc:
     {{> example path="/components/header/demos/meta-menu.html"}}
 
     {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/meta-menu"}}
-        {{{.}}}
-      {{/get}}
+      <nav class="header-meta-menu">
+        <ul class="header-meta-menu-list">
+          <li class="header-meta-menu-item">
+            <a href="#" class="header-meta-menu-link">Individuals</a>
+          </li>
+          <!-- more items -->
+        </ul>
+      </nav>
     {{/code-snippet}}
 
     <h3 class="docs-h4">Brand</h3>
@@ -87,9 +97,13 @@ toc:
     {{> example path="/components/header/demos/brand.html"}}
 
     {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/brand"}}
-        {{{.}}}
-      {{/get}}
+      <a href="#" class="header-brand">
+        <span>
+          <strong>AXA</strong>
+          <br />
+          <span>Strategic Ventures</span>
+        </span>
+      </a>
     {{/code-snippet}}
 
     <p>You can also provide an image like a logo by simply replacing
@@ -99,9 +113,9 @@ toc:
     {{> example path="/components/header/demos/brand-image.html"}}
 
     {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/brand-image"}}
-        {{{.}}}
-      {{/get}}
+      <a href="#" class="header-brand">
+        <img class="header-brand-image" src="axa.svg" />
+      </a>
     {{/code-snippet}}
 
     <h3 class="docs-h4">Burger</h3>
@@ -112,12 +126,12 @@ toc:
     sure it is placed correctly on the side where the drawer is
     going to appear.</p>
 
-    {{> example path="/components/header/demos/brand-image.html"}}
+    {{> example path="/components/header/demos/burger.html"}}
 
     {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/brand-image"}}
-        {{{.}}}
-      {{/get}}
+      <a href="#" class="header-burger">
+        <span class="header-burger-line"></span>
+      </a>
     {{/code-snippet}}
 
     <h3 class="docs-h4">Search</h3>
@@ -129,9 +143,15 @@ toc:
     {{> example path="/components/header/demos/search.html"}}
 
     {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/search"}}
-        {{{.}}}
-      {{/get}}
+      <form class="header-search float-xs-right" data-search="header">
+        <div class="header-search-dunno">
+          <input type="text" class="header-search-input" name="q" placeholder="Search the entire axa.com" />
+          <button type="submit" class="header-search-button">
+            <span class="sr-only">Search</span>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </div>
+      </form>
     {{/code-snippet}}
 
     <h3 class="docs-h4">Navigation</h3>
@@ -142,9 +162,15 @@ toc:
     {{> example path="/components/header/demos/navigation.html"}}
 
     {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/navigation"}}
-        {{{.}}}
-      {{/get}}
+    <nav id="demoNav" class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#" class="nav-link">Web Guidelines</a>
+        </li>
+        <!-- more items -->
+      </ul>
+      <div class="nav-stroke" data-spy="stroke" data-target="#demoNav" />
+    </nav>
     {{/code-snippet}}
 
     <h3 class="docs-h4">All other items</h3>
@@ -156,9 +182,9 @@ toc:
     {{> example path="/components/header/demos/custom-items.html"}}
 
     {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/custom-items"}}
-        {{{.}}}
-      {{/get}}
+      <div class="header-item">
+        <a href="#" class="btn btn-default">File a Claim</a>
+      </div>
     {{/code-snippet}}
 
     <h2 id="positioning-content" class="docs-h3">Positioning content</h2>
@@ -219,9 +245,9 @@ toc:
     {{> example path="/components/header/demos/transparent-header.html"}}
 
     {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/transparent-header"}}
-        {{{.}}}
-      {{/get}}
+      <header class="header transparent">
+        <!-- header content -->
+      </header>
     {{/code-snippet}}
 
   {{/inline}}
