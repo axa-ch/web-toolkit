@@ -7,7 +7,7 @@ node {
     def imageName = repositoryName + ":" + tagName.replaceAll("[.:_/\\\\]", '-')
     def testImageName = repositoryName + "-test" + ":" + tagName.replaceAll("[.:_/\\\\]", '-')
     def projectName = imageName.replaceAll("[.:_/\\\\]", '-')
-    def baseUrl = '/' + tagName.replaceAll("[.:_/\\\\]", '-')
+    def baseUrl = branchName != "master" ? ('/' + tagName.replaceAll("[.:_/\\\\]", '-')) : "/toolkit"
 
     stage 'Checkout'
 
