@@ -4,7 +4,6 @@ description: The flexible wrapper component for branding, navigation and other e
 nav: side/components/header
 order: 1
 lunr: true
-transparentBgImage: https://cloud.githubusercontent.com/assets/198988/19979108/8b2d3476-a1f9-11e6-8ffd-c352eeeb053e.jpg
 toc:
   - title: Overview
     slug: overview
@@ -41,6 +40,7 @@ toc:
         {{{.}}}
       {{/get}}
     {{/code-snippet}}
+
     <h2 id="supported-content" class="docs-h3">Supported Content</h2>
 
     <p>There are a handful of sub-components that come
@@ -68,25 +68,13 @@ toc:
     of your app or even link to other related apps. It is used
     with the <code>.header-meta-menu</code> block.</p>
 
-    <header class="header">
-      <div class="header-meta">
-        <div class="container-fluid">
-          <nav class="header-meta-menu">
-            <ul class="header-meta-menu-list">
-              <li class="header-meta-menu-item">
-                <a href="#" class="header-meta-menu-link">Individuals</a>
-              </li>
-              <li class="header-meta-menu-item">
-                <a href="#" class="header-meta-menu-link">Small Businesses</a>
-              </li>
-              <li class="header-meta-menu-item">
-                <a href="#" class="header-meta-menu-link">Businesses</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    {{> example path="/components/header/demos/meta-menu.html"}}
+
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/meta-menu"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
 
     <h3 class="docs-h4">Brand</h3>
 
@@ -96,33 +84,25 @@ toc:
     The element should be a link, so you can link back to your home page.
     Make sure that there is only one node in the brand component.</p>
 
-    <header class="header">
-      <div class="header-main">
-        <div class="container-fluid">
-          <a href="#" class="header-brand">
-            <span>
-              <strong>AXA</strong>
-              <br />
-              <span>Strategic Ventures</span>
-            </span>
-          </a>
-        </div>
-      </div>
-    </header>
+    {{> example path="/components/header/demos/brand.html"}}
 
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/brand"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
+    
     <p>You can also provide an image like a logo by simply replacing
     any text and adding an image to the <code>.header-brand</code>
     item.</p>
 
-    <header class="header">
-      <div class="header-main">
-        <div class="container-fluid">
-          <a href="#" class="header-brand">
-            <img class="header-brand-image" src="{{relative '/images/axa.svg'}}" />
-          </a>
-        </div>
-      </div>
-    </header>
+    {{> example path="/components/header/demos/brand-image.html"}}
+
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/brand-image"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
 
     <h3 class="docs-h4">Burger</h3>
 
@@ -132,15 +112,13 @@ toc:
     sure it is placed correctly on the side where the drawer is
     going to appear.</p>
 
-    <header class="header">
-      <div class="header-main">
-        <div class="container-fluid">
-          <a href="#" class="header-burger">
-            <span class="header-burger-line"></span>
-          </a>
-        </div>
-      </div>
-    </header>
+    {{> example path="/components/header/demos/brand-image.html"}}
+
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/brand-image"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
 
     <h3 class="docs-h4">Search</h3>
 
@@ -148,44 +126,26 @@ toc:
     to the left. It is created using the <code>.header-search</code> block.
     This is why it always has to be on the right side.</p>
 
-    <header class="header">
-      <div class="header-main">
-        <div class="container-fluid">
-          <form class="header-search float-xs-right" data-search="header">
-            <div class="header-search-dunno">
-              <input type="text" class="header-search-input" name="q" placeholder="Search the entire axa.com" />
-              <button type="submit" class="header-search-button">
-                <span class="sr-only">Search</span>
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </header>
+    {{> example path="/components/header/demos/search.html"}}
+
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/search"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
 
     <h3 class="docs-h4">Navigation</h3>
 
     <p>The navigation is essential in every header. It can be easily
     added using the <code>.nav</code> block.</p>
 
-    <header class="header">
-      <div class="header-main">
-        <div class="container-fluid">
-          <nav id="demoNav" class="nav">
-            <ul class="nav-list">
-              <li class="nav-item">
-                <a href="#" class="nav-link">Web Guidelines</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Toolkit</a>
-              </li>
-            </ul>
-            <div class="nav-stroke" data-spy="stroke" data-target="#demoNav" />
-          </nav>
-        </div>
-      </div>
-    </header>
+    {{> example path="/components/header/demos/navigation.html"}}
+
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/navigation"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
 
     <h3 class="docs-h4">All other items</h3>
 
@@ -193,15 +153,13 @@ toc:
     A good example for that is a call-to-action button or a dropdown button.
     Make sure you wrap those components in a <code>.header-item</code> block.</p>
 
-    <header class="header">
-      <div class="header-main">
-        <div class="container-fluid">
-          <div class="header-item">
-            <a href="#" class="btn btn-default">File a Claim</a>
-          </div>
-        </div>
-      </div>
-    </header>
+    {{> example path="/components/header/demos/custom-items.html"}}
+
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/custom-items"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
 
     <h2 id="positioning-content" class="docs-h3">Positioning content</h2>
 
@@ -227,29 +185,25 @@ toc:
     <code>.container</code> in order for them to be nicely centered
     and padded on the page.</p>
 
-    <header class="header">
-      <div class="header-main">
-        <div class="container">
-          <div class="header-item">
-            <span>I'm a constrained-width header!</span>
-          </div>
-        </div>
-      </div>
-    </header>
+    {{> example path="/components/header/demos/container.html"}}
+
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/container"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
 
     <p>If you're building a web app that needs to have full-width content,
     consider making the header expand to the full width too. Use
     <code>.container-fluid</code> to wrap all the header items in that case.</p>
 
-    <header class="header">
-      <div class="header-main">
-        <div class="container-fluid">
-          <div class="header-item">
-            <span>I'm a full-width header!</span>
-          </div>
-        </div>
-      </div>
-    </header>
+    {{> example path="/components/header/demos/container-fluid.html"}}
+
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/container-fluid"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
 
     <h2 id="appearance" class="docs-h3">Appearance</h2>
 
@@ -262,66 +216,13 @@ toc:
     provide a dark gradient on the top, though. This is important
     in order for the light text to be legible.</p>
 
-    <div style="position: relative">
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url({{transparentBgImage}}) no-repeat center top; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
-      <header class="header transparent">
-        <div class="header-meta hidden-md-down">
-          <div class="container-fluid">
-            <nav class="header-meta-menu float-xs-right">
-              <ul class="header-meta-menu-list">
-                <li class="header-meta-menu-item">
-                  <a href="#" class="header-meta-menu-link">Individuals</a>
-                </li>
-                <li class="header-meta-menu-item">
-                  <a href="#" class="header-meta-menu-link">Small Businesses</a>
-                </li>
-                <li class="header-meta-menu-item">
-                  <a href="#" class="header-meta-menu-link">Businesses</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+    {{> example path="/components/header/demos/transparent-header.html"}}
 
-        <div class="header-main">
-          <div class="container-fluid">
-            <a href="#" class="header-brand" data-fade="search" data-target="#transparentSearch" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
-              <span><strong>AXA</strong><br />Strategic <strong>Ventures</strong></span>
-            </a>
-
-            <a href="#" class="header-burger float-xs-right hidden-lg-up">
-              <span class="header-burger-line"></span>
-            </a>
-
-            <form id="transparentSearch" class="header-search float-xs-right" data-search="header">
-              <div class="header-search-dunno">
-                <input type="text" class="header-search-input" name="q" placeholder="Search the entire axa.com" />
-                <button type="submit" class="header-search-button">
-                  <span class="sr-only">Search</span>
-                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                </button>
-              </div>
-            </form>
-
-            <div class="header-item float-xs-right hidden-xs-down" data-fade="search" data-target="#transparentSearch" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
-              <a href="#" class="btn btn-axa">File a Claim</a>
-            </div>
-
-            <nav id="transparentNav" class="nav float-xs-right hidden-md-down" data-fade="search" data-target="#transparentSearch" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
-              <ul class="nav-list">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Web Guidelines</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Toolkit</a>
-                </li>
-              </ul>
-              <div class="nav-stroke" data-spy="stroke" data-target="#transparentNav" />
-            </nav>
-          </div>
-        </div>
-      </header>
-    </div>
+    {{#code-snippet "html"}}
+      {{#get snippets "/components/header/snippets/transparent-header"}}
+        {{{.}}}
+      {{/get}}
+    {{/code-snippet}}
 
   {{/inline}}
 {{/page}}
