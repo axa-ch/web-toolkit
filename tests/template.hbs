@@ -5,8 +5,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      .passed {
+        background: #2ab27b;
+      }
+      .failed {
+        background: #f07662;
+      }
+    </style>
   </head>
-  <body>
+  <body style="font-family: sans-serif;">
     <div>
       <h1>Stats:</h1>
       <p>
@@ -18,21 +35,25 @@
         {{#each tests}}
           <h2>{{name}}</h2>
           {{#gt misMatchPercentage 0}}
-            u fucked up!
+            <p class="failed">
+              Test failed.
+            </p>
             <div>
-              <p>expected:</p>
+              <p>Expected:</p>
               <img src="../{{expected}}" />
             </div>
             <div>
-              <p>actual:</p>
+              <p>Actual:</p>
               <img src="../{{screenshot}}" />
             </div>
             <div>
-              <p>diff:</p>
+              <p>Diff:</p>
               <img src="../{{diff}}" />
             </div>
           {{else}}
-            We gud!
+            <p class="passed">
+              Test passed with flying colors.
+            </p>
           {{/gt}}
         {{/each}}
       {{/each}}
