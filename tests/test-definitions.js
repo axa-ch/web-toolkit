@@ -16,17 +16,26 @@ function getDefinitions() {
   };
   var pages = [];
 
-  pages.push(addPage('/components/demos/font-test', [
-    { name: 'font_mobile', viewport: viewports.mobile, expected: 'tests/expected/font_mobile.png' },
-    { name: 'font_desktop', viewport: viewports.desktop, expected: 'tests/expected/font_desktop.png' }
+  pages.push(addPage('/components/header/demos/standard-header', [
+    { name: 'standard-header_mobile', viewport: viewports.mobile, expected: 'tests/expected/font_mobile.png' },
+    { name: 'standard-header_desktop', viewport: viewports.desktop, expected: 'tests/expected/font_desktop.png' }
   ]));
-  pages.push(addPage('/components/demos/badge', [
-    { name: 'badge_mobile', viewport: viewports.mobile, expected: 'tests/expected/badge_mobile.png' },
-    { name: 'badge_tablet', viewport: viewports.tablet, expected: 'tests/expected/badge_tablet.png' }
+  pages.push(addPage('/components/header/demos/transparent-header', [
+    { name: 'transparent-header_mobile', viewport: viewports.mobile, expected: 'tests/expected/badge_mobile.png' },
+    { name: 'transparent-header_desktop', viewport: viewports.desktop, expected: 'tests/expected/badge_tablet.png' }
   ]));
-  pages.push(addPage('/components/demos/button-ghost', [
-    { name: 'button-ghost_mobile', viewport: viewports.mobile, expected: 'tests/expected/button-ghost_mobile.png' },
-    { name: 'button-ghost_tablet', viewport: viewports.tablet, expected: 'tests/expected/button-ghost_tablet.png' }
+  pages.push(addPage('/components/buttons/demos/standard-button', [
+    { name: 'standard-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/button-ghost_mobile.png' },
+    { name: 'standard-button_desktop', viewport: viewports.desktop, expected: 'tests/expected/badge_tablet.png' }
+  ]));
+  pages.push(addPage('/components/buttons/demos/icon-button', [
+    { name: 'icon-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/button-ghost_mobile.png' },
+  ]));
+  pages.push(addPage('/components/buttons/demos/ghost-button', [
+    { name: 'ghost-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/button-ghost_mobile.png' },
+  ]));
+  pages.push(addPage('/components/buttons/demos/axa-button', [
+    { name: 'axa-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/button-ghost_mobile.png' },
   ]));
 
   return pages;
