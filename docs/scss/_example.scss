@@ -3,6 +3,10 @@ $z-index-example-border-brackets: 49;
 
 .docs-example {
   margin: 0 -10px 0 -10px;
+  padding: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: $color-wild-sand;
 
   @media (min-width: $screen-md-min) {
     margin: 0;
@@ -20,24 +24,19 @@ $z-index-example-border-brackets: 49;
   align-items: center;
   justify-content: center;
 
-  width: 50px;
-  height: 50px;
   margin: 0 5px;
+  padding: .5rem 1rem;
 
-  border-radius: 25px;
-  background: $color-periwinkle;
-  color: $color-mine-shaft;
+  transition: background $transition-slow $transition-ease, color $transition-slow $transition-ease;
+
+  border-radius: .25rem;
+  color: $color-dark-indigo;
   text-align: center;
   cursor: pointer;
 
-  &::before {
-    font-size: 18px;
-    line-height: 40px;
-  }
-
   &.is-active,
   &:hover {
-    background: $color-indigo;
+    background: $color-dark-indigo;
     color: $color-white;
   }
 
@@ -47,15 +46,12 @@ $z-index-example-border-brackets: 49;
 }
 
 .docs-example-device-icon {
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .docs-example-content {
-  padding: 18px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background: $color-wild-sand;
   text-align: center;
 }
 
