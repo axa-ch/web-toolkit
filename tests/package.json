@@ -13,13 +13,13 @@
     "css",
     "js"
   ],
-  "main": "test2.js",
+  "main": "run-tests.sh",
   "repository": {
     "type": "git",
     "url": "https://github.com/axa-group/web-toolkit.git"
   },
   "scripts": {
-    "start": "test2.js"
+    "start": "run-tests.sh"
   },
   "author": "AXA",
   "license": "SEE LICENSE IN LICENSE",
