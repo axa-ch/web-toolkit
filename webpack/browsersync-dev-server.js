@@ -29,14 +29,20 @@ browserSync({
 
     middleware: [
       webpackDevMiddleware(bundler, {
-        quiet: true,
         noInfo: true,
         // IMPORTANT: dev middleware can't access config, so we should
         // provide publicPath by ourselves
         publicPath: webpackConfig.output.publicPath,
 
-        // pretty colored output
-        stats: { colors: true },
+        stats: {
+          assets: false,
+          colors: true,
+          version: false,
+          hash: false,
+          timings: false,
+          chunks: false,
+          chunkModules: false,
+        },
 
         // for other settings see
         // http://webpack.github.io/docs/webpack-dev-middleware.html

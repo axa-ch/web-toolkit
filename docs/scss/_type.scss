@@ -1,11 +1,17 @@
-.h2 {
+.docs-h2 {
+  @extend .h2;
+
   margin-top: 36px;
 }
 
-.h3 {
+.docs-h3 {
+  @extend .h3;
+
   margin-top: 48px;
 }
 
-.h4 {
+.docs-h4 {
+  @extend .h4;
+
   margin-top: 24px;
 }

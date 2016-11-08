@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{package.description}}">
+    <meta name="keywords" content="{{package.keywords}}">
+    <meta name="author" content="{{package.author}}">
+
+    {{> appicon-ios size=57 }}
+    {{> appicon-ios size=72 }}
+    {{> appicon-ios size=76 }}
+    {{> appicon-ios size=114 }}
+    {{> appicon-ios size=120 }}
+    {{> appicon-ios size=144 }}
+    {{> appicon-ios size=152 }}
+    {{> appicon-ios size=180 }}
+
+    <meta name="apple-mobile-web-app-title" content="{{package.title}}">
+    <link media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" href="{{relative "/images/splash-screen/ios/750x1294.png"}}">
+    <link rel="manifest" href="{{relative "/manifest.json"}}">
+    <link rel="icon" sizes="192x192" href="{{relative "/images/app-icon/android/192x192.png"}}">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content={{package.title}}>
+    <meta name="msapplication-square70x70logo" content="{{relative "/images/app-icon/windows/128x128.png"}}">
+    <meta name="msapplication-square150x150logo" content="{{relative "/images/app-icon/windows/270x270.png"}}">
+    <meta name="msapplication-wide310x150logo" content="{{relative "/images/app-icon/windows/558x270.png"}}">
+    <meta name="msapplication-square310x310logo" content="{{relative "/images/app-icon/windows/558x558.png"}}">
+
+    <title>{{#if title}}{{title}}{{/if}} · {{package.title}}</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
+
+    {{#eq process.env.NODE_ENV 'production'}}
+      <link rel="stylesheet" href="{{relative "/dist/docs.css"}}">
+    {{/eq}}
+  </head>
+  <body class="push-lg-left" data-make="drawer" data-fade="drawer" data-target="body" data-in="overflow-hidden-md-down">
+    <a href="#content" class="sr-only sr-only-focusable btn btn-default btn-block push-absolute-lg-left" id="skippy">
+      <span class="skiplink-text">Skip to main content</span>
+    </a>
+
+    <a href="#" class="mask fade-out-delayed-md-down fade-out-lg-up" data-fade="drawer" data-target="body" data-in="fade-in-md-down" data-out="fade-out-delayed-md-down"></a>
+
+    <div id="notification" class="notifications"
+      data-notification-info="{{relative "/images/icons.svg#info"}}"
+      data-notification-success="{{relative "/images/icons.svg#checkmark"}}"
+      data-notification-error="{{relative "/images/icons.svg#cross"}}">
+    </div>
+
+    <header class="header header-fixed-top push-absolute-lg-left">
+      <div class="header-main">
+        <div class="container-fluid">
+          <a href="#" class="header-burger float-xs-left hidden-lg-up" data-fade="drawer" data-target="body" data-in="is-open">
+            <span class="header-burger-line"></span>
+          </a>
+
+          <div class="header-title float-xs-left">
+            <span>{{title}}</span>
+          </div>
+
+          <div class="header-title float-xs-right">
+            <span class="label label-primary">{{package.version}}</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="content" class="container-fluid docs-main">
+      {{#> content }}
+        {{{contents}}}
+      {{/content}}
+    </main>
+
+    <div class="drawer togglable-xs-left persistent-lg-left" data-fade="drawer" data-target="body" data-in="in">
+      <div class="header">
+        <div class="header-main">
+          <a href="{{relative "/index.html"}}" class="header-brand" title="Go to home page">
+            <img alt="AXA logo" src="{{relative '/images/axa.svg'}}" class="header-brand-image">
+            <span style="padding-left: 15px;">
+              <span>Web</span>
+              <br />
+              <span>Toolkit</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="inline-search autocomplete">
+        <input class="inline-search__input autocomplete__input" type='text' data-search="docs" data-search-index-data="{{relative "/searchIndex.json"}}" data-search-base-url="{{relative "/"}}" placeholder="Search pages...">
+        <div class="inline-search__button">
+          {{> icon name="search" classes="header-search__icon icon"}}
+        </div>
+      </div>
+
+      <nav class="col-md-12 mobile-menu mobile-menu--collapsing" data-menu="collapsing">
+        <ul class="mobile-menu__level" data-level>
+          {{#with menu.side}}
+            {{> menu}}
+          {{/with}}
+        </ul>
+      </nav>
+
+      <div class="col-md-12 mobile__separator"></div>
+
+      <div class="col-md-12 list-group">
+        <a class="list-group__item list-group__item--link" href="{{package.repository.url}}">
+          {{> icon name="github" classes="list-group__icon"}}
+          <span class="list-group__text">View on GitHub</span>
+        </a>
+      </div>
+    </div>
+
+    <script src="{{relative "/dist/docs.js"}}"></script>
+
+    <script>
+      var href = '{{relative link}}'
+      var mobile = $('[data-menu="collapsing"]')
+      var upmost = mobile.find('[data-level]').first()
+
+      var activeElement = mobile
+        .find('[data-link]')
+        .filter('[href=\'' + href + '\']')
+
+      if (activeElement.length > 0) {
+        activeElement.toggleClass('is-active')
+      }
+
+      var level = activeElement
+        .closest('[data-level]')
+
+      if (level.length > 0) {
+        level.toggleClass('is-active')
+      } else {
+        level = upmost
+      }
+
+      mobile.collapsingMenu('toggle', level)
+    </script>
+
+    <script> window.intercomSettings = { app_id: 'i82zr1ej' }</script>
+    <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/i82zr1ej';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+  </body>
+</html>

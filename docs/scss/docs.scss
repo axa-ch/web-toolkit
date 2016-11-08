@@ -1,7 +1,9 @@
 @import '../../scss/style';
+@import '~highlight.js/styles/github';
 
-@import 'highlight';
 @import 'type';
+@import 'code-snippet';
+@import 'example';
 
 @import './blocks/block';
 @import './blocks/box';
@@ -11,10 +13,8 @@
 @import './blocks/contribute';
 @import './blocks/easter-egg';
 @import './blocks/error';
-@import './blocks/example';
 @import './blocks/head';
 @import './blocks/hero';
-@import './blocks/highlight';
 @import './blocks/icon';
 @import './blocks/icons-list';
 @import './blocks/image';
@@ -27,6 +27,11 @@
 body {
   // Pad the page to make room for the fixed header
   padding-top: 74px;
+}
+
+.docs-main {
+  // Add whitespace to page bottom, so things look nicer
+  padding-bottom: 100px;
 }
 
 // Copyright AXA 2016

@@ -6,6 +6,9 @@
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://design.axa.com/toolkit",
   "homepageWebGuidelines": "https://design.axa.com/introduction",
+  "distArchive": "https://github.com/axa-group/web-toolkit/releases/download/{tag}/web-toolkit-{tag}-dist.zip",
+  "sourceArchive": "https://github.com/axa-group/web-toolkit/archive/{tag}.zip",
+  "npmjsPackage": "https://www.npmjs.com/package/@axa/web-toolkit",
   "keywords": [
     "axa",
     "insurance",
@@ -111,7 +114,7 @@
     "front-matter": "^1.0.0",
     "handlebars": "^4.0.5",
     "happypack": "^2.2.1",
-    "highlight.js": "^8.9.1",
+    "highlight.js": "^9.8.0",
     "iframe-resizer": "^2.8.10",
     "jsdoc-babel": "^0.2.1",
     "jsdoc-to-markdown": "^2.0.0-alpha.15",

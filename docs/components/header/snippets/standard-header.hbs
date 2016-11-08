@@ -1,0 +1,61 @@
+---
+title: Standard Header
+layout: demo.hbs
+---
+<header class="header">
+  <div class="header-meta hidden-md-down">
+    <div class="container-fluid">
+      <nav class="header-meta-menu float-xs-right hidden-md-down">
+        <ul class="header-meta-menu-list">
+          <li class="header-meta-menu-item">
+            <a href="#" class="header-meta-menu-link">Individuals</a>
+          </li>
+          <li class="header-meta-menu-item">
+            <a href="#" class="header-meta-menu-link">Small Businesses</a>
+          </li>
+          <li class="header-meta-menu-item">
+            <a href="#" class="header-meta-menu-link">Businesses</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="container-fluid">
+      <a href="#" class="header-brand">
+        <img class="header-brand-image" src="{{relative '/images/axa.svg'}}" />
+      </a>
+
+      <a  href="#"class="header-burger float-xs-right hidden-lg-up">
+        <span class="header-burger-line"></span>
+      </a>
+
+      <form id="overviewSearch" class="header-search float-xs-right" data-search="header">
+        <div class="header-search-dunno">
+          <input type="text" class="header-search-input" name="q" placeholder="Search the entire axa.com" />
+          <button type="submit" class="header-search-button">
+            <span class="sr-only">Search</span>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </div>
+      </form>
+
+      <div class="header-item float-xs-right hidden-xs-down" data-fade="search" data-target="#overviewSearch" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
+        <a href="#" class="btn btn-default">File a Claim</a>
+      </div>
+
+      <nav id="overviewNav" class="nav float-xs-right hidden-md-down" data-fade="search" data-target="#overviewSearch" data-in="fade-in-delayed-xs-up" data-out="fade-out-xs-up">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Web Guidelines</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Toolkit</a>
+          </li>
+        </ul>
+        <div class="nav-stroke" data-spy="stroke" data-target="#overviewNav" />
+      </nav>
+    </div>
+  </div>
+</header>
