@@ -1,7 +1,7 @@
 # Web Toolkit Testing
 
 This is a docker image containing phantomjs and resemblejs to capture
-screenshots and compare them with expected values respecitely.
+screenshots and compare them with expected values respectively.
 
 ## How to use
 To use it locally run the Web Toolkit docker container:
