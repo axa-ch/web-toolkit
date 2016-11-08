@@ -31,7 +31,7 @@ $z-index-example-border-brackets: 49;
   color: $color-dark-indigo;
   text-align: center;
   cursor: pointer;
-  transition: background .3s ease, color .3s ease;
+  transition: background $transition-slow $transition-ease, color $transition-slow $transition-ease;
 
   &.is-active,
   &:hover {
