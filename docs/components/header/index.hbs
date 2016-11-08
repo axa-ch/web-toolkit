@@ -213,11 +213,7 @@ toc:
 
     {{> example path="/components/header/demos/container.html"}}
 
-    {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/container"}}
-        {{{.}}}
-      {{/get}}
-    {{/code-snippet}}
+    {{#code-snippet "html"}}{{#get snippets "/components/header/snippets/container"}}{{{this}}}{{/get}}{{/code-snippet}}
 
     <p>If you're building a web app that needs to have full-width content,
     consider making the header expand to the full width too. Use
@@ -225,11 +221,7 @@ toc:
 
     {{> example path="/components/header/demos/container-fluid.html"}}
 
-    {{#code-snippet "html"}}
-      {{#get snippets "/components/header/snippets/container-fluid"}}
-        {{{.}}}
-      {{/get}}
-    {{/code-snippet}}
+    {{#code-snippet "html"}}{{#get snippets "/components/header/snippets/container-fluid"}}{{{this}}}{{/get}}{{/code-snippet}}
 
     <h2 id="appearance" class="docs-h3">Appearance</h2>
 
