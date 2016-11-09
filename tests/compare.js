@@ -14,10 +14,14 @@ function compareTestResults(page) {
           const base64Data = imgDataUrl.replace(/^data:image\/png;base64,/, '')
 
           fs.writeFile(test.diff, base64Data, 'base64', (err) => {
-            console.log(err)
+            if (err) {
+              console.log('Error writing diff:', err)
+            }
           })
           fs.writeFile(test.screenshot, test.snapshotBase64, 'base64', (err) => {
-            console.log(err)
+            if (err) {
+              console.log('Error writing actual:', err)
+            }
           })
         }
       })
