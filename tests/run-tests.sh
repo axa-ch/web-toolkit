@@ -8,5 +8,4 @@ mkdir tests/actual
 mkdir tests/diff
 mv expected/* tests/expected/
 
-phantomjs screenshots.js
-node compare.js
+npm start

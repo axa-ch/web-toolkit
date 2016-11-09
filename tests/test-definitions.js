@@ -1,9 +1,9 @@
-function addPage(name, testcases) {
+function addPage(path, testcases) {
   for (const testcase of testcases) {
     testcase.screenshot = `tests/actual/${testcase.name}.png`
   }
   return {
-    name,
+    path,
     tests: testcases,
   }
 }
@@ -17,25 +17,25 @@ function getDefinitions() {
   const pages = []
 
   pages.push(addPage('/components/header/demos/standard-header.html', [
-    { name: 'standard-header_mobile', viewport: viewports.mobile, expected: 'tests/expected/font_mobile.png' },
-    { name: 'standard-header_desktop', viewport: viewports.desktop, expected: 'tests/expected/font_desktop.png' },
+    { name: 'standard-header_mobile', viewport: viewports.mobile, expected: 'tests/expected/standard-header_mobile.png' },
+    { name: 'standard-header_desktop', viewport: viewports.desktop, expected: 'tests/expected/standard-header_desktop.png' },
   ]))
   pages.push(addPage('/components/header/demos/transparent-header.html', [
-    { name: 'transparent-header_mobile', viewport: viewports.mobile, expected: 'tests/expected/badge_mobile.png' },
-    { name: 'transparent-header_desktop', viewport: viewports.desktop, expected: 'tests/expected/badge_tablet.png' },
+    { name: 'transparent-header_mobile', viewport: viewports.mobile, expected: 'tests/expected/transparent-header_mobile.png' },
+    { name: 'transparent-header_desktop', viewport: viewports.desktop, expected: 'tests/expected/transparent-header_desktop.png' },
   ]))
   pages.push(addPage('/components/buttons/demos/standard-button.html', [
-    { name: 'standard-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/button-ghost_mobile.png' },
-    { name: 'standard-button_desktop', viewport: viewports.desktop, expected: 'tests/expected/badge_tablet.png' },
+    { name: 'standard-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/standard-button_mobile.png' },
+    { name: 'standard-button_desktop', viewport: viewports.desktop, expected: 'tests/expected/standard-button_desktop.png' },
   ]))
   pages.push(addPage('/components/buttons/demos/icon-button.html', [
-    { name: 'icon-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/button-ghost_mobile.png' },
+    { name: 'icon-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/icon-button_mobile.png' },
   ]))
   pages.push(addPage('/components/buttons/demos/ghost-button.html', [
-    { name: 'ghost-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/button-ghost_mobile.png' },
+    { name: 'ghost-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/ghost-button_mobile.png' },
   ]))
   pages.push(addPage('/components/buttons/demos/axa-button.html', [
-    { name: 'axa-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/button-ghost_mobile.png' },
+    { name: 'axa-button_mobile', viewport: viewports.mobile, expected: 'tests/expected/axa-button_mobile.png' },
   ]))
 
   return pages

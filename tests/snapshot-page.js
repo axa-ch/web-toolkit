@@ -8,13 +8,17 @@ function snapshotPage(page) {
     if (i < page.tests.length) {
       const test = page.tests[i]
       sitepage.property('viewportSize', test.viewport)
-      sitepage.render(test.screenshot)
-        .then(snapshotViewport(i + 1))
+      return sitepage.renderBase64('PNG')
+        .then((base64Image) => {
+          test.snapshotBase64 = base64Image
+          return i + 1
+        })
+        .then(snapshotViewport)
     }
     return 'all viewports rendered'
   }
 
-  phantom.create()
+  return phantom.create()
     .then((instance) => {
       phantomInstance = instance
       return instance.createPage()
@@ -22,13 +26,14 @@ function snapshotPage(page) {
     .then((phantomPage) => {
       sitepage = phantomPage
       phantomPage.property('viewportSize', page.tests[0].viewport)
-      return phantomPage.open('https://design.axa.com/toolkit')
+      return phantomPage.open('https://design.axa.com/toolkit' + page.path)
     })
     .then(() => Promise.resolve(0).then(snapshotViewport))
-    .then((content) => {
-      console.log(content)
+    .then(() => {
+      // console.log(content)
       sitepage.close()
       phantomInstance.exit()
+      return page
     })
     .catch((error) => {
       console.log(error)
