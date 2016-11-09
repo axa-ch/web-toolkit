@@ -13,13 +13,13 @@
     "css",
     "js"
   ],
-  "main": "run-tests.sh",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/axa-group/web-toolkit.git"
   },
   "scripts": {
-    "start": "run-tests.sh"
+    "start": "babel-node index.js"
   },
   "author": "AXA",
   "license": "SEE LICENSE IN LICENSE",
@@ -28,10 +28,14 @@
   },
   "homepage": "https://design.axa.com",
   "dependencies": {
-  },
-  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.2.1",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-node6": "^11.0.0",
     "canvas": "^1.6.1",
+    "handlebars": "^4.0.5",
     "node-resemble": "1.1.3",
-    "handlebars": "^4.0.5"
+    "phantom": "^3.0.2"
   }
 }

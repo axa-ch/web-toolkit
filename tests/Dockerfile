@@ -13,4 +13,4 @@ VOLUME "/usr/src/app/tests"
 # Phantom on linux cannot load fonts from the web. They must be present locally. Yeah...
 RUN mv /usr/src/app/fonts /usr/share/fonts/truetype/
 
-CMD [ "./run-tests.sh" ]
+CMD [ "npm", "start" ]
