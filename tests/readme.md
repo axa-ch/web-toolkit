@@ -5,7 +5,7 @@ screenshots and compare them with expected values respectively.
 
 ## How to use
 To use it locally run the Web Toolkit docker container:
-`docker run [ -p 3000:3000 ] --name wtk wtk`
+`docker run [ -p 3000:3000 ] [ -d ] --name wtk wtk`
 
 Build the image
 `docker build -t wtk-test .`
