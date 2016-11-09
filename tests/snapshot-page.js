@@ -36,7 +36,7 @@ function snapshotPage(page) {
       return page
     })
     .catch((error) => {
-      console.log(error)
+      console.log('Error:', error)
       phantomInstance.exit()
     })
 }

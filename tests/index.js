@@ -4,12 +4,16 @@ import compare from './compare'
 import resultPage from './result-page'
 
 const pages = testDefinitions()
+const promises = []
 
 for (const page of pages) {
-  snapshotPage(page)
+  const promise = snapshotPage(page)
     .then((p) => {
       compare(p)
     })
+  promises.push(promise)
 }
 
-resultPage.createResultPage(pages)
+Promise.all(promises).then(() => {
+  resultPage.createResultPage(pages)
+})
