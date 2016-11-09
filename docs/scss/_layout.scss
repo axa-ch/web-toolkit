@@ -1,7 +1,15 @@
-.docs-layout-example-wrapper {
+.docs-layout-example {
   position: relative;
   padding: 10px;
   overflow: hidden;
+}
+
+.docs-layout-example-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.docs-layout-example-container-fluid {
 }
 
 .docs-layout-example-header {
@@ -16,9 +24,18 @@
   align-items: center;
   justify-content: center;
   height: 120px;
+  margin-right: 120px;
   border-radius: 10px;
   background-color: #4267c3;
   color: white;
+}
+
+.docs-layout-example-sidebar {
+  width: 100px;
+  height: 120px;
+  float: right;
+  border-radius: 10px;
+  background-color: #ec4d33;
 }
 
 .docs-layout-example-drawer {

@@ -5,12 +5,14 @@ nav: side/layout/overview
 order: 2
 lunr: true
 toc:
-  - title: Quick Start
-    slug: quick-start
-  - title: Starter Template
-    slug: starter-template
-  - title: Important Globals
-    slug: important-globals
+  - title: Containers
+    slug: containers
+  - title: Grid
+    slug: grid
+  - title: Drawer component
+    slug: drawer-component
+  - title: Reponsive utilities
+    slug: responsive-utilities
 ---
 
 {{#> page}}
@@ -18,15 +20,44 @@ toc:
 
     <h1 class="docs-h2">{{title}}</h1>
 
-    <p class="lead"></p>
-
-    <p></p>
+    <p class="lead">The Web Toolkit provides several ways
+    for laying out your web application according to your users needs.
+    This contains wrapping containers, a Bootstrap-based grid system,
+    a powerful Drawer component, and responsive utility classes.</p>
 
     {{> table-of-contents data=toc}}
 
-    <h2 id="quick-start" class="docs-h3"></h2>
+    <h2 id="containers" class="docs-h3">Containers</h2>
 
-    <p></p>
+    <p>As in Bootstrap</p>
+
+    <div class="docs-layout-example">
+      <div class="docs-layout-example-container">
+        <div class="docs-layout-example-header"></div>
+        <div class="docs-layout-example-sidebar"></div>
+        <div class="docs-layout-example-body"></div>
+      </div>
+    </div>
+
+    <div class="docs-layout-example">
+      <div class="docs-layout-example-container-fluid">
+        <div class="docs-layout-example-header"></div>
+        <div class="docs-layout-example-sidebar"></div>
+        <div class="docs-layout-example-body"></div>
+      </div>
+    </div>
+
+    <h2 id="grid" class="docs-h3">Grid</h2>
+
+    <p>...</p>
+
+    <h2 id="drawer-component" class="docs-h3">Drawer component</h2>
+
+    <p>...</p>
+
+    <h2 id="responsive-utilities" class="docs-h3">Responsive utilities</h2>
+
+    <p>...</p>
 
   {{/inline}}
 {{/page}}
