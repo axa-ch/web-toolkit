@@ -1,52 +1,47 @@
-var handlebars = require('handlebars');
-var fs = require('fs');
+import handlebars from 'handlebars'
+import fs from 'fs'
 
-function createResultPage(pages) {
-  handlebars.registerHelper('gt', function(a, b, opts) {
-    if (a > b)
-      return opts.fn(this);
-    else
-      return opts.inverse(this);
-  });
+function resultPage(pages) {
+  handlebars.registerHelper('gt', function gtHelper(a, b, opts) {
+    if (a > b) {
+      return opts.fn(this)
+    }
 
-  var numberOfTests = 0;
-  var numberOfFailedTests = 0;
-  var numberOfPages = 0;
-  var numberOfFailedPages = 0;
+    return opts.inverse(this)
+  })
 
-  for (var pageIndex = 0; pageIndex < pages.length; pageIndex++) {
-    var page = pages[pageIndex];
-    page.ok = true;
-    numberOfPages++;
+  const numberOfPages = pages.length
+  let numberOfTests = 0
+  let numberOfFailedTests = 0
+  let numberOfFailedPages = 0
 
-    for (var testIndex = 0; testIndex < page.tests.length; testIndex++) {
-      var test = page.tests[testIndex];
-      numberOfTests++;
-      
+  for (const page of pages) {
+    page.ok = true
+    numberOfTests += page.tests.length
+
+    for (const test of page.tests) {
       if (test.misMatchPercentage > 0) {
-        page.ok = false;
-        numberOfFailedTests++;
+        page.ok = false
+        numberOfFailedTests += 1
       }
     }
 
     if (!page.ok) {
-      numberOfFailedPages++;
+      numberOfFailedPages += 1
     }
   }
 
-  var template = handlebars.compile(fs.readFileSync('template.hbs', 'utf-8'));
+  const template = handlebars.compile(fs.readFileSync('template.hbs', 'utf-8'))
 
-  var output = template({
-    pages: pages,
-    numberOfFailedPages: numberOfFailedPages,
-    numberOfFailedTests: numberOfFailedTests,
-    numberOfPages: numberOfPages,
-    numberOfTests: numberOfTests
-  });
+  const output = template({
+    pages,
+    numberOfFailedPages,
+    numberOfFailedTests,
+    numberOfPages,
+    numberOfTests,
+  })
 
-  fs.writeFileSync('tests/results.html', output);
+  fs.writeFileSync('tests/results.html', output)
 }
 
-module.exports = {
-  createResultPage: createResultPage
-};
+export default resultPage
