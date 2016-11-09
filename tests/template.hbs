@@ -26,6 +26,11 @@
   <body style="font-family: sans-serif;">
     <div>
       <h1>Stats:</h1>
+      {{#gt numberOfFailedTests 0}}
+        <p class="failed">Tests failed!</p>
+      {{else}}
+        <p class="passed">Tests passed! gz!</p>
+      {{/gt}}
       <p>
         {{numberOfFailedTests}} of {{numberOfTests}} tests have failed while
         {{numberOfFailedPages}} of {{numberOfPages}} pages have failing tests.
