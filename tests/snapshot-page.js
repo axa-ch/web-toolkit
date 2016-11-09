@@ -26,7 +26,7 @@ function snapshotPage(page) {
     .then((phantomPage) => {
       sitepage = phantomPage
       phantomPage.property('viewportSize', page.tests[0].viewport)
-      return phantomPage.open('https://design.axa.com/toolkit' + page.path)
+      return phantomPage.open(`${process.env.BASE_URL}${page.path}`)
     })
     .then(() => Promise.resolve(0).then(snapshotViewport))
     .then(() => {
