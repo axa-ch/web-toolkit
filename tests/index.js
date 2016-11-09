@@ -15,5 +15,5 @@ for (const page of pages) {
 }
 
 Promise.all(promises).then(() => {
-  resultPage.createResultPage(pages)
+  resultPage(pages)
 })
