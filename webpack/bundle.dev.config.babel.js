@@ -18,8 +18,6 @@ export default {
       './docs/js/index-with-styles.js',
     ],
     all: [
-      'webpack/hot/dev-server',
-      'webpack-hot-middleware/client',
       './js/index-with-styles.js',
     ],
   },
