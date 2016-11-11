@@ -2,13 +2,20 @@ $footer-text-color: $color-white;
 $footer-link-color: $color-white;
 $footer-link-hover-color: $color-mercury;
 $footer-copyline-color: $color-dusty-gray;
+$footer-padding-lr: 30px;
+$footer-primary-color: $color-azure;
+$footer-secondary-color: $color-st-tropaz;
 
 .footer {
-  background: $color-azure;
+  background: $footer-primary-color;
 }
 
 .footer-social {
   display: flex;
+  margin: 0;
+  //Overrid default grid gutter to make the clickable area
+  //on the left- and rightmost icons extend to the border.
+  padding: 0;
 
   list-style-type: none;
 }
@@ -20,6 +27,8 @@ $footer-copyline-color: $color-dusty-gray;
     flex-grow: 1;
 
     .footer-social-link {
+      padding-left: $footer-padding-lr;
+
       text-align: left;
     }
   }
@@ -28,6 +37,8 @@ $footer-copyline-color: $color-dusty-gray;
     flex-grow: 1;
 
     .footer-social-link {
+      padding-right: $footer-padding-lr;
+    
       text-align: right;
     }
   }
@@ -35,6 +46,9 @@ $footer-copyline-color: $color-dusty-gray;
 
 .footer-social-link {
   display: block;
+  height: 60px;
+  padding: 20px;
+
   color: $footer-link-color;
   text-align: center;
 
@@ -60,6 +74,15 @@ $footer-copyline-color: $color-dusty-gray;
 }
 
 .footer-link {
+  display: block;
+  height: 40px;
+  border-top: 1px solid $footer-secondary-color;
+  margin-left: -$grid-gutter-width/2;
+  margin-right: -$grid-gutter-width/2;
+  padding-left: $footer-padding-lr;
+  padding-right: $footer-padding-lr;
+  line-height: 40px;
+
   color: $footer-link-color;
 
   &:hover {
@@ -69,10 +92,12 @@ $footer-copyline-color: $color-dusty-gray;
 
 .footer-languages {
   display: flex;
+  padding-left: $footer-padding-lr;
+  padding-right: $footer-padding-lr;
 
   margin: 0;
 
-  background: $color-st-tropaz;
+  background: $footer-secondary-color;
   list-style-type: none;
 }
 
@@ -91,7 +116,15 @@ $footer-copyline-color: $color-dusty-gray;
 }
 
 .footer-copyline {
-  background: $color-st-tropaz;
-  color: $footer-copyline-color;
+  padding-left: $footer-padding-lr;
+  padding-right: $footer-padding-lr;
+
   text-align: right;
+  
+  background: $footer-secondary-color;
+  color: $footer-copyline-color;
+
+  a {
+    color: $footer-copyline-color;
+  }
 }
