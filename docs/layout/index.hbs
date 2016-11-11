@@ -4,6 +4,8 @@ description: Layout your app according to your needs using the AXA Web Toolkit.
 nav: side/layout/overview
 order: 2
 lunr: true
+gridDocs: http://getbootstrap.com/css/#grid
+responsiveUtilsDocs: http://v4-alpha.getbootstrap.com/layout/responsive-utilities/
 toc:
   - title: Containers
     slug: containers
@@ -21,7 +23,7 @@ toc:
     <h1 class="docs-h2">{{title}}</h1>
 
     <p class="lead">The Web Toolkit provides several ways
-    for laying out your web application according to your users needs.
+    for laying out your web application according to your user's needs.
     This contains wrapping containers, a Bootstrap-based grid system,
     a powerful Drawer component, and responsive utility classes.</p>
 
@@ -29,7 +31,11 @@ toc:
 
     <h2 id="containers" class="docs-h3">Containers</h2>
 
-    <p>As in Bootstrap</p>
+    <p>As in Bootstrap, you have two containers available. The default
+    one should always be the ordinary <code>container</code>, which restricts
+    your content to a certain width depending on your viewport.
+    This behavior is perfect for all sort of informational websites,
+    because it keeps things readable.</p>
 
     <div class="docs-example">
       <div class="docs-example-content">
@@ -49,7 +55,10 @@ toc:
       </div>
     {{/code-snippet}}
 
-    <p>...</p>
+    <p>The alternative is <code>container-fluid</code>. It doesn't
+    restrict to any specific width, keeping the whole browser estate
+    for your content. You should only use this when building complex
+    transactional websites, that need all the browser space available.</p>
 
     <div class="docs-example">
       <div class="docs-example-content">
@@ -69,19 +78,165 @@ toc:
       </div>
     {{/code-snippet}}
 
-    <p>...</p>
-
     <h2 id="grid" class="docs-h3">Grid</h2>
 
-    <p>...</p>
+    <p>The AXA Web Toolkit uses the 12-column Bootstrap grid. Whenever
+    you use the grid to split some content into multiple columns, make
+    sure you place it inside a `container` or `container-fluid`.</p>
+
+    <p>You can find the full documentation of the grid in the official
+    <a href="{{gridDocs}}">Bootstrap grid docs</a>.</p>
 
     <h2 id="drawer-component" class="docs-h3">Drawer component</h2>
 
-    <p>...</p>
+    <p>Especially on small screens, it's often necessary to
+    toggle some content that slides into the viewport.
+    The most common example
+    is the menu that is toggled by a burger (𝍫) button. But there
+    are also some cases in which that behavior needs to be available
+    on larger screens, too. These docs are a great example for both those
+    cases.</p>
+
+    <p>In order to achieve such a behavior, there's the flexible
+    Drawer component. It's fully documented in it's own
+    <a href="{{relative '/layout/drawer/'}}">Drawer component docs</a>.</p>
 
     <h2 id="responsive-utilities" class="docs-h3">Responsive utilities</h2>
 
-    <p>...</p>
+    <p>While you can use the Bootstrap v3 ones,
+    we strongly recommend to already use the
+    <a href="{{responsiveUtilsDocs}}">Bootstrap v4 responsive utilities</a>.
+    Both are part of the AXA Web Toolkit.</p>
+
+    <p>Reponsive utilities are CSS classes that allow you to hide content
+    from a page depending on the user's current viewport. They can also be
+    used to toggle content when printed.</p>
+
+    <p>Try to use these on a limited basis and avoid creating entirely
+    different versions of the same site. Instead, use them to
+    complement each device's presentation.</p>
+
+    <h3 class="docs-h4">Available classes</h3>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped docs-responsive-utilities">
+        <colgroup>
+          <col width="20%">
+          <col width="20%">
+          <col width="20%">
+          <col width="20%">
+          <col width="20%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Extra small devices</th>
+            <th>Small devices</th>
+            <th>Medium devices</th>
+            <th>Large devices</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><code>.hidden-xs-down</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.hidden-sm-down</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.hidden-md-down</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.hidden-lg-down</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.hidden-xs-up</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.hidden-sm-up</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.hidden-md-up</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.hidden-lg-up</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="docs-h4">Print classes</h3>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped docs-responsive-utilities">
+        <colgroup>
+          <col width="33%">
+          <col width="33%">
+          <col width="33%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Browser</th>
+            <th>Print</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><code>.visible-print-block</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible<br>(as <code>display: block</code>)</td>
+          </tr>
+          <tr>
+            <th><code>.visible-print-inline</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible<br>(as <code>display: inline</code>)</td>
+          </tr>
+          <tr>
+            <th><code>.visible-print-inline-block</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible<br>(as <code>display: inline-block</code>)</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-print</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
   {{/inline}}
 {{/page}}
