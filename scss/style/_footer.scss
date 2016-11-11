@@ -1,3 +1,8 @@
+$footer-text-color: $color-white;
+$footer-link-color: $color-white;
+$footer-link-hover-color: $color-mercury;
+$footer-copyline-color: $color-dusty-gray;
+
 .footer {
   background: $color-azure;
 }
@@ -30,8 +35,12 @@
 
 .footer-social-link {
   display: block;
-  color: $color-white;
+  color: $footer-link-color;
   text-align: center;
+
+  &:hover {
+    color: $footer-link-hover-color;
+  }
 }
 
 .footer-social-icon {
@@ -39,63 +48,50 @@
   height: 20px;
 }
 
-.footer-links {
+.footer-title {
+  color: $footer-text-color;
+}
 
+.footer-link-list {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.footer-link {
+  color: $footer-link-color;
+
+  &:hover {
+    color: $footer-link-hover-color;
+  }
 }
 
 .footer-languages {
+  display: flex;
+
+  margin: 0;
+
   background: $color-st-tropaz;
+  list-style-type: none;
+}
+
+.footer-language-item {
+}
+
+.footer-language-link {
+  display: inline-block;
+  
+  padding: 0 18px;
+  color: $footer-link-color;
+
+  &:hover {
+    color: $footer-link-hover-color;
+  }
 }
 
 .footer-copyline {
-  background: $color-st-tropaz;  
+  background: $color-st-tropaz;
+  color: $footer-copyline-color;
+  text-align: right;
 }
-
-/*
-.footer__main {
-  border-top: 5px solid $color-blue;
-}
-
-.footer__main__container {
-  @extend .container;
-}
-
-.footer__main__row {
-  @extend .row;
-}
-
-.footer__social, .footer__links, .footer__worldwide {
-  @media (min-width: $screen-md-min) {
-    padding-top: 8px;
-    padding-bottom: 40px;
-  }
-}
-
-.footer__social {
-  @include make-md-column(4);
-
-  @media (min-width: $screen-md-min) {
-    order: 2;
-  }
-}
-
-.footer__links {
-  @include make-md-column(5);
-
-  @media (min-width: $screen-md-min) {
-    order: 1;
-  }
-}
-
-.footer__worldwide {
-  @include make-md-column(3);
-
-  @media (min-width: $screen-md-min) {
-    order: 3;
-  }
-}
-
-.footer__copyline {
-}*/
-
-// Copyright AXA Versicherungen AG 2015
