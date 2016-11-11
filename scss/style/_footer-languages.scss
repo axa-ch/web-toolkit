@@ -1,12 +1,11 @@
 .footer-languages {
+  @include unstyle-list();
+
   display: flex;
   padding-left: $footer-padding-lr;
   padding-right: $footer-padding-lr;
 
-  margin: 0;
-
   background: $footer-secondary-color;
-  list-style-type: none;
 }
 
 .footer-language-item {

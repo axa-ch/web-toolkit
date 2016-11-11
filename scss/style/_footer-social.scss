@@ -1,11 +1,11 @@
 .footer-social {
+  @include unstyle-list();
+  
   display: flex;
-  margin: 0;
-  //Overrid default grid gutter to make the clickable area
-  //on the left- and rightmost icons extend to the border.
-  padding: 0;
 
-  list-style-type: none;
+  @media (min-width: $screen-sm-min) {
+    margin-top: 25px;
+  }
 }
 
 .footer-social-item {

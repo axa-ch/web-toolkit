@@ -8,4 +8,8 @@ $footer-secondary-color: $color-st-tropaz;
 
 .footer {
   background: $footer-primary-color;
+
+  @media (min-width: $screen-lg-min) {
+    padding-top: 25px;
+  }
 }
