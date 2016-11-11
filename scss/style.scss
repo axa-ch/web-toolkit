@@ -61,8 +61,12 @@
 @import 'style/mixins';
 @import 'style/utilities';
 
-@import 'style/header';
 @import 'style/footer';
+@import 'style/footer-copyline';
+@import 'style/footer-languages';
+@import 'style/footer-links';
+@import 'style/footer-social';
+@import 'style/header';
 @import 'style/nav';
 @import 'style/sliding-menu';
 @import 'style/table-of-contents';

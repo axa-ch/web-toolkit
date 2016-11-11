@@ -1,0 +1,63 @@
+.footer-social {
+  display: flex;
+  margin: 0;
+  //Overrid default grid gutter to make the clickable area
+  //on the left- and rightmost icons extend to the border.
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.footer-social-item {
+  flex-grow: 2;
+
+  @media (min-width: $screen-sm-min) {
+    flex-grow: unset;
+  }
+
+  &:first-of-type {
+    flex-grow: 1;
+
+    @media (min-width: $screen-sm-min) {
+      flex-grow: unset;
+    }
+
+    .footer-social-link {
+      padding-left: $footer-padding-lr;
+
+      text-align: left;
+    }
+  }
+
+  &:last-of-type {
+    flex-grow: 1;
+
+    @media (min-width: $screen-sm-min) {
+      flex-grow: unset;
+    }
+    
+    .footer-social-link {
+      padding-right: $footer-padding-lr;
+    
+      text-align: right;
+    }
+  }
+}
+
+.footer-social-link {
+  display: block;
+  height: 60px;
+  padding: 20px;
+
+  color: $footer-link-color;
+  text-align: center;
+
+  &:hover {
+    color: $footer-link-hover-color;
+  }
+}
+
+.footer-social-icon {
+  width: auto;
+  height: 20px;
+}

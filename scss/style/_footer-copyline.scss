@@ -1,0 +1,13 @@
+.footer-copyline {
+  padding-left: $footer-padding-lr;
+  padding-right: $footer-padding-lr;
+
+  text-align: right;
+  
+  background: $footer-secondary-color;
+  color: $footer-copyline-color;
+
+  a {
+    color: $footer-copyline-color;
+  }
+}

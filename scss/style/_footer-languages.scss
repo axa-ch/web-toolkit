@@ -1,0 +1,24 @@
+.footer-languages {
+  display: flex;
+  padding-left: $footer-padding-lr;
+  padding-right: $footer-padding-lr;
+
+  margin: 0;
+
+  background: $footer-secondary-color;
+  list-style-type: none;
+}
+
+.footer-language-item {
+}
+
+.footer-language-link {
+  display: inline-block;
+  
+  padding: 0 18px;
+  color: $footer-link-color;
+
+  &:hover {
+    color: $footer-link-hover-color;
+  }
+}
