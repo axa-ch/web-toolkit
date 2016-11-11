@@ -1,0 +1,30 @@
+---
+title: Footer
+description: Showcases and describes the footer.
+nav: side/components/footer
+order: 1
+toc:
+  - title: Standard footer
+    slug: footer
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">{{title}}</h1>
+    <p class="lead">
+      This page describes the footer.
+    </p>
+    <p>
+      More footer info.
+    </p>
+    {{> table-of-contents data=toc}}
+
+    <h2 class="h3" id="footer">Standard footer</h2>
+    <p>
+      Info about the standard footer
+    </p>
+
+    {{> example path="/components/footer/demos/footer.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer"}}{{{.}}}{{/get}}{{/code-snippet}}
+  {{/inline}}
+{{/page}}
