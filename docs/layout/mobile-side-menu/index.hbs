@@ -1,18 +1,16 @@
 ---
-title: Drawer component
-description: Add a fixed drawer-like element for your mobile or desktop navigation.
-nav: side/layout/drawer
+title: Mobile and side menu
+description: Add a flexible mobile or side menu to your app.
+nav: side/layout/mobile-side-menu
 order: 2
 lunr: true
 toc:
-  - title: Overview
-    slug: overview
-  - title: Top drawer
-    slug: top-drawer
-  - title: Side drawer
-    slug: side-drawer
-  - title: Persistent side drawer
-    slug: persistent-side-drawer
+  - title: Top menu
+    slug: top-menu
+  - title: Side menu
+    slug: side-menu
+  - title: Persistent side menu
+    slug: persistent-side-menu
 ---
 
 {{#> page}}
@@ -20,64 +18,35 @@ toc:
 
     <h1 class="docs-h2">{{title}}</h1>
 
-    <p class="lead">The drawer is a flexible layout component. It helps you
+    <p class="lead">Use the highly flexible <code>Drawer</code>
+    component to create mobile or side menus. It helps you
     create togglable mobile menus. On larger viewports,
     it can also stick persistently on one side.
     This website you're on even uses both depending on the viewport!</p>
 
     {{> table-of-contents data=toc}}
 
-    <h2 id="overview" class="docs-h3">Overview</h2>
+    <h2 id="top-menu" class="docs-h3">Top menu</h2>
 
-    <p>Most probably, you'll use the drawer as a mobile menu.
-    The recommended way is to let it slide in from the top of the screen,
-    where it then presents a menu.
-    However, the drawer also supports toggling
-    from both sides of the screen.</p>
-
-    <p>These are the <em>interactive</em> ways of using the drawer:</p>
-
-    <ul>
-      <li>Toggle from top</li>
-      <li>Toggle from left side</li>
-      <li>Toggle from right side</li>
-    </ul>
-
-    <p>It is also possible to use a static approach and make the drawer
-    persist on either the left or the right side of the screen. This
-    can be helpful for websites that are solely driven by a navigation
-    and can afford the always occupied screen estate:</p>
-
-    <ul>
-      <li>Persist on left side</li>
-      <li>Persist on right side</li>
-    </ul>
-
-    <p>Ultimately, all these ways of using the drawer can also be combined.
-    For example, you can make the drawer togglable on small devices
-    and persistent on large screens.</p>
-
-    <h2 id="top-drawer" class="docs-h3">Top drawer</h2>
-
-    <p>In order to add a top drawer, first add a
+    <p>In order to add a top menu, first add a
     <code>[data-make="drawer"]</code> to your <code>&lt;body&gt;</code> element
-    or one that will be parent of the drawer and your burger button. This
-    will introduce the drawer toggling feature, which toggles the drawer
+    or one that will be parent of the drawer component and your burger button.
+    This will introduce the menu toggling feature, which toggles
     whenever a <code>.header-burger</code> is clicked. It also
     sends events to the <code>[data-fade="drawer"]</code> plugin,
     which then intelligently switches CSS classes, depending on whether
-    the drawer is open or not.</p>
+    the menu is open or not.</p>
 
     <p>Next, add a
     <code>&lt;div class="drawer togglable-*-top"&gt;&lt;/div&gt;</code>
     element to your page. Use the <code>[data-fade="drawer"]</code> plugin
-    to toggle the <code>.in</code> class when the drawer should be open.</p>
+    to toggle the <code>.in</code> class when the menu should be open.</p>
 
     <p>Ultimately, make sure you have a burger button somewhere in your page.
     Add a <code>&lt;a href="#" class="header-burger"&gt;&lt;/a&gt;</code>
     element for that.</p>
 
-    <p>The following is the full example of a top drawer:</p>
+    <p>The following is the full example of a top menu:</p>
 
     {{> example path="/layout/drawer/demos/top-drawer.html"}}
     {{#code-snippet "html"}}
@@ -95,18 +64,16 @@ toc:
       </body>
     {{/code-snippet}}
 
-    <h2 id="side-drawer" class="docs-h3">Side drawer</h2>
+    <h2 id="side-menu" class="docs-h3">Side menu</h2>
 
-    <p>Creating a side drawer is similar to creating a
-    <a href="#top-drawer">top drawer</a>. There are only two differences.
+    <p>Creating a side menu is similar to creating a
+    <a href="#top-menu">top menu</a>. There are only two differences.
     Use the <code>.togglable-*-left</code> or
-    <code>.togglable-*-right</code> class on the drawer.</p>
+    <code>.togglable-*-right</code> class on the drawer component.</p>
 
-    <p>Also, when making the drawer togglable from the side, it's highly
+    <p>Also, when making the menu togglable from the side, it's highly
     recommended to display a content mask, which can also be used
-    to close the drawer.</p>
-
-    <p>This is done using a <code>.mask</code>
+    to close the menu. This is done using a <code>.mask</code>
     element and the <code>[data-fade="drawer"]</code> plugin.</p>
 
     {{#code-snippet "html"}}
@@ -120,7 +87,7 @@ toc:
       </a>
     {{/code-snippet}}
 
-    <p>The following is the full example of a side drawer:</p>
+    <p>The following is the full example of a side menu:</p>
 
     {{> example path="/layout/drawer/demos/side-drawer.html"}}
     {{#code-snippet "html"}}
@@ -140,17 +107,17 @@ toc:
       </body>
     {{/code-snippet}}
 
-    <h2 id="persistent-side-drawer" class="docs-h3">Persistent side drawer</h2>
+    <h2 id="persistent-side-menu" class="docs-h3">Persistent side menu</h2>
 
-    <p>Creating a persistent drawer is much easier than adding a
+    <p>Creating a persistent menu is much easier than adding a
     togglable one to your web app. You don't need to
     introduce any plugins to your site.</p>
 
     <p>You just need to use either the <code>persistent-*-left</code>
     or the <code>persistent-*-right</code> class on your drawer
-    element.</p>
+    component.</p>
 
-    <p>The following is the full example of a persistent side drawer:</p>
+    <p>The following is the full example of a persistent side menu:</p>
 
     {{> example path="/layout/drawer/demos/persistent-drawer.html"}}
     {{#code-snippet "html"}}

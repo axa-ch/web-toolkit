@@ -11,8 +11,8 @@ toc:
     slug: containers
   - title: Grid
     slug: grid
-  - title: Drawer component
-    slug: drawer-component
+  - title: Mobile and side menu
+    slug: mobile-side-menu
   - title: Reponsive utilities
     slug: responsive-utilities
 ---
@@ -32,7 +32,7 @@ toc:
     <h2 id="containers" class="docs-h3">Containers</h2>
 
     <p>As in Bootstrap, you have two containers available. The default
-    one should always be the ordinary <code>container</code>, which restricts
+    one should always be the ordinary <code>.container</code>, which restricts
     your content to a certain width depending on your viewport.
     This behavior is perfect for all sort of informational websites,
     because it keeps things readable.</p>
@@ -55,7 +55,7 @@ toc:
       </div>
     {{/code-snippet}}
 
-    <p>The alternative is <code>container-fluid</code>. It doesn't
+    <p>The alternative is <code>.container-fluid</code>. It doesn't
     restrict to any specific width, keeping the whole browser estate
     for your content. You should only use this when building complex
     transactional websites, that need all the browser space available.</p>
@@ -82,24 +82,26 @@ toc:
 
     <p>The AXA Web Toolkit uses the 12-column Bootstrap grid. Whenever
     you use the grid to split some content into multiple columns, make
-    sure you place it inside a `container` or `container-fluid`.</p>
+    sure you place it inside a <code>.container</code> or
+    <code>.container-fluid</code>.</p>
 
     <p>You can find the full documentation of the grid in the official
     <a href="{{gridDocs}}">Bootstrap grid docs</a>.</p>
 
-    <h2 id="drawer-component" class="docs-h3">Drawer component</h2>
+    <h2 id="mobile-side-menu" class="docs-h3">Mobile and side menu</h2>
 
     <p>Especially on small screens, it's often necessary to
     toggle some content that slides into the viewport.
     The most common example
-    is the menu that is toggled by a burger (𝍫) button. But there
+    is the menu that is toggled by a burger button. But there
     are also some cases in which that behavior needs to be available
-    on larger screens, too. These docs are a great example for both those
+    on larger screens, too. This website is a great example for both those
     cases.</p>
 
     <p>In order to achieve such a behavior, there's the flexible
-    Drawer component. It's fully documented in it's own
-    <a href="{{relative '/layout/drawer/'}}">Drawer component docs</a>.</p>
+    <code>Drawer</code> component. It's usage is fully documented in the
+    <a href="{{relative '/layout/mobile-side-menu/'}}">mobile and side
+    menu docs</a>.</p>
 
     <h2 id="responsive-utilities" class="docs-h3">Responsive utilities</h2>
 
