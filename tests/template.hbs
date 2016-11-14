@@ -36,7 +36,7 @@
         {{numberOfFailedPages}} of {{numberOfPages}} pages have failing tests.
       </p>
       {{#each pages}}
-        <h1>{{page}}</h1>
+        <h1><a href="{{env.BASE_URL}}{{path}}">{{env.BASE_URL}}{{path}}</a></h1>
         {{#each tests}}
           <h2>{{name}}</h2>
           {{#gt misMatchPercentage 0}}
