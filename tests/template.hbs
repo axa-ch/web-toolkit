@@ -57,8 +57,10 @@
             </div>
           {{else}}
             <p class="passed">
-              Test passed with flying colors.
+              Test passed with flying colors. There was no differeence detected
+              to the expected image below:
             </p>
+            <img src="../{{expected}}" />
           {{/gt}}
         {{/each}}
       {{/each}}
