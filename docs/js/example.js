@@ -106,9 +106,9 @@ class Example {
   }
 
   mapViewportToWidth(viewport) {
-    if (viewport === 'xs') { return `${768 - 1}px` }
-    if (viewport === 'sm') { return `${992 - 1}px` }
-    if (viewport === 'md') { return `${1200 - 1}px` }
+    if (viewport === 'xs') { return '360px' }
+    if (viewport === 'sm') { return '768px' }
+    if (viewport === 'md') { return '992px' }
     return '100%'
   }
 
