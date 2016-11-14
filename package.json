@@ -131,6 +131,7 @@
     "metalsmith-watch": "^1.0.3",
     "multimatch": "^2.1.0",
     "node-sass": "^3.10.0",
+    "node-uuid": "^1.4.7",
     "object-fit-polyfill": "^0.1.0",
     "open": "0.0.5",
     "postcss-loader": "^0.13.0",
