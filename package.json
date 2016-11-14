@@ -70,8 +70,7 @@
       }
     }
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "babel-cli": "^6.14.0",
@@ -93,6 +92,7 @@
     "cheet.js": "^0.3.3",
     "classnames": "^2.2.5",
     "clean-webpack-plugin": "^0.1.10",
+    "clipboard": "^1.5.15",
     "colors": "^1.1.2",
     "concurrently": "^2.2.0",
     "css-loader": "^0.25.0",
@@ -144,8 +144,8 @@
     "serve-static": "^1.11.1",
     "slick-carousel": "^1.6.0",
     "slug": "^0.9.1",
-    "style-loader": "^0.13.1",
     "strip-loader": "^0.1.2",
+    "style-loader": "^0.13.1",
     "svg4everybody": "^2.1.0",
     "sync-files": "^1.0.3",
     "webpack": "^1.13.2",

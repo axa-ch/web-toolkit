@@ -2,10 +2,10 @@
 
 import $ from 'jquery'
 import svg4everybody from 'svg4everybody'
+import Clipboard from 'clipboard'
 
 import '../../js/index'
 
-import './clipboard'
 import './cheat'
 import './example'
 import './iframe-resizer'
@@ -45,3 +45,6 @@ $('[data-chat]').click((e) => {
   e.preventDefault()
   Intercom('show')
 })
+
+// eslint-disable-next-line no-new
+new Clipboard('.btn')
