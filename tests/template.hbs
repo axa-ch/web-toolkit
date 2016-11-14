@@ -38,7 +38,7 @@
       {{#each pages}}
         <h1><a href="{{env.BASE_URL}}{{path}}">{{env.BASE_URL}}{{path}}</a></h1>
         {{#each tests}}
-          <h2>{{name}}</h2>
+          <h2>{{name}} - Viewport width: {{viewport.width}}</h2>
           {{#gt misMatchPercentage 0}}
             <p class="failed">
               Test failed.
