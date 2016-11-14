@@ -1,5 +1,5 @@
 ---
-title: Table of Contents
+title: Table of contents
 description: This component provides an easy and clean way to provide a table of contents for a longer article.
 nav: side/components/table-of-contents
 order: 99
@@ -21,17 +21,21 @@ simple_example:
     <p>This component provides an easy and clean way to
     provide a table of contents for a longer article.</p>
 
-    <div class="table-of-contents">
-      <div class="table-of-contents__heading">Chapters</div>
-      <nav class="table-of-contents__nav">
-        <ul class="table-of-contents__menu">
-          {{#each simple_example}}
-            <li class="table-of-contents__item">
-              <a href="#" class="table-of-contents__link">{{title}}</a>
-            </li>
-          {{/each}}
-        </ul>
-      </nav>
+    <div class="docs-example">
+      <div class="docs-example-content">
+        <div class="table-of-contents">
+          <div class="table-of-contents__heading">Chapters</div>
+          <nav class="table-of-contents__nav">
+            <ul class="table-of-contents__menu">
+              {{#each simple_example}}
+                <li class="table-of-contents__item">
+                  <a href="#" class="table-of-contents__link">{{title}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
 
     {{#code-snippet "html"}}

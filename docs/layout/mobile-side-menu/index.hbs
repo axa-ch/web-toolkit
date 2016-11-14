@@ -1,0 +1,134 @@
+---
+title: Mobile and side menu
+description: Add a flexible mobile or side menu to your app.
+nav: side/layout/mobile-side-menu
+order: 2
+lunr: true
+toc:
+  - title: Top menu
+    slug: top-menu
+  - title: Side menu
+    slug: side-menu
+  - title: Persistent side menu
+    slug: persistent-side-menu
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <p class="lead">Use the highly flexible <code>Drawer</code>
+    component to create mobile or side menus. It helps you
+    create togglable mobile menus. On larger viewports,
+    it can also stick persistently on one side.
+    This website you're on even uses both depending on the viewport!</p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 id="top-menu" class="docs-h3">Top menu</h2>
+
+    <p>In order to add a top menu, first add a
+    <code>[data-make="drawer"]</code> to your <code>&lt;body&gt;</code> element
+    or one that will be parent of the drawer component and your burger button.
+    This will introduce the menu toggling feature, which toggles
+    whenever a <code>.header-burger</code> is clicked. It also
+    sends events to the <code>[data-fade="drawer"]</code> plugin,
+    which then intelligently switches CSS classes, depending on whether
+    the menu is open or not.</p>
+
+    <p>Next, add a
+    <code>&lt;div class="drawer togglable-*-top"&gt;&lt;/div&gt;</code>
+    element to your page. Use the <code>[data-fade="drawer"]</code> plugin
+    to toggle the <code>.in</code> class when the menu should be open.</p>
+
+    <p>Ultimately, make sure you have a burger button somewhere in your page.
+    Add a <code>&lt;a href="#" class="header-burger"&gt;&lt;/a&gt;</code>
+    element for that.</p>
+
+    <p>The following is the full example of a top menu:</p>
+
+    {{> example path="/layout/drawer/demos/top-drawer.html"}}
+    {{#code-snippet "html"}}
+      <body data-make="drawer">
+        <!-- Burger in header -->
+        <a href="#" class="header-burger float-xs-right" data-fade="drawer" data-target="#site" data-in="is-open">
+          <span class="header-burger-line"></span>
+        </a>
+
+        <!-- Content here... -->
+
+        <div class="drawer togglable-xs-top" data-fade="drawer" data-target="#site" data-in="in">
+          <!-- Drawer content here... -->
+        </div>
+      </body>
+    {{/code-snippet}}
+
+    <h2 id="side-menu" class="docs-h3">Side menu</h2>
+
+    <p>Creating a side menu is similar to creating a
+    <a href="#top-menu">top menu</a>. There are only two differences.
+    Use the <code>.togglable-*-left</code> or
+    <code>.togglable-*-right</code> class on the drawer component.</p>
+
+    <p>Also, when making the menu togglable from the side, it's highly
+    recommended to display a content mask, which can also be used
+    to close the menu. This is done using a <code>.mask</code>
+    element and the <code>[data-fade="drawer"]</code> plugin.</p>
+
+    {{#code-snippet "html"}}
+      <a
+        href="#"
+        class="mask"
+        data-fade="drawer"
+        data-target="#site"
+        data-in="fade-in-xs-down"
+        data-out="fade-out-delayed-xs-down">
+      </a>
+    {{/code-snippet}}
+
+    <p>The following is the full example of a side menu:</p>
+
+    {{> example path="/layout/drawer/demos/side-drawer.html"}}
+    {{#code-snippet "html"}}
+      <body data-make="drawer">
+        <!-- Burger in header -->
+        <a href="#" class="header-burger float-xs-right" data-fade="drawer" data-target="#site" data-in="is-open">
+          <span class="header-burger-line"></span>
+        </a>
+
+        <!-- Content here... -->
+
+        <div class="drawer togglable-xs-right" data-fade="drawer" data-target="#site" data-in="in">
+          <!-- Drawer content here... -->
+        </div>
+
+        <a href="#" class="mask" data-fade="drawer" data-target="#site" data-in="fade-in-xs-down" data-out="fade-out-delayed-xs-down"></a>
+      </body>
+    {{/code-snippet}}
+
+    <h2 id="persistent-side-menu" class="docs-h3">Persistent side menu</h2>
+
+    <p>Creating a persistent menu is much easier than adding a
+    togglable one to your web app. You don't need to
+    introduce any plugins to your site.</p>
+
+    <p>You just need to use either the <code>persistent-*-left</code>
+    or the <code>persistent-*-right</code> class on your drawer
+    component.</p>
+
+    <p>The following is the full example of a persistent side menu:</p>
+
+    {{> example path="/layout/drawer/demos/persistent-drawer.html"}}
+    {{#code-snippet "html"}}
+      <body class="push-sm-left">
+        <!-- Content here... -->
+
+        <div class="drawer persistent-sm-left hidden-xs-down">
+          <!-- Drawer content here... -->
+        </div>
+      </body>
+    {{/code-snippet}}
+
+  {{/inline}}
+{{/page}}

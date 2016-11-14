@@ -1,9 +1,11 @@
 @import '../../scss/style';
 @import '~highlight.js/styles/github';
 
-@import 'type';
 @import 'code-snippet';
 @import 'example';
+@import 'layout';
+@import 'responsive-utilities';
+@import 'type';
 
 @import './blocks/block';
 @import './blocks/box';
