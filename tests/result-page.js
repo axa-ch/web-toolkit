@@ -39,6 +39,7 @@ function resultPage(pages) {
     numberOfFailedTests,
     numberOfPages,
     numberOfTests,
+    env: process.env,
   })
 
   fs.writeFileSync('tests/results.html', output)
