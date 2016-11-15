@@ -47,4 +47,4 @@ $('[data-chat]').click((e) => {
 })
 
 // eslint-disable-next-line no-new
-new Clipboard('.btn')
+new Clipboard('.docs-code-snippet-copy')

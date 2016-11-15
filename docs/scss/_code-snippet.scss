@@ -1,4 +1,5 @@
 .docs-code-snippet {
+  position: relative;
   margin: 20px 0;
   padding: 20px 15px;
   border: none;
@@ -27,4 +28,42 @@
 .docs-code-snippet-clipboard-wrapper {
   display: flex;
   justify-content: flex-end;
+}
+
+.docs-code-snippet-copy {
+  display: flex;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 2px 8px;
+
+  transition: background $transition-slow $transition-ease, color $transition-slow $transition-ease;
+
+  border-width: 0;
+  border-radius: .25rem;
+  outline: none;
+  background-color: transparent;
+  color: $color-mine-shaft;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-dark-indigo;
+    text-decoration: none;
+  }
+
+  &:active {
+    background: $color-dark-indigo;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
 }
