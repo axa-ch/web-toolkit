@@ -1,10 +1,14 @@
 .docs-code-snippet {
   position: relative;
-  margin: 20px 0;
+  margin: 20px ($grid-gutter-width / -2);
   padding: 20px 15px;
   border: none;
-  border-radius: 5px;
   background-color: $color-wild-sand;
+
+  @include media-breakpoint-up(lg) {
+    margin: 20px 0;
+    border-radius: 5px;
+  }
 
   // reset the default pre styles when wrapped in .code-snippet
   pre {
@@ -21,8 +25,11 @@
 
 .docs-example + .docs-code-snippet {
   margin-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+  @include media-breakpoint-up(lg) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 
 .docs-code-snippet-clipboard-wrapper {

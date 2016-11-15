@@ -1,10 +1,14 @@
 .docs-example {
-  margin: 0;
+  margin: 0 ($grid-gutter-width / -2);
   padding: 18px;
 
   border: 5px solid $color-wild-sand;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
 }
 
 .docs-example-devices-list {
