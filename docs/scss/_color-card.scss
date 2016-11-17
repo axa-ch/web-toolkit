@@ -1,0 +1,16 @@
+.color-card {
+  margin-bottom: 20px;
+  padding: ($grid-gutter-width / 2);
+
+  border-radius: 5px;
+  background: $color-wild-sand;
+}
+
+.color-card-color {
+  height: 50px;
+  border: 1px solid $color-mercury;
+}
+
+.color-card-anchor {
+  vertical-align: middle;
+}

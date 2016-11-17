@@ -1,0 +1,27 @@
+---
+title: Colors
+description: Overview over our color variables.
+nav: side/api/colors
+order: 0
+---
+{{#> page}}
+  {{#*inline "content"}}
+    {{#each sassdoc.colors as |palette paletteName|}}
+      <h2>{{paletteName}}</h2>
+      {{!-- TODO: Review flexbox stuff, make it a mixin/class? --}}
+      <div class="row" style="display: flex; flex-wrap: wrap;">
+        {{#each palette}}
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="color-card">
+              <h3 class="typo-item-highlight" id="{{name}}"><a href="#{{name}}" class="color-card-anchor"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a> {{title}}</h3>
+              <p><code id="scss-{{name}}">${{name}}</code> <button type="button" data-clipboard-target="#scss-{{name}}" class="btn btn-xs btn-default" aria-label="copy scss var"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button></p>
+              <p><code id="hex-{{name}}">{{value}}</code> <button type="button" data-clipboard-target="#hex-{{name}}" class="btn btn-xs btn-default" aria-label="copy hex code"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button></p>
+              <p>{{description}}</p>
+              <div class="color-card-color" style="background: {{value}}"></div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+  {{/inline}}
+{{/page}}
