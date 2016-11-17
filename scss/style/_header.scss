@@ -28,6 +28,30 @@ $header-search-lg-width: 500px;
     top: 0;
     z-index: $z-index-fixed-header;
   }
+
+  &.header-absolute {
+    position: absolute;
+    transition: position 0 linear $transition-delay-normal;
+  }
+
+  &.revealable {
+    position: fixed;
+    top: 0;
+    transform: translateY(-100%);
+  }
+
+  &.revealed,
+  &.unrevealed {
+    transition: transform $transition-normal $transition-ease;
+  }
+
+  &.revealed {
+    transform: translateY(0%);
+  }
+
+  &.unrevealed {
+    transform: translateY(-100%);
+  }
 }
 
 .header-title {
