@@ -6,8 +6,14 @@ order: 0
 ---
 {{#> page}}
   {{#*inline "content"}}
+    <h1 class="h2">Colors</h1>
+    <p>
+      Get an overview and a quick way to copy the right scss
+      variable name or hex code into your clipboard.
+    </p>
+
     {{#each sassdoc.colors as |palette paletteName|}}
-      <h2>{{paletteName}}</h2>
+      <h2 class="h3">{{paletteName}}</h2>
       {{!-- TODO: Review flexbox stuff, make it a mixin/class? --}}
       <div class="row" style="display: flex; flex-wrap: wrap;">
         {{#each palette}}
