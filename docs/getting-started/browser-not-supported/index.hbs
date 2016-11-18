@@ -1,0 +1,60 @@
+---
+title: Browser not supported
+description: asdf
+nav: side/getting-started/browser-not-supported
+order: 3
+lunr: true
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <!-- <= IE9 redirect -->
+    <!--[if lte IE 9]>
+    <![endif]-->
+    <div class="browser-not-supported-overlay">
+      <div class="browser-not-supported">
+        <header class="header">
+          <div class="header-main">
+            <div class="container">
+              <a href="#" class="header-brand">
+                <img class="header-brand-image" src="{{relative '/images/axa.svg'}}" />
+              </a>
+            </div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="jumbotron">
+            <h1 class="h3 browser-not-supported-title">Your browser is not supported. Sry mate!</h1>
+            <h2 class="h4 browser-not-supported-message">Please use one of the following browsers to view our page.</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <a class="browser-not-supported-link" href="https://www.google.com/chrome/">
+                <span class="h4 browser-not-supported-browsername">Chrome</span>
+                <img class="browser-not-supported-browsericon" src="{{relative '/images/legacy-chrome.png'}}">
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a class="browser-not-supported-link" href="https://www.mozilla.org/en-US/firefox/new/">
+                <span class="h4 browser-not-supported-browsername">Firefox</span>
+                <img class="browser-not-supported-browsericon" src="{{relative '/images/legacy-firefox.png'}}">
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a class="browser-not-supported-link" href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                <span class="h4 browser-not-supported-browsername">Edge</span>
+                <img class="browser-not-supported-browsericon" src="{{relative '/images/legacy-edge.png'}}">
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a class="browser-not-supported-link" href="https://support.apple.com/downloads/safari">
+                <span class="h4 browser-not-supported-browsername">Safari</span>
+                <img class="browser-not-supported-browsericon" src="{{relative '/images/legacy-safari.png'}}">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/inline}}
+{{/page}}
