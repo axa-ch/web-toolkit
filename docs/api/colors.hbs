@@ -7,7 +7,7 @@ order: 0
 {{#> page}}
   {{#*inline "content"}}
     <h1 class="h2">Colors</h1>
-    <p>
+    <p class="lead">
       Get an overview and a quick way to copy the right scss
       variable name or hex code into your clipboard.
     </p>
@@ -17,13 +17,16 @@ order: 0
       {{!-- TODO: Review flexbox stuff, make it a mixin/class? --}}
       <div class="row" style="display: flex; flex-wrap: wrap;">
         {{#each palette}}
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="color-card">
-              <h3 class="typo-item-highlight" id="{{name}}"><a href="#{{name}}" class="color-card-anchor"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a> {{title}}</h3>
-              <p><code id="scss-{{name}}">${{name}}</code> <button type="button" data-clipboard-target="#scss-{{name}}" class="btn btn-xs btn-default" aria-label="copy scss var"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button></p>
-              <p><code id="hex-{{name}}">{{value}}</code> <button type="button" data-clipboard-target="#hex-{{name}}" class="btn btn-xs btn-default" aria-label="copy hex code"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button></p>
-              <p>{{description}}</p>
-              <div class="color-card-color" style="background: {{value}}"></div>
+          <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom: 20px;">
+            <div class="color-card" style="background: {{value}}; color: {{front-color value}};">
+              <h3 class="color-card-title" id="{{name}}">{{title}}</h3>
+              <p class="color-card-description">{{description}}</p>
+              <p class="color-card-variable">
+                <code id="scss-{{name}}" data-clipboard-target="#scss-{{name}}">${{name}}</code>
+              </p>
+              <p class="color-card-hex">
+                <code id="hex-{{name}}" data-clipboard-target="#hex-{{name}}">{{value}}</code>
+              </p>
             </div>
           </div>
         {{/each}}
