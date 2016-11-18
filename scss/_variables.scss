@@ -86,27 +86,33 @@ $drawer-widths: (
   lg: 300px
 );
 
-// Colors
-//----- Basic palette
-
+/// Used in our logo and as the subtle text color on dark backgrounds.
 /// @title AXA Blue
 /// @color Brand Colors
 $color-axa-blue: #103184;
+
+/// Used in our logo, to attract special offers and in error states.
 /// @title AXA Red
 /// @color Brand Colors
 $color-axa-red: #c91432;
+
 /// @title Deep Sapphire
 /// @color Main Colors
 $color-deep-sapphire: #0d2970;
+
 /// @title St. Tropaz
 /// @color Main Colors
 $color-st-tropaz: #22449a;
+
 /// @title Azure
 /// @color Main Colors
 $color-azure: #3054ae;
+
+/// Used for links and as the most common background color.
 /// @title Dark Indigo
 /// @color Main Colors
 $color-dark-indigo: #4267c3;
+
 /// @title Indigo
 /// @color Main Colors
 $color-indigo: #5174cb;
@@ -114,37 +120,51 @@ $color-indigo: #5174cb;
 /// @title Flamingo
 /// @color Main Colors
 $color-flamingo: #ec4d33;
+
+/// Used as the text color for call to action links.
 /// @title Burnt Sienna
 /// @color Main Colors
 $color-burnt-sienna: #f07662;
 
+/// Used as the default text color.
 /// @title Mineshaft
 /// @color Main Colors
 $color-mineshaft: #333333;
+
 /// @title Scorpion
 /// @color Main Colors
 $color-scorpion: #5f5f5f;
+
 /// @title Gray
 /// @color Main Colors
 $color-gray: #7f7f7f;
+
 /// @title Dusty Gray
 /// @color Main Colors
 $color-dusty-gray: #999999;
+
 /// @title Silver
 /// @color Main Colors
 $color-silver: #cccccc;
+
 /// @title Mercury
 /// @color Main Colors
 $color-mercury: #e5e5e5;
+
+/// Used for light subtle backgrounds.
 /// @title Wild Sand
 /// @color Main Colors
 $color-wild-sand: #f5f5f5;
+
 /// @title Alabaster
 /// @color Main Colors
 $color-alabaster: #fafafa;
+
+/// Used as the default text color on dark backgrounds.
 /// @title White
 /// @color Main Colors
 $color-white: #ffffff;
+
 /// @title Black
 /// @color Main Colors
 $color-black: #000000;
@@ -152,6 +172,7 @@ $color-black: #000000;
 /// @title Periwinkle
 /// @color Main Colors
 $color-periwinkle: #c9d8ff;
+
 /// @title Iceberg
 /// @color Main Colors
 $color-iceberg: #d4eef5;
@@ -166,7 +187,6 @@ $color-mountain-meadow: #1c9a67;
 $color-jungle-green: #2ab27b;
 $color-fountain-blue: #57c3c3;
 $color-monte-carlo: #7ed2d2;
-
 
 //----- Override bootstrap colors
 
