@@ -4,32 +4,19 @@
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: scroll;
   background: $color-white;
+  overflow: scroll;
   z-index: 999;
-}
-
-.browser-not-supported .jumbotron {
-  background: $color-dark-indigo;
-
-  & .browser-not-supported-title {
-    color: $color-white;
-  }
-  & .browser-not-supported-message {
-    color: $color-white;
-  }
 }
 
 .browser-not-supported-link {
   display: block;
+  padding-bottom: 20px;
   text-align: center;
 
   &:hover {
     text-decoration: none;
   }
-}
-
-.browser-not-supported-browsername {
 }
 
 .browser-not-supported-browsericon {
