@@ -120,7 +120,7 @@ class Example {
   }
 
   setViewport(viewport) {
-    return this.$frame.css('max-width', this.mapViewportToWidth(viewport))
+    return this.$frame.css('width', this.mapViewportToWidth(viewport))
   }
 
   setMode(viewport) {
