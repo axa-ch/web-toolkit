@@ -1,0 +1,34 @@
+---
+title: Tables
+description: Description of how to deal with tables in your app.
+nav: side/components/tables
+order: 1
+toc:
+  - title: Bootstrap tables
+    slug: bootstrap-tables
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">{{title}}</h1>
+    <p class="lead">
+      Tables are a very difficult beast to tame and used for a
+      variety of very different use cases.
+      If you have great tables that are based on our toolkit and
+      guidelines, we're happy to accept pull requests and showcase
+      them here.
+    </p>
+
+    {{> table-of-contents data=toc}}
+    
+    <h2 class="h3" id="bootstrap-tables">Bootstrap tables</h2>
+    <p>
+      For now we have the bootstrap tables with little
+      modifiactions to the colors. They're very helpful in a
+      number of use cases.
+    </p>
+
+    {{> example path="/components/tables/demos/bootstrap-tables.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/tables/snippets/bootstrap-tables"}}{{{.}}}{{/get}}{{/code-snippet}}
+  {{/inline}}
+{{/page}}
