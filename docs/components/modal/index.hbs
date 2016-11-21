@@ -1,0 +1,30 @@
+---
+title: Modal
+description: Showcase and info about the modal
+nav: side/components/modal
+order: 3
+lunr: true
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <h1 class="docs-h2">{{title}}</h1>
+    <p class="lead">
+      We use the bootstrap modal with a few modifications to the
+      optics to account for our AXA styling.
+      Any proper implementation of the bootstrap modal should
+      therefore look like ours.
+    </p>
+    <p>
+      See an example of it below. The bootstrap modal supports a
+      variety of options (e.g. sizes). Make sure to visit the
+      <a href="{{package.bootstrapDocs}}javascript/#modals">bootstrap
+      docs</a> for more info on the options.
+    </p>
+
+    {{> example path="/components/modal/demos/modal.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/modal/snippets/modal"}}{{{this}}}{{/get}}{{/code-snippet}}
+
+  {{/inline}}
+{{/page}}
