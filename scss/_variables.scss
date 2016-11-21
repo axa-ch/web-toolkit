@@ -205,6 +205,10 @@ $color-button-secondary: $color-st-tropaz;
 
 $badge-bg: $color-indigo;
 
+$jumbotron-bg: $color-dark-indigo;
+$jumbotron-color: $color-white;
+$jumbotron-heading-color: $color-white;
+
 $navbar-default-bg: $color-wild-sand;
 $navbar-default-border: $color-wild-sand;
 $navbar-default-color: $color-mineshaft;
@@ -350,6 +354,7 @@ $z-index-header: 15;
 $z-index-fixed-header: 16;
 $z-index-mask: 17;
 $z-index-drawer-side: 20;
+$z-index-browser-not-supported-overlay: 999;
 
 // Old z-index
 $z-index-progress-step: 15;

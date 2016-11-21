@@ -1,0 +1,87 @@
+---
+title: Browser not supported page
+description: Notify users of old browsers to upgrade in order to enjoy your app.
+nav: side/getting-started/browser-not-supported
+order: 3
+lunr: true
+toc:
+  - title: Redirect
+    slug: redirect
+  - title: Overlay
+    slug: overlay
+---
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <p class="lead">
+      You're probably not going to support every browser in the world
+      (Yes, we're talking about you Internet Explorer.)
+      We recommend showing a "Browser not supported" page instead of
+      displaying a page with rendering errors and broken behavior.
+    </p>
+
+    <p>
+      There are two good ways to show users of old IE versions (version <= 9).
+      Both are based on IE's conditional comments features.
+    </p>
+    
+    {{> table-of-contents data=toc}}
+
+    <h2 id="redirect" class="docs-h3">Redirect</h2>
+    <p>
+      You can redirect to another URL that shows the user the
+      "Browser not supported" page using a meta tag.
+    </p>
+
+    {{#code-snippet "html"}}
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <!--[if lte IE 9]>
+            <meta http-equiv="refresh" content="0; URL=/your/browser-not-supported-page.html">
+          <![endif]-->
+          <!-- Meta Tags here. -->
+        </head>
+        <body>
+          <!-- Your page for users of modern browsers here.-->
+        </body>
+      </html>
+    {{/code-snippet}}
+
+    <p>
+      Our sample page looks like this:
+    </p>
+
+    {{> example path="/getting-started/browser-not-supported/demos/full-page.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/getting-started/browser-not-supported/snippets/full-page"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h2 id="overlay" class="docs-h3">Overlay</h2>
+    <p>
+      Also based on conditional comments, you can include an overlay
+      that uses <code>position: fixed;</code> to cover the broken
+      layout of your page with a simple IE optimized layout.
+    </p>
+
+    <div class="alert alert-info">
+      <strong>Info!</strong> You will also need to place the header in
+      this overlay.
+    </div>
+
+    {{#code-snippet "html"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    Meta Tags here.
+  </head>
+  <body>
+<!--[if lte IE 9]>
+  {{#get snippets "/getting-started/browser-not-supported/snippets/full-page"}}{{{.}}}{{/get}}
+<![endif]-->
+    Your content for all your customers using modern browsers.
+  </body>
+</html>
+    {{/code-snippet}}
+
+  {{/inline}}
+{{/page}}
