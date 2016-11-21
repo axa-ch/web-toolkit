@@ -6,7 +6,7 @@
   height: 100%;
   background: $color-white;
   overflow: scroll;
-  z-index: 999;
+  z-index: $z-index-browser-not-supported-overlay;
 }
 
 .browser-not-supported-link {
