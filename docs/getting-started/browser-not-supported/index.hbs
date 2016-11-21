@@ -1,6 +1,6 @@
 ---
 title: Browser not supported page
-description: asdf
+description: Notify users of old browsers to upgrade in order to enjoy your app.
 nav: side/getting-started/browser-not-supported
 order: 3
 lunr: true
@@ -38,11 +38,13 @@ toc:
       <!DOCTYPE html>
       <html>
         <head>
-          <!--[if lte IE 9]><meta http-equiv="refresh" content="0; URL=/your/browser-not-supported-page.html"><![endif]-->
-          Meta Tags here.
+          <!--[if lte IE 9]>
+            <meta http-equiv="refresh" content="0; URL=/your/browser-not-supported-page.html">
+          <![endif]-->
+          <!-- Meta Tags here. -->
         </head>
         <body>
-          Your page for users of modern browsers here.
+          <!-- Your page for users of modern browsers here.-->
         </body>
       </html>
     {{/code-snippet}}
@@ -67,18 +69,18 @@ toc:
     </div>
 
     {{#code-snippet "html"}}
-<!DOCTYPE html>
-<html>
-  <head>
-    Meta Tags here.
-  </head>
-  <body>
-<!--[if lte IE 9]>
-{{#get snippets "/getting-started/browser-not-supported/snippets/full-page"}}{{{.}}}{{/get}}
-<![endif]-->
-    Your content for all your customers using modern browsers.
-  </body>
-</html>
+      <!DOCTYPE html>
+      <html>
+        <head>
+          Meta Tags here.
+        </head>
+        <body>
+          <!--[if lte IE 9]>
+            {{#get snippets "/getting-started/browser-not-supported/snippets/full-page"}}{{{.}}}{{/get}}
+          <![endif]-->
+          Your content for all your customers using modern browsers.
+        </body>
+      </html>
     {{/code-snippet}}
 
   {{/inline}}
