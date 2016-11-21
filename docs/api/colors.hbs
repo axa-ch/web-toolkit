@@ -1,0 +1,36 @@
+---
+title: Colors
+description: Overview over our color variables.
+nav: side/api/colors
+order: 0
+---
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">Colors</h1>
+    <p class="lead">
+      Get an overview and a quick way to copy the right scss
+      variable name or hex code into your clipboard.
+    </p>
+
+    {{#each sassdoc.colors as |palette paletteName|}}
+      <h2 class="h3">{{paletteName}}</h2>
+      {{!-- TODO: Review flexbox stuff, make it a mixin/class? --}}
+      <div class="row" style="display: flex; flex-wrap: wrap;">
+        {{#each palette}}
+          <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom: 20px;">
+            <div class="color-card" style="background: {{value}}; color: {{front-color value}};">
+              <h3 class="color-card-title" id="{{name}}">{{title}}</h3>
+              <p class="color-card-description">{{description}}</p>
+              <p class="color-card-variable">
+                <code id="scss-{{name}}" data-clipboard-target="#scss-{{name}}">${{name}}</code>
+              </p>
+              <p class="color-card-hex">
+                <code id="hex-{{name}}" data-clipboard-target="#hex-{{name}}">{{value}}</code>
+              </p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+  {{/inline}}
+{{/page}}
