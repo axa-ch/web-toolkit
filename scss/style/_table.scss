@@ -2,14 +2,14 @@
   border: none;
 
   & thead {
-    border-top: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    border-left: 1px solid #ccc;
+    border-top: 1px solid $table-border-color;
+    border-right: 1px solid $table-border-color;
+    border-left: 1px solid $table-border-color;
   }
 
   & thead {
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    border-left: 1px solid #ccc;
+    border-right: 1px solid $table-border-color;
+    border-bottom: 1px solid $table-border-color;
+    border-left: 1px solid $table-border-color;
   }
 }
