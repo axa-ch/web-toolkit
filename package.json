@@ -9,6 +9,8 @@
   "distArchive": "https://github.com/axa-group/web-toolkit/releases/download/v{tag}/web-toolkit-v{tag}-dist.zip",
   "sourceArchive": "https://github.com/axa-group/web-toolkit/archive/{tag}.zip",
   "npmjsPackage": "https://www.npmjs.com/package/@axa/web-toolkit",
+  "cdnCss": "https://unpkg.com/@axa/web-toolkit@{tag}/dist/bundles/all.css",
+  "cdnJs": "https://unpkg.com/@axa/web-toolkit@{tag}/dist/bundles/all.js",
   "keywords": [
     "axa",
     "insurance",
