@@ -61,7 +61,7 @@
           </div>
 
           <div class="header-title float-xs-right">
-            <a class="label label-primary" href="https://github.com/axa-group/web-toolkit/releases" >{{package.version}}</a>
+            <a class="label label-primary" href="{{package.releasesUrl}}" >{{package.version}}</a>
           </div>
         </div>
       </div>
@@ -99,12 +99,6 @@
           {{#with menu.side}}
             {{> menu}}
           {{/with}}
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link"
-              href="https://github.com/axa-group/web-toolkit/releases">
-              <span class="mobile-menu__text" >Releases</span>
-            </a>
-          </li>
         </ul>
       </nav>
 
@@ -114,6 +108,10 @@
         <a class="list-group__item list-group__item--link" href="{{package.repository.url}}">
           {{> icon name="github" classes="list-group__icon"}}
           <span class="list-group__text">View on GitHub</span>
+        </a>
+        <a class="list-group__item list-group__item--link" href="{{package.releasesUrl}}">
+          {{> icon name="empty" classes="list-group__icon"}}
+          <span class="list-group__text">Releases</span>
         </a>
       </div>
     </div>
