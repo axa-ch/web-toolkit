@@ -1,0 +1,101 @@
+---
+title: Icons
+description: Guidelines on how to work with icons.
+nav: side/getting-started/icons
+order: 3
+toc:
+  - title: Iconsets
+    slug: iconsets
+  - title: SVGs
+    slug: svgs
+  - title: Inline SVGs
+    slug: inline-svgs
+  - title: SVG sprites
+    slug: svg-sprites
+  - title: Icon fonts
+    slug: icon-fonts
+  - title: How to choose
+    slug: choosing
+---
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">Icons</h1>
+    <p class="lead">
+      Get an overview over what icons to use, how we use icons, and
+      how we recommend you use icons.
+    </p>
+
+    <div class="alert alert-info">
+      <strong>TLDR:</strong> You can use both icon fonts as well as
+      SVGs. Go with what's best supported by your stack and if it
+      doesn't matter take inline SVGs.
+    </div>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 class="h3" id="iconsets">Iconsets</h2>
+    <p>
+      We're using the glyphicon iconset that is made available
+      to all bootstrap users. Make sure to give them credit in
+      your apps.
+    </p>
+    <p>
+      We have a few additional icons that we're using in some of
+      our components. They're always used as inline svg elements
+      so you can copy & paste the code as is.
+    </p>
+    <h2 class="h3" id="svgs">SVGs</h2>
+    <p>
+      SVGs are web native technologies and extremely versatile.
+      They support powerful animations, can be styled through css,
+      manipulated with Javascript and inspected with your
+      browser's dev-tools.
+    </p>
+    <div class="alert alert-warning">
+      <strong>Do not</strong> link to SVGs individually. Use inline SVGs
+      or sprites.
+    </div>
+    <h2 class="h3" id="inline-svgs">Inline SVGs</h2>
+    <p>
+      We use inline SVGs for most use cases in our components.
+      They do not require additional requests, or build steps.
+      They are easily copy&paste-able. They may bloat
+      your markup a little bit and increase the payload if you
+      use them repeatedly, but gzip can take care of most of that
+      very well.
+    </p>
+    <p>
+      By being in the same context as the rest of your content,
+      they respect CSS rules from your stylesheets and can be
+      manipulated through your Javascript.
+    </p>
+    <h2 class="h3" id="svg-sprites">SVG sprites</h2>
+    <p>
+      SVG sprites are files containing multiple SVG symbols.
+      You can reference a sprite in your document and then use
+      the SVGs <code>use</code> element to reference specific symbols.
+    </p>
+    <p>
+      Unlike inline SVGs they don't care about your CSS and cannot be
+      manipulated with Javascript.<br />
+      You can also inline a sprite at the top of your document to Make
+      use of some of these options.
+    </p>
+    <h2 class="h3" id="icon-fonts">Icon fonts</h2>
+    <p>
+      Icon fonts are probably the most common way to display icons.
+      Like SVGs icon fonts are widely supported by browsers and the
+      developer community. SVG sprites are even limited to IE9 and
+      higher, a limitation not applying to icon fonts.
+    </p>
+    <h2 class="h3" id="choosing">How to choose</h2>
+    <p>
+      If you're unsure what to choose, look at what is best supported
+      and or best practice by the other frameworks in your stack.
+      If you're still unsure, go with inline SVGs. They're greatly
+      supported, very versatile and as non-text elements allow for
+      better positioning and sizing and in some cases their rendering
+      is just a bit crispier.
+    </p>
+  {{/inline}}
+{{/page}}
