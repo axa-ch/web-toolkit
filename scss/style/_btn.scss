@@ -5,13 +5,13 @@
 ///   <button type="button" class="btn btn-axa">AXA Button</button>
 .btn-axa {
   @include typo-16();
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 600;
-
   border-width: 0;
   border-bottom-width: 2px;
   border-style: solid;
+  
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 
   &.btn.btn-lg {
     border-width: 0;
@@ -39,23 +39,27 @@
     // Reduce vertical padding by 1px because we increase border-width by 1px
     @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
       $font-size-large, $line-height-large, $btn-border-radius-large);
+    @include typo-16();
+    
     border-width: 2px;
   }
 
   &.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
       $font-size-small, $line-height-small, $btn-border-radius-small);
+    @include typo-16();
   }
 
   &.btn-xs {
     @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
       $line-height-small, $btn-border-radius-small);
+    @include typo-16();
   }
 
-  line-height: 1.5;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
 
   .badge {
     font-size: .9em;

@@ -2,8 +2,18 @@
   @include button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius);
 
   & .glyphicon {
-    margin-right: -$padding-horizontal;
     width: $line-height + $padding-vertical + $padding-vertical;
+    margin-right: -$padding-horizontal;
+  }
+
+  & .btn-icon {
+    display: block;
+    align-self: center;
+    width: $line-height + $padding-vertical + $padding-vertical;
+    height: 1em;
+    margin-top: 5px;
+    margin-right: -$padding-horizontal;
+    float: right;
   }
 
   &.btn-split-icon {
@@ -11,14 +21,32 @@
 
     & .glyphicon {
       display: flex;
-      margin-left: 20px;
-      margin-right: -$padding-horizontal;
-      margin-top: (-$padding-vertical - 1px);
-      margin-bottom: (-$padding-vertical - 1px);
-      height: $line-height + 2*$padding-vertical;
-      width: $line-height + 2*$padding-vertical;
       align-items: center;
       justify-content: center;
+      width: $line-height + 2*$padding-vertical;
+      height: $line-height + 2*$padding-vertical;
+      margin-top: (-$padding-vertical - 1px);
+      margin-right: -$padding-horizontal;
+      margin-bottom: (-$padding-vertical - 1px);
+      margin-left: 20px;
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+
+    & .btn-icon {
+      display: block;
+      align-self: center;
+      width: $line-height + 2*$padding-vertical;
+      height: $line-height + 2*$padding-vertical;
+      margin-top: (-$padding-vertical - 1px);
+      margin-right: -$padding-horizontal;
+      margin-bottom: (-$padding-vertical - 1px);
+      margin-left: 20px;
+      padding-top: $padding-vertical + ($line-height - $font-size)/2;
+      padding-right: $padding-vertical + ($line-height - $font-size)/2;
+      padding-bottom: $padding-vertical + ($line-height - $font-size)/2;
+      padding-left: $padding-vertical + ($line-height - $font-size)/2 -1px;
+      float: unset;
       border-left-width: 1px;
       border-left-style: solid;
     }
@@ -26,39 +54,38 @@
 }
 
 @mixin button-primary($main, $secondary, $contrast) {
+  transition: background-position $duration-fast $motion-easein;
+  border-color: $secondary;
   background: $color-button-primary;
-
-  color: $contrast;
   background-image: linear-gradient(to bottom, $main 50%, $secondary 50%);
   // Use a bit more than 200% to avoid anti-aliasing creating a small top border
   // in hover state and not much more to not affect the animation
   background-size: 100% 202%;
-  border-color: $secondary;
-  transition: background-position $duration-fast $motion-easein;
+
+  color: $contrast;
 
   &:focus,
   &.focus,
   &:hover {
-    background-position: 0 100%;
-    border-color: $secondary;
-    color: $contrast;
     transition: background-position $duration-fast $motion-easeout;
+    border-color: $secondary;
+    background-position: 0 100%;
+    color: $contrast;
   }
 
   &:active,
   &.active,
   .open > &.dropdown-toggle {
-    background-position: 0 100%;
     border-color: $secondary;
+    background-position: 0 100%;
     color: $contrast;
 
     &:hover,
     &:focus,
     &.focus {
-      color: $contrast;
-      border-color: $secondary;
-      background-color: darken($secondary, 8%);
       border-color: darken($secondary, 8%);
+      background-color: darken($secondary, 8%);
+      color: $contrast;
     }
   }
   &:active,
@@ -69,41 +96,41 @@
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    background: lightgray;
+    border-color: $color-scorpion;
+    background: $color-wild-sand;
     background-image: none;
-    border-color: dimgray;
-    color: dimgray;
+    color: $color-scorpion;
 
     &:hover,
     &:focus,
     &.focus {
-      background-color: lightgray;
-      border-color: dimgray;
-      color: dimgray;
+      border-color: $color-scorpion;
+      background-color: $color-wild-sand;
+      color: $color-scorpion;
     }
   }
 
   .badge {
-    color: $main;
     background-color: $contrast;
+    color: $main;
   }
 
   &:hover,
   &:focus,
   &.focus {
     .badge {
-      color: $secondary;
       background-color: $contrast;
+      color: $secondary;
     }
     
     &.btn-split-icon {
-      & .glyphicon {
+      & .glyphicon, & .btn-icon {
         border-left-color: $main;
       }
     }
   }
      
-  &.btn-split-icon {
+  &.btn-split-icon, & .btn-icon {
     & .glyphicon {
       border-left-color: $secondary;
     }
@@ -118,8 +145,8 @@
   &:hover,
   &:focus,
   &.focus {
-    color: $secondary;
     border-color: $secondary;
+    color: $secondary;
 
     .badge {
       background-color: $secondary;
@@ -129,10 +156,10 @@
 
   &:active,
   &.active {
-    outline: 0;
     @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
-    color: darken($secondary, 8%);
     border-color: darken($secondary, 8%);
+    outline: 0;
+    color: darken($secondary, 8%);
 
     .badge {
       background-color: darken($secondary, 8%);
@@ -143,13 +170,14 @@
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
+    @include opacity(.65);
+    @include box-shadow(none);
+    
     border-color: $main;
     background: $contrast;
     color: $main;
 
     cursor: $cursor-disabled;
-    @include opacity(.65);
-    @include box-shadow(none);
   }
   
   .badge {

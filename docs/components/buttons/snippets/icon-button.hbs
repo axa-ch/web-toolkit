@@ -6,3 +6,7 @@ layout: demo.hbs
   <button type="button" class="btn btn-split-icon btn-primary">Split Icon Button<span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
   <button type="button" class="btn btn-primary">Fallback Icon Button<span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
 </p>
+<p>
+  <button type="button" class="btn btn-split-icon btn-primary">Split Icon Button{{> icon name="search" classes="btn-icon"}}</button>
+  <button type="button" class="btn btn-primary">Fallback Icon Button{{> icon name="search" classes="btn-icon"}}</button>
+</p>
