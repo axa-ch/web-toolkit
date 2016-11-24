@@ -6,6 +6,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://design.axa.com/toolkit",
   "homepageWebGuidelines": "https://design.axa.com/introduction",
+  "releasesUrl": "https://github.com/axa-group/web-toolkit/releases",
   "distArchive": "https://github.com/axa-group/web-toolkit/releases/download/v{tag}/web-toolkit-v{tag}-dist.zip",
   "sourceArchive": "https://github.com/axa-group/web-toolkit/archive/{tag}.zip",
   "bootstrapDocs": "http://bootstrapdocs.com/v3.3.6/docs/",
