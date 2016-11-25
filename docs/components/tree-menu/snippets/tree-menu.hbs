@@ -1,0 +1,45 @@
+---
+title: Tree menu
+layout: demo.hbs
+data:
+  - title: First parent
+    children:
+      - title: First child
+      - title: Second child
+      - title: Third child
+  - title: Second parent
+    children:
+      - title: First child
+      - title: Second child
+      - title: Third child
+  - title: Third parent
+    children:
+      - title: First child
+      - title: Second child
+      - title: Third child
+---
+<nav class="tree-menu" data-menu="collapsing">
+  <ul class="tree-menu__level is-open" data-level>
+    {{#each data}}
+      <li class="tree-menu__item">
+        <a class="tree-menu__link{{#if children}} tree-menu__link--parent{{/if}}" data-link href="#">
+          <span class="tree-menu__text">{{title}}</span>
+          {{#if children}}
+            {{> icon name="arrow-right" classes="tree-menu__link__parent-icon"}}
+          {{/if}}
+        </a>
+        {{#if children}}
+          <ul class="tree-menu__level" data-level>
+            {{#each children}}
+              <li class="tree-menu__item">
+                <a class="tree-menu__link" data-link href="#">
+                  <span class="tree-menu__text">{{title}}</span>
+                </a>
+              </li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</nav>
