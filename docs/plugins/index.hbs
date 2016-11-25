@@ -1,0 +1,232 @@
+---
+title: Plugins
+description: An API reference of all plugins provided by the AXA Web Toolkit.
+nav: side/plugins
+order: 5
+lunr: true
+toc:
+  - title: Drawer
+    slug: drawer
+  - title: Search
+    slug: search
+  - title: Fade
+    slug: fade
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <p class="lead">The Web Toolkit comes with a set of helpful
+    jQuery plugins, that add interactivity to your web app without
+    having to use a fully fledged js framework or library.</p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 id="drawer" class="docs-h3">Drawer</h2>
+
+    <p>The drawer plugin introduces one simple binary state to your
+    app: either it's <em>open</em> or <em>closed</em>.
+    That state is then toggled by your burger and mask elements,
+    or using JavaScript. To make things appear or disappear depending
+    on that state, there's the <a href="#fade">fade plugin</a> which you
+    can then initialize with <code>data-fade="drawer"</code>.</p>
+
+    <h3 class="docs-h4">Usage via data attributes</h3>
+
+    <p>Initialize the plugin by adding the attribute
+    <code>data-make="drawer"</code> to <code>&lt;body&gt;</code>.</p>
+
+    {{#code-snippet "html"}}
+      <body data-make="drawer">
+        <!-- content here... -->
+      </body>
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Usage via JavaScript</h3>
+
+    <p>Initialize the plugin by calling the <code>.drawer()</code>
+    method on the <code>&lt;body&gt;</code> element.</p>
+
+    {{#code-snippet "js"}}
+      $('body').drawer()
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Methods</h3>
+
+    <h4 class="docs-h5"><code>$().drawer()</code></h4>
+
+    <p>With this method call and an empty argument list,
+    the drawer gets initialized with the the state
+    <em>closed</em>.</p>
+
+    {{#code-snippet "js"}}
+      $('body').drawer()
+    {{/code-snippet}}
+
+    <h4 class="docs-h5"><code>.drawer('toggle')</code></h4>
+
+    <p>This methods toggles the drawer's state depending on
+    the previous state.</p>
+
+    {{#code-snippet "js"}}
+      $('body').drawer('toggle')
+    {{/code-snippet}}
+
+    <h4 class="docs-h5"><code>.drawer('open')</code></h4>
+
+    <p>This methods opens the drawer.</p>
+
+    {{#code-snippet "js"}}
+      $('body').drawer('open')
+    {{/code-snippet}}
+
+    <h4 class="docs-h5"><code>.drawer('close')</code></h4>
+
+    <p>This methods closes the drawer.</p>
+
+    {{#code-snippet "js"}}
+      $('body').drawer('close')
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Options</h3>
+
+    Name, Type, Default, Description
+    offset, number, 10, Pixels to offset from top when calculating position of scroll.
+
+    <h3 class="docs-h4">Events</h3>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+
+        <thead>
+          <tr>
+            <th>Event Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>open.axa.drawer</th>
+            <td>This event fires before the drawer opens.</td>
+          </tr>
+          <tr>
+            <th>close.axa.drawer</th>
+            <td>This event fires before the drawer closes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {{#code-snippet "js"}}
+      $('body').on('open.axa.drawer', function (event) {
+        // do something
+      })
+    {{/code-snippet}}
+
+    <h2 id="search" class="docs-h3">Search</h2>
+    <h2 id="fade" class="docs-h3">Fade</h2>
+
+    <p>The fade plugin can make elements fade in or out depending
+    on the state of a drawer or a search component.</p>
+
+    <h3 class="docs-h4">Usage via data attributes</h3>
+
+    <p>Since the plugin can listen to the state changes of different
+    components, it has to be specified which kind it is while
+    initializing. If the plugin should listen to drawer state, set the
+    <code>data-fade="drawer"</code> attribute to the toggling element.
+    For search, it's <code>data-fade="search"</code>.</p>
+
+    {{#code-snippet "html"}}
+      <div class="drawer" data-fade="drawer">
+        <!-- content here... -->
+      </div>
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Usage via JavaScript</h3>
+
+    <p>When using the fade plugin programmatically, you have to take
+    care of listening to state changes by yourself.</p>
+
+    {{#code-snippet "js"}}
+      $('.drawer').fade()
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Methods</h3>
+
+    <h4 class="docs-h5"><code>$().drawer()</code></h4>
+
+    <p>With this method call and an empty argument list,
+    the drawer gets initialized with the the state
+    <em>closed</em>.</p>
+
+    {{#code-snippet "js"}}
+      $('body').drawer()
+    {{/code-snippet}}
+
+    <h4 class="docs-h5"><code>.drawer('toggle')</code></h4>
+
+    <p>This methods toggles the drawer's state depending on
+    the previous state.</p>
+
+    {{#code-snippet "js"}}
+      $('body').drawer('toggle')
+    {{/code-snippet}}
+
+    <h4 class="docs-h5"><code>.drawer('open')</code></h4>
+
+    <p>This methods opens the drawer.</p>
+
+    {{#code-snippet "js"}}
+      $('body').drawer('open')
+    {{/code-snippet}}
+
+    <h4 class="docs-h5"><code>.drawer('close')</code></h4>
+
+    <p>This methods closes the drawer.</p>
+
+    {{#code-snippet "js"}}
+      $('body').drawer('close')
+    {{/code-snippet}}
+
+    <h3 class="docs-h4">Options</h3>
+
+    Name, Type, Default, Description
+    offset, number, 10, Pixels to offset from top when calculating position of scroll.
+
+    <h3 class="docs-h4">Events</h3>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+
+        <thead>
+          <tr>
+            <th>Event Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>open.axa.drawer</th>
+            <td>This event fires before the drawer opens.</td>
+          </tr>
+          <tr>
+            <th>close.axa.drawer</th>
+            <td>This event fires before the drawer closes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {{#code-snippet "js"}}
+      $('body').on('open.axa.drawer', function (event) {
+        // do something
+      })
+    {{/code-snippet}}
+
+    <!-- <h2 id="stroke" class="docs-h3">Stroke</h2> -->
+
+  {{/inline}}
+{{/page}}
