@@ -1,0 +1,25 @@
+---
+title: Alerts
+description: Showcases and provides snippets for the alerts.
+nav: side/components/alerts
+order: 1
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">{{title}}</h1>
+    <p class="lead">
+      Our alerts are 100% based on Bootstrap.
+      Have a look at our slightly modified styling of them below
+      and get the code snippet to use them in your app.
+    </p>
+    <p>
+      Make sure to visit the
+      <a href="{{package.bootstrapDocs}}components/#alerts">Bootstrap
+      docs</a> for more info on the options.
+    </p>
+
+    {{> example path="/components/alerts/demos/alerts.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/alerts/snippets/alerts"}}{{{.}}}{{/get}}{{/code-snippet}}
+  {{/inline}}
+{{/page}}
