@@ -1,7 +1,7 @@
 @mixin btn-split-icon($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
   @include button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius);
 
-  & .glyphicon {
+  & .btn-font-icon {
     width: $line-height + $padding-vertical + $padding-vertical;
     margin-right: -$padding-horizontal;
   }
@@ -19,7 +19,7 @@
   &.btn-split-icon {
     display: inline-flex;
 
-    & .glyphicon {
+    & .btn-font-icon {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -124,14 +124,14 @@
     }
     
     &.btn-split-icon {
-      & .glyphicon, & .btn-icon {
+      & .btn-font-icon, & .btn-icon {
         border-left-color: $main;
       }
     }
   }
      
   &.btn-split-icon, & .btn-icon {
-    & .glyphicon {
+    & .btn-font-icon {
       border-left-color: $secondary;
     }
   }
@@ -186,7 +186,7 @@
   }
   
   &.btn-split-icon {
-    & .glyphicon {
+    & .btn-font-icon {
       border-left-color: $main;
     }
   }

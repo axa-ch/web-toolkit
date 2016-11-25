@@ -18,9 +18,11 @@
   </head>
   <body>
     <div class="example">
-{{!Do not indent this line because all lines of the rendered partial will also
+{{!Do not indent these lines because all lines of the rendered partials will also
   be indented, which affects <pre> tags}}
+{{#> content }}
 {{{contents}}}
+{{/content}}
     </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
