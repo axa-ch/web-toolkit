@@ -1,3 +1,10 @@
 .icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
   fill: currentColor;
+}
+
+.icon-inline {
+  margin-bottom: -0.125em;
 }

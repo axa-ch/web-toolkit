@@ -19,6 +19,7 @@ toc:
 ---
 {{#> page}}
   {{#*inline "content"}}
+    {{> icon-font }}
     <h1 class="h2">Icons</h1>
     <p class="lead">
       Get an overview over what icons to use, how we use icons, and
@@ -35,14 +36,14 @@ toc:
 
     <h2 class="h3" id="iconsets">Iconsets</h2>
     <p>
-      We're using the glyphicon iconset that is made available
+      We're using the Glyphicon iconset that is made available
       to all Bootstrap users. Make sure to give them credit in
       your apps.
     </p>
     <p>
       We have a some additional icons that we're using in some of
-      our components. They're always used as inline svg elements
-      so you can copy & paste the code as is.
+      our components. We always use SVGs and in some cases also
+      provide examples with an icon font.
     </p>
     <h2 class="h3" id="svgs">SVGs</h2>
     <p>
@@ -51,10 +52,20 @@ toc:
       manipulated with Javascript and inspected with your
       browser's dev-tools.
     </p>
+    <p>
+      When creating icons, size the viewbox as large as the icon really is
+      (do not add extra space to the top/right/bottom/left).
+      Remove any extraneous markup added by your editor. You can do that in
+      your build e.g. with the SVGO npm package.
+      Do not set any colors (not even black). This way you can set the color
+      through CSS.
+    </p>
+
     <div class="alert alert-warning">
       <strong>Do not</strong> link to SVGs individually. Use inline SVGs
       or sprites.
     </div>
+
     <h2 class="h3" id="inline-svgs">Inline SVGs</h2>
     <p>
       We use inline SVGs for many use cases in our components.
@@ -69,6 +80,24 @@ toc:
       they respect CSS rules from your stylesheets and can be
       manipulated through your Javascript.
     </p>
+    <p>
+      The code snippet below will show a blue calendar icon from 
+      an inline SVG:      
+      <span style="color: #103184">
+        <svg class="icon icon-inline" xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048">
+          <title>Calendar</title>
+          <path d="M483.125 48c-50.38 0-91.156 40.693-91.156 90.97v327.717c0 50.195 40.856 90.97 91.155 90.97 50.38 0 91.156-40.756 91.156-91.032V138.97c0-50.277-40.775-90.97-91.155-90.97zm1098.094 0c-50.3 0-91.064 40.693-91.064 90.97v327.717c0 50.195 40.764 90.97 91.063 90.97 50.38 0 91.25-40.756 91.25-91.032V138.97c-.002-50.277-40.87-90.97-91.25-90.97zM0 310.188V2048h2048V310.187h-345.5v4.125c37.928 33.464 62.03 82.282 62.03 136.782 0 100.958-82.05 182.75-183.217 182.75-101.086 0-183.126-81.873-183.126-182.75 0-54.5 24.023-103.318 62.032-136.78v-4.127H604.31v4.125c37.928 33.464 61.938 82.282 61.938 136.782 0 100.958-82.04 182.75-183.125 182.75C381.958 633.844 300 551.97 300 451.094c0-54.5 24.022-103.318 62.03-136.78v-4.127H0zM56.97 706.78h1933.81v1284.126H56.97V706.78zM320 1024v256h256v-256H320zm384 0v256h256v-256H704zm384 0v256h256v-256h-256zm384 0v256h256v-256h-256zM320 1408v256h256v-256H320zm384 0v256h256v-256H704zm384 0v256h256v-256h-256z"/>
+        </svg>
+      </span> 
+    </p>
+    {{#code-snippet "html"}}
+      <span style="color: #103184">
+        <svg class="icon icon-inline" xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048">
+          <title>Calendar</title>
+          <path d="M483.125 48c-50.38 0-91.156 40.693-91.156 90.97v327.717c0 50.195 40.856 90.97 91.155 90.97 50.38 0 91.156-40.756 91.156-91.032V138.97c0-50.277-40.775-90.97-91.155-90.97zm1098.094 0c-50.3 0-91.064 40.693-91.064 90.97v327.717c0 50.195 40.764 90.97 91.063 90.97 50.38 0 91.25-40.756 91.25-91.032V138.97c-.002-50.277-40.87-90.97-91.25-90.97zM0 310.188V2048h2048V310.187h-345.5v4.125c37.928 33.464 62.03 82.282 62.03 136.782 0 100.958-82.05 182.75-183.217 182.75-101.086 0-183.126-81.873-183.126-182.75 0-54.5 24.023-103.318 62.032-136.78v-4.127H604.31v4.125c37.928 33.464 61.938 82.282 61.938 136.782 0 100.958-82.04 182.75-183.125 182.75C381.958 633.844 300 551.97 300 451.094c0-54.5 24.022-103.318 62.03-136.78v-4.127H0zM56.97 706.78h1933.81v1284.126H56.97V706.78zM320 1024v256h256v-256H320zm384 0v256h256v-256H704zm384 0v256h256v-256h-256zm384 0v256h256v-256h-256zM320 1408v256h256v-256H320zm384 0v256h256v-256H704zm384 0v256h256v-256h-256z"/>
+        </svg>
+      </span>
+    {{/code-snippet}}
     <h2 class="h3" id="svg-sprites">SVG sprites</h2>
     <p>
       SVG sprites are files containing multiple SVG symbols.
@@ -81,6 +110,15 @@ toc:
       You can also inline a sprite at the top of your document to Make
       use of some of these options.
     </p>
+    <p>
+      The code snippet below will show a blue calendar icon from 
+      an SVG sprite:
+      <span style="color: #103184">{{> icon name="calendar" classes="icon icon-inline"}}</span> 
+    </p>
+    {{#code-snippet "html"}}
+      <span style="color: #103184">{{> icon name="calendar" classes="icon icon-inline"}}</span>
+    {{/code-snippet}}
+
     <h2 class="h3" id="icon-fonts">Icon fonts</h2>
     <p>
       Icon fonts are probably the most common way to display icons.
@@ -88,6 +126,34 @@ toc:
       developer community. SVG sprites are even limited to IE9 and
       higher, a limitation not applying to icon fonts.
     </p>
+    <p>
+      The code snippet below will show a blue calendar icon from 
+      an icon font:
+      <span class="docs-icon docs-icon-calendar" style="color: #103184"></span> 
+    </p>
+    {{#code-snippet "html"}}
+      <span class="docs-icon docs-icon-calendar" style="color: #103184"></span>
+    {{/code-snippet}}
+
+    <p>
+      When creating an icon font make sure, that your class
+      sets the properties below. This will make sure, they will
+      work the same as the Bootstrap provided Glyphicons.
+    </p>
+    {{#code-snippet "css"}}
+      .custom-icon {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: 'custom-icons';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    {{/code-snippet}}
+
     <h2 class="h3" id="choosing">How to choose</h2>
     <p>
       If you're unsure what to choose, look at what is best supported
