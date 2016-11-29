@@ -6,19 +6,22 @@ $header-search-sm-width: 300px;
 $header-search-md-width: 400px;
 $header-search-lg-width: 500px;
 
+$header-item-padding: 15px;
+
 .header {
   display: block;
   position: relative;
 
   width: 100%;
 
-  background-color: $color-white;
-  border-top: 2px solid $color-dark-indigo;
   transition: background-color $transition-normal $transition-ease;
+  border-top: 2px solid $color-dark-indigo;
+  background-color: $color-white;
   z-index: $z-index-header;
 
   &.transparent {
     background-color: transparent;
+    color: $color-white;
   }
 
   &.header-fixed-top,
@@ -57,14 +60,13 @@ $header-search-lg-width: 500px;
   @extend .typo-18;
 
   display: flex;
-  height: 100%;
   align-items: center;
+  height: 100%;
+  padding-right: $header-item-padding;
 }
 
 .header-brand {
   @extend .typo-24;
-
-  float: left;
 
   display: inline-flex;
   flex-shrink: 0;
@@ -72,8 +74,9 @@ $header-search-lg-width: 500px;
   justify-content: flex-start;
   height: $header-main-height;
 
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: $header-item-padding;
+
+  float: left;
 
   color: $color-axa-blue;
   font-weight: normal;
@@ -97,27 +100,28 @@ $header-search-lg-width: 500px;
 }
 
 .header-brand-image {
-  max-height: 46px;
+  width: auto;
+  height: 46px;
 }
 
 .header-item {
   display: flex;
-  height: 100%;
   align-items: center;
+  height: 100%;
 }
 
 .header-search {
   display: flex;
+  position: relative;
   width: 60px;
   height: 100%;
-  position: relative;
   overflow: visible;
 }
 
 .header-search-dunno {
+  display: flex;
   position: absolute;
   right: 0;
-  display: flex;
   width: 60px;
   height: 100%;
   transition: width $transition-normal $transition-easeout;
@@ -146,10 +150,9 @@ $header-search-lg-width: 500px;
   flex-grow: 1;
   min-width: 0;
   padding: 0;
-  background: transparent;
   border: none;
-
   outline: none;
+  background: transparent;
 
   color: $color-mineshaft;
 
@@ -159,22 +162,22 @@ $header-search-lg-width: 500px;
 }
 
 .header-search-button {
-  width: 60px;
-  flex-shrink: 0;
   flex-grow: 0;
+  flex-shrink: 0;
+  width: 60px;
   border: none;
-  background: none;
-  font-size: 24px;
-  color: $color-silver;
   outline: none;
+  background: none;
+  color: $color-silver;
+  font-size: 24px;
 }
 
 .header-meta {
   @include clearfix();
 
   height: $header-meta-height;
-  border-bottom: 1px solid $color-wild-sand;
   transition: border-bottom $transition-normal $transition-ease;
+  border-bottom: 1px solid $color-wild-sand;
 
   .header.transparent & {
     border-bottom-color: transparent;
@@ -183,6 +186,7 @@ $header-search-lg-width: 500px;
   .container,
   .container-fluid {
     height: 100%;
+    padding-right: 0;
   }
 }
 
@@ -197,8 +201,8 @@ $header-search-lg-width: 500px;
 
   height: 100%;
 
-  padding: 0;
   margin: 0;
+  padding: 0;
 
   list-style-type: none;
 }
@@ -231,8 +235,8 @@ $header-search-lg-width: 500px;
   &:hover,
   &:focus,
   &:active {
-    cursor: pointer;
     text-decoration: none;
+    cursor: pointer;
 
     .header.transparent & {
       color: $color-white;
@@ -247,8 +251,8 @@ $header-search-lg-width: 500px;
 
   height: $header-main-height;
 
-  border-bottom: 2px solid $color-wild-sand;
   transition: border-bottom $transition-normal $transition-ease;
+  border-bottom: 2px solid $color-wild-sand;
 
   .header.transparent & {
     border-bottom-color: transparent;
@@ -257,6 +261,7 @@ $header-search-lg-width: 500px;
   .container,
   .container-fluid {
     height: 100%;
+    padding-right: 0;
   }
 }
 
@@ -267,7 +272,8 @@ $header-search-lg-width: 500px;
 
   height: 100%;
 
-  padding: 10px 20px 10px 20px;
+  margin-left: -$header-item-padding;
+  padding: 10px $header-item-padding;
   font-size: 30px;
 
   .header-burger-line {
@@ -301,7 +307,7 @@ $header-search-lg-width: 500px;
 
     .header.transparent &,
     .header.transparent &:before,
-    .header.transparent &:after, {
+    .header.transparent &:after {
       background: $color-white;
     }
   }
