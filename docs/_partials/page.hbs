@@ -8,27 +8,28 @@
     <meta name="keywords" content="{{package.keywords}}">
     <meta name="author" content="{{package.author}}">
 
-    {{> appicon-ios size=57 }}
-    {{> appicon-ios size=72 }}
-    {{> appicon-ios size=76 }}
-    {{> appicon-ios size=114 }}
-    {{> appicon-ios size=120 }}
-    {{> appicon-ios size=144 }}
-    {{> appicon-ios size=152 }}
-    {{> appicon-ios size=180 }}
-
     <meta name="apple-mobile-web-app-title" content="{{package.title}}">
-    <link media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" href="{{relative "/images/splash-screen/ios/750x1294.png"}}">
-    <link rel="manifest" href="{{relative "/manifest.json"}}">
-    <link rel="icon" sizes="192x192" href="{{relative "/images/app-icon/android/192x192.png"}}">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{relative '/images/app-icon/ios/57x57.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{relative '/images/app-icon/ios/72x72.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{relative '/images/app-icon/ios/76x76.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{relative '/images/app-icon/ios/114x114.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{relative '/images/app-icon/ios/120x120.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{relative '/images/app-icon/ios/144x144.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{relative '/images/app-icon/ios/152x152.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="{{relative '/images/app-icon/ios/180x180.png'}}">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="{{relative "/images/splash-screen/ios/750x1294.png"}}">
+
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content={{package.title}}>
+    <link rel="manifest" href="{{relative "/manifest.json"}}">
+    <link rel="icon" sizes="192x192" href="{{relative "/images/app-icon/android/192x192.png"}}">
+
     <meta name="msapplication-square70x70logo" content="{{relative "/images/app-icon/windows/128x128.png"}}">
     <meta name="msapplication-square150x150logo" content="{{relative "/images/app-icon/windows/270x270.png"}}">
     <meta name="msapplication-wide310x150logo" content="{{relative "/images/app-icon/windows/558x270.png"}}">
     <meta name="msapplication-square310x310logo" content="{{relative "/images/app-icon/windows/558x558.png"}}">
 
-    <title>{{#if title}}{{title}}{{/if}} · {{package.title}}</title>
+    <title>{{#if title}}{{title}} · {{/if}}{{package.title}}</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
 
@@ -42,12 +43,6 @@
     </a>
 
     <a href="#" class="mask fade-out-delayed-md-down fade-out-lg-up" data-fade="drawer" data-target="body" data-in="fade-in-md-down" data-out="fade-out-delayed-md-down"></a>
-
-    <div id="notification" class="notifications"
-      data-notification-info="{{relative "/images/icons.svg#info"}}"
-      data-notification-success="{{relative "/images/icons.svg#checkmark"}}"
-      data-notification-error="{{relative "/images/icons.svg#cross"}}">
-    </div>
 
     <header class="header header-fixed-top push-absolute-lg-left">
       <div class="header-main">
@@ -116,33 +111,8 @@
       </div>
     </div>
 
+    <script>var __HREF = '{{relative link}}'</script>
     <script src="{{relative "/dist/docs.js"}}"></script>
-
-    <script>
-      var href = '{{relative link}}'
-      var mobile = $('[data-menu="collapsing"]')
-      var upmost = mobile.find('[data-level]').first()
-
-      var activeElement = mobile
-        .find('[data-link]')
-        .filter('[href=\'' + href + '\']')
-
-      if (activeElement.length > 0) {
-        activeElement.toggleClass('is-active')
-      }
-
-      var level = activeElement
-        .closest('[data-level]')
-
-      if (level.length > 0) {
-        level.toggleClass('is-active')
-      } else {
-        level = upmost
-      }
-
-      mobile.collapsingMenu('toggle', level)
-    </script>
-
     <script> window.intercomSettings = { app_id: 'i82zr1ej' }</script>
     <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/i82zr1ej';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
   </body>
