@@ -108,6 +108,7 @@ $header-item-padding: 15px;
   display: flex;
   align-items: center;
   height: 100%;
+  padding-right: $header-item-padding;
 }
 
 .header-search {
