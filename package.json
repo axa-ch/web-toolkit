@@ -8,7 +8,7 @@
   "homepageWebGuidelines": "https://design.axa.com/introduction",
   "releasesUrl": "https://github.com/axa-group/web-toolkit/releases",
   "distArchive": "https://github.com/axa-group/web-toolkit/releases/download/v{tag}/web-toolkit-v{tag}-dist.zip",
-  "sourceArchive": "https://github.com/axa-group/web-toolkit/archive/{tag}.zip",
+  "sourceArchive": "https://github.com/axa-group/web-toolkit/archive/v{tag}.zip",
   "bootstrapDocs": "http://bootstrapdocs.com/v3.3.6/docs/",
   "npmjsPackage": "https://www.npmjs.com/package/@axa/web-toolkit",
   "cdnCss": "https://unpkg.com/@axa/web-toolkit@{tag}/dist/bundles/all.css",
