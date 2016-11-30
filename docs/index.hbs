@@ -1,5 +1,4 @@
 ---
-title: AXA Web Toolkit
 description: The CSS, JS and HTML framework for building responsive AXA web apps!
 lunr: true
 banner768: https://cloud.githubusercontent.com/assets/198988/20709926/466791a8-b638-11e6-8037-e2528d5aae94.jpg
@@ -30,9 +29,11 @@ banner1200: https://cloud.githubusercontent.com/assets/198988/20709927/4694e9fa-
       </div>
     </div>
 
-    <main id="content" class="container docs-main">
+    <main id="content" class="container docs-main" style="max-width: 750px;">
 
-      <p class="lead" style="margin: 50px 0;">
+      <h2 class="docs-h3">What's the AXA Web Toolkit?</h2>
+
+      <p class="lead">
         The Web Toolkit is the <em>CSS, JS and HTML framework</em>
         that we use globally at <a href="https://www.axa.com">AXA</a>
         <em>for modern and responsive web apps</em>. It is based
@@ -42,32 +43,65 @@ banner1200: https://cloud.githubusercontent.com/assets/198988/20709927/4694e9fa-
         <a href="{{package.homepageWebGuidelines}}">Web Guidelines</a> super easy!
       </p>
 
-      <div class="row">
-        <div class="col-md-4">
-          <div class="jumbotron" style="padding: 35px;">
-            <p>Get started quickly with the AXA Web Toolkit.</p>
-            <p>
-              <a href="{{relative "/getting-started/"}}" class="btn btn-primary" role="button">Get started</a>
-            </p>
-          </div>
+      <h2 class="docs-h3">The key properties</h2>
+
+      <div class="docs-property">
+        <div class="docs-property-image">
+          <img src="{{relative '/images/illustrations/rocket.svg'}}" alt="An illustration of a flying rocket." />
         </div>
-        <div class="col-md-4">
-          <div class="jumbotron" style="padding: 35px;">
-            <p>View the source code, add issues and contribute.</p>
-            <p>
-              <a href="{{package.repository.url}}" class="btn btn-default" role="button">View on GitHub</a>
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="jumbotron" style="padding: 35px;">
-            <p>Read the API reference of the components, utilities and plugins.</p>
-            <p>
-              <a href="{{relative '/api/'}}" class="btn btn-default" role="button">Browse API reference</a>
-            </p>
-          </div>
+        <div class="docs-property-text">
+          A set of very specific AXA components
+          and more generic, themed Bootstrap components.
+          Great as a kickstart for new projects!
         </div>
       </div>
+
+      <div class="docs-property right">
+        <div class="docs-property-image">
+          <img src="{{relative '/images/illustrations/target.svg'}}" alt="An illustration of an arrow in the middle of a target." />
+        </div>
+        <div class="docs-property-text">
+          Based on common web standards,
+          so it’s easy to integrate into more
+          complex frontend frameworks and libraries.
+        </div>
+      </div>
+
+      <div class="docs-property">
+        <div class="docs-property-image">
+          <img src="{{relative '/images/illustrations/community.svg'}}" alt="An illustration of four hands holding together." />
+        </div>
+        <div class="docs-property-text">
+          Developed openly on GitHub.
+          Used by potentially any web project at AXA
+          or by anyone who is building things for AXA.
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="{{relative '/getting-started/'}}" class="btn btn-axa btn-lg">Get started</a>
+      </div>
+
+      <h2 class="docs-h3">Who it's used by?</h2>
+
+      <p class="lead">The AXA Web Toolkit is starting to be used by a couple of projects
+      at AXA. The first one is the public
+      <a href="https://design.axa.com">design.axa.com</a> website.</p>
+
+      <p>Are you using it, too? Tell us or extend this list by
+      making a pull request.</p>
+
+      <h2 class="docs-h3">Backed by a global community</h2>
+
+      <p class="lead">The development of the AXA Web Toolkit is backed by
+      a global community of developers and designers all across AXA.
+      You have a couple of options to join the community!</p>
+
+      <ul>
+        <li>For feature requests and bugs <a href="{{package.repository.url}}">find us on GitHub</a>.</li>
+        <li>For discussions and help <a href="{{package.slackTeam}}">join our Slack team</a>.</li>
+        <li>For quick questions use our on-site chat messenger on the bottom right.</li>
+      </ul>
 
     </main>
 

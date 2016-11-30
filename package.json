@@ -13,6 +13,7 @@
   "npmjsPackage": "https://www.npmjs.com/package/@axa/web-toolkit",
   "cdnCss": "https://unpkg.com/@axa/web-toolkit@{tag}/dist/bundles/all.css",
   "cdnJs": "https://unpkg.com/@axa/web-toolkit@{tag}/dist/bundles/all.js",
+  "slackTeam": "https://axa-bb1.slack.com/signup",
   "keywords": [
     "axa",
     "insurance",

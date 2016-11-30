@@ -1,0 +1,45 @@
+.docs-property {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 50px;
+    text-align: left;
+  }
+}
+
+.docs-property-image {
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    right: auto;
+    left: 0;
+    width: 155px;
+
+    .docs-property.right & {
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
+.docs-property-text {
+  @extend .typo-20;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    min-height: 155px;
+    padding-right: 0;
+    padding-left: 200px;
+
+    .docs-property.right & {
+      padding-right: 200px;
+      padding-left: 0;
+    }
+  }
+}
