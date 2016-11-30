@@ -38,13 +38,24 @@
   padding-bottom: 100px;
 }
 
+$color-github: #333;
+
 .docs-header-github {
   width: 28px;
   height: 28px;
-  color: $color-black;
+  transition: color $transition-normal $transition-ease;
+  color: $color-github;
+
+  &:hover {
+    color: darken($color-github, 10%);
+  }
 
   .header.transparent & {
     color: $color-white;
+
+    &:hover {
+      color: $color-mercury;
+    }
   }
 
   .docs-header-github-icon {
@@ -53,13 +64,24 @@
   }
 }
 
+$color-npm: #CB3837;
+
 .docs-header-npm {
   width: 28px;
   height: 28px;
-  color: #CB3837;
+  transition: color $transition-normal $transition-ease;
+  color: $color-npm;
+
+  &:hover {
+    color: darken($color-npm, 10%);
+  }
 
   .header.transparent & {
     color: $color-white;
+
+    &:hover {
+      color: $color-mercury;
+    }
   }
 
   .docs-header-npm-icon {
