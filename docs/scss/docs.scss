@@ -38,4 +38,34 @@
   padding-bottom: 100px;
 }
 
+.docs-header-github {
+  width: 28px;
+  height: 28px;
+  color: $color-black;
+
+  .header.transparent & {
+    color: $color-white;
+  }
+
+  .docs-header-github-icon {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.docs-header-npm {
+  width: 28px;
+  height: 28px;
+  color: #CB3837;
+
+  .header.transparent & {
+    color: $color-white;
+  }
+
+  .docs-header-npm-icon {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 // Copyright AXA 2016

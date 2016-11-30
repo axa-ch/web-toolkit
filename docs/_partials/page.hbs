@@ -21,6 +21,18 @@
             <div class="header-title float-xs-right">
               <a class="label label-primary" href="{{package.releasesUrl}}" >{{package.version}}</a>
             </div>
+
+            <div class="header-item float-xs-right">
+              <a href="{{package.repository.url}}" class="docs-header-github" title="View the repository on GitHub.">
+                {{> icon name="github" classes="docs-header-github-icon"}}
+              </a>
+            </div>
+
+            <div class="header-item float-xs-right">
+              <a href="{{package.npmjsPackage}}" class="docs-header-npm" title="View the npm package.">
+                {{> icon name="npm" classes="docs-header-npm-icon"}}
+              </a>
+            </div>
           </div>
         </div>
       </header>
@@ -64,19 +76,6 @@
             {{/with}}
           </ul>
         </nav>
-
-        <div class="col-md-12 mobile__separator"></div>
-
-        <div class="col-md-12 list-group">
-          <a class="list-group__item list-group__item--link" href="{{package.repository.url}}">
-            {{> icon name="github" classes="list-group__icon"}}
-            <span class="list-group__text">View on GitHub</span>
-          </a>
-          <a class="list-group__item list-group__item--link" href="{{package.releasesUrl}}">
-            {{> icon name="empty" classes="list-group__icon"}}
-            <span class="list-group__text">Releases</span>
-          </a>
-        </div>
       </div>
 
       <script>var __HREF = '{{relative link}}'</script>
