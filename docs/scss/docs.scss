@@ -4,7 +4,9 @@
 @import 'code-snippet';
 @import 'color-card';
 @import 'example';
+@import 'github';
 @import 'layout';
+@import 'npm';
 @import 'property';
 @import 'responsive-utilities';
 @import 'type';
@@ -36,58 +38,6 @@
 .docs-main {
   // Add whitespace to page bottom, so things look nicer
   padding-bottom: 100px;
-}
-
-$color-github: #333;
-
-.docs-header-github {
-  width: 28px;
-  height: 28px;
-  transition: color $transition-normal $transition-ease;
-  color: $color-github;
-
-  &:hover {
-    color: darken($color-github, 10%);
-  }
-
-  .header.transparent & {
-    color: $color-white;
-
-    &:hover {
-      color: $color-mercury;
-    }
-  }
-
-  .docs-header-github-icon {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-$color-npm: #CB3837;
-
-.docs-header-npm {
-  width: 28px;
-  height: 28px;
-  transition: color $transition-normal $transition-ease;
-  color: $color-npm;
-
-  &:hover {
-    color: darken($color-npm, 10%);
-  }
-
-  .header.transparent & {
-    color: $color-white;
-
-    &:hover {
-      color: $color-mercury;
-    }
-  }
-
-  .docs-header-npm-icon {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 // Copyright AXA 2016
