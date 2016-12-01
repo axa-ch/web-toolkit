@@ -8,7 +8,7 @@
   border-width: 0;
   border-bottom-width: 2px;
   border-style: solid;
-  
+
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -40,7 +40,7 @@
     @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
       $font-size-large, $line-height-large, $btn-border-radius-large);
     @include typo-16();
-    
+
     border-width: 2px;
   }
 
@@ -71,5 +71,5 @@
 }
 
 .btn-ghost {
-  @include button-color($color-azure, $color-axa-blue, transparent);  
+  @include button-color($color-white, $color-wild-sand, transparent);
 }

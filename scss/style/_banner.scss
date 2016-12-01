@@ -1,0 +1,50 @@
+.banner {
+  display: block;
+  position: relative;
+  height: 95vh;
+  max-height: 600px;
+}
+
+.banner-bg {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+
+.banner-bg-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.banner-content {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
+  color: $color-white;
+}
+
+.banner-title {
+  @extend .typo-62;
+
+  margin-bottom: 30px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.banner-lead {
+  @extend .typo-24;
+
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+.banner-actions {
+}

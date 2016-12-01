@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{package.description}}">
+    <meta name="keywords" content="{{package.keywords}}">
+    <meta name="author" content="{{package.author}}">
+
+    <meta name="apple-mobile-web-app-title" content="{{package.title}}">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{relative '/images/app-icon/ios/57x57.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{relative '/images/app-icon/ios/72x72.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{relative '/images/app-icon/ios/76x76.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{relative '/images/app-icon/ios/114x114.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{relative '/images/app-icon/ios/120x120.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{relative '/images/app-icon/ios/144x144.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{relative '/images/app-icon/ios/152x152.png'}}">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="{{relative '/images/app-icon/ios/180x180.png'}}">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="{{relative '/images/splash-screen/ios/750x1294.png'}}">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content={{package.title}}>
+    <link rel="manifest" href="{{relative '/manifest.json'}}">
+    <link rel="icon" sizes="192x192" href="{{relative '/images/app-icon/android/192x192.png'}}">
+
+    <meta name="msapplication-square70x70logo" content="{{relative '/images/app-icon/windows/128x128.png'}}">
+    <meta name="msapplication-square150x150logo" content="{{relative '/images/app-icon/windows/270x270.png'}}">
+    <meta name="msapplication-wide310x150logo" content="{{relative '/images/app-icon/windows/558x270.png'}}">
+    <meta name="msapplication-square310x310logo" content="{{relative '/images/app-icon/windows/558x558.png'}}">
+
+    <title>{{#if title}}{{title}} · {{/if}}{{package.title}}</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
+
+    {{#eq process.env.NODE_ENV 'production'}}
+      <link rel="stylesheet" href="{{relative '/dist/docs.css'}}">
+    {{/eq}}
+  </head>
+
+  {{#> body }}
+    {{{body}}}
+  {{/body}}
+</html>

@@ -1,22 +1,18 @@
 {{#> html}}
   {{#*inline "body"}}
-    <body class="push-lg-left docs-body-top-padding" data-make="drawer" data-fade="drawer" data-target="body" data-in="overflow-hidden-md-down">
-      <a href="#content" class="sr-only sr-only-focusable btn btn-default btn-block push-absolute-lg-left" id="skippy">
+    <body data-make="drawer" data-fade="drawer" data-target="body" data-in="overflow-hidden-lg-down">
+      <a href="#content" class="sr-only sr-only-focusable btn btn-default btn-block" id="skippy">
         <span class="skiplink-text">Skip to main content</span>
       </a>
 
-      <a href="#" class="mask fade-out-delayed-md-down hidden-lg-up" data-fade="drawer" data-target="body" data-in="fade-in-md-down" data-out="fade-out-delayed-md-down"></a>
+      <a href="#" class="mask fade-out-delayed-xs-up" data-fade="drawer" data-target="body" data-in="fade-in-xs-up" data-out="fade-out-delayed-xs-up"></a>
 
-      <header class="header header-fixed-top push-absolute-lg-left">
+      <header class="header header-absolute transparent">
         <div class="header-main">
           <div class="container-fluid">
-            <a href="#" class="header-burger float-xs-left hidden-lg-up" data-fade="drawer" data-target="body" data-in="is-open">
+            <a href="#" class="header-burger float-xs-left" data-fade="drawer" data-target="body" data-in="is-open">
               <span class="header-burger-line"></span>
             </a>
-
-            <div class="header-title float-xs-left">
-              <span>{{title}}</span>
-            </div>
 
             <div class="header-title float-xs-right">
               <a class="label label-primary" href="{{package.releasesUrl}}" >{{package.version}}</a>
@@ -37,17 +33,15 @@
         </div>
       </header>
 
-      <main id="content" class="container-fluid docs-main">
-        {{#> content }}
-          {{{contents}}}
-        {{/content}}
-      </main>
+      {{#> content }}
+        {{{contents}}}
+      {{/content}}
 
-      <div class="drawer togglable-xs-left persistent-lg-left" data-fade="drawer" data-target="body" data-in="in">
+      <div class="drawer togglable-xs-left" data-fade="drawer" data-target="body" data-in="in">
         <div class="header">
           <div class="header-main">
             <div class="container-fluid">
-              <a href="#" class="header-burger float-xs-left hidden-lg-up" data-fade="drawer" data-target="body" data-in="is-open">
+              <a href="#" class="header-burger float-xs-left" data-fade="drawer" data-target="body" data-in="is-open">
                 <span class="header-burger-line"></span>
               </a>
 
