@@ -61,6 +61,7 @@
 
 // Core CSS and Components
 @import 'style/browser-not-supported';
+@import 'style/btn';
 @import 'style/drawer';
 @import 'style/header';
 @import 'style/loading-spinner';
@@ -77,7 +78,6 @@
 @import 'style/blocks/blockquote';
 @import 'style/blocks/bouncy-spinner';
 @import 'style/blocks/brand';
-@import 'style/blocks/btn';
 @import 'style/blocks/bubble';
 @import 'style/blocks/button-row';
 @import 'style/blocks/button';
@@ -106,7 +106,6 @@
 @import 'style/blocks/header-search';
 @import 'style/blocks/heading';
 @import 'style/blocks/hr';
-@import 'style/blocks/icon';
 @import 'style/blocks/icon-teaser';
 @import 'style/blocks/image';
 @import 'style/blocks/info-icon';
