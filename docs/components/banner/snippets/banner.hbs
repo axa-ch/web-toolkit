@@ -1,0 +1,27 @@
+---
+title: Banner
+layout: demo.hbs
+banner768: https://cloud.githubusercontent.com/assets/198988/20709926/466791a8-b638-11e6-8037-e2528d5aae94.jpg
+banner992: https://cloud.githubusercontent.com/assets/198988/20709928/46954634-b638-11e6-958a-268faba34dcc.jpg
+banner1200: https://cloud.githubusercontent.com/assets/198988/20709927/4694e9fa-b638-11e6-8b5b-8aed1becabfb.jpg
+---
+<div class="banner">
+  <div class="banner-bg">
+    <img
+      class="banner-bg-media"
+      src="{{banner768}}"
+      srcset="{{banner1200}} 1200w, {{banner992}} 992w, {{banner768}} 768w"
+      sizes="100vw"
+      alt="A man working on his laptop in a coffee shop" />
+  </div>
+  <div class="banner-overlay gradient"></div>
+  <div class="banner-content">
+    <div class="container">
+      <p class="banner-title">Title</p>
+      <p class="banner-lead">A key message which makes your topic interesting to your customers.</p>
+      <div class="banner-actions">
+        <a href="#" class="banner-action btn btn-ghost btn-lg">Call to action</a>
+      </div>
+    </div>
+  </div>
+</div>
