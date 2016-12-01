@@ -47,8 +47,8 @@ toc:
     before all other stylesheets to load our CSS.</p>
 
     {{#code-snippet "html"}}
-      <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
-      <link rel="stylesheet" href="{{replace package.cdnCss '{tag}' package.version}}" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{{fontUrl}}}">
+      <link rel="stylesheet" href="{{replace package.cdnCss '{tag}' package.version}}">
     {{/code-snippet}}
 
     <p>Add our JavaScript plugins and jQuery near the end of your pages,
@@ -56,7 +56,7 @@ toc:
     Be sure to place jQuery first, as our code depends on them.</p>
 
     {{#code-snippet "html"}}
-      <script src="{{replace package.cdnJs '{tag}' package.version}}" crossorigin="anonymous"></script>
+      <script src="{{replace package.cdnJs '{tag}' package.version}}"></script>
     {{/code-snippet}}
 
     <p>And that's it—you're on your way to a fully
@@ -89,15 +89,15 @@ toc:
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
         <!-- Fonts first, then the AXA Web Toolkit CSS. -->
-        <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{replace package.cdnCss '{tag}' package.version}}" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{{fontUrl}}}">
+        <link rel="stylesheet" href="{{replace package.cdnCss '{tag}' package.version}}">
       </head>
       <body>
         <h1>Hello, world!</h1>
 
         <!-- jQuery first, then the AXA Web Toolkit JS. -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
-        <script src="{{replace package.cdnJs '{tag}' package.version}}" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="{{replace package.cdnJs '{tag}' package.version}}"></script>
       </body>
       </html>
     {{/code-snippet}}
