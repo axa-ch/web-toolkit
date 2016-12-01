@@ -1,15 +1,15 @@
 {{#each childrenArray}}
-  <li class="mobile-menu__item">
-    <a class="mobile-menu__link{{#if children}} mobile-menu__link--parent{{/if}}"
+  <li class="tree-menu__item">
+    <a class="tree-menu__link{{#if children}} tree-menu__link--parent{{/if}}"
       data-link
       href={{#unless children}}{{#with file}}"{{relative link}}"{{/with}}{{else}}"#"{{/unless}}>
-      <span class="mobile-menu__text">{{#with file}}{{title}}{{/with}}</span>
+      <span class="tree-menu__text">{{#with file}}{{title}}{{/with}}</span>
       {{#if childrenArray}}
-        {{> icon name="arrow-right" classes="mobile-menu__link__parent-icon icon"}}
+        {{> icon name="arrow-right" classes="tree-menu__link__parent-icon"}}
       {{/if}}
     </a>
     {{#if childrenArray}}
-      <ul class="mobile-menu__level" data-level>
+      <ul class="tree-menu__level" data-level>
         {{> menu }}
       </ul>
     {{/if}}

@@ -1,0 +1,59 @@
+---
+title: Tree menu
+description: A collapsible tree menu.
+nav: side/components/tree-menu
+order: 3
+lunr: true
+toc:
+  - title: Overview
+    slug: overview
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+
+    <h1 class="docs-h2">{{title}}</h1>
+
+    <p class="lead">Use the Tree menu component to display a two-level
+    menu in a simple, vertically expanding way. The component
+    is most commonly used inside a mobile navigation drawer.</p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 id="overview" class="docs-h3">Overview</h2>
+
+    <p></p>
+
+    {{> example path="/components/tree-menu/demos/tree-menu.html"}}
+
+    {{#code-snippet "html"}}
+      <nav class="tree-menu" data-menu="collapsing">
+
+        <!-- first menu level -->
+        <ul class="tree-menu__level is-open" data-level>
+          <li class="tree-menu__item">
+            <a class="tree-menu__link" data-link href="#">
+              <span class="tree-menu__text">Simple item</span>
+            </a>
+          </li>
+          <li class="tree-menu__item">
+            <a class="tree-menu__link tree-menu__link--parent" data-link href="#">
+              <span class="tree-menu__text">Parent item</span>
+              {{> icon name="arrow-right" classes="tree-menu__link__parent-icon"}}
+            </a>
+
+            <!-- second menu level -->
+            <ul class="tree-menu__level" data-level>
+              <li class="tree-menu__item">
+                <a class="tree-menu__link" data-link href="#">
+                  <span class="tree-menu__text">Child item</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    {{/code-snippet}}
+
+  {{/inline}}
+{{/page}}
