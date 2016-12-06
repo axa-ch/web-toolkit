@@ -5,7 +5,7 @@
   "author": "AXA",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://design.axa.com/toolkit",
-  "homepageWebGuidelines": "https://design.axa.com/introduction",
+  "homepageWebGuidelines": "https://design.axa.com/web-guidelines/introduction",
   "releasesUrl": "https://github.com/axa-group/web-toolkit/releases",
   "distArchive": "https://github.com/axa-group/web-toolkit/releases/download/v{tag}/web-toolkit-v{tag}-dist.zip",
   "sourceArchive": "https://github.com/axa-group/web-toolkit/archive/v{tag}.zip",
