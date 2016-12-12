@@ -63,7 +63,15 @@
         </div>
 
         <div class="inline-search autocomplete">
-          <input class="inline-search__input autocomplete__input" type='text' data-search="docs" data-search-index-data="{{relative '/searchIndex.json'}}" data-search-base-url="{{relative '/'}}" placeholder="Search pages...">
+          <input
+            class="inline-search__input autocomplete__input"
+            type='text'
+            data-search="docs"
+            data-search-index-data="{{relative '/searchIndex.json'}}"
+            data-search-base-url="{{relative '/'}}"
+            placeholder="Search pages..."
+            onclick="window.track.SearchEnter()"
+          >
           <div class="inline-search__button">
             {{> icon name="search" classes="header-search__icon icon"}}
           </div>
