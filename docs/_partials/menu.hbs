@@ -2,7 +2,8 @@
   <li class="mobile-menu__item">
     <a class="mobile-menu__link{{#if children}} mobile-menu__link--parent{{/if}}"
       data-link
-      href={{#unless children}}{{#with file}}"{{relative link}}"{{/with}}{{else}}"#"{{/unless}}>
+      href={{#unless children}}{{#with file}}"{{relative link}}"{{/with}}{{else}}"#"{{/unless}}
+      onclick={{#unless children}}{{#with file}}"window.track.GoTo("{{link}}");"{{/with}}{{else}}"#"{{/unless}}>
       <span class="mobile-menu__text">{{#with file}}{{title}}{{/with}}</span>
       {{#if childrenArray}}
         {{> icon name="arrow-right" classes="mobile-menu__link__parent-icon icon"}}
