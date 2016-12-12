@@ -39,7 +39,14 @@ flexbugsUrl: https://github.com/luisrudge/postcss-flexbugs-fixes
     Doesn't include documentation or source files.</p>
 
     <p>
-      <a href="{{replace package.distArchive '{tag}' package.version}}" class="btn btn-default btn-lg" role="button">Download AXA Web Toolkit</a>
+      <a
+        href="{{replace package.distArchive '{tag}' package.version}}"
+        class="btn btn-default btn-lg"
+        role="button"
+        onclick="window.track.Download('dist-{{package.version}}')"
+      >
+        Download AXA Web Toolkit
+      </a>
     </p>
 
     <h2 id="source-files" class="docs-h3">Source files</h2>
@@ -53,7 +60,14 @@ flexbugsUrl: https://github.com/luisrudge/postcss-flexbugs-fixes
     and some setup.</p>
 
     <p>
-      <a href="{{replace package.sourceArchive '{tag}' package.version}}" class="btn btn-default" role="button">Download source</a>
+      <a
+        href="{{replace package.sourceArchive '{tag}' package.version}}"
+        class="btn btn-default"
+        role="button"
+        onclick="window.track.Download('source-{{package.version}}')"
+      >
+        Download source
+      </a>
     </p>
 
     <h2 id="cdn" class="docs-h3">CDN</h2>
