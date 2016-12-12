@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-const trackGoTo = (path) => {
+const GoTo = (path) => {
   window.tc_events_7(
     null,
     'virtual_page',
@@ -8,7 +8,7 @@ const trackGoTo = (path) => {
   )
 }
 
-const trackDownload = (filename) => {
+const Download = (filename) => {
   window.tc_events_7(
     null,
     'interaction',
@@ -18,7 +18,7 @@ const trackDownload = (filename) => {
   )
 }
 
-const trackSearchEnter = () => {
+const SearchEnter = () => {
   window.tc_events_7(
     null,
     'interaction',
@@ -26,7 +26,7 @@ const trackSearchEnter = () => {
   )
 }
 
-const trackSearchResults = (searchVal, resultsCount) => {
+const SearchResults = (searchVal, resultsCount) => {
   window.tc_events_7(
     null,
     'interaction',
@@ -37,7 +37,7 @@ const trackSearchResults = (searchVal, resultsCount) => {
   )
 }
 
-const trackClickHere = (path) => {
+const ClickHere = (path) => {
   window.tc_events_7(
      null,
      'interaction',
@@ -48,9 +48,9 @@ const trackClickHere = (path) => {
 }
 
 export {
-  trackGoTo,
-  trackDownload,
-  trackSearchEnter,
-  trackSearchResults,
-  trackClickHere,
+  GoTo,
+  Download,
+  SearchEnter,
+  SearchResults,
+  ClickHere,
 }

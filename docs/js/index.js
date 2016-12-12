@@ -12,6 +12,7 @@ import './iframe-resizer'
 import './object-fit'
 import './search'
 import './tab'
+import * as track from './track'
 
 window.jQuery = $
 window.$ = $
@@ -19,6 +20,8 @@ window.$ = $
 svg4everybody()
 
 initMenu(window.__HREF) // eslint-disable-line no-underscore-dangle
+
+window.track = track
 
 // eslint-disable-next-line no-new
 new Clipboard('[data-clipboard-target]')
