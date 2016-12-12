@@ -35,16 +35,7 @@ toc:
 
     {{> example path="/components/header/demos/standard-header.html"}}
 
-    {{#code-snippet "html"}}
-      <header class="header">
-        <div class="header-meta hidden-md-down">
-          <!-- items for the upper header part -->
-        </div>
-        <div class="header-main">
-          <!-- items for the main header part, e.g. brand, burger-menu, search, main-nav, main-action -->
-        </div>
-      </header>
-    {{/code-snippet}}
+    {{#code-snippet "html"}}{{#get snippets "/components/header/snippets/standard-header"}}{{{this}}}{{/get}}{{/code-snippet}}
 
     <h2 id="supported-content" class="docs-h3">Supported Content</h2>
 
