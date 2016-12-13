@@ -149,6 +149,7 @@ $header-item-padding: 15px;
   @extend .typo-20;
 
   flex-grow: 1;
+  width: inherit;
   min-width: 0;
   padding: 0;
   border: none;
