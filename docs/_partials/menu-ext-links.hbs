@@ -1,14 +1,18 @@
 <li class="mobile-menu__item">
   <a class="mobile-menu__link"
     data-link
-    href="{{package.slackWebGuidelines}}">
+    href="{{package.slackWebGuidelines}}"
+    onclick={{#unless children}}{{#with file}}"window.track.GoTo("{{package.slackWebGuidelines}}");"{{/with}}{{else}}{{/unless}}
+  >
     <span class="mobile-menu__text">Join our Community on Slack</span>
   </a>
 </li>
 <li class="mobile-menu__item">
   <a class="mobile-menu__link"
     data-link
-    href="{{package.homepageDesinGuidelines}}">
+    href="{{package.homepageDesinGuidelines}}"
+    onclick={{#unless children}}{{#with file}}"window.track.GoTo("{{package.homepageDesinGuidelines}}");"{{/with}}{{else}}{{/unless}}
+  >
     <span class="mobile-menu__text">Back to Design Guidelines</span>
   </a>
 </li>
