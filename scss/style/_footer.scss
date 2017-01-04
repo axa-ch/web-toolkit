@@ -1,5 +1,6 @@
 $footer-text-color: $color-white;
 $footer-link-color: $color-white;
+$footer-social-color: $color-white;
 $footer-link-hover-color: $color-periwinkle;
 $footer-copyline-color: $color-silver;
 $footer-padding-lr: 30px;
@@ -30,4 +31,10 @@ $footer-sides-offset: 50px;
     padding-left: $footer-sides-offset;
   }
 
+}
+
+.footer-social-link {
+  svg {
+    fill: $footer-social-color;
+  }
 }

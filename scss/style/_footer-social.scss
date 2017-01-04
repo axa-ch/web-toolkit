@@ -35,12 +35,8 @@
 }
 
 .footer-social-link {
-  display: block;
-  height: 60px;
-  padding: 20px;
-
+  padding-right: 20px;
   color: $footer-link-color;
-  text-align: center;
 
   &:hover {
     color: $footer-link-hover-color;
