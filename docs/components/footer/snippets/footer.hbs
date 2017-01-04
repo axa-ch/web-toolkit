@@ -3,28 +3,11 @@ title: Standard Footer
 layout: demo.hbs
 ---
 <div class="container">
-  <div class="footer row">
-    <ul class="footer-social col-lg-4 col-lg-push-8">
-      <li class="footer-social-item">
-        <a class="footer-social-link" href="#">{{> icon name="search" classes="footer-social-icon" attributes="viewBox=\"0 0 1 1\" preserveAspectRatio=\"xMidYMid meet\"" }}</a>
-      </li>
-      <li class="footer-social-item">
-        <a class="footer-social-link" href="#">{{> icon name="search" classes="footer-social-icon" attributes="viewBox=\"0 0 1 1\" preserveAspectRatio=\"xMidYMid meet\"" }}</a>
-      </li>
-      <li class="footer-social-item">
-        <a class="footer-social-link" href="#">{{> icon name="search" classes="footer-social-icon" attributes="viewBox=\"0 0 1 1\" preserveAspectRatio=\"xMidYMid meet\"" }}</a>
-      </li>
-      <li class="footer-social-item">
-        <a class="footer-social-link" href="#">{{> icon name="search" classes="footer-social-icon" attributes="viewBox=\"0 0 1 1\" preserveAspectRatio=\"xMidYMid meet\"" }}</a>
-      </li>
-      <li class="footer-social-item">
-        <a class="footer-social-link" href="#">{{> icon name="search" classes="footer-social-icon" attributes="viewBox=\"0 0 1 1\" preserveAspectRatio=\"xMidYMid meet\"" }}</a>
-      </li>
-    </ul>
-    <section class="footer-links col-lg-8 col-lg-pull-4">
+  <div class="row footer-top">
+    <section class="col-lg-9 footer-links">
       <div class="row">
-        <div class="col-sm-6">
-          <div class="footer-link-title hidden-xs-down">Quick Access</div>
+        <div class="col-sm-4">
+          <div class="footer-link-title hidden-md-down">Quick Access</div>
           <ul class="footer-link-list">
             <li class="footer-link-item">
               <a class="footer-link" href="#">Careers</a>
@@ -37,7 +20,21 @@ layout: demo.hbs
             </li>
           </ul>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+          <div class="footer-link-title hidden-xs-down">Our fancy apps</div>
+          <ul class="footer-link-list">
+            <li class="footer-link-item">
+              <a class="footer-link" href="#">AXA Sure</a>
+            </li>
+            <li class="footer-link-item">
+              <a class="footer-link" href="#">myAXA App</a>
+            </li>
+            <li class="footer-link-item">
+              <a class="footer-link" href="#">myAXA Web</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
           <div class="footer-link-title hidden-xs-down">Our fancy apps</div>
           <ul class="footer-link-list">
             <li class="footer-link-item">
@@ -53,22 +50,24 @@ layout: demo.hbs
         </div>
       </div>
     </section>
-    
-    <div class="clearfix hidden-md-down"></div>
-
-    <ul class="footer-languages col-md-6">
-      <li class="footer-language-item">
-        <a class="footer-language-link" href="#">DE</a>
-      </li>
-      <li class="footer-language-item">
-        <a class="footer-language-link is-active" href="#">EN</a>
-      </li>
-      <li class="footer-language-item">
-        <a class="footer-language-link" href="#">FR</a>
-      </li>
-    </ul>
-    <section class="footer-copyline col-md-6">
+  </div>
+  <div class="row footer-bottom">
+    <div class="footer-languages-bottom-container">
+      <span class="footer-languages-label">Languages:</span>
+      <ul class="footer-languages">
+        <li class="footer-language-item">
+          <a class="footer-language-link" href="#">English</a>
+        </li>
+        <li class="footer-language-item">
+          <a class="footer-language-link active-language" href="#">French</a>
+        </li>
+        <li class="footer-language-item">
+          <a class="footer-language-link" href="#">German</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-copyline-bottom">
       <a href="#">Privacy Policy</a> © 2016 AXA, All Rights Reserved
-    </section>
+    </div>
   </div>
 </div

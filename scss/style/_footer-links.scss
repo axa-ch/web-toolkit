@@ -1,21 +1,8 @@
 .footer-links {
-  @media (min-width: $screen-sm-min) {
-    margin-bottom: 25px;
-  }
-}
-
-.footer-link-title {
-  @extend .typo-16;
-
-  height: 33px;
-  margin-left: -$grid-gutter-width/2;
   margin-right: -$grid-gutter-width/2;
-  padding-left: $footer-padding-lr;
+  margin-left: -$grid-gutter-width/2;
   padding-right: $footer-padding-lr;
-  
-  font-weight: bold;
-
-  color: $footer-text-color;
+  padding-left: $footer-padding-lr;
 }
 
 .footer-link-list {
@@ -28,13 +15,8 @@
   display: block;
   height: 40px;
   border-top: 1px solid $footer-secondary-color;
-  margin-left: -$grid-gutter-width/2;
-  margin-right: -$grid-gutter-width/2;
-  padding-left: $footer-padding-lr;
-  padding-right: $footer-padding-lr;
-  line-height: 40px;
-
   color: $footer-link-color;
+  line-height: 40px;
 
   @media (min-width: $screen-sm-min) {
     height: 33px;
@@ -46,4 +28,12 @@
     color: $footer-link-hover-color;
     text-decoration: none;
   }
+}
+
+.footer-link-title {
+  @extend .typo-16;
+  padding-bottom: 25px;
+  color: $footer-text-color;
+  font-weight: bold;
+  text-transform: uppercase;
 }

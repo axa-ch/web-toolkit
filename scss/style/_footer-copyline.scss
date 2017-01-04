@@ -1,13 +1,19 @@
-.footer-copyline {
-  padding-left: $footer-padding-lr;
-  padding-right: $footer-padding-lr;
-
-  text-align: right;
-  
-  background: $footer-secondary-color;
-  color: $footer-copyline-color;
+.footer-copyline-bottom {
+  @extend .typo-13;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-end;
+  height: inherit;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: transparentize($footer-copyline-color, 0.5);
+  @media (max-width: $screen-xs-min) {
+    justify-content: center;
+  }
 
   a {
-    color: $footer-copyline-color;
+    color: transparentize($footer-copyline-color, 0.5);
   }
+
 }

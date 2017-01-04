@@ -1,11 +1,6 @@
 .footer-social {
   @include unstyle-list();
-  
   display: flex;
-
-  @media (min-width: $screen-sm-min) {
-    margin-top: 25px;
-  }
 }
 
 .footer-social-item {
@@ -22,11 +17,6 @@
       flex-grow: unset;
     }
 
-    .footer-social-link {
-      padding-left: $footer-padding-lr;
-
-      text-align: left;
-    }
   }
 
   &:last-of-type {
@@ -35,10 +25,10 @@
     @media (min-width: $screen-sm-min) {
       flex-grow: unset;
     }
-    
+
     .footer-social-link {
       padding-right: $footer-padding-lr;
-    
+
       text-align: right;
     }
   }
