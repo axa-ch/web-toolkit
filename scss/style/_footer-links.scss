@@ -5,6 +5,14 @@
 
 .footer-link-list {
   @include unstyle-list();
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+
+  &.is-active {
+    display: block;
+  }
+
 }
 
 .footer-link {
@@ -22,9 +30,24 @@
     line-height: 33px;
   }
 
+  @media (max-width: $screen-xs-max) {
+    height: 80px;
+    padding-right: $footer-sides-offset;
+    padding-left: $footer-sides-offset;
+    border-top: 1px solid $footer-secondary-color;
+    line-height: 80px;
+  }
+
   &:hover {
     color: $footer-link-hover-color;
     text-decoration: none;
+  }
+}
+
+.footer-back {
+  >.footer-link {
+    height: 120px;
+    line-height: 120px;
   }
 }
 
