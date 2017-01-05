@@ -11,8 +11,9 @@
   @extend .typo-14;
   display: flex;
   align-items: center;
-  @media (max-width: $screen-xs-min) {
-    justify-content: center;
+  padding-right: 18px;
+  @media (max-width: $screen-md-min) {
+    display: none;
   }
 }
 
@@ -20,12 +21,15 @@
   @include unstyle-list();
   display: flex;
   align-items: center;
-  @media (max-width: $screen-xs-min) {
-    justify-content: center;
-  }
 }
 
 .footer-language-item {
+  padding: 0 18px;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
   &:not(:last-child) {
     border-right: 1px solid transparentize($footer-link-color, 0.5);
     line-height: 14px;
@@ -35,7 +39,6 @@
 .footer-language-link {
   @extend .typo-14;
   display: inline-block;
-  padding: 0 18px;
   color: transparentize($footer-link-color, 0.5);
 
   &:hover {

@@ -1,3 +1,11 @@
+.footer-social-container {
+  @media (min-width: $screen-sm-min) {
+    padding-right: 0;
+    padding-bottom: 40px;
+    padding-left: 0;
+  }
+}
+
 .footer-social {
   @include unstyle-list();
   display: flex;

@@ -9,14 +9,20 @@ $footer-secondary-color: $color-st-tropaz;
 $footer-bottom-border: $color-indigo;
 $footer-sides-offset: 50px;
 
+.clear-gutter {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .footer-top {
   padding-top: 50px;
   padding-bottom: 50px;
   background: $footer-primary-color;
 
-  @media (min-width: $screen-lg-min) {
-    padding-right: $footer-sides-offset - $grid-gutter-width/2;
-    padding-left: $footer-sides-offset  - $grid-gutter-width/2;
+  @media (min-width: $screen-sm-min) {
+    padding-top: 40px;
+    padding-right: $footer-sides-offset;
+    padding-left: $footer-sides-offset;
   }
 }
 
@@ -26,7 +32,7 @@ $footer-sides-offset: 50px;
   border-top: 2px solid $footer-bottom-border;
   background: $footer-secondary-color;
 
-  @media (min-width: $screen-lg-min) {
+  @media (min-width: $screen-sm-min) {
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
   }
