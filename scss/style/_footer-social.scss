@@ -4,11 +4,21 @@
     padding-bottom: 40px;
     padding-left: 0;
   }
+  @media (max-width: $screen-xs-max) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .footer-social {
   @include unstyle-list();
   display: flex;
+  @media (max-width: $screen-xs-max) {
+    align-items: center;
+    height: 120px;
+    padding-right: $footer-sides-offset;
+    padding-left: $footer-sides-offset;
+  }
 }
 
 .footer-social-item {
@@ -19,7 +29,7 @@
   }
 
   &:first-of-type {
-    flex-grow: 1;
+    // flex-grow: 1;
 
     @media (min-width: $screen-sm-min) {
       flex-grow: unset;

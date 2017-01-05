@@ -5,6 +5,12 @@
   padding-bottom: 11px;
   color: $footer-text-color;
   text-transform: uppercase;
+  @media (max-width: $screen-xs-max) {
+    justify-content: center;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .footer-languages-label {

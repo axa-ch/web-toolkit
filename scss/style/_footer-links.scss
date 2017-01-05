@@ -34,4 +34,11 @@
   color: $footer-text-color;
   font-weight: bold;
   text-transform: uppercase;
+  @media (max-width: $screen-xs-max) {
+    height: 80px;
+    padding-right: $footer-sides-offset;
+    padding-left: $footer-sides-offset;
+    border-top: 1px solid $footer-secondary-color;
+    line-height: 80px;
+  }
 }

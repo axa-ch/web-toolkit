@@ -24,6 +24,10 @@ $footer-sides-offset: 50px;
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
   }
+  @media (max-width: $screen-xs-max) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 .footer-bottom {

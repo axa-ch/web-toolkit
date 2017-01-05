@@ -8,8 +8,10 @@
   padding-top: 3px;
   padding-bottom: 3px;
   color: transparentize($footer-copyline-color, 0.5);
-  @media (max-width: $screen-xs-min) {
+  @media (max-width: $screen-xs-max) {
     justify-content: center;
+    padding-top: 0;
+    padding-bottom: 15px;
   }
 
   a {
