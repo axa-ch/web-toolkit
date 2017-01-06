@@ -44,11 +44,31 @@
   }
 }
 
+.footer-link-icon-container {
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+
+.footer-link-icon {
+  height: 16px;
+  fill: $color-white;
+}
+
 .footer-back {
   >.footer-link {
     height: 120px;
     line-height: 120px;
   }
+
+}
+
+.footer-back-icon {
+  height: 20px;
+  transform: rotate(180deg);
+  fill: $color-white;
 }
 
 .footer-link-title {
@@ -64,4 +84,12 @@
     border-top: 1px solid $footer-secondary-color;
     line-height: 80px;
   }
+}
+
+
+.footer-title-only {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0;
 }
