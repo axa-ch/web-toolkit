@@ -4,8 +4,12 @@ description: Showcases and describes the footer.
 nav: side/components/footer
 order: 1
 toc:
-  - title: Standard footer
-    slug: footer
+  - title: Full footer
+    slug: full
+  - title: Langues top footer
+    slug: languages-top
+  - title: Top only footer
+    slug: top-only
 ---
 
 {{#> page}}
@@ -19,12 +23,30 @@ toc:
     </p>
     {{> table-of-contents data=toc}}
 
-    <h2 class="h3" id="footer">Standard footer</h2>
+    <h2 class="h3" id="full">Full footer</h2>
     <p>
-      Info about the standard footer
+      Info about the full footer
     </p>
 
-    {{> example path="/components/footer/demos/footer.html"}}
-    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer"}}{{{.}}}{{/get}}{{/code-snippet}}
+    {{> example path="/components/footer/demos/footer-full.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer-full"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+
+    <h2 class="h3" id="languages-top">Languages top footer</h2>
+    <p>
+      Info about the languages top footer
+    </p>
+
+    {{> example path="/components/footer/demos/footer-lang-top.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer-lang-top"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h2 class="h3" id="top-only">Top only footer</h2>
+    <p>
+      Info about the top only footer
+    </p>
+
+    {{> example path="/components/footer/demos/footer-top-only.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer-top-only"}}{{{.}}}{{/get}}{{/code-snippet}}
+
   {{/inline}}
 {{/page}}
