@@ -13,10 +13,10 @@ class Footer {
     if (this.$element.hasClass('is-active')) {
       $('.footer-back').remove()
       this.$element.removeClass('is-active')
-      $('.footer-social-container').show()
+      $('.footer-social-top-container').show()
       this.$parents.show()
     } else {
-      $('.footer-social-container').hide()
+      $('.footer-social-top-container').hide()
       this.$element.prepend(`<li
         class="footer-back footer-link-item hidden-sm-up"
         >
