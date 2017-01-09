@@ -14,6 +14,10 @@ $footer-sides-offset: 50px;
   margin-left: 0;
 }
 
+.footer-last-column {
+  padding: 0;
+}
+
 .footer-top {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -41,10 +45,4 @@ $footer-sides-offset: 50px;
     padding-left: $footer-sides-offset;
   }
 
-}
-
-.footer-social-link {
-  svg {
-    fill: $footer-social-color;
-  }
 }

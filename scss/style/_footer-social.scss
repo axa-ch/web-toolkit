@@ -1,4 +1,4 @@
-.footer-social-container {
+.footer-social-top-container {
   @media (min-width: $screen-sm-min) {
     padding-right: 0;
     padding-bottom: 40px;
@@ -7,6 +7,12 @@
   @media (max-width: $screen-xs-max) {
     padding-right: 0;
     padding-left: 0;
+  }
+}
+
+.footer-social-link {
+  svg {
+    fill: $footer-social-color;
   }
 }
 
