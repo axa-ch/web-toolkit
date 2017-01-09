@@ -35,7 +35,9 @@
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
     border-top: 1px solid $footer-secondary-color;
+    font-weight: 400;
     line-height: 80px;
+    text-transform: uppercase;
   }
 
   &:hover {
@@ -59,8 +61,12 @@
 
 .footer-back {
   >.footer-link {
+    @extend .typo-20;
+    display: flex;
+    align-items: center;
     height: 120px;
     line-height: 120px;
+    text-transform: uppercase;
   }
 
 }
@@ -78,10 +84,12 @@
   font-weight: bold;
   text-transform: uppercase;
   @media (max-width: $screen-xs-max) {
+    @include typo-20();
     height: 80px;
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
     border-top: 1px solid $footer-secondary-color;
+    font-weight: 400;
     line-height: 80px;
   }
 }
