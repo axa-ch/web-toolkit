@@ -1,0 +1,63 @@
+---
+title: Tables
+description: Description of how to deal with tables in your app.
+nav: side/components/tables
+order: 1
+toc:
+  - title: Bootstrap tables
+    slug: bootstrap-tables
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">{{title}}</h1>
+    <p class="lead">
+      Tables can be used for a great variety of use cases and there
+      is no single right way to create and use tables.<br />
+      If you have great tables that are based on our toolkit and
+      guidelines, we're happy to accept pull requests and showcase
+      them here.
+    </p>
+
+    {{> table-of-contents data=toc}}
+    
+    <h2 class="h3" id="bootstrap-tables">Bootstrap tables</h2>
+    <p>
+      For now we have the Bootstrap tables with little
+      modifiactions to the colors. They're very helpful in a
+      number of use cases.
+    </p>
+
+    <h3 class="h4" id="bootstrap-tables">Default Bootstrap table</h3>
+    {{> example path="/components/tables/demos/bootstrap-table.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/tables/snippets/bootstrap-table"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h3 class="h4" id="bootstrap-tables">Striped Bootstrap table</h3>
+    {{> example path="/components/tables/demos/bootstrap-table-striped.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/tables/snippets/bootstrap-table-striped"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h3 class="h4" id="bootstrap-tables">Bordered Bootstrap table</h3>
+    {{> example path="/components/tables/demos/bootstrap-table-bordered.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/tables/snippets/bootstrap-table-bordered"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h3 class="h4" id="bootstrap-tables">Condensed Bootstrap table</h3>
+    <p>
+      The condensed table has a slightly smaller cell-padding leaving more
+      room for content in a cell compared to the default table.
+    </p>
+    {{> example path="/components/tables/demos/bootstrap-table-condensed.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/tables/snippets/bootstrap-table-condensed"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h3 class="h4" id="bootstrap-tables">Responsive Bootstrap table</h3>
+    <p>
+      The responsive table will respect the width of the container it's in
+      and create a horizontal scrollbar if necessary. Other tables will push
+      the width of their containers.
+    </p>
+    <div class="alert alert-info hidden-xs-down" role="alert">
+      <strong>Hint!</strong> Try the xs viewport to view the horizontal scrollbar.
+    </div>
+    {{> example path="/components/tables/demos/bootstrap-table-responsive.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/tables/snippets/bootstrap-table-responsive"}}{{{.}}}{{/get}}{{/code-snippet}}
+  {{/inline}}
+{{/page}}

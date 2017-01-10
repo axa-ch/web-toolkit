@@ -1,0 +1,137 @@
+---
+title: Banner
+description: Banners provide a way to highlight topics and are mostly used on home pages.
+nav: side/components/banners
+order: 1
+lunr: true
+toc:
+  - title: Overview
+    slug: overview
+  - title: Background media
+    slug: background-media
+  - title: Overlay types
+    slug: overlay-types
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="docs-h2">{{title}}</h1>
+    <p class="lead">Banners provide a way to highlight
+    topics and are mostly used on home pages.</p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 class="docs-h3" id="overview">Overview</h2>
+
+    {{> example path="/components/banner/demos/banner.html"}}
+
+    {{#code-snippet "html"}}
+      <div class="banner">
+        <div class="banner-bg">
+          <img class="banner-bg-media" src="image.jpg" alt="an image" />
+        </div>
+        <div class="banner-overlay gradient"></div>
+        <div class="banner-content">
+          <div class="container">
+            <p class="banner-title">Title</p>
+            <p class="banner-lead">A key message which makes your topic interesting to your customers.</p>
+            <div class="banner-actions">
+              <a href="#" class="banner-action btn btn-ghost btn-lg">Call to action</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/code-snippet}}
+
+    <h2 class="docs-h3" id="background-media">Background media</h2>
+
+    <p>You can use different types of media as the banner background.
+    Most commonly, it will be a simple image. Videos and responsive
+    images (<code>&lt;picture&gt;</code>) are possible too.</p>
+
+    <p>Simply place the right element in the <code>.banner-bg</code> element.</p>
+
+    <h2 class="docs-h4">Simple image</h2>
+
+    {{#code-snippet "html"}}
+      <div class="banner">
+        <div class="banner-bg">
+          <img class="banner-bg-media" src="image.jpg" alt="an image" />
+        </div>
+        </div>
+        <!-- ... -->
+      </div>
+    {{/code-snippet}}
+
+    <h2 class="docs-h4">Picture element</h2>
+
+    {{#code-snippet "html"}}
+      <div class="banner">
+        <div class="banner-bg">
+          <picture src="image.jpg" alt="an image">
+            <source srcset="image.1200.jpg" media="(min-width: 1200px)">
+            <source srcset="image.992.jpg" media="(min-width: 992px)">
+            <source srcset="image.768.jpg" media="(min-width: 768px)">
+            <source srcset="image.jpg">
+            <img class="banner-bg-media" src="image.jpg" alt="an image" />
+          </picture>
+        </div>
+        <!-- ... -->
+      </div>
+    {{/code-snippet}}
+
+    <h2 class="docs-h4">Video</h2>
+
+    {{#code-snippet "html"}}
+      <div class="banner">
+        <div class="banner-bg">
+          <video class="banner-bg-media">
+            <source src="clip.webm" type="video/webm">
+            <source src="clip.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- ... -->
+      </div>
+    {{/code-snippet}}
+
+    <h2 class="docs-h3" id="overlay-types">Overlay types</h2>
+
+    <p>The overlay is the dark transcluent area which is
+    put over the background image or video. It makes the
+    background darker, so the white text and components are
+    better legible.</p>
+
+    <p>There are different types of overlays available, pick the
+    one that leads to the best results for your user or create
+    a new type for your specific needs.</p>
+
+    <h2 class="docs-h4">Semi overlay</h2>
+
+    <p>The semi overlay is a black area which is transparent to 50%.</p>
+
+    {{#code-snippet "html"}}
+      <div class="banner">
+        <!-- media -->
+        <div class="banner-overlay semi"></div>
+        <!-- content -->
+      </div>
+    {{/code-snippet}}
+
+    <h2 class="docs-h4">Gradient overlay</h2>
+
+    <p>The gradient overlay is great if you're using the
+    <a href="{{relative '/components/header'}}##appearance">transparent header</a>.
+    It starts pretty dark on the top and ends
+    in 50% black transparency on the bottom.
+    </p>
+
+    {{#code-snippet "html"}}
+      <div class="banner">
+        <!-- media -->
+        <div class="banner-overlay gradient"></div>
+        <!-- content -->
+      </div>
+    {{/code-snippet}}
+
+  {{/inline}}
+{{/page}}

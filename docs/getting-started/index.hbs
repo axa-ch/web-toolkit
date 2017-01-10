@@ -4,8 +4,6 @@ nav: side/getting-started/introduction
 order: 1
 lunr: true
 fontUrl: https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700
-cssUrl: https://design.axa.com/toolkit/dist/all.css
-jsUrl: https://design.axa.com/toolkit/dist/all.js
 metaExplanationUrl: https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do
 toc:
   - title: Quick Start
@@ -44,22 +42,13 @@ toc:
     <a href="{{relative '/getting-started/downloads/'}}">Check out
     the downloads page.</a></p>
 
-    <div class="alert alert-danger" role="alert">
-      <p><strong>Watch out!</strong> Our CDN isn't ready yet,
-      which is why the URLs you'll find below aren't properly
-      versioned and highly available. To use the AXA Web Toolkit productively,
-      choose an
-      <a href="{{relative '/getting-started/downloads/'}}">alternative
-      download method</a>.</p>
-    </div>
-
     <p>Copy-paste the stylesheet <code>&lt;link&gt;</code> of the
     Web Toolkit and the fonts into your <code>&lt;head&gt;</code>
     before all other stylesheets to load our CSS.</p>
 
     {{#code-snippet "html"}}
-      <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
-      <link rel="stylesheet" href="{{{cssUrl}}}" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{{fontUrl}}}">
+      <link rel="stylesheet" href="{{replace package.cdnCss '{tag}' package.version}}">
     {{/code-snippet}}
 
     <p>Add our JavaScript plugins and jQuery near the end of your pages,
@@ -67,7 +56,7 @@ toc:
     Be sure to place jQuery first, as our code depends on them.</p>
 
     {{#code-snippet "html"}}
-      <script src="{{{jsUrl}}}" crossorigin="anonymous"></script>
+      <script src="{{replace package.cdnJs '{tag}' package.version}}"></script>
     {{/code-snippet}}
 
     <p>And that's it—you're on your way to a fully
@@ -100,15 +89,15 @@ toc:
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
         <!-- Fonts first, then the AXA Web Toolkit CSS. -->
-        <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{{cssUrl}}}" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{{fontUrl}}}">
+        <link rel="stylesheet" href="{{replace package.cdnCss '{tag}' package.version}}">
       </head>
       <body>
         <h1>Hello, world!</h1>
 
         <!-- jQuery first, then the AXA Web Toolkit JS. -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
-        <script src="{{{jsUrl}}}" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="{{replace package.cdnJs '{tag}' package.version}}"></script>
       </body>
       </html>
     {{/code-snippet}}

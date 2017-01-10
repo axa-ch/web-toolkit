@@ -16,7 +16,7 @@ export default function isAnimationSupported() {
     const property = properties[i]
 
     // if the animation property is supported, exit
-    if (elm.style[property] != null) {
+    if (elm.style[property] !== undefined) {
       return true
     }
   }

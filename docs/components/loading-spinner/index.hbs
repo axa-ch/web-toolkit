@@ -1,0 +1,50 @@
+---
+title: Loading Spinner 
+description: Shows the loading spinner and it's gif based fallback for IE9
+nav: side/components/loading-spinner
+order: 1
+toc:
+  - title: Default spinner
+    slug: default-spinner
+  - title: IE 9 Fallback
+    slug: ie9-fallback
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">{{title}}</h1>
+    <p class="lead">
+      Use loading spinners whenever operations can't be expected to
+      finish in a blink of an eye.
+      Our spinner is based on a sexy css animation, but we also have
+      a fallback for old IE versions based on a gif.
+    </p>
+
+    {{> table-of-contents data=toc}}
+
+    <h2 class="h3" id="default-spinner">Default spinner</h2>
+    
+    {{> example path="/components/loading-spinner/demos/loading-spinner.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/loading-spinner/snippets/loading-spinner"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h2 class="h3" id="ie9-fallback">IE 9 Fallback</h2>
+    
+    <p>
+      We have implemented a fallback for the loading spinner supporting
+      IE versions 9 and older with a gif.
+    </p>
+    
+    <div class="alert alert-info">
+      <strong>Info!</strong> Set the <code>.is-fallback-active</code> class
+      to enable the fallback on browsers that do not support animations.
+      You can use our jQuery plugin <code>ie9-spinner</code> to do that.
+      Make sure to use the <code>data-spinner</code> attribute as shown below
+      and our plugin will automatically set the class on those spinners when
+      necessary.
+    </div>
+
+    {{> example path="/components/loading-spinner/demos/loading-spinner-ie9-fallback-active.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/loading-spinner/snippets/loading-spinner-ie9"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+  {{/inline}}
+{{/page}}

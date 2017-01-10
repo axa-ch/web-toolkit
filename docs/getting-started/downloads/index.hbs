@@ -14,8 +14,6 @@ toc:
   - title: Package managers
     slug: package-managers
 fontUrl: https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700
-cssUrl: https://design.axa.com/toolkit/dist/all.css
-jsUrl: https://design.axa.com/toolkit/dist/all.js
 autoprefixerUrl: https://github.com/postcss/autoprefixer
 flexbugsUrl: https://github.com/luisrudge/postcss-flexbugs-fixes
 ---
@@ -41,7 +39,14 @@ flexbugsUrl: https://github.com/luisrudge/postcss-flexbugs-fixes
     Doesn't include documentation or source files.</p>
 
     <p>
-      <a href="{{replace package.distArchive '{tag}' package.version}}" class="btn btn-default btn-lg" role="button">Download AXA Web Toolkit</a>
+      <a
+        href="{{replace package.distArchive '{tag}' package.version}}"
+        class="btn btn-default btn-lg"
+        role="button"
+        onclick="window.track.Download('dist-{{package.version}}')"
+      >
+        Download AXA Web Toolkit
+      </a>
     </p>
 
     <h2 id="source-files" class="docs-h3">Source files</h2>
@@ -55,7 +60,14 @@ flexbugsUrl: https://github.com/luisrudge/postcss-flexbugs-fixes
     and some setup.</p>
 
     <p>
-      <a href="{{replace package.sourceArchive '{tag}' package.version}}" class="btn btn-default" role="button">Download source</a>
+      <a
+        href="{{replace package.sourceArchive '{tag}' package.version}}"
+        class="btn btn-default"
+        role="button"
+        onclick="window.track.Download('source-{{package.version}}')"
+      >
+        Download source
+      </a>
     </p>
 
     <h2 id="cdn" class="docs-h3">CDN</h2>
@@ -63,17 +75,10 @@ flexbugsUrl: https://github.com/luisrudge/postcss-flexbugs-fixes
     <p>Skip the download and use our CDN to deliver
     the compiled CSS and JS to your project.</p>
 
-    <div class="alert alert-danger" role="alert">
-      <p><strong>Watch out!</strong> Our CDN isn't ready yet,
-      which is why the URLs you'll find below aren't properly
-      versioned and highly available. To use the AXA Web Toolkit productively,
-      choose an alternative download method.</p>
-    </div>
-
     {{#code-snippet "html"}}
       <link rel="stylesheet" href="{{{fontUrl}}}" crossorigin="anonymous">
-      <link rel="stylesheet" href="{{{cssUrl}}}" crossorigin="anonymous">
-      <script src="{{{jsUrl}}}" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="{{replace package.cdnCss '{tag}' package.version}}" crossorigin="anonymous">
+      <script src="{{replace package.cdnJs '{tag}' package.version}}" crossorigin="anonymous"></script>
     {{/code-snippet}}
 
     <h2 id="package-managers" class="docs-h3">Package managers</h2>

@@ -16,26 +16,29 @@ class Example {
     const $el = this.$el
 
     this.$frame = $el.find('[data-example-iframe]')
-    this.$mobile = $el.find('[data-example-mobile]')
-    this.$tablet = $el.find('[data-example-tablet]')
-    this.$desktop = $el.find('[data-example-desktop]')
+    this.$xs = $el.find('[data-example-xs]')
+    this.$sm = $el.find('[data-example-sm]')
+    this.$md = $el.find('[data-example-md]')
+    this.$lg = $el.find('[data-example-lg]')
 
     // store the availability of the viewports
-    this.disableMobile = $el.attr('data-example-disable-mobile')
-    this.disableTablet = $el.attr('data-example-disable-tablet')
-    this.disableDesktop = $el.attr('data-example-disable-desktop')
+    this.disableXs = $el.attr('data-example-disable-xs')
+    this.disableSm = $el.attr('data-example-disable-sm')
+    this.disableMd = $el.attr('data-example-disable-md')
+    this.disableLg = $el.attr('data-example-disable-lg')
 
     // we need both an initial resize and click
     const initialResize = Bacon.once($el.width())
     const initialClick = Bacon.once($el.width())
       .map(this.mapWidthToViewport)
-      .map(this.mapToEnabledViewport(this.disableMobile, this.disableTablet, this.disableDesktop))
+      .map(this.mapToEnabledViewport(this.disableXs, this.disableSm, this.disableMd, this.disableLg))
 
     // viewport that we explicitly switched to
     this.clickedTo = initialClick
-      .merge(Bacon.$.asEventStream.call(this.$mobile, 'click').map('mobile'))
-      .merge(Bacon.$.asEventStream.call(this.$tablet, 'click').map('tablet'))
-      .merge(Bacon.$.asEventStream.call(this.$desktop, 'click').map('desktop'))
+      .merge(Bacon.$.asEventStream.call(this.$xs, 'click').map('xs'))
+      .merge(Bacon.$.asEventStream.call(this.$sm, 'click').map('sm'))
+      .merge(Bacon.$.asEventStream.call(this.$md, 'click').map('md'))
+      .merge(Bacon.$.asEventStream.call(this.$lg, 'click').map('lg'))
       .skipDuplicates()
       .toProperty()
 
@@ -45,7 +48,7 @@ class Example {
       .merge(initialResize)
       .throttle(25)
       .map(this.mapWidthToViewport)
-      .map(this.mapToEnabledViewport(this.disableMobile, this.disableTablet, this.disableDesktop))
+      .map(this.mapToEnabledViewport(this.disableXs, this.disableSm, this.disableMd, this.disableLg))
       .skipDuplicates()
       .toProperty()
 
@@ -59,7 +62,7 @@ class Example {
         return resizedTo
       }
     )
-      .onValue(viewport => {
+      .onValue((viewport) => {
         this.setMode(viewport)
         return this.setViewport(viewport)
       }
@@ -79,7 +82,7 @@ class Example {
         return resizedTo
       }
     )
-      .onValue(viewport => {
+      .onValue((viewport) => {
         this.setMode(viewport)
         return this.setViewport(viewport)
       }
@@ -87,53 +90,56 @@ class Example {
   }
 
   mapWidthToViewport(width) {
-    if (width < 768) { return 'mobile' }
-    if (width < 980) { return 'tablet' }
-    return 'desktop'
+    if (width < 768) { return 'xs' }
+    if (width < 992) { return 'sm' }
+    if (width < 1200) { return 'md' }
+    return 'lg'
   }
 
-  mapToEnabledViewport(disableMobile, disableTablet, disableDesktop) {
+  mapToEnabledViewport(disableXs, disableSm, disableMd, disableLg) {
     return function (viewport) {
-      if ((viewport === 'mobile' && !disableMobile) || (disableTablet && disableDesktop)) { return 'mobile' }
-      if ((viewport === 'tablet' && !disableTablet) || disableDesktop) { return 'tablet' }
-      return 'desktop'
+      if ((viewport === 'xs' && !disableXs) || (disableSm && disableMd && disableLg)) { return 'xs' }
+      if ((viewport === 'sm' && !disableSm) || (disableMd && disableLg)) { return 'sm' }
+      if ((viewport === 'md' && !disableMd) || (disableLg)) { return 'md' }
+      return 'lg'
     }
   }
 
   mapViewportToWidth(viewport) {
-    if (viewport === 'mobile') { return '320px' }
-    if (viewport === 'tablet') { return '768px' }
+    if (viewport === 'xs') { return '360px' }
+    if (viewport === 'sm') { return '768px' }
+    if (viewport === 'md') { return '992px' }
     return '100%'
   }
 
   viewportToOrder(viewport) {
-    if (viewport === 'mobile') { return 0 }
-    if (viewport === 'tablet') { return 1 }
-    return 2
+    if (viewport === 'xs') { return 0 }
+    if (viewport === 'sm') { return 1 }
+    if (viewport === 'md') { return 2 }
+    return 3
   }
 
   setViewport(viewport) {
-    return this.$frame.css('max-width', this.mapViewportToWidth(viewport))
+    return this.$frame.css('width', this.mapViewportToWidth(viewport))
   }
 
   setMode(viewport) {
-    this.$mobile.toggleClass('is-active', viewport === 'mobile')
-    this.$tablet.toggleClass('is-active', viewport === 'tablet')
-    return this.$desktop.toggleClass('is-active', viewport === 'desktop')
+    this.$xs.toggleClass('is-active', viewport === 'xs')
+    this.$sm.toggleClass('is-active', viewport === 'sm')
+    this.$md.toggleClass('is-active', viewport === 'md')
+    return this.$lg.toggleClass('is-active', viewport === 'lg')
   }
 
   setModeAvailability(maxViewport) {
     const maxViewportOrder = this.viewportToOrder(maxViewport)
 
-    this.$mobile.toggleClass('is-available', !this.disableMobile && maxViewportOrder >= 0)
-    this.$tablet.toggleClass('is-available', !this.disableTablet && maxViewportOrder >= 1)
-    return this.$desktop.toggleClass('is-available', !this.disableDesktop && maxViewportOrder >= 2)
+    this.$xs.toggleClass('is-available', !this.disableXs && maxViewportOrder >= 0)
+    this.$sm.toggleClass('is-available', !this.disableSm && maxViewportOrder >= 1)
+    this.$md.toggleClass('is-available', !this.disableMd && maxViewportOrder >= 2)
+    return this.$lg.toggleClass('is-available', !this.disableLg && maxViewportOrder >= 3)
   }
 }
 
 $(() =>
-  $('[data-example]')
-    .each((i, el) => new Example(el))
+  $('[data-example]').each((i, el) => new Example(el))
 )
-
-//! Copyright AXA Versicherungen AG 2015

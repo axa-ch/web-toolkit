@@ -1,21 +1,14 @@
 <div class="docs-example"
     data-example
-    {{#if disableMobile}}data-example-disable-mobile="true"{{/if}}
-    {{#if disableTablet}}data-example-disable-tablet="true"{{/if}}
-    {{#if disableDesktop}}data-example-disable-desktop="true"{{/if}}>
+    {{#if disableXs}}data-example-disable-xs="true"{{/if}}
+    {{#if disableSm}}data-example-disable-sm="true"{{/if}}
+    {{#if disableMd}}data-example-disable-md="true"{{/if}}
+    {{#if disableLg}}data-example-disable-lg="true"{{/if}}>
   <div class="docs-example-devices-list">
-    <a class="docs-example-device docs-example-device--mobile"
-        data-example-mobile>
-      {{> icon name="mobile" classes="docs-example-device-icon" }}
-    </a>
-    <a class="docs-example-device docs-example-device--tablet"
-        data-example-tablet>
-      {{> icon name="tablet" classes="docs-example-device-icon" }}
-    </a>
-    <a class="docs-example-device docs-example-device--desktop"
-        data-example-desktop>
-      {{> icon name="desktop" classes="docs-example-device-icon" }}
-    </a>
+    <a class="docs-example-device" data-example-xs>xs</a>
+    <a class="docs-example-device" data-example-sm>sm</a>
+    <a class="docs-example-device" data-example-md>md</a>
+    <a class="docs-example-device" data-example-lg>lg</a>
   </div>
   <div class="docs-example-content">
     <iframe class="docs-example-iframe"

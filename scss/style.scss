@@ -7,7 +7,7 @@
 @import 'bootstrap/normalize';
 @import 'bootstrap/variables';
 
-// Core variables and mixins
+// Core mixins
 @import 'bootstrap/mixins';
 
 // Reset and dependencies
@@ -53,34 +53,37 @@
 @import 'bootstrap/popovers';
 @import 'bootstrap/carousel';
 
-// Utility classes
-@import 'bootstrap/utilities';
-@import 'bootstrap/responsive-utilities';
-
-// Mixins and utilities
+// Mixins
 @import 'style/mixins';
+
+// Utilities
 @import 'style/utilities';
 
+// Core CSS and Components
+@import 'style/banner';
+@import 'style/browser-not-supported';
+@import 'style/btn';
+@import 'style/drawer';
 @import 'style/footer';
 @import 'style/footer-copyline';
 @import 'style/footer-languages';
 @import 'style/footer-links';
 @import 'style/footer-social';
 @import 'style/header';
+@import 'style/loading-spinner';
+@import 'style/mask';
 @import 'style/nav';
 @import 'style/sliding-menu';
 @import 'style/table-of-contents';
+@import 'style/table';
 @import 'style/type';
 
-@import 'style/drawer';
-@import 'style/mask';
-
+// To be refactored and migrated to style/xyz
 @import 'style/blocks/autocomplete';
 @import 'style/blocks/backdrop';
 @import 'style/blocks/blockquote';
 @import 'style/blocks/bouncy-spinner';
 @import 'style/blocks/brand';
-@import 'style/blocks/btn';
 @import 'style/blocks/bubble';
 @import 'style/blocks/button-row';
 @import 'style/blocks/button';
@@ -104,7 +107,6 @@
 @import 'style/blocks/header-search';
 @import 'style/blocks/heading';
 @import 'style/blocks/hr';
-@import 'style/blocks/icon';
 @import 'style/blocks/icon-teaser';
 @import 'style/blocks/image';
 @import 'style/blocks/info-icon';
@@ -137,7 +139,6 @@
 @import 'style/blocks/progressbar';
 @import 'style/blocks/richtext';
 @import 'style/blocks/segmented-control';
-@import 'style/blocks/spinner';
 @import 'style/blocks/step';
 @import 'style/blocks/steps';
 @import 'style/blocks/summary';
@@ -146,5 +147,9 @@
 @import 'style/blocks/tag';
 @import 'style/blocks/toggle';
 @import 'style/blocks/word-break';
+
+// Bootstrap utilities
+@import 'bootstrap/utilities';
+@import 'bootstrap/responsive-utilities';
 
 // Copyright AXA 2016

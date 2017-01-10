@@ -1,9 +1,14 @@
 .docs-code-snippet {
-  margin: 20px 0;
+  position: relative;
+  margin: 20px ($grid-gutter-width / -2);
   padding: 20px 15px;
   border: none;
-  border-radius: 5px;
   background-color: $color-wild-sand;
+
+  @include media-breakpoint-up(lg) {
+    margin: 20px 0;
+    border-radius: 5px;
+  }
 
   // reset the default pre styles when wrapped in .code-snippet
   pre {
@@ -11,6 +16,7 @@
     padding: 0;
     border: none;
     background-color: transparent;
+    word-wrap: normal;
 
     code {
       white-space: nowrap;
@@ -20,6 +26,52 @@
 
 .docs-example + .docs-code-snippet {
   margin-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+  @include media-breakpoint-up(lg) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.docs-code-snippet-clipboard-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.docs-code-snippet-copy {
+  display: flex;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 2px 8px;
+
+  transition: background $transition-slow $transition-ease, color $transition-slow $transition-ease;
+
+  border-width: 0;
+  border-radius: .25rem;
+  outline: none;
+  background-color: transparent;
+  color: $color-mineshaft;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-dark-indigo;
+    text-decoration: none;
+  }
+
+  &:active {
+    background: $color-dark-indigo;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
 }

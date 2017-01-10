@@ -1,0 +1,75 @@
+/// This is unique style for the normal buttons.
+/// This button has a border only on the bottom and features a nice animation on hover.
+///
+/// @example html - HTML Usage
+///   <button type="button" class="btn btn-axa">AXA Button</button>
+.btn-axa {
+  @include typo-16();
+  border-width: 0;
+  border-bottom-width: 2px;
+  border-style: solid;
+
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  &.btn.btn-lg {
+    border-width: 0;
+    border-bottom-width: 2px;
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large,
+      $line-height-large, $btn-border-radius-large);
+  }
+
+  @include button-primary($color-button-primary, $color-button-secondary, $color-white);
+}
+
+/// This is the default bootstrap button that's been modified for AXA.
+/// Modifications include most notably a 2px border-width on it's large version,
+/// but also modifications to typography.
+/// Combine with the `btn-primary`, `btn-default`, `btn-axa`, or `btn-link` modifiers.
+///
+/// @example html - HTML Usage
+///   <button type="button" class="btn btn-primary">Primary Button</button>
+.btn {
+  @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
+    $line-height-base, $btn-border-radius-base);
+  @extend .typo-16;
+
+  &.btn-lg {
+    // Reduce vertical padding by 1px because we increase border-width by 1px
+    @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
+      $font-size-large, $line-height-large, $btn-border-radius-large);
+    @include typo-16();
+
+    border-width: 2px;
+  }
+
+  &.btn-sm {
+    @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
+      $font-size-small, $line-height-small, $btn-border-radius-small);
+    @include typo-16();
+  }
+
+  &.btn-xs {
+    @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
+      $line-height-small, $btn-border-radius-small);
+    @include typo-16();
+  }
+
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  .badge {
+    font-size: .9em;
+  }
+}
+
+.btn.btn-default {
+  @include button-color($color-button-primary, $color-button-secondary, $color-white);
+}
+
+.btn-ghost {
+  @include button-color($color-white, $color-wild-sand, transparent);
+}

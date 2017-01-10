@@ -1,22 +1,22 @@
-$z-index-example-iframe: 50;
-$z-index-example-border-brackets: 49;
-
 .docs-example {
-  margin: 0 -10px 0 -10px;
+  margin: 0 ($grid-gutter-width / -2);
   padding: 18px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background: $color-wild-sand;
 
-  @media (min-width: $screen-md-min) {
+  border: 5px solid $color-wild-sand;
+
+  @include media-breakpoint-up(lg) {
     margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
 }
 
 .docs-example-devices-list {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 10px;
+  margin: -18px -18px 18px -18px;
+  padding: 5px 5px 10px 5px;
+  background-color: $color-wild-sand;
 }
 
 .docs-example-device {
@@ -24,20 +24,25 @@ $z-index-example-border-brackets: 49;
   align-items: center;
   justify-content: center;
 
-  margin: 0 5px;
-  padding: .5rem 1rem;
+  margin-left: 2px;
+  padding: 2px 8px;
 
   transition: background $transition-slow $transition-ease, color $transition-slow $transition-ease;
 
   border-radius: .25rem;
-  color: $color-dark-indigo;
+  color: $color-mineshaft;
   text-align: center;
   cursor: pointer;
 
-  &.is-active,
   &:hover {
+    color: $color-dark-indigo;
+    text-decoration: none;
+  }
+
+  &.is-active {
     background: $color-dark-indigo;
     color: $color-white;
+    text-decoration: none;
   }
 
   &.is-available {
@@ -45,26 +50,18 @@ $z-index-example-border-brackets: 49;
   }
 }
 
-.docs-example-device-icon {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-}
-
 .docs-example-content {
-  text-align: center;
 }
 
 .docs-example-iframe {
   display: block;
   position: relative;
 
-  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
 
-  transition: max-width $transition-normal ease;
+  transition: width $transition-normal $transition-ease;
 
   border: none;
   background: $color-white;
-  z-index: $z-index-example-iframe;
 }

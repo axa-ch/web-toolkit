@@ -149,10 +149,12 @@ class Search {
   displayResult() {
     let results = []
     const term = this.$input.val().trim()
-
     if (term !== '') {
       const res = this.lunrIdx.search(term)
       const iterable = res.slice(0, 5)
+
+      // eslint-disable-next-line
+      window.track.SearchResults(term, iterable.length)
 
       results = iterable.map((result) => {
         const data = this.searchData.pages[result.ref]

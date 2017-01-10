@@ -1,0 +1,112 @@
+{{#> html}}
+  {{#*inline "body"}}
+    <body data-make="drawer" data-fade="drawer" data-target="body" data-in="overflow-hidden-lg-down">
+      <a href="#content" class="sr-only sr-only-focusable btn btn-default btn-block" id="skippy">
+        <span class="skiplink-text">Skip to main content</span>
+      </a>
+
+      <a href="#" class="mask fade-out-delayed-xs-up" data-fade="drawer" data-target="body" data-in="fade-in-xs-up" data-out="fade-out-delayed-xs-up"></a>
+
+      <header class="header header-absolute transparent">
+        <div class="header-main">
+          <div class="container-fluid">
+            <a href="#" class="header-burger float-xs-left" data-fade="drawer" data-target="body" data-in="is-open">
+              <span class="header-burger-line"></span>
+            </a>
+
+            <div class="header-title float-xs-right">
+              <a class="label label-primary" href="{{package.releasesUrl}}" >{{package.version}}</a>
+            </div>
+
+            <div class="header-item float-xs-right">
+              <a href="{{package.repository.url}}" class="docs-github" title="View the repository on GitHub.">
+                {{> icon name="github" classes="docs-github-icon"}}
+              </a>
+            </div>
+
+            <div class="header-item float-xs-right">
+              <a href="{{package.npmjsPackage}}" class="docs-npm" title="View the npm package.">
+                {{> icon name="npm" classes="docs-npm-icon"}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {{#> content }}
+        {{{contents}}}
+      {{/content}}
+
+      <div class="drawer togglable-xs-left" data-fade="drawer" data-target="body" data-in="in">
+        <div class="header">
+          <div class="header-main">
+            <div class="container-fluid">
+              <a href="#" class="header-burger float-xs-left" data-fade="drawer" data-target="body" data-in="is-open">
+                <span class="header-burger-line"></span>
+              </a>
+
+              <a href="{{relative '/'}}" class="header-brand" title="Go to home page">
+                <span>
+                  <strong>AXA</strong>
+                  <br />
+                  <span>Web Toolkit</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="inline-search autocomplete">
+          <input
+            class="inline-search__input autocomplete__input"
+            type='text'
+            data-search="docs"
+            data-search-index-data="{{relative '/searchIndex.json'}}"
+            data-search-base-url="{{relative '/'}}"
+            placeholder="Search pages..."
+            onclick="window.track.SearchEnter()"
+          >
+          <div class="inline-search__button">
+            {{> icon name="search" classes="header-search__icon icon"}}
+          </div>
+        </div>
+
+        <nav class="col-md-12 mobile-menu mobile-menu--collapsing" data-menu="collapsing">
+          <ul class="mobile-menu__level" data-level>
+            {{#with menu.side}}
+              {{> menu}}
+            {{/with}}
+            {{> menu-ext-links}}
+          </ul>
+        </nav>
+      </div>
+
+      <script>var __HREF = '{{relative link}}'</script>
+      <script src="{{relative '/dist/docs.js'}}"></script>
+      <script> window.intercomSettings = { app_id: 'i82zr1ej' }</script>
+      <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/i82zr1ej';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+      <!-- TAG COMMANDER START //-->
+      <script type="text/javascript">
+      //<![CDATA[
+          var tc_vars = {
+            env_work: 'prod',
+            page_name: '{{env.BASE_URL}}{{link}}',
+          }
+      //]]>
+      </script>
+      <script
+        type="text/javascript"
+        src="//cdn.tagcommander.com/1737/tc_WebGuide_7.js"
+      ></script>
+      <noscript>
+        <iframe
+          src="//redirect1737.tagcommander.com/utils/noscript.php?id=7&amp;mode=iframe"
+          width="1"
+          height="1"
+          rel="noindex,nofollow"
+        />
+      </noscript>
+      <!-- TAG COMMANDER START //-->
+    </body>
+  {{/inline}}
+{{/html}}

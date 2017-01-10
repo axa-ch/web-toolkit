@@ -21,7 +21,7 @@ order: 1
   </head>
   <body data-make="drawer">
 
-    <header class="header">
+    <header class="header header-absolute" data-spy="reveal" data-offset-top="150">
       <div class="header-main">
         <div class="container">
           <a href="#" class="header-brand" data-fade="search" data-target=".header-search" data-in="fade-in-delayed-xs-down" data-out="fade-out-xs-down">
@@ -91,7 +91,25 @@ order: 1
       </div>
     </header>
 
-    <div style="height: 80vh; min-height: 600px; background: url({{bgImage}}) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+    <div class="banner">
+      <div class="banner-bg">
+        <img class="banner-bg-media" src="{{bgImage}}" alt="Girl working on laptop." />
+      </div>
+      <div class="banner-overlay gradient"></div>
+      <div class="banner-content">
+        <div class="container">
+          <p class="banner-title">Title of an article</p>
+          <p class="banner-lead">A key message which makes your topic interesting to your customers.</p>
+          <div class="banner-actions">
+            <a href="#" class="banner-action btn btn-ghost btn-lg">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
 
     <div class="drawer togglable-xs-top hidden-md-up" data-fade="drawer" data-target="body" data-in="in">
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

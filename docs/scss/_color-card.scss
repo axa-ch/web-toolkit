@@ -1,0 +1,33 @@
+.color-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  margin-bottom: 20px;
+  padding: ($grid-gutter-width / 2);
+
+  border-radius: 5px;
+  background: $color-wild-sand;
+}
+
+.color-card-title {
+  @extend .typo-item-highlight;
+
+  margin-top: 15px;
+}
+
+.color-card-description {
+  flex-grow: 1;
+  opacity: 0.6;
+}
+
+.color-card-variable code {
+  background: transparent;
+  color: inherit;
+}
+
+.color-card-hex code {
+  background: transparent;
+  color: inherit;
+  text-transform: uppercase;
+}

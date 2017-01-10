@@ -1,48 +1,110 @@
 ---
-title: Home
 description: The CSS, JS and HTML framework for building responsive AXA web apps!
-order: -2
+lunr: true
+banner768: https://cloud.githubusercontent.com/assets/198988/20709926/466791a8-b638-11e6-8037-e2528d5aae94.jpg
+banner992: https://cloud.githubusercontent.com/assets/198988/20709928/46954634-b638-11e6-958a-268faba34dcc.jpg
+banner1200: https://cloud.githubusercontent.com/assets/198988/20709927/4694e9fa-b638-11e6-8b5b-8aed1becabfb.jpg
 ---
 
-{{#> page}}
+{{#> home}}
   {{#*inline "content"}}
 
-    <p class="lead" style="margin: 50px 0;">
-      The Web Toolkit is the <em>CSS, JS and HTML framework</em>
-      that we use globally at <a href="https://www.axa.com">AXA</a>
-      <em>for modern and responsive web apps</em>. It is based
-      on <em>Bootstrap 3</em> and provides <em>many specific components
-      and utilities</em> for you to use. It makes developing great web apps
-      that follow our
-      <a href="{{package.homepageWebGuidelines}}">Web Guidelines</a> super easy!
-    </p>
-
-    <div class="row">
-      <div class="col-md-4">
-        <div class="jumbotron" style="padding: 35px;">
-          <p>Get started quickly with the AXA Web Toolkit.</p>
-          <p>
-            <a href="{{relative "/getting-started/"}}" class="btn btn-primary" role="button">Get started</a>
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="jumbotron" style="padding: 35px;">
-          <p>View the source code, add issues and contribute.</p>
-          <p>
-            <a href="{{package.repository.url}}" class="btn btn-default" role="button">View on GitHub</a>
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="jumbotron" style="padding: 35px;">
-          <p>Read the API reference of the components, utilities and plugins.</p>
-          <p>
-            <a href="{{relative "/api/"}}" class="btn btn-default" role="button">Browse API reference</a>
-          </p>
+    <div class="banner">
+      <div class="banner-bg">
+        <img
+          class="banner-bg-media"
+          src="{{banner768}}"
+          srcset="{{banner1200}} 1200w, {{banner992}} 992w, {{banner768}} 768w"
+          sizes="100vw"
+          alt="A man working on his laptop in a coffee shop" />
+     </div>
+     <div class="banner-overlay gradient"></div>
+      <div class="banner-content">
+        <div class="container">
+          <p class="banner-title"><b>AXA</b><br>Web Toolkit</p>
+          <p class="banner-lead">The CSS, JS and HTML framework that is used globally for modern and responsive web apps at AXA.</p>
+          <div class="banner-actions">
+            <a href="{{relative '/getting-started/'}}" class="banner-action btn btn-ghost btn-lg">Get started</a>
+          </div>
         </div>
       </div>
     </div>
 
+    <main id="content" class="container docs-main" style="max-width: 750px;">
+
+      <h2 class="docs-h3">What's the AXA Web Toolkit?</h2>
+
+      <p class="lead">
+        The Web Toolkit is the CSS, JS and HTML framework
+        that we use globally at <a href="https://www.axa.com">AXA</a>
+        for modern and responsive web apps. It is based
+        on Bootstrap 3 and provides many specific components
+        and utilities for you to use. It makes developing great web apps
+        that follow our
+        <a href="{{package.homepageWebGuidelines}}">Web Guidelines</a> super easy!
+      </p>
+
+      <h2 class="docs-h3">The key properties</h2>
+
+      <div class="docs-property">
+        <div class="docs-property-image">
+          <img src="{{relative '/images/illustrations/rocket.svg'}}" alt="An illustration of a flying rocket." />
+        </div>
+        <div class="docs-property-text">
+          A set of very specific AXA components
+          and more generic, themed Bootstrap components.
+          Great as a kickstart for new projects!
+        </div>
+      </div>
+
+      <div class="docs-property right">
+        <div class="docs-property-image">
+          <img src="{{relative '/images/illustrations/target.svg'}}" alt="An illustration of an arrow in the middle of a target." />
+        </div>
+        <div class="docs-property-text">
+          Based on common web standards,
+          so it’s easy to integrate into more
+          complex frontend frameworks and libraries.
+        </div>
+      </div>
+
+      <div class="docs-property">
+        <div class="docs-property-image">
+          <img src="{{relative '/images/illustrations/community.svg'}}" alt="An illustration of four hands holding together." />
+        </div>
+        <div class="docs-property-text">
+          Developed openly on GitHub.
+          Used by potentially any web project at AXA
+          or by anyone who is building things for AXA.
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="{{relative '/getting-started/'}}" class="btn btn-axa btn-lg">Get started</a>
+      </div>
+
+      <h2 class="docs-h3">Who it's used by?</h2>
+
+      <p class="lead">The AXA Web Toolkit is starting to be used by a couple of projects
+      at AXA. The first one is the public
+      <a href="https://design.axa.com">design.axa.com</a> website.</p>
+
+      <p>Are you using it, too? Tell us or extend this list by
+      making a pull request.</p>
+
+      <h2 class="docs-h3">Backed by a global community</h2>
+
+      <p class="lead">The development of the AXA Web Toolkit is backed by
+      a global community of developers and designers all across AXA.
+      You have a couple of options to join the community!</p>
+
+      <ul>
+        <li>For feature requests and bugs <a href="{{package.repository.url}}">find us on GitHub</a>.</li>
+        <li>For discussions and help <a href="{{package.slackTeam}}">join our Slack team</a>.</li>
+        <li>For quick questions use our on-site chat messenger on the bottom right.</li>
+      </ul>
+
+    </main>
+
   {{/inline}}
-{{/page}}
+{{/home}}

@@ -7,5 +7,17 @@ web:
     - "8080"
   labels:
     io.rancher.container.pull_image: always
+    io.rancher.sidekicks: test
   tty: true
   stdin_open: false
+test:
+  image: ${TEST_IMAGE}
+  links:
+    - web:web
+  environment:
+    BASE_URL: http://web:3000${BASE_URL}/
+  volumes_from:
+    - web
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.container.start_once: true

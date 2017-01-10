@@ -1,47 +1,51 @@
-/* global window, Intercom */
+/* global window */
 
 import $ from 'jquery'
 import svg4everybody from 'svg4everybody'
+import Clipboard from 'clipboard'
 
 import '../../js/index'
 
-import './clipboard'
 import './cheat'
 import './example'
 import './iframe-resizer'
 import './object-fit'
 import './search'
 import './tab'
+import * as track from './track'
 
 window.jQuery = $
 window.$ = $
 
 svg4everybody()
 
-$('#showNotification').on('click', () => {
-  const content = $('#notification_content').val()
-  const modifier = $('[name="notification__modifier"]:checked').val()
-  const isHtml = $('#notification_html').is(':checked')
+initMenu(window.__HREF) // eslint-disable-line no-underscore-dangle
 
-  $('#notification').notification({
-    content,
-    modifier,
-    html: isHtml,
-  })
-})
+window.track = track
 
-$('#cities-autocomplete').autocomplete({
-  source: ['8000 Zürich', '8400 Winterthur', '8472 Seuzach'],
-})
+// eslint-disable-next-line no-new
+new Clipboard('[data-clipboard-target]')
 
-$('[data-subscribe]').submit((e) => {
-  e.preventDefault()
-  const email = $('[data-email]').val()
-  Intercom('showNewMessage', `Hi there,\n\nPlease keep me updated on ${email}!\n\nRegards.`)
-  $('.intercom-composer-send-button').click()
-})
+function initMenu(href) {
+  const mobile = $('[data-menu="collapsing"]')
+  const upmost = mobile.find('[data-level]').first()
 
-$('[data-chat]').click((e) => {
-  e.preventDefault()
-  Intercom('show')
-})
+  const activeElement = mobile
+    .find('[data-link]')
+    .filter(`[href='${href}']`)
+
+  if (activeElement.length > 0) {
+    activeElement.toggleClass('is-active')
+  }
+
+  let level = activeElement
+    .closest('[data-level]')
+
+  if (level.length > 0) {
+    level.toggleClass('is-active')
+  } else {
+    level = upmost
+  }
+
+  mobile.collapsingMenu('toggle', level)
+}

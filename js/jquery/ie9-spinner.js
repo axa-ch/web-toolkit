@@ -13,7 +13,7 @@ class IE9Spinner {
   }
 }
 
-if (isAnimationSupported()) {
+if (!isAnimationSupported()) {
   // Plugin definition
   registerPlugin('spinner', IE9Spinner)
 }

@@ -1,8 +1,16 @@
 ---
 title: Icon Button
-layout: demo.hbs
+layout: icon-font-demo.hbs
 ---
 <p>
-  <button type="button" class="btn btn-split-icon btn-primary">Split Icon Button<span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
-  <button type="button" class="btn btn-primary">Fallback Icon Button<span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
+  <button type="button" class="btn btn-split-icon btn-primary">Split Icon Button SVG{{> icon name="download" classes="icon btn-icon"}}</button>
+  <button type="button" class="btn btn-primary">Fallback Icon Button SVG{{> icon name="download" classes="icon btn-icon"}}</button>
+</p>
+<p>
+  <button type="button" class="btn btn-split-icon btn-primary">Split Icon Button icon font<span class="btn-font-icon docs-icon docs-icon-download" aria-hidden="true"></span></button>
+  <button type="button" class="btn btn-primary">Fallback Icon Button icon font<span class="btn-font-icon docs-icon docs-icon-download" aria-hidden="true"></span></button>
+</p>
+<p>
+  <button type="button" class="btn btn-split-icon btn-primary">Split Icon Button glyphicons<span class="btn-font-icon glyphicon glyphicon-star" aria-hidden="true"></span></button>
+  <button type="button" class="btn btn-primary">Fallback Icon Button glyphicons<span class="btn-font-icon glyphicon glyphicon-star" aria-hidden="true"></span></button>
 </p>

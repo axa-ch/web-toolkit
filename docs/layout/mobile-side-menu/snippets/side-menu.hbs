@@ -1,0 +1,32 @@
+---
+title: Side menu
+layout: demo.hbs
+---
+<div id="site" data-make="drawer">
+  <header class="header">
+    <div class="header-main">
+      <a href="#" class="header-brand">
+        <span>Example</span>
+      </a>
+      <a href="#" class="header-burger float-xs-right" data-fade="drawer" data-target="#site" data-in="is-open">
+        <span class="header-burger-line"></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <h1 class="h3">A title</h1>
+
+    <p>A paragraph...</p>
+  </div>
+
+  <div class="drawer togglable-xs-right" data-fade="drawer" data-target="#site" data-in="in">
+    <div class="container-fluid">
+      <div class="alert alert-info" role="alert" style="margin-top: 20px;">
+      <strong>Fill me!</strong> I can contain a navigation menu,
+      search and a million other things you can think of!</div>
+    </div>
+  </div>
+
+  <a href="#" class="mask fade-out-delayed-xs-up" data-fade="drawer" data-target="#site" data-in="fade-in-xs-up" data-out="fade-out-delayed-xs-up"></a>
+</div>
