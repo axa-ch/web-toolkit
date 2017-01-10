@@ -34,6 +34,11 @@ $footer-sides-offset: 50px;
   }
 }
 
+.footer-top-lang-social {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
@@ -45,4 +50,10 @@ $footer-sides-offset: 50px;
     padding-left: $footer-sides-offset;
   }
 
+}
+
+.footer-bottom-social-light {
+  @media (min-width: $screen-md-min) {
+    height: 50px
+  }
 }
