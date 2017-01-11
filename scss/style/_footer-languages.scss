@@ -32,8 +32,10 @@
 .footer-language-item {
   padding: 0 18px;
 
-  &:first-child {
-    padding-left: 0;
+  @media (min-width: $screen-xs-min) {
+    &:first-child {
+      padding-left: 0;
+    }
   }
 
   &:not(:last-child) {
@@ -54,6 +56,10 @@
 
   &.active-language {
     color: $footer-text-color;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    @include typo-20();
   }
 
 }
