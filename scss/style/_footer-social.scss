@@ -117,7 +117,14 @@
 
 .footer-social-icon {
   width: auto;
-  height: 20px;
+  height: 25px;
+
+  &.footer-social-icon-sm {
+    @media (min-width: $screen-xs-min) {
+      height: 20px;
+    }
+  }
+
   @media (max-width: $screen-xs-max) {
     height: 35px;
   }
