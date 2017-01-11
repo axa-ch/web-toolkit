@@ -46,6 +46,7 @@
   @extend .typo-14;
   display: inline-block;
   color: transparentize($footer-link-color, 0.5);
+  text-transform: uppercase;
 
   &:hover {
     color: $footer-text-color;
