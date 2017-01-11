@@ -25,6 +25,14 @@
   }
 }
 
+.footer-light-social-top-container {
+  @media (min-width: $screen-sm-min) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
 .footer-social-bottom-title {
   @extend .typo-14;
   display: flex;
@@ -51,7 +59,11 @@
 }
 
 .footer-top-lang-social {
-  display: flex;
+  @media (min-width: $screen-sm-min) {
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 .footer-social-bottom {
@@ -106,4 +118,7 @@
 .footer-social-icon {
   width: auto;
   height: 20px;
+  @media (max-width: $screen-xs-max) {
+    height: 35px;
+  }
 }

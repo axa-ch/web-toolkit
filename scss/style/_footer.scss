@@ -24,7 +24,6 @@ $footer-sides-offset: 50px;
   background: $footer-primary-color;
 
   @media (min-width: $screen-sm-min) {
-    padding-top: 40px;
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
   }
@@ -32,11 +31,6 @@ $footer-sides-offset: 50px;
     padding-top: 0;
     padding-bottom: 0;
   }
-}
-
-.footer-top-lang-social {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 .footer-bottom {
