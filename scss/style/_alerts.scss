@@ -1,0 +1,39 @@
+.top-content-bar {
+  @extend .typo-13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  color: $color-white;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-lg-min) {
+    height: 48px;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    flex-wrap: wrap;
+  }
+}
+
+.top-content-bar-message {
+  @media (max-width: $screen-xs-max) {
+    padding-bottom: 20px;
+  }
+}
+
+.top-content-bar-btn {
+  margin-left: 20px;
+}
+
+.top-content-bar--corporate {
+  background-color: $color-outer-space;
+}
+
+.top-content-bar--content {
+  background-color: $color-deep-sapphire;
+}
+
+.top-content-bar--warning {
+  background-color: $color-amaranth;
+}
