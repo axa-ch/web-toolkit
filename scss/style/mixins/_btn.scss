@@ -1,3 +1,38 @@
+@mixin button-animation($color) {
+  position: relative;
+  transition: color 0.3s;
+  outline: none;
+  overflow: hidden;
+  z-index: 0; // for animation
+
+  // animation
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 530px;
+    transform: translate(-50%,-50%) rotate(45deg);
+    transform: translate3d(-50%,-50%, 0) rotate(45deg);
+    transition: width 0.3s, opacity 0.3s;
+    background: $color;
+    content: '';
+    opacity: 0;
+    z-index: -1;
+    backface-visibility: hidden;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    &:after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+}
+
 @mixin btn-split-icon($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
   @include button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius);
 
@@ -55,23 +90,21 @@
 
 @mixin button-primary($main, $secondary, $contrast) {
   transition: background-position $duration-fast $motion-easein;
-  border-color: $secondary;
+  border-bottom-color: $secondary;
   background: $color-button-primary;
-  background-image: linear-gradient(to bottom, $main 50%, $secondary 50%);
-  // Use a bit more than 200% to avoid anti-aliasing creating a small top border
-  // in hover state and not much more to not affect the animation
-  background-size: 100% 202%;
+  // background-image: linear-gradient(to bottom, $main 50%, $secondary 50%);
+  // background-size: 100% 200%;
 
   color: $contrast;
 
-  &:focus,
-  &.focus,
-  &:hover {
-    transition: background-position $duration-fast $motion-easeout;
-    border-color: $secondary;
-    background-position: 0 100%;
-    color: $contrast;
-  }
+  // &:focus,
+  // &.focus,
+  // &:hover {
+  //   transition: background-position $duration-fast $motion-easeout;
+  //   border-color: $secondary;
+  //   background-position: 0 100%;
+  //   color: $contrast;
+  // }
 
   &:active,
   &.active,
@@ -122,14 +155,14 @@
       background-color: $contrast;
       color: $secondary;
     }
-    
+
     &.btn-split-icon {
       & .btn-font-icon, & .btn-icon {
         border-left-color: $main;
       }
     }
   }
-     
+
   &.btn-split-icon, & .btn-icon {
     & .btn-font-icon {
       border-left-color: $secondary;
@@ -146,7 +179,7 @@
   &:focus,
   &.focus {
     border-color: $secondary;
-    color: $secondary;
+    color: $contrast;
 
     .badge {
       background-color: $secondary;
@@ -172,19 +205,19 @@
   fieldset[disabled] & {
     @include opacity(.65);
     @include box-shadow(none);
-    
+
     border-color: $main;
     background: $contrast;
     color: $main;
 
     cursor: $cursor-disabled;
   }
-  
+
   .badge {
     background-color: $main;
     color: $contrast;
   }
-  
+
   &.btn-split-icon {
     & .btn-font-icon {
       border-left-color: $main;

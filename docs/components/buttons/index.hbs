@@ -4,14 +4,12 @@ description: Showcases and descriptions of the different types of buttons and ho
 nav: side/components/buttons
 order: 1
 toc:
-  - title: Standard button
-    slug: standard-buttons
-  - title: Icon button
-    slug: icon-buttons
-  - title: AXA button
+  - title: AXA buttons
     slug: axa-buttons
   - title: Ghost button
     slug: ghost-buttons
+  - title: Icon button
+    slug: icon-buttons
 ---
 
 {{#> page}}
@@ -49,13 +47,31 @@ toc:
     </ul>
     {{> table-of-contents data=toc}}
 
-    <h2 class="h3" id="standard-buttons">Standard button</h2>
+    <!-- <h2 class="h3" id="standard-buttons">Standard button</h2>
     <p>
       Use the <code>btn-primary</code> modifier for standard buttons.
     </p>
 
     {{> example path="/components/buttons/demos/standard-button.html"}}
-    {{#code-snippet "html"}}{{#get snippets "/components/buttons/snippets/standard-button"}}{{{.}}}{{/get}}{{/code-snippet}}
+    {{#code-snippet "html"}}{{#get snippets "/components/buttons/snippets/standard-button"}}{{{.}}}{{/get}}{{/code-snippet}} -->
+
+    <h2 class="h3" id="axa-buttons">AXA buttons</h2>
+    <p>
+      Use the <code>btn-axa</code> modifier to create the primary
+      AXA button.
+    </p>
+
+    {{> example path="/components/buttons/demos/axa-button.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/buttons/snippets/axa-button"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h2 class="h3" id="ghost-buttons">Ghost button</h2>
+    <p>
+      Use the <code>btn-ghost</code> modifier to create buttons with
+      transparent backgrounds to be used over images
+    </p>
+
+    {{> example path="/components/buttons/demos/ghost-button.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/buttons/snippets/ghost-button"}}{{{.}}}{{/get}}{{/code-snippet}}
 
     <h2 class="h3" id="icon-buttons">Icon button</h2>
     <p>
@@ -74,22 +90,5 @@ toc:
     {{> example path="/components/buttons/demos/icon-button.html"}}
     {{#code-snippet "html"}}{{#get snippets "/components/buttons/snippets/icon-button"}}{{{.}}}{{/get}}{{/code-snippet}}
 
-    <h2 class="h3" id="axa-buttons">AXA button</h2>
-    <p>
-      Use the <code>btn-axa</code> modifier to create the primary
-      AXA button.
-    </p>
-
-    {{> example path="/components/buttons/demos/axa-button.html"}}
-    {{#code-snippet "html"}}{{#get snippets "/components/buttons/snippets/axa-button"}}{{{.}}}{{/get}}{{/code-snippet}}
-
-    <h2 class="h3" id="ghost-buttons">Ghost button</h2>
-    <p>
-      Use the <code>btn-ghost</code> modifier to create buttons with
-      transparent backgrounds to be used over images
-    </p>
-
-    {{> example path="/components/buttons/demos/ghost-button.html"}}
-    {{#code-snippet "html"}}{{#get snippets "/components/buttons/snippets/ghost-button"}}{{{.}}}{{/get}}{{/code-snippet}}
   {{/inline}}
 {{/page}}
