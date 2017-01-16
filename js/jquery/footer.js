@@ -12,14 +12,19 @@ class Footer {
 
   toggle() {
     if (this.$element.hasClass('is-active')) {
-      $('.footer-back').remove()
-      this.$element.removeClass('is-active')
-      $('.footer-social-top-container').show()
-      this.$parents.show()
+      this.$element.addClass('slide-from-left')
+      this.$element.one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
+        () => {
+          $('.footer-back').remove()
+          $('.footer-social-top-container').removeClass('slide-from-right')
+          $('.footer-social-top-container').show()
+          $('.footer-links').removeClass('slide-from-right')
+          this.$parents.show()
+          this.$element.removeClass('is-active')
+        }
+      )
     } else {
       $('.footer-social-top-container').hide()
-      console.log('THIS.$BACKLABEL ', this.$backLabel)
-      // console.log('THIS.$ELEMENT', this.$element)
       this.$element.prepend(`<li
         class="footer-back footer-link-item hidden-sm-up"
         >
@@ -31,6 +36,9 @@ class Footer {
         </a></li>`)
       this.$element.addClass('is-active')
       this.$parents.hide()
+      this.$element.removeClass('slide-from-left')
+      $('.footer-social-top-container').addClass('slide-from-right')
+      $('.footer-links').addClass('slide-from-right')
     }
   }
 }
