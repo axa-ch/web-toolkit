@@ -9,6 +9,7 @@ $footer-secondary-color: $color-st-tropaz;
 $footer-bottom-border: $color-indigo;
 $footer-sides-offset: 50px;
 
+
 .clear-gutter {
   margin-right: 0;
   margin-left: 0;
@@ -53,11 +54,13 @@ $footer-sides-offset: 50px;
 }
 
 .slide-from-right {
-  animation: slide-from-right 300ms 1 cubic-bezier(0.23, 1, 0.32, 1);
+  animation: slide-from-right 400ms 1 cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .slide-from-left {
-  animation: slide-from-left 300ms 1 cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  @media (max-width: $screen-xs-max) {
+    animation: slide-from-left 400ms 1 cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
 }
 
 
@@ -68,7 +71,7 @@ $footer-sides-offset: 50px;
   }
 
   50% {
-    box-shadow: -12px 0px 17px -7px $color-mineshaft;
+    box-shadow: -12px 0px 17px -7px transparentize($color-mineshaft, 0.33);
     opacity: 0.5;
   }
 
@@ -87,7 +90,8 @@ $footer-sides-offset: 50px;
   }
 
   50% {
-    box-shadow: -12px 0px 17px -7px $color-mineshaft;
+    box-shadow: -12px 0px 17px -7px transparentize($color-mineshaft, 0.33);
+
     opacity: 0.5;
   }
 
