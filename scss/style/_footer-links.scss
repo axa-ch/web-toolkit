@@ -16,7 +16,7 @@
 }
 
 .footer-link {
-  @extend .typo-16;
+  @extend .typo-20;
 
   display: block;
   height: 40px;
@@ -61,7 +61,7 @@
 
 .footer-back {
   >.footer-link {
-    @extend .typo-20;
+    @extend .typo-24;
     display: flex;
     align-items: center;
     height: 120px;
@@ -73,6 +73,7 @@
 
 .footer-back-icon {
   height: 20px;
+  padding-left: 30px;
   transform: rotate(180deg);
   fill: $color-white;
 }
