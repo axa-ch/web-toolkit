@@ -117,4 +117,23 @@
     }
 
   }
+
+  &:hover {
+    .btn-icon-blue {
+      color: $color-white;
+    }
+  }
+}
+
+.btn-icon-blue {
+  color: $color-button-primary;
+}
+
+.btn-icon-arrow {
+
+  &:hover {
+    >svg {
+      animation: animate-arrow-right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+  }
 }
