@@ -1,9 +1,9 @@
-@mixin make-link {
-  color: $color-gray--darker;
+@mixin make-link ($main-color, $hover-color) {
+  color: $main-color;
   text-decoration: none;
   cursor: pointer;
 
   &:hover {
-    color: $color-blue;
+    color: $hover-color;
   }
 }

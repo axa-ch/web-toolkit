@@ -3,7 +3,7 @@
 
 .meta-language__button {
   @extend .make-font-small-semibold;
-  @include make-link;
+  @include make-link($color-gray--darker,$color-blue);
 
   display: flex;
   align-items: center;

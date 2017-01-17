@@ -1,7 +1,7 @@
 $dropdown-arrow-width: 40px;
 
 .dropdown {
-  @include make-link;
+  @include make-link($color-gray--darker,$color-blue);
 
   position: relative;
 }

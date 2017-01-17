@@ -1,5 +1,5 @@
 .header-search {
-  @include make-link;
+  @include make-link($color-gray--darker,$color-blue);
 
   display: flex;
 }
