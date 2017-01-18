@@ -5,5 +5,42 @@
 
   &:hover {
     color: $hover-color;
+    text-decoration: none;
   }
+}
+
+@mixin _make-axa-link ($main-color, $hover-color) {
+  @extend .typo-14;
+  @include make-link($main-color, $hover-color);
+  text-transform: uppercase;
+
+  svg {
+    width: 30px;
+    vertical-align: sub;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    @include typo-18();
+
+    svg {
+      width: 40px;
+    }
+
+  }
+}
+
+
+@mixin make-one-arrow-link ($main-color, $hover-color) {
+  @include _make-axa-link($main-color, $hover-color);
+
+  &:hover {
+    >svg {
+      animation: animate-arrow-right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+  }
+
+}
+
+@mixin make-icon-link ($main-color, $hover-color) {
+  @include _make-axa-link($main-color, $hover-color);
 }
