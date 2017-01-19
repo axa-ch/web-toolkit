@@ -1,5 +1,6 @@
 $header-meta-height: 40px;
 $header-main-height: 72px;
+$header-brand-height: 44px;
 
 $header-search-xs-width: 200px;
 $header-search-sm-width: 300px;
@@ -15,7 +16,6 @@ $header-item-padding: 15px;
   width: 100%;
 
   transition: background-color $transition-normal $transition-ease;
-  border-top: 2px solid $color-dark-indigo;
   background-color: $color-white;
   z-index: $z-index-header;
 
@@ -72,7 +72,7 @@ $header-item-padding: 15px;
   flex-shrink: 0;
   align-items: center;
   justify-content: flex-start;
-  height: $header-main-height;
+  height: $header-brand-height;
 
   padding-right: $header-item-padding;
 
@@ -101,7 +101,7 @@ $header-item-padding: 15px;
 
 .header-brand-image {
   width: auto;
-  height: 46px;
+  height: $header-brand-height;
 }
 
 .header-item {
@@ -143,6 +143,7 @@ $header-item-padding: 15px;
       width: $header-search-lg-width;
     }
   }
+
 }
 
 .header-search-input {
@@ -172,6 +173,24 @@ $header-item-padding: 15px;
   background: none;
   color: $color-silver;
   font-size: 24px;
+
+  @media (min-width: $screen-sm-min) {
+    &:before {
+      margin-right: 10px;
+      border-left: 1px solid $color-dusty-gray;
+      content: '';
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    &:after {
+      margin-right: 10px;
+      margin-left: 8px;
+      border-right: 1px solid $color-dusty-gray;
+      content: '';
+    }
+  }
+
 }
 
 .header-meta {
@@ -179,6 +198,7 @@ $header-item-padding: 15px;
 
   height: $header-meta-height;
   transition: border-bottom $transition-normal $transition-ease;
+  border-top: 2px solid $color-dark-indigo;
   border-bottom: 1px solid $color-wild-sand;
 
   .header.transparent & {
