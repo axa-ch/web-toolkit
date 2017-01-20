@@ -99,6 +99,10 @@ $header-item-padding: 15px;
   }
 }
 
+.header-brand-axa-xx {
+  height: 72px;
+}
+
 .header-brand-image {
   width: auto;
   height: $header-brand-height;
@@ -177,7 +181,7 @@ $header-item-padding: 15px;
   @media (min-width: $screen-sm-min) {
     &:before {
       margin-right: 10px;
-      border-left: 1px solid $color-dusty-gray;
+      border-left: 1px solid $color-silver;
       content: '';
     }
   }
@@ -186,7 +190,7 @@ $header-item-padding: 15px;
     &:after {
       margin-right: 10px;
       margin-left: 8px;
-      border-right: 1px solid $color-dusty-gray;
+      border-right: 1px solid $color-silver;
       content: '';
     }
   }
@@ -198,7 +202,7 @@ $header-item-padding: 15px;
 
   height: $header-meta-height;
   transition: border-bottom $transition-normal $transition-ease;
-  border-top: 2px solid $color-dark-indigo;
+  border-top: 2px solid $color-azure;
   border-bottom: 1px solid $color-wild-sand;
 
   .header.transparent & {
@@ -247,7 +251,7 @@ $header-item-padding: 15px;
   padding-right: 20px;
   padding-left: 20px;
 
-  color: $color-dusty-gray;
+  color: $color-silver;
 
   .header.transparent & {
     color: $color-alabaster;
