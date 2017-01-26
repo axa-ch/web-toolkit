@@ -13,12 +13,8 @@ $footer-sides-offset: 50px;
   width: auto;
 }
 
-.clear-gutter {
-  margin-right: 0;
-  margin-left: 0;
-}
-
 .footer-last-column {
+  @extend .clear-gutter;
   padding: 0;
 }
 
