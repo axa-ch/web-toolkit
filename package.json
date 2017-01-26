@@ -1,11 +1,11 @@
 {
   "name": "@axa/web-toolkit",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.8",
   "description": "The CSS, JS and HTML framework for building responsive AXA web apps!",
   "author": "AXA",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://design.axa.com/toolkit",
-  "homepageDesinGuidelines" : "https://design.axa.com/",
+  "homepageDesinGuidelines": "https://design.axa.com/",
   "homepageWebGuidelines": "https://design.axa.com/web-guidelines/introduction",
   "releasesUrl": "https://github.com/axa-group/web-toolkit/releases",
   "distArchive": "https://github.com/axa-group/web-toolkit/releases/download/v{tag}/web-toolkit-v{tag}-dist.zip",
@@ -15,7 +15,7 @@
   "cdnCss": "https://unpkg.com/@axa/web-toolkit@{tag}/dist/bundles/all.css",
   "cdnJs": "https://unpkg.com/@axa/web-toolkit@{tag}/dist/bundles/all.js",
   "slackTeam": "https://axa-bb1.slack.com/signup",
-  "slackWebGuidelines" : "https://web-guidelines.slack.com/messages/general/details/",
+  "slackWebGuidelines": "https://web-guidelines.slack.com/messages/general/details/",
   "keywords": [
     "axa",
     "insurance",
