@@ -26,6 +26,8 @@ $nav-panel-lg-height: 400px;
 .nav-item {
   height: 100%;
   margin: 0;
+  margin-right: 15px;
+  margin-left: 15px;
   padding: 0;
 }
 
@@ -130,7 +132,7 @@ $nav-panel-lg-height: 400px;
   transform: translate3d(0, 0, 0);
   transition: height $transition-fast $transition-ease, width $transition-fast $transition-ease, transform $transition-fast $transition-ease, opacity 0s linear $transition-fast;
 
-  background: $color-axa-red;
+  background: $color-burnt-sienna;
   opacity: 0;
 
   &.is-visible {

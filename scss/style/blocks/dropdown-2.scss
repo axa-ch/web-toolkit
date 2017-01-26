@@ -13,7 +13,7 @@ $dropdown-height--condensed: 30px;
 $dropdown-icon-size--condensed: 16px;
 
 .dropdown-2 {
-  @include make-link();
+  @include make-link($color-gray--darker,$color-blue)
   display: block;
   border: $dropdown-border-width solid $color-gray--light;
   background: $color-gray--lighter;
@@ -33,7 +33,7 @@ $dropdown-icon-size--condensed: 16px;
 }
 
 .dropdown-2__select {
-  @include make-link();
+  @include make-link($color-gray--darker,$color-blue)
   display: block;
   -webkit-appearance: none;
   appearance: none;

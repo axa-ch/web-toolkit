@@ -74,7 +74,7 @@
 
 .icon-teaser__item__action {
   @extend .make-font-medium-semibold;
-  @include make-link();
+  @include make-link($color-gray--darker,$color-blue)
 
   display: flex;
   justify-content: center;
@@ -131,7 +131,7 @@
     list-style-type: none;
 
     .icon-teaser__link {
-      @include make-link();
+      @include make-link($color-gray--darker,$color-blue)
 
       display: flex;
       justify-content: center;

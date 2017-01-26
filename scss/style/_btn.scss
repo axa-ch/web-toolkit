@@ -5,22 +5,31 @@
 ///   <button type="button" class="btn btn-axa">AXA Button</button>
 .btn-axa {
   @include typo-16();
+  @include button-primary($color-button-primary, $color-button-secondary, $color-white);
+  @include button-animation($color-button-secondary);
   border-width: 0;
   border-bottom-width: 2px;
   border-style: solid;
 
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
   &.btn.btn-lg {
-    border-width: 0;
-    border-bottom-width: 2px;
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large,
       $line-height-large, $btn-border-radius-large);
+
+    border-width: 0;
+    border-bottom-width: 2px;
   }
 
-  @include button-primary($color-button-primary, $color-button-secondary, $color-white);
+  &.btn.btn-sm {
+    @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
+      $font-size-small, $line-height-small, $btn-border-radius-small);
+    @include typo-16();
+  }
+
+
 }
 
 /// This is the default bootstrap button that's been modified for AXA.
@@ -38,7 +47,7 @@
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px
     @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
-      $font-size-large, $line-height-large, $btn-border-radius-large);
+        $font-size-large, $line-height-large, $btn-border-radius-large);
     @include typo-16();
 
     border-width: 2px;
@@ -64,6 +73,12 @@
   .badge {
     font-size: .9em;
   }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $color-white;
+  }
 }
 
 .btn.btn-default {
@@ -71,5 +86,54 @@
 }
 
 .btn-ghost {
-  @include button-color($color-white, $color-wild-sand, transparent);
+  @include button-animation($color-button-secondary);
+  @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
+    $line-height-base, $btn-border-radius-base);
+  @include typo-16();
+
+  @include button-color($color-button-primary, $color-button-secondary, $color-white);
+
+  &.btn-lg {
+    // Reduce vertical padding by 1px because we increase border-width by 1px
+    @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
+        $font-size-large, $line-height-large, $btn-border-radius-large);
+    @include typo-16();
+  }
+
+  &.btn-sm {
+    @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
+      $font-size-small, $line-height-small, $btn-border-radius-small);
+    @include typo-16();
+  }
+
+  &.btn-ghost-white {
+    @include button-color($color-white, $color-wild-sand, transparent);
+    @include button-animation($color-wild-sand);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color-scorpion;
+    }
+
+  }
+
+  &:hover {
+    .btn-icon-blue {
+      color: $color-white;
+    }
+  }
+}
+
+.btn-icon-blue {
+  color: $color-button-primary;
+}
+
+.btn-icon-arrow {
+
+  &:hover {
+    >svg {
+      animation: animate-arrow-right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+  }
 }

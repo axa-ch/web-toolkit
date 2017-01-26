@@ -4,7 +4,7 @@
 }
 
 .meta-language2__button {
-  @include make-link();
+  @include make-link($color-gray--darker,$color-blue)
   @extend .make-font-small-semibold;
 
   display: flex;
@@ -72,7 +72,7 @@
 }
 
 .meta-language2__menu__item {
-  @include make-link();
+  @include make-link($color-gray--darker,$color-blue)
   @extend .make-font-small-semibold;
 
   display: flex;
