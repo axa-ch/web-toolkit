@@ -60,6 +60,12 @@
 }
 
 .footer-back {
+  display: none;
+
+  &.is-visible {
+    display: block;
+  }
+
   >.footer-link {
     @extend .typo-24;
     display: flex;

@@ -6,7 +6,6 @@ import registerPlugin from './register-plugin'
 class Footer {
   constructor(element) {
     this.$element = $($(element).data('footer'))
-    this.$backLabel = $(element).data('back-label')
     this.$parents = $('.footer-title-only')
   }
 
@@ -15,7 +14,7 @@ class Footer {
       this.$element.addClass('slide-from-left')
       this.$element.one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
         () => {
-          $('.footer-back').remove()
+          $('.footer-back').removeClass('is-visible')
           $('.footer-social-top-container').removeClass('slide-from-right')
           $('.footer-social-top-container').show()
           $('.footer-links').removeClass('slide-from-right')
@@ -25,15 +24,7 @@ class Footer {
       )
     } else {
       $('.footer-social-top-container').hide()
-      this.$element.prepend(`<li
-        class="footer-back footer-link-item hidden-sm-up"
-        >
-          <a class="footer-link " href="#" data-footer="${this.$element.selector}">
-          <svg class="footer-back-icon" viewBox="0 0 24 24">
-	           <path fill-rule="evenodd" clip-rule="evenodd" d="M5.39 1.478L6.86-.025l10.3 10.522.004-.004 1.467 1.497-.003.005.004.004-1.472 1.503-.004-.005L6.9 23.975 5.434 22.48 15.688 12" data-reactid="37"></path>
-          </svg>
-          ${this.$backLabel}
-        </a></li>`)
+      $('.footer-back').addClass('is-visible')
       this.$element.addClass('is-active')
       this.$parents.hide()
       this.$element.removeClass('slide-from-left')
