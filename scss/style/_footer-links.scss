@@ -1,0 +1,111 @@
+.footer-links {
+  @extend .clear-gutter;
+  margin-right: -$grid-gutter-width/2;
+  margin-left: -$grid-gutter-width/2;
+}
+
+.footer-link-list {
+  @include unstyle-list();
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+
+  &.is-active {
+    display: block;
+  }
+
+}
+
+.footer-link {
+  @extend .typo-20;
+
+  display: block;
+  height: 40px;
+  border-top: 1px solid $footer-secondary-color;
+  color: $footer-link-color;
+  line-height: 40px;
+
+  @media (min-width: $screen-sm-min) {
+    height: 33px;
+    border-top: unset;
+    line-height: 33px;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    height: 80px;
+    padding-right: $footer-sides-offset;
+    padding-left: $footer-sides-offset;
+    border-top: 1px solid $footer-secondary-color;
+    font-weight: 400;
+    line-height: 80px;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    color: $footer-link-hover-color;
+    text-decoration: none;
+  }
+}
+
+.footer-link-icon-container {
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+
+.footer-link-icon {
+  height: 16px;
+  fill: $color-white;
+}
+
+.footer-back {
+  display: none;
+
+  &.is-visible {
+    display: block;
+  }
+
+  >.footer-link {
+    @extend .typo-24;
+    display: flex;
+    align-items: center;
+    height: 120px;
+    line-height: 120px;
+    text-transform: uppercase;
+  }
+
+}
+
+.footer-back-icon {
+  height: 20px;
+  padding-left: 30px;
+  transform: rotate(180deg);
+  fill: $color-white;
+}
+
+.footer-link-title {
+  @extend .typo-16;
+  padding-bottom: 25px;
+  color: $footer-text-color;
+  font-weight: bold;
+  text-transform: uppercase;
+  @media (max-width: $screen-xs-max) {
+    @include typo-20();
+    height: 80px;
+    padding-right: $footer-sides-offset;
+    padding-left: $footer-sides-offset;
+    border-top: 1px solid $footer-secondary-color;
+    font-weight: 400;
+    line-height: 80px;
+  }
+}
+
+
+.footer-title-only {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0;
+}

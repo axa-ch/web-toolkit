@@ -42,7 +42,7 @@
 .btn {
   @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
     $line-height-base, $btn-border-radius-base);
-  @include typo-16();
+  @extend .typo-16;
 
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px

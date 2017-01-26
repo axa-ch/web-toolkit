@@ -1,0 +1,93 @@
+---
+title: Footer
+description: Showcases and describes the footer.
+nav: side/components/footer
+order: 1
+toc:
+  - title: Full footer
+    slug: full
+  - title: Langues top footer
+    slug: languages-top
+  - title: Top only footer
+    slug: top-only
+  - title: Light footer - Languages & Social
+    slug: footer-light-lang-social
+  - title: Light footer - Languages
+    slug: footer-light-lang
+  - title: Light footer - Social
+    slug: footer-light-social
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">{{title}}</h1>
+    <p class="lead">
+      In this section you ill find all you need to build AXA footers.
+    </p>
+    <p>
+      The AXA footer component is fully modular to match the Web Guidelines.
+    </p>
+    {{> table-of-contents data=toc}}
+
+    <h2 class="h3" id="full">Full footer</h2>
+    <p>
+      The full footer is most extended version of the AXA footer. It implements
+      links, languages switch, social networks and the legal line modules.
+    </p>
+
+    {{> example path="/components/footer/demos/footer-full.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer-full"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+
+    <h2 class="h3" id="languages-top">Languages top footer</h2>
+    <p>
+      The language top footer defines a footer where the language switch is on
+      the top section on large breakpoints. In this version, the social networks
+      module is not used.
+    </p>
+
+    {{> example path="/components/footer/demos/footer-lang-top.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer-lang-top"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h2 class="h3" id="top-only">Top only footer</h2>
+    <p>
+      The top footer defines a footer where the bottom section is not use on
+      large breakpoints. In this version, the social networks, language switch
+      are not used.
+    </p>
+
+    {{> example path="/components/footer/demos/footer-top-only.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer-top-only"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h2 class="h3" id="footer-light-lang-social">Light footer - Languages & Social</h2>
+    <p>
+      The light footer with language switch & social network module is an AXA
+      footer in a light implementation.
+    </p>
+
+    {{> example path="/components/footer/demos/footer-light-lang-social.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer-light-lang-social"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h2 class="h3" id="footer-light-lang">Light footer - Language</h2>
+    <p>
+      The light footer with language switch module is an AXA footer in a light implementation.
+      Only the language switch and the legal line modules are used within the
+      bottom section.
+    </p>
+
+    {{> example path="/components/footer/demos/footer-light-lang.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer-light-lang"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h2 class="h3" id="footer-light-social">Light footer - Social</h2>
+    <p>
+      The light footer with social network module is an AXA footer in a light implementation.
+      Only the social network and the legal line modules are used within the
+      bottom section.
+    </p>
+
+    {{> example path="/components/footer/demos/footer-light-social.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/footer/snippets/footer-light-social"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+
+  {{/inline}}
+{{/page}}
