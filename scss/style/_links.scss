@@ -1,0 +1,32 @@
+.axa-arrow-link-blue {
+  @include make-one-arrow-link($color-axa-blue,$color-deep-sapphire);
+}
+
+.axa-arrow-link-red {
+  @include make-one-arrow-link($color-burnt-sienna,$color-flamingo);
+}
+
+.axa-icon-link-blue {
+  @include make-icon-link($color-axa-blue,$color-deep-sapphire);
+
+  svg {
+    margin-left: -10px;
+  }
+}
+
+.axa-icon-link-red {
+  @include make-icon-link($color-burnt-sienna,$color-flamingo);
+
+  svg {
+    margin-left: -10px;
+  }
+}
+
+.axa-links {
+  @include unstyle-list();
+
+  svg.icon {
+    margin-left: -10px;
+  }
+
+}

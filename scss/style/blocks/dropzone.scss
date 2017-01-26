@@ -39,7 +39,7 @@
 }
 
 .dropzone__text__upload-link {
-  @include make-link();
+  @include make-link($color-gray--darker,$color-blue)
 
   font-variant: small-caps;
   font-size: 18px;
