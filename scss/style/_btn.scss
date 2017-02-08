@@ -15,7 +15,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   &.btn.btn-lg {
-    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large,
+    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-lg,
      $btn-border-radius-lg);
 
     border-width: 0;
@@ -24,7 +24,7 @@
 
   &.btn.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
-      $font-size-small, $line-height-small, $btn-border-radius-sm);
+      $font-size-sm, $line-height-sm, $btn-border-radius-sm);
     @include typo-16();
   }
 
@@ -46,7 +46,7 @@
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px
     @include btn-split-icon(($padding-large-vertical - 0.06667rem), $padding-large-horizontal,
-        $font-size-large, $line-height-large, $btn-border-radius-lg);
+        $font-size-lg, $line-height-lg, $btn-border-radius-lg);
     @include typo-16();
 
     border-width: 2px;
@@ -54,13 +54,13 @@
 
   &.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
-      $font-size-small, $line-height-small, $btn-border-radius-sm);
+      $font-size-sm, $line-height-sm, $btn-border-radius-sm);
     @include typo-16();
   }
 
   &.btn-xs {
-    @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
-      $line-height-small, $btn-border-radius-sm);
+    @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-sm,
+      $line-height-sm, $btn-border-radius-sm);
     @include typo-16();
   }
 
@@ -95,13 +95,13 @@
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px
     @include btn-split-icon(($padding-large-vertical - 0.06667rem), $padding-large-horizontal,
-        $font-size-large, $line-height-large, $btn-border-radius-lg);
+        $font-size-lg, $line-height-lg, $btn-border-radius-lg);
     @include typo-16();
   }
 
   &.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
-      $font-size-small, $line-height-small, $btn-border-radius-sm);
+      $font-size-sm, $line-height-sm, $btn-border-radius-sm);
     @include typo-16();
   }
 
