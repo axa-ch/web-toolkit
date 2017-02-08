@@ -4,8 +4,8 @@ $font-family-sans-serif: 'Source Sans Pro', Arial, sans-serif;
 $font-family-serif: 'PT Serif', serif;
 
 $font-size-base: 1rem;
-$font-size-large: 1rem;
-$font-size-small: 1rem;
+$font-size-lg: 1rem;
+$font-size-sm: 1rem;
 
 $font-size-title-main: 5.2rem;
 $font-size-title-l2: 4.133rem;
@@ -39,18 +39,18 @@ $padding-small-horizontal: 1.333rem;
 $padding-xs-vertical: 0;
 $padding-xs-horizontal: 0.6667rem;
 
-$line-height-large: 1.6rem;
-$line-height-small: 1.6rem;
+$line-height-lg: 1.6rem;
+$line-height-sm: 1.6rem;
 
 $line-height-large-computed: $line-height-base;
 $line-height-small-computed: $line-height-base;
 
-$border-radius-base: 0;
-$border-radius-large: 0;
-$border-radius-small: 0;
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
 
-$input-height-large: ($line-height-large-computed + ($padding-large-vertical * 2) + 2);
-$input-height-small: ($line-height-small-computed + ($padding-small-vertical * 2) + 2);
+$input-height-lg: ($line-height-large-computed + ($padding-large-vertical * 2) + 2);
+$input-height-sm: ($line-height-small-computed + ($padding-small-vertical * 2) + 2);
 
 $jumbotron-font-size: $font-size-item-highlight;
 $jumbotron-heading-font-size: $font-size-title-main;

@@ -16,6 +16,9 @@ $footer-sides-offset: 50px;
 .footer-last-column {
   @extend .clear-gutter;
   padding: 0;
+  @include media-breakpoint-up(lg) {
+    order: 2;
+  }
 }
 
 .footer-top {
