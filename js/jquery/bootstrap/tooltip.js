@@ -1,3 +1,6 @@
+import jQuery from 'jquery'
+import Tether from 'tether'
+
 /* global Tether */
 
 import Util from './util'
