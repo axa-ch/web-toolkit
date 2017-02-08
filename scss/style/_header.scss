@@ -135,15 +135,15 @@ $header-item-padding: 15px;
     width: $header-search-xs-width;
     transition: width $transition-normal $transition-easein $transition-delay-normal;
 
-    @media (min-width: $screen-sm-min) {
+    @include media-breakpoint-up(sm) {
       width: $header-search-sm-width;
     }
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       width: $header-search-md-width;
     }
 
-    @media (min-width: $screen-lg-min) {
+    @include media-breakpoint-up(lg) {
       width: $header-search-lg-width;
     }
   }
@@ -178,7 +178,7 @@ $header-item-padding: 15px;
   color: $color-silver;
   font-size: 24px;
 
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(sm) {
     &:before {
       margin-right: 10px;
       border-left: 1px solid $color-silver;
@@ -186,7 +186,7 @@ $header-item-padding: 15px;
     }
   }
 
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     &:after {
       margin-right: 10px;
       margin-left: 8px;

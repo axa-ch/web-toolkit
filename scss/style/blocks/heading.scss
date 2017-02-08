@@ -38,8 +38,8 @@
   font-size: 18px;
   color: white;
 
-  @media (min-width: $screen-md-min) {
-    padding: 0 $grid-gutter-width/2 18px;
+  @include media-breakpoint-up(md) {
+    padding: 0 $grid-gutter-width-base/2 18px;
     margin-top: 54px;
 
     line-height: 1.15;
@@ -61,7 +61,7 @@
 
   color: $color-blue;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     margin-top: -5px;
     font-size: 24px;
   }
@@ -74,7 +74,7 @@
   line-height: 1.5;
   font-weight: bold;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     margin: 22px 0 1px 0;
   }
 }

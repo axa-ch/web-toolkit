@@ -8,7 +8,7 @@
 }
 
 .copyline-menu__item {
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     float: left;
     border-right: 1px dotted $color-gray--mid;
 
@@ -29,7 +29,7 @@
 
   line-height: 40px;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     height: auto;
 
     line-height: 30px;

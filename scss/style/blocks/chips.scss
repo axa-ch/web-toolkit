@@ -15,7 +15,7 @@
   border: $focus-border-width solid $color-gray--lighter;
   -webkit-appearance: none;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
       padding-right: 4px;
       padding-bottom: 4px;
     }

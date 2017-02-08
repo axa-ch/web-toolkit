@@ -23,11 +23,11 @@ $footer-sides-offset: 50px;
   padding-bottom: 50px;
   background: $footer-primary-color;
 
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(sm) {
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
   }
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -39,7 +39,7 @@ $footer-sides-offset: 50px;
   border-top: 2px solid $footer-bottom-border;
   background: $footer-secondary-color;
 
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(sm) {
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
   }
@@ -47,7 +47,7 @@ $footer-sides-offset: 50px;
 }
 
 .footer-bottom-social-light {
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     height: 50px;
   }
 }
@@ -57,7 +57,7 @@ $footer-sides-offset: 50px;
 }
 
 .slide-from-left {
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     animation: slide-from-left 400ms 1 cubic-bezier(0.895, 0.03, 0.685, 0.22);
   }
 }

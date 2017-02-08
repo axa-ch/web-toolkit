@@ -1,4 +1,4 @@
-@mixin make-row($gutter: $grid-gutter-width) {
+@mixin make-row($gutter: $grid-gutter-width-base) {
   display: flex;
   flex-wrap: wrap;
 

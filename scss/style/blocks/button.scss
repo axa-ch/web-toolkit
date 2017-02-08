@@ -31,7 +31,7 @@
     $font-size: $button-font-size
   );
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     @include make-button-size(
       $height: $button-height--medium,
       $pad-lr: $button-pad-lr--medium,
@@ -69,7 +69,7 @@
     $font-size: $button-sm-font-size
   );
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     @include make-button-size(
       $height: $button-sm-height--medium,
       $pad-lr: $button-sm-pad-lr,
@@ -158,7 +158,7 @@
     $color: $color-white
   );
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     @include make-button-size(
       $height: $button-height--medium,
       $pad-lr: $button-pad-lr--medium,

@@ -1,5 +1,5 @@
 .main-nav {
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     border-bottom: 5px solid $color-blue;
   }
 }

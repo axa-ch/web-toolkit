@@ -23,7 +23,7 @@
   padding-top: 3px;
   padding-bottom: 3px;
 
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     justify-content: center;
     padding-top: 0;
   }

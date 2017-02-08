@@ -59,7 +59,7 @@
 .modal2__close--inside {
   color: $color-white;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     margin-top: 20px;
 
     font-size: 21px;
@@ -92,7 +92,7 @@
     margin-left: 8px;
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     top: 32px;
     right: 32px;
 
@@ -135,7 +135,7 @@
     background: transparent;
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     .modal2__backdrop {
       padding: 40px 0 68px;
     }

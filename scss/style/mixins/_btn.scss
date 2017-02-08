@@ -60,7 +60,7 @@
 }
 
 @mixin btn-split-icon($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  @include button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius);
+  @include button-size($padding-vertical, $padding-horizontal, $font-size, $border-radius);
 
   & .btn-font-icon {
     width: $line-height + $padding-vertical + $padding-vertical;
@@ -86,9 +86,9 @@
       justify-content: center;
       width: $line-height + 2*$padding-vertical;
       height: $line-height + 2*$padding-vertical;
-      margin-top: (-$padding-vertical - 1px);
+      margin-top: (-$padding-vertical - 0.06667rem);
       margin-right: -$padding-horizontal;
-      margin-bottom: (-$padding-vertical - 1px);
+      margin-bottom: (-$padding-vertical - 0.06667rem);
       margin-left: 20px;
       border-left-width: 1px;
       border-left-style: solid;
@@ -99,14 +99,14 @@
       align-self: center;
       width: $line-height + 2*$padding-vertical;
       height: $line-height + 2*$padding-vertical;
-      margin-top: (-$padding-vertical - 1px);
+      margin-top: (-$padding-vertical - 0.06667rem);
       margin-right: -$padding-horizontal;
-      margin-bottom: (-$padding-vertical - 1px);
+      margin-bottom: (-$padding-vertical - 0.06667rem);
       margin-left: 20px;
       padding-top: $padding-vertical + ($line-height - $font-size)/2;
       padding-right: $padding-vertical + ($line-height - $font-size)/2;
       padding-bottom: $padding-vertical + ($line-height - $font-size)/2;
-      padding-left: $padding-vertical + ($line-height - $font-size)/2 -1px;
+      padding-left: $padding-vertical + ($line-height - $font-size)/2 -0.06667rem;
       float: unset;
       border-left-width: 1px;
       border-left-style: solid;

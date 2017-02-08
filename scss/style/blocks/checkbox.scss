@@ -49,7 +49,7 @@
     fill: $color-light-blue;
     background: white;
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       width: 25px;
       height: 25px;
     }
@@ -67,7 +67,7 @@
 
     line-height: 1.5; // TODO: use more global definition
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       padding-top: 2px;
       margin-left: 35px;
     }

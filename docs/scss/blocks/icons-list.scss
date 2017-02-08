@@ -15,7 +15,7 @@
     width: 50%;
     padding: 20px 10px 10px 10px;
 
-    @media (min-width: $screen-lg-min) {
+    @include media-breakpoint-up(lg) {
       width: 25%;
     }
 

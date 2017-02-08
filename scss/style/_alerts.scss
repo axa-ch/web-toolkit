@@ -7,17 +7,17 @@
   color: $color-white;
   text-transform: uppercase;
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(xl) {
     height: 48px;
   }
 
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     flex-wrap: wrap;
   }
 }
 
 .top-content-bar-message {
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     padding-bottom: 20px;
   }
 }

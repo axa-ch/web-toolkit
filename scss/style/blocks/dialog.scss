@@ -20,7 +20,7 @@ $dialog-padding: 15px;
   margin-top: 0;
   padding: 0 15px;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     background: $color-white;
     margin-top: auto;
   }
@@ -35,8 +35,8 @@ $dialog-padding: 15px;
   line-height: 1.2;
   padding: 10px 0;
 
-  @media (min-width: $screen-md-min) {
-    padding: 0 $grid-gutter-width/2 18px;
+  @include media-breakpoint-up(md) {
+    padding: 0 $grid-gutter-width-base/2 18px;
     margin-top: 54px;
 
     line-height: 1.15;
@@ -71,7 +71,7 @@ $dialog-padding: 15px;
     color: $color-white;
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     margin-top: 20px;
 
     font-size: 21px;
@@ -101,9 +101,9 @@ $dialog-padding: 15px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     height: auto;
-    padding: 0 $grid-gutter-width;
+    padding: 0 $grid-gutter-width-base;
   }
 }
 
@@ -112,7 +112,7 @@ $dialog-padding: 15px;
   margin-bottom: 0;
   text-align: center;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     background: $color-white;
     margin-bottom: auto;
     text-align: right;
@@ -120,7 +120,7 @@ $dialog-padding: 15px;
 }
 
 .dialog--top {
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     .dialog__header {
       margin-top: 0;
     }
@@ -132,7 +132,7 @@ $dialog-padding: 15px;
 }
 
 .dialog--bottom {
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     .dialog__header {
       margin-top: auto;
     }

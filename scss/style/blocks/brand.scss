@@ -1,6 +1,6 @@
 .brand {
   display: flex;
-  padding: 20px $grid-gutter-width/2;
+  padding: 20px $grid-gutter-width-base/2;
   text-decoration: none;
 
   &:hover,
@@ -12,7 +12,7 @@
 .brand__image {
   height: 37px;
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     height: 54px;
   }
 }
@@ -27,7 +27,7 @@
   font-weight: 600;
   line-height: 20px;
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     margin-left: 20px;
     padding-left: 15px;
     border-left: 1px solid $color-blue;

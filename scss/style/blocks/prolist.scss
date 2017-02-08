@@ -33,7 +33,7 @@ $prolist_item_icon_size: 26px;
   // $todo: these font-size, line-height values should be coded in a central place as variables, that we can reuse it here.
   margin-top: ((16px * 1.8) - $prolist_item_icon_size) / 2;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     margin-top: ((17px * 1.8) - $prolist_item_icon_size) / 2;
   }
 }

@@ -1,7 +1,7 @@
 .icon-teaser {
   @extend .container;
 
-  max-width: $container-lg;
+  max-width: map_get($container-max-widths,lg);
 }
 
 .icon-teaser__items {
@@ -10,13 +10,15 @@
 
   padding-top: 64px;
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     padding-top: 0;
   }
 }
 
 .icon-teaser__item {
-  @include make-lg-column(4);
+  @include media-breakpoint-up(lg) {
+    @include make-col(4);
+  }
 
   text-decoration: none;
   outline: none;
@@ -87,7 +89,7 @@
   border: 2px solid $color-blue-gray--light;
   transition: all $transition-fast;
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     padding: 13px 32px 14px;
   }
 
@@ -118,7 +120,7 @@
 
   background-color: $color-white;
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     display: none;
   }
 
@@ -139,7 +141,7 @@
       height: 100%;
       width: 100%;
 
-      padding: 8px $grid-gutter-width/2;
+      padding: 8px $grid-gutter-width-base/2;
 
       text-align: center;
       font-size: 14px;

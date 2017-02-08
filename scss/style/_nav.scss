@@ -93,15 +93,15 @@ $nav-panel-lg-height: 400px;
   .nav-list.is-open & {
     height: $nav-panel-xs-height;
 
-    @media (min-width: $screen-sm-min) {
+    @include media-breakpoint-up(sm) {
       height: $nav-panel-sm-height;
     }
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       height: $nav-panel-md-height;
     }
 
-    @media (min-width: $screen-lg-min) {
+    @include media-breakpoint-up(lg) {
       height: $nav-panel-lg-height;
     }
   }

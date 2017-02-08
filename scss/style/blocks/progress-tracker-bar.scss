@@ -18,13 +18,13 @@
   line-height: 23px;
   overflow: hidden;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     border-left: 1px $color-white solid;
     height: 40px;
     line-height: 40px;
   }
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     height: 59px;
     line-height: 59px;
   }
@@ -36,7 +36,7 @@
   height: 16px;
   line-height: 16px;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     height: 23px;
     line-height: 23px;
   }
@@ -60,12 +60,12 @@
 
   display: none;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: inline;
     font-size: 24px;
   }
 
- @media (min-width: $screen-lg-min) {
+ @include media-breakpoint-up(lg) {
     margin-left: 30px;
     margin-right: 10px;
     font-size: 36px;
@@ -82,7 +82,7 @@
 
   display: none;
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     display: inline;
   }
 

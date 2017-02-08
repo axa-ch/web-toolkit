@@ -1,4 +1,4 @@
-@mixin make-container($gutter: $grid-gutter-width) {
+@mixin make-container($gutter: $grid-gutter-width-base) {
   margin-left: auto;
   margin-right: auto;
 

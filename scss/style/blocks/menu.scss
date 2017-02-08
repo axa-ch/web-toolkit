@@ -92,7 +92,7 @@
 .menu--side {
   display: none;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: block;
   }
 
@@ -137,7 +137,7 @@
       }
     }
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       float: left;
     }
   }

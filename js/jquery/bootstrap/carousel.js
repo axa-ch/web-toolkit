@@ -1,239 +1,497 @@
-import jQuery from 'jquery'
+import Util from './util'
 
-/* ========================================================================
- * Bootstrap: carousel.js v3.3.7
- * http://getbootstrap.com/javascript/#carousel
- * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0-alpha.6): carousel.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+ * --------------------------------------------------------------------------
+ */
+
+const Carousel = (($) => {
 
 
-+function ($) {
-  'use strict';
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
-  // CAROUSEL CLASS DEFINITION
-  // =========================
+  const NAME                = 'carousel'
+  const VERSION             = '4.0.0-alpha.6'
+  const DATA_KEY            = 'bs.carousel'
+  const EVENT_KEY           = `.${DATA_KEY}`
+  const DATA_API_KEY        = '.data-api'
+  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const TRANSITION_DURATION = 600
+  const ARROW_LEFT_KEYCODE  = 37 // KeyboardEvent.which value for left arrow key
+  const ARROW_RIGHT_KEYCODE = 39 // KeyboardEvent.which value for right arrow key
 
-  var Carousel = function (element, options) {
-    this.$element    = $(element)
-    this.$indicators = this.$element.find('.carousel-indicators')
-    this.options     = options
-    this.paused      = null
-    this.sliding     = null
-    this.interval    = null
-    this.$active     = null
-    this.$items      = null
-
-    this.options.keyboard && this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this))
-
-    this.options.pause == 'hover' && !('ontouchstart' in document.documentElement) && this.$element
-      .on('mouseenter.bs.carousel', $.proxy(this.pause, this))
-      .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
+  const Default = {
+    interval : 5000,
+    keyboard : true,
+    slide    : false,
+    pause    : 'hover',
+    wrap     : true
   }
 
-  Carousel.VERSION  = '3.3.7'
-
-  Carousel.TRANSITION_DURATION = 600
-
-  Carousel.DEFAULTS = {
-    interval: 5000,
-    pause: 'hover',
-    wrap: true,
-    keyboard: true
+  const DefaultType = {
+    interval : '(number|boolean)',
+    keyboard : 'boolean',
+    slide    : '(boolean|string)',
+    pause    : '(string|boolean)',
+    wrap     : 'boolean'
   }
 
-  Carousel.prototype.keydown = function (e) {
-    if (/input|textarea/i.test(e.target.tagName)) return
-    switch (e.which) {
-      case 37: this.prev(); break
-      case 39: this.next(); break
-      default: return
+  const Direction = {
+    NEXT     : 'next',
+    PREV     : 'prev',
+    LEFT     : 'left',
+    RIGHT    : 'right'
+  }
+
+  const Event = {
+    SLIDE          : `slide${EVENT_KEY}`,
+    SLID           : `slid${EVENT_KEY}`,
+    KEYDOWN        : `keydown${EVENT_KEY}`,
+    MOUSEENTER     : `mouseenter${EVENT_KEY}`,
+    MOUSELEAVE     : `mouseleave${EVENT_KEY}`,
+    LOAD_DATA_API  : `load${EVENT_KEY}${DATA_API_KEY}`,
+    CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`
+  }
+
+  const ClassName = {
+    CAROUSEL : 'carousel',
+    ACTIVE   : 'active',
+    SLIDE    : 'slide',
+    RIGHT    : 'carousel-item-right',
+    LEFT     : 'carousel-item-left',
+    NEXT     : 'carousel-item-next',
+    PREV     : 'carousel-item-prev',
+    ITEM     : 'carousel-item'
+  }
+
+  const Selector = {
+    ACTIVE      : '.active',
+    ACTIVE_ITEM : '.active.carousel-item',
+    ITEM        : '.carousel-item',
+    NEXT_PREV   : '.carousel-item-next, .carousel-item-prev',
+    INDICATORS  : '.carousel-indicators',
+    DATA_SLIDE  : '[data-slide], [data-slide-to]',
+    DATA_RIDE   : '[data-ride="carousel"]'
+  }
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
+
+  class Carousel {
+
+    constructor(element, config) {
+      this._items             = null
+      this._interval          = null
+      this._activeElement     = null
+
+      this._isPaused          = false
+      this._isSliding         = false
+
+      this._config            = this._getConfig(config)
+      this._element           = $(element)[0]
+      this._indicatorsElement = $(this._element).find(Selector.INDICATORS)[0]
+
+      this._addEventListeners()
     }
 
-    e.preventDefault()
-  }
 
-  Carousel.prototype.cycle = function (e) {
-    e || (this.paused = false)
+    // getters
 
-    this.interval && clearInterval(this.interval)
-
-    this.options.interval
-      && !this.paused
-      && (this.interval = setInterval($.proxy(this.next, this), this.options.interval))
-
-    return this
-  }
-
-  Carousel.prototype.getItemIndex = function (item) {
-    this.$items = item.parent().children('.item')
-    return this.$items.index(item || this.$active)
-  }
-
-  Carousel.prototype.getItemForDirection = function (direction, active) {
-    var activeIndex = this.getItemIndex(active)
-    var willWrap = (direction == 'prev' && activeIndex === 0)
-                || (direction == 'next' && activeIndex == (this.$items.length - 1))
-    if (willWrap && !this.options.wrap) return active
-    var delta = direction == 'prev' ? -1 : 1
-    var itemIndex = (activeIndex + delta) % this.$items.length
-    return this.$items.eq(itemIndex)
-  }
-
-  Carousel.prototype.to = function (pos) {
-    var that        = this
-    var activeIndex = this.getItemIndex(this.$active = this.$element.find('.item.active'))
-
-    if (pos > (this.$items.length - 1) || pos < 0) return
-
-    if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) }) // yes, "slid"
-    if (activeIndex == pos) return this.pause().cycle()
-
-    return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
-  }
-
-  Carousel.prototype.pause = function (e) {
-    e || (this.paused = true)
-
-    if (this.$element.find('.next, .prev').length && $.support.transition) {
-      this.$element.trigger($.support.transition.end)
-      this.cycle(true)
+    static get VERSION() {
+      return VERSION
     }
 
-    this.interval = clearInterval(this.interval)
-
-    return this
-  }
-
-  Carousel.prototype.next = function () {
-    if (this.sliding) return
-    return this.slide('next')
-  }
-
-  Carousel.prototype.prev = function () {
-    if (this.sliding) return
-    return this.slide('prev')
-  }
-
-  Carousel.prototype.slide = function (type, next) {
-    var $active   = this.$element.find('.item.active')
-    var $next     = next || this.getItemForDirection(type, $active)
-    var isCycling = this.interval
-    var direction = type == 'next' ? 'left' : 'right'
-    var that      = this
-
-    if ($next.hasClass('active')) return (this.sliding = false)
-
-    var relatedTarget = $next[0]
-    var slideEvent = $.Event('slide.bs.carousel', {
-      relatedTarget: relatedTarget,
-      direction: direction
-    })
-    this.$element.trigger(slideEvent)
-    if (slideEvent.isDefaultPrevented()) return
-
-    this.sliding = true
-
-    isCycling && this.pause()
-
-    if (this.$indicators.length) {
-      this.$indicators.find('.active').removeClass('active')
-      var $nextIndicator = $(this.$indicators.children()[this.getItemIndex($next)])
-      $nextIndicator && $nextIndicator.addClass('active')
+    static get Default() {
+      return Default
     }
 
-    var slidEvent = $.Event('slid.bs.carousel', { relatedTarget: relatedTarget, direction: direction }) // yes, "slid"
-    if ($.support.transition && this.$element.hasClass('slide')) {
-      $next.addClass(type)
-      $next[0].offsetWidth // force reflow
-      $active.addClass(direction)
-      $next.addClass(direction)
-      $active
-        .one('bsTransitionEnd', function () {
-          $next.removeClass([type, direction].join(' ')).addClass('active')
-          $active.removeClass(['active', direction].join(' '))
-          that.sliding = false
-          setTimeout(function () {
-            that.$element.trigger(slidEvent)
-          }, 0)
-        })
-        .emulateTransitionEnd(Carousel.TRANSITION_DURATION)
-    } else {
-      $active.removeClass('active')
-      $next.addClass('active')
-      this.sliding = false
-      this.$element.trigger(slidEvent)
+
+    // public
+
+    next() {
+      if (this._isSliding) {
+        throw new Error('Carousel is sliding')
+      }
+      this._slide(Direction.NEXT)
     }
 
-    isCycling && this.cycle()
-
-    return this
-  }
-
-
-  // CAROUSEL PLUGIN DEFINITION
-  // ==========================
-
-  function Plugin(option) {
-    return this.each(function () {
-      var $this   = $(this)
-      var data    = $this.data('bs.carousel')
-      var options = $.extend({}, Carousel.DEFAULTS, $this.data(), typeof option == 'object' && option)
-      var action  = typeof option == 'string' ? option : options.slide
-
-      if (!data) $this.data('bs.carousel', (data = new Carousel(this, options)))
-      if (typeof option == 'number') data.to(option)
-      else if (action) data[action]()
-      else if (options.interval) data.pause().cycle()
-    })
-  }
-
-  var old = $.fn.carousel
-
-  $.fn.carousel             = Plugin
-  $.fn.carousel.Constructor = Carousel
-
-
-  // CAROUSEL NO CONFLICT
-  // ====================
-
-  $.fn.carousel.noConflict = function () {
-    $.fn.carousel = old
-    return this
-  }
-
-
-  // CAROUSEL DATA-API
-  // =================
-
-  var clickHandler = function (e) {
-    var href
-    var $this   = $(this)
-    var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
-    if (!$target.hasClass('carousel')) return
-    var options = $.extend({}, $target.data(), $this.data())
-    var slideIndex = $this.attr('data-slide-to')
-    if (slideIndex) options.interval = false
-
-    Plugin.call($target, options)
-
-    if (slideIndex) {
-      $target.data('bs.carousel').to(slideIndex)
+    nextWhenVisible() {
+      // Don't call next when the page isn't visible
+      if (!document.hidden) {
+        this.next()
+      }
     }
 
-    e.preventDefault()
+    prev() {
+      if (this._isSliding) {
+        throw new Error('Carousel is sliding')
+      }
+      this._slide(Direction.PREVIOUS)
+    }
+
+    pause(event) {
+      if (!event) {
+        this._isPaused = true
+      }
+
+      if ($(this._element).find(Selector.NEXT_PREV)[0] &&
+        Util.supportsTransitionEnd()) {
+        Util.triggerTransitionEnd(this._element)
+        this.cycle(true)
+      }
+
+      clearInterval(this._interval)
+      this._interval = null
+    }
+
+    cycle(event) {
+      if (!event) {
+        this._isPaused = false
+      }
+
+      if (this._interval) {
+        clearInterval(this._interval)
+        this._interval = null
+      }
+
+      if (this._config.interval && !this._isPaused) {
+        this._interval = setInterval(
+          (document.visibilityState ? this.nextWhenVisible : this.next).bind(this),
+          this._config.interval
+        )
+      }
+    }
+
+    to(index) {
+      this._activeElement = $(this._element).find(Selector.ACTIVE_ITEM)[0]
+
+      const activeIndex = this._getItemIndex(this._activeElement)
+
+      if (index > this._items.length - 1 || index < 0) {
+        return
+      }
+
+      if (this._isSliding) {
+        $(this._element).one(Event.SLID, () => this.to(index))
+        return
+      }
+
+      if (activeIndex === index) {
+        this.pause()
+        this.cycle()
+        return
+      }
+
+      const direction = index > activeIndex ?
+        Direction.NEXT :
+        Direction.PREVIOUS
+
+      this._slide(direction, this._items[index])
+    }
+
+    dispose() {
+      $(this._element).off(EVENT_KEY)
+      $.removeData(this._element, DATA_KEY)
+
+      this._items             = null
+      this._config            = null
+      this._element           = null
+      this._interval          = null
+      this._isPaused          = null
+      this._isSliding         = null
+      this._activeElement     = null
+      this._indicatorsElement = null
+    }
+
+
+    // private
+
+    _getConfig(config) {
+      config = $.extend({}, Default, config)
+      Util.typeCheckConfig(NAME, config, DefaultType)
+      return config
+    }
+
+    _addEventListeners() {
+      if (this._config.keyboard) {
+        $(this._element)
+          .on(Event.KEYDOWN, (event) => this._keydown(event))
+      }
+
+      if (this._config.pause === 'hover' &&
+        !('ontouchstart' in document.documentElement)) {
+        $(this._element)
+          .on(Event.MOUSEENTER, (event) => this.pause(event))
+          .on(Event.MOUSELEAVE, (event) => this.cycle(event))
+      }
+    }
+
+    _keydown(event) {
+      if (/input|textarea/i.test(event.target.tagName)) {
+        return
+      }
+
+      switch (event.which) {
+        case ARROW_LEFT_KEYCODE:
+          event.preventDefault()
+          this.prev()
+          break
+        case ARROW_RIGHT_KEYCODE:
+          event.preventDefault()
+          this.next()
+          break
+        default:
+          return
+      }
+    }
+
+    _getItemIndex(element) {
+      this._items = $.makeArray($(element).parent().find(Selector.ITEM))
+      return this._items.indexOf(element)
+    }
+
+    _getItemByDirection(direction, activeElement) {
+      const isNextDirection = direction === Direction.NEXT
+      const isPrevDirection = direction === Direction.PREVIOUS
+      const activeIndex     = this._getItemIndex(activeElement)
+      const lastItemIndex   = this._items.length - 1
+      const isGoingToWrap   = isPrevDirection && activeIndex === 0 ||
+                              isNextDirection && activeIndex === lastItemIndex
+
+      if (isGoingToWrap && !this._config.wrap) {
+        return activeElement
+      }
+
+      const delta     = direction === Direction.PREVIOUS ? -1 : 1
+      const itemIndex = (activeIndex + delta) % this._items.length
+
+      return itemIndex === -1 ?
+        this._items[this._items.length - 1] : this._items[itemIndex]
+    }
+
+
+    _triggerSlideEvent(relatedTarget, eventDirectionName) {
+      const slideEvent = $.Event(Event.SLIDE, {
+        relatedTarget,
+        direction: eventDirectionName
+      })
+
+      $(this._element).trigger(slideEvent)
+
+      return slideEvent
+    }
+
+    _setActiveIndicatorElement(element) {
+      if (this._indicatorsElement) {
+        $(this._indicatorsElement)
+          .find(Selector.ACTIVE)
+          .removeClass(ClassName.ACTIVE)
+
+        const nextIndicator = this._indicatorsElement.children[
+          this._getItemIndex(element)
+        ]
+
+        if (nextIndicator) {
+          $(nextIndicator).addClass(ClassName.ACTIVE)
+        }
+      }
+    }
+
+    _slide(direction, element) {
+      const activeElement = $(this._element).find(Selector.ACTIVE_ITEM)[0]
+      const nextElement   = element || activeElement &&
+        this._getItemByDirection(direction, activeElement)
+
+      const isCycling = Boolean(this._interval)
+
+      let directionalClassName
+      let orderClassName
+      let eventDirectionName
+
+      if (direction === Direction.NEXT) {
+        directionalClassName = ClassName.LEFT
+        orderClassName = ClassName.NEXT
+        eventDirectionName = Direction.LEFT
+      } else {
+        directionalClassName = ClassName.RIGHT
+        orderClassName = ClassName.PREV
+        eventDirectionName = Direction.RIGHT
+      }
+
+      if (nextElement && $(nextElement).hasClass(ClassName.ACTIVE)) {
+        this._isSliding = false
+        return
+      }
+
+      const slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName)
+      if (slideEvent.isDefaultPrevented()) {
+        return
+      }
+
+      if (!activeElement || !nextElement) {
+        // some weirdness is happening, so we bail
+        return
+      }
+
+      this._isSliding = true
+
+      if (isCycling) {
+        this.pause()
+      }
+
+      this._setActiveIndicatorElement(nextElement)
+
+      const slidEvent = $.Event(Event.SLID, {
+        relatedTarget: nextElement,
+        direction: eventDirectionName
+      })
+
+      if (Util.supportsTransitionEnd() &&
+        $(this._element).hasClass(ClassName.SLIDE)) {
+
+        $(nextElement).addClass(orderClassName)
+
+        Util.reflow(nextElement)
+
+        $(activeElement).addClass(directionalClassName)
+        $(nextElement).addClass(directionalClassName)
+
+        $(activeElement)
+          .one(Util.TRANSITION_END, () => {
+            $(nextElement)
+              .removeClass(`${directionalClassName} ${orderClassName}`)
+              .addClass(ClassName.ACTIVE)
+
+            $(activeElement).removeClass(`${ClassName.ACTIVE} ${orderClassName} ${directionalClassName}`)
+
+            this._isSliding = false
+
+            setTimeout(() => $(this._element).trigger(slidEvent), 0)
+
+          })
+          .emulateTransitionEnd(TRANSITION_DURATION)
+
+      } else {
+        $(activeElement).removeClass(ClassName.ACTIVE)
+        $(nextElement).addClass(ClassName.ACTIVE)
+
+        this._isSliding = false
+        $(this._element).trigger(slidEvent)
+      }
+
+      if (isCycling) {
+        this.cycle()
+      }
+    }
+
+
+    // static
+
+    static _jQueryInterface(config) {
+      return this.each(function () {
+        let data      = $(this).data(DATA_KEY)
+        const _config = $.extend({}, Default, $(this).data())
+
+        if (typeof config === 'object') {
+          $.extend(_config, config)
+        }
+
+        const action = typeof config === 'string' ? config : _config.slide
+
+        if (!data) {
+          data = new Carousel(this, _config)
+          $(this).data(DATA_KEY, data)
+        }
+
+        if (typeof config === 'number') {
+          data.to(config)
+        } else if (typeof action === 'string') {
+          if (data[action] === undefined) {
+            throw new Error(`No method named "${action}"`)
+          }
+          data[action]()
+        } else if (_config.interval) {
+          data.pause()
+          data.cycle()
+        }
+      })
+    }
+
+    static _dataApiClickHandler(event) {
+      const selector = Util.getSelectorFromElement(this)
+
+      if (!selector) {
+        return
+      }
+
+      const target = $(selector)[0]
+
+      if (!target || !$(target).hasClass(ClassName.CAROUSEL)) {
+        return
+      }
+
+      const config     = $.extend({}, $(target).data(), $(this).data())
+      const slideIndex = this.getAttribute('data-slide-to')
+
+      if (slideIndex) {
+        config.interval = false
+      }
+
+      Carousel._jQueryInterface.call($(target), config)
+
+      if (slideIndex) {
+        $(target).data(DATA_KEY).to(slideIndex)
+      }
+
+      event.preventDefault()
+    }
+
   }
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Data Api implementation
+   * ------------------------------------------------------------------------
+   */
 
   $(document)
-    .on('click.bs.carousel.data-api', '[data-slide]', clickHandler)
-    .on('click.bs.carousel.data-api', '[data-slide-to]', clickHandler)
+    .on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler)
 
-  $(window).on('load', function () {
-    $('[data-ride="carousel"]').each(function () {
-      var $carousel = $(this)
-      Plugin.call($carousel, $carousel.data())
+  $(window).on(Event.LOAD_DATA_API, () => {
+    $(Selector.DATA_RIDE).each(function () {
+      const $carousel = $(this)
+      Carousel._jQueryInterface.call($carousel, $carousel.data())
     })
   })
 
-}(jQuery);
+
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+  $.fn[NAME]             = Carousel._jQueryInterface
+  $.fn[NAME].Constructor = Carousel
+  $.fn[NAME].noConflict  = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT
+    return Carousel._jQueryInterface
+  }
+
+  return Carousel
+
+})(jQuery)
+
+export default Carousel

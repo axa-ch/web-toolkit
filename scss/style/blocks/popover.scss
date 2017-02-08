@@ -15,7 +15,7 @@
   width: 100%;
   height: 100%;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     position: absolute;
     height: auto;
     width: 320px;
@@ -33,7 +33,7 @@
   background: transparent;
   pointer-events:none;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: block;
   }
 }
@@ -64,7 +64,7 @@
   padding: 15px;
   background: #0062a9;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     height: 42px;
     padding-bottom: 0;
     background: $color-gray--dark;
@@ -75,7 +75,7 @@
   font-size: 18px;
   color: white;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     color: #0062a9;
   }
 }
@@ -85,7 +85,7 @@
   padding-top: 57px;
   margin-top: -57px;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     padding: 0;
     margin: 0;
     background: $color-gray--dark;
@@ -97,7 +97,7 @@
   padding: 15px;
   background: $color-gray--dark;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     height: auto;
   }
 }

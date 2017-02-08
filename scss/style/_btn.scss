@@ -14,10 +14,9 @@
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
   &.btn.btn-lg {
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large,
-      $line-height-large, $btn-border-radius-large);
+     $btn-border-radius-lg);
 
     border-width: 0;
     border-bottom-width: 2px;
@@ -25,7 +24,7 @@
 
   &.btn.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
-      $font-size-small, $line-height-small, $btn-border-radius-small);
+      $font-size-small, $line-height-small, $btn-border-radius-sm);
     @include typo-16();
   }
 
@@ -41,13 +40,13 @@
 ///   <button type="button" class="btn btn-primary">Primary Button</button>
 .btn {
   @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
-    $line-height-base, $btn-border-radius-base);
+    $line-height-base, $btn-border-radius);
   @extend .typo-16;
 
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px
-    @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
-        $font-size-large, $line-height-large, $btn-border-radius-large);
+    @include btn-split-icon(($padding-large-vertical - 0.06667rem), $padding-large-horizontal,
+        $font-size-large, $line-height-large, $btn-border-radius-lg);
     @include typo-16();
 
     border-width: 2px;
@@ -55,13 +54,13 @@
 
   &.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
-      $font-size-small, $line-height-small, $btn-border-radius-small);
+      $font-size-small, $line-height-small, $btn-border-radius-sm);
     @include typo-16();
   }
 
   &.btn-xs {
     @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-small,
-      $line-height-small, $btn-border-radius-small);
+      $line-height-small, $btn-border-radius-sm);
     @include typo-16();
   }
 
@@ -88,21 +87,21 @@
 .btn-ghost {
   @include button-animation($color-button-secondary);
   @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
-    $line-height-base, $btn-border-radius-base);
+    $line-height-base, $btn-border-radius);
   @include typo-16();
 
   @include button-color($color-button-primary, $color-button-secondary, $color-white);
 
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px
-    @include btn-split-icon(($padding-large-vertical - 1px), $padding-large-horizontal,
-        $font-size-large, $line-height-large, $btn-border-radius-large);
+    @include btn-split-icon(($padding-large-vertical - 0.06667rem), $padding-large-horizontal,
+        $font-size-large, $line-height-large, $btn-border-radius-lg);
     @include typo-16();
   }
 
   &.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
-      $font-size-small, $line-height-small, $btn-border-radius-small);
+      $font-size-small, $line-height-small, $btn-border-radius-sm);
     @include typo-16();
   }
 

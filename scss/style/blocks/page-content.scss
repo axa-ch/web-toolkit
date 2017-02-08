@@ -1,7 +1,7 @@
 .page-content {
   @extend .container;
 
-  max-width: $container-lg;
+  max-width: map_get($container-max-widths,lg);
   min-height: 512px;
 
   padding-top: 32px;

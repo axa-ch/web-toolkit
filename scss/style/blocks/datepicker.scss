@@ -20,7 +20,7 @@
 .datepicker {
   @extend .clearfix;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     @include control--short();
   }
 }
@@ -237,7 +237,7 @@
     display: none;
   }
 
-  @media (min-width: $screen-lg-min) {
+  @include media-breakpoint-up(lg) {
     flex-direction: row;
 
     .birthday--day {

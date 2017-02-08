@@ -8,7 +8,7 @@
   box-sizing: border-box;
   width: 100%;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: $display;
     float: none;
     clear: none;
@@ -39,7 +39,7 @@
   display: block;
   width: 100%;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: table;
   }
 
@@ -48,7 +48,7 @@
 .table__header {
   display: none;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: table-row;
   }
 }
@@ -65,7 +65,7 @@
 .table__content {
   @include make-ie9-block(table-row-group);
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     border: 1px solid $color-gray--light;
   }
 }
@@ -88,13 +88,13 @@
     border-bottom: 1px solid $color-gray--mid;
 
     .table__row__item {
-      @media (min-width: $screen-md-min) {
+      @include media-breakpoint-up(md) {
         border-bottom: 1px solid $color-gray--mid;
       }
     }
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     padding: 15px 20px;
     border: none;
   }
@@ -104,7 +104,7 @@
   display: inline-block;
   padding: 0 0 10px 0;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     vertical-align: middle;
   }
 
@@ -113,18 +113,18 @@
       content: '';
     }
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       border-right: 1px solid $color-gray--mid;
     }
   }
 
   &:first-of-type {
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       border-left: 1px solid $color-gray--mid;
     }
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: table-cell !important;
     padding: 12px 10px;
     border-top: 1px solid $color-gray--mid;
@@ -143,7 +143,7 @@
   &::after {
     content: ',\00a0';
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       content: '' !important;
       display: none;
     }
@@ -152,7 +152,7 @@
   &__label {
     display: inline-block;
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       display: none;
     }
   }
@@ -169,7 +169,7 @@
 
 .table__row__item--headline {
   @include make-ie9-block(table-cell);
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     width: auto;
   }
 
@@ -180,7 +180,7 @@
   .table__row__item__content {
     font-size: 15px;
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       font-size: 14px;
     }
   }

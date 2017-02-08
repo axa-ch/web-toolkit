@@ -16,7 +16,7 @@ $font-heading-primary--line-height--medium: 1.4;
   font-weight: $font-heading-primary--weight;
   line-height: $font-heading-primary--line-height;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     font-size: $font-heading-primary--size--medium;
     line-height: $font-heading-primary--line-height--medium;
   }
@@ -40,7 +40,7 @@ $font-heading-secondary--line-height--medium: 1.4;
   font-weight: $font-heading-secondary--weight;
   line-height: $font-heading-secondary--line-height;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     font-size: $font-heading-secondary--size--medium;
     line-height: $font-heading-secondary--line-height--medium;
   }
@@ -64,7 +64,7 @@ $font-heading-tertiary--line-height--medium: 1.6;
   font-weight: $font-heading-tertiary--weight;
   line-height: $font-heading-tertiary--line-height;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     font-size: $font-heading-tertiary--size--medium; //24px
     line-height: $font-heading-tertiary--line-height--medium;
   }
@@ -88,7 +88,7 @@ $font-large--line-height--medium: 1.8; // make the font "feel" 19px as in design
   font-weight: $font-large--weight;
   line-height: $font-large--line-height;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     font-size: $font-large--size--medium;
     line-height: $font-large--line-height--medium;
   }
@@ -112,7 +112,7 @@ $font-large-semibold--line-height--medium: 1.8; // make the font "feel" 19px as 
   font-weight: $font-large-semibold--weight;
   line-height: $font-large-semibold--line-height;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     font-size: $font-large-semibold--size--medium;
     line-height: $font-large-semibold--line-height--medium;
   }
@@ -135,7 +135,7 @@ $font-medium--size--medium: 1rem; // 16px
   font-weight: $font-medium--weight;
   line-height: $font-medium--line-height;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     font-size: $font-medium--size--medium; //16px
   }
 }
@@ -157,7 +157,7 @@ $font-medium-semibold--size--medium: 1rem; //16px
   font-weight: $font-medium-semibold--weight;
   line-height: $font-medium-semibold--line-height;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     font-size: $font-medium-semibold--size--medium; //16px
   }
 }

@@ -1,4 +1,4 @@
-@mixin make-column($gutter: $grid-gutter-width) {
+@mixin make-column($gutter: $grid-gutter-width-base) {
   position: relative;
   min-height: 1px;
 
