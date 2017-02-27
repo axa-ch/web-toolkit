@@ -1,4 +1,4 @@
-web:
+web-toolkit:
   build: .
   environment:
     NODE_ENV: production
@@ -10,7 +10,7 @@ web:
     io.rancher.sidekicks: test
   tty: true
   stdin_open: false
-test:
+web-toolkit-test:
   build: tests
   links:
     - web:web

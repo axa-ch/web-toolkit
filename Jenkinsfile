@@ -41,6 +41,19 @@ node {
     }
   } else {
     stage('Build') {
+      sh """
+        set +x
+        export BASE_URL=/
+        docker-compose build web-toolkit
+      """
+    }
+
+    stage('Lint') {
+      sh """
+        set +x
+        export BASE_URL=/
+        docker-compose run web-toolkit npm run lint
+      """
     }
   }
 }
