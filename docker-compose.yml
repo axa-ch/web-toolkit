@@ -10,7 +10,7 @@ web-toolkit:
 web-toolkit-test:
   build: tests
   links:
-    - web:web-toolkit
+    - web-toolkit:web
   environment:
     BASE_URL: http://web:3000${BASE_URL}/
   volumes_from:
