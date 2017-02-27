@@ -3,7 +3,7 @@ node {
     checkout scm
   }
 
-  if (env.BRANCH_NAME == "v2") {
+  if (env.BRANCH_NAME == "v1") {
     stage('Deploy') {
       withCredentials([[
         $class: 'UsernamePasswordMultiBinding',
@@ -22,19 +22,19 @@ node {
       ]]) {
         sh """
           set +x
-          export BASE_URL=/toolkit-v2
+          export BASE_URL=/toolkit
 
           rancher-compose \
             --url \$RANCHER_URL \
             --access-key \$RANCHER_ACCESS_KEY \
             --secret-key \$RANCHER_SECRET_KEY \
-            --project-name "web-toolkit" \
+            --project-name "web-toolkit-v1" \
             --verbose up -d --confirm-upgrade
           rancher-compose \
             --url \$RANCHER_URL \
             --access-key \$RANCHER_ACCESS_KEY \
             --secret-key \$RANCHER_SECRET_KEY \
-            --project-name "web-toolkit" \
+            --project-name "web-toolkit-v1" \
             --verbose up -d --upgrade
         """
       }
