@@ -27,3 +27,6 @@ npm-debug.log
 WebEssentials-Settings.json
 phantomjs
 screenshots/
+
+# yarn
+yarn.lock
