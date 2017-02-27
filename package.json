@@ -1,6 +1,6 @@
 {
   "name": "@axa/web-toolkit",
-  "version": "1.0.0-alpha.8",
+  "version": "2.0.0-alpha.1",
   "description": "The CSS, JS and HTML framework for building responsive AXA web apps!",
   "author": "AXA",
   "license": "SEE LICENSE IN LICENSE",
@@ -10,7 +10,7 @@
   "releasesUrl": "https://github.com/axa-group/web-toolkit/releases",
   "distArchive": "https://github.com/axa-group/web-toolkit/releases/download/v{tag}/web-toolkit-v{tag}-dist.zip",
   "sourceArchive": "https://github.com/axa-group/web-toolkit/archive/v{tag}.zip",
-  "bootstrapDocs": "http://bootstrapdocs.com/v3.3.6/docs/",
+  "bootstrapDocs": "http://v4-alpha.getbootstrap.com",
   "npmjsPackage": "https://www.npmjs.com/package/@axa/web-toolkit",
   "cdnCss": "https://unpkg.com/@axa/web-toolkit@{tag}/dist/bundles/all.css",
   "cdnJs": "https://unpkg.com/@axa/web-toolkit@{tag}/dist/bundles/all.js",
