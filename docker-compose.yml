@@ -1,5 +1,5 @@
 web:
-  image: ${IMAGE}
+  build: .
   environment:
     NODE_ENV: production
     BASE_URL: ${BASE_URL}
@@ -11,7 +11,7 @@ web:
   tty: true
   stdin_open: false
 test:
-  image: ${TEST_IMAGE}
+  build: tests
   links:
     - web:web
   environment:
