@@ -1,2 +1,1 @@
 import './jquery'
-import './react'
