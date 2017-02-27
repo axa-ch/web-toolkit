@@ -35,7 +35,7 @@
     "url": "https://github.com/axa-group/web-toolkit.git"
   },
   "title": "AXA Web Toolkit",
-  "copyline": "Copyright 2016 AXA",
+  "copyline": "Copyright 2017 AXA",
   "main": "dist/js/index.js",
   "scripts": {
     "dev": "better-npm-run dev",
