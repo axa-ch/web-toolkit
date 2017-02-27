@@ -135,6 +135,4 @@ Check the collaborators list for the people behind it.
 
 ## License
 
-Copyright AXA 2016. All rights reserved.
-
-<!--- Copyright AXA 2016 -->
+Copyright AXA 2017. All rights reserved.
