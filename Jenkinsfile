@@ -25,12 +25,14 @@ node {
           export BASE_URL=/toolkit
 
           rancher-compose \
+            --file docker-compose.test.yml \
             --url \$RANCHER_URL \
             --access-key \$RANCHER_ACCESS_KEY \
             --secret-key \$RANCHER_SECRET_KEY \
             --project-name "web-toolkit-v1" \
             --verbose up -d --confirm-upgrade
           rancher-compose \
+            --file docker-compose.test.yml \
             --url \$RANCHER_URL \
             --access-key \$RANCHER_ACCESS_KEY \
             --secret-key \$RANCHER_SECRET_KEY \
@@ -44,7 +46,10 @@ node {
       sh """
         set +x
         export BASE_URL=/
-        docker-compose build web-toolkit
+
+        docker-compose \
+          --file docker-compose.test.yml \
+          --verbose build web-toolkit
       """
     }
   }

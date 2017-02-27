@@ -7,11 +7,3 @@ web-toolkit:
     - "8080"
   tty: true
   stdin_open: false
-web-toolkit-test:
-  build: tests
-  links:
-    - web-toolkit:web
-  environment:
-    BASE_URL: http://web:3000${BASE_URL}/
-  volumes_from:
-    - web-toolkit
