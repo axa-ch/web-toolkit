@@ -14,4 +14,4 @@ web-toolkit-test:
   environment:
     BASE_URL: http://web:3000${BASE_URL}/
   volumes_from:
-    - web
+    - web-toolkit
