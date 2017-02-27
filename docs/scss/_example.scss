@@ -29,7 +29,9 @@
 
   transition: background $transition-slow $transition-ease, color $transition-slow $transition-ease;
 
+  border: none;
   border-radius: .25rem;
+  background-color: transparent;
   color: $color-mineshaft;
   text-align: center;
   cursor: pointer;
