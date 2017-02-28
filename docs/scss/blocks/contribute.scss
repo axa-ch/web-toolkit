@@ -5,7 +5,7 @@
 
   @extend .clearfix;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: table;
     margin-left: 0;
     margin-right: 0;
@@ -15,13 +15,13 @@
 }
 
 .contribute__row {
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: table-row;
   }
 }
 
 .contribute__content {
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: table-cell;
     vertical-align: middle;
     padding: 20px;
@@ -31,7 +31,7 @@
 .contribute__image {
   display: none;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: table-cell;
     width: 100px;
     vertical-align: middle;

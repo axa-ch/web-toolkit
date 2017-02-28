@@ -1,12 +1,12 @@
 .footer-links {
   @extend .clear-gutter;
-  margin-right: -$grid-gutter-width/2;
-  margin-left: -$grid-gutter-width/2;
+  margin-right: -$grid-gutter-width-base/2;
+  margin-left: -$grid-gutter-width-base/2;
 }
 
 .footer-link-list {
   @include unstyle-list();
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     display: none;
   }
 
@@ -25,13 +25,13 @@
   color: $footer-link-color;
   line-height: 40px;
 
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(sm) {
     height: 33px;
     border-top: unset;
     line-height: 33px;
   }
 
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     height: 80px;
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
@@ -91,7 +91,7 @@
   color: $footer-text-color;
   font-weight: bold;
   text-transform: uppercase;
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     @include typo-20();
     height: 80px;
     padding-right: $footer-sides-offset;

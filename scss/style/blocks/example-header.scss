@@ -10,7 +10,7 @@ $example-header__sticky-height--medium: 70px;
   color: white;
   padding: 20px 0;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     padding: 40px 0;
   }
 }
@@ -37,7 +37,7 @@ $example-header__sticky-height--medium: 70px;
 
   background: $color-blue;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     height: $example-header__sticky-height--medium;
   }
 }
@@ -46,7 +46,7 @@ $example-header__sticky-height--medium: 70px;
   margin-top: $example-header__sticky-height;
   padding-bottom: $example-header__sticky-height;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     margin-top: $example-header__sticky-height--medium;
     padding-bottom: $example-header__sticky-height--medium;
   }
@@ -74,7 +74,7 @@ $example-header__sticky-height--medium: 70px;
 
   color: white;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     height: $example-header__sticky-height--medium;
     line-height: $example-header__sticky-height--medium;
     font-size: 12px;
@@ -108,7 +108,7 @@ $example-header__sticky-height--medium: 70px;
 
   color: white;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     line-height: $example-header__sticky-height--medium;
   }
 }

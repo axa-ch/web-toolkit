@@ -22,7 +22,6 @@ import './search'
 import './segmented-control'
 import './stroke'
 
-import './bootstrap/affix'
 import './bootstrap/alert'
 import './bootstrap/button'
 import './bootstrap/carousel'
@@ -33,6 +32,6 @@ import './bootstrap/popover'
 import './bootstrap/scrollspy'
 import './bootstrap/tab'
 import './bootstrap/tooltip'
-import './bootstrap/transition'
+import './bootstrap/util'
 
 export default {}

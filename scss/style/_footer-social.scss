@@ -1,11 +1,11 @@
 .footer-social-top-container {
   @extend .clear-gutter;
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(sm) {
     padding-right: 0;
     padding-bottom: 40px;
     padding-left: 0;
   }
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     padding-right: 0;
     padding-left: 0;
   }
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: flex-end;
 
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(sm) {
 
     svg {
       width: 20px;
@@ -28,7 +28,7 @@
 }
 
 .footer-light-social-top-container {
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(sm) {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -52,7 +52,7 @@
 .footer-social {
   @include unstyle-list();
   display: flex;
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     align-items: center;
     height: 120px;
     padding-right: $footer-sides-offset;
@@ -61,7 +61,7 @@
 }
 
 .footer-top-lang-social {
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(sm) {
     display: flex;
     padding-top: 0;
     padding-bottom: 0;
@@ -71,7 +71,7 @@
 .footer-social-bottom {
   align-items: center;
   justify-content: center;
-  @media (max-width: $screen-md-max) {
+  @include media-breakpoint-down(md) {
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -80,14 +80,14 @@
 .footer-social-item {
   flex-grow: 2;
 
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(sm) {
     flex-grow: unset;
   }
 
   &:first-of-type {
     // flex-grow: 1;
 
-    @media (min-width: $screen-sm-min) {
+    @include media-breakpoint-up(sm) {
       flex-grow: unset;
     }
 
@@ -96,7 +96,7 @@
   &:last-of-type {
     flex-grow: 1;
 
-    @media (min-width: $screen-sm-min) {
+    @include media-breakpoint-up(sm) {
       flex-grow: unset;
     }
 
@@ -122,12 +122,12 @@
   height: 25px;
 
   &.footer-social-icon-sm {
-    @media (min-width: $screen-xs-min) {
+    @include media-breakpoint-up(xs) {
       height: 20px;
     }
   }
 
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     height: 35px;
   }
 }

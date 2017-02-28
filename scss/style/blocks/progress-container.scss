@@ -5,7 +5,7 @@
   overflow: visible;
   background: $color-gray--lighter;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     margin-top: 60px;
     padding-bottom: 24px;
   }
@@ -17,21 +17,21 @@
 
   margin-bottom: 12px;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     top: -20px;
     margin-bottom: 5px;
   }
 }
 
 .progress-container__label {
-  padding: 0 $grid-gutter-width/2;
+  padding: 0 $grid-gutter-width-base/2;
 
   font-size: 17px;
   text-align: center;
 
   color: $color-light-blue;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     font-size: 24px;
   }
 }

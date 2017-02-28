@@ -30,14 +30,14 @@ $modal-padding: 15px;
   overflow: auto;
   background: white;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     position: static;
     top: auto;
     right: auto;
     bottom: auto;
     left: auto;
 
-    padding: 0 $grid-gutter-width/2;
+    padding: 0 $grid-gutter-width-base/2;
   }
 }
 
@@ -47,7 +47,7 @@ $modal-padding: 15px;
 
   background: white;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     @include make-center();
 
     padding-top: 115px;
@@ -70,7 +70,7 @@ $modal-padding: 15px;
 
   background: $color-blue;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     right: auto;
     left: auto;
 
@@ -100,7 +100,7 @@ $modal-padding: 15px;
     cursor: pointer;
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     margin-top: 20px;
 
     font-size: 21px;
@@ -124,7 +124,7 @@ $modal-padding: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     padding: 0;
     margin-right: 0;
   }
@@ -143,7 +143,7 @@ $modal-padding: 15px;
 
   background: $color-gray--lighter;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     right: auto;
     left: auto;
 
@@ -157,7 +157,7 @@ $modal-padding: 15px;
 }
 
 .modal__footer__wrapper {
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     padding-top: 27px;
   }
 }

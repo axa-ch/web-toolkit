@@ -2,7 +2,7 @@
   margin-top: 26px;
   margin-left: 24px;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     margin-top: 54px;
   }
 }

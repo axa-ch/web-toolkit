@@ -5,7 +5,7 @@
   padding-bottom: 11px;
   color: $footer-text-color;
   text-transform: uppercase;
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     justify-content: center;
     width: 100%;
     padding-top: 5%;
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   padding-right: 18px;
-  @media (max-width: $screen-md-min) {
+  @include media-breakpoint-down(xs) {
     display: none;
   }
 }
@@ -32,7 +32,7 @@
 .footer-language-item {
   padding: 0 18px;
 
-  @media (min-width: $screen-xs-min) {
+  @include media-breakpoint-up(xs) {
     &:first-child {
       padding-left: 0;
     }
@@ -58,7 +58,7 @@
     color: $footer-text-color;
   }
 
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     @include typo-20();
   }
 

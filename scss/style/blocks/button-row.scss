@@ -3,10 +3,10 @@
 
   margin-bottom: 80px;
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     padding-top: 8px;
-    margin-left: -$grid-gutter-width;
-    margin-right: -$grid-gutter-width;
+    margin-left: -$grid-gutter-width-base;
+    margin-right: -$grid-gutter-width-base;
   }
 }
 
@@ -19,7 +19,7 @@
   &.button {
     display: block;
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       display: inline-block;
     }
   }
@@ -28,14 +28,14 @@
     margin-top: 0;
   }
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     display: inline-block;
     margin-top: 0;
   }
 }
 
 .button-row__button--right {
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     float: right;
   }
 }

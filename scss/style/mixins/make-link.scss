@@ -19,7 +19,7 @@
     vertical-align: sub;
   }
 
-  @media (max-width: $screen-xs-max) {
+  @include media-breakpoint-down(xs) {
     @include typo-18();
 
     svg {

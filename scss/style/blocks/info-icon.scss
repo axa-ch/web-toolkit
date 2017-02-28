@@ -29,7 +29,7 @@ $info-icon-diameter--medium: 28px;
   &::before {
     font-size: 20px;
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       font-size: 28px;
     }
   }
@@ -42,7 +42,7 @@ $info-icon-diameter--medium: 28px;
   fill: $color-gray--darker;
 
 
-  @media (min-width: $screen-md-min) {
+  @include media-breakpoint-up(md) {
     width: $info-icon-diameter--medium;
     height: $info-icon-diameter--medium;
   }
