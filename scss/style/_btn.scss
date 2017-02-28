@@ -1,8 +1,3 @@
-/// This is unique style for the normal buttons.
-/// This button has a border only on the bottom and features a nice animation on hover.
-///
-/// @example html - HTML Usage
-///   <button type="button" class="btn btn-axa">AXA Button</button>
 .btn-axa {
   @include typo-16();
   @include button-primary($color-button-primary, $color-button-secondary, $color-white);
@@ -27,17 +22,8 @@
       $font-size-sm, $line-height-sm, $btn-border-radius-sm);
     @include typo-16();
   }
-
-
 }
 
-/// This is the default bootstrap button that's been modified for AXA.
-/// Modifications include most notably a 2px border-width on it's large version,
-/// but also modifications to typography.
-/// Combine with the `btn-primary`, `btn-default`, `btn-axa`, or `btn-link` modifiers.
-///
-/// @example html - HTML Usage
-///   <button type="button" class="btn btn-primary">Primary Button</button>
 .btn {
   @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
     $line-height-base, $btn-border-radius);
