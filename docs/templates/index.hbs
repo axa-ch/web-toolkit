@@ -16,23 +16,19 @@ order: 99
       of very helpful templates for you to get started with.
     </p>
 
-    <div class="row">
+    <div class="card-columns">
       {{#each menu.templates.childrenArray}}
         {{#with file}}
-          <div class="col-md-4 col-sm-6">
-            <div class="thumbnail">
-              <img src="{{thumbnail}}" alt="{{description}}">
-              <div class="caption">
-                <p>{{description}}</p>
-                <p>
-                  <a href="{{relative link}}" class="btn btn-primary" role="button">View the template</a>
-                </p>
-              </div>
+          <div class="card">
+            <img class="card-img-top img-fluid" src="{{thumbnail}}" alt="{{description}}">
+            <div class="card-block">
+              <h4 class="card-title">{{title}}</h4>
+              <p class="card-text">{{description}}</p>
+              <a href="{{relative link}}" class="card-link">View template</a>
             </div>
           </div>
         {{/with}}
       {{/each}}
     </div>
-
   {{/inline}}
 {{/page}}
