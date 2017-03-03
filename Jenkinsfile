@@ -22,7 +22,7 @@ node {
       ]]) {
         sh """
           set +x
-          export BASE_URL=/toolkit-v2
+          export BASE_URL=/toolkit/v2
 
           rancher-compose \
             --file docker-compose.yml \
