@@ -2,12 +2,23 @@
 title: Checkbox
 order: 2
 layout: page.hbs
-tags: Checkbox, Select
-draft: true
+tags: Checkbox
+draft: false
 ---
 
-include ../../mixins.pug
+<p>
+Same markup as bootstrap v4
+</p>
 
+<div>
+  <label for="checkbox" class="custom-control custom-checkbox">
+      <input type="checkbox" id="checkbox" class="custom-control-input" />
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">checkbox</span>
+  </label>
+</div>
+
+<!--
 p.paragraph.
   A checkbox is a basic control that enables the user to select or deselect one or multiple options.
 
@@ -166,3 +177,4 @@ p.paragraph.
               include:highlight(renderPug) ./snippets/checkbox-non-enhanced.pug
 
 //- Copyright AXA Versicherungen AG 2015
+-->
