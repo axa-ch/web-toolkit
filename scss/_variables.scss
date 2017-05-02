@@ -49,9 +49,6 @@ $border-radius: 0;
 $border-radius-lg: 0;
 $border-radius-sm: 0;
 
-$input-height-lg: ($line-height-large-computed + ($padding-large-vertical * 2) + 2);
-$input-height-sm: ($line-height-small-computed + ($padding-small-vertical * 2) + 2);
-
 $jumbotron-font-size: $font-size-item-highlight;
 $jumbotron-heading-font-size: $font-size-title-main;
 
@@ -323,7 +320,21 @@ $focus-border-width: 1px;
 // # Controls
 // #############################
 
-$control-height-condensed: 30px;
+$input-color: $color-mineshaft;
+$input-border-color: $color-silver;
+$input-padding-y: 0.625rem; // gets us approx. to the wanted 50px height
+$input-padding-x: 20px;
+$custom-select-padding-y: 10px;
+$custom-select-padding-x: 20px;
+$custom-select-indicator-padding: 20px + 10px; // 20px + indicator width (TODO: estimated)
+
+$axa-input-width: 300px !default ;
+$axa-input-short-width: 200px !default ;
+$axa-input-long-width: 400px !default ;
+
+// override so that there is no calc error
+$input-height-lg: ($line-height-large-computed + ($padding-large-vertical * 2) + 2);
+$input-height-sm: ($line-height-small-computed + ($padding-small-vertical * 2) + 2);
 
 // #############################
 // # Buttons

@@ -3,7 +3,7 @@
   @include typo-16;
 }
 
-// TODO: disabled
+// TODO: disabled state
 .custom-checkbox {
 
   .custom-control-indicator {
@@ -123,4 +123,11 @@
       background: $color-azure;
     }
   }
+}
+
+.custom-select {
+  height: auto;
+  width: 100%;
+  max-width: $axa-input-width;
+  @include typo-18;
 }
