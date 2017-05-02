@@ -1,0 +1,126 @@
+// hack: more specifity than ".form-group label" to override typo-18 to typo-16
+.form-group label.custom-checkbox {
+  @include typo-16;
+}
+
+// TODO: disabled
+.custom-checkbox {
+
+  .custom-control-indicator {
+    margin-right: 10px;
+
+    width: 16px;
+    height: 16px;
+    border: 1px solid $color-dusty-gray;
+    background: white;
+  }
+
+  .custom-control-input:focus ~ .custom-control-indicator,
+  // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+  &:hover .custom-control-indicator {
+    border-color: $color-azure;
+    box-shadow: none; // reset bootstrap
+  }
+
+  .custom-control-input:checked ~ .custom-control-indicator,
+  .custom-control-input:active ~ .custom-control-indicator {
+    background: $color-azure;
+    border-color: $color-azure;
+    background-image: none; // reset bootstrap
+  }
+}
+
+.custom-radio1-wrapper {
+  display: flex;
+}
+
+.custom-radio.radio1 {
+  margin-right: 1px;
+  padding: 0; // reset bootstrap
+
+  .custom-control-indicator {
+    display: none;
+  }
+
+  .custom-control-description {
+    display: block;
+    @include typo-16; // TODO: should be typo-15
+    font-weight: $font-small-semibold--weight;
+    text-transform: uppercase;
+    color: $color-mineshaft;
+    cursor: pointer;
+    background: $color-mercury;
+    border: 1px solid $color-dusty-gray;
+    border-bottom-width: 3px; // TODO: just a guess
+    padding: 8px 20px;
+  }
+
+  .custom-control-input:focus ~ .custom-control-description,
+  // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+  &:hover .custom-control-description {
+    border-color: $color-azure;
+
+    &::after {
+      border-color: $color-azure;
+      background: $color-silver;
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-description,
+  .custom-control-input:active ~ .custom-control-description {
+    background: white;
+    border-bottom-color: $color-azure;
+  }
+}
+
+.custom-radio.radio2 {
+  @include typo-18;
+  margin: 0 40px 0 0;
+  display: inline-flex;
+  line-height: 1; // vertical positioning
+  align-items: center;
+
+  .custom-control-indicator {
+    position: static; // reset bootstrap
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 15px;
+    border: 1px solid $color-silver;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 8px; // TODO: just a guess
+      height: 8px;
+      border-radius: 4px;
+      border: 1px solid $color-silver;
+    }
+  }
+
+  .custom-control-input:focus ~ .custom-control-indicator,
+  // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+  &:hover .custom-control-indicator {
+    border-color: $color-azure;
+    box-shadow: none; // reset bootstrap
+
+    &::after {
+      border-color: $color-azure;
+      background: $color-silver;
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-indicator,
+  .custom-control-input:active ~ .custom-control-indicator {
+    background: none; // reset bootstrap
+
+    &::after {
+      border-color: $color-azure;
+      background: $color-azure;
+    }
+  }
+}
