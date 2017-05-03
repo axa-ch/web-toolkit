@@ -44,30 +44,27 @@
 
   .custom-control-description {
     display: block;
-    @include typo-16; // TODO: should be typo-15
+    //@include typo-18; // TODO: should be typo-12
+    @extend .typo-13; // TODO: use mixin instead of @extend. Should be typo-12 (doesn't exist tough in web guidelines)
     font-weight: $font-small-semibold--weight;
     text-transform: uppercase;
     color: $color-mineshaft;
     cursor: pointer;
     background: $color-mercury;
     border: 1px solid $color-dusty-gray;
-    border-bottom-width: 3px; // TODO: just a guess
-    padding: 8px 20px;
+    border-bottom-width: 2px;
+    padding: 4px 20px;
   }
 
   .custom-control-input:focus ~ .custom-control-description,
   // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
-  &:hover .custom-control-description {
+  &:hover .custom-control-input:not(:disabled) ~ .custom-control-description {
     border-color: $color-azure;
-
-    &::after {
-      border-color: $color-azure;
-      background: $color-silver;
-    }
+    color: $color-azure;
   }
 
-  .custom-control-input:checked ~ .custom-control-description,
-  .custom-control-input:active ~ .custom-control-description {
+  .custom-control-input:checked:not(:disabled) ~ .custom-control-description, // :not(:disabled) is used to give this more specifity than the :hover effect
+  .custom-control-input:active:not(:disabled) ~ .custom-control-description {
     background: white;
     border-bottom-color: $color-azure;
   }
@@ -76,14 +73,15 @@
 .custom-radio.radio2 {
   @include typo-18;
   margin: 0 40px 0 0;
+  padding: 0; // reste bootstrap
   display: inline-flex;
   line-height: 1; // vertical positioning
   align-items: center;
 
   .custom-control-indicator {
     position: static; // reset bootstrap
-    width: 30px;
-    height: 30px;
+    width: 16px;
+    height: 16px;
     background: white;
     border-radius: 15px;
     border: 1px solid $color-silver;
@@ -95,16 +93,16 @@
     &::after {
       content: '';
       display: block;
-      width: 8px; // TODO: just a guess
-      height: 8px;
-      border-radius: 4px;
+      width: 6px; // TODO: just a guess
+      height: 6px;
+      border-radius: 50%;
       border: 1px solid $color-silver;
     }
   }
 
   .custom-control-input:focus ~ .custom-control-indicator,
   // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
-  &:hover .custom-control-indicator {
+  &:hover .custom-control-input:not(:disabled) ~ .custom-control-indicator {
     border-color: $color-azure;
     box-shadow: none; // reset bootstrap
 
@@ -114,8 +112,8 @@
     }
   }
 
-  .custom-control-input:checked ~ .custom-control-indicator,
-  .custom-control-input:active ~ .custom-control-indicator {
+  .custom-control-input:checked:not(:disabled) ~ .custom-control-indicator, // :not(:disabled) is used to give this more specifity than the :hover effect
+  .custom-control-input:active:not(:disabled) ~ .custom-control-indicator {
     background: none; // reset bootstrap
 
     &::after {
