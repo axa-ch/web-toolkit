@@ -5,6 +5,8 @@
 
 // TODO: disabled state
 .custom-checkbox {
+  display: block;
+  margin-bottom: 7px;
 
   .custom-control-indicator {
     margin-right: 10px;
@@ -17,13 +19,13 @@
 
   .custom-control-input:focus ~ .custom-control-indicator,
   // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
-  &:hover .custom-control-indicator {
+  &:hover .custom-control-input:not(:disabled) ~ .custom-control-indicator {
     border-color: $color-azure;
     box-shadow: none; // reset bootstrap
   }
 
-  .custom-control-input:checked ~ .custom-control-indicator,
-  .custom-control-input:active ~ .custom-control-indicator {
+  .custom-control-input:checked:not(:disabled) ~ .custom-control-indicator, // :not(:disabled) is used to give this more specifity than the :hover effect
+  .custom-control-input:active:not(:disabled) ~ .custom-control-indicator {
     background: $color-azure;
     border-color: $color-azure;
     background-image: none; // reset bootstrap
@@ -123,9 +125,127 @@
   }
 }
 
-.custom-select {
-  height: auto;
-  width: 100%;
-  max-width: $axa-input-width;
-  @include typo-18;
+.axa-select {
+  position: relative;
+  display: inline-block;
+  color: $color-mineshaft;
+
+  select {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 10px (/*spacing left of the arrow + arrow width + spacing right of the arrow*/30px + 10px + 20px) 10px 20px;
+    line-height: 1.5;
+    color: $color-mineshaft;
+    background-color: white;
+    border: 1px solid $color-silver;
+    cursor: pointer;
+    outline: 0;
+    appearance: none;
+    border-radius: 0;
+  }
+
+  /* Undo the Firefox inner focus ring */
+  select:focus:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+
+  /* Dropdown arrow */
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    display: inline-block;
+    content: "";
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%227%22%3E%0D%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20fill%3D%22%23999%22%20d%3D%22M9.754%201.451L5.573%205.756c-.322.331-.844.331-1.166%200L.226%201.451c-.322-.332-.322-.87%200-1.202.321-.331.844-.331%201.166%200L4.99%203.954%208.588.249c.322-.331.844-.331%201.166%200%20.322.332.322.87%200%201.202z%22%2F%3E%0D%0A%3C%2Fsvg%3E") center center;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 7px;
+    margin-top: -3px;
+    pointer-events: none;
+  }
+
+  // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+  /* Hover */
+  select:hover:not(:disabled),
+  /* Focus */
+  select:focus:not(:disabled),
+  /* Active/open */
+  select:active:not(:disabled) {
+    border-color: $color-azure;
+  }
+
+  /* Hide the arrow in IE10 and up */
+  select::-ms-expand {
+    display: none;
+  }
+
+  /* danger state */
+  &.axa-select-danger {
+    color: $brand-danger;
+
+    select {
+      color: $brand-danger;
+    }
+
+    // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+    /* Hover */
+    select:hover:not(:disabled),
+    /* Focus */
+    select:focus:not(:disabled),
+    /* Active/open */
+    select:active:not(:disabled) {
+      border-color: $brand-danger;
+    }
+  }
+}
+
+/* Media query to target Firefox only */
+@-moz-document url-prefix() {
+  /* Firefox hack to hide the arrow */
+  .axa-select select {
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding-right: 1rem;
+  }
+
+  /* <option> elements inherit styles from <select>, so reset them. */
+  .axa-select option {
+    background-color: white;
+  }
+}
+
+/* IE9 hack to hide the arrow */
+@media screen and (min-width:0\0) {
+  // TODO: fix these sizings
+  .axa-select {
+    select {
+      z-index: 1;
+      padding: .5rem 1.5rem .5rem 1rem;
+    }
+
+    &:after {
+      z-index: 5;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 1rem;
+      bottom: 0;
+      z-index: 2;
+      content: "";
+      display: block;
+      width: 1.5rem;
+      background-color: #eee;
+    }
+
+    select:hover,
+    select:focus,
+    select:active {
+      color: #555;
+      background-color: #eee;
+    }
+  }
 }

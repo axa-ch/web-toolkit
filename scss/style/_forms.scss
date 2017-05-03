@@ -1,10 +1,42 @@
 .form-control {
   @include typo-18;
   max-width: $axa-input-width;
+}
 
-  .has-danger & {
-    // not included in bootstrap
+// reset bootstrap
+.has-danger .form-control-danger,
+.has-warning .form-control-warning,
+.has-success .form-control-success {
+  background-image: none;
+}
+
+// reset bootstrap
+.form-control-success,
+.form-control-warning,
+.form-control-danger {
+  padding-right: $input-padding-x;
+}
+
+.form-control-feedback {
+  margin-top: 0;
+}
+
+.form-group.has-danger .form-control,
+.form-control-danger {
+  border-color: $input-border-color;
+  color: $brand-danger;
+
+  &:not(:focus)::placeholder {
     color: $brand-danger;
+  }
+
+  &:hover {
+    border-color: $brand-danger;
+  }
+
+  &:focus {
+    border-color: $color-azure;
+    color: $color-azure;
   }
 }
 
@@ -24,4 +56,60 @@
 .form-group label {
   @include typo-18;
   color: $color-mineshaft;
+  margin-bottom: 3px;
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 8px;
+  }
+}
+
+
+// testing below here
+.form-control-info-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.form-control-info-indicator {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    // TODO: use proper info icon as SVG
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid $color-azure;
+    content: 'i';
+    display: block;
+    color: $color-azure;
+    line-height: 15px;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+.form-control-info-description {
+  background: $color-azure;
+  color: white;
+  $negativeMargin: -30px; // TODO: wont' work in every case
+  padding: 20px (-$negativeMargin);
+  margin: 15px $negativeMargin 0;
+
+  &::before {
+    // TODO: arrow
+  }
+}
+
+
+@include media-breakpoint-up(sm) {
+  .form-control-info-description {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 0 0 0;
+    position: absolute;
+  }
 }
