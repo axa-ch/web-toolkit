@@ -1,5 +1,5 @@
 .form-control {
-  @include typo-18;
+  @include typo-18();
   max-width: $axa-input-width;
 }
 
@@ -21,22 +21,49 @@
   margin-top: 0;
 }
 
+.form-group.has-danger .form-control-feedback {
+  color:$color-axa-red;
+}
+
+.form-group.has-danger {
+  position: relative;
+  &::before, &::after {
+    position: absolute;
+    left: -27px;
+    top: 50px;
+    content: ' ';
+    height: 15px;
+    width: 2px;
+    background-color: $color-axa-red;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+}
+
 .form-group.has-danger .form-control,
 .form-control-danger {
+  color: $color-axa-red;
+
   border-color: $input-border-color;
-  color: $brand-danger;
 
   &:not(:focus)::placeholder {
-    color: $brand-danger;
+    color: $color-axa-red;
   }
 
   &:hover {
-    border-color: $brand-danger;
+    border-color: $color-axa-red;
   }
 
   &:focus {
-    border-color: $color-azure;
     color: $color-azure;
+
+    border-color: $color-azure;
   }
 }
 
@@ -45,8 +72,9 @@
 }
 
 .form-control:focus {
-  border-color: $color-azure;
   color: $color-azure;
+
+  border-color: $color-azure;
 }
 
 .form-control::placeholder {
@@ -54,62 +82,77 @@
 }
 
 .form-group label {
-  @include typo-18;
-  color: $color-mineshaft;
+  @include typo-18();
   margin-bottom: 3px;
+
+  color: $color-mineshaft;
 
   @include media-breakpoint-up(sm) {
     margin-bottom: 8px;
   }
 }
 
-
 // testing below here
 .form-control-info-wrapper {
   display: flex;
+
   align-items: center;
 }
 
 .form-control-info-indicator {
-  padding: 10px;
-  cursor: pointer;
   display: flex;
-  align-items: center;
+
+  padding: 10px;
+
   justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
 
   &::before {
+    display: flex;
+
     // TODO: use proper info icon as SVG
     width: 15px;
     height: 15px;
-    border-radius: 50%;
-    border: 2px solid $color-azure;
-    content: 'i';
-    display: block;
-    color: $color-azure;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: $form-control-info-indicator-font-size;
     line-height: 15px;
-    font-size: 10px;
-    text-align: center;
+
+    color: $color-azure;
+
+    border: 2px solid $color-azure;
+    border-radius: 50%;
+
+    content: 'i';
   }
 }
 
 .form-control-info-description {
-  background: $color-azure;
-  color: white;
   $negativeMargin: -30px; // TODO: wont' work in every case
   padding: 20px (-$negativeMargin);
+
   margin: 15px $negativeMargin 0;
+
+  color: $color-white;
+
+  background: $color-azure;
 
   &::before {
     // TODO: arrow
   }
 }
 
-
 @include media-breakpoint-up(sm) {
   .form-control-info-description {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 0 0 0;
     position: absolute;
+
+    padding-right: 20px;
+    padding-left: 20px;
+
+    margin: 0;
   }
 }

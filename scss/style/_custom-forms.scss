@@ -1,6 +1,9 @@
+$custom-control-description-font-size: 13px;
+$form-control-info-indicator-font-size: 10px;
+
 // hack: more specifity than ".form-group label" to override typo-18 to typo-16
 .form-group label.custom-checkbox {
-  @include typo-16;
+  @include typo-16();
 }
 
 // TODO: disabled state
@@ -8,17 +11,21 @@
   display: block;
   margin-bottom: 7px;
 
-  .custom-control-indicator {
-    margin-right: 10px;
+  user-select: none;
 
+  .custom-control-indicator {
     width: 16px;
     height: 16px;
+
+    margin-right: 10px;
+
+    background: $color-white;
+
     border: 1px solid $color-dusty-gray;
-    background: white;
   }
 
   .custom-control-input:focus ~ .custom-control-indicator,
-  // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+    // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
   &:hover .custom-control-input:not(:disabled) ~ .custom-control-indicator {
     border-color: $color-azure;
     box-shadow: none; // reset bootstrap
@@ -27,8 +34,8 @@
   .custom-control-input:checked:not(:disabled) ~ .custom-control-indicator, // :not(:disabled) is used to give this more specifity than the :hover effect
   .custom-control-input:active:not(:disabled) ~ .custom-control-indicator {
     background: $color-azure;
-    border-color: $color-azure;
     background-image: none; // reset bootstrap
+    border-color: $color-azure;
   }
 }
 
@@ -37,8 +44,9 @@
 }
 
 .custom-radio.radio1 {
-  margin-right: 1px;
   padding: 0; // reset bootstrap
+
+  margin-right: 1px;
 
   .custom-control-indicator {
     display: none;
@@ -46,71 +54,96 @@
 
   .custom-control-description {
     display: block;
-    //@include typo-18; // TODO: should be typo-12
-    @extend .typo-13; // TODO: use mixin instead of @extend. Should be typo-12 (doesn't exist tough in web guidelines)
+
+    padding: 4px 20px;
+
+    // @include typo-18; // TODO: should be typo-12
+    // @extend .typo-13; // TODO: use mixin instead of @extend. Should be typo-12 (doesn't exist tough in web guidelines)
+    font-family: $font-family-sans-serif;
+    font-size: $custom-control-description-font-size;
     font-weight: $font-small-semibold--weight;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
     color: $color-mineshaft;
+    text-transform: uppercase;
     cursor: pointer;
+
     background: $color-mercury;
     border: 1px solid $color-dusty-gray;
+
     border-bottom-width: 2px;
-    padding: 4px 20px;
   }
 
   .custom-control-input:focus ~ .custom-control-description,
-  // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+    // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
   &:hover .custom-control-input:not(:disabled) ~ .custom-control-description {
-    border-color: $color-azure;
     color: $color-azure;
+
+    border-color: $color-azure;
   }
 
   .custom-control-input:checked:not(:disabled) ~ .custom-control-description, // :not(:disabled) is used to give this more specifity than the :hover effect
   .custom-control-input:active:not(:disabled) ~ .custom-control-description {
     background: white;
+
     border-bottom-color: $color-azure;
   }
 }
 
 .custom-radio.radio2 {
-  @include typo-18;
-  margin: 0 40px 0 0;
-  padding: 0; // reste bootstrap
+  @include typo-18();
   display: inline-flex;
-  line-height: 1; // vertical positioning
+
+  padding: 0; // reset bootstrap
+
+  margin: 0 40px 0 0;
+
   align-items: center;
+
+  line-height: 1; // vertical positioning
 
   .custom-control-indicator {
     position: static; // reset bootstrap
+
+    display: flex;
+
     width: 16px;
     height: 16px;
-    background: white;
-    border-radius: 15px;
-    border: 1px solid $color-silver;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     margin-right: 20px;
 
+    justify-content: center;
+
+    align-items: center;
+
+    background: white;
+
+    border: 1px solid $color-silver;
+    border-radius: 15px;
+
     &::after {
-      content: '';
       display: block;
+
       width: 6px; // TODO: just a guess
       height: 6px;
-      border-radius: 50%;
+
       border: 1px solid $color-silver;
+      border-radius: 50%;
+
+      content: '';
     }
   }
 
   .custom-control-input:focus ~ .custom-control-indicator,
-  // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+    // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
   &:hover .custom-control-input:not(:disabled) ~ .custom-control-indicator {
     border-color: $color-azure;
     box-shadow: none; // reset bootstrap
 
     &::after {
-      border-color: $color-azure;
       background: $color-silver;
+
+      border-color: $color-azure;
     }
   }
 
@@ -119,30 +152,42 @@
     background: none; // reset bootstrap
 
     &::after {
-      border-color: $color-azure;
       background: $color-azure;
+
+      border-color: $color-azure;
     }
   }
 }
 
 .axa-select {
   position: relative;
+
   display: inline-block;
+
   color: $color-mineshaft;
 
   select {
     display: inline-block;
+
     width: 100%;
-    margin: 0;
+
     padding: 10px (/*spacing left of the arrow + arrow width + spacing right of the arrow*/30px + 10px + 20px) 10px 20px;
+
+    margin: 0;
+
     line-height: 1.5;
     color: $color-mineshaft;
-    background-color: white;
-    border: 1px solid $color-silver;
+
     cursor: pointer;
-    outline: 0;
-    appearance: none;
+
+    background-color: $color-white;
+
+    border: 1px solid $color-silver;
     border-radius: 0;
+
+    outline: 0;
+
+    appearance: none;
   }
 
   /* Undo the Firefox inner focus ring */
@@ -152,26 +197,33 @@
   }
 
   /* Dropdown arrow */
-  &:after {
+  &::after {
     position: absolute;
     top: 50%;
     right: 20px;
+
     display: inline-block;
-    content: "";
-    background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%227%22%3E%0D%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20fill%3D%22%23999%22%20d%3D%22M9.754%201.451L5.573%205.756c-.322.331-.844.331-1.166%200L.226%201.451c-.322-.332-.322-.87%200-1.202.321-.331.844-.331%201.166%200L4.99%203.954%208.588.249c.322-.331.844-.331%201.166%200%20.322.332.322.87%200%201.202z%22%2F%3E%0D%0A%3C%2Fsvg%3E") center center;
-    background-repeat: no-repeat;
+
     width: 10px;
     height: 7px;
+
     margin-top: -3px;
+
     pointer-events: none;
+
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%227%22%3E%0D%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20fill%3D%22%23999%22%20d%3D%22M9.754%201.451L5.573%205.756c-.322.331-.844.331-1.166%200L.226%201.451c-.322-.332-.322-.87%200-1.202.321-.331.844-.331%201.166%200L4.99%203.954%208.588.249c.322-.331.844-.331%201.166%200%20.322.332.322.87%200%201.202z%22%2F%3E%0D%0A%3C%2Fsvg%3E") center center;
+    background-repeat: no-repeat;
+
+    content: "";
   }
 
   // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+
   /* Hover */
   select:hover:not(:disabled),
-  /* Focus */
+    /* Focus */
   select:focus:not(:disabled),
-  /* Active/open */
+    /* Active/open */
   select:active:not(:disabled) {
     border-color: $color-azure;
   }
@@ -183,20 +235,22 @@
 
   /* danger state */
   &.axa-select-danger {
-    color: $brand-danger;
+    color: $color-axa-red;
 
     select {
-      color: $brand-danger;
+      color: $color-axa-red;
     }
 
     // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
+
     /* Hover */
     select:hover:not(:disabled),
-    /* Focus */
+      /* Focus */
     select:focus:not(:disabled),
-    /* Active/open */
+      /* Active/open */
     select:active:not(:disabled) {
-      border-color: $brand-danger;
+      color: $color-mineshaft;
+      border-color: $color-azure;
     }
   }
 }
@@ -205,47 +259,56 @@
 @-moz-document url-prefix() {
   /* Firefox hack to hide the arrow */
   .axa-select select {
+    padding-right: 1rem;
+
     text-indent: 0.01px;
     text-overflow: '';
-    padding-right: 1rem;
   }
 
   /* <option> elements inherit styles from <select>, so reset them. */
   .axa-select option {
-    background-color: white;
+    background-color: $color-white;
   }
 }
 
 /* IE9 hack to hide the arrow */
-@media screen and (min-width:0\0) {
+
+/*
+@media screen and (min-width: 0\0) {
   // TODO: fix these sizings
   .axa-select {
     select {
-      z-index: 1;
-      padding: .5rem 1.5rem .5rem 1rem;
+      z-index: $ie-select-hack-z-index;
+
+      padding: 0.5rem 1.5rem 0.5rem 1rem;
     }
 
-    &:after {
-      z-index: 5;
+    &::after {
+      z-index: $ie-select-hack-after-z-index;
     }
 
-    &:before {
+    &::before {
       position: absolute;
       top: 0;
       right: 1rem;
       bottom: 0;
-      z-index: 2;
-      content: "";
+
+      z-index: $ie-select-hack-before-z-index;
+
       display: block;
       width: 1.5rem;
-      background-color: #eee;
+
+      background-color: $select-background-color;
+
+      content: "";
     }
 
     select:hover,
     select:focus,
     select:active {
-      color: #555;
-      background-color: #eee;
+      color: $select-color;
+
+      background-color: $select-background-color;
     }
   }
-}
+} */
