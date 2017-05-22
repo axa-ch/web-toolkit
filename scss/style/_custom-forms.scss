@@ -72,6 +72,11 @@ $form-control-info-indicator-font-size: 10px;
     border: 1px solid $color-dusty-gray;
 
     border-bottom-width: 2px;
+
+    @include media-breakpoint-up(sm) {
+      padding-top: 9px;
+      padding-bottom: 8px;
+    }
   }
 
   .custom-control-input:focus ~ .custom-control-description,
