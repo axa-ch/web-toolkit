@@ -22,7 +22,7 @@
 }
 
 .form-group.has-danger .form-control-feedback {
-  color:$color-axa-red;
+  color: $brand-danger;
 }
 
 .form-group.has-danger {
@@ -48,16 +48,16 @@
 
 .form-group.has-danger .form-control,
 .form-control-danger {
-  color: $color-axa-red;
+  color: $brand-danger;
 
   border-color: $input-border-color;
 
   &:not(:focus)::placeholder {
-    color: $color-axa-red;
+    color: $brand-danger;
   }
 
   &:hover {
-    border-color: $color-axa-red;
+    border-color: $brand-danger;
   }
 
   &:focus {
@@ -100,35 +100,18 @@
 }
 
 .form-control-info-indicator {
-  display: flex;
-
   padding: 10px;
+  width: 21px + 20px;
+  height: 21px + 20px;
 
   justify-content: center;
   align-items: center;
 
   cursor: pointer;
 
-  &::before {
-    display: flex;
-
-    // TODO: use proper info icon as SVG
-    width: 15px;
-    height: 15px;
-
-    justify-content: center;
-    align-items: center;
-
-    font-size: $form-control-info-indicator-font-size;
-    line-height: 15px;
-
-    color: $color-azure;
-
-    border: 2px solid $color-azure;
-    border-radius: 50%;
-
-    content: 'i';
-  }
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIxIDIxIj48cGF0aCBmaWxsPSIjMzc0NDk2IiBkPSJNMTAuNSAyLjYyNWM0LjM0OSAwIDcuODc1IDMuNTI1IDcuODc1IDcuODc1cy0zLjUyNiA3Ljg3NS03Ljg3NSA3Ljg3NWMtNC4zNSAwLTcuODc1LTMuNTI1LTcuODc1LTcuODc1UzYuMTUgMi42MjUgMTAuNSAyLjYyNU0xMC41IDBDNC43MDEgMCAwIDQuNzAxIDAgMTAuNVM0LjcwMSAyMSAxMC41IDIxIDIxIDE2LjI5OSAyMSAxMC41IDE2LjI5OSAwIDEwLjUgMHoiLz48cGF0aCBmaWxsPSIjMzc0NDk2IiBkPSJNMTAuNSA1LjI1Yy43MjUgMCAxLjMxMy41ODggMS4zMTMgMS4zMTNzLS41ODggMS4zMTMtMS4zMTMgMS4zMTMtMS4zMTMtLjU4Ny0xLjMxMy0xLjMxM2MuMDAxLS43MjYuNTg4LTEuMzEzIDEuMzEzLTEuMzEzek05LjE4OCA5LjE4N2gyLjYyNXY2LjU2M0g5LjE4OFY5LjE4N3oiLz48L3N2Zz4=");
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .form-control-info-description {

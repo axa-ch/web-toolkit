@@ -164,154 +164,43 @@ $form-control-info-indicator-font-size: 10px;
   }
 }
 
-.axa-select {
-  position: relative;
+.custom-select {
+  display: block;
   max-width: $axa-input-width;
-  color: $color-mineshaft;
-
-  select {
-    display: inline-block;
-
-    width: 100%;
-
-    padding: 10px (/*spacing left of the arrow + arrow width + spacing right of the arrow*/30px + 10px + 20px) 10px 20px;
-
-    margin: 0;
-
-    line-height: 1.5;
-    color: $color-mineshaft;
-
-    cursor: pointer;
-
-    background-color: $color-white;
-
-    border: 1px solid $color-silver;
-    border-radius: 0;
-
-    outline: 0;
-
-    appearance: none;
-  }
-
-  /* Undo the Firefox inner focus ring */
-  select:focus:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
-  }
-
-  /* Dropdown arrow */
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-
-    display: inline-block;
-
-    width: 10px;
-    height: 7px;
-
-    margin-top: -3px;
-
-    pointer-events: none;
-
-    background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%227%22%3E%0D%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20fill%3D%22%23999%22%20d%3D%22M9.754%201.451L5.573%205.756c-.322.331-.844.331-1.166%200L.226%201.451c-.322-.332-.322-.87%200-1.202.321-.331.844-.331%201.166%200L4.99%203.954%208.588.249c.322-.331.844-.331%201.166%200%20.322.332.322.87%200%201.202z%22%2F%3E%0D%0A%3C%2Fsvg%3E") center center;
-    background-repeat: no-repeat;
-
-    content: "";
-  }
+  padding: 10px 60px 10px 20px;
+  line-height: 1.5;
+  color: #333333;
+  cursor: pointer;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%227%22%3E%0D%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20fill%3D%22%23999%22%20d%3D%22M9.754%201.451L5.573%205.756c-.322.331-.844.331-1.166%200L.226%201.451c-.322-.332-.322-.87%200-1.202.321-.331.844-.331%201.166%200L4.99%203.954%208.588.249c.322-.331.844-.331%201.166%200%20.322.332.322.87%200%201.202z%22%2F%3E%0D%0A%3C%2Fsvg%3E");
+  background-size: 12px 8px;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  outline: 0;
 
   // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
-
   /* Hover */
-  select:hover:not(:disabled),
+  &:hover:not(:disabled),
     /* Focus */
-  select:focus:not(:disabled),
+  &:focus:not(:disabled),
     /* Active/open */
-  select:active:not(:disabled) {
+  &:active:not(:disabled) {
     border-color: $color-azure;
   }
 
-  /* Hide the arrow in IE10 and up */
-  select::-ms-expand {
-    display: none;
-  }
-
-  /* danger state */
-  &.axa-select-danger {
-    color: $color-axa-red;
-
-    select {
-      color: $color-axa-red;
-    }
+  .form-group.has-danger &,
+  &.custom-select-danger {
+    color: $brand-danger;
 
     // TODO: sticky state on iOS: shall we remove hover therefore?! see wtfforms.com
-
     /* Hover */
-    select:hover:not(:disabled),
+    &:hover:not(:disabled),
       /* Focus */
-    select:focus:not(:disabled),
+    &:focus:not(:disabled),
       /* Active/open */
-    select:active:not(:disabled) {
+    &:active:not(:disabled) {
       color: $color-mineshaft;
-      border-color: $color-azure;
+      border-color: $brand-danger;
     }
   }
 }
-
-/* Media query to target Firefox only */
-@-moz-document url-prefix() {
-  /* Firefox hack to hide the arrow */
-  .axa-select select {
-    padding-right: 1rem;
-
-    text-indent: 0.01px;
-    text-overflow: '';
-  }
-
-  /* <option> elements inherit styles from <select>, so reset them. */
-  .axa-select option {
-    background-color: $color-white;
-  }
-}
-
-/* IE9 hack to hide the arrow */
-
-/*
-@media screen and (min-width: 0\0) {
-  // TODO: fix these sizings
-  .axa-select {
-    select {
-      z-index: $ie-select-hack-z-index;
-
-      padding: 0.5rem 1.5rem 0.5rem 1rem;
-    }
-
-    &::after {
-      z-index: $ie-select-hack-after-z-index;
-    }
-
-    &::before {
-      position: absolute;
-      top: 0;
-      right: 1rem;
-      bottom: 0;
-
-      z-index: $ie-select-hack-before-z-index;
-
-      display: block;
-      width: 1.5rem;
-
-      background-color: $select-background-color;
-
-      content: "";
-    }
-
-    select:hover,
-    select:focus,
-    select:active {
-      color: $select-color;
-
-      background-color: $select-background-color;
-    }
-  }
-} */
