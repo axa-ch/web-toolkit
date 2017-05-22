@@ -1,6 +1,7 @@
 .form-control {
   @include typo-18();
   max-width: $axa-input-width;
+  height: 50px; // IE needs some fixed heights
 }
 
 // reset bootstrap
@@ -28,13 +29,18 @@
 .form-group.has-danger {
   position: relative;
   &::before, &::after {
+    // TODO: replace this with an SVG
     position: absolute;
-    left: -27px;
+    left: -17px;
     top: 50px;
     content: ' ';
     height: 15px;
     width: 2px;
     background-color: $color-axa-red;
+
+    @include media-breakpoint-up(sm) {
+      left: -27px;
+    }
   }
 
   &::after {

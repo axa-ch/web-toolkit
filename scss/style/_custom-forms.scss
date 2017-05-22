@@ -1,6 +1,48 @@
 $custom-control-description-font-size: 13px;
 $form-control-info-indicator-font-size: 10px;
 
+.form {
+  padding: 0 30px;
+  background-color: $color-alabaster;
+
+  @include media-breakpoint-up(sm) {
+    padding: 0 70px;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 0 80px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 95px;
+  }
+
+  &-title {
+    @include typo-36;
+    // TODO: publico
+  }
+
+  fieldset {
+    border-top: 1px solid $color-silver;
+
+    legend {
+      @include typo-20;
+      color: $color-scorpion;
+      background-color: $color-alabaster;
+      width: auto;
+      margin-left: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+
+      @include media-breakpoint-up(sm) {
+        margin-left: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
 // hack: more specifity than ".form-group label" to override typo-18 to typo-16
 .form-group label.custom-checkbox {
   @include typo-16();
@@ -172,6 +214,7 @@ $form-control-info-indicator-font-size: 10px;
   color: #333333;
   cursor: pointer;
   background-color: #ffffff;
+  height: 50px;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%227%22%3E%0D%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20fill%3D%22%23999%22%20d%3D%22M9.754%201.451L5.573%205.756c-.322.331-.844.331-1.166%200L.226%201.451c-.322-.332-.322-.87%200-1.202.321-.331.844-.331%201.166%200L4.99%203.954%208.588.249c.322-.331.844-.331%201.166%200%20.322.332.322.87%200%201.202z%22%2F%3E%0D%0A%3C%2Fsvg%3E");
   background-size: 12px 8px;
   border: 1px solid #cccccc;
@@ -201,6 +244,25 @@ $form-control-info-indicator-font-size: 10px;
     &:active:not(:disabled) {
       color: $color-mineshaft;
       border-color: $brand-danger;
+    }
+  }
+}
+
+.custom-select-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  .custom-select + .custom-select {
+    margin-top: 5px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+
+    .custom-select + .custom-select {
+      margin-top: 0;
+      margin-left: 10px;
     }
   }
 }
