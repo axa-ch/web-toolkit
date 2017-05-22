@@ -3,20 +3,23 @@ title: Radio button 2
 layout: demo.hbs
 ---
 
-<div>
-  <label class="custom-control custom-radio radio2">
-    <input id="radio1" name="radio" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Toggle this custom radio</span>
-  </label>
-  <label class="custom-control custom-radio radio2">
-    <input id="radio2" name="radio" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Or toggle this other custom radio</span>
-  </label>
-  <label class="custom-control custom-radio radio2">
-    <input id="radio2" name="radio" type="radio" class="custom-control-input" disabled>
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">disabled</span>
-  </label>
+<div class="form-group" role="group" aria-labelledby="foo" >
+  <label id="foo">Some label</label>
+  <div>
+    <label class="custom-control custom-radio radio2">
+      <input id="radio1" name="radio" type="radio" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">Toggle this custom radio</span>
+    </label>
+    <label class="custom-control custom-radio radio2">
+      <input id="radio2" name="radio" type="radio" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">Or toggle this other custom radio</span>
+    </label>
+    <label class="custom-control custom-radio radio2">
+      <input id="radio2" name="radio" type="radio" class="custom-control-input" disabled>
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">disabled</span>
+    </label>
+  </div>
 </div>

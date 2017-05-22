@@ -6,7 +6,8 @@ layout: demo.hbs
 <form class="form">
   <h2 class="form-title">Your personal details</h2>
   <p><strong>Bacon ipsum dolor amet sausage</strong> short loin chicken capicola tri-tip. Filet mignon spare ribs turkey short loin shoulder swine porchetta ground round. Tri-tip burgdoggen pancetta, biltong beef filet mignon shankle ground round pork belly leberkas shoulder pig flank kevin. Chicken pork chop cupim, pancetta shankle ball tip salami strip steak biltong jerky fatback landjaeger.</p>
-  <div class="form-group" >
+  <div class="form-group" role="group" aria-labelledby="gender" >
+    <label class="sr-only" id="gender" >Choose your gender</label>
     <div>
       <label class="custom-control custom-radio radio2">
         <input id="gender" name="radio" type="radio" class="custom-control-input">
@@ -154,11 +155,11 @@ layout: demo.hbs
     </div>
     <div class="form-group has-danger" >
       <label for="phone" >Phone number</label>
-      <input type="tel" id="phone" class="form-control form-control-danger" value="+41 00 000 00" />
-      <div class="form-control-feedback" >Wrong number</div>
+      <input type="tel" id="phone" class="form-control form-control-danger" value="+41 00 000 00" aria-describedby="phoneError" />
+      <div class="form-control-feedback" id="phoneError">Wrong number</div>
     </div>
-    <div class="form-group" >
-      <label>Do you want to be informed by SMS?</label>
+    <div class="form-group" role="group" aria-labelledby="inform" >
+      <label id="inform">Do you want to be informed by SMS?</label>
       <div class="custom-radio1-wrapper">
         <label class="custom-control custom-radio radio1">
           <input id="radio1" name="sms" type="radio" class="custom-control-input" checked>
@@ -172,8 +173,8 @@ layout: demo.hbs
         </label>
       </div>
     </div>
-    <div class="form-group" >
-      <label>Choose your insurance plan</label>
+    <div class="form-group" role="group" aria-labelledby="plan" >
+      <label id="plan">Choose your insurance plan</label>
       <div class="custom-radio1-wrapper">
         <label class="custom-control custom-radio radio1">
           <input id="radio1" name="plan" type="radio" class="custom-control-input" checked>
@@ -192,8 +193,8 @@ layout: demo.hbs
         </label>
       </div>
     </div>
-    <div class="form-group" >
-      <label>Are you interested in the following?</label>
+    <div class="form-group" role="group" aria-labelledby="interest" >
+      <label id="interest">Are you interested in the following?</label>
       <div>
         <label class="custom-control custom-checkbox">
           <input type="checkbox" id="checkbox1" class="custom-control-input" />
