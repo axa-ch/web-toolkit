@@ -1,3 +1,15 @@
+.multi-form-group {
+  @include media-breakpoint-up(sm) {
+    display: flex;
+  }
+
+  & > .form-group + .form-group {
+    @include media-breakpoint-up(sm) {
+      margin-left: 10px;
+    }
+  }
+}
+
 .form-control {
   @include typo-18();
   max-width: $axa-input-width;
