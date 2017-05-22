@@ -1,52 +1,25 @@
 ---
-title: Radio Buttons
+title: Radio buttons
 order: 3
 layout: page.hbs
 tags: Radio, Segmented Control
-draft: false
+nav: side/components/forms/radio
 ---
+<h1 class="h2">Radio buttons</h1>
 
-<h1>Radio 1</h1>
+<h2 class="h3">Radio button 1</h2>
 
-<p>Same markup as bootstrap v4 EXCEPT that you need to add the radio1 class to the .custom-radio elements</p>
-<p>NOTE: either do not include any whitespace OR wrap the .custom-radio items inside a .custom-radio1-wrapper</p>
+<p>Same markup as bootstrap v4 EXCEPT that you need to add the radio1 class to the <code>.custom-radio</code> elements</p>
+<p>NOTE: either do not include any whitespace OR wrap the <code>.custom-radio</code> items inside a <code>.custom-radio1-wrapper</code></p>
 
-<div class="custom-radio1-wrapper">
-  <label class="custom-control custom-radio radio1">
-    <input id="radio1" name="radio" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Toggle this custom radio</span>
-  </label>
-  <label class="custom-control custom-radio radio1">
-    <input id="radio2" name="radio" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Or toggle this other custom radio</span>
-  </label>
-  <label class="custom-control custom-radio radio1">
-    <input id="radio2" name="radio" type="radio" class="custom-control-input" disabled>
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">disabled</span>
-  </label>
-</div>
+{{> example path="/components/form-and-input-elements/demos/radio1.html"}}
 
-<h2>Radio 2</h2>
+{{#code-snippet "html"}}{{#get snippets "/components/form-and-input-elements/snippets/radio1"}}{{{this}}}{{/get}}{{/code-snippet}}
 
-<p>Same markup as bootstrap v4 EXCEPT that you need to add the radio2 class to the .custom-radio elements</p>
+<h2 class="h3">Radio button 2</h2>
 
-<div>
-  <label class="custom-control custom-radio radio2">
-    <input id="radio1" name="radio" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Toggle this custom radio</span>
-  </label>
-  <label class="custom-control custom-radio radio2">
-    <input id="radio2" name="radio" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Or toggle this other custom radio</span>
-  </label>
-  <label class="custom-control custom-radio radio2">
-    <input id="radio2" name="radio" type="radio" class="custom-control-input" disabled>
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">disabled</span>
-  </label>
-</div>
+<p>Same markup as bootstrap v4 EXCEPT that you need to add the <code>.radio2</code> class to the <code>.custom-radio</code> elements</p>
+
+{{> example path="/components/form-and-input-elements/demos/radio2.html"}}
+
+{{#code-snippet "html"}}{{#get snippets "/components/form-and-input-elements/snippets/radio2"}}{{{this}}}{{/get}}{{/code-snippet}}
