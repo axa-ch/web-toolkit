@@ -4,6 +4,7 @@ $form-control-info-indicator-font-size: 10px;
 .form {
   padding: 0 30px;
   background-color: $color-alabaster;
+  overflow: hidden; // do not let margin get outside the dark background
 
   @include media-breakpoint-up(sm) {
     padding: 0 70px;
@@ -18,15 +19,36 @@ $form-control-info-indicator-font-size: 10px;
   }
 
   &-title {
-    @include typo-36;
-    // TODO: publico
+    @include typo-24-serif;
+    border-bottom: 1px solid $color-silver;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+
+    @include media-breakpoint-up(sm) {
+      @include typo-36-serif;
+      margin-top: 45px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-top: 60px;
+    }
   }
 
   fieldset {
     border-top: 1px solid $color-silver;
+    margin-top: 15px;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: 25px;
+
+    }
 
     legend {
-      @include typo-20;
+      @include typo-16;
+      font-weight: $font-weight-medium;
       color: $color-scorpion;
       background-color: $color-alabaster;
       width: auto;
@@ -35,9 +57,11 @@ $form-control-info-indicator-font-size: 10px;
       padding-right: 15px;
 
       @include media-breakpoint-up(sm) {
+        @include typo-20;
         margin-left: 30px;
         padding-left: 20px;
         padding-right: 20px;
+        margin-bottom: 20px;
       }
     }
   }
