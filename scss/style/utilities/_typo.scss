@@ -1,5 +1,17 @@
-.typo-78-serif {
+@mixin typo-78-serif() {
   font-family: $font-family-serif;
+  font-size: 78px;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+  line-height: 1.051;
+}
+
+.typo-78-serif {
+  @include typo-78-serif;
+}
+
+@mixin typo-78() {
+  font-family: $font-family-sans-serif;
   font-size: 78px;
   font-weight: bold;
   letter-spacing: -0.01em;
@@ -7,14 +19,10 @@
 }
 
 .typo-78 {
-  font-family: $font-family-sans-serif;
-  font-size: 78px;
-  font-weight: bold;
-  letter-spacing: -0.01em;
-  line-height: 1.051;
+  @include typo-78;
 }
 
-.typo-62-serif {
+@mixin typo-62-serif() {
   font-family: $font-family-serif;
   font-size: 62px;
   font-weight: bold;
@@ -22,7 +30,11 @@
   line-height: 1.161;
 }
 
-.typo-62 {
+.typo-62-serif {
+  @include typo-62-serif;
+}
+
+@mixin typo-62() {
   font-family: $font-family-sans-serif;
   font-size: 62px;
   font-weight: bold;
@@ -30,7 +42,11 @@
   line-height: 1.161;
 }
 
-.typo-48-serif {
+.typo-62 {
+  @include typo-62;
+}
+
+@mixin typo-48-serif() {
   font-family: $font-family-serif;
   font-size: 48px;
   font-weight: bold;
@@ -38,20 +54,46 @@
   line-height: 1.125;
 }
 
-.typo-48 {
+.typo-48-serif {
+  @include typo-48-serif;
+}
+
+@mixin typo-48() {
   font-family: $font-family-sans-serif;
   font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+  line-height: 1.125;
+}
+
+.typo-48 {
+  @include typo-48;
+}
+
+
+@mixin typo-36() {
+  font-family: $font-family-sans-serif;
+  font-size: 36px;
   font-weight: bold;
   letter-spacing: 0.01em;
   line-height: 1.125;
 }
 
 .typo-36 {
-  font-family: $font-family-sans-serif;
+  @include typo-36();
+}
+
+
+@mixin typo-36-serif() {
+  font-family: $font-family-serif;
   font-size: 36px;
   font-weight: bold;
-  letter-spacing: 0.01em;
-  line-height: 1.125;
+  letter-spacing: 0.02em;
+  line-height: 1.17;
+}
+
+.typo-36-serif {
+  @include typo-36-serif();
 }
 
 .typo-28-serif {
@@ -75,11 +117,27 @@
   @include typo-28();
 }
 
-.typo-24 {
+@mixin typo-24 {
   font-family: $font-family-sans-serif;
   font-size: 24px;
   font-weight: bold;
-  line-height: 1.2
+  line-height: 1.2;
+}
+
+.typo-24 {
+  @include typo-24;
+}
+
+@mixin typo-24-serif {
+  font-family: $font-family-serif;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.17;
+}
+
+.typo-24-serif {
+  @include typo-24-serif;
 }
 
 @mixin typo-20 {
@@ -115,16 +173,24 @@
   @include typo-16();
 }
 
-.typo-14 {
+@mixin typo-14 {
   font-family: $font-family-sans-serif;
   font-size: 14px;
   letter-spacing: 0.08em;
 }
 
-.typo-13 {
+.typo-14 {
+  @include typo-14;
+}
+
+@mixin typo-13 {
   font-family: $font-family-sans-serif;
   font-size: 13px;
   letter-spacing: 0.08em;
+}
+
+.typo-13 {
+  @include typo-13;
 }
 
 .typo-main-title-editorial {

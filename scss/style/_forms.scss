@@ -1,0 +1,159 @@
+.multi-form-group {
+  @include media-breakpoint-up(sm) {
+    display: flex;
+  }
+
+  & > .form-group + .form-group {
+    @include media-breakpoint-up(sm) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.form-control {
+  @include typo-18();
+  max-width: $axa-input-width;
+  height: 50px; // IE needs some fixed heights
+}
+
+// reset bootstrap
+.has-danger .form-control-danger,
+.has-warning .form-control-warning,
+.has-success .form-control-success {
+  background-image: none;
+}
+
+// reset bootstrap
+.form-control-success,
+.form-control-warning,
+.form-control-danger {
+  padding-right: $input-padding-x;
+}
+
+.form-control-feedback {
+  margin-top: 0;
+}
+
+.form-group.has-danger .form-control-feedback {
+  color: $brand-danger;
+}
+
+.form-group.has-danger {
+  position: relative;
+  &::before, &::after {
+    // TODO: replace this with an SVG
+    position: absolute;
+    left: -17px;
+    top: 50px;
+    content: ' ';
+    height: 15px;
+    width: 2px;
+    background-color: $color-axa-red;
+
+    @include media-breakpoint-up(sm) {
+      left: -27px;
+    }
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+}
+
+.form-group.has-danger .form-control,
+.form-control-danger {
+  color: $brand-danger;
+
+  border-color: $input-border-color;
+
+  &:not(:focus)::placeholder {
+    color: $brand-danger;
+  }
+
+  &:hover {
+    border-color: $brand-danger;
+  }
+
+  &:focus {
+    color: $color-azure;
+
+    border-color: $color-azure;
+  }
+}
+
+.form-control:hover {
+  border-color: $color-azure;
+}
+
+.form-control:focus {
+  color: $color-azure;
+
+  border-color: $color-azure;
+}
+
+.form-control::placeholder {
+  color: $color-dusty-gray;
+}
+
+.form-group label {
+  @include typo-18();
+  margin-bottom: 3px;
+
+  color: $color-mineshaft;
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 8px;
+  }
+}
+
+// testing below here
+.form-control-info-wrapper {
+  display: flex;
+
+  align-items: center;
+}
+
+.form-control-info-indicator {
+  padding: 10px;
+  width: 21px + 20px;
+  height: 21px + 20px;
+
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIxIDIxIj48cGF0aCBmaWxsPSIjMzc0NDk2IiBkPSJNMTAuNSAyLjYyNWM0LjM0OSAwIDcuODc1IDMuNTI1IDcuODc1IDcuODc1cy0zLjUyNiA3Ljg3NS03Ljg3NSA3Ljg3NWMtNC4zNSAwLTcuODc1LTMuNTI1LTcuODc1LTcuODc1UzYuMTUgMi42MjUgMTAuNSAyLjYyNU0xMC41IDBDNC43MDEgMCAwIDQuNzAxIDAgMTAuNVM0LjcwMSAyMSAxMC41IDIxIDIxIDE2LjI5OSAyMSAxMC41IDE2LjI5OSAwIDEwLjUgMHoiLz48cGF0aCBmaWxsPSIjMzc0NDk2IiBkPSJNMTAuNSA1LjI1Yy43MjUgMCAxLjMxMy41ODggMS4zMTMgMS4zMTNzLS41ODggMS4zMTMtMS4zMTMgMS4zMTMtMS4zMTMtLjU4Ny0xLjMxMy0xLjMxM2MuMDAxLS43MjYuNTg4LTEuMzEzIDEuMzEzLTEuMzEzek05LjE4OCA5LjE4N2gyLjYyNXY2LjU2M0g5LjE4OFY5LjE4N3oiLz48L3N2Zz4=");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.form-control-info-description {
+  $negativeMargin: -30px; // TODO: wont' work in every case
+  padding: 20px (-$negativeMargin);
+
+  margin: 15px $negativeMargin 0;
+
+  color: $color-white;
+
+  background: $color-azure;
+
+  &::before {
+    // TODO: arrow
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .form-control-info-description {
+    position: absolute;
+
+    padding-right: 20px;
+    padding-left: 20px;
+
+    margin: 0;
+  }
+}

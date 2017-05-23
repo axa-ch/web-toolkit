@@ -1,0 +1,27 @@
+---
+title: Select
+layout: demo.hbs
+---
+
+<form>
+  <div class="form-group">
+    <label for="customSelect">Select</label>
+    <select id="customSelect" class="custom-select">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+
+  <div class="form-group has-danger">
+    <label for="exampleSelectDanger">Select danger</label>
+    <select id="exampleSelectDanger" class="custom-select TODO:DANGER-CLASS" aria-describedby="customSelectDangerFeedback">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <div class="form-control-feedback" id="customSelectDangerFeedback">Sorry, that username's taken. Try another?</div>
+  </div>
+</form>

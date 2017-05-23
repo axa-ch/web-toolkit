@@ -25,7 +25,8 @@
     "framework",
     "html",
     "css",
-    "js"
+    "js",
+    "styleguide"
   ],
   "bugs": {
     "url": "https://github.com/axa-group/web-toolkit/issues"

@@ -1,10 +1,9 @@
 import 'svg4everybody'
+import $ from 'jquery';
 
 import './affix'
 import './autocomplete'
 import './autogrow'
-import './checkbox-group'
-import './checkbox'
 import './drawer'
 import './dropdown'
 import './dropzone'
@@ -19,7 +18,6 @@ import './notification'
 import './progress-bar'
 import './reveal'
 import './search'
-import './segmented-control'
 import './stroke'
 
 import './bootstrap/alert'
@@ -33,5 +31,10 @@ import './bootstrap/scrollspy'
 import './bootstrap/tab'
 import './bootstrap/tooltip'
 import './bootstrap/util'
+
+// fixes bootstrap tooltips not triggered by Default
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 export default {}

@@ -1,0 +1,212 @@
+---
+title: Complete form
+layout: demo.hbs
+---
+
+<form class="form">
+  <h2 class="form-title">Your personal details</h2>
+  <p><strong>Bacon ipsum dolor amet sausage</strong> short loin chicken capicola tri-tip. Filet mignon spare ribs turkey short loin shoulder swine porchetta ground round. Tri-tip burgdoggen pancetta, biltong beef filet mignon shankle ground round pork belly leberkas shoulder pig flank kevin. Chicken pork chop cupim, pancetta shankle ball tip salami strip steak biltong jerky fatback landjaeger.</p>
+  <div class="form-group" role="group" aria-labelledby="gender" >
+    <label class="sr-only" id="gender" >Choose your gender</label>
+    <div>
+      <label class="custom-control custom-radio radio2">
+        <input id="gender" name="radio" type="radio" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Mr.</span>
+      </label>
+      <label class="custom-control custom-radio radio2">
+        <input id="radio2" name="radio" type="radio" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Mrs.</span>
+      </label>
+      <label class="custom-control custom-radio radio2">
+        <input id="radio2" name="radio" type="radio" class="custom-control-input" >
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Miss</span>
+      </label>
+    </div>
+  </div>
+  <div class="form-group" >
+    <label for="firstname" >First name</label>
+    <input type="text" id="firstname" placeholder="e.g. Jane" class="form-control" />
+  </div>
+  <div class="form-group" >
+    <label for="lastname" >Last name</label>
+    <input type="text" id="lastname" placeholder="e.g. Doe" class="form-control" />
+  </div>
+  <div class="form-group" >
+    <label for="password" >Password</label>
+    <input type="password" id="password" placeholder="e.g. such secret" class="form-control" />
+  </div>
+  <div class="form-group" >
+    <label>Date of birth</label>
+    <div class="custom-select-group">
+      <select class="custom-select" >
+        <option selected disabled>Day</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>21</option>
+        <option>22</option>
+        <option>23</option>
+        <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
+      </select>
+      <select class="custom-select" >
+        <option selected disabled>Month</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+      </select>
+      <select class="custom-select" >
+        <option selected disabled>Year</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+        <option>2009</option>
+        <option>2008</option>
+        <option>2007</option>
+        <option>2006</option>
+        <option>2005</option>
+        <option>2004</option>
+        <option>2003</option>
+        <option>2002</option>
+        <option>2001</option>
+        <option>2000</option>
+        <option>1999</option>
+        <option>1998</option>
+        <option>1997</option>
+        <option>1996</option>
+        <option>1995</option>
+        <option>1994</option>
+        <option>1993</option>
+        <option>1992</option>
+        <option>1990</option>
+        <option>1989</option>
+        <option>1988</option>
+        <option>1987</option>
+        <option>1986</option>
+        <option>1985</option>
+        <option>1984</option>
+        <option>1983</option>
+        <option>1982</option>
+        <option>1981</option>
+        <option>1980</option>
+        <option>1979</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="optional">Label (optional)</label>
+    <input type="text" id="optional" class="form-control" />
+  </div>
+  <fieldset>
+    <legend>Contact</legend>
+    <div class="multi-form-group" >
+      <div class="form-group" >
+        <label for="city" >City</label>
+        <input type="text" id="city" placeholder="Where do you live?" class="form-control" />
+      </div>
+      <div class="form-group" >
+        <label for="zip" >Zipcode</label>
+        <input type="text" id="zip" placeholder="zip" style="width: 150px;" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group has-danger" >
+      <label for="phone" >Phone number</label>
+      <input type="tel" id="phone" class="form-control form-control-danger" value="+41 00 000 00" aria-describedby="phoneError" />
+      <div class="form-control-feedback" id="phoneError">Wrong number</div>
+    </div>
+    <div class="form-group" role="group" aria-labelledby="inform" >
+      <label id="inform">Do you want to be informed by SMS?</label>
+      <div class="custom-radio1-wrapper">
+        <label class="custom-control custom-radio radio1">
+          <input id="radio1" name="sms" type="radio" class="custom-control-input" checked>
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">YES</span>
+        </label>
+        <label class="custom-control custom-radio radio1">
+          <input id="radio2" name="sms" type="radio" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">NO</span>
+        </label>
+      </div>
+    </div>
+    <div class="form-group" role="group" aria-labelledby="plan" >
+      <label id="plan">Choose your insurance plan</label>
+      <div class="custom-radio1-wrapper">
+        <label class="custom-control custom-radio radio1">
+          <input id="radio1" name="plan" type="radio" class="custom-control-input" checked>
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">1 YEAR</span>
+        </label>
+        <label class="custom-control custom-radio radio1">
+          <input id="radio2" name="plan" type="radio" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">2 YEARS</span>
+        </label>
+        <label class="custom-control custom-radio radio1">
+          <input id="radio2" name="plan" type="radio" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">5 YEARS</span>
+        </label>
+      </div>
+    </div>
+    <div class="form-group" role="group" aria-labelledby="interest" >
+      <label id="interest">Are you interested in the following?</label>
+      <div>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" id="checkbox1" class="custom-control-input" />
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Commercial informations</span>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" id="checkbox2" class="custom-control-input" />
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Corporate informations</span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group" >
+    <button class="btn btn-lg btn-axa" >Confirm your informations</button>
+    <button class="btn btn-lg btn-ghost" >Save my quote</button>
+  </div>
+</form>

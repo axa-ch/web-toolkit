@@ -11,7 +11,7 @@
   text-transform: uppercase;
   &.btn.btn-lg {
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-lg,
-     $btn-border-radius-lg);
+      $btn-border-radius-lg);
 
     border-width: 0;
     border-bottom-width: 2px;
@@ -28,11 +28,13 @@
   @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
     $line-height-base, $btn-border-radius);
   @extend .typo-16;
+  // slight margin-bottom to prevent gluing buttons together when they break into two lines
+  margin-bottom: 10px;
 
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px
     @include btn-split-icon(($padding-large-vertical - 0.06667rem), $padding-large-horizontal,
-        $font-size-lg, $line-height-lg, $btn-border-radius-lg);
+      $font-size-lg, $line-height-lg, $btn-border-radius-lg);
     @include typo-16();
 
     border-width: 2px;
@@ -77,11 +79,12 @@
   @include typo-16();
 
   @include button-color($color-button-primary, $color-button-secondary, $color-white);
+  background-color: transparent;
 
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px
     @include btn-split-icon(($padding-large-vertical - 0.06667rem), $padding-large-horizontal,
-        $font-size-lg, $line-height-lg, $btn-border-radius-lg);
+      $font-size-lg, $line-height-lg, $btn-border-radius-lg);
     @include typo-16();
   }
 
