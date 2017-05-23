@@ -3,7 +3,7 @@ node {
     checkout scm
   }
 
-  if (env.BRANCH_NAME == "feature/forms") {
+  if (env.BRANCH_NAME == "v2") {
     stage('Deploy') {
       withCredentials([[
         $class: 'UsernamePasswordMultiBinding',
@@ -22,21 +22,21 @@ node {
       ]]) {
         sh """
           set +x
-          export BASE_URL=/toolkit/forms
+          export BASE_URL=/toolkit/v2
 
           rancher-compose \
             --file docker-compose.yml \
             --url \$RANCHER_URL \
             --access-key \$RANCHER_ACCESS_KEY \
             --secret-key \$RANCHER_SECRET_KEY \
-            --project-name "web-toolkit-forms" \
+            --project-name "web-toolkit-v2" \
             --verbose up -d --confirm-upgrade
           rancher-compose \
             --file docker-compose.yml \
             --url \$RANCHER_URL \
             --access-key \$RANCHER_ACCESS_KEY \
             --secret-key \$RANCHER_SECRET_KEY \
-            --project-name "web-toolkit-forms" \
+            --project-name "web-toolkit-v2" \
             --verbose up -d --upgrade
         """
       }
