@@ -3,14 +3,14 @@ FROM node:6
 ENV BASE_URL '/'
 
 RUN mkdir -p /usr/src/app/dist/docs \
-  mkdir /usr/src/app/tests \
-  ln -s /usr/src/app/tests/ /usr/src/app/dist/docs/tests
+&& mkdir /usr/src/app/tests \
+&& ln -s /usr/src/app/tests/ /usr/src/app/dist/docs/tests
 VOLUME "/usr/src/app/tests"
 
 WORKDIR /usr/src/app
 
 COPY package.json /usr/src/app/
-RUN npm install --quiet
+RUN npm install --production
 
 COPY . /usr/src/app
 
