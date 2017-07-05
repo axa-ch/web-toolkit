@@ -4,6 +4,6 @@ web-toolkit:
     NODE_ENV: production
     BASE_URL: ${BASE_URL}
   ports:
-    - "8080"
+    - "1337"
   tty: true
   stdin_open: false
