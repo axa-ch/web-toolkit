@@ -9,6 +9,27 @@
   }
 }
 
+@mixin make-link-underline ($main-color, $visited-color, $hover-color, $active-color) {
+  color: $main-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $hover-color;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $active-color;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: $visited-color;
+    text-decoration: none;
+  }
+}
+
 @mixin _make-axa-link ($main-color, $hover-color) {
   @extend .typo-14;
   @include make-link($main-color, $hover-color);
