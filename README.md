@@ -79,7 +79,7 @@ $ npm run dev
 
 ### But but but.... Enterprise Proxy?
 
-If you're working on a heavily guarded machine as used by many enterprises, follow our [Enterprise Proxy Guide](https://github.com/axa-ch/style-guide/wiki/Sitting-behind-a-corporate-proxy%3F).
+If you're working on a heavily guarded machine as used by many enterprises, follow our [Enterprise Proxy Guide](https://github.com/axa-ch/style-guide/wiki/solve-proxy-problems).
 
 ## What do we build it with?
 
