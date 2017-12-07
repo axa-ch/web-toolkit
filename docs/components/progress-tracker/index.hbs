@@ -1,0 +1,19 @@
+---
+title: Progress tracker
+description: Showcases and descriptions of the progress tracker.
+nav: side/components/progress-tracker
+order: 1
+---
+
+{{#> page}}
+    {{#*inline "content"}}
+        <h1 class="h2">{{title}}</h1>
+        <p class="lead">
+            This page shows how to use the form progress tracker
+        </p>
+
+        {{> example path="/components/progress-tracker/demos/example1.html"}}
+        {{#code-snippet "html"}}{{#get snippets "/components/progress-tracker/snippets/example1"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    {{/inline}}
+{{/page}}
