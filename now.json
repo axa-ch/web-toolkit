@@ -1,0 +1,19 @@
+{
+  "name": "toolkit-v2",
+  "alias": "toolkit-v2",
+  "type": "npm",
+  "files": [
+    "docs",
+    "icons",
+    "images",
+    "js",
+    "lib",
+    "scss",
+    "tests",
+    "webpack",
+    ".babelrc"
+  ],
+  "env": {
+    "BASE_URL": "/toolkit/v2"
+  }
+}
