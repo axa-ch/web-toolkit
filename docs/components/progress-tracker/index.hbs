@@ -1,0 +1,37 @@
+---
+title: Progress tracker
+description: Showcases and descriptions of the progress tracker.
+nav: side/components/progress-tracker
+order: 1
+toc:
+  - title: Standard implementation
+    slug: standard
+  - title: Linkable implementaiton
+    slug: linkable
+  - title: Icon button
+    slug: icon-buttons
+  - title: Arrow button
+    slug: arrow-buttons
+  - title: Links
+    slug: links
+---
+
+{{#> page}}
+    {{#*inline "content"}}
+        <h1 class="h2">{{title}}</h1>
+        <p class="lead" id="standard">
+            This page shows how to use the form progress tracker
+        </p>
+
+        {{> example path="/components/progress-tracker/demos/example1.html"}}
+        {{#code-snippet "html"}}{{#get snippets "/components/progress-tracker/snippets/example1"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+        <h2 class="h3" id="linkable">Linkable implementaiton</h2>
+        <p>
+            Form steps element's tag can be turned into anchors. By adding an href on it, you can directly link to the related step.
+        </p>
+
+        {{> example path="/components/progress-tracker/demos/example2.html"}}
+        {{#code-snippet "html"}}{{#get snippets "/components/progress-tracker/snippets/example2"}}{{{.}}}{{/get}}{{/code-snippet}}
+    {{/inline}}
+{{/page}}

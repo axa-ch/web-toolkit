@@ -1,0 +1,216 @@
+//
+// FormSteps
+// --------------------------------------------------
+$FormSteps-border-color: #d5d5d5 !default;
+$FormSteps-spacing: 3rem 0 2rem !default;
+$FormSteps-padding-v: .5rem !default;
+$FormSteps-padding-h: 2rem !default;
+$FormSteps-padding: $FormSteps-padding-v $FormSteps-padding-h !default;
+$FormSteps-border-tracking-thickness: 5px !default;
+
+//
+// Styles
+// --------------------------------------------------
+
+.form-steps {
+    border: 1px solid $FormSteps-border-color;
+    border-width: 1px 0;
+    margin: $FormSteps-spacing;
+    position: relative;
+}
+
+.form-steps__wrapper {
+    @include make-container();
+    @include make-container-max-widths();
+    display: flex;
+}
+
+.form-steps__step {
+    background: $body-bg;
+    border: 1px solid $FormSteps-border-color;
+    border-width: 0 1px 1px;
+    padding: $FormSteps-padding;
+    margin-left: -1px;
+    margin-bottom: -1px;
+    flex-grow: 1;
+    align-items: center;
+    position: relative;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: $color-gray--darkest;
+    transition: margin .3s, opacity .3s;
+
+    .icon {
+        transition: all .3s;
+        opacity: .5;
+    }
+
+    &:after {
+        background: $body-bg;
+        content: "";
+        width: calc(100% + 1px);
+        height: $FormSteps-border-tracking-thickness;
+        left: 0;
+        bottom: -6px;
+        position: absolute;
+        z-index: 1;
+        transition: all .3s;
+    }
+
+    &:before {
+        background: $color-burnt-sienna;
+        z-index: 0;
+    }
+
+    &:hover, &:focus {
+        color: $color-gray--darkest;
+        text-decoration: none;
+
+        .form-steps__step__number, .form-steps__step__count, .form-steps__step__title {
+            opacity: 1;
+        }
+    }
+}
+
+.form-steps__step__number, .form-steps__step__count {
+    @include typo-14;
+    opacity: .5;
+    line-height: 1.2;
+}
+
+.form-steps__step__number {
+    display: none;
+}
+
+.form-steps__step__title {
+    flex-grow: 1;
+    font-weight: 900;
+    opacity: .5;
+    transition: all .3s;
+}
+
+.form-step__title__sub-count {
+    font-weight: 400;
+    opacity: .5;
+    white-space: nowrap;
+}
+
+.form-steps__step--active {
+    display: flex;
+
+    &:after {
+        background: $color-burnt-sienna;
+        width: 4rem;
+    }
+
+    .form-steps__step__number, .form-steps__step__count, .form-steps__step__title {
+        opacity: 1;
+    }
+
+    .form-steps__step__title:after {
+        transform: rotate(90deg);
+    }
+
+    .icon {
+        opacity: 1;
+        transform: rotateZ(90deg);
+    }
+}
+
+.form-steps__step--done {
+    background-color: $color-wild-sand;
+
+    &:after {
+        background: $color-silver;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .form-steps__wrapper {
+        flex-wrap: nowrap;
+        position: relative;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .form-steps__step {
+        width: 100%;
+        flex-shrink: 0;
+        margin-right: 2.5rem;
+    }
+
+    .form-steps__step--hide-left {
+        margin-left: calc(-100% - 2.5rem);
+    }
+
+    .form-steps__prev, .form-steps__next {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        height: 100%;
+        width: 2rem;
+        transition: opacity .3s;
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: "";
+            background: transparent url("data:image/svg+xml,%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20x%3D%270px%27%20y%3D%270px%27%20viewBox%3D%270%200%201000%201000%27%20enable-background%3D%27new%200%200%201000%201000%27%20xml%3Aspace%3D%27preserve%27%3E%0A%3Cg%3E%3Cg%20transform%3D%27matrix(1%200%200%20-1%200%201008)%27%3E%3Cpath%20d%3D%27M268.1%2C998l490-490l-490-490l-26.3%2C26.3L705.6%2C508L241.9%2C971.8L268.1%2C998z%27%2F%3E%3C%2Fg%3E%3C%2Fg%3E%0A%3C%2Fsvg%3E") no-repeat center center;
+            left: .5rem;
+            width: 1rem;
+            height: 100%;
+            transition: transform .3s;
+        }
+
+        &.disabled {
+            opacity: .3;
+        }
+    }
+
+    .form-steps__next {
+        right: auto;
+        left: 0;
+
+        &:after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .form-steps__step {
+        border: 1px solid $FormSteps-border-color;
+        border-width: 0 1px;
+        margin-bottom: 0;
+        position: relative;
+        padding-right: $FormSteps-padding-h + 1.5rem;
+    }
+
+    .form-steps__step__number {
+        display: block;
+    }
+
+    .form-steps__step__count {
+        display: none;
+    }
+
+    .form-steps__step__title {
+        &:after {
+            content: "";
+            position: absolute;
+            background: transparent url("data:image/svg+xml,%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20x%3D%270px%27%20y%3D%270px%27%20viewBox%3D%270%200%201000%201000%27%20enable-background%3D%27new%200%200%201000%201000%27%20xml%3Aspace%3D%27preserve%27%3E%0A%3Cg%3E%3Cg%20transform%3D%27matrix(1%200%200%20-1%200%201008)%27%3E%3Cpath%20d%3D%27M268.1%2C998l490-490l-490-490l-26.3%2C26.3L705.6%2C508L241.9%2C971.8L268.1%2C998z%27%2F%3E%3C%2Fg%3E%3C%2Fg%3E%0A%3C%2Fsvg%3E") no-repeat center center;
+            right: $FormSteps-padding-h;
+            top: 0;
+            width: 1rem;
+            height: 100%;
+            opacity: .5;
+        }
+    }
+
+    .form-steps__radio {
+        display: none;
+    }
+}

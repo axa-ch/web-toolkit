@@ -19,6 +19,7 @@ import './progress-bar'
 import './reveal'
 import './search'
 import './stroke'
+import './form-steps'
 
 import './bootstrap/alert'
 import './bootstrap/button'
