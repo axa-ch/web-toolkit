@@ -7,10 +7,6 @@
   color: $color-white;
   text-transform: uppercase;
 
-  @include media-breakpoint-up(xl) {
-    height: 48px;
-  }
-
   @include media-breakpoint-down(xs) {
     flex-wrap: wrap;
   }
@@ -22,8 +18,8 @@
   }
 }
 
-.top-content-bar-btn {
-  margin-left: 20px;
+.top-content-bar-btn.btn { // Add .btn class to raise priority. Otherwise, standard styles are applied
+  margin: -.25rem 0 -.25rem 20px;
 }
 
 .top-content-bar--corporate {
