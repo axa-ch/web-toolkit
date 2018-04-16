@@ -1,0 +1,32 @@
+---
+title: Tab Panel
+description: Description of how to deal with tab panel in your app.
+nav: side/components/tab-panel
+order: 1
+toc:
+  - title: Default Tab Panel
+    slug: tab-panel-default
+  - title: Full-width Tab Panel
+    slug: tab-panel-fullwidth
+---
+
+{{#> page}}
+  {{#*inline "content"}}
+    <h1 class="h2">{{title}}</h1>
+    <p class="lead">
+      Tab panels can be used to segment the screens, to make a step-by-step wizard, ...
+    </p>
+
+    {{> table-of-contents data=toc}}
+    
+    <h2 class="h3" id="tab-panel-default">Default Tab panel</h2>
+
+    {{> example path="/components/tab-panel/demos/tab-panel-default.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/tab-panel/snippets/tab-panel-default"}}{{{.}}}{{/get}}{{/code-snippet}}
+
+    <h2 class="h3" id="tab-panel-fullwidth">Full-width Tab panel</h2>
+
+    {{> example path="/components/tab-panel/demos/tab-panel-fullwidth.html"}}
+    {{#code-snippet "html"}}{{#get snippets "/components/tab-panel/snippets/tab-panel-fullwidth"}}{{{.}}}{{/get}}{{/code-snippet}}
+  {{/inline}}
+{{/page}}
