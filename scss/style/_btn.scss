@@ -1,12 +1,12 @@
 .btn-axa {
-  @include typo-16();
   @include button-primary($color-button-primary, $color-button-secondary, $color-white);
   @include button-animation($color-button-secondary);
+  @include typo-14();
   border-width: 0;
   border-bottom-width: 2px;
   border-style: solid;
 
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   &.btn.btn-lg {
@@ -20,14 +20,14 @@
   &.btn.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
       $font-size-sm, $line-height-sm, $btn-border-radius-sm);
-    @include typo-16();
+    @include typo-14();
   }
 }
 
 .btn {
   @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
     $line-height-base, $btn-border-radius);
-  @extend .typo-16;
+  @extend .typo-14;
   // slight margin-bottom to prevent gluing buttons together when they break into two lines
   margin-bottom: 10px;
 
@@ -35,7 +35,7 @@
     // Reduce vertical padding by 1px because we increase border-width by 1px
     @include btn-split-icon(($padding-large-vertical - 0.06667rem), $padding-large-horizontal,
       $font-size-lg, $line-height-lg, $btn-border-radius-lg);
-    @include typo-16();
+    @include typo-14();
 
     border-width: 2px;
   }
@@ -43,13 +43,13 @@
   &.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
       $font-size-sm, $line-height-sm, $btn-border-radius-sm);
-    @include typo-16();
+    @include typo-14();
   }
 
   &.btn-xs {
     @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-sm,
       $line-height-sm, $btn-border-radius-sm);
-    @include typo-16();
+    @include typo-14();
   }
 
   font-weight: 600;
@@ -61,7 +61,7 @@
     font-size: .9em;
   }
 
-  &:hover,
+  &:not([disabled]):hover,
   &:focus,
   &.focus {
     color: $color-white;
@@ -76,7 +76,7 @@
   @include button-animation($color-button-secondary);
   @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
     $line-height-base, $btn-border-radius);
-  @include typo-16();
+  @include typo-14();
 
   @include button-color($color-button-primary, $color-button-secondary, $color-white);
   background-color: transparent;
@@ -85,13 +85,13 @@
     // Reduce vertical padding by 1px because we increase border-width by 1px
     @include btn-split-icon(($padding-large-vertical - 0.06667rem), $padding-large-horizontal,
       $font-size-lg, $line-height-lg, $btn-border-radius-lg);
-    @include typo-16();
+    @include typo-14();
   }
 
   &.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
       $font-size-sm, $line-height-sm, $btn-border-radius-sm);
-    @include typo-16();
+    @include typo-14();
   }
 
   &.btn-ghost-white {

@@ -32,7 +32,7 @@
   z-index: 0; // for animation
 
   // animation
-  &:after {
+  &:not([disabled]):after {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -56,7 +56,6 @@
       opacity: 1;
     }
   }
-
 }
 
 @mixin btn-split-icon($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
@@ -155,17 +154,20 @@
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    border-color: $color-scorpion;
-    background: $color-wild-sand;
-    background-image: none;
-    color: $color-scorpion;
+    border-color: $color-light-grey;
+    background: $color-mercury;
+    color: $color-light-grey;
+
+    cursor: $cursor-disabled;
 
     &:hover,
     &:focus,
     &.focus {
-      border-color: $color-scorpion;
-      background-color: $color-wild-sand;
-      color: $color-scorpion;
+      border-color: $color-light-grey;
+      background: $color-mercury;
+      color: $color-light-grey;
+
+      cursor: $cursor-disabled;
     }
   }
 
@@ -232,14 +234,21 @@
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    @include opacity(.65);
-    @include box-shadow(none);
-
-    border-color: $main;
-    background: $contrast;
-    color: $main;
+    border-color: $color-light-grey;
+    background: $color-mercury;
+    color: $color-light-grey;
 
     cursor: $cursor-disabled;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      border-color: $color-light-grey;
+      background: $color-mercury;
+      color: $color-light-grey;
+
+      cursor: $cursor-disabled;
+    }
   }
 
   .badge {

@@ -30,7 +30,6 @@
   &.disabled,
   &:disabled {
     cursor: $cursor-disabled;
-    opacity: .65;
     @include box-shadow(none);
   }
 
@@ -99,7 +98,7 @@ fieldset[disabled] a.btn {
 // Make a button look and behave like a link
 .btn-link {
   font-weight: $font-weight-normal;
-  color: $link-color;
+  color: $color-axa-blue;
   border-radius: 0;
 
   &,
@@ -118,12 +117,12 @@ fieldset[disabled] a.btn {
     border-color: transparent;
   }
   @include hover-focus {
-    color: $link-hover-color;
+    color: $color-deep-sapphire;
     text-decoration: $link-hover-decoration;
     background-color: transparent;
   }
   &:disabled {
-    color: $btn-link-disabled-color;
+    color: $color-mercury;
 
     @include hover-focus {
       text-decoration: none;

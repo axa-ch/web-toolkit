@@ -117,6 +117,8 @@ $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
 $brand-danger:              $red !default;
 $brand-inverse:             $gray-dark !default;
+$color-axa-blue: #00008f;
+$color-deep-sapphire: #00005b;
 
 
 // Options
@@ -368,8 +370,8 @@ $btn-focus-box-shadow:           0 0 0 2px rgba($brand-primary, .25) !default;
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125) !default;
 
 $btn-primary-color:              $white !default;
-$btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             $btn-primary-bg !default;
+$btn-primary-bg:                 $color-axa-blue !default;
+$btn-primary-border:             $color-deep-sapphire !default;
 
 $btn-secondary-color:            $gray-dark !default;
 $btn-secondary-bg:               $white !default;

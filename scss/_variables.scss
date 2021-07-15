@@ -3,9 +3,9 @@
 $font-family-sans-serif: 'Source Sans Pro', Arial, sans-serif;
 $font-family-serif: 'PT Serif', serif;
 
-$font-size-base: 1rem;
-$font-size-lg: 1rem;
-$font-size-sm: 1rem;
+$font-size-base: 0.875rem;
+$font-size-lg: 0.875rem;
+$font-size-sm: 0.875rem;
 
 $font-size-title-main: 5.2rem;
 $font-size-title-l2: 4.133rem;
@@ -204,9 +204,9 @@ $brand-danger:          $color-crimson !default;
 
 //----- Component colors
 
-$color-button-primary: $color-azure;
+$color-button-primary: $color-axa-blue;
 
-$color-button-secondary: $color-axa-blue;
+$color-button-secondary: $color-deep-sapphire;
 
 $badge-bg: $color-indigo;
 
@@ -301,12 +301,13 @@ $color-tbd-17: #dfdfdf;
 $color-tbd-23: #1762a5;
 $color-tbd-24: #010943;
 $color-tbd-25: #babfd3;
+$color-light-grey: #999 !default;
 
 // #############################
 // # Buttons
 // #############################
 
-$font-size: 16px;
+$font-size: 14px;
 $font-weight-medium: 600;
 $line-height: 1.375;
 $font-color: $color-gray--darkest;
@@ -357,9 +358,9 @@ $button-sm-pad-lr: 15px;
 $button-sm-icon-size: 14px;
 $button-sm-font-size: 14px;
 
-$button-primary-bg: $color-blue;
+$button-primary-bg: $color-axa-blue;
 $button-primary-color: white;
-$button-primary-highlight-bg: lighten($color-blue, 5%);
+$button-primary-highlight-bg: $color-deep-sapphire;
 
 $button-secondary-bg: $color-gray--dark;
 $button-secondary-color: white;
