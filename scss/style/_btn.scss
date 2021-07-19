@@ -12,6 +12,7 @@
   &.btn.btn-lg {
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-lg,
       $btn-border-radius-lg);
+    @include typo-14();
 
     border-width: 0;
     border-bottom-width: 2px;
@@ -27,7 +28,7 @@
 .btn {
   @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
     $line-height-base, $btn-border-radius);
-  @extend .typo-14;
+  @include typo-14();
   // slight margin-bottom to prevent gluing buttons together when they break into two lines
   margin-bottom: 10px;
 
@@ -61,7 +62,7 @@
     font-size: .9em;
   }
 
-  &:not([disabled]):hover,
+  &:not([disabled]):not(.btn-link):hover,
   &:focus,
   &.focus {
     color: $color-white;

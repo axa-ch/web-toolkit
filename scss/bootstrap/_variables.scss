@@ -193,9 +193,9 @@ $inverse-color: $gray-lighter !default;
 //
 // Style anchor elements.
 
-$link-color:            $brand-primary !default;
+$link-color:            $color-axa-blue !default;
 $link-decoration:       none !default;
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      $color-axa-blue !default;
 $link-hover-decoration: underline !default;
 
 
