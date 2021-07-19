@@ -62,11 +62,19 @@
     font-size: .9em;
   }
 
-  &:not([disabled]):not(.btn-link):hover,
+  &:not([disabled]):not(.btn-link):not(.btn-toggle):not(.btn) > .btn-group:hover,
   &:focus,
   &.focus {
     color: $color-white;
   }
+
+  .btn-link {
+    &:disabled {
+      color: $color-white;
+    }
+  }
+
+
 }
 
 .btn.btn-default {
