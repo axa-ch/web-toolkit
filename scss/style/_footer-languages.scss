@@ -1,9 +1,13 @@
+@import "footer";
+@import "../bootstrap/mixins/breakpoints";
+@import "./utilities/typo";
+
 .footer-languages-bottom-container {
   display: flex;
   flex-grow: 1;
-  padding-top: 12px;
-  padding-bottom: 11px;
-  color: $footer-text-color;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: $footer-language-color;
   text-transform: uppercase;
   @include media-breakpoint-down(xs) {
     justify-content: center;
@@ -15,6 +19,7 @@
 
 .footer-languages-label {
   @extend .typo-14;
+  line-height: 17px;
   display: flex;
   align-items: center;
   padding-right: 18px;
@@ -30,7 +35,7 @@
 }
 
 .footer-language-item {
-  padding: 0 18px;
+  padding: 0 4px;
 
   @include media-breakpoint-up(xs) {
     &:first-child {
@@ -39,15 +44,15 @@
   }
 
   &:not(:last-child) {
-    border-right: 1px solid transparentize($footer-link-color, 0.5);
-    line-height: 14px;
+    border-right: 1px solid $footer-language-color;
+    line-height: 17px;
   }
 }
 
 .footer-language-link {
   @extend .typo-14;
   display: inline-block;
-  color: transparentize($footer-link-color, 0.5);
+  color: $footer-language-color;
   text-transform: uppercase;
 
   &:hover {

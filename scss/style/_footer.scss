@@ -1,12 +1,14 @@
+@import "../variables";
+
 $footer-text-color: $color-white;
+$footer-language-color: $color-silver;
 $footer-link-color: $color-white;
 $footer-social-color: $color-white;
 $footer-link-hover-color: $color-periwinkle;
 $footer-copyline-color: $color-silver;
 $footer-padding-lr: 30px;
-$footer-primary-color: $color-azure;
-$footer-secondary-color: $color-st-tropaz;
-$footer-bottom-border: $color-indigo;
+$footer-primary-color: $color-ocean-blue;
+$footer-bottom-border: lighten($color-ocean-blue, 25);
 $footer-sides-offset: 50px;
 
 .footer {
@@ -40,7 +42,7 @@ $footer-sides-offset: 50px;
   display: flex;
   flex-wrap: wrap;
   border-top: 2px solid $footer-bottom-border;
-  background: $footer-secondary-color;
+  background: $footer-primary-color;
 
   @include media-breakpoint-up(sm) {
     padding-right: $footer-sides-offset;
