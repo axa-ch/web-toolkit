@@ -17,17 +17,6 @@
   }
 }
 
-.footer-languages-label {
-  @extend .typo-14;
-  line-height: 17px;
-  display: flex;
-  align-items: center;
-  padding-right: 18px;
-  @include media-breakpoint-down(sm) {
-    display: none;
-  }
-}
-
 .footer-languages {
   @include unstyle-list();
   display: flex;
