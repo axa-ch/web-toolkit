@@ -1,11 +1,12 @@
 .footer-copyline {
-  @extend .typo-13;
-  color: transparentize($footer-copyline-color, 0.5);
+  @extend .typo-14;
+  color: $footer-text-color;
 
   a {
-    color: transparentize($footer-copyline-color, 0.5);
+    color: $footer-text-color;
+    text-decoration: none;
+    margin-right: 16px;
   }
-
 }
 
 .footer-copyline-top-container {
@@ -23,7 +24,7 @@
   padding-top: 3px;
   padding-bottom: 3px;
 
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     justify-content: center;
     padding-top: 0;
   }

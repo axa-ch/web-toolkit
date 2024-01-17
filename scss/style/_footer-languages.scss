@@ -9,7 +9,7 @@
   padding-bottom: 16px;
   color: $footer-language-color;
   text-transform: uppercase;
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     justify-content: center;
     width: 100%;
     padding-top: 5%;
@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   padding-right: 18px;
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     display: none;
   }
 }
@@ -36,16 +36,21 @@
 
 .footer-language-item {
   padding: 0 4px;
+  font-weight: bold;
 
-  @include media-breakpoint-up(xs) {
+  @include media-breakpoint-up(sm) {
     &:first-child {
       padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
     }
   }
 
   &:not(:last-child) {
     border-right: 1px solid $footer-language-color;
-    line-height: 17px;
+    line-height: 14px;
   }
 }
 
@@ -63,8 +68,8 @@
     color: $footer-text-color;
   }
 
-  @include media-breakpoint-down(xs) {
-    @include typo-20();
+  @include media-breakpoint-down(sm) {
+    @include typo-14();
   }
 
 }

@@ -28,11 +28,11 @@ $footer-sides-offset: 50px;
   padding-bottom: 50px;
   background: $footer-primary-color;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -44,7 +44,7 @@ $footer-sides-offset: 50px;
   border-top: 2px solid $footer-bottom-border;
   background: $footer-primary-color;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
   }
@@ -62,7 +62,7 @@ $footer-sides-offset: 50px;
 }
 
 .slide-from-left {
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     animation: slide-from-left 400ms 1 cubic-bezier(0.895, 0.03, 0.685, 0.22);
   }
 }

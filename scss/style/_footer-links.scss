@@ -21,7 +21,7 @@
 
   display: block;
   height: 40px;
-  border-top: 1px solid $footer-secondary-color;
+  border-top: 1px solid $footer-primary-color;
   color: $footer-link-color;
   line-height: 40px;
 
@@ -35,7 +35,7 @@
     height: 80px;
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
-    border-top: 1px solid $footer-secondary-color;
+    border-top: 1px solid $footer-primary-color;
     font-weight: 400;
     line-height: 80px;
     text-transform: uppercase;
@@ -96,7 +96,7 @@
     height: 80px;
     padding-right: $footer-sides-offset;
     padding-left: $footer-sides-offset;
-    border-top: 1px solid $footer-secondary-color;
+    border-top: 1px solid $footer-primary-color;
     font-weight: 400;
     line-height: 80px;
   }
