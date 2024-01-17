@@ -9,7 +9,7 @@
   padding-bottom: 16px;
   color: $footer-language-color;
   text-transform: uppercase;
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     justify-content: center;
     width: 100%;
     padding-top: 5%;
@@ -27,7 +27,7 @@
   padding: 0 4px;
   font-weight: bold;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     &:first-child {
       padding-left: 0;
     }
@@ -57,7 +57,7 @@
     color: $footer-text-color;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     @include typo-14();
   }
 
