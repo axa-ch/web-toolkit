@@ -26,6 +26,7 @@
 .footer-language-item {
   padding: 0 4px;
   font-weight: bold;
+  cursor: pointer;
 
   @include media-breakpoint-up(md) {
     &:first-child {
