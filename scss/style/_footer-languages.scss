@@ -26,8 +26,11 @@
 .footer-language-item {
   padding: 0 4px;
   font-weight: bold;
+  cursor: pointer;
 
   @include media-breakpoint-up(md) {
+    line-height: 14px;
+
     &:first-child {
       padding-left: 0;
     }
@@ -39,7 +42,6 @@
 
   &:not(:last-child) {
     border-right: 1px solid $footer-language-color;
-    line-height: 14px;
   }
 }
 
