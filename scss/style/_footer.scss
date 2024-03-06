@@ -1,14 +1,14 @@
 @import "../variables";
 
 $footer-text-color: $color-white;
-$footer-language-color: lighten($color-white, 20);
+$footer-language-color: #ffffffcc;
 $footer-link-color: $color-white;
 $footer-social-color: $color-white;
 $footer-link-hover-color: $color-periwinkle;
-$footer-copyline-color: lighten($color-white, 20);
+$footer-copyline-color: #ffffffcc;
 $footer-padding-lr: 30px;
 $footer-primary-color: $color-ocean-blue;
-$footer-bottom-border: lighten($color-ocean-blue, 25);
+$footer-bottom-border: #ffffffcc;
 $footer-sides-offset: 50px;
 
 .footer {
